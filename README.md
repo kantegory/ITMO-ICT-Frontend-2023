@@ -14,7 +14,7 @@
 2. Дока: https://doka.guide/
 3. MDN: https://developer.mozilla.org/ru/
 4. Мой YouTube: https://youtube.com/@dobryakov
-5. Мой телеграм-канал: https://t.me/kantegory
+5. Мой телеграм-канал: https://t.me/davidobryakov
 
 ## Разделы
 
