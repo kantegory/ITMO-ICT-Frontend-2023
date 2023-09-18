@@ -78,7 +78,8 @@
 
 ### Работа с UI-фреймворком Bootstrap + адаптивность
 
-Видео-лекция: https://www.youtube.com/watch?v=J1bMExplCAw&t=757s
+Видео-лекция: https://www.youtube.com/watch?v=J1bMExplCAw&t=757s  
+Статья про длинный и короткий контент: https://ishadeed.com/article/css-short-long-content/. 
 
 ### Язык программирования JS: основы языка, основы работы с DOM, обработка пользовательских событий, DOM-хранилища
 
