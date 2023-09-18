@@ -69,7 +69,8 @@
 
 ### Язык CSS: изоляция стилей
 
-Видео-лекция: https://www.youtube.com/watch?v=xtC6l5-q4yU
+Видео-лекция: https://www.youtube.com/watch?v=xtC6l5-q4yU  
+Презентация: https://docs.google.com/presentation/d/16FAdeODKJXs5nQRrUCc26hIiimL2RzireuiEaWQBc6s/edit?usp=sharing  
 
 ### Язык CSS: адаптивность под разные виды устройств
 
