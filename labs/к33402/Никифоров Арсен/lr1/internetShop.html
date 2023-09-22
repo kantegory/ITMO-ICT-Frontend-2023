@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Clothing Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login and Registration Form -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-4">
+                <button class="btn btn-secondary btn-block" onclick="showLoginForm()">Войти</button>
+                <button class="btn btn-primary btn-block" onclick="showRegistrationForm()">Регистрация</button>
+            </div>
+        </div>
+
+        <!-- Profile and Shopping Cart -->
+        <div class="row justify-content-center mt-4" id="profile" style="display: none;">
+            <div class="col-6">
+                <h2 class="text-center">Профиль Пользователя</h2>
+                <p id="profileUsername" class="text-center"></p>
+
+                <div>
+                    <h3>Товары</h3>
+                    <ul id="cartItems" class="list-group"></ul>
+                </div>
+
+                <div class="mt-4">
+                    <h3>Добавить товар</h3>
+                    <div class="form-group">
+                        <label for="product">Название товара</label>
+                        <input type="text" class="form-control" id="product" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Количество</label>
+                        <input type="number" class="form-control" id="quantity" required>
+                    </div>
+                    <button class="btn btn-success" onclick="addItemToCart()">Добавить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showLoginForm() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registrationForm').style.display = 'none';
+        }
+
+        function showRegistrationForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registrationForm').style.display = 'block';
+        }
+
+        function showProfile() {
+            document.getElementById('profile').style.display = 'block';
+            document.getElementById('profileUsername').textContent = "Профиль пользователя: " + enteredUsername;
+        }
+
+        document.getElementById('regForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var regUsername = document.getElementById('regUsername').value;
+            var regPassword = document.getElementById('regPassword').value;
+
+            var user = {
+                username: regUsername,
+                password: regPassword
+            };
+
+            localStorage.setItem('user', JSON.stringify(user));
+            alert('Регистрация прошла успешно!');
+
+            document.getElementById('regUsername').value = '';
+            document.getElementById('regPassword').value = '';
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var enteredUsername = document.getElementById('loginUsername').value;
+            var enteredPassword = document.getElementById('loginPassword').value;
+
+            var storedUser = JSON.parse(localStorage.getItem('user'));
+
+            if (storedUser && storedUser.username === enteredUsername && storedUser.password === enteredPassword) {
+                alert('Вход выполнен успешно!');
+                showProfile();
+            } else {
+                alert('Неверное имя пользователя или пароль.');
+            }
+
+            document.getElementById('loginUsername').value = '';
+            document.getElementById('loginPassword').value = '';
+        });
+
+        // Sample: Adding items to the cart
+        function addItemToCart() {
+            var product = document.getElementById('product').value;
+            var quantity = document.getElementById('quantity').value;
+
+            var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            cartItems.push({ product: product, quantity: quantity });
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+
+            // Clear input fields
+            document.getElementById('product').value = '';
+            document.getElementById('quantity').value = '';
+
+            // Update the cart display
+            showShoppingCart();
+        }
+
+        function showShoppingCart() {
+            var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            var cartItemsElement = document.getElementById('cartItems');
+            cartItemsElement.innerHTML = '';
+
+            if (cartItems.length === 0) {
+                cartItemsElement.innerHTML = '<li class="list-group-item">Корзина пуста</li>';
+            } else {
+                cartItems.forEach(function (item) {
+                    var li = document.createElement('li');
+                    li.className = 'list-group-item';
+                    li.textContent = 'Товар: ' + item.product + ', Количество: ' + item.quantity;
+                    cartItemsElement.appendChild(li);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
