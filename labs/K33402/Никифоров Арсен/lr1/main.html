@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интернет-магазин одежды</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 10px;
+    }
+
+    nav {
+      padding: 1110 10px;
+    }
+
+    nav .navbar-brand {
+      font-size: 20px;
+    }
+
+    main {
+      margin-top: 20px;
+    }
+
+    footer {
+      background-color: #eeeeee;
+      padding: 10px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <script>
+    // Функция для сохранения пользователя в Local Storage
+    function saveUserToLocalStorage(email, password) {
+      // Получаем текущих пользователей из Local Storage или создаем пустой массив
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+
+      // Добавляем нового пользователя
+      users.push({ email: email, password: password });
+
+      // Сохраняем обновленный список пользователей
+      localStorage.setItem('users', JSON.stringify(users));
+    }
+
+    // Функция для обработки нажатия на кнопку регистрации
+    function register() {
+      const email = document.getElementById('registerEmail').value;
+      const password = document.getElementById('registerPassword').value;
+
+      // Сохраняем пользователя
+      saveUserToLocalStorage(email, password);
+
+      // Закрываем модальное окно
+      const registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+      registerModal.hide();
+
+      // Предотвращаем перезагрузку страницы
+      return false;
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Интернет-магазин одежды</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Контакты</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Вход</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="registration.html">Регистрация</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html">Личный кабинет</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Интернет-магазин одежды</h1>
+        <p>В нашем магазине вы можете найти широкий выбор одежды для мужчин, женщин и детей.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Copyright &copy; 2023 Интернет-магазин одежды</p>
+  </div>
+</footer>
+
+<!-- Модальное окно для входа -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Вход</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Форма для входа -->
+        <form>
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Введите email">
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Войти</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Модальное окно для регистрации -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Регистрация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Форма для регистрации -->
+        <form>
+          <div class="mb-3">
+            <label for="registerEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" placeholder="Введите email">
+          </div>
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Зарегистрироваться</button>
+      </div>
+	  
+	  
+    </div>
+  </div>
+</div>
+
+
+<!-- Модальное окно для личного кабинета -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="profileModalLabel">Личный кабинет</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Содержимое для личного кабинета -->
+        <p>Здесь может быть информация о пользователе, его заказы, настройки и т.д.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Сохранить изменения</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Модальное окно для фильтрации -->
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="filterModalLabel">Настройки фильтрации</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Содержимое для фильтрации -->
+        <p>Здесь могут быть настройки фильтрации по категориям товаров.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Применить фильтры</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
