@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <title>User profile page</title>
+  </head>
+  <body>
+    <nav class="sidemenu">
+      <img class="navbar_logo" src="assets/logo.png" />
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">
+            <img src="assets/home.svg" alt="home SVG" />
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true" href="#">
+            <img src="assets/about.svg" alt="about SVG" />
+            About
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true" href="#">
+            <img src="assets/work.svg" alt="work SVG" />
+            Work
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">
+            <img src="assets/blog.svg" alt="blog SVG" />
+            Blog
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">
+            <img src="assets/notes.svg" alt="blog SVG" />
+            Notes
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">
+            <img src="assets/about_this_page.svg" alt="blog SVG" />
+            About this page
+          </a>
+        </li>
+      </ul>
+      <div class="spacer"></div>
+      <!-- Spacer that moves footer to the bottom -->
+      <footer class="footer">
+        <h5>2023 © Useless Student</h5>
+      </footer>
+    </nav>
+    <div class="content">
+      <div class="column one">
+        <div>
+          <h1>Hi, I'm <span style="color: #1DFF9E;">Artem</span> </h1>
+          <p class="lowvisibilitytext">Welcome to my page</p>
+            
+        </div>
+        <p class="bio">
+          Im a <span style="color: #1DFF9E;">Native Android Developer</span><br><br>
+          In my free time, I like watching F1 with my gf/documentaries about planes or driving cars in sim racing games<br><br>
+          I love talking about cats, traveling and especially code.
+        </p>
+       
+      </div>
+      <div class="column two">
+        <h1>Want to hire me?</h1>
+        <div class="segment_email">
+          <p class="lowvisibilitytext">I strive to reply within an hour.</p>
+          <button class="button_email">
+            <img src="assets/email.svg" alt="blog SVG" />
+            EMAIL
+          </button>
+        </div> <!-- button_email -->
+
+        <div class="separator_row">
+            <hr>
+            or
+            <hr>
+        </div>
+      </div>
+    </div>
+</html>
