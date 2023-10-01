@@ -1,4 +1,3 @@
-
 :root {
     /* background color */
     --bg-gray: #f5f4f2
@@ -17,4 +16,8 @@ label {
     display: inline-block;
 }
 
-
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

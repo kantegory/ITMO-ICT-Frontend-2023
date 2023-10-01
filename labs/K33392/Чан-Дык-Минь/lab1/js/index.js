@@ -35,7 +35,6 @@ function BMRCalculator(h, w, a, sex, activity){
             R = 1.9;
             break;
     }
-    console.log(R);
 
     if (sex == "men")
         return ((88.362 + (13.397*w) + (4.799*h) - (5.677*a))*R).toFixed(2);
@@ -49,9 +48,4 @@ function calcTdee() {
     const BMR = BMRCalculator(height.value, weight.value, age.value, gender.value, selection.value);
     tdee.innerHTML = BMR;
     msgtdee.innerHTML = "calories per day";
-
-
-    console.log("Your BMI: ", BMI);
-    console.log("Your BMR: ",BMR)
-
 }
