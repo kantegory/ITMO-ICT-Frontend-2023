@@ -1,0 +1,23 @@
+:root {
+    /* background color */
+    --bg-gray: #f5f4f2
+}
+
+h1 {
+    font-size: 2rem !important;
+}
+
+body {
+    background-color: var(--bg-gray) !important;
+}
+
+label {
+    width: 7em;
+    display: inline-block;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
