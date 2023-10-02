@@ -143,7 +143,7 @@
 
 ### Язык программирования JS: Иммитация работы с закрытым API (авторизация)
 
-Видео-лекция: https://www.youtube.com/watch?v=_yvw_tAUGZw&t=437s
+Видео-лекция: https://www.youtube.com/watch?v=_yvw_tAUGZw
 
 ### Лабораторная работа 2: взаимодействие с внешним API
 
