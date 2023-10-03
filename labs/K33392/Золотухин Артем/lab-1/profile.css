@@ -59,7 +59,7 @@ body {
 
 .content {
   display: flex;
-  padding: 32px 64px;
+  padding: 1em 1em;
   justify-content: space-between; /* Distribute space evenly between columns */
   gap: 8px; /* Add a margin between columns */
   flex: 1 0 0;
