@@ -18,7 +18,7 @@ export function SignUpLayout() {
             type="email"
             className={`form-control ${styles.formEmail}`}
             id="floatingInput"
-            placeholder="name@example.com"
+            placeholder={t('emailLabel')}
           />
           <label htmlFor="floatingInput">{t('emailLabel')}</label>
         </div>
@@ -27,7 +27,7 @@ export function SignUpLayout() {
             type="password"
             className={`form-control ${styles.formPassword}`}
             id="floatingPassword"
-            placeholder="Password"
+            placeholder={t('passwordLabel')}
           />
           <label htmlFor="floatingPassword">{t('passwordLabel')}</label>
         </div>
@@ -35,9 +35,12 @@ export function SignUpLayout() {
           <input
             type="password"
             className={`form-control ${styles.formRetypePassword}`}
+            placeholder={t('retypePasswordLabel')}
             id="floatingRetypePassword"
           />
-          <label htmlFor="floatingPassword">{t('retypePasswordLabel')}</label>
+          <label htmlFor="floatingRetypePassword">
+            {t('retypePasswordLabel')}
+          </label>
         </div>
         <button className="w-100 btn btn-lg btn-primary" type="submit">
           {t('signupButton')}
