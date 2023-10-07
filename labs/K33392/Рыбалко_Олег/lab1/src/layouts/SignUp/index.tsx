@@ -9,7 +9,7 @@ export function SignUpLayout() {
     <div
       className={`container d-flex justify-content-center align-items-center ${styles.signupContainer}`}
     >
-      <form>
+      <form className={styles.signupForm}>
         <h1>{tGlobal('title')}</h1>
         <h2 className="h3 mb-3 fw-normal">{t('createAccount')}</h2>
 
