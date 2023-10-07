@@ -8,5 +8,11 @@
     "emailLabel": "Email Address",
     "passwordLabel": "Password",
     "retypePasswordLabel": "Retype password"
+  },
+  "signin": {
+    "signinButton": "Sign In",
+    "signinToAccount": "Sign In",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password"
   }
 }
