@@ -1,0 +1,12 @@
+{
+  "global": {
+    "title": "Mumblr"
+  },
+  "signup": {
+    "signupButton": "Sign Up",
+    "createAccount": "Create new account",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "retypePasswordLabel": "Retype password"
+  }
+}
