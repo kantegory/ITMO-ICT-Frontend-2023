@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 40px;
+    color: #292929;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/*
+====================================================
+Container
+====================================================
+*/
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+
+/*
+====================================================
+Header
+====================================================
+*/
+
+.header {
+
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 9px 0;
+
+    border-bottom: 1px solid #E5D2D7;
+}
+
+
+/*
+====================================================
+Navigation
+====================================================
+*/
+
+.nav__link {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 24px;
+    color: #292929;
+    text-decoration: none;
+    .active{background-color: #7e7c7c;}
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+}
