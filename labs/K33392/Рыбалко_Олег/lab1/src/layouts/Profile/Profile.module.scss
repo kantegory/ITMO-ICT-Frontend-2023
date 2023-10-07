@@ -1,0 +1,12 @@
+.profileImage {
+  border: none;
+  border-radius: 50%;
+  width: 200px;
+  background-color: #3c3c3c3c;
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
