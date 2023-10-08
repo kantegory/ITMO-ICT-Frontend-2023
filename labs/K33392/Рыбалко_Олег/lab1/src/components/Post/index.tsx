@@ -36,7 +36,13 @@ export function Post({ post }: { post: PostType }) {
     <div className={`mt-3 ${styles.post}`}>
       <div className={styles.body} onClick={() => setOpen((open) => !open)}>
         <h1 className="h4">{post.title}</h1>
-        <p>{isOpen ? post.body : `${post.body.slice(0, 500)}...`}</p>
+        <p>
+          {isOpen
+            ? post.body
+            : `${post.body.slice(0, 500)}${
+                post.body.length > 500 ? '...' : ''
+              }`}
+        </p>
       </div>
 
       <div className={styles.footer}>
