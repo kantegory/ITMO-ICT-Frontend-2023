@@ -36,6 +36,13 @@ export function MumblrNavbar() {
             {t('feed')}
           </Nav.Link>
 
+          <Nav.Link
+            onClick={() => navigate('/search')}
+            active={location.pathname.startsWith('/search')}
+          >
+            {t('search')}
+          </Nav.Link>
+
           {isLoggedIn && (
             <Nav.Link
               onClick={openProfile}

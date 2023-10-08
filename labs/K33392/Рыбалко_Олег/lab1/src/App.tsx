@@ -7,6 +7,7 @@ import {
   SignInLayout,
   SignUpLayout,
   ProfileLayout,
+  SearchLayout,
 } from './layouts'
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/profile/:username" element={<ProfileLayout />} />
           <Route path="/signin" element={<SignInLayout />} />
           <Route path="/signup" element={<SignUpLayout />} />
+          <Route path="/search" element={<SearchLayout />} />
         </Routes>
       </BrowserRouter>
     </Provider>

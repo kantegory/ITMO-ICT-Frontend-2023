@@ -31,10 +31,18 @@
   "navbar": {
     "feed": "Feed",
     "profile": "Profile",
-    "signIn": "Sign In"
+    "signIn": "Sign In",
+    "search": "Search"
   },
   "feed": {
     "headerFollowing": "Following",
     "headerForYou": "For you"
+  },
+  "search": {
+    "searchButton": "Search",
+    "usernameRadioLabel": "username",
+    "titleRadioLabel": "title",
+    "usernameFilterPlaceholder": "Example: rybalkooleg",
+    "titleFilterPlaceholder": "Example: CI/CD"
   }
 }
