@@ -23,6 +23,7 @@ export function Post({ post }: { post: PostType }) {
   const [isLiked, setLiked] = useState(false)
   const [commentsOpen, setCommentsOpen] = useState(false)
   const [isOpen, setOpen] = useState(false)
+  const textPreviewLength = 500
 
   const like = () => {
     setLiked((liked) => !liked)
@@ -39,8 +40,8 @@ export function Post({ post }: { post: PostType }) {
         <p>
           {isOpen
             ? post.body
-            : `${post.body.slice(0, 500)}${
-                post.body.length > 500 ? '...' : ''
+            : `${post.body.slice(0, textPreviewLength)}${
+                post.body.length > textPreviewLength ? '...' : ''
               }`}
         </p>
       </div>
