@@ -2,15 +2,10 @@ import styles from './Post.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHeart as faHeartSolid,
-  faComment as faCommentSolid,
   faTrashCan,
 } from '@fortawesome/free-solid-svg-icons'
-import {
-  faHeart as faHeartRegular,
-  faComment as faCommentRegular,
-} from '@fortawesome/free-regular-svg-icons'
+import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons'
 import { useState } from 'react'
-import Button from 'react-bootstrap/Button'
 
 export type PostType = {
   id: string
@@ -18,16 +13,17 @@ export type PostType = {
   body: string
   authorUsername: string
   likesCount: number
-  commentsCount: number
 }
 
 export function Post({
+  className,
   post,
   onDelete,
   showDeleteButton,
 }: {
+  className?: string
   post: PostType
-  onDelete: (post: PostType) => void
+  onDelete?: (post: PostType) => void
   showDeleteButton: boolean
 }) {
   const [isLiked, setLiked] = useState(false)
@@ -39,7 +35,7 @@ export function Post({
   }
 
   return (
-    <div className={`mt-3 ${styles.post}`}>
+    <div className={`mt-3 ${className}`}>
       <div className={styles.body} onClick={() => setOpen((open) => !open)}>
         <h1 className="h4">{post.title}</h1>
         <p>
@@ -52,6 +48,15 @@ export function Post({
       </div>
 
       <div className={styles.footer}>
+        {showDeleteButton && (
+          <button
+            className={styles.deleteButton}
+            onClick={() => onDelete!(post)}
+          >
+            <FontAwesomeIcon icon={faTrashCan} size="xl" color="red" />
+            <p>&nbsp;</p>
+          </button>
+        )}
         <button className={styles.likeButton} onClick={like}>
           <FontAwesomeIcon
             icon={isLiked ? faHeartSolid : faHeartRegular}
@@ -59,15 +64,6 @@ export function Post({
           />
           <p>{post.likesCount}</p>
         </button>
-        {showDeleteButton && (
-          <button
-            className={styles.deleteButton}
-            onClick={() => onDelete(post)}
-          >
-            <FontAwesomeIcon icon={faTrashCan} size="xl" color="red" />
-            <p>&nbsp;</p>
-          </button>
-        )}
       </div>
     </div>
   )
