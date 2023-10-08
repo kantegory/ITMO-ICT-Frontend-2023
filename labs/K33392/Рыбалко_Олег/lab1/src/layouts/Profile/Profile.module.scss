@@ -1,3 +1,6 @@
+@import "@/vars.scss";
+@import "@/styles/post.scss";
+
 .profileImage {
   border: none;
   border-radius: 50%;
@@ -13,9 +16,16 @@
 
 .postsHeader {
   display: flex;
+  align-items: center;
   gap: 16px;
 }
 
 .container {
-  margin-top: 70px;
+  margin-top: $topMargin;
+}
+
+@media screen and (max-width: 600px) {
+  .profileImage {
+    width: 100px;
+  }
 }

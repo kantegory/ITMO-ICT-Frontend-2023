@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import styles from './SignUp.module.scss'
 import { useState, useCallback } from 'react'
-import store from '../../store'
-import { loginAction } from '../../store/slices/auth'
+import store from '@/store'
+import { loginAction } from '@/store/slices/auth'
 import { useNavigate } from 'react-router-dom'
 
 type UserData = {

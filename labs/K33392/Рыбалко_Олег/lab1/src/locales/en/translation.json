@@ -32,5 +32,9 @@
     "feed": "Feed",
     "profile": "Profile",
     "signIn": "Sign In"
+  },
+  "feed": {
+    "headerFollowing": "Following",
+    "headerForYou": "For you"
   }
 }
