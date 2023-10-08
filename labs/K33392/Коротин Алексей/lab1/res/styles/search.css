@@ -1,0 +1,7 @@
+.border-hover:hover {
+    border-color: #ffc107;
+}
+
+.border-hover {
+    border: 2px solid transparent;
+}
