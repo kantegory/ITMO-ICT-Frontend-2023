@@ -24,7 +24,9 @@
     "newPostModalHeader": "New Post",
     "newPostModalPostButton": "Post",
     "newPostModalTitleLabel": "Title",
-    "newPostModalBodyLabel": "Body"
+    "newPostModalBodyLabel": "Body",
+    "followButton": "Follow",
+    "unfollowButton": "Unfollow"
   },
   "navbar": {
     "feed": "Feed",

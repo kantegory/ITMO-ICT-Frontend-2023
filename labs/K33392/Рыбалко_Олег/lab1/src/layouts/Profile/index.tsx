@@ -32,6 +32,7 @@ export function ProfileLayout() {
   const [newPost, setNewPost] = useState<NewPostData>({ body: '', title: '' })
 
   const [showNewPostModal, setShowNewPostModal] = useState(false)
+  const [isFollowed, setFollowed] = useState(false)
 
   // TODO: fetch user data
   useEffect(() => {
@@ -95,6 +96,11 @@ export function ProfileLayout() {
           {isAdmin && (
             <Button variant="link" onClick={() => setShowNewPostModal(true)}>
               {t('newPostButton')}
+            </Button>
+          )}
+          {!isAdmin && (
+            <Button variant="link" onClick={() => setFollowed(!isFollowed)}>
+              {isFollowed ? t('unfollowButton') : t('followButton')}
             </Button>
           )}
         </div>
