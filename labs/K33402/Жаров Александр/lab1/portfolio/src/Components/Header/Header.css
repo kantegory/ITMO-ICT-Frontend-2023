@@ -1,0 +1,30 @@
+.body{
+  background-color: #000;
+}
+
+.link{
+  color: white;
+  text-decoration: none;
+}
+
+.link-container{
+  display: flex;
+  gap: 12px;
+}
+
+.button{
+  @media (max-width: 575.9px) {
+    margin-top: 12px;
+  }
+}
+
+.button-group{
+  display: flex;
+  gap: 12px;
+}
+
+
+.text {
+  color: rgb(133, 133, 133);
+  margin-top: 12px;
+}
