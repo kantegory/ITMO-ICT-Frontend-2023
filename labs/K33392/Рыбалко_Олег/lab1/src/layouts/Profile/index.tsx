@@ -77,6 +77,10 @@ export function ProfileLayout() {
     setNewPost({ title: '', body: '' })
   }, [newPost, authStore, posts])
 
+  const deletePost = (post: PostType) => {
+    setPosts(posts.filter((val) => val.id !== post.id))
+  }
+
   return (
     <>
       <Container className={styles.container}>
@@ -107,7 +111,13 @@ export function ProfileLayout() {
         <div>
           <hr />
           {posts.map((post) => (
-            <Post post={post} />
+            <div className="row">
+              <Post
+                post={post}
+                showDeleteButton={isAdmin}
+                onDelete={deletePost}
+              />
+            </div>
           ))}
         </div>
       </Container>

@@ -3,12 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHeart as faHeartSolid,
   faComment as faCommentSolid,
+  faTrashCan,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faHeart as faHeartRegular,
   faComment as faCommentRegular,
 } from '@fortawesome/free-regular-svg-icons'
 import { useState } from 'react'
+import Button from 'react-bootstrap/Button'
 
 export type PostType = {
   id: string
@@ -19,18 +21,21 @@ export type PostType = {
   commentsCount: number
 }
 
-export function Post({ post }: { post: PostType }) {
+export function Post({
+  post,
+  onDelete,
+  showDeleteButton,
+}: {
+  post: PostType
+  onDelete: (post: PostType) => void
+  showDeleteButton: boolean
+}) {
   const [isLiked, setLiked] = useState(false)
-  const [commentsOpen, setCommentsOpen] = useState(false)
   const [isOpen, setOpen] = useState(false)
   const textPreviewLength = 500
 
   const like = () => {
     setLiked((liked) => !liked)
-  }
-
-  const comment = () => {
-    setCommentsOpen((isOpen) => !isOpen)
   }
 
   return (
@@ -54,13 +59,15 @@ export function Post({ post }: { post: PostType }) {
           />
           <p>{post.likesCount}</p>
         </button>
-        <button className={`${styles.commentButton}`} onClick={comment}>
-          <FontAwesomeIcon
-            icon={commentsOpen ? faCommentSolid : faCommentRegular}
-            size="xl"
-          />
-          <p>{post.commentsCount}</p>
-        </button>
+        {showDeleteButton && (
+          <button
+            className={styles.deleteButton}
+            onClick={() => onDelete(post)}
+          >
+            <FontAwesomeIcon icon={faTrashCan} size="xl" color="red" />
+            <p>&nbsp;</p>
+          </button>
+        )}
       </div>
     </div>
   )

@@ -5,7 +5,7 @@
   max-width: 600px;
 }
 
-.likeButton, .commentButton {
+.likeButton, .commentButton, .deleteButton {
   border: none;
   background: none;
   padding: 0;
@@ -13,7 +13,7 @@
 
 .footer {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   float: right;
 }
 
