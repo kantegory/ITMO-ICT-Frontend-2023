@@ -39,7 +39,33 @@ export function FeedLayout() {
 
   const fetchForYou = () => {
     setCurrentTab(Tab.forYou)
-    setFeed([])
+
+    // TODO: fetch from the API
+    setFeed([
+      {
+        authorUsername: 'nasa',
+        body: `
+        Technicians encapsulate NASA’s Psyche spacecraft in its payload fairings – the cone at the top of the rocket – at the Astrotech Space Operations facility in Titusville, Florida, on Tuesday, Oct. 3, 2023. Next, the spacecraft will move to SpaceX facilities at NASA’s Kennedy Space Center. Bound for a metal-rich asteroid of the same name, the Psyche mission is targeting Thursday, Oct. 12, to launch from Kennedy. Liftoff, atop a SpaceX Falcon Heavy rocket, is targeted for 10:16 a.m. EDT from Launch Complex 39A. 
+        Technicians encapsulate NASA’s Psyche spacecraft in its payload fairings – the cone at the top of the rocket – at the Astrotech Space Operations facility in Titusville, Florida, on Tuesday, Oct. 3, 2023. Next, the spacecraft will move to SpaceX facilities at NASA’s Kennedy Space Center. Photo credit: NASA/Ben Smegelsky
+        In the early hours of Oct. 6, workers transported NASA’s Psyche spacecraft to the SpaceX hangar at Launch Complex 39A at the agency’s Kennedy Space Center in preparation for launch. Earlier in the week, technicians completed encapsulation of the spacecraft, along with the DSOC (Deep Space Optical Communications) technology demonstration, inside a clean room at the Astrotech Space Operations facility in Titusville, Florida.
+        
+        The fairings will protect the spacecraft from aerodynamic pressure and heat during launch. After the rocket’s second stage climbs to a high enough altitude, the fairings will separate from the vehicle and return to Earth. Soon, technicians will mate the spacecraft to a SpaceX Falcon Heavy rocket in preparation for launch, which is targeted for 10:16 a.m. EDT, Thursday, Oct. 12.
+        
+        Psyche will be NASA’s first primary science mission launched to orbit by a Falcon Heavy rocket, and the second interplanetary mission SpaceX has launched on behalf of NASA. NASA’s Launch Services Program certified the rocket for use with the agency’s most complex and highest priority missions in early 2023 at the conclusion of a 2.5 year effort.`,
+        title: 'NASA’s Psyche Mission Advances to Launch Complex 39A',
+        id: '1',
+        likesCount: 100,
+      },
+      {
+        authorUsername: 'gitlab',
+        body: `CI/CD is a method to frequently deliver apps to customers by introducing automation into the stages of app development. The main concepts attributed to CI/CD are continuous integration, continuous delivery, and continuous deployment. CI/CD is a solution to the problems integrating new code can cause for development and operations teams (AKA "integration hell").
+
+        Specifically, CI/CD introduces ongoing automation and continuous monitoring throughout the lifecycle of apps, from integration and testing phases to delivery and deployment. Taken together, these connected practices are often referred to as a "CI/CD pipeline" and are supported by development and operations teams working together in an agile way with either a DevOps or site reliability engineering (SRE) approach.`,
+        title: 'CI/CD',
+        id: '1',
+        likesCount: 100,
+      },
+    ])
   }
 
   useEffect(fetchFollowing, [])
