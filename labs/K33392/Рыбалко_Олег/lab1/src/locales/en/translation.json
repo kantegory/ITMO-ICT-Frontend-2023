@@ -15,7 +15,8 @@
     "signinToAccount": "Sign In",
     "emailLabel": "Email Address",
     "passwordLabel": "Password",
-    "usernameLabel": "Username"
+    "usernameLabel": "Username",
+    "createAccountButton": "Create account"
   },
   "profile": {
     "postsHeader": "Posts",
@@ -24,5 +25,10 @@
     "newPostModalPostButton": "Post",
     "newPostModalTitleLabel": "Title",
     "newPostModalBodyLabel": "Body"
+  },
+  "navbar": {
+    "feed": "Feed",
+    "profile": "Profile",
+    "signIn": "Sign In"
   }
 }

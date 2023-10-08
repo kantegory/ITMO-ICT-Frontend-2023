@@ -4,6 +4,7 @@ import { loginAction } from '../../store/slices/auth'
 import { useState, useCallback } from 'react'
 import styles from './SignIn.module.scss'
 import { useNavigate } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 type UserData = {
   username: string
@@ -28,7 +29,7 @@ export function SignInLayout() {
     <div
       className={`container d-flex justify-content-center align-items-center ${styles.signinContainer}`}
     >
-      <form className={styles.signinForm}>
+      <form className={`${styles.signinForm}`}>
         <h1 className="h1 mb-3">{tGlobal('title')}</h1>
         <h1 className="h3 mb-3 fw-normal">{t('signinToAccount')}</h1>
 
@@ -58,9 +59,16 @@ export function SignInLayout() {
           />
           <label htmlFor="floatingPassword">{t('passwordLabel')}</label>
         </div>
-        <button className="w-100 btn btn-lg btn-primary" onClick={signIn}>
+        <Button variant="primary" size="lg" className="w-100" onClick={signIn}>
           {t('signinButton')}
-        </button>
+        </Button>
+        <Button
+          variant="link"
+          onClick={() => navigate('/signup')}
+          className={styles.createAccountButton}
+        >
+          {t('createAccountButton')}
+        </Button>
       </form>
     </div>
   )

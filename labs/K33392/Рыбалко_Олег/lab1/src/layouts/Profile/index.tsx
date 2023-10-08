@@ -9,6 +9,7 @@ import { AuthState } from '../../store/slices/auth'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
+import Container from 'react-bootstrap/Container'
 
 type UserData = {
   username: string | undefined
@@ -77,7 +78,7 @@ export function ProfileLayout() {
 
   return (
     <>
-      <div className="container">
+      <Container className={styles.container}>
         <div className={styles.profileInfo}>
           <img
             className={`mt-3 ${styles.profileImage}`}
@@ -103,7 +104,7 @@ export function ProfileLayout() {
             <Post post={post} />
           ))}
         </div>
-      </div>
+      </Container>
 
       <Modal show={showNewPostModal} onHide={() => setShowNewPostModal(false)}>
         <Modal.Header closeButton>

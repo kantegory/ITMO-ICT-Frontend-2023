@@ -4,11 +4,13 @@ import { SignInLayout } from './layouts/SignIn'
 import { ProfileLayout } from './layouts/Profile'
 import { Provider } from 'react-redux'
 import store from './store'
+import { MumblrNavbar } from './components/Navbar'
 
 export default function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
+        <MumblrNavbar />
         <Routes>
           <Route path="/profile/:username" element={<ProfileLayout />} />
           <Route path="/signin" element={<SignInLayout />} />
