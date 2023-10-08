@@ -18,6 +18,11 @@
     "usernameLabel": "Username"
   },
   "profile": {
-    "postsHeader": "Posts"
+    "postsHeader": "Posts",
+    "newPostButton": "New Post",
+    "newPostModalHeader": "New Post",
+    "newPostModalPostButton": "Post",
+    "newPostModalTitleLabel": "Title",
+    "newPostModalBodyLabel": "Body"
   }
 }

@@ -2,13 +2,22 @@ import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import styles from './Profile.module.scss'
 import { Post, PostType } from '../../components/Post'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
+import { AuthState } from '../../store/slices/auth'
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+import Form from 'react-bootstrap/Form'
 
 type UserData = {
   username: string | undefined
   bio: string | undefined
+}
+
+type NewPostData = {
+  title: string
+  body: string
 }
 
 export function ProfileLayout() {
@@ -16,8 +25,12 @@ export function ProfileLayout() {
   const { username } = useParams<{ username: string }>()
   const [userData, setUserData] = useState<UserData>({} as UserData)
 
-  const authStore = useSelector<RootState>((state) => state.auth)
-  console.log('auth store: ', authStore)
+  const authStore = useSelector<RootState>((state) => state.auth) as AuthState
+  const [isAdmin, setAdmin] = useState(false)
+  const [posts, setPosts] = useState<PostType[]>([])
+  const [newPost, setNewPost] = useState<NewPostData>({ body: '', title: '' })
+
+  const [showNewPostModal, setShowNewPostModal] = useState(false)
 
   // TODO: fetch user data
   useEffect(() => {
@@ -27,12 +40,13 @@ export function ProfileLayout() {
     })
   }, [username])
 
-  const [posts, setPosts] = useState<PostType[]>([])
+  useEffect(() => {
+    setAdmin(authStore.username === username)
+  }, [authStore, username])
 
   // TODO: fetch posts
   useEffect(() => {
     setPosts([
-      ...posts,
       {
         id: '1',
         title: 'RE: LAST NIGHT',
@@ -44,25 +58,90 @@ export function ProfileLayout() {
     ])
   }, [])
 
+  const publishNewPost = useCallback(() => {
+    // TODO: use api
+    setPosts([
+      {
+        id: 'test',
+        title: newPost.title,
+        body: newPost.body,
+        authorUsername: authStore.username,
+        likesCount: 0,
+        commentsCount: 0,
+      },
+      ...posts,
+    ])
+    setShowNewPostModal(false)
+    setNewPost({ title: '', body: '' })
+  }, [newPost, authStore, posts])
+
   return (
-    <div className="container">
-      <div className={styles.profileInfo}>
-        <img
-          className={`mt-3 ${styles.profileImage}`}
-          src={`https://robohash.org/${userData.username ?? ''}`}
-          alt="Profile image"
-        />
-        <h1 className="h3 mt-3 fw-normal">@{userData.username}</h1>
-        <h1 className="h5 blockquote-footer mt-2 text-muted">{userData.bio}</h1>
+    <>
+      <div className="container">
+        <div className={styles.profileInfo}>
+          <img
+            className={`mt-3 ${styles.profileImage}`}
+            src={`https://robohash.org/${userData.username ?? ''}`}
+            alt="Profile image"
+          />
+          <h1 className="h3 mt-3 fw-normal">@{userData.username}</h1>
+          <h1 className="h5 blockquote-footer mt-2 text-muted">
+            {userData.bio}
+          </h1>
+        </div>
+        <div className={styles.postsHeader}>
+          <h1 className="h3">{t('postsHeader')}</h1>
+          {isAdmin && (
+            <Button variant="link" onClick={() => setShowNewPostModal(true)}>
+              {t('newPostButton')}
+            </Button>
+          )}
+        </div>
+        <div>
+          <hr />
+          {posts.map((post) => (
+            <Post post={post} />
+          ))}
+        </div>
       </div>
-      <div>
-        <h1 className="h3">{t('postsHeader')}</h1>
-        <hr />
-        {posts.map((post) => (
-          <Post post={post} />
-        ))}
-      </div>
-    </div>
+
+      <Modal show={showNewPostModal} onHide={() => setShowNewPostModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>{t('newPostModalHeader')}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>{t('newPostModalTitleLabel')}</Form.Label>
+              <Form.Control
+                type="text"
+                value={newPost.title}
+                onChange={(e) =>
+                  setNewPost({ ...newPost, title: e.currentTarget.value })
+                }
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label>{t('newPostModalBodyLabel')}</Form.Label>
+              <Form.Control
+                type="text"
+                as="textarea"
+                value={newPost.body}
+                onChange={(e) =>
+                  setNewPost({ ...newPost, body: e.currentTarget.value })
+                }
+              />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={publishNewPost}>
+            {t('newPostModalPostButton')}
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   )
 }
 
