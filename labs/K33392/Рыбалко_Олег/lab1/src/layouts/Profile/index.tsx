@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next'
 import styles from './Profile.module.scss'
 import { Post, PostType } from '../../components/Post'
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store'
 
 type UserData = {
   username: string | undefined
@@ -13,6 +15,9 @@ export function ProfileLayout() {
   const { t } = useTranslation('profile')
   const { username } = useParams<{ username: string }>()
   const [userData, setUserData] = useState<UserData>({} as UserData)
+
+  const authStore = useSelector<RootState>((state) => state.auth)
+  console.log('auth store: ', authStore)
 
   // TODO: fetch user data
   useEffect(() => {

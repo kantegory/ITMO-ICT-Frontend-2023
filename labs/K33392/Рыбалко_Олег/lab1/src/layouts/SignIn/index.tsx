@@ -1,9 +1,28 @@
 import { useTranslation } from 'react-i18next'
+import store from '../../store'
+import { loginAction } from '../../store/slices/auth'
+import { useState, useCallback } from 'react'
 import styles from './SignIn.module.scss'
+import { useNavigate } from 'react-router-dom'
+
+type UserData = {
+  username: string
+  password: string
+}
 
 export function SignInLayout() {
   const { t } = useTranslation('signin')
   const { t: tGlobal } = useTranslation('global')
+  const navigate = useNavigate()
+  const [userData, setUserData] = useState<UserData>({
+    username: '',
+    password: '',
+  })
+
+  const signIn = useCallback(() => {
+    store.dispatch(loginAction(userData))
+    navigate(`/profile/${userData.username}`)
+  }, [userData, navigate])
 
   return (
     <div
@@ -15,23 +34,31 @@ export function SignInLayout() {
 
         <div className="form-floating">
           <input
-            type="email"
-            className={`form-control ${styles.formEmail}`}
-            id="floatingInput"
-            placeholder="name@example.com"
+            type="text"
+            className={`form-control ${styles.formUsername}`}
+            id="floatingUsername"
+            placeholder={t('usernameLabel')}
+            value={userData.username}
+            onChange={(e) =>
+              setUserData({ ...userData, username: e.currentTarget.value })
+            }
           />
-          <label htmlFor="floatingInput">{t('emailLabel')}</label>
+          <label htmlFor="floatingUsername">{t('usernameLabel')}</label>
         </div>
         <div className="form-floating">
           <input
             type="password"
             className={`form-control ${styles.formPassword}`}
             id="floatingPassword"
-            placeholder="Password"
+            placeholder={t('passwordLabel')}
+            value={userData.password}
+            onChange={(e) =>
+              setUserData({ ...userData, password: e.currentTarget.value })
+            }
           />
           <label htmlFor="floatingPassword">{t('passwordLabel')}</label>
         </div>
-        <button className="w-100 btn btn-lg btn-primary" type="submit">
+        <button className="w-100 btn btn-lg btn-primary" onClick={signIn}>
           {t('signinButton')}
         </button>
       </form>
