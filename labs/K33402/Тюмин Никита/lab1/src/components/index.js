@@ -6,6 +6,7 @@ import VolumeUpIcon from "./ui/icons/VolumeUpIcon.vue";
 import ThumbUpIcon from "./ui/icons/ThumbUpIcon.vue";
 import ThumbDownIcon from "./ui/icons/ThumbDownIcon.vue";
 import ThreeDotsIcon from "./ui/icons/ThreeDotsIcon.vue";
+import VolumeMuteIcon from "./ui/icons/VolumeMuteIcon.vue";
 
 
 export default [
@@ -17,4 +18,5 @@ export default [
     ThumbUpIcon,
     ThumbDownIcon,
     ThreeDotsIcon,
+    VolumeMuteIcon
 ]
