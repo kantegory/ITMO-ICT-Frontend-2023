@@ -1,4 +1,4 @@
-import Header from "../../Components/Header";
+import Header from "../../components/Header";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";

@@ -2,7 +2,7 @@ import "./Profile.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/esm/Container";
-import Avatar from "../../Components/Avatar";
+import Avatar from "../../components/Avatar";
 import AvatarImg from "../../img/avatar.jpg";
 
 function Profile() {

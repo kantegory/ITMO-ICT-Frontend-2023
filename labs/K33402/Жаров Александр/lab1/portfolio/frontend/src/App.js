@@ -1,10 +1,10 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
-import Account from "./Pages/Account";
-import Profile from "./Pages/Profile";
-import Registration from "./Pages/Registration";
-import Header from "./Components/Header";
-import React from "react";
+import Account from "./pages/Account";
+import Profile from "./pages/Profile";
+import Registration from "./pages/Registration";
+import Header from "./components/Header";
+import React, { useEffect } from "react";
 
 function App() {
   const [isOpenRegistrationPage, setIsOpenRegistrationPage] =
