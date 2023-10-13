@@ -10,7 +10,24 @@ import { useNavigate, useParams } from "react-router-dom";
 function Registration() {
   const navigate = useNavigate();
   const params = useParams();
-
+  const onSubmit = async () => {
+    const res = await fetch("http://localhost:3030/api/create-user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "test1",
+        password: "test1",
+        about: "sdfsdfds"
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+      return res
+  }
+  
   const onClickBack = () => {
     navigate("/");
   };
@@ -81,7 +98,7 @@ function Registration() {
                 <Button variant="warning" onClick={() => onClickBackToReg()}>
                   Создать аккаунт
                 </Button>
-                <Button variant="success" onClick={() => onLogin()}>
+                <Button variant="success" onClick={() => onSubmit()}>
                   Войти
                 </Button>
               </>

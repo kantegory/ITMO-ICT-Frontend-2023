@@ -6,10 +6,19 @@ import Registration from "./pages/Registration";
 import Header from "./components/Header";
 import React, { useEffect } from "react";
 
+const USER_ID = "65293a3055b0df2e28a63fde";
+
 function App() {
   const [isOpenRegistrationPage, setIsOpenRegistrationPage] =
     React.useState(false);
   let location = useLocation();
+
+  useEffect(() => {
+    fetch(`http://localhost:3030/api/get-user/${USER_ID}`)
+      .then((response) => response.text())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  }, []);
 
   React.useEffect(() => {
     setIsOpenRegistrationPage(false);
