@@ -24,7 +24,7 @@ function Header() {
 
   return (
     <>
-      <Navbar expand="md" className="body" data-bs-theme="dark" sticky="top">
+      <Navbar expand="sm" className="body" data-bs-theme="dark" sticky="top">
         <Container>
           <Navbar.Brand>
             <img
