@@ -10,7 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 
 function Header() {
-  const [isAuthorized, setIsAuthorized] = React.useState(false);
+  const [isAuthorized, setIsAuthorized] = React.useState(true);
 
   const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ function Header() {
 
   return (
     <>
-      <Navbar expand="sm" className="body" data-bs-theme="dark" sticky="top">
+      <Navbar expand="md" className="body" data-bs-theme="dark" sticky="top">
         <Container>
           <Navbar.Brand>
             <img
@@ -44,8 +44,7 @@ function Header() {
                 Личный кабинет
               </Link>
             </Nav>
-            {isAuthorized ? (
-              <Form className="d-flex">
+              <Form className="md-block">
                 <Form.Control
                   type="search"
                   placeholder="Search"
@@ -54,24 +53,7 @@ function Header() {
                 />
                 <Button variant="outline-success">Search</Button>
               </Form>
-            ) : (
-              <div className="button-group justify-content-center">
-                <Button
-                  className="button"
-                  variant="outline-warning"
-                  onClick={() => handleClickReg()}
-                >
-                  Регистрация
-                </Button>
-                <Button
-                  className="button"
-                  variant="outline-success"
-                  onClick={() => handleClickLog()}
-                >
-                  Войти
-                </Button>
-              </div>
-            )}
+            
           </Navbar.Collapse>
         </Container>
       </Navbar>

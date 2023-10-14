@@ -13,8 +13,15 @@
 }
 
 .button{
-  @media (max-width: 575.9px) {
+  @media (max-width: 767.9px) {
     margin-top: 12px;
+  }
+}
+
+.md-block{
+  display: flex;
+  @media (max-width: 767.9px) {
+    display: none;
   }
 }
 

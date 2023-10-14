@@ -9,5 +9,11 @@
   margin-top: 12px;
   margin-bottom: 12px;
   gap: 12px;
+}
 
+.md-none{
+  display: flex;
+  @media (min-width: 768px) {
+    display: none;
+  }
 }

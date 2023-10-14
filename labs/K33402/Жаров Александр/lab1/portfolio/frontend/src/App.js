@@ -5,6 +5,7 @@ import Profile from "./pages/Profile";
 import Registration from "./pages/Registration";
 import Header from "./components/Header";
 import React, { useEffect } from "react";
+import { PrivateRoute } from "./PrivatRoute";
 
 const USER_ID = "65293a3055b0df2e28a63fde";
 
@@ -33,9 +34,11 @@ function App() {
       {!isOpenRegistrationPage && <Header />}
       <Routes>
         <Route path="/">
-          <Route index element={<Profile />} />
-          <Route path="/account" element={<Account />} />
           <Route path="/registration/:isLogin" element={<Registration />} />
+          <Route element={<PrivateRoute />}>
+            <Route index element={<Profile />} />
+            <Route path="/account" element={<Account />} />
+          </Route>
         </Route>
       </Routes>
     </div>
