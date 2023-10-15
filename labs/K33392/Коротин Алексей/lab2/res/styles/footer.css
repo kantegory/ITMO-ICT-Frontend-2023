@@ -9,4 +9,9 @@
 
 #icon-like, #icon-repeat {
     height: 30px;
+    cursor: pointer;
+}
+
+.selected {
+    filter: invert(20%) sepia(39%) saturate(2140%) hue-rotate(354deg) brightness(105%) contrast(101%);
 }

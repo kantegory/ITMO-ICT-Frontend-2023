@@ -3,8 +3,10 @@ const iconPause = document.getElementById("icon-pause");
 const iconPrevious = document.getElementById("icon-play-previous");
 const iconNext = document.getElementById("icon-play-next");
 const progressBar = document.getElementById("music-progress-bar");
+const iconRepeat = document.getElementById("icon-repeat");
 const volumeRange = document.getElementById("volume-range");
 let currentSong = null;
+window.localStorage.repeat = false;
 
 document.getElementById("music-progress-bar-total").addEventListener("click", (e) => {
     if (currentSong === null) {
@@ -56,7 +58,15 @@ export const startAudio = () => {
         progressBar.style = "width: " + frac + "%;"
     });
 
-    currentSong.audio.addEventListener("ended", playNext);
+    currentSong.audio.addEventListener("ended", () => {
+        if (!JSON.parse(window.localStorage.repeat)) {
+            playNext();
+            return;
+        }
+
+        currentSong.audio.currentTime = 0;
+        currentSong.audio.play();
+    });
 };
 
 iconPlay.addEventListener("click", startAudio);
@@ -78,4 +88,16 @@ iconPrevious.addEventListener("click", () => {
     const newIndex = window.localStorage.currentTrackIndex - 1;
     window.localStorage.currentTrackIndex = newIndex < 0 ? JSON.parse(window.localStorage.lastSearched).length + newIndex : newIndex;
     startAudio();
+});
+
+iconRepeat.addEventListener("click", () => {
+    const isRepeat = JSON.parse(window.localStorage.repeat);
+    if (!isRepeat) {
+        iconRepeat.classList.add("selected");
+    }
+    if (isRepeat) {
+        iconRepeat.classList.remove("selected");
+    }
+    console.log(isRepeat);
+    window.localStorage.repeat = JSON.stringify(!isRepeat);
 });
