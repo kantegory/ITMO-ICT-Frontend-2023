@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand ps-5" href="index.html">TDEE Calculator</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nutriotionPage.html">Nutrition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="loginPage.html">Log in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registerPage.html">Register</a>
+                    </li>
+                </ul>
+                <a class="nav-link" href="profilePage.html">
+                    <i class="bi bi-person-circle ms-4 me-4" style="font-size: 1.8rem;"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- body -->
+    <div class="container mt-5 bg-primary-subtle">
+        <div>
+            <h1>
+                Your stats
+            </h1>
+        </div>
+        <div class="row bg-success-subtle ">
+            <!-- stat -->
+
+            <!-- calories per day -->
+            <div class="col border border-black d-flex flex-column align-items-center">
+                <h2>
+                    Your Maintenance Calories
+                </h2>
+                <div class="d-flex flex-column align-items-center">
+                    <h3 class="px-5 " id="BMR"></h3>
+                    <h6 class="display text-success">calories per day</h6>
+                </div>
+            </div>
+
+            <!-- ideal weight -->
+            <div class="col border border-black">
+                <div class="d-flex">
+                    <h2 class="me-2">
+                        Ideal Weight:
+                    </h2>
+                    <p id="idealWeight">
+                        0
+                    </p>
+                    <p>kg</p>
+                </div>
+            </div>
+
+            <!-- BMIscore -->
+
+        </div>
+        <div class="row border border-black">
+            <div class="col ">
+                <div class="d-flex">
+                    <h2 class="me-2">
+                        Your BMI score:
+                    </h2>
+                    <h2 id="BMI">
+                        0
+                    </h2>
+                </div>
+                <span> Your BMI is <span id="BMItext"></span>, which means you are classified as </span>
+                <span id="BMIClass"></span>
+            </div>
+
+            <div class="col">
+                <div class="container">
+                    <h1 class="text-center">BMI Score Table</h1>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>BMI</th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>&lt; 18.5</td>
+                                <td>Underweight</td>
+                            </tr>
+                            <tr>
+                                <td>18.5 - 24.9</td>
+                                <td>Normal Weight</td>
+                            </tr>
+                            <tr>
+                                <td>25 - 29.9</td>
+                                <td>Overweight</td>
+                            </tr>
+                            <tr>
+                                <td>&ge; 30</td>
+                                <td>Obesity</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Macronutrients -->
+        <div>
+            <h1>
+                Macronutrients
+            </h1>
+            <div class="">
+                <div class="d-flex ">
+                    <h2 class="">
+                        Maintenance
+                    </h2>
+                    <p class="ms-2 me-2" id="maintainCalo">
+                        0
+                    </p>
+                    <p class="display text-success">calories per day</p>
+                </div>
+
+                <div>
+                    <div class="d-flex">
+                        <h2 class="">
+                            Cutting
+                        </h2>
+                        <p class="ms-2 me-2" id="cuttingCalo">
+                            0
+                        </p>
+                        <p class="display text-success">calories per day</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="d-flex">
+                        <h2 class="">
+                            Bulking
+                        </h2>
+                        <p class="ms-2 me-2" id="bulkingCalo">
+                            0
+                        </p>
+                        <p class="display text-success">calories per day</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/resultPage.js"></script>
+</body>
+
+</html>
