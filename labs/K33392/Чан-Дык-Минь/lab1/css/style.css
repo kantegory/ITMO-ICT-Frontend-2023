@@ -6,15 +6,14 @@
 h1 {
     font-size: 2rem !important;
 }
+h2 {
+    font-size: 1.3rem !important; 
+}
 
 body {
     background-color: var(--bg-gray) !important;
 }
 
-label {
-    width: 7em;
-    display: inline-block;
-}
 
 img {
     display: block;

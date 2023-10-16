@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +13,16 @@
 
 <body>
   <!-- navbar -->
-  <nav class="navbar navbar-expand bg-body-tertiary">
+  <nav class="navbar navbar-expand bg-body-tertiary d-none d-sm-block">
     <div class="container-fluid">
       <a class="navbar-brand ps-5" href="index.html">TDEE Calculator</a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nutriotionPage.html">Nutrition</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="loginPage.html">Log in</a>
@@ -38,31 +42,31 @@
   </nav>
 
   <!-- TDEE Form -->
-  <div class="container w-50 mt-5 pt-4 d-flex flex-column align-items-center bg-light border border-1 rounded-2">
-    <h1 class="mb-5">How Many Calories You Burn Every Day</h1>
+  <div class="container w-75 mt-5 pt-4 d-flex flex-column align-items-center bg-light border border-1 rounded-2">
+    <h1 class="mb-5 align-items-center">How Many Calories You Burn Every Day</h1>
     <form class="tdeeform">
       <!-- Age input -->
       <div class="d-flex flex-row mb-3">
-        <label>Age</label>
-        <input type="age" class="form-control" id="inputAge" placeholder="year">
+        <label class="w-25">Age</label>
+        <input type="age" class="form-control w-75" id="inputAge" placeholder="year">
       </div>
 
       <!-- Weight input -->
       <div class="d-flex flex-row mb-3">
-        <label>Weight</label>
-        <input type="age" class="form-control" id="inputWeight" placeholder="kg">
+        <label class="w-25">Weight</label>
+        <input type="age" class="form-control w-75" id="inputWeight" placeholder="kg">
       </div>
 
       <!-- Height input -->
       <div class="d-flex flex-row mb-3">
-        <label>Height</label>
-        <input type="age" class="form-control" id="inputHeight" placeholder="cm">
+        <label class="w-25">Height</label>
+        <input type="age" class="form-control w-75" id="inputHeight" placeholder="cm">
       </div>
 
       <!-- Activity -->
       <div class="d-flex flex-row mb-3">
-        <label>Activity</label>
-        <select class="form-select" aria-label="Default select example" id="selectInput">
+        <label class="w-25">Activity</label>
+        <select class="form-select w-75" aria-label="Default select example" id="selectInput">
           <option selected value="0">Sedentary (office job)</option>
           <option value="1">Light excercise (1-2 days/week)</option>
           <option value="2">Moderate excercise (3-5 days/week)</option>
@@ -73,10 +77,10 @@
 
       <!-- Gender input -->
       <div class="d-flex flex-row justify-content-start mb-3">
-        <label>Gender</label>
+        <label class="w-25">Gender</label>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="flexRadio" id="flexRadioMen" value="men" checked>
-          <label class="form-check-label" for="flexRadioMen">
+          <label class="form-check-label me-5" for="flexRadioMen">
             Men
           </label>
         </div>
@@ -88,17 +92,10 @@
         </div>
       </div>
 
-
       <!-- Submit button -->
-      <button class="btn btn-outline-success btn-lg" cl type="button" id="calculator" onclick="calcTdee()">
+      <button class="btn btn-outline-success btn-lg mb-4" cl type="button" id="calculator" onclick="calcTdee()">
         Calculate
       </button>
-
-      <div class="d-flex flex-row mt-3 align-items-end overflow-visible">
-        <h3 id="age">your calories</h3>
-        <h3 class="px-5 text-success" id="tdee"></h3>
-        <h6 class="display text-success" id="msgtdee"></h6>
-      </div>
     </form>
   </div>
 
