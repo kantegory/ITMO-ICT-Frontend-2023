@@ -3,9 +3,20 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import "./Account.css";
+import useAuth from "../../hooks/useAuth";
 import Button from "react-bootstrap/esm/Button";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Account() {
+
+  const navigate = useNavigate()
+  const { isAuthenticate, setAuth} = useAuth()
+
+  const onLogout = () => {
+    setAuth(false)
+    navigate("/registration/login");
+  }
+
   return (
     <>
       <Container className="main-container">
@@ -20,8 +31,8 @@ function Account() {
           </Col>
         </Row>
         <Form className="form">
-          <Form.Group as={Row} className="mb-3" controlId="formPlaintextName">
-            <Form.Label column sm="2">
+          <Form.Group className="mb-3" controlId="formPlaintextName">
+            <Form.Label column className="d-flex">
               Имя и фамилия
             </Form.Label>
             <Col sm="10">
@@ -29,8 +40,8 @@ function Account() {
             </Col>
           </Form.Group>
 
-          <Form.Group as={Row} className="mb-3" controlId="formPlaintextPhoto">
-            <Form.Label column sm="2">
+          <Form.Group className="mb-3" controlId="formPlaintextPhoto">
+            <Form.Label column className="d-flex">
               фото
             </Form.Label>
             <Col sm="10">
@@ -38,8 +49,8 @@ function Account() {
             </Col>
           </Form.Group>
 
-          <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-            <Form.Label column sm="2">
+          <Form.Group className="mb-3" controlId="formPlaintextEmail">
+            <Form.Label column className="d-flex">
               Почта
             </Form.Label>
             <Col sm="10">
@@ -48,14 +59,13 @@ function Account() {
           </Form.Group>
 
           <Form.Group
-            as={Row}
             className="mb-3"
             controlId="formPlaintextPassword"
           >
-            <Form.Label column sm="2">
+            <Form.Label column className="d-flex">
               О себе
             </Form.Label>
-            <Col sm="10">
+            <Col>
               <Form.Control
                 as="textarea"
                 type="info"
@@ -65,14 +75,13 @@ function Account() {
           </Form.Group>
 
           <Form.Group
-            as={Row}
             className="mb-3"
             controlId="formPlaintextJobInfo"
           >
-            <Form.Label column sm="2">
+            <Form.Label column className="d-flex">
               Опыт работы
             </Form.Label>
-            <Col sm="10">
+            <Col >
               <Form.Control
                 as="textarea"
                 type="jobinfo"
@@ -82,14 +91,14 @@ function Account() {
           </Form.Group>
 
           <Form.Group
-            as={Row}
+            
             className="mb-3"
             controlId="formPlaintextProjects"
           >
-            <Form.Label column sm="2">
+            <Form.Label column className="d-flex">
               Проектная деятельность
             </Form.Label>
-            <Col sm="10">
+            <Col >
               <Form.Control
                 as="textarea"
                 type="info"
@@ -112,43 +121,43 @@ function Account() {
 
         <Form className="form">
           <Form.Group
-            as={Row}
             className="mb-3"
             controlId="formPlaintextPassword"
           >
-            <Form.Label column sm="2">
+            <Form.Label column className="d-flex">
               Текущий пароль
             </Form.Label>
-            <Col sm="10">
+            <Col>
               <Form.Control type="name" placeholder="Текущий пароль" />
             </Col>
           </Form.Group>
 
           <Form.Group
-            as={Row}
             className="mb-3"
             controlId="formPlaintextPassword"
           >
-            <Form.Label column sm="2">
+            <Form.Label column className="d-flex">
               Новый пароль
             </Form.Label>
-            <Col sm="10">
+            <Col>
               <Form.Control type="name" placeholder="Пароль" />
             </Col>
           </Form.Group>
 
           <Form.Group
-            as={Row}
             className="mb-3"
             controlId="formPlaintextPassword"
           >
-            <Form.Label column sm="2" />
-            <Col sm="10">
+            <Form.Label column className="d-flex" />
+            <Col >
               <Form.Control type="name" placeholder="Повторить пароль" />
             </Col>
           </Form.Group>
         </Form>
         <Row>
+        <Col className="d-flex justify-content-start">
+            <Button variant="danger" onClick={() => onLogout()}>Выйти из аккаунта</Button>
+          </Col>
           <Col className="d-flex justify-content-end">
             <Button>Сохранить</Button>
           </Col>

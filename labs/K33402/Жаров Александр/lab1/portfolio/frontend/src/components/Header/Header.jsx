@@ -10,8 +10,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 
 function Header() {
-  const [isAuthorized, setIsAuthorized] = React.useState(true);
-
   const navigate = useNavigate();
 
   const handleClickLog = () => {

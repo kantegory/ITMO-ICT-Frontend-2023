@@ -5,11 +5,14 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/esm/Button";
 import "./Registration.css";
+import useAuth from "../../hooks/useAuth";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Registration() {
+  
   const navigate = useNavigate();
   const params = useParams();
+
   const onSubmit = async () => {
     const res = await fetch("http://localhost:3030/api/create-user", {
       method: "POST",
@@ -23,10 +26,17 @@ function Registration() {
       }),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data)  
+        setAuth(true)
+        navigate("/");
+      })
+        
       .catch((error) => console.log(error));
       return res
   }
+
+  const { isAuthenticate, setAuth} = useAuth()
   
   const onClickBack = () => {
     navigate("/");
@@ -41,8 +51,10 @@ function Registration() {
   };
 
   const onCreateAccount = () => {
+    setAuth(true)
     navigate("/");
   };
+
   const onLogin = () => {
     navigate("/");
   };
@@ -56,42 +68,39 @@ function Registration() {
         </Row>
         <Form className="form">
           {params.isLogin === "reg" && (
-            <Form.Group as={Row} className="mb-3" controlId="formPlaintextName">
-              <Form.Label column sm="2">
+            <Form.Group className="mb-3" controlId="name">
+              <Form.Label column className="d-flex">
                 Имя
               </Form.Label>
-              <Col sm="10">
+              <Col>
                 <Form.Control type="name" placeholder="Имя" />
               </Col>
             </Form.Group>
           )}
 
-          <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-            <Form.Label column sm="2">
+          <Form.Group  className="mb-3" controlId="email">
+            <Form.Label column className="d-flex">
               Почта
             </Form.Label>
-            <Col sm="10">
+            <Col >
               <Form.Control type="email" placeholder="email@example.com" />
             </Col>
           </Form.Group>
 
           <Form.Group
-            as={Row}
+            
             className="mb-3"
-            controlId="formPlaintextPassword"
+            controlId="password"
           >
-            <Form.Label column sm="2">
+            <Form.Label column className="d-flex">
               Пароль
             </Form.Label>
-            <Col sm="10">
+            <Col>
               <Form.Control type="password" placeholder="Пароль" />
             </Col>
           </Form.Group>
         </Form>
         <Row className="button-group">
-          <Col className="button-group justify-content-start">
-            <Button onClick={() => onClickBack()}>На главную</Button>
-          </Col>
           <Col className="button-group justify-content-end">
             {params.isLogin === "login" && (
               <>
