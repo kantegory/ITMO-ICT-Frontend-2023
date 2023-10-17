@@ -34,7 +34,7 @@ function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto link-container">
+            <Nav className="me-auto item-container">
               <Link to="/" className="link">
                 Профиль
               </Link>
@@ -42,16 +42,15 @@ function Header() {
                 Личный кабинет
               </Link>
             </Nav>
-              <Form className="md-block">
-                <Form.Control
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
-            
+            <Form className="md-block">
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+              />
+              <Button variant="outline-success">Search</Button>
+            </Form>
           </Navbar.Collapse>
         </Container>
       </Navbar>

@@ -7,7 +7,7 @@
   text-decoration: none;
 }
 
-.link-container{
+.item-container{
   display: flex;
   gap: 12px;
 }
@@ -23,11 +23,6 @@
   @media (max-width: 767.9px) {
     display: none;
   }
-}
-
-.button-group{
-  display: flex;
-  gap: 12px;
 }
 
 

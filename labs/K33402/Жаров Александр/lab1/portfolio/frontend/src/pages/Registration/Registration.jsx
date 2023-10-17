@@ -9,7 +9,6 @@ import useAuth from "../../hooks/useAuth";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Registration() {
-  
   const navigate = useNavigate();
   const params = useParams();
 
@@ -22,28 +21,28 @@ function Registration() {
       body: JSON.stringify({
         name: "test1",
         password: "test1",
-        about: "sdfsdfds"
+        about: "sdfsdfds",
       }),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)  
-        setAuth(true)
+        console.log(data);
+        setAuth(true);
         navigate("/");
       })
-        
-      .catch((error) => console.log(error));
-      return res
-  }
 
-  const { isAuthenticate, setAuth} = useAuth()
-  
+      .catch((error) => console.log(error));
+    return res;
+  };
+
+  const { isAuthenticate, setAuth } = useAuth();
+
   const onClickBack = () => {
     navigate("/");
   };
 
   const onClickBackToReg = () => {
-    navigate("/registration/reg");
+    navigate("/registration/registration");
   };
 
   const onClickBackToLog = () => {
@@ -51,7 +50,7 @@ function Registration() {
   };
 
   const onCreateAccount = () => {
-    setAuth(true)
+    setAuth(true);
     navigate("/");
   };
 
@@ -63,11 +62,13 @@ function Registration() {
       <div className="form-container">
         <Row>
           <h2>
-            {params.isLogin === "reg" ? "Создание аккаунта" : "Вход в аккаунт"}
+            {params.isLogin === "registration"
+              ? "Создание аккаунта"
+              : "Вход в аккаунт"}
           </h2>
         </Row>
         <Form className="form">
-          {params.isLogin === "reg" && (
+          {params.isLogin === "registration" && (
             <Form.Group className="mb-3" controlId="name">
               <Form.Label column className="d-flex">
                 Имя
@@ -78,20 +79,16 @@ function Registration() {
             </Form.Group>
           )}
 
-          <Form.Group  className="mb-3" controlId="email">
+          <Form.Group className="mb-3" controlId="email">
             <Form.Label column className="d-flex">
               Почта
             </Form.Label>
-            <Col >
+            <Col>
               <Form.Control type="email" placeholder="email@example.com" />
             </Col>
           </Form.Group>
 
-          <Form.Group
-            
-            className="mb-3"
-            controlId="password"
-          >
+          <Form.Group className="mb-3" controlId="password">
             <Form.Label column className="d-flex">
               Пароль
             </Form.Label>
@@ -100,8 +97,18 @@ function Registration() {
             </Col>
           </Form.Group>
         </Form>
-        <Row className="button-group">
-          <Col className="button-group justify-content-end">
+        <Row className="item-container">
+          <Col className="item-container justify-content-end">
+            {params.isLogin === "registration" && (
+              <>
+                <Button variant="warning" onClick={() => onClickBackToLog()}>
+                  Уже есть аккаунт
+                </Button>
+                <Button variant="success" onClick={() => onCreateAccount()}>
+                  Создать аккаунт
+                </Button>
+              </>
+            )}
             {params.isLogin === "login" && (
               <>
                 <Button variant="warning" onClick={() => onClickBackToReg()}>
@@ -109,16 +116,6 @@ function Registration() {
                 </Button>
                 <Button variant="success" onClick={() => onSubmit()}>
                   Войти
-                </Button>
-              </>
-            )}
-            {params.isLogin === "reg" && (
-              <>
-                <Button variant="warning" onClick={() => onClickBackToLog()}>
-                  Уже есть аккаунт
-                </Button>
-                <Button variant="success" onClick={() => onCreateAccount()}>
-                  Создать аккаунт
                 </Button>
               </>
             )}

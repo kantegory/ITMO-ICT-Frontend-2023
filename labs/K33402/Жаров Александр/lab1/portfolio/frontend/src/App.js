@@ -11,8 +11,7 @@ const USER_ID = "65293a3055b0df2e28a63fde";
 
 function App() {
   let location = useLocation();
-  const [isOpenRegistrationPage, setIsOpenRegistrationPage] =
-    React.useState(false);
+  const [isHeaderDisplayNone, setHeaderDisplayNone] = React.useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:3030/api/get-user/${USER_ID}`)
@@ -22,16 +21,16 @@ function App() {
   }, []);
 
   React.useEffect(() => {
-    setIsOpenRegistrationPage(false);
+    setHeaderDisplayNone(false);
     const regex = /\/registration/;
     if (regex.test(location.pathname)) {
-      setIsOpenRegistrationPage(true);
+      setHeaderDisplayNone(true);
     }
   }, [location]);
 
   return (
     <div className="App">
-      {!isOpenRegistrationPage && <Header />}
+      {!isHeaderDisplayNone && <Header />}
       <Routes>
         <Route path="/">
           <Route path="/registration/:isLogin" element={<Registration />} />
