@@ -1,24 +1,41 @@
 import "./App.css";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Account from "./pages/Account";
 import Profile from "./pages/Profile";
 import Registration from "./pages/Registration";
 import Header from "./components/Header";
 import React, { useEffect } from "react";
 import { PrivateRoute } from "./components/PrivatRoute";
-
-const USER_ID = "65293a3055b0df2e28a63fde";
+import useAuth from "./hooks/useAuth";
+import useUser from "./hooks/useUser";
 
 function App() {
   let location = useLocation();
+  const navigate = useNavigate();
+
   const [isHeaderDisplayNone, setHeaderDisplayNone] = React.useState(false);
 
+  const { isAuthenticated, setAuth } = useAuth();
+  const { user, setUser } = useUser();
+
   useEffect(() => {
-    fetch(`http://localhost:3030/api/get-user/${USER_ID}`)
-      .then((response) => response.text())
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error));
-  }, []);
+    if (document.cookie) {
+      console.log(document.cookie);
+      const userString = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("user="))
+        .slice(5);
+
+      const user = JSON.parse(userString);
+      console.log(isAuthenticated);
+
+      if (!isAuthenticated) {
+        setAuth(true);
+        setUser(user);
+        navigate("/");
+      }
+    }
+  }, [setUser, setAuth, navigate, isAuthenticated]);
 
   React.useEffect(() => {
     setHeaderDisplayNone(false);

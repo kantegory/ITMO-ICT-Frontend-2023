@@ -27,7 +27,7 @@ function Registration() {
       [id]: value,
     }));
   };
-  console.log(formState);
+
   const onLogin = async () => {
     const res = await fetch("http://localhost:3030/login", {
       method: "POST",
@@ -41,6 +41,8 @@ function Registration() {
         console.log(user);
         if (user._id) {
           setUser(user);
+
+          //document.cookie = `user=${JSON.stringify(user)}`;
           setAuth(true);
           navigate("/");
         } else {
@@ -65,6 +67,7 @@ function Registration() {
         if (user._id) {
           console.log(user);
           setUser(user);
+          //document.cookie = `user=${user}`;
           setAuth(true);
           navigate("/");
         } else {
