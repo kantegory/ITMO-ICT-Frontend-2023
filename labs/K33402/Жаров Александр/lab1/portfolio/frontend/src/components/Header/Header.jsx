@@ -3,23 +3,12 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Col from "react-bootstrap/esm/Col";
 import Form from "react-bootstrap/Form";
-import icon from "../../img/main-icon.svg";
-import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
+import icon from "../../img/main-icon.svg";
+import { Link } from "react-router-dom";
 
 function Header() {
-  const navigate = useNavigate();
-
-  const handleClickLog = () => {
-    navigate("/registration/login");
-  };
-
-  const handleClickReg = () => {
-    navigate("/registration/reg");
-  };
-
   return (
     <>
       <Navbar expand="md" className="body" data-bs-theme="dark" sticky="top">

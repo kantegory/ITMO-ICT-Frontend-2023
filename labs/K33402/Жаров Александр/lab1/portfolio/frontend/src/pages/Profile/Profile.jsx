@@ -2,16 +2,16 @@ import "./Profile.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/esm/Container";
-import Avatar from "../../components/Avatar";
-import AvatarImg from "../../img/avatar.jpg";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
-
+import Avatar from "../../components/Avatar";
+import AvatarImg from "../../img/avatar.jpg";
+import useUser from "../../hooks/useUser";
 
 function Profile() {
+  const { user } = useUser();
   return (
     <>
-
       <Container className="main-container">
         <Form className="md-none">
           <Form.Control
@@ -19,21 +19,20 @@ function Profile() {
             placeholder="Search"
             className="me-2"
             aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          />
+          <Button variant="outline-success">Search</Button>
+        </Form>
         <Row>
           <Col xs={5} sm={3} md={2}>
             <Avatar src={AvatarImg} size={100} />
           </Col>
           <Col className="name">
-            <h3>Жаров Александр</h3>
+            <h3>{user.name}</h3>
           </Col>
         </Row>
         <Row>
           <Col className="d-flex justify-content-start">
-            Меня зовут Саша, я из Санкт-Петербурга, занимаюсь программированием
-            и учусь в Итмо
+            {user.about ? user.about : "-"}
           </Col>
         </Row>
         <hr />
@@ -44,7 +43,7 @@ function Profile() {
         </Row>
 
         <Col className="d-flex justify-content-start">
-          <div>Место работы 1</div>
+          <div>{user.experience ? user.experience : "-"}</div>
         </Col>
         <hr />
         <Row>
@@ -53,7 +52,7 @@ function Profile() {
           </Col>
         </Row>
         <Col className="d-flex justify-content-start">
-          <div>Проект 1</div>
+          <div>{user.projects ? user.projects : "-"}</div>
         </Col>
         <hr />
         <Row>
@@ -62,7 +61,7 @@ function Profile() {
           </Col>
         </Row>
         <Col className="d-flex justify-content-start">
-          <div>email@example.com</div>
+          <div>{user.contacts ? user.contacts : "-"}</div>
         </Col>
       </Container>
     </>

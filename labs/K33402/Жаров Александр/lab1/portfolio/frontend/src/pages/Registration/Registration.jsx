@@ -1,44 +1,79 @@
-import Header from "../../components/Header";
+import "./Registration.css";
+import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/esm/Button";
-import "./Registration.css";
-import useAuth from "../../hooks/useAuth";
 import { useNavigate, useParams } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import useUser from "../../hooks/useUser";
 
 function Registration() {
   const navigate = useNavigate();
   const params = useParams();
+  const { setAuth } = useAuth();
+  const { setUser } = useUser();
 
-  const onSubmit = async () => {
-    const res = await fetch("http://localhost:3030/api/create-user", {
+  const [formState, setFormState] = React.useState({
+    name: null,
+    email: null,
+    password: null,
+  });
+
+  const onFormChange = (e) => {
+    const { id, value } = e.target;
+    setFormState((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }));
+  };
+  console.log(formState);
+  const onLogin = async () => {
+    const res = await fetch("http://localhost:3030/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        name: "test1",
-        password: "test1",
-        about: "sdfsdfds",
-      }),
+      body: JSON.stringify(formState),
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setAuth(true);
-        navigate("/");
+      .then((user) => {
+        console.log(user);
+        if (user._id) {
+          setUser(user);
+          setAuth(true);
+          navigate("/");
+        } else {
+          console.log(user.message);
+        }
       })
-
       .catch((error) => console.log(error));
+
     return res;
   };
 
-  const { isAuthenticate, setAuth } = useAuth();
+  const onRegistration = async () => {
+    const res = await fetch("http://localhost:3030/registration", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formState),
+    })
+      .then((response) => response.json())
+      .then((user) => {
+        if (user._id) {
+          console.log(user);
+          setUser(user);
+          setAuth(true);
+          navigate("/");
+        } else {
+          console.log(user.message);
+        }
+      })
+      .catch((error) => console.log(error));
 
-  const onClickBack = () => {
-    navigate("/");
+    return res;
   };
 
   const onClickBackToReg = () => {
@@ -49,14 +84,6 @@ function Registration() {
     navigate("/registration/login");
   };
 
-  const onCreateAccount = () => {
-    setAuth(true);
-    navigate("/");
-  };
-
-  const onLogin = () => {
-    navigate("/");
-  };
   return (
     <>
       <div className="form-container">
@@ -74,7 +101,12 @@ function Registration() {
                 Имя
               </Form.Label>
               <Col>
-                <Form.Control type="name" placeholder="Имя" />
+                <Form.Control
+                  type="name"
+                  placeholder="Имя"
+                  value={formState.name || ""}
+                  onChange={(e) => onFormChange(e)}
+                />
               </Col>
             </Form.Group>
           )}
@@ -84,7 +116,12 @@ function Registration() {
               Почта
             </Form.Label>
             <Col>
-              <Form.Control type="email" placeholder="email@example.com" />
+              <Form.Control
+                type="email"
+                placeholder="email@example.com"
+                value={formState.email || ""}
+                onChange={(e) => onFormChange(e)}
+              />
             </Col>
           </Form.Group>
 
@@ -93,7 +130,12 @@ function Registration() {
               Пароль
             </Form.Label>
             <Col>
-              <Form.Control type="password" placeholder="Пароль" />
+              <Form.Control
+                type="password"
+                placeholder="Пароль"
+                value={formState.password || ""}
+                onChange={(e) => onFormChange(e)}
+              />
             </Col>
           </Form.Group>
         </Form>
@@ -104,7 +146,7 @@ function Registration() {
                 <Button variant="warning" onClick={() => onClickBackToLog()}>
                   Уже есть аккаунт
                 </Button>
-                <Button variant="success" onClick={() => onCreateAccount()}>
+                <Button variant="success" onClick={() => onRegistration()}>
                   Создать аккаунт
                 </Button>
               </>
@@ -114,7 +156,7 @@ function Registration() {
                 <Button variant="warning" onClick={() => onClickBackToReg()}>
                   Создать аккаунт
                 </Button>
-                <Button variant="success" onClick={() => onSubmit()}>
+                <Button variant="success" onClick={() => onLogin()}>
                   Войти
                 </Button>
               </>

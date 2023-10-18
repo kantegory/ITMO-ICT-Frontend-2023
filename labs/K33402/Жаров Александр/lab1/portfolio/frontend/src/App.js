@@ -1,5 +1,5 @@
-import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Account from "./pages/Account";
 import Profile from "./pages/Profile";
 import Registration from "./pages/Registration";
