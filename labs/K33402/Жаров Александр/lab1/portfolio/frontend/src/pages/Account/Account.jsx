@@ -8,6 +8,7 @@ import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useUser from "../../hooks/useUser";
+import { deleteCookie, getCookie } from "../../utils/cookiesUtils";
 
 function Account() {
   const navigate = useNavigate();
@@ -35,10 +36,13 @@ function Account() {
 
   const onFormSubmit = async () => {
     console.log("submit");
+    const token = getCookie("token");
+
     const res = await fetch("http://localhost:3030/api/update-user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(formState),
     })
@@ -55,15 +59,7 @@ function Account() {
   const onLogout = () => {
     setUser({});
 
-    const cookies = document.cookie.split("; ");
-
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i];
-      const eqPos = cookie.indexOf("=");
-      const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-      document.cookie =
-        name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    }
+    deleteCookie("token");
     setAuth(false);
     navigate("/registration/login");
   };

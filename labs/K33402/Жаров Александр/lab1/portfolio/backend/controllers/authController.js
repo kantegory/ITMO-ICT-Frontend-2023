@@ -1,7 +1,16 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
+const { secret } = require("../config");
 
+const genereteAccessToken = (id, email) => {
+  const payload = {
+    id,
+    email,
+  };
+
+  return jwt.sign(payload, secret, { expiresIn: "12h" });
+};
 class authController {
   async registration(req, res) {
     try {
@@ -19,7 +28,9 @@ class authController {
 
       await user.save();
 
-      return res.send(user);
+      const token = genereteAccessToken(user._id, user.email);
+
+      return res.json({ token });
     } catch (error) {
       console.error(error);
       res.status(500).send("Internal Server Error");
@@ -40,13 +51,14 @@ class authController {
       const validPassword = bcrypt.compareSync(password, user.password);
 
       if (validPassword) {
-        return res.send(user);
+        const token = genereteAccessToken(user._id, user.email);
+        return res.json({ token });
       }
 
       return res.status(400).json({ message: "Неверный пароль" });
     } catch (error) {
       console.error(error);
-      res.status(500).send("Internal Server Error");
+      res.status(500).json({ message: "Internal Server Error" });
     }
   }
 }

@@ -1,11 +1,12 @@
 const Router = require("express");
 const apiRouter = new Router();
 const apiController = require("../controllers/apiController");
+const authMiddleware = require("../middleware/authMiddleware");
 
-apiRouter.get("/get-users", apiController.getUsers);
+apiRouter.get("/get-users", authMiddleware, apiController.getUsers);
 
-apiRouter.get("/get-user/:id", apiController.getUserById);
+apiRouter.get("/get-user", authMiddleware, apiController.getUserById);
 
-apiRouter.post("/update-user", apiController.updateUser);
+apiRouter.post("/update-user", authMiddleware, apiController.updateUser);
 
 module.exports = apiRouter;

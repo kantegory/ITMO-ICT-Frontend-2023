@@ -7,6 +7,8 @@ import Button from "react-bootstrap/esm/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useUser from "../../hooks/useUser";
+import { setCookie } from "../../utils/cookiesUtils";
+import { fetchUser } from "../../utils/fetchUser";
 
 function Registration() {
   const navigate = useNavigate();
@@ -37,16 +39,19 @@ function Registration() {
       body: JSON.stringify(formState),
     })
       .then((response) => response.json())
-      .then((user) => {
-        console.log(user);
-        if (user._id) {
-          setUser(user);
 
-          //document.cookie = `user=${JSON.stringify(user)}`;
-          setAuth(true);
-          navigate("/");
+      .then((data) => {
+        if (data.token) {
+          console.log(data);
+          setCookie("token", JSON.stringify(data.token));
+
+          fetchUser(data.token).then((user) => {
+            setUser(user);
+            setAuth(true);
+            navigate("/");
+          });
         } else {
-          console.log(user.message);
+          console.log(data.message);
         }
       })
       .catch((error) => console.log(error));
@@ -63,15 +68,16 @@ function Registration() {
       body: JSON.stringify(formState),
     })
       .then((response) => response.json())
-      .then((user) => {
-        if (user._id) {
-          console.log(user);
-          setUser(user);
-          //document.cookie = `user=${user}`;
-          setAuth(true);
-          navigate("/");
+      .then((data) => {
+        if (data.token) {
+          setCookie("token", JSON.stringify(data.token));
+          fetchUser(data.token).then((user) => {
+            setUser(user);
+            setAuth(true);
+            navigate("/");
+          });
         } else {
-          console.log(user.message);
+          console.log(data.message);
         }
       })
       .catch((error) => console.log(error));

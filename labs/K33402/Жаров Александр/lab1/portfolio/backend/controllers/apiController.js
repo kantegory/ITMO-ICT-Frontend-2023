@@ -3,7 +3,6 @@ const User = require("../models/user");
 class apiController {
   async getUsers(req, res) {
     try {
-      console.log("GET users");
       const users = await User.find();
       res.send(users);
     } catch (error) {
@@ -14,7 +13,7 @@ class apiController {
 
   async getUserById(req, res) {
     try {
-      const user = await User.findById(req.params.id);
+      const user = await User.findById(req.user.id);
       res.send(user);
     } catch (error) {
       console.error(error);
@@ -34,7 +33,7 @@ class apiController {
       }
 
       const checkEmail = await User.find({ email });
-      console.log(checkEmail);
+
       if (checkEmail.length > 1) {
         return res.status(400).json({ message: "Эта почта уже занята" });
       }

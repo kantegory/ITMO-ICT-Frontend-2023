@@ -8,6 +8,8 @@ import React, { useEffect } from "react";
 import { PrivateRoute } from "./components/PrivatRoute";
 import useAuth from "./hooks/useAuth";
 import useUser from "./hooks/useUser";
+import { deleteCookie, getCookie } from "./utils/cookiesUtils";
+import { fetchUser } from "./utils/fetchUser";
 
 function App() {
   let location = useLocation();
@@ -16,26 +18,23 @@ function App() {
   const [isHeaderDisplayNone, setHeaderDisplayNone] = React.useState(false);
 
   const { isAuthenticated, setAuth } = useAuth();
-  const { user, setUser } = useUser();
+  const { setUser } = useUser();
+
+  const fetchUserCallback = React.useCallback((token) => fetchUser(token), []);
 
   useEffect(() => {
-    if (document.cookie) {
-      console.log(document.cookie);
-      const userString = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("user="))
-        .slice(5);
+    const token = getCookie("token");
 
-      const user = JSON.parse(userString);
-      console.log(isAuthenticated);
-
-      if (!isAuthenticated) {
+    if (token && !isAuthenticated) {
+      fetchUserCallback(token).then((user) => {
         setAuth(true);
         setUser(user);
         navigate("/");
-      }
+        console.log(user);
+      });
     }
-  }, [setUser, setAuth, navigate, isAuthenticated]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   React.useEffect(() => {
     setHeaderDisplayNone(false);
