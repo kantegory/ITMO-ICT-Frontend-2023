@@ -1,0 +1,24 @@
+.search {
+    display: flex;
+    height: 100vh;
+    align-items: start;
+    flex-direction: column;
+    justify-content:start;
+    font-size: 3rem;
+    background-color: #3c3c5b;
+    color: #fff;
+    gap: 2rem; 
+  }
+
+  .search-users_list{
+    padding: 10px;
+    background-color: #3c3c5b;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+
