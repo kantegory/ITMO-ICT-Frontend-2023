@@ -1,63 +1,638 @@
-body {
-    margin: 0;
+@import url(./clear.css);
 
-    font-family: 'Bebas Neue Cyrillic', sans-serif;
-    font-size: 40px;
-    color: #292929;
+@font-face {
+    font-family: Bebas Neue Cyrillic;
+    src: url(../fonts/ofont.ru_Bebas_Neue.ttf);
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
+* {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /*
-====================================================
-Container
-====================================================
-*/
-.container {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
-
-/*
-====================================================
+===========================================
 Header
-====================================================
+===========================================
 */
 
-.header {
-
-}
-
-.header__inner {
+#header {
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap;
-    padding: 9px 0;
-
-    border-bottom: 1px solid #E5D2D7;
+    align-items: center;
+    padding: 13px 150px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 69;
 }
 
+.logo_container {
+    width: 150px;
+}
+
+.logo_container img {
+    width: 100%;
+}
 
 /*
-====================================================
-Navigation
-====================================================
+===========================================
+Hamburger
+===========================================
 */
 
-.nav__link {
-    font-family: 'Bebas Neue Cyrillic', sans-serif;
-    font-size: 24px;
-    color: #292929;
-    text-decoration: none;
-    .active{background-color: #7e7c7c;}
+.hamburger {
+    display: none;
+    cursor: pointer;
 }
 
-.nav__link:hover {
+.bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px auto;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: #FEBA00;
+}
+
+/*
+===========================================
+Navigation
+===========================================
+*/
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-link {
+    font-size: 24px;
+    color: #949393;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links .nav_item a:hover {
+    color: #949393;
     text-decoration: underline;
+}
+
+.nav_links .nav_item.active a {
+    color: #292929;
+}
+
+.nav_links .nav_item a.color1:hover {
+    color: #FEBA00;
+}
+
+/*
+===========================================
+Typography
+===========================================
+*/
+
+h1 {
+    font-size: 120px;
+    line-height: 0.5;
+}
+
+h2 {
+    font-size: 100px;
+    line-height: 0.6;
+}
+
+h2.text-subtitle {
+    font-family: "Caveat", sans-serif;
+}
+
+h3 {
+    font-size: 80px;
+    padding: 78px 0;
+}
+
+h4 {
+    font-size: 50px;
+}
+
+h5 {
+    font-size: 35px;
+}
+
+h6 {
+    font-size: 30px;
+}
+
+p {
+    font-family: 'Caveat', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+}
+
+p .highlight {
+    display: inline-block;
+    height: 60px;
+    padding-right: 3px;
+    border-radius: 24px;
+
+    line-height: 60px;
+    color: #fff;
+    font-family: 'Caveat', sans-serif;
+}
+
+.number p {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-size: 200px;
+    text-shadow: 0px 4px 4px #0000002c;
+
+    margin: 40px 0;
+}
+
+.footer_link {
+    font-family: 'Caveat', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.footer_group {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 30px;
+    text-align: left;
+    margin: 25px 0;
+}
+
+p.copy {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 35px;
+}
+
+p.price {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 40px;
+}
+
+p.quest_description {
+    font-size: 25px;
+    font-weight: 400;
+    text-align: left;
+}
+
+p.filter {
+    font-size: 20px;
+}
+
+.filters p {
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/*
+===========================================
+Colors
+===========================================
+*/
+
+.color1 {
+    color: #FEBA00;
+}
+
+.color2 {
+    color: #F85A59;
+}
+
+.color3 {
+    color: #949393;
+}
+
+.bg-color1 {
+    background-color: #FEBA00;
+}
+
+.bg-color2 {
+    background-color: #F85A59;
+}
+
+/*
+===========================================
+Main page
+===========================================
+*/
+
+.main_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url(../images/mainBackground.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: calc(100vh - 82px);
+}
+
+.moto {
+    padding-top: 65px;
+}
+
+/*
+===========================================
+About Us
+===========================================
+*/
+
+img.center {
+    display: block;
+    margin: 107px auto;
+}
+
+/*
+===========================================
+Links page
+===========================================
+*/
+
+.qrcode {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.qrcode img {
+    width: 638px;
+}
+
+/*
+===========================================
+Numbers page
+===========================================
+*/
+
+.numbers_page {
+    margin-bottom: 50px;
+}
+
+/*
+===========================================
+Footer
+===========================================
+*/
+
+footer {
+    background-color: #e9e9e9;
+    padding: 50px 0;
+}
+
+.footer_links li a.footer_link {
+    margin-top: 100px;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.social_nets {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_icon {
+    width: 38px;
+}
+
+/*
+===========================================
+Buttons
+===========================================
+*/
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    margin: 33px 0;
+}
+
+.btn-primary {
+    --bs-btn-active-bg: #FEBA00;
+}
+
+.primary-button {
+    background-color: #FEBA00;
+    border: 0;
+    width: 415px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+.primary-button:hover {
+    background-color: #FEBA00;
+    text-decoration: underline;
+}
+
+.primary-button:active {
+    background-color: #FEBA00;
+    text-decoration: none;
+}
+
+.outline-button {
+    width: 415px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 20px;
+}
+
+.outline-button:hover {
+    background-color: transparent;
+    text-decoration: underline;
+    color: #fff;
+}
+
+.primary-button:active {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.questcard-button {
+    height: 38px;
+    font-size: 25px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.button-filters {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: #000;
+    font-family: 'Caveat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.category-button {
+    border: 0;
+    background-color: #EFEFEF;
+    border-radius: 30px;
+    padding: 2px 15px;
+
+    color: #8B8B8B;
+    font-family: 'Caveat', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.category-button.chosen {
+    background-color: #F85A59;
+    color: #fff;
+}
+
+/*
+===========================================
+Quests
+===========================================
+*/
+
+.quest-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    gap: 70px;
+}
+
+.quest-card {
+    background-color: #EFEFEF;
+    border-radius: 30px;
+    filter: drop-shadow(0 4px 4px #0000002c);
+    margin-top: 25px;
+    margin-bottom: 100px;
+    height: 770px;
+}
+
+.quest-card img {
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+}
+
+.quest-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 0 32px;
+}
+
+.hide {
+    display: none;
+}
+
+.search-form {
+    background-color: #EFEFEF;
+    background-image: url(../images/searchIcon.svg);
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    text-indent: 50px;
+    border: 0px;
+    border-radius: 30px;
+    margin: 50px 0;
+    height: 50px;
+    font-family: 'Caveat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: none;
+}
+
+.search-form:active {
+    box-shadow: none;
+    background-color: #EFEFEF;
+}
+
+.search-form::placeholder {
+    font-family: 'Caveat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.filters {
+    display: none;
+    margin-top: 30px;
+}
+
+.category-filter {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/*
+===========================================
+Media
+===========================================
+*/
+@media (max-width: 1008px) {
+    #header {
+        padding: 10px 36px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 146px;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 123px;
+        line-height: 1;
+    }
+
+    h2.text-subtitle {
+        font-family: "Caveat", sans-serif;
+        margin-top: -100px;
+    }
+
+    h4 {
+        font-size: 70px;
+        line-height: 1.1;
+    }
+
+    p {
+        font-size: 60px;
+    }
+
+    #about_us p.color3 {
+        color: #000;
+    }
+
+    li,
+    a {
+        font-size: 14px;
+    }
+
+    .link {
+        padding: 10px 20px;
+        position: fixed;
+        left: -100%;
+        top: 510px;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        background-color: #fff;
+    }
+
+    .link img {
+        width: 84px;
+    }
+
+    .link.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(18px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-18px) rotate(-45deg);
+    }
+
+    .hamburger .bar {
+        width: 60px;
+        height: 6px;
+        margin: 12px auto;
+    }
+
+    .nav_links {
+        position: fixed;
+        left: -100%;
+        top: 190px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        background-color: #fff;
+    }
+
+    .nav-link {
+        font-size: 50px;
+    }
+
+    .nav_item {
+        margin: 8px 0;
+    }
+
+    .nav_links.active {
+        left: 0;
+    }
+
+    .primary-button,
+    .outline-button {
+        width: 830px;
+        height: 130px;
+        font-size: 60px;
+        margin-top: 50px;
+        border-radius: 90px;
+    }
+
+    .questcard-button {
+        width: 80%;
+        height: 38px;
+        font-size: 25px;
+    }
+
+    .logo_container img {
+        width: 300px;
+    }
+
+    .main_page {
+        height: calc(100vh - 190px);
+    }
 }
