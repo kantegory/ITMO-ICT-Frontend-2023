@@ -191,6 +191,27 @@ p.copy {
     font-size: 35px;
 }
 
+p.price {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 40px;
+}
+
+p.quest_description {
+    font-size: 25px;
+    font-weight: 400;
+    text-align: left;
+}
+
+p.filter {
+    font-size: 20px;
+}
+
+.filters p {
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
 .stats_number  {
     font-family: 'Bebas Neue Cyrillic', sans-serif;
     font-size: 40px;
@@ -536,6 +557,46 @@ Buttons
     text-decoration: underline;
     color: #fff;
 }
+.questcard-button {
+    height: 38px;
+    font-size: 25px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.button-filters {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: #000;
+    font-family: 'Caveat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.category-button {
+    border: 0;
+    background-color: #EFEFEF;
+    border-radius: 30px;
+    padding: 2px 15px;
+
+    color: #8B8B8B;
+    font-family: 'Caveat', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.category-button.chosen {
+    background-color: #F85A59;
+    color: #fff;
+}
 
 .primary-button:active {
     background-color: transparent;
@@ -569,15 +630,77 @@ Quests
 ===========================================
 */
 
+.quest-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    gap: 70px;
+}
+
 .quest-card {
-    width: 265px;
     background-color: #EFEFEF;
     border-radius: 30px;
+    filter: drop-shadow(0 4px 4px #0000002c);
+    margin-top: 25px;
+    margin-bottom: 100px;
+    height: 770px;
 }
 
 .quest-card img {
     width: 100%;
     border-radius: 30px 30px 0 0;
+}
+
+.quest-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 0 32px;
+}
+
+.hide {
+    display: none;
+}
+
+.search-form {
+    background-color: #EFEFEF;
+    background-image: url(../images/searchIcon.svg);
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    text-indent: 50px;
+    border: 0px;
+    border-radius: 30px;
+    margin: 50px 0;
+    height: 50px;
+    font-family: 'Caveat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: none;
+}
+
+.search-form:active {
+    box-shadow: none;
+    background-color: #EFEFEF;
+}
+
+.search-form::placeholder {
+    font-family: 'Caveat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.filters {
+    display: none;
+    margin-top: 30px;
+}
+
+.category-filter {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
 /*
@@ -738,7 +861,7 @@ Media
     .nav_links {
         position: fixed;
         left: -100%;
-        top: 200px;
+        top: 190px;
         gap: 20px;
         display: flex;
         flex-direction: column;
@@ -791,6 +914,12 @@ Media
         background-color: #FEBA00;
         border-radius: 90px;
         margin-top: 30px;
+    }
+
+    .questcard-button {
+        width: 80%;
+        height: 38px;
+        font-size: 25px;
     }
 
 
