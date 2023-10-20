@@ -19,7 +19,7 @@
 <body>
 <header id="header">
     <div class="logo_container">
-        <img src="./assets/images/logo.png" alt="">
+        <img src="assets/images/logo.png" alt="">
     </div>
     <nav id="nav-bar">
         <ul class="nav_links">
@@ -63,18 +63,17 @@
                         почту, к которой привязон бот в telegram</small>
                 </div>
 
-                <div class="d-flex flex-column align-content-center mb-lg-5">
-                    <button id="submit_btn" type="submit" class="btn align-content-center">
-                        Получить код
-                    </button>
-                    <small class="text-center form_clue_text">Найти почту, <span
-                            class="form_clue_text form_clue_highlighted">инструкция</span></small>
-                </div>
+                <button id="submit_btn" type="submit" class="btn m-auto">
+                    Получить код
+                </button>
+                <small class="text-center form_clue_text mb-lg-5">Найти почту, <span
+                        class="form_clue_text form_clue_highlighted">инструкция</span></small>
 
 
                 <div>
                     <p class="form_clue_text form_clue_text">Не зарегистрирован в боте?</p>
-                    <a href="#link_page" onclick="closeModal('enter_modal')" class="form_clue_text form_clue_highlighted">Пройди регистрацию</a>
+                    <a href="#link_page" onclick="closeModal('enter_modal')"
+                       class="form_clue_text form_clue_highlighted">Пройди регистрацию</a>
                 </div>
             </div>
         </form>
@@ -96,12 +95,18 @@
         </div>
         <form>
             <fieldset name='number-code' data-number-code-form>
-                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false" name='number-code-0' data-number-code-input='0' required autofocus />
-                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false" name='number-code-1' data-number-code-input='1' required />
-                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false" name='number-code-2' data-number-code-input='2' required />
-                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false" name='number-code-3' data-number-code-input='3' required />
-                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false" name='number-code-4' data-number-code-input='4' required />
-                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false" name='number-code-5' data-number-code-input='5' required />
+                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false"
+                       name='number-code-0' data-number-code-input='0' required autofocus/>
+                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false"
+                       name='number-code-1' data-number-code-input='1' required/>
+                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false"
+                       name='number-code-2' data-number-code-input='2' required/>
+                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false"
+                       name='number-code-3' data-number-code-input='3' required/>
+                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false"
+                       name='number-code-4' data-number-code-input='4' required/>
+                <input type="number" autocorrect="off" autocomplete="on" autocapitalize="none" spellcheck="false"
+                       name='number-code-5' data-number-code-input='5' required/>
             </fieldset>
         </form>
         <small class="text-center form_clue_text mb-lg-5">Код не пришел? <span

@@ -400,7 +400,7 @@ User account page
     display: flex;
     flex-direction: column;
     background-color: #EFEFEF;
-    border: 0px;
+    border: 0;
     gap: 12px;
 }
 
@@ -885,7 +885,7 @@ Media
     }
 
     .primary-button, .outline-button {
-        width: 80vw;
+        width: 830px;
         height: 130px;
         font-size: 60px;
         margin-top: 50px;
@@ -949,7 +949,7 @@ Media
         justify-content: center;
         gap: 20px;
         align-items: center;
-
+        border: 0px;
         /*padding-left: 22px;*/
     }
 

@@ -48,13 +48,13 @@ function filterList() {
     let displayedCount = 0;
     currentQuests.forEach((quest) => {
       let questDisplay = getComputedStyle(quest, null).display;
-      if (questDisplay != 'none') {
+      if (questDisplay !== 'none') {
         displayedCount = 1;
         item.style.display = '';
         return;
       }
     })
-    if (displayedCount == 0) {
+    if (displayedCount === 0) {
       item.style.display = 'none';
     }
   })
@@ -103,13 +103,13 @@ function displayFiltered() {
     let displayedCount = 0;
     currentQuests.forEach((quest) => {
       let questDisplay = getComputedStyle(quest, null).display;
-      if (questDisplay != 'none') {
+      if (questDisplay !== 'none') {
         displayedCount = 1;
         item.style.display = '';
         return;
       }
     })
-    if (displayedCount == 0) {
+    if (displayedCount === 0) {
       item.style.display = 'none';
     }
   })
