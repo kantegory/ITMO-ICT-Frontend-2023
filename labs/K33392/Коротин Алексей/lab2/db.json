@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "email": "sx12fx@gmail.com",
+      "password": "$2a$10$No12MW6R9NJItVo3Bt/RbO/buXlA3UAGbcFhzS8CeA1vsbXOalHg6",
+      "id": 1
+    },
+    {
+      "email": "admin@admin.com",
+      "password": "$2a$10$DVfT5fdwfICb7hlSRWLG7OXkVI9HX3Ns.70QRwwSEkNoFbGHL9C2a",
+      "id": 2
+    },
+    {
+      "email": "admin@admin.comm",
+      "password": "$2a$10$vBVRvJ3aAYoAEMy8klOv.e/YfRV3mZRKybiiYuIpKpTFLuZQ1ESf.",
+      "id": 3
+    }
+  ],
+  "playlists": [],
+  "tracks": []
+}
