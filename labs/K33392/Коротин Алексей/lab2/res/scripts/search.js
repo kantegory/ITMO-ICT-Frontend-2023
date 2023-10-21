@@ -63,3 +63,6 @@ searchBar.addEventListener("keypress", (e) => {
     searchFunction();
 });
 
+
+searchBar.value = "Bones";
+searchFunction();
