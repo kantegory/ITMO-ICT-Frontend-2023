@@ -7,7 +7,7 @@ const Artist = (artistName, genre, imageUrl) => {
             </div>
             <div class="card-body text-center">
                 <h5 class="card-title text-truncate">${artistName}</h5>
-                <h6 class="card-text text-truncate">${genre}<h6>
+                <div class="card-text text-truncate">${genre}</div>
             </div>
         </div>
     </div>
