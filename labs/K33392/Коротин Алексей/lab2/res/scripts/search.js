@@ -64,5 +64,15 @@ searchBar.addEventListener("keypress", (e) => {
 });
 
 
-searchBar.value = "Bones";
-searchFunction();
+const init = () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("q") !== null) {
+        searchBar.value = params.get("q");
+    } else {
+        searchBar.value = "Bones";
+    }
+    searchFunction();
+}
+
+init();
+

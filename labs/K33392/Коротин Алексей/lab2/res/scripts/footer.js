@@ -1,7 +1,11 @@
+import { likeTrack } from "./api.js";
+import { getPlaylists } from "./api.js";
+
 const iconPlay = document.getElementById("icon-play");
 const iconPause = document.getElementById("icon-pause");
 const iconPrevious = document.getElementById("icon-play-previous");
 const iconNext = document.getElementById("icon-play-next");
+const iconLike = document.getElementById("icon-like");
 const progressBar = document.getElementById("music-progress-bar");
 const iconRepeat = document.getElementById("icon-repeat");
 const volumeRange = document.getElementById("volume-range");
@@ -67,7 +71,24 @@ export const startAudio = () => {
         currentSong.audio.currentTime = 0;
         currentSong.audio.play();
     });
+
+    markLike();
 };
+
+const markLike = async () => {
+    const currentId = JSON.parse(window.localStorage.lastSearched)[window.localStorage.currentTrackIndex].id;
+
+    const liked = await getLikedPlaylist();
+
+    for (const track of liked.tracks) {
+        if (track.id == currentId) {
+            iconLike.classList.add("selected");
+            return;
+        }
+    }
+
+    iconLike.classList.remove("selected");
+}
 
 iconPlay.addEventListener("click", startAudio);
 
@@ -101,3 +122,38 @@ iconRepeat.addEventListener("click", () => {
     console.log(isRepeat);
     window.localStorage.repeat = JSON.stringify(!isRepeat);
 });
+
+
+const getLikedPlaylist = async () => {
+    let playlists = await getPlaylists(window.localStorage.accessToken);
+    
+    if (playlists.status === 304) { // not changed => use cached
+        playlists = JSON.parse(window.localStorage.playlists);
+    } else { // changed
+        window.localStorage.playlists = JSON.stringify(playlists.data);
+        playlists = playlists.data;
+    }
+
+    return playlists.find(p => p.name === "Liked");
+}
+
+
+const addToLiked = async () => {
+    const likedPlaylist = await getLikedPlaylist();
+    const track = JSON.parse(window.localStorage.lastSearched)[window.localStorage.currentTrackIndex];
+
+    for (let t of likedPlaylist.tracks) {
+        if (t.id === track.id) {
+            return;
+        }
+    }
+
+    iconLike.classList.add("selected");    
+
+    track.userId = JSON.parse(window.localStorage.user).id;
+    track.playlistId = likedPlaylist.id;
+
+    likeTrack(window.localStorage.accessToken, track);
+}
+
+iconLike.addEventListener("click", addToLiked);
