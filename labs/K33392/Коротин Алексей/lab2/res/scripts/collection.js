@@ -27,7 +27,6 @@ const playlistOnClick = async (playlistId) => {
     } else {
         result = result.data;
     }
-    debugger;
     const tracks = result.tracks.map((t) => {
         let minutes = Math.floor(t.duration / 60);
         let seconds = Math.floor(t.duration - minutes * 60);
