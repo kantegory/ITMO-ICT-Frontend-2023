@@ -210,8 +210,15 @@ p.quest_description {
     text-align: left;
 }
 
-p.filter {
+p.quest_description_modal {
     font-size: 20px;
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-weight: 400;
+    text-align: left;
+}
+
+p.quest_description_modal_category {
+    font-size: 50px;
 }
 
 .filters p {
@@ -830,6 +837,13 @@ Quest modal window
     border: 1px solid #888;
     width: 80%;
     gap: 40px;
+}
+
+.more_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 60px;
 }
 
 /*
