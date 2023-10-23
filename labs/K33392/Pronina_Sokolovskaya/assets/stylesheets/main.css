@@ -133,6 +133,10 @@ h3 {
     padding: 78px 0;
 }
 
+h3.no-padding {
+    padding: 0;
+}
+
 h4 {
     font-size: 50px;
 }
@@ -554,14 +558,36 @@ Buttons
     font-size: 30px;
     line-height: 50px;
     border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid #fff;
 }
 
 .outline-button:hover {
     background-color: transparent;
     text-decoration: underline;
     color: #fff;
+    border: 1px solid #fff;
 }
+
+.outline-button:active {
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+
 .questcard-button {
+    height: 38px;
+    font-size: 25px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.more-button {
     height: 38px;
     font-size: 25px;
     border-radius: 20px;
@@ -572,7 +598,10 @@ Buttons
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    color: #FEBA00;
+    border: 1px solid #FEBA00;
 }
+
 
 .button-filters {
     padding: 0;
@@ -775,6 +804,33 @@ Enter modal window
     align-items: center;
 }
 
+/*
+===========================================
+Quest modal window
+===========================================
+*/
+
+.quest-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+}
+
+.quest-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    gap: 40px;
+}
 
 /*
 ===========================================

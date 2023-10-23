@@ -45,6 +45,8 @@ function openEnterModal() {
         enter_modal.style.display = "none";
     }
 
+    enter_modal.onsubmit = e => e.preventDefault();
+
     window.onclick = function (event) {
         if (event.target === enter_modal) {
             enter_modal.style.display = "none";
