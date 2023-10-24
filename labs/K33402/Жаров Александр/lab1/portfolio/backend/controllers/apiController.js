@@ -3,7 +3,14 @@ const User = require("../models/user");
 class apiController {
   async getUsers(req, res) {
     try {
-      const users = await User.find();
+      let users = [];
+      console.log(req.body);
+      if (req.body.search) {
+        const searchRegex = new RegExp(req.body.search, "i");
+        users = await User.find({ name: searchRegex });
+      } else {
+        users = await User.find();
+      }
       res.send(users);
     } catch (error) {
       console.error(error);

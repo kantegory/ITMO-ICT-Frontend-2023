@@ -9,7 +9,8 @@ import { PrivateRoute } from "./components/PrivatRoute";
 import useAuth from "./hooks/useAuth";
 import useUser from "./hooks/useUser";
 import { deleteCookie, getCookie } from "./utils/cookiesUtils";
-import { fetchUser } from "./utils/fetchUser";
+import { fetchUser } from "./utils/fetchUtils";
+import Search from "./pages/Search";
 
 function App() {
   let location = useLocation();
@@ -24,13 +25,20 @@ function App() {
 
   useEffect(() => {
     const token = getCookie("token");
+    console.log(token);
 
     if (token && !isAuthenticated) {
       fetchUserCallback(token).then((user) => {
-        setAuth(true);
-        setUser(user);
-        navigate("/");
-        console.log(user);
+        if (user.message) {
+          setAuth(false);
+          setUser(null);
+          deleteCookie("token");
+        } else {
+          setAuth(true);
+          setUser(user);
+          navigate("/");
+          console.log(user);
+        }
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -54,6 +62,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route index element={<Profile />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/search/:query" element={<Search />} />
           </Route>
         </Route>
       </Routes>
