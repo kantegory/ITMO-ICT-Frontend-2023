@@ -25,7 +25,7 @@
         
       </div>
     </header>
-
+    
     <section class="rounded">
         <div class="container">
             <div class="row justify-s-a" id="capsuleSelector">
@@ -40,11 +40,28 @@
                   </select>
                 </div>
             </div>
-
+          
             <hr class="content-dividing-line rounded mt-3 mb-3"/>
 
             <div class="row" id="capsules">
-
+              <div class="col-xl-3 col-md-4 col-sm-6 mb-3">
+                <div class="card capsule-param">
+                    <div class="card-header">
+                        <img src="../img/pattern.jpg" alt="..." class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">${name}</h5>
+                        <p class="card-text mb-2">${description}</p>
+                        <form onsubmit="decapsulate(event)" class="justify-f-e" data-card-id="${id}" data-ownerUser-id="${userId}">
+                            <button type="submit" class="btn btn-my-main btn-block btn-sm">Открыть</button>
+                        </form>
+                    </div>
+                    <div class="card-footer justify-s-b">
+                        <p>${openDate}</p>
+                        <p>@${userName}</p>
+                    </div>
+                </div>
+            </div>
             </div>
     </section>
 
@@ -146,11 +163,11 @@
       </div>
     </div>
 
-    <div class="modal fade modal-my-config" id="openCapsuleFormModalId" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="openCapsuleFormModal" aria-hidden="true">
+    <div class="modal fade modal-my-config-light" id="openCapsuleFormModalId" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="openCapsuleFormModal" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Заголовок капсулы</h5>
+            <h5 class="modal-title" id="modalCapsuleOpenedTitle"></h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
           </div>
           <div class="modal-body" id="modalCapsuleOpenedBody">
@@ -191,5 +208,6 @@
     <script src="../js/DataScan.js"></script>
     <script src="../js/loadMain.js"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/capsuleAddOpen.js"></script>
 </body>
 </html>
