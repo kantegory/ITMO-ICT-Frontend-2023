@@ -210,15 +210,8 @@ p.quest_description {
     text-align: left;
 }
 
-p.quest_description_modal {
+p.filter {
     font-size: 20px;
-    font-family: 'Bebas Neue Cyrillic', sans-serif;
-    font-weight: 400;
-    text-align: left;
-}
-
-p.quest_description_modal_category {
-    font-size: 50px;
 }
 
 .filters p {
@@ -576,6 +569,11 @@ Buttons
     border: 1px solid #fff;
 }
 
+.primary-button:active {
+    background-color: transparent;
+    text-decoration: none;
+}
+
 .outline-button:active {
     border: 1px solid #fff;
     background-color: transparent;
@@ -878,7 +876,6 @@ Media
         width: 60px;
         height: 6px;
         margin: 12px auto;
-
     }
 
     .nav_links {
@@ -907,7 +904,8 @@ Media
         left: 0;
     }
 
-    .primary-button, .outline-button {
+    .primary-button,
+    .outline-button {
         width: 830px;
         height: 130px;
         font-size: 60px;
@@ -944,7 +942,6 @@ Media
         height: 38px;
         font-size: 25px;
     }
-
 
     .logo_container img {
         width: 300px;
