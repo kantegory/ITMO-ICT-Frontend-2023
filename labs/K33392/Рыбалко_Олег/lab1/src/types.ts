@@ -11,3 +11,10 @@ export type UserDataType = {
   bio: string | undefined
 }
 
+export type SignUpDataType = {
+  email: string
+  emailVisibility: boolean
+  username: string
+  password: string
+  passwordConfirm: string
+}
