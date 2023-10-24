@@ -22,8 +22,8 @@ export function SignUpLayout() {
   const signUp = useCallback(() => {
     pb.collection('users')
       .create(userData)
-      .then(() => {
-        store.dispatch(loginAction(userData))
+      .then((record) => {
+        store.dispatch(loginAction({ ...userData, id: record.id }))
         navigate(`/profile/${userData.username}`)
       })
       .catch((err) => {

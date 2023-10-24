@@ -24,8 +24,8 @@ export function SignInLayout() {
   const signIn = useCallback(() => {
     pb.collection('users')
       .authWithPassword(userData.username, userData.password)
-      .then(() => {
-        store.dispatch(loginAction(userData))
+      .then((model) => {
+        store.dispatch(loginAction({ ...userData, id: model.record.id }))
         navigate(`/profile/${userData.username}`)
       })
       .catch(() => alert('failed to log in. check your credentials'))
