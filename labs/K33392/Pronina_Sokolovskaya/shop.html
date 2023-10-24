@@ -74,7 +74,7 @@
             <div class="col-xl-9 col-md-12 col-sm-12">
                 <h4 class="color2">Фильмы и сериалы</h4>
                 <div class="quest-group">
-                    <div class="quest-card cat-art">
+                    <div class="quest-card cat-art" id="tjdqk151ovrx7up">
                         <img src="assets/images/questimg1.jpg" alt="">
                         <div class="quest-content">
                             <p class="price text-center">990 &#8381;</p>
@@ -90,37 +90,9 @@
                                 <p class="color3 quest_description">2.5 часа</p>
                             </div>
 
-                            <button type="button"
+                            <button type="button" onclick=addToPurchased(this)
                                     class="btn btn-primary primary-button questcard-button">Купить
                             </button>
-                            <button type="button" id="modalbtn1"
-                                    class="outline-button more-button">Подробнее
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="modal quest-modal" id="modal1">
-                        <div class="modal-content quest-modal-content">
-                            <span class="close">&times</span>
-                            <h3 class="text-center no-padding">Восьмиклассница</h3>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-12 col-sm-12">
-                                        <p>blablabla blbalbalblbalblba lbalb albalbalba lbalablab labalb lbla balbala balba lbalab labla balba lablablabalbalb albal ablab laba lbal ablabalbalabl abalbal ablb al ablabal balbal abla</p>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12 more_info">
-                                        <div class="category">
-                                            <p class="text-black quest_description_modal filter text-center">Категория:</p>
-                                            <p class="color2 quest_description_modal_category">В мире искусства</p>
-                                        </div>
-                                        <div class="duration">
-                                            <p class="text-black quest_description_modal filter text-center">Время в пути:</p>
-                                            <p class="color2 quest_description_modal_category">2.5 часа</p>
-                                        </div>
-                                        <p class="price text-center">990 &#8381;</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -422,7 +394,7 @@
 </footer>
 
 <script src="./script.js"></script>
-<script src="questinfomodal.js"></script>
+<script src="addToPurchased.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
