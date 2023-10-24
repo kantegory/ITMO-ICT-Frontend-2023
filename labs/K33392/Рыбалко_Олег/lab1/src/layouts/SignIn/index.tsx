@@ -5,6 +5,7 @@ import { useState, useCallback } from 'react'
 import styles from './SignIn.module.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
+import { pb } from '@/constants'
 
 type UserData = {
   username: string
@@ -21,8 +22,13 @@ export function SignInLayout() {
   })
 
   const signIn = useCallback(() => {
-    store.dispatch(loginAction(userData))
-    navigate(`/profile/${userData.username}`)
+    pb.collection('users')
+      .authWithPassword(userData.username, userData.password)
+      .then(() => {
+        store.dispatch(loginAction(userData))
+        navigate(`/profile/${userData.username}`)
+      })
+      .catch(() => alert('failed to log in. check your credentials'))
   }, [userData, navigate])
 
   return (
