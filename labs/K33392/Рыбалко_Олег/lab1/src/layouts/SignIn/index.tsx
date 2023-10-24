@@ -3,7 +3,7 @@ import store from '@/store'
 import { loginAction } from '@/store/slices/auth'
 import { useState, useCallback } from 'react'
 import styles from './SignIn.module.scss'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 
 type UserData = {
@@ -62,13 +62,9 @@ export function SignInLayout() {
         <Button variant="primary" size="lg" className="w-100" onClick={signIn}>
           {t('signinButton')}
         </Button>
-        <Button
-          variant="link"
-          onClick={() => navigate('/signup')}
-          className={styles.createAccountButton}
-        >
+        <Link to="/signup" className={styles.createAccountButton}>
           {t('createAccountButton')}
-        </Button>
+        </Link>
       </form>
     </div>
   )

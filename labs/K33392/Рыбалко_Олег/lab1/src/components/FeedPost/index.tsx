@@ -1,20 +1,17 @@
 import { Post } from '@/components/Post'
 import { PostType } from '@/types'
-import { Button } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './FeedPost.module.scss'
 
 export function FeedPost({ post }: { post: PostType }) {
-  const navigate = useNavigate()
   return (
     <div className={styles.post}>
-      <Button
-        variant="link"
+      <Link
+        to={`/profile/${post.authorUsername}`}
         className={styles.authorButton}
-        onClick={() => navigate(`/profile/${post.authorUsername}`)}
       >
         @{post.authorUsername}
-      </Button>
+      </Link>
       <Post post={post} showDeleteButton={false} />
       <hr />
     </div>

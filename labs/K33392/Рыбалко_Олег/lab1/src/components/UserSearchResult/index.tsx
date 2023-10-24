@@ -1,10 +1,7 @@
-import { Button } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './UserSearchResult.module.scss'
 
 export function UserSearchResult({ username }: { username: string }) {
-  const navigate = useNavigate()
-
   return (
     <div>
       <img
@@ -12,13 +9,7 @@ export function UserSearchResult({ username }: { username: string }) {
         alt="profile image"
         className={styles.profileImage}
       />
-      <Button
-        variant="link"
-        size="lg"
-        onClick={() => navigate(`/profile/${username}`)}
-      >
-        @{username}
-      </Button>
+      <Link to={`/profile/${username}`}>@{username}</Link>
       <hr />
     </div>
   )
