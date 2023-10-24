@@ -23,6 +23,7 @@ function parseCategory(category) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    console.log("DOMContentLoaded");
     fetch("http://127.0.0.1:8090/api/collections/quest_card/records").then(Response => Response.json()).then(data => {
          
         let questsTypes = new Map();
@@ -103,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 buyButton.type = "button";
                 buyButton.className = "btn btn-primary primary-button questcard-button";
                 buyButton.textContent = "Купить";
+                addToPurchased(buyButton, parseJson(quest.id));
             })
         })
     })
