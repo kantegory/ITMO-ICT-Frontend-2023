@@ -97,6 +97,17 @@ Navigation
     color: #FEBA00;
 }
 
+.nav_links_column {
+    padding-top: 99px;
+    padding-left: 67px;
+    gap: 92px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    background-color: #fff;
+}
+
 /*
 ===========================================
 Typography
@@ -120,6 +131,10 @@ h2.text-subtitle {
 h3 {
     font-size: 80px;
     padding: 78px 0;
+}
+
+h3.no-padding {
+    padding: 0;
 }
 
 h4 {
@@ -160,6 +175,11 @@ p .highlight {
     margin: 40px 0;
 }
 
+.greeting_card p {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-size: 60px;
+}
+
 .footer_link {
     font-family: 'Caveat', sans-serif;
     font-size: 30px;
@@ -190,8 +210,15 @@ p.quest_description {
     text-align: left;
 }
 
-p.filter {
+p.quest_description_modal {
     font-size: 20px;
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-weight: 400;
+    text-align: left;
+}
+
+p.quest_description_modal_category {
+    font-size: 50px;
 }
 
 .filters p {
@@ -199,6 +226,64 @@ p.filter {
     text-align: left;
     margin-bottom: 15px;
 }
+
+.stats_number  {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 40px;
+}
+.stats_desc  {
+    font-family: 'Caveat', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.user_quest_text {
+    font-family: 'Caveat', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 37px;
+    padding-top: 6px;
+    color: #292929;
+}
+
+.user_quest_name {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #8E8E8E;
+    line-height: 1.5;
+}
+
+.form_title {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+.form_label {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.form_clue_text {
+    font-family: "Caveat", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #8E8E8E;
+}
+
+.form_clue_highlighted {
+    color: #F85A59;
+    text-decoration: underline;
+}
+
+.code_label {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
 
 /*
 ===========================================
@@ -226,6 +311,20 @@ Colors
     background-color: #F85A59;
 }
 
+.bg-color3 {
+    background-color: #FE8F67
+}
+
+.bg-color4 {
+    background-color: #FEBCA4;
+}
+
+.bg-color5 {
+    background-color: #EFEFEF;
+}
+
+
+
 /*
 ===========================================
 Main page
@@ -247,6 +346,102 @@ Main page
 
 .moto {
     padding-top: 65px;
+}
+
+/*
+===========================================
+User account page
+===========================================
+*/
+
+.user_account_body {
+    display: flex;
+    flex-direction: column;
+}
+.greeting_card {
+    border: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 68px;
+    justify-content: flex-start;
+    width: 100%;
+    height: 199px;
+    margin-top: 97px;
+    border-radius: 24px
+}
+
+.user_stats {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 113px;
+}
+
+.stats_item {
+    width: 300px;
+    height: 119px;
+    border-radius: 20px;
+    /*margin-top: 113px;*/
+    display: flex;
+    flex-direction: row;;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 22px;
+}
+
+.stats_item img {
+    width: 79px;
+    height: 79px;
+}
+
+.stats_text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+
+
+.user_quest_item img {
+    height: 127px;
+    width: 127px;
+    border-radius: 30px;
+}
+
+.user_quest_item {
+    display: flex;
+    flex-direction: column;
+    background-color: #EFEFEF;
+    border: 0;
+    gap: 12px;
+}
+
+.user_quests_items {
+    display: flex;
+    flex-direction: row;
+    gap: 23px;
+    padding-left: 37px;
+    padding-top: 5px;
+}
+
+.user_quests {
+    width: 100%;
+    height: 251px;
+    border-radius: 24px;
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 6px;
+    gap:5px;
+    border: 0px;
+}
+
+.user_account_body {
+    padding-bottom: 150px;
 }
 
 /*
@@ -370,17 +565,20 @@ Buttons
     font-size: 30px;
     line-height: 50px;
     border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid #fff;
 }
 
 .outline-button:hover {
     background-color: transparent;
     text-decoration: underline;
     color: #fff;
+    border: 1px solid #fff;
 }
 
-.primary-button:active {
+.outline-button:active {
+    border: 1px solid #fff;
     background-color: transparent;
-    text-decoration: none;
 }
 
 .questcard-button {
@@ -388,7 +586,7 @@ Buttons
     font-size: 25px;
     border-radius: 20px;
     position: absolute;
-    bottom: 14px;
+    bottom: 20px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -422,6 +620,32 @@ Buttons
 .category-button.chosen {
     background-color: #F85A59;
     color: #fff;
+}
+
+.primary-button:active {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+#submit_btn {
+    width: 80%;
+    height: 10%;
+    font-size: 20px;
+    border: 0px;
+    padding: 10px 50px;
+    background-color: #FEBA00;
+    border-radius: 90px;
+    margin-top: 30px;
+}
+#submit_code_btn {
+    width: 80%;
+    height: 10%;
+    font-size: 20px;
+    border: 0px;
+    padding: 10px 50px;
+    background-color: #FEBA00;
+    border-radius: 90px;
+    margin-top: 30px;
 }
 
 /*
@@ -501,6 +725,74 @@ Quests
     align-items: flex-start;
     gap: 10px;
     margin-bottom: 30px;
+}
+
+/*
+===========================================
+Enter modal window
+===========================================
+*/
+
+
+.enter_form {
+    display: flex;
+    flex-direction:  column;
+    justify-content: space-between;
+    /*align-content: center;*/
+    align-items: flex-start;
+}
+
+
+.input_email {
+    width: 60vw;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+
+}
+
+/* The Modal (background) */
+.enter_modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.enter_modal_content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*
@@ -586,6 +878,7 @@ Media
         width: 60px;
         height: 6px;
         margin: 12px auto;
+
     }
 
     .nav_links {
@@ -599,6 +892,7 @@ Media
         text-align: center;
         transition: 0.3s;
         background-color: #fff;
+        z-index: 40;
     }
 
     .nav-link {
@@ -613,13 +907,36 @@ Media
         left: 0;
     }
 
-    .primary-button,
-    .outline-button {
+    .primary-button, .outline-button {
         width: 830px;
         height: 130px;
         font-size: 60px;
         margin-top: 50px;
         border-radius: 90px;
+    }
+
+    #submit_btn {
+        width: 80%;
+        height: 10%;
+        font-size: 20px;
+        color: #fff;
+        border: 0px;
+        padding: 10px 0;
+        background-color: #FEBA00;
+        border-radius: 90px;
+        margin-top: 30px;
+    }
+
+    #submit_code_btn {
+        width: 80%;
+        height: 10%;
+        font-size: 20px;
+        color: #fff;
+        border: 0px;
+        padding: 10px 0;
+        background-color: #FEBA00;
+        border-radius: 90px;
+        margin-top: 30px;
     }
 
     .questcard-button {
@@ -628,6 +945,7 @@ Media
         font-size: 25px;
     }
 
+
     .logo_container img {
         width: 300px;
     }
@@ -635,4 +953,120 @@ Media
     .main_page {
         height: calc(100vh - 190px);
     }
+
+    .user_stats {
+        margin-top: 70px;
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .stats_item {
+        width: 95%;
+        height: 130px;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        border: 0px;
+        /*padding-left: 22px;*/
+    }
+
+    .stats_item img {
+        width: 79px;
+        height: 79px;
+    }
+
+    .stats_text {
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+/*
+===========================================
+Code input modal window
+===========================================
+*/
+
+.code_input_modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.code_input_modal_content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+
+
+form {
+    border: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 0;
+}
+
+input[data-number-code-input] + input[data-number-code-input] {
+    margin-left: 0.9rem;
+}
+
+input[data-number-code-input] {
+    width: 2.8rem;
+    height: 3rem;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #d6d6d6;
+    border-radius: 0.2rem;
+    color: #3c3c3c;
+    font-weight: 500;
+}
+
+input[data-number-code-input]:focus {
+    outline: none !important;
+    border:1px solid #2d8cf0;
+    box-shadow: 0 0 3px 2px #bddcfc;
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[data-number-code-input]::-webkit-outer-spin-button,
+input[data-number-code-input]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[data-number-code-input] {
+    -moz-appearance: textfield;
 }
