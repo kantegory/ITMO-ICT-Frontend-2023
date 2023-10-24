@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import styles from './Profile.module.scss'
-import { Post, PostType } from '@/components/Post'
+import { Post } from '@/components/Post'
+import { PostType, UserDataType } from '@/types'
 import { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/store'
@@ -11,25 +12,18 @@ import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 
-type UserData = {
-  username: string | undefined
-  bio: string | undefined
-}
-
-type NewPostData = {
-  title: string
-  body: string
-}
-
 export function ProfileLayout() {
   const { t } = useTranslation('profile')
   const { username } = useParams<{ username: string }>()
-  const [userData, setUserData] = useState<UserData>({} as UserData)
+  const [userData, setUserData] = useState<UserDataType>({} as UserDataType)
 
   const authStore = useSelector<RootState>((state) => state.auth) as AuthState
   const [isAdmin, setAdmin] = useState(false)
   const [posts, setPosts] = useState<PostType[]>([])
-  const [newPost, setNewPost] = useState<NewPostData>({ body: '', title: '' })
+  const [newPost, setNewPost] = useState<{ title: string; body: string }>({
+    body: '',
+    title: '',
+  })
 
   const [showNewPostModal, setShowNewPostModal] = useState(false)
   const [isFollowed, setFollowed] = useState(false)

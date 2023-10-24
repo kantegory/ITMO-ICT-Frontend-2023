@@ -6,14 +6,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons'
 import { useState } from 'react'
-
-export type PostType = {
-  id: string
-  title: string
-  body: string
-  authorUsername: string
-  likesCount: number
-}
+import { PostType } from '@/types'
 
 export function Post({
   className,

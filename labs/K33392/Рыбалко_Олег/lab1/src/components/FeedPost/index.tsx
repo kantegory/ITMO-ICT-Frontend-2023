@@ -1,4 +1,5 @@
-import { Post, PostType } from '@/components/Post'
+import { Post } from '@/components/Post'
+import { PostType } from '@/types'
 import { Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import styles from './FeedPost.module.scss'
