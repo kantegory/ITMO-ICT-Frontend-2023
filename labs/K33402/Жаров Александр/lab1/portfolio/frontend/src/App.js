@@ -2,6 +2,7 @@ import "./App.css";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Account from "./pages/Account";
 import Profile from "./pages/Profile";
+import UserPage from "./pages/UserPage";
 import Registration from "./pages/Registration";
 import Header from "./components/Header";
 import React, { useEffect } from "react";
@@ -9,7 +10,7 @@ import { PrivateRoute } from "./components/PrivatRoute";
 import useAuth from "./hooks/useAuth";
 import useUser from "./hooks/useUser";
 import { deleteCookie, getCookie } from "./utils/cookiesUtils";
-import { fetchUser } from "./utils/fetchUtils";
+import { fetchAuthUser } from "./utils/fetchUtils";
 import Search from "./pages/Search";
 
 function App() {
@@ -21,11 +22,13 @@ function App() {
   const { isAuthenticated, setAuth } = useAuth();
   const { setUser } = useUser();
 
-  const fetchUserCallback = React.useCallback((token) => fetchUser(token), []);
+  const fetchUserCallback = React.useCallback(
+    (token) => fetchAuthUser(token),
+    []
+  );
 
   useEffect(() => {
     const token = getCookie("token");
-    console.log(token);
 
     if (token && !isAuthenticated) {
       fetchUserCallback(token).then((user) => {
@@ -37,7 +40,6 @@ function App() {
           setAuth(true);
           setUser(user);
           navigate("/");
-          console.log(user);
         }
       });
     }
@@ -63,6 +65,7 @@ function App() {
             <Route index element={<Profile />} />
             <Route path="/account" element={<Account />} />
             <Route path="/search/:query" element={<Search />} />
+            <Route path="/user/:id" element={<UserPage />} />
           </Route>
         </Route>
       </Routes>

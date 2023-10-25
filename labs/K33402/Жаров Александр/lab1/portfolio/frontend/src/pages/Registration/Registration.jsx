@@ -8,7 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useUser from "../../hooks/useUser";
 import { setCookie } from "../../utils/cookiesUtils";
-import { fetchUser } from "../../utils/fetchUtils";
+import { fetchAuthUser } from "../../utils/fetchUtils";
 
 function Registration() {
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ function Registration() {
           console.log(data.token);
           setCookie("token", JSON.stringify(data.token));
 
-          fetchUser(data.token).then((user) => {
+          fetchAuthUser(data.token).then((user) => {
             setUser(user);
             setAuth(true);
             navigate("/");
@@ -71,7 +71,7 @@ function Registration() {
       .then((data) => {
         if (data.token) {
           setCookie("token", JSON.stringify(data.token));
-          fetchUser(data.token).then((user) => {
+          fetchAuthUser(data.token).then((user) => {
             setUser(user);
             setAuth(true);
             navigate("/");

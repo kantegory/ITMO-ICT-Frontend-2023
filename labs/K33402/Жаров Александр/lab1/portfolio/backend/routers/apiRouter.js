@@ -5,8 +5,10 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 apiRouter.post("/get-users", authMiddleware, apiController.getUsers);
 
-apiRouter.get("/get-user", authMiddleware, apiController.getUserById);
+apiRouter.get("/get-user", authMiddleware, apiController.getUser);
 
 apiRouter.post("/update-user", authMiddleware, apiController.updateUser);
+
+apiRouter.post("/get-user-by-id", authMiddleware, apiController.getUserById);
 
 module.exports = apiRouter;

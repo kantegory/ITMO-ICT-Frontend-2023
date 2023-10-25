@@ -8,28 +8,33 @@ import UserCell from "../../components/UserCell";
 
 function Search() {
   const { query } = useParams();
+  const sliceQuery = query.slice(1);
   const token = getCookie("token");
 
   const [data, setData] = useState([]);
 
-  const searchLoad = React.useCallback((token) => fetchUsers(token), []);
+  const searchLoad = React.useCallback(
+    (token, query) => fetchUsers(token, query),
+    []
+  );
 
   useEffect(() => {
-    console.log("make search", token);
-    searchLoad(token, query).then((res) => {
+    searchLoad(token, sliceQuery).then((res) => {
       setData(res);
     });
-  }, [searchLoad, token, query]);
+  }, [searchLoad, token, sliceQuery]);
 
   return (
     <ListGroup>
-      {data &&
+      {data.length === 0 ? (
+        <>Ничего не найдено</>
+      ) : (
         data.map((element, index) => (
-          // <UserCell key={index} user={element} />
           <ListGroup.Item key={index}>
             <UserCell user={element} />
           </ListGroup.Item>
-        ))}
+        ))
+      )}
     </ListGroup>
   );
 }

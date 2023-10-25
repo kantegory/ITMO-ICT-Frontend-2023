@@ -20,6 +20,16 @@ class apiController {
 
   async getUserById(req, res) {
     try {
+      const user = await User.findById(req.body.id);
+      res.send(user);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Internal Server Error");
+    }
+  }
+
+  async getUser(req, res) {
+    try {
       const user = await User.findById(req.user.id);
       res.send(user);
     } catch (error) {
