@@ -46,7 +46,8 @@ export function ProfileLayout() {
           id: record.id,
         })
       })
-      .catch(() => navigate('/notfound'))
+      .catch((err) => console.log(err))
+    // .catch(() => navigate('/notfound'))
   }, [username, navigate])
 
   useEffect(() => {

@@ -24,7 +24,7 @@ export function SignUpLayout() {
       .create(userData)
       .then((record) => {
         store.dispatch(loginAction({ ...userData, id: record.id }))
-        navigate(`/profile/${userData.username}`)
+        navigate(`/signin`)
       })
       .catch((err) => {
         console.log(err)
