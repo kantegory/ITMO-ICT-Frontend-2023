@@ -1,6 +1,7 @@
 {
   "global": {
-    "title": "Mumblr"
+    "title": "Mumblr",
+    "notFound": "Not Found"
   },
   "signup": {
     "signupButton": "Sign Up",
