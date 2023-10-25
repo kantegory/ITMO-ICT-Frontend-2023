@@ -11,6 +11,8 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
+import { pb } from '@/constants'
+import { useNavigate } from 'react-router-dom'
 
 export function ProfileLayout() {
   const { t } = useTranslation('profile')
@@ -20,56 +22,59 @@ export function ProfileLayout() {
   const authStore = useSelector<RootState>((state) => state.auth) as AuthState
   const [isAdmin, setAdmin] = useState(false)
   const [posts, setPosts] = useState<PostType[]>([])
-  const [newPost, setNewPost] = useState<{ title: string; body: string }>({
+  const [newPost, setNewPost] = useState<{
+    title: string
+    body: string
+  }>({
     body: '',
     title: '',
   })
+  const navigate = useNavigate()
 
   const [showNewPostModal, setShowNewPostModal] = useState(false)
   const [isFollowed, setFollowed] = useState(false)
 
-  // TODO: fetch user data
   useEffect(() => {
-    setUserData({
-      username: username!,
-      bio: 'Frontend develop from Saint-P',
-    })
-  }, [username])
+    pb.collection('users')
+      .getFirstListItem(`username="${username}"`)
+      .then((record) => {
+        setUserData({
+          username: record.username,
+          bio: record.bio,
+          id: record.id,
+        })
+      })
+      .catch(() => navigate('/notfound'))
+  }, [username, navigate])
 
   useEffect(() => {
     setAdmin(authStore.username === username)
   }, [authStore, username])
 
-  // TODO: fetch posts
   useEffect(() => {
-    setPosts([
-      {
-        id: '1',
-        title: 'MARS',
-        body: `Mars is one of the most explored bodies in our solar system, and it's the only planet where we've sent rovers to roam the alien landscape. NASA missions have found lots of evidence that Mars was much wetter and warmer, with a thicker atmosphere, billions of years ago.
-
-        Mars was named by the Romans for their god of war because its reddish color was reminiscent of blood. The Egyptians called it "Her Desher," meaning "the red one."
-        
-        Even today, it is frequently called the "Red Planet" because iron minerals in the Martian dirt oxidize, or rust, causing the surface to look red.`,
-        authorUsername: 'rybalkooleg',
-        likesCount: 100,
-      },
-      {
-        id: '2',
-        title: 'MERCURY',
-        body: `Mercury—the smallest planet in our solar system and nearest to the Sun—is only slightly larger than Earth's Moon. Its surface is covered in tens of thousands of impact craters.
-
-        From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as 11 times brighter.
-        
-        Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system— that title belongs to nearby Venus, thanks to its dense atmosphere. But Mercury is the fastest planet, zipping around the Sun every 88 Earth days. Mercury is appropriately named for the swiftest of the ancient Roman gods.`,
-        authorUsername: 'rybalkooleg',
-        likesCount: 158,
-      },
-    ])
-  }, [])
+    pb.collection('posts')
+      .getFullList({
+        filter: `author="${userData.id}"`,
+        expand: 'author',
+        sort: '-created',
+      })
+      .then((records) =>
+        setPosts(
+          records.map((r) => {
+            return {
+              id: r.id,
+              title: r.title,
+              body: r.body,
+              authorUsername: r.expand!.author.username,
+              likesCount: r.likesCount,
+            }
+          })
+        )
+      )
+  }, [userData])
 
   const publishNewPost = useCallback(() => {
-    // TODO: use api
+    pb.collection('posts').create()
     setPosts([
       {
         id: 'test',
@@ -124,6 +129,7 @@ export function ProfileLayout() {
                 post={post}
                 showDeleteButton={isAdmin}
                 onDelete={deletePost}
+                posts={posts}
               />
             </div>
           ))}
