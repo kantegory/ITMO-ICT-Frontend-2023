@@ -8,7 +8,6 @@ import { PostType } from '@/types'
 import { FeedPost } from '@/components/FeedPost'
 import { pb } from '@/constants'
 import { useSelector } from 'react-redux'
-import { RecordModel } from 'pocketbase'
 
 enum Tab {
   following,
