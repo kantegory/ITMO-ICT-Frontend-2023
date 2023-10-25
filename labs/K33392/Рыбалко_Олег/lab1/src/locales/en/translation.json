@@ -27,7 +27,8 @@
     "newPostModalTitleLabel": "Title",
     "newPostModalBodyLabel": "Body",
     "followButton": "Follow",
-    "unfollowButton": "Unfollow"
+    "unfollowButton": "Unfollow",
+    "saveButton": "Save"
   },
   "navbar": {
     "feed": "Feed",

@@ -7,12 +7,12 @@ import { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/store'
 import { AuthState } from '@/store/slices/auth'
-import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
-import Form from 'react-bootstrap/Form'
+import { Button, Modal, Form } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import { pb } from '@/constants'
 import { useNavigate } from 'react-router-dom'
+import { faPencil } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export function ProfileLayout() {
   const { t } = useTranslation('profile')
@@ -29,10 +29,12 @@ export function ProfileLayout() {
     body: '',
     title: '',
   })
+  const [newBio, setNewBio] = useState<string>()
   const navigate = useNavigate()
 
   const [showNewPostModal, setShowNewPostModal] = useState(false)
   const [isFollowed, setFollowed] = useState(false)
+  const [isEditingBio, setEditingBio] = useState(false)
 
   useEffect(() => {
     pb.collection('users')
@@ -46,6 +48,10 @@ export function ProfileLayout() {
       })
       .catch(() => navigate('/notfound'))
   }, [username, navigate])
+
+  useEffect(() => {
+    setNewBio(userData.bio)
+  }, [userData])
 
   useEffect(() => {
     setAdmin(authStore.username === username)
@@ -104,6 +110,16 @@ export function ProfileLayout() {
       .catch(() => alert('failed to delete the post'))
   }
 
+  const updateBio = useCallback(() => {
+    pb.collection('users')
+      .update(authStore.id, { bio: newBio })
+      .then((record) => {
+        setUserData({ ...userData, bio: record.bio })
+        setEditingBio(false)
+      })
+      .catch(() => alert('failed to save'))
+  }, [userData, authStore, newBio])
+
   return (
     <>
       <Container className={styles.container}>
@@ -114,9 +130,26 @@ export function ProfileLayout() {
             alt="Profile image"
           />
           <h1 className="h3 mt-3 fw-normal">@{userData.username}</h1>
-          <h1 className="h5 blockquote-footer mt-2 text-muted">
-            {userData.bio}
-          </h1>
+          <div className={styles.bioBlock}>
+            {!isEditingBio && (
+              <h1 className="h5 blockquote-footer mt-2 text-muted">
+                {userData.bio}
+              </h1>
+            )}
+            {isEditingBio && (
+              <input
+                type="text"
+                value={newBio}
+                onChange={(e) => setNewBio(e.currentTarget.value)}
+              />
+            )}
+            {isEditingBio && (
+              <Button onClick={updateBio}>{t('saveButton')}</Button>
+            )}
+            <Button variant="link" onClick={() => setEditingBio(!isEditingBio)}>
+              <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
+            </Button>
+          </div>
         </div>
         <div className={styles.postsHeader}>
           <h1 className="h3">{t('postsHeader')}</h1>
