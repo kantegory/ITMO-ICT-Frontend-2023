@@ -74,18 +74,27 @@ export function ProfileLayout() {
   }, [userData])
 
   const publishNewPost = useCallback(() => {
-    setPosts([
-      {
-        id: 'test',
+    pb.collection('posts')
+      .create({
         title: newPost.title,
         body: newPost.body,
-        authorUsername: authStore.username,
-        likesCount: 0,
-      },
-      ...posts,
-    ])
-    setShowNewPostModal(false)
-    setNewPost({ title: '', body: '' })
+        author: authStore.id,
+      })
+      .then((record) => {
+        setPosts([
+          {
+            id: record.id,
+            title: record.title,
+            body: record.body,
+            authorUsername: authStore.username,
+            likesCount: 0,
+          },
+          ...posts,
+        ])
+        setShowNewPostModal(false)
+        setNewPost({ title: '', body: '' })
+      })
+      .catch(() => alert('failed to publish'))
   }, [newPost, authStore, posts])
 
   const deletePost = (post: PostType) => {
