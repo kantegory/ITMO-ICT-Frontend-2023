@@ -80,6 +80,14 @@ export function ProfileLayout() {
       )
   }, [userData])
 
+  useEffect(() => {
+    pb.collection('follows')
+      .getFirstListItem(
+        `follower="${authStore.id}" && followee="${userData.id}"`
+      )
+      .then(() => setFollowed(true))
+  }, [authStore, userData])
+
   const publishNewPost = useCallback(() => {
     pb.collection('posts')
       .create({
@@ -121,6 +129,26 @@ export function ProfileLayout() {
       .catch(() => alert('failed to save'))
   }, [userData, authStore, newBio])
 
+  const followUser = useCallback(() => {
+    if (isFollowed) {
+      pb.collection('follows')
+        .getFirstListItem(
+          `follower="${authStore.id}" && followee="${userData.id}"`
+        )
+        .then((record) => {
+          pb.collection('follows').delete(record.id)
+          setFollowed(false)
+        })
+    } else {
+      pb.collection('follows')
+        .create({
+          follower: authStore.id,
+          followee: userData.id,
+        })
+        .then(() => setFollowed(true))
+    }
+  }, [isFollowed, authStore, userData])
+
   return (
     <>
       <Container className={styles.container}>
@@ -160,7 +188,7 @@ export function ProfileLayout() {
             </Button>
           )}
           {!isAdmin && (
-            <Button variant="link" onClick={() => setFollowed(!isFollowed)}>
+            <Button variant="link" onClick={followUser}>
               {isFollowed ? t('unfollowButton') : t('followButton')}
             </Button>
           )}
