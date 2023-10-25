@@ -74,7 +74,6 @@ export function ProfileLayout() {
   }, [userData])
 
   const publishNewPost = useCallback(() => {
-    pb.collection('posts').create()
     setPosts([
       {
         id: 'test',
@@ -90,7 +89,10 @@ export function ProfileLayout() {
   }, [newPost, authStore, posts])
 
   const deletePost = (post: PostType) => {
-    setPosts(posts.filter((val) => val.id !== post.id))
+    pb.collection('posts')
+      .delete(post.id)
+      .then(() => setPosts(posts.filter((el) => el.id !== post.id)))
+      .catch(() => alert('failed to delete the post'))
   }
 
   return (
