@@ -656,6 +656,20 @@ Buttons
     color: #fff;
 }
 
+#submit_btn:hover, #submit_code_btn:hover {
+    text-decoration: underline;
+}
+
+#submit_btn:active, #submit_code_btn:active {
+    text-decoration: underline;
+}
+
+#submit_btn:focus, #submit_code_btn:focus {
+    background-color: #e9e8e8;
+    color: #8E8E8E;
+    text-decoration: underline;
+}
+
 /*
 ===========================================
 Quests

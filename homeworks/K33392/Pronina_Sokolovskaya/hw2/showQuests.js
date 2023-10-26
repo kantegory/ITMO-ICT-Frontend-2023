@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 let questImg = questCard.appendChild(document.createElement("img"));
                 questImg.src = parseJson(quest.picture);
+                questImg.alt = parseJson(quest.picture_alt_text)
 
                 let questContent = questCard.appendChild(document.createElement("div"));
                 questContent.className = "quest-content";
