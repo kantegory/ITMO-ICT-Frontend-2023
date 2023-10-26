@@ -592,10 +592,9 @@ Buttons
     border-radius: 20px;
     position: absolute;
     bottom: 20px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
+    /*right: 0;*/
+    /*margin-bottom: 50px;*/
+
     width: 80%;
 }
 
@@ -683,12 +682,16 @@ Quests
 }
 
 .quest-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #EFEFEF;
     border-radius: 30px;
     filter: drop-shadow(0 4px 4px #0000002c);
     margin-top: 25px;
     margin-bottom: 100px;
     height: 770px;
+    position: relative;
 }
 
 .quest-card img {
