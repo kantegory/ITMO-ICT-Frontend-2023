@@ -26,14 +26,17 @@ function Search() {
 
   return (
     <ListGroup>
+      <div>Результат поиска по запросу: {sliceQuery}</div>
       {data.length === 0 ? (
         <>Ничего не найдено</>
       ) : (
-        data.map((element, index) => (
-          <ListGroup.Item key={index}>
-            <UserCell user={element} />
-          </ListGroup.Item>
-        ))
+        <>
+          {data.map((element, index) => (
+            <ListGroup.Item key={index}>
+              <UserCell user={element} />
+            </ListGroup.Item>
+          ))}
+        </>
       )}
     </ListGroup>
   );

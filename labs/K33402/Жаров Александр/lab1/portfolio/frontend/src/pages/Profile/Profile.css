@@ -11,9 +11,3 @@
   gap: 12px;
 }
 
-.md-none{
-  display: flex;
-  @media (min-width: 768px) {
-    display: none;
-  }
-}

@@ -11,3 +11,7 @@
   max-width: 700px;
   padding: 20px 20px;
 }
+
+.error-massege {
+  color: red
+}

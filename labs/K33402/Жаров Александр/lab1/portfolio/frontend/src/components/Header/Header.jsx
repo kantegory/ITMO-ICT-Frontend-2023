@@ -7,22 +7,12 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
 import icon from "../../img/main-icon.svg";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import SearchCell from "../SearchCell";
 
 function Header() {
-  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    navigate(`/search/:${searchQuery}`);
-    console.log("Вы ищете:", searchQuery);
-  };
   return (
     <>
       <Navbar expand="md" className="body" data-bs-theme="dark" sticky="top">
@@ -45,19 +35,12 @@ function Header() {
                 Личный кабинет
               </Link>
             </Nav>
-            <Form className="md-block" onSubmit={handleSubmit}>
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-                value={searchQuery}
-                onChange={handleChange}
+            <div className="md-block">
+              <SearchCell
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
               />
-              <Button variant="outline-success" onClick={handleSubmit}>
-                Search
-              </Button>
-            </Form>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>

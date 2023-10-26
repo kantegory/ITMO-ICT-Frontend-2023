@@ -1,27 +1,28 @@
 import "./Profile.css";
+import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/esm/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
+import { useParams } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import AvatarImg from "../../img/avatar.jpg";
 import useUser from "../../hooks/useUser";
+import SearchCell from "../../components/SearchCell";
 
 function Profile() {
   const { user } = useUser();
+  const [searchQuery, setSearchQuery] = React.useState("");
   return (
     <>
       <Container className="main-container">
-        <Form className="md-none">
-          <Form.Control
-            type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
+        <div className="md-none">
+          <SearchCell
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
           />
-          <Button variant="outline-success">Search</Button>
-        </Form>
+        </div>
         <Row>
           <Col xs={5} sm={3} md={2}>
             <Avatar src={AvatarImg} size={100} />

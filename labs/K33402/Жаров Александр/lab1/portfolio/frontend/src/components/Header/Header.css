@@ -19,7 +19,6 @@
 }
 
 .md-block{
-  display: flex;
   @media (max-width: 767.9px) {
     display: none;
   }
