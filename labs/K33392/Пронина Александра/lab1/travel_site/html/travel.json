@@ -1,0 +1,22 @@
+[
+  {
+    "destination": "Париж, Франция",
+    "status": "upcoming",
+    "image": "https://example.com/paris.jpg"
+  },
+  {
+    "destination": "Лондон, Великобритания",
+    "status": "completed",
+    "image": "https://example.com/london.jpg"
+  },
+  {
+    "destination": "Токио, Япония",
+    "status": "ongoing",
+    "image": "https://example.com/tokyo.jpg"
+  },
+  {
+    "destination": "Рим, Италия",
+    "status": "postponed",
+    "image": "https://example.com/rome.jpg"
+  }
+]

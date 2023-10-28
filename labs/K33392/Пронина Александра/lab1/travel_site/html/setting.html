@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки профиля</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            margin-top: 20px;
+        }
+
+        body {
+            background-color: #000;
+            color: #ff6b6b;
+            text-align: center;
+            font-family: 'Creepster', cursive;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+<script src="../js/script.js" type="text/babel"></script>
+
+<script>
+    document.getElementById('profile-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        console.log(Имя: ${name});
+        console.log(Email: ${email});
+    });
+</script>
+</body>
+</html>
