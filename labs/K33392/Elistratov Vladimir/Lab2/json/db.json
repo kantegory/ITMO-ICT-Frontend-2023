@@ -2,120 +2,70 @@
   "users": [
     {
       "email": "123kek@gmail.com",
-      "password": "$2a$10$h6IMvrh82fhyOYjRaivPQOqOXwwiJ9ijdtIgmHJl.6.kbReeTq.Gu",
-      "firstName": "Володя",
-      "userName": "vova123",
-      "id": 1
+      "firstName": "Михаил__3",
+      "userName": "Misha1123_2",
+      "capCount": 1,
+      "lastUpdate": 1698329218715,
+      "id": 1,
+      "password": "$2a$10$JRGzc2ToKkzzIGFkwZ6HeeUZ3v7TdFwvDJqu7tFV4vw8hnKw1qmmu"
     },
     {
-      "email": "370259@niuitmo.ru",
-      "password": "$2a$10$XYtLoXdwsyMksVuG06TcdejUwtKeYVI6GVuZ4z9uco.8RkI87i1li",
-      "firstName": "Маша",
-      "userName": "mashaKek",
-      "id": 2
+      "email": "itmo@ru",
+      "firstName": "Володя",
+      "userName": "vova123_3",
+      "capCount": 1,
+      "lastUpdate": 1698410044085,
+      "id": 2,
+      "password": "$2a$10$NnPeOjOvdSSuWds7.ESRnuWiG4oU76MntSlzMJ9asOtWBK/1VkZ6O"
     }
   ],
   "capsules": [
     {
-      "name": "Климушин Антон Тимофеевичfweefsdfsdvfsdgf",
-      "openDate": "2023-10-05T15:22",
-      "description": "abacabababa",
-      "access": "on",
-      "text": "keeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeek ARK",
-      "files": "C:\\fakepath\\Elistratov_ST_HW_2.docx",
+      "name": "231231231231232",
+      "openDate": "2023-10-27T15:19",
+      "description": "12312312312312",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "userId": 1,
+      "userName": "Misha1123_2",
       "id": 1
     },
     {
-      "name": "Климушин Антон Тимофеевичfweefsdfsdvfsdgf",
-      "openDate": "2023-10-25T15:22",
-      "description": "312312312313",
-      "access": "on",
-      "text": "123213213213123213",
-      "files": "C:\\fakepath\\Elistratov_ST_HW_3.docx",
-      "id": 2
-    },
-    {
-      "name": "123123",
-      "openDate": "2023-10-30T20:35",
-      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "access": "on",
-      "text": "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv",
-      "files": "",
-      "id": 3
-    },
-    {
-      "name": "Климушин Антон Тимофеевиfsdfdsfsdfsd",
-      "openDate": "2023-10-03T03:22",
-      "description": "321321321313",
-      "access": "FFA",
+      "name": "12321321321",
+      "openDate": "2023-10-19T15:21",
+      "description": "123213213213",
+      "access": "my",
       "text": "",
       "files": "",
+      "": "",
+      "userId": 1,
+      "userName": "Misha1123_2",
       "id": 4
     },
     {
-      "name": "Климушин Антон Тимофеевиfsdfdsfsdfsd",
-      "openDate": "2023-11-02T22:55",
-      "description": "НОВАЯ БОЛЬШАЯ КАПСУЛЯ",
-      "access": "FFA",
-      "text": "",
+      "name": "Тексты",
+      "openDate": "2023-10-06T16:25",
+      "description": "цуцйуйцуйцуйцуц",
+      "access": "my",
+      "text": "ф\n\nфф\nф\nф\nф\nф\nф\nф\nф\nф\nф\n",
       "files": "",
+      "": "",
+      "userId": 1,
+      "userName": "Misha1123_2",
       "id": 5
     },
     {
-      "name": "Мистер ЗЛОООООООО",
-      "openDate": "2023-10-31T08:04",
-      "description": "Нужно больше ЗОЛОТА",
+      "name": "Мистер ЗЛОООООООО YJDSQ",
+      "openDate": "2023-10-29T15:36",
+      "description": "123213213123123123",
       "access": "FFA",
-      "text": "",
+      "text": "123123213123",
       "files": "",
-      "userName": {
-        "email": "123kek@gmail.com",
-        "firstName": "Володя",
-        "userName": "vova123",
-        "id": 1
-      },
+      "": "",
+      "userId": 2,
+      "userName": "vova123_3",
       "id": 6
-    },
-    {
-      "name": "Мистер ЗЛОООООООО 2.0",
-      "openDate": "2023-11-02T08:05",
-      "description": "ТВОЯ ДУША, БУДЕТ МОЕЙ!",
-      "access": "FFA",
-      "text": "",
-      "files": "",
-      "userName": "vova123",
-      "id": 7
-    },
-    {
-      "name": "Мистер ЗЛОООООООО 3.0",
-      "openDate": "2023-10-27T09:28",
-      "description": "ЗА ЧЕСТЬ И ОТВАГУ",
-      "access": "my",
-      "text": "31232131313",
-      "files": "",
-      "userID": 1,
-      "id": 8
-    },
-    {
-      "name": "СОВЕРШЕННО НОВАЯ ЗАМЕТКА",
-      "openDate": "2023-10-27T10:28",
-      "description": "очень много всего",
-      "access": "FFA",
-      "text": "keeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeek ARK",
-      "files": "C:\\fakepath\\Комментарии.docx",
-      "userId": 1,
-      "userName": "vova123",
-      "id": 9
-    }
-  ],
-  "tags": [
-    {
-      "id": 1,
-      "name": "to-do"
-    },
-    {
-      "id": 2,
-      "name": "to-buy"
     }
   ]
 }

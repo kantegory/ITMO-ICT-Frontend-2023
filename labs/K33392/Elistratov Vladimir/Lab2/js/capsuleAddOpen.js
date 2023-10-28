@@ -3,8 +3,9 @@ class CapsuleC{
         this.data = {};
     }
     async encapsulate(event){
-        let fields = Array.from(event.target.querySelectorAll('input'));
-        for(const field of fields){
+        const form = event.target.elements
+        for(const field of form){
+            //console.log(field);
             if(field.name == "access"){
                 if(field.checked){
                     this.data[field.name] = 'FFA';
@@ -15,12 +16,12 @@ class CapsuleC{
                 continue;  
             }
             this.data[field.name] = field.value;
+            
         }
-        //console.log(this.data);
+        console.log(this.data);
         this.data['userId'] = JSON.parse(localStorage.getItem('user'))['id'];
         this.data['userName'] = JSON.parse(localStorage.getItem('user'))['userName'];
         //console.log(this.data['userId']);
-
         const response = await fetch('http://localhost:3000/664/capsules', {
             method: "POST", 
             body: JSON.stringify(this.data), 
@@ -29,17 +30,37 @@ class CapsuleC{
                 'Authorization': `Bearer ${localStorage.accessToken}`
             }
         })
-
-        const responseJson = await response.json();
+        
+        //const responseJson = await response.json();
 
         //console.log(responseJson)
+        const uData = JSON.parse(localStorage.user)
+        uData['capCount'] += 1;
+        localStorage.user = JSON.stringify(uData)
+        //console.log(uData)
+        this.reloadUser();
     }
     
+    async reloadUser(){
+        const data = JSON.parse(localStorage.user);
+        const id = data['id'];
+        const url = `http://localhost:3000/users/${id}`
+        console.log(url);
+        const response = await fetch(url, {
+            method: "PUT", 
+            body: JSON.stringify(data), 
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.accessToken}`
+            }
+        })
+    }
+
     async getCapsule(id){
         const searchParams = new URLSearchParams();
         searchParams.set('id', id)
 
-        const url = "http://localhost:3000/600/capsules?" + searchParams.toString();
+        const url = "http://localhost:3000/660/capsules?" + searchParams.toString();
 
         const response = await fetch(url, {
             method: "GET", 
@@ -80,7 +101,7 @@ class CapsuleC{
 
             <div class="mb-4">
                 <p class="fw-bold">Послание:</p>
-                <div>${capsule['text']}</div>
+                <div>${JSON.stringify(capsule['text'])}</div>
             </div>
 
             <div class="mb-4">

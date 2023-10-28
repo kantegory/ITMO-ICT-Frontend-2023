@@ -1,15 +1,10 @@
 class LogInC{
-    constructor (event){
-        this.fields = Array.from(event.target.querySelectorAll('input'));
+    constructor (){
         this.data = {};
     }
-    async worker() {
-        
-        for(const field of this.fields){
-            if(field.name == "remembMe"){
-                //this.data[field.name] = field.checked;
-                continue;
-            }
+    async worker(event){
+        let fields = Array.from(event.target.querySelectorAll('input'));
+        for(const field of fields){
             this.data[field.name] = field.value;
         }
 
@@ -21,9 +16,11 @@ class LogInC{
     async req(){
         const response = await fetch('http://localhost:3000/login', {
             method: "POST", 
+            credentials: 'include',
             body: JSON.stringify(this.data), 
             headers: {
-                'Content-Type': 'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
             }
         })
 
@@ -41,17 +38,17 @@ class LogInC{
 }
 
 class RegistrationC{
-    constructor (event){
-        this.fields = Array.from(event.target.querySelectorAll('input'));
+    constructor(){
         this.data = {};
     }
-    async worker() {
-        
-        for(const field of this.fields){
+    async worker(event) {
+        let fields = Array.from(event.target.querySelectorAll('input'));
+        for(const field of fields){
             this.data[field.name] = field.value;
         }
-
-        console.log(this.data);
+        this.data['capCount'] = 0;
+        this.data['lastUpdate'] = (new Date(new Date())).getTime();
+        //console.log(this.data);
 
         await this.req()
     }
@@ -65,23 +62,24 @@ class RegistrationC{
             }
         })
 
-        const responseJson = await response.json();
+        //const responseJson = await response.json();
 
         //console.log(responseJson)
     }
     
 }
 
+loginC = new LogInC()
+registrationC = new RegistrationC()
+
 async function login(event){
     event.preventDefault();
-    const parser = new LogInC(event)
-    await parser.worker();
+    await loginC.worker(event);
     location.reload();
 }
 
 async function registration(event){
     event.preventDefault();
-    const parser = new RegistrationC(event)
-    await parser.worker();
+    await registrationC.worker(event);
     location.reload();
 }

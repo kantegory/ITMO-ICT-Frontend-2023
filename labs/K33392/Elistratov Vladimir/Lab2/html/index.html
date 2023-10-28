@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/../css/bootstrap.min.css">
     <link rel="stylesheet" href="/../css/indexMyStyle.css">
 </head>
-<body onload="loadpage(event)">
+<body onload="loadMainPage()">
     <header class="rounded" id="pageHeader">
       <div class="row">
         <div class="col-12 justify-f-s"> 
@@ -132,7 +132,7 @@
         
               <div class="form-outline mb-4">
                 <label class="form-label" for="CreateCapsuleDescriptionID">Краткое описание капсулы:</label>
-                <input type="text" id="CreateCapsuleDescriptionID" class="form-control" name="description" required/>
+                <textarea type="text" id="CreateCapsuleDescriptionID" class="form-control" name="description" required></textarea>
               </div>
 
               <div class="form-outline mb-4">
@@ -147,7 +147,7 @@
 
               <div class="form-outline mb-4">
                 <label class="form-label" for="CreateCapsuleTextID">Запечатанный текст</label>
-                <input type="text" id="CreateCapsuleTextID" class="form-control" name="text"/>
+                <textarea type="text" id="CreateCapsuleTextID" class="form-control" name="text"></textarea>
               </div>
         
               <div class="form-outline mb-4">
@@ -206,7 +206,7 @@
 
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/DataScan.js"></script>
-    <script src="../js/loadMain.js"></script>
+    <script src="../js/loadPages.js"></script>
     <script src="../js/index.js"></script>
     <script src="../js/capsuleAddOpen.js"></script>
 </body>
