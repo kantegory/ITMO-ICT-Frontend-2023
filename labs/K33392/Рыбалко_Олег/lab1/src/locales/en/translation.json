@@ -50,5 +50,8 @@
     "titleRadioLabel": "title",
     "usernameFilterPlaceholder": "Example: rybalkooleg",
     "titleFilterPlaceholder": "Example: CI/CD"
+  },
+  "post": {
+    "deleteButtonAriaLabel": "Delete post"
   }
 }

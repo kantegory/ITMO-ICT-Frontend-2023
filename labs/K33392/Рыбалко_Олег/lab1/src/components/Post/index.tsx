@@ -12,6 +12,7 @@ import { RootState } from '@/store'
 import { AuthState } from '@/store/slices/auth'
 import { pb } from '@/constants'
 import { RecordModel } from 'pocketbase'
+import { useTranslation } from 'react-i18next'
 
 export function Post({
   className,
@@ -28,6 +29,7 @@ export function Post({
   const [likedRecord, setLikedRecord] = useState<RecordModel | undefined>()
   const authStore = useSelector<RootState>((state) => state.auth) as AuthState
   const [isOpen, setOpen] = useState(false)
+  const { t } = useTranslation('post')
   const textPreviewLength = 500
 
   useEffect(() => {
@@ -90,6 +92,7 @@ export function Post({
           <button
             className={styles.deleteButton}
             onClick={() => onDelete!(post)}
+            aria-label={t('deleteButtonAriaLabel')}
           >
             <FontAwesomeIcon icon={faTrashCan} size="xl" color="red" />
             <p>&nbsp;</p>
