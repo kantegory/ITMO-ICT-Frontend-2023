@@ -202,7 +202,6 @@ export function ProfileLayout() {
                 post={post}
                 showDeleteButton={isAdmin}
                 onDelete={deletePost}
-                posts={posts}
               />
             </div>
           ))}

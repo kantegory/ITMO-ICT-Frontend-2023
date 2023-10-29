@@ -16,7 +16,6 @@ import { RecordModel } from 'pocketbase'
 export function Post({
   className,
   post,
-  posts,
   onDelete,
   showDeleteButton,
 }: {
@@ -24,7 +23,6 @@ export function Post({
   post: PostType
   onDelete?: (post: PostType) => void
   showDeleteButton: boolean
-  posts: PostType[]
 }) {
   const [isLiked, setLiked] = useState(false)
   const [likedRecord, setLikedRecord] = useState<RecordModel | undefined>()
@@ -50,7 +48,7 @@ export function Post({
       .then((records) => {
         setLikesCount(records.length)
       })
-  }, [posts, post])
+  }, [post])
 
   const like = useCallback(() => {
     if (!isLiked) {
