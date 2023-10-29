@@ -112,44 +112,47 @@
     <a href="#" role="button">Отели рядом<span aria-hidden="true"></span></a>
     <a href="#" role="button">Кафе рядом<span aria-hidden="true"></span></a>
   </nav>
-  <div id="map" role="application" aria-label="Карта"></div>
-  <button type="submit" class="halloween-btn" onclick="window.location.href='http://localhost:63342/travel_site/html/payment.html?_ijt=7oek42keu9er57n2a1ip5fjjdt#'" role="button">Оплатить тур</button>
-  <script>
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 55.7558, lng: 37.6176 },
-        zoom: 12
-      });
+  <div class="c">
+  <div id="map" role="application" aria-label="Карта"> <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af6661458abfaf04965e62d99d11a6b474c05a766ff1c02032d91555b56ab0ba2&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+  </div>
+    <button type="submit" class="halloween-btn" onclick="window.location.href='http://localhost:63342/lab1/travel_site/html/payment.html?_ijt=q3i2m4lntpsntbletsp5esd4sv#'" role="button">Оплатить тур</button>
+
+  </div>
+    <script>
+
+      ymaps.ready(init);
+
+      function init()
+      {
+      var map = new ymaps.Map("map", {
+      center: [55.7558, 37.6176],
+      zoom: 12
+    });
 
       var locations = [
-        { lat: 55.7558, lng: 37.6176 },
-        { lat: 55.7522, lng: 37.6156 },
-        { lat: 55.7517, lng: 37.6109 },
-        { lat: 55.7495, lng: 37.6051 },
-        { lat: 55.7539, lng: 37.6226 }
+      [55.7558, 37.6176],
+      [55.7522, 37.6156],
+      [55.7517, 37.6109],
+      [55.7495, 37.6051],
+      [55.7539, 37.6226]
       ];
 
       locations.forEach(function (location) {
-        new google.maps.Marker({
-          position: location,
-          map: map
-        });
-      });
+      var placemark = new ymaps.Placemark(location);
+      map.geoObjects.add(placemark);
+    });
 
-      var path = new google.maps.Polyline({
-        path: locations,
-        geodesic: true,
-        strokeColor: '#ff0000',
-        strokeOpacity: 1.0,
-        strokeWeight: 2
-      });
+      var polyline = new ymaps.Polyline(locations, {}, {
+      strokeColor: '#ff0000',
+      strokeWidth: 2,
+      strokeOpacity: 1
+    });
 
-      path.setMap(map);
+      map.geoObjects.add(polyline);
     }
   </script>
 
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 </div>
 </body>
 </html>
