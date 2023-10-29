@@ -28,7 +28,11 @@
     "newPostModalBodyLabel": "Body",
     "followButton": "Follow",
     "unfollowButton": "Unfollow",
-    "saveButton": "Save"
+    "saveButton": "Save",
+    "editBioButton": "Edit bio",
+    "saveBioAriaLabel": "Save new bio",
+    "newBioAriaLabel": "Input for new bio",
+    "profileImageAriaLabel": "Profile image"
   },
   "navbar": {
     "feed": "Feed",
