@@ -206,7 +206,7 @@ https://www.youtube.com/watch?v=8LFbS78a4Rw
 
 ### Кроссбраузерные картинки (тег picture)
 
-Видео-лекция: https://www.youtube.com/watch?v=2cNj9kcbIC8
+Видео-лекция: https://www.youtube.com/watch?v=2cNj9kcbIC8  
 Пример, который разбирали на лекции: https://github.com/kantegory/mentoring/tree/master/10_tag_picture_example
 
 ### Контрольная работа 1
