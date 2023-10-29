@@ -156,7 +156,7 @@ export function ProfileLayout() {
           <img
             className={`mt-3 ${styles.profileImage}`}
             src={`https://robohash.org/${userData.username ?? ''}`}
-            alt="Profile image"
+            alt={t('profileImageAriaLabel')}
           />
           <h1 className="h3 mt-3 fw-normal">@{userData.username}</h1>
           <div className={styles.bioBlock}>
@@ -170,12 +170,19 @@ export function ProfileLayout() {
                 type="text"
                 value={newBio}
                 onChange={(e) => setNewBio(e.currentTarget.value)}
+                aria-label={t('newBioAriaLabel')}
               />
             )}
             {isEditingBio && (
-              <Button onClick={updateBio}>{t('saveButton')}</Button>
+              <Button onClick={updateBio} aria-label={t('saveBioAriaLabel')}>
+                {t('saveButton')}
+              </Button>
             )}
-            <Button variant="link" onClick={() => setEditingBio(!isEditingBio)}>
+            <Button
+              variant="link"
+              onClick={() => setEditingBio(!isEditingBio)}
+              aria-label={t('editBioButton')}
+            >
               <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
             </Button>
           </div>
@@ -183,12 +190,20 @@ export function ProfileLayout() {
         <div className={styles.postsHeader}>
           <h1 className="h3">{t('postsHeader')}</h1>
           {isAdmin && (
-            <Button variant="link" onClick={() => setShowNewPostModal(true)}>
+            <Button
+              variant="link"
+              onClick={() => setShowNewPostModal(true)}
+              aria-label={t('newPostButton')}
+            >
               {t('newPostButton')}
             </Button>
           )}
           {!isAdmin && (
-            <Button variant="link" onClick={followUser}>
+            <Button
+              variant="link"
+              onClick={followUser}
+              aria-label={isFollowed ? t('unfollowButton') : t('followButton')}
+            >
               {isFollowed ? t('unfollowButton') : t('followButton')}
             </Button>
           )}
@@ -240,7 +255,11 @@ export function ProfileLayout() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={publishNewPost}>
+          <Button
+            variant="primary"
+            onClick={publishNewPost}
+            aria-label={t('newPostModalPostButton')}
+          >
             {t('newPostModalPostButton')}
           </Button>
         </Modal.Footer>
