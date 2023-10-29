@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Маршрут путешествия</title>
+
+  <title>Новое путешествие</title>
   <style>
     #map {
       width: 50%;
@@ -32,6 +26,7 @@
     .halloween-btn:hover {
       box-shadow: none;
     }
+
     .navigation {
       display: flex;
       margin-top: 20px;
@@ -79,10 +74,6 @@
       color: #fff3cd;
       text-shadow: 0px 0px 10px #fe3901, 0px 0px 20px #ff7518, 0px 0px 30px #ffa801;
     }
-    a{
-      color: #fff3cd;
-      text-underline: none;
-    }
 
     p {
       color: #fff3cd;
@@ -106,53 +97,48 @@
 </head>
 <body>
 <div class="background-img">
-  <h1> Добавление поездки </h1>
+  <h1>Настройка маршрута</h1>
   <nav class="navigation">
     <a href="#" role="button">Достопримечательности<span aria-hidden="true"></span></a>
     <a href="#" role="button">Отели рядом<span aria-hidden="true"></span></a>
     <a href="#" role="button">Кафе рядом<span aria-hidden="true"></span></a>
+    <button type="submit" class="halloween-btn" onclick="window.location.href='http://localhost:63342/labs/K33392/%D0%9F%D1%80%D0%BE%D0%BD%D0%B8%D0%BD%D0%B0%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0/lab_2/travel_site/html/payment.html?_ijt=3v71t7cn2gnb10c628svevi0aa'" role="button">Оплатить</button>
   </nav>
-  <div class="c">
-  <div id="map" role="application" aria-label="Карта"> <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af6661458abfaf04965e62d99d11a6b474c05a766ff1c02032d91555b56ab0ba2&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+  <div id="map"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af6661458abfaf04965e62d99d11a6b474c05a766ff1c02032d91555b56ab0ba2&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
   </div>
-    <button type="submit" class="halloween-btn" onclick="window.location.href='http://localhost:63342/lab1/travel_site/html/payment.html?_ijt=q3i2m4lntpsntbletsp5esd4sv#'" role="button">Оплатить тур</button>
-
-  </div>
-    <script>
-
-      ymaps.ready(init);
-
-      function init()
-      {
-      var map = new ymaps.Map("map", {
-      center: [55.7558, 37.6176],
+</div>
+<script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 55.7558, lng: 37.6176 },
       zoom: 12
     });
 
-      var locations = [
-      [55.7558, 37.6176],
-      [55.7522, 37.6156],
-      [55.7517, 37.6109],
-      [55.7495, 37.6051],
-      [55.7539, 37.6226]
-      ];
+    var locations = [
+      {lat: 55.7558, lng: 37.6176},
+      {lat: 55.7522, lng: 37.6156},
+      {lat: 55.7517, lng: 37.6109},
+      {lat: 55.7495, lng: 37.6051},
+      {lat: 55.7539, lng: 37.6226}
+    ];
 
-      locations.forEach(function (location) {
-      var placemark = new ymaps.Placemark(location);
-      map.geoObjects.add(placemark);
+    locations.forEach(function (location) {
+      new google.maps.Marker({
+        position: location,
+        map: map
+      });
     });
 
-      var polyline = new ymaps.Polyline(locations, {}, {
+    var path = new google.maps.Polyline({
+      path: locations,
+      geodesic: true,
       strokeColor: '#ff0000',
-      strokeWidth: 2,
-      strokeOpacity: 1
+      strokeOpacity: 1.0,
+      strokeWeight: 2
     });
 
-      map.geoObjects.add(polyline);
-    }
-  </script>
-
-
-</div>
+    path.setMap(map);
+  }
+</script>
 </body>
 </html>

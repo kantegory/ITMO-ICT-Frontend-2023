@@ -1,8 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 
 <head>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,6 +43,7 @@
             user-select: none;
         }
         h5 {
+
             color: #fff3cd; /* Зеленый цвет */
             text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
             animation: fog 20s;
@@ -106,7 +106,7 @@
             z-index: -1;
         }
         #text {
-            position: absolute;
+            position: fixed;
             font-size: 5em;
             color: #fff3cd;
             text-shadow: 2px 4px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
@@ -125,7 +125,7 @@
         }
         .parallax img#gate-right {
             transform: translateX(270px);
-            ;
+        ;
         }
         .navigation ul {
             display: flex;
@@ -161,11 +161,11 @@
             text-align: justify;
 
         }
-                 </style>
+    </style>
 </head>
 <body>
 <section class="parallax">
-    <h4 id="text">Welcome back!</h4>
+    <h4 id="text">Let's Travel</h4>
     <img src="../css/img/tree-left.png" id="tree-left">
     <img src="../css/img/tree-right.png" id="tree-right">
     <img src="../css/img/gate-left.png" id="gate-left">
@@ -174,17 +174,14 @@
 </section>
 
 <header>
-    <h5 class="logo"> Profile of mine</h5>
+    <h5 class="logo"> Profile of $(name)</h5>
     <nav class="navigation">
-        <a href="http://localhost:63342/lab1/travel_site/html/finding.html?_ijt=gs8s735d45u6jrcq9arl12nbqc"> travels of mine <span></span></a>
-        <a href="http://localhost:63342/lab1/travel_site/html/setting.html?_ijt=6ptiiueb3q0k6cmm4iu0f189h4">settings<span></span></a>
+        <a href="">Поиск путешествий<span></span></a>
+        <a href="http://localhost:63342/labs/K33392/%D0%9F%D1%80%D0%BE%D0%BD%D0%B8%D0%BD%D0%B0%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0/lab_2/travel_site/html/finding.html?_ijt=kg56fj745cm8oou312a6unl0m">Мои путешествия<span></span></a>
+        <a href="http://localhost:63342/labs/K33392/%D0%9F%D1%80%D0%BE%D0%BD%D0%B8%D0%BD%D0%B0%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0/lab_2/travel_site/html/setting.html?_ijt=ec9k13v2d0t2sskhv05kn91j0j">Настройки профиля<span></span></a>
     </nav>
 </header>
 <section class="sec">
-
-    <h2> Рекомендации: </h2>
-<p> Ваши рекомендации будут тут(your recommendations)<br><br>
-</p>
 
 </section>
 
@@ -197,130 +194,17 @@
 
     window.addEventListener('scroll',()=>
         {
-        let value = window.scrollY;
+            let value = window.scrollY;
 
-        text.style.marginTop = value * 2 +'px';
-        treeLeft.style.left = value * -1.5 +'px';
-        gateLeft.style.left = value * 0.5 +'px';
-        treeRight.style.left = value * 1.5 +'px';
-        gateRight.style.left = value * -0.5 +'px';
+            text.style.marginTop = value * 2 +'px';
+            treeLeft.style.left = value * -1.5 +'px';
+            gateLeft.style.left = value * 0.5 +'px';
+            treeRight.style.left = value * 1.5 +'px';
+            gateRight.style.left = value * -0.5 +'px';
         }
 
     );
 
-    function analyzePreferences() {
-        // Функция загрузки данных пользователей и предпочтений
-        function loadUsersData() {
-            // ваш код загрузки данных пользователей
-            // Например, можно использовать fetch для получения данных с сервера:
-            return fetch('/users').then(response => response.json());
-        }
-        function loadPreferencesData() {
-            // ваш код загрузки данных предпочтений
-            // Например, можно использовать fetch для получения данных с сервера:
-            return fetch('/preferences').then(response => response.json());
-        }
-
-// Функция создания матрицы предпочтений пользователя
-        function createPreferencesMatrix(usersData, preferencesData) {
-            // ваш код для создания матрицы предпочтений пользователя
-            // Например, можно использовать объект Map для хранения матрицы предпочтений пользователя:
-            const preferencesMatrix = new Map();
-
-            for (const user of usersData) {
-                const userPreferences = preferencesData.filter(preference => preference.userId === user.id);
-                preferencesMatrix.set(user.id, userPreferences);
-            }
-
-            return preferencesMatrix;
-        }
-
-// Функция расчета сходства между пользователями
-        function calculateUserSimilarity(preferencesMatrix) {
-            // ваш код для расчета сходства между пользователями
-            // Например, можно использовать популярный алгоритм коллаборативной фильтрации - косинусное сходство:
-            const similarityMatrix = new Map();
-
-            for (const [userId1, preferences1] of preferencesMatrix) {
-                const similarities = new Map();
-
-                for (const [userId2, preferences2] of preferencesMatrix) {
-                    const similarity = calculateCosineSimilarity(preferences1, preferences2);
-                    similarities.set(userId2, similarity);
-                }
-
-                similarityMatrix.set(userId1, similarities);
-            }
-
-            return similarityMatrix;
-        }
-
-// Функция предсказания предпочтений для новых пользователей
-        function predictPreferences(newUserData, similarityMatrix) {
-            // ваш код для предсказания предпочтений для новых пользователей
-            // Например, можно взвешенно усреднить предпочтения похожих пользователей:
-            const predictedPreferences = new Map();
-
-            for (const [newUserId, newUserPreferences] of newUserData) {
-                const predictedUserPreferences = new Map();
-
-                for (const [userId, similarityValues] of similarityMatrix) {
-                    let totalSimilarity = 0;
-                    let weightedPreferencesSum = 0;
-
-                    for (const [similarUserId, similarity] of similarityValues) {
-                        const similarUserPreferences = preferencesMatrix.get(similarUserId);
-
-                        if (similarUserPreferences.has(itemId)) {
-                            const preferenceValue = similarUserPreferences.get(itemId);
-                            const weightedPreferenceValue = similarity * preferenceValue;
-
-                            totalSimilarity += similarity;
-                            weightedPreferencesSum += weightedPreferenceValue;
-                        }
-                    }
-
-                    const predictedPreferenceValue = weightedPreferencesSum / totalSimilarity;
-                    predictedUserPreferences.set(itemId, predictedPreferenceValue);
-                }
-
-                predictedPreferences.set(newUserId, predictedUserPreferences);
-            }
-
-            return predictedPreferences;
-        }
-
-// Функция расчета сходства
-        function calculateCosineSimilarity(preferences1, preferences2) {
-            //код для расчета сходства
-            const dotProduct = preferences1.reduce((sum, value, index) => sum + (value * preferences2[index]), 0);
-            const magnitude1 = Math.sqrt(preferences1.reduce((sum, value) => sum + (value * value), 0));
-            const magnitude2 = Math.sqrt(preferences2.reduce((sum, value) => sum + (value * value), 0));
-
-            return dotProduct / (magnitude1 * magnitude2);
-        }
-
-        let resultList = document.createElement('ul'); // Создаем элемент списка
-
-        // Пример добавления элементов в список
-        let item1 = document.createElement('li');
-        item1.textContent = 'Место 1';
-        resultList.appendChild(item1);
-
-        let item2 = document.createElement('li');
-        item2.textContent = 'Место 2';
-        resultList.appendChild(item2);
-
-        let item3 = document.createElement('li');
-        item3.textContent = 'Место 3';
-        resultList.appendChild(item3);
-
-        // Вставляем список на страницу
-        document.body.appendChild(resultList);
-    }
-
-
-    analyzePreferences();
 </script>
 
 </body>
