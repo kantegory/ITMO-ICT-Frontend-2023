@@ -1,0 +1,13 @@
+@import "@/vars.scss";
+@import "@/styles/post.scss";
+@import "@/../node_modules/bootstrap/scss/functions";
+@import "@/../node_modules/bootstrap/scss/variables";
+@import "@/../node_modules/bootstrap/scss/mixins";
+
+.container {
+  margin-top: $topMargin;
+}
+
+.button {
+  border-bottom: 3px solid $blue;
+}

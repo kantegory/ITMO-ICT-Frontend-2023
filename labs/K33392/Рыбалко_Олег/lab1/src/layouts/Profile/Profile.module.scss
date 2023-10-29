@@ -1,0 +1,31 @@
+@import "@/vars.scss";
+@import "@/styles/post.scss";
+
+.profileImage {
+  border: none;
+  border-radius: 50%;
+  width: 200px;
+  background-color: #3c3c3c3c;
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.postsHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.container {
+  margin-top: $topMargin;
+}
+
+@media screen and (max-width: 600px) {
+  .profileImage {
+    width: 100px;
+  }
+}
