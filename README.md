@@ -195,7 +195,7 @@ https://www.youtube.com/watch?v=8LFbS78a4Rw
 
 Видео о том, как создать SVG-спрайт: https://www.youtube.com/watch?v=dPoRsolsCjA
 
-Видео-лекция: https://www.youtube.com/watch?v=2cNj9kcbIC8
+Видео-лекция: https://www.youtube.com/watch?v=2cNj9kcbIC8  
 Пример, который разбирали на лекции: https://github.com/kantegory/mentoring/tree/master/09_svg_sprite_example
 
 ### Домашняя работа 4: SVG-спрайт
