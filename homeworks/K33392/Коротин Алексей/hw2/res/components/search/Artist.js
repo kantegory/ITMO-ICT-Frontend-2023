@@ -6,8 +6,8 @@ const Artist = (artistName, genre, imageUrl) => {
                 <img src="${imageUrl}" class="card-img-top rounded-circle" alt="image">
             </div>
             <div class="card-body text-center">
-                <h5 class="card-title text-truncate">${artistName}</h5>
-                <div class="card-text text-truncate">${genre}</div>
+                <p class="card-title text-truncate fs-5">${artistName}</p>
+                <p class="card-text text-truncate">${genre}</p>
             </div>
         </div>
     </li>

@@ -13,7 +13,7 @@ const fillArtists = (result) => {
         return JSON.stringify({
             name: a.artist.name,
             genre: "Genre",
-            picture: a.artist.picture_big
+            picture: a.artist.picture_medium
         });
     });
     totalArtists = Array.from(new Set(totalArtists)).slice(0, 5);
