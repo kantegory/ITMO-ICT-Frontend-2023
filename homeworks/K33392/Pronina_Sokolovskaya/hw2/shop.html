@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="assets/stylesheets/main.css"/>
+    <link rel="icon" href="assets/images/puzzles_logo.png" type="image/x-icon">
+
+    <title>City Puzzle | Квесты по Питеру</title>
+</head>
+
+<body>
+<header id="header">
+    <div class="logo_container">
+        <img src="./assets/images/logo.png" alt="">
+    </div>
+    <nav id="nav-bar">
+        <ul class="nav_links">
+            <li class="nav_item">
+                <a href="./main.html" class="nav-link">Главная</a>
+            </li>
+            <li class="nav_item active">
+                <a href="./shop.html" class="nav-link">Магазин</a>
+            </li>
+            <li class="nav_item">
+                <a href="#" class="nav-link">Инструкция к боту</a>
+            </li>
+            <li class="nav_item">
+                <a href="#" class="nav-link color1">Бесплатный квеcт</a>
+            </li>
+        </ul>
+    </nav>
+    <a href="user_account.html" class="link">
+        <img src="assets/images/person_icon.png" width="42" alt="">
+    </a>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</header>
+
+
+<section class="quests">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-md-12 col-sm-12">
+                <input type="text" class="form-control p3 search-form" placeholder="Поиск" id="search-input">
+                <button class="button-filters" id="filters" onclick="displayFilters()">Фильтры</button>
+                <div class="filters">
+                    <p>Категория</p>
+                    <div class="category-filter">
+                        <button class="category-button" id="cat-history"
+                                onclick="filterByCategory('cat-history')">история и мистика
+                        </button>
+                        <button class="category-button" id="cat-art" onclick="filterByCategory('cat-art')">мир
+                            искусства
+                        </button>
+                        <button class="category-button" id="cat-love" onclick="filterByCategory('cat-love')">дела
+                            сердечные
+                        </button>
+                        <button class="category-button" id="cat-society"
+                                onclick="filterByCategory('cat-society')">питерская интеллигенция
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <p class="footer_group color3">Партнерам</p>
+                <ul class="footer_links">
+                    <li><a href="#" class="footer_link color3">Предложить сотрудничество</a></li>
+                </ul>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <p class=" footer_group color3">Правовая информация</p>
+                <ul class="footer_links">
+                    <li><a href="#" class="footer_link color3">Пользовательское соглашение</a></li>
+                    <li><a href="#" class="footer_link color3">Обработка персональных данных</a></li>
+                    <li><a href="#" class="footer_link color3">Публичная оферта</a></li>
+                </ul>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <p class="footer_group color3">Возникли вопросы? <br> Свяжитесь с нами</p>
+                <ul class="footer_links">
+                    <li><a href="mailto:citypuzzzle@gmail.com?subject="
+                           class="footer_link color3">citypuzzzle@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="social">
+                    <p class="copy color3">citypuzzle &copy2023</p>
+                    <div class="social_nets">
+                        <img class="social_icon" src="assets/images/instagramIcon.png" alt="">
+                        <img class="social_icon" src="assets/images/telegramIcon.png" alt="">
+                        <img class="social_icon" src="assets/images/tiktokIcon.png" alt="">
+                        <img class="social_icon" src="assets/images/VKIcon.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="./script.js"></script>
+<script src="addToPurchased.js"></script>
+<script src="showQuests.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
