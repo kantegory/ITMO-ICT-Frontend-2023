@@ -1,5 +1,5 @@
 import "./Search.css";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import { useParams } from "react-router-dom";
 import { getCookie } from "../../utils/cookiesUtils";
@@ -26,9 +26,8 @@ function Search() {
 
   return (
     <ListGroup>
-      <div>Результат поиска по запросу: {sliceQuery}</div>
       {data.length === 0 ? (
-        <>Ничего не найдено</>
+        <h4>Ничего не найдено</h4>
       ) : (
         <>
           {data.map((element, index) => (

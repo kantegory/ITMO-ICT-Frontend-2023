@@ -1,13 +1,10 @@
 import "./Header.css";
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/esm/Button";
 import icon from "../../img/main-icon.svg";
 import { Link } from "react-router-dom";
-import { useNavigate, useParams } from "react-router-dom";
 import SearchCell from "../SearchCell";
 
 function Header() {

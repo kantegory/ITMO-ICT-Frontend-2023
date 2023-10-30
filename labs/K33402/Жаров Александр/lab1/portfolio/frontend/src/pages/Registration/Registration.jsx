@@ -23,7 +23,7 @@ function Registration() {
   });
 
   const [error, setError] = React.useState("");
-  const [validated, setValidated] = React.useState(false);
+  //const [validated, setValidated] = React.useState(false);
 
   const onFormChange = (e) => {
     const { id, value } = e.target;

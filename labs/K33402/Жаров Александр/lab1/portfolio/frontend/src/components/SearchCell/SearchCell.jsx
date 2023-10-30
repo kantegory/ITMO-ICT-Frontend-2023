@@ -1,5 +1,4 @@
 import "./SearchCell.css";
-import { Navigate, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import Form from "react-bootstrap/Form";
