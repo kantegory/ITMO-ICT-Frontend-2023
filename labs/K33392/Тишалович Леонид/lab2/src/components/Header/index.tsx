@@ -10,10 +10,24 @@ import { useState } from "react";
 type HeaderProps = {
   setSelectedGender: (gender: string) => void;
   cartItems: CartItem[];
+  onSearch?: (query: string) => void;
 };
 
-export const Header = ({ setSelectedGender, cartItems }: HeaderProps) => {
+export const Header = ({
+  setSelectedGender,
+  cartItems,
+  onSearch,
+}: HeaderProps) => {
   const [isCartPopupVisible, setCartPopupVisible] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+
+    if (onSearch) {
+      onSearch(e.target.value);
+    }
+  };
 
   const handleGenderClick = (gender: string) => {
     setSelectedGender(gender);
@@ -30,7 +44,11 @@ export const Header = ({ setSelectedGender, cartItems }: HeaderProps) => {
         <p onClick={() => handleGenderClick("male")}>Men</p>
         <p onClick={() => handleGenderClick("female")}>Women</p>
       </div>
-      <input placeholder="Search" />
+      <input
+        placeholder="Search"
+        value={searchQuery}
+        onChange={handleSearchChange}
+      />
       <div className={style.headerBtns}>
         <div>
           <img src={heratSvg} alt="Избранное" />

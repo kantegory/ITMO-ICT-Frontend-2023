@@ -1,15 +1,6 @@
 {
   "users": [],
-  "cart": [
-    {
-      "id": 1,
-      "title": "Black SweatShort",
-      "img": "/src/assets/itemsCovers/blackSweatshort.svg",
-      "price": 123,
-      "brand": "Jhanvi's Brand",
-      "gender": "female"
-    }
-  ],
+  "cart": [],
   "clothes": [
     {
       "id": 0,
