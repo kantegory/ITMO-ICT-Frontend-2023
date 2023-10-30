@@ -38,31 +38,31 @@ export const Header = ({
   };
 
   return (
-    <div className={style.wrapper}>
+    <header className={style.wrapper}>
       <img onClick={() => handleGenderClick("all")} src={logoSvg} alt="Лого" />
-      <div className={style.categories}>
-        <p onClick={() => handleGenderClick("male")}>Men</p>
-        <p onClick={() => handleGenderClick("female")}>Women</p>
-      </div>
+      <nav className={style.categories}>
+        <button onClick={() => handleGenderClick("male")}>Men</button>
+        <button onClick={() => handleGenderClick("female")}>Women</button>
+      </nav>
       <input
         placeholder="Search"
         value={searchQuery}
         onChange={handleSearchChange}
       />
       <div className={style.headerBtns}>
-        <div>
+        <button>
           <img src={heratSvg} alt="Избранное" />
-        </div>
-        <div>
+        </button>
+        <button>
           <img src={userSvg} alt="Профиль" />
-        </div>
-        <div className={style.cartWrapper}>
+        </button>
+        <button className={style.cartWrapper}>
           <div onClick={handleCartIconClick}>
             <img src={shoppingCartSvg} />
             {isCartPopupVisible && <CartPopup items={cartItems} />}
           </div>
-        </div>
+        </button>
       </div>
-    </div>
+    </header>
   );
 };

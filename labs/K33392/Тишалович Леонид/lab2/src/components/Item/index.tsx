@@ -18,9 +18,9 @@ export const Item = ({ title, img, price, brand, addToCart }: ItemProps) => {
           <p className={style.title}>{title}</p>
           <p className={style.brand}>{brand}</p>
         </div>
-        <div onClick={addToCart} className={style.priceHolder}>
+        <button onClick={addToCart} className={style.priceHolder}>
           <p className={style.price}>${price}</p>
-        </div>
+        </button>
       </div>
     </div>
   );

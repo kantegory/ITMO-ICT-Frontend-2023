@@ -63,7 +63,7 @@ export const SignInPage = () => {
   return (
     <div className={style.wrapper}>
       <h1>Sign In Page</h1>
-      <div className={style.inputs}>
+      <fieldset className={style.inputs}>
         <div className={style.inputText}>
           <p>User name or email address</p>
           <input
@@ -79,7 +79,7 @@ export const SignInPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-      </div>
+      </fieldset>
       <div className={style.buttons}>
         <button onClick={handleSignIn}>Sign In</button>
         <button onClick={handleLogIn}>Log In</button>

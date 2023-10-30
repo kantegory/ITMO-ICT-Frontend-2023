@@ -86,13 +86,13 @@ export const Main = () => {
   }, [selectedGender, searchQuery]);
 
   return (
-    <div className={style.wrapper}>
+    <main className={style.wrapper}>
       <Header
         setSelectedGender={setSelectedGender}
         cartItems={cartItems}
         onSearch={setSearchQuery}
       />
-      <div className={style.feed}>
+      <section className={style.feed}>
         <p className={style.title}>Items</p>
         <div className={style.itemSelection}>
           {data.map((item: ItemData) => {
@@ -107,7 +107,7 @@ export const Main = () => {
             return <Item {...props} />;
           })}
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
