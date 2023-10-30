@@ -1,0 +1,13 @@
+.name{
+  display: flex;
+  align-items: center;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
