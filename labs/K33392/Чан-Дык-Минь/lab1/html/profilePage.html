@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand ps-5" href="index.html">TDEE Calculator</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nutriotionPage.html">Nutrition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="loginPage.html">Log in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registerPage.html">Register</a>
+                    </li>
+                </ul>
+                <a class="nav-link" href="profilePage.html">
+                    <i class="bi bi-person-circle ms-4 me-4" style="font-size: 1.8rem;"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login -->
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-3  d-flex flex-column align-items-center">
+                <img src="../assets/profile.jpg" class="rounded w-75 mb-4" alt="...">
+                <div>
+                    <h1>David Laid</h1>
+                </div>
+                <form action="">
+                    <div class="d-flex flex-row mt-3">
+                        <label>Weight</label>
+                        <p>60kg</p>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <label>Height</label>
+                        <p>171cm</p>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <label>Age</label>
+                        <p>21</p>
+                    </div>
+                </form>
+            </div>
+            <div class="col-9 bg-light">
+                <form class="d-flex m-4 w-50" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

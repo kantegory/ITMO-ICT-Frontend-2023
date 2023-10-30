@@ -1,0 +1,31 @@
+.body{
+  background-color: #000;
+}
+
+.link{
+  color: white;
+  text-decoration: none;
+}
+
+.item-container{
+  display: flex;
+  gap: 12px;
+}
+
+.button{
+  @media (max-width: 767.9px) {
+    margin-top: 12px;
+  }
+}
+
+.md-block{
+  @media (max-width: 767.9px) {
+    display: none;
+  }
+}
+
+
+.text {
+  color: rgb(133, 133, 133);
+  margin-top: 12px;
+}
