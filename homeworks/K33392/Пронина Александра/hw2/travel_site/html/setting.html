@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - Настройки</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    .halloween-btn {
+        background-color: #ff7518;
+        color: #ffffff;
+        border: none;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        animation: fog 20s ;
+    }
+    .halloween-btn:hover {
+        box-shadow: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="mt-4">Настройки профиля</h1>
+
+    <!-- Форма для настроек профиля -->
+    <form id="profileSettingsForm">
+
+        <!-- Имя пользователя -->
+        <div class="form-group">
+            <label for="username">Имя пользователя</label>
+            <input type="text" class="form-control" id="username" placeholder="Введите ваше имя" required>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Введите ваш email" required>
+        </div>
+
+        <!-- Пароль -->
+        <div class="form-group">
+            <label for="password">Пароль</label>
+            <input type="password" class="form-control" id="password" placeholder="Введите ваш пароль" required>
+        </div>
+
+        <!-- Кнопка Сохранить -->
+        <button type="submit" class="halloween-btn">Сохранить</button>
+    </form>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#profileSettingsForm").submit(function(event) {
+        event.preventDefault();
+        // Получение значений полей формы
+        let username = $("#username").val();
+        let email = $("#email").val();
+        let password = $("#password").val();
+        // Здесь можно добавить код для валидации значений полей формы
+        let postData = {
+            username: username,
+            email: email,
+            password: password
+        };
+
+        $.ajax({
+            url: "http://127.0.0.1:5000/save_profile_settings",
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(postData),
+            success: function(response) {
+                // Обработка успешного ответа от сервера
+                Swal.fire("Успешно", "Настройки профиля сохранены.", "success");
+            },
+            error: function(error) {
+                Swal.fire("Ошибка", "Произошла ошибка при сохранении настроек профиля.", "error");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

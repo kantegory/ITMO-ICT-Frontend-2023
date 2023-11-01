@@ -1,10 +1,10 @@
-
-    [
-        {
-            "email": "example@email.com",
-            "password": "paЫswЩrd!23"
-        },
-        { "email": "john7078@email.com",
-            "password": "9078563412"
-        }
-    ]
+[
+    {
+        "email": "example@email.com",
+        "password": "paЫswЩrd!23"
+    },
+    {
+        "email": "john7078@email.com",
+        "password": "9078563412"
+    }
+]

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.background{
+    color: black;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+
+}
+body {
+    min-height: 100vh;
+}
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    user-select: none;
+}
+h5 {
+
+    color: #fff3cd; /* Зеленый цвет */
+    text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+    animation: fog 20s;
+}
+h2{
+    color: #fff3cd; /* Зеленый цвет */
+    text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+}
+.logo {
+    font-size: 1.75em;
+    color: #fff;
+}
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
+.navigation a {
+    position: relative;
+    font-size: 1.25em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 75px;
+    padding: 5px 25px;
+    transition: .5s;
+}
+.navigation a:hover {
+    color: #fff3cd;
+    text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+}
+.navigation a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff fixed;
+    border-radius: 50px;
+    z-index: -1;
+    transform: scale(0);
+    opacity: 0;
+    transition: .5s;
+}
+.navigation a:hover span {
+    transform: scale(1);
+    opacity: 0.25;
+}
+.parallax {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 115vh;
+    background: url("../css/img/background.png") center center no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    z-index: -1;
+}
+#text {
+    position: fixed;
+    font-size: 5em;
+    color: #fff3cd;
+    text-shadow: 2px 4px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+}
+
+.parallax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+.parallax img#gate-left {
+    transform: translateX(-310px);
+
+}
+.parallax img#gate-right {
+    transform: translateX(270px);
+;
+}
+.navigation ul {
+    display: flex;
+    list-style: none;
+}
+.navigation ul li {
+    margin-left: 40px;
+}
+.navigation ul li a {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    text-decoration: none;
+}
+.navigation ul li a:hover {
+    color: #f1f1f1;
+}
+.seс {
+    position: relative;
+    background: #020912;
+    padding: 30px 100px;
+
+}
+.sec h2{
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.sec p{
+    font-size: 1em;
+    color: #fe3901;
+    font-weight: 300;
+    text-align: justify;
+
+}
