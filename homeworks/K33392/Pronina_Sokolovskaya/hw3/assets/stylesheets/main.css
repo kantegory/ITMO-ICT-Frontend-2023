@@ -27,7 +27,7 @@ Header
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--bg-color1);
     z-index: 69;
 }
 
@@ -57,7 +57,7 @@ Hamburger
     margin: 6px auto;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    background-color: #FEBA00;
+    background-color: var(--bg-color-accent1);
 }
 
 /*
@@ -77,7 +77,7 @@ Navigation
 
 .nav-link {
     font-size: 24px;
-    color: #949393;
+    color: var(--text-color1);
 }
 
 .nav_links li a {
@@ -85,16 +85,16 @@ Navigation
 }
 
 .nav_links .nav_item a:hover {
-    color: #949393;
+    color: var(--text-color1);
     text-decoration: underline;
 }
 
 .nav_links .nav_item.active a {
-    color: #292929;
+    color: var(--text-color2);
 }
 
 .nav_links .nav_item a.color1:hover {
-    color: #FEBA00;
+    color: var(--text-color-accent1);
 }
 
 .nav_links_column {
@@ -105,7 +105,7 @@ Navigation
     flex-direction: column;
     width: 100%;
     align-items: flex-start;
-    background-color: #fff;
+    background-color: var(--bg-color1);
 }
 
 /*
@@ -163,7 +163,7 @@ p .highlight {
     border-radius: 24px;
 
     line-height: 60px;
-    color: #fff;
+    color: var(--text-color3);
     font-family: 'Caveat', sans-serif;
 }
 
@@ -237,14 +237,14 @@ p.filter {
     text-align: left;
     padding-left: 37px;
     padding-top: 6px;
-    color: #292929;
+    color: var(--text-color2);
 }
 
 .user_quest_name {
     font-family: 'Bebas Neue Cyrillic', sans-serif;
     font-size: 20px;
     font-weight: 400;
-    color: #8E8E8E;
+    color: var(--text-color4);
     line-height: 1.5;
 }
 
@@ -263,11 +263,11 @@ p.filter {
     font-family: "Caveat", sans-serif;
     font-size: 20px;
     font-weight: 400;
-    color: #8E8E8E;
+    color: var(--text-color4);
 }
 
 .form_clue_highlighted {
-    color: #F85A59;
+    color: var(--text-color-accent2);
     text-decoration: underline;
 }
 
@@ -285,35 +285,35 @@ Colors
 */
 
 .color1 {
-    color: #FEBA00;
+    color: var(--text-color-accent1);
 }
 
 .color2 {
-    color: #F85A59;
+    color: var(--text-color-accent2);
 }
 
 .color3 {
-    color: #949393;
+    color: var(--text-color1);
 }
 
 .bg-color1 {
-    background-color: #FEBA00;
+    background-color: var(--bg-color-accent1);
 }
 
 .bg-color2 {
-    background-color: #F85A59;
+    background-color: var(--bg-color-accent2);
 }
 
 .bg-color3 {
-    background-color: #FE8F67
+    background-color: var(--bg-color-accent3)
 }
 
 .bg-color4 {
-    background-color: #FEBCA4;
+    background-color: var(--bg-color2);
 }
 
 .bg-color5 {
-    background-color: #EFEFEF;
+    background-color: var(--bg-color3);
 }
 
 
@@ -407,7 +407,7 @@ User account page
 .user_quest_item {
     display: flex;
     flex-direction: column;
-    background-color: #EFEFEF;
+    background-color: var(--bg-color3);
     border: 0;
     gap: 12px;
 }
@@ -481,7 +481,7 @@ Footer
 */
 
 footer {
-    background-color: #e9e9e9;
+    background-color: var(--bg-color4);
     padding: 50px 0;
 }
 
@@ -528,7 +528,7 @@ Buttons
 }
 
 .primary-button {
-    background-color: #FEBA00;
+    background-color: var(--bg-color-accent1);
     border: 0;
     width: 415px;
     height: 50px;
@@ -540,18 +540,18 @@ Buttons
 }
 
 .primary-button:hover {
-    background-color: #FEBA00;
+    background-color: var(--bg-color-accent1);
     text-decoration: underline;
 }
 
 .primary-button:active {
-    background-color: #FEBA00;
+    background-color: var(--bg-color-accent1);
     text-decoration: none;
 }
 
 .primary-button:focus {
-    background-color: #fff;
-    color: #FEBA00;
+    background-color: var(--bg-color1);
+    color: var(--text-color-accent1);
     text-decoration: underline;
     border: 0;
 }
@@ -572,7 +572,7 @@ Buttons
 .outline-button:hover {
     background-color: transparent;
     text-decoration: underline;
-    color: #fff;
+    color: var(--text-color3);
     border: 1px solid #fff;
 }
 
@@ -602,7 +602,7 @@ Buttons
     padding: 0;
     border: 0;
     background-color: transparent;
-    color: #000;
+    color: var(--text-color5);
     font-family: 'Caveat', sans-serif;
     font-size: 30px;
     font-weight: 700;
@@ -611,19 +611,19 @@ Buttons
 
 .category-button {
     border: 0;
-    background-color: #EFEFEF;
+    background-color: var(--bg-color3);
     border-radius: 30px;
     padding: 2px 15px;
 
-    color: #8B8B8B;
+    color: var(--text-color4);
     font-family: 'Caveat', sans-serif;
     font-size: 25px;
     font-weight: 700;
 }
 
 .category-button.chosen {
-    background-color: #F85A59;
-    color: #fff;
+    background-color: var(--bg-color-accent2);
+    color: var(--text-color3);
 }
 
 .primary-button:active {
@@ -637,10 +637,10 @@ Buttons
     font-size: 20px;
     border: 0px;
     padding: 10px 50px;
-    background-color: #FEBA00;
+    background-color: var(--bg-color-accent1);
     border-radius: 90px;
     margin-top: 30px;
-    color: #fff;
+    color: var(--text-color3);
 }
 
 #submit_code_btn {
@@ -649,10 +649,10 @@ Buttons
     font-size: 20px;
     border: 0px;
     padding: 10px 50px;
-    background-color: #FEBA00;
+    background-color: var(--bg-color-accent1);
     border-radius: 90px;
     margin-top: 30px;
-    color: #fff;
+    color: var(--text-color3);
 }
 
 #submit_btn:hover, #submit_code_btn:hover {
@@ -664,8 +664,8 @@ Buttons
 }
 
 #submit_btn:focus, #submit_code_btn:focus {
-    background-color: #e9e8e8;
-    color: #8E8E8E;
+    background-color: var(--bg-color4);
+    color: var(--text-color4);
     text-decoration: underline;
 }
 
@@ -685,7 +685,7 @@ Quests
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #EFEFEF;
+    background-color: var(--bg-color3);
     border-radius: 30px;
     filter: drop-shadow(0 4px 4px #0000002c);
     margin-top: 25px;
@@ -712,7 +712,7 @@ Quests
 }
 
 .search-form {
-    background-color: #EFEFEF;
+    background-color: var(--bg-color3);
     background-image: url(../images/searchIcon.svg);
     background-repeat: no-repeat;
     background-position: 5% 50%;
@@ -729,7 +729,7 @@ Quests
 
 .search-form:active {
     box-shadow: none;
-    background-color: #EFEFEF;
+    background-color: var(--bg-color3);
 }
 
 .search-form::placeholder {
@@ -772,7 +772,7 @@ Enter modal window
     width: 60vw;
     height: 50px;
     border-radius: 10px;
-    background-color: #D9D9D9;
+    background-color: var(--bg-color5);
 
 }
 
@@ -786,13 +786,13 @@ Enter modal window
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: var(--bg-color6); /* Fallback color */
+    background-color: var(--bg-color6-opacity)    /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .enter_modal_content {
-    background-color: #fefefe;
+    background-color: var(--bg-color3);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
@@ -801,7 +801,7 @@ Enter modal window
 
 /* The Close Button */
 .close {
-    color: #aaa;
+    color: var(--text-color6);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -809,7 +809,7 @@ Enter modal window
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: var(--text-color5);
     text-decoration: none;
     cursor: pointer;
 }
@@ -856,7 +856,7 @@ Media
     }
 
     #about_us p.color3 {
-        color: #000;
+        color: var(--text-color5);
     }
 
     li,
@@ -872,7 +872,7 @@ Media
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        background-color: #fff;
+        background-color: var(--bg-color1);
     }
 
     .link img {
@@ -915,7 +915,7 @@ Media
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        background-color: #fff;
+        background-color: var(--bg-color1);
         z-index: 40;
     }
 
@@ -944,10 +944,10 @@ Media
         width: 80%;
         height: 10%;
         font-size: 20px;
-        color: #fff;
+        color: var(--text-color3);
         border: 0px;
         padding: 10px 0;
-        background-color: #FEBA00;
+        background-color: var(--bg-color-accent1);
         border-radius: 90px;
         margin-top: 30px;
     }
@@ -956,10 +956,10 @@ Media
         width: 80%;
         height: 10%;
         font-size: 20px;
-        color: #fff;
+        color: var(--text-color3);
         border: 0px;
         padding: 10px 0;
-        background-color: #FEBA00;
+        background-color: var(--bg-color-accent1);
         border-radius: 90px;
         margin-top: 30px;
     }
@@ -1021,25 +1021,24 @@ Code input modal window
 */
 
 .code_input_modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 100;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: var(--bg-color6);
+    background-color: var(--bg-color6-opacity);
 }
 
-/* Modal Content/Box */
 .code_input_modal_content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    background-color: var(--bg-color3);
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
 }
 
 
@@ -1072,7 +1071,7 @@ input[data-number-code-input] {
     text-align: center;
     border: 1px solid #d6d6d6;
     border-radius: 0.2rem;
-    color: #3c3c3c;
+    color: var(--text-color7);
     font-weight: 500;
 }
 
