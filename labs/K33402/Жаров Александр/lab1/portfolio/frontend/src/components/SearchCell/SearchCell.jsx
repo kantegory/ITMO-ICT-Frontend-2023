@@ -28,7 +28,7 @@ const SearchCell = ({ searchQuery, setSearchQuery }) => {
         value={searchQuery}
         onChange={handleChange}
       />
-      <Button variant="outline-success" onClick={handleSubmit}>
+      <Button variant="success" onClick={handleSubmit}>
         Search
       </Button>
     </Form>

@@ -13,7 +13,7 @@ function Profile() {
   const [searchQuery, setSearchQuery] = React.useState("");
   return (
     <>
-      <Container className="main-container">
+      <Container className="main-container ">
         <div className="md-none">
           <SearchCell
             searchQuery={searchQuery}

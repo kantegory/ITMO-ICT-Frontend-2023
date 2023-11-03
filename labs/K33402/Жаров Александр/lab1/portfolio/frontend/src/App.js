@@ -5,10 +5,11 @@ import Profile from "./pages/Profile";
 import UserPage from "./pages/UserPage";
 import Registration from "./pages/Registration";
 import Header from "./components/Header";
-import React from "react";
+import React, { useContext } from "react";
 import { PrivateRoute } from "./components/PrivatRoute";
 import useAuth from "./hooks/useAuth";
 import useUser from "./hooks/useUser";
+
 import { deleteCookie, getCookie } from "./utils/cookiesUtils";
 import { fetchAuthUser } from "./utils/fetchUtils";
 import Search from "./pages/Search";

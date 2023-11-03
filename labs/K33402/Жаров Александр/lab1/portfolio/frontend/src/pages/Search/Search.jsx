@@ -31,15 +31,18 @@ function Search() {
   }, [searchLoad, token, sliceQuery]);
 
   return error ? (
-    <h4>{error}</h4>
+    <h4 className="full-page-div text">{error}</h4>
   ) : (
-    <ListGroup>
+    <ListGroup className="full-page-div">
       {data.length === 0 ? (
-        <h4>Загрузка</h4>
+        <h4 className="full-page-div text">Загрузка</h4>
       ) : (
         <>
           {data.map((element, index) => (
-            <ListGroup.Item key={index}>
+            <ListGroup.Item
+              style={{ backgroundColor: "var(--body-background)" }}
+              key={index}
+            >
               <UserCell user={element} />
             </ListGroup.Item>
           ))}

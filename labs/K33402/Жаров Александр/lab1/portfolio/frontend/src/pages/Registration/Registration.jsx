@@ -85,7 +85,7 @@ function Registration() {
   };
 
   return (
-    <div className="form-container">
+    <div className="form-container text">
       {params.isLogin === "login" && (
         <>
           <Row>
