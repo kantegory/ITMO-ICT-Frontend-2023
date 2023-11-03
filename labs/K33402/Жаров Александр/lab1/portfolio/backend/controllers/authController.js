@@ -9,7 +9,7 @@ const genereteAccessToken = (id, email) => {
     email,
   };
 
-  return jwt.sign(payload, secret, { expiresIn: "12h" });
+  return jwt.sign(payload, secret, { expiresIn: "5m" });
 };
 class authController {
   async registration(req, res) {

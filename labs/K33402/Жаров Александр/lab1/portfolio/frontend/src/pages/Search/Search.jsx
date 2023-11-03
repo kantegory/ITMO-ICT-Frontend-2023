@@ -12,6 +12,7 @@ function Search() {
   const token = getCookie("token");
 
   const [data, setData] = useState([]);
+  const [error, setError] = useState();
 
   const searchLoad = React.useCallback(
     (token, query) => fetchUsers(token, query),
@@ -19,15 +20,22 @@ function Search() {
   );
 
   useEffect(() => {
-    searchLoad(token, sliceQuery).then((res) => {
-      setData(res);
-    });
+    searchLoad(token, sliceQuery)
+      .then((res) => {
+        setData(res);
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
   }, [searchLoad, token, sliceQuery]);
 
-  return (
+  return error ? (
+    <h4>{error}</h4>
+  ) : (
     <ListGroup>
       {data.length === 0 ? (
-        <h4>Ничего не найдено</h4>
+        <h4>Загрузка</h4>
       ) : (
         <>
           {data.map((element, index) => (

@@ -17,17 +17,13 @@ function UserPage() {
   const token = getCookie("token");
   const [user, setUser] = React.useState({});
 
-  const fetchUserCallback = React.useCallback((token, id) => {
-    fetchUser(token, id).then((res) => {
+  React.useEffect(() => {
+    fetchUser(token, userId).then((res) => {
       setUser(res);
     });
-  }, []);
+  }, [token, userId]);
 
-  React.useEffect(() => {
-    fetchUserCallback(token, userId);
-  }, [fetchUserCallback, token, userId]);
-
-  return (
+  return user.name ? (
     <>
       <Container className="mt-2">
         <Row>
@@ -80,6 +76,8 @@ function UserPage() {
         </Col>
       </Container>
     </>
+  ) : (
+    <>Загрузка</>
   );
 }
 

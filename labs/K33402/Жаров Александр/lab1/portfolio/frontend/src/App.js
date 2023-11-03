@@ -5,7 +5,7 @@ import Profile from "./pages/Profile";
 import UserPage from "./pages/UserPage";
 import Registration from "./pages/Registration";
 import Header from "./components/Header";
-import React, { useEffect } from "react";
+import React from "react";
 import { PrivateRoute } from "./components/PrivatRoute";
 import useAuth from "./hooks/useAuth";
 import useUser from "./hooks/useUser";
@@ -22,29 +22,35 @@ function App() {
   const { isAuthenticated, setAuth } = useAuth();
   const { setUser } = useUser();
 
-  const fetchUserCallback = React.useCallback(
-    (token) => fetchAuthUser(token),
-    []
+  const onAuth = React.useCallback(
+    (user) => {
+      setAuth(true);
+      setUser(user);
+    },
+    [setAuth, setUser]
   );
 
-  useEffect(() => {
-    const token = getCookie("token");
+  const onLogout = React.useCallback(() => {
+    setAuth(false);
+    setUser(null);
+    deleteCookie("token");
+  }, [setAuth, setUser]);
 
+  React.useEffect(() => {
+    const token = getCookie("token");
     if (token && !isAuthenticated) {
-      fetchUserCallback(token).then((user) => {
-        if (user.message) {
-          setAuth(false);
-          setUser(null);
-          deleteCookie("token");
-        } else {
-          setAuth(true);
-          setUser(user);
-          navigate("/");
-        }
-      });
+      navigate("/");
+      fetchAuthUser(token)
+        .then((user) => {
+          onAuth(user);
+        })
+        .catch((error) => {
+          console.log(error);
+          navigate("/registration/login");
+          onLogout();
+        });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isAuthenticated, setAuth, setUser, onAuth, onLogout, navigate]);
 
   React.useEffect(() => {
     setHeaderDisplayNone(false);

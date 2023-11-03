@@ -5,17 +5,13 @@ export async function fetchAuthUser(token) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  })
-    .then((response) => response.json())
-
-    .then((responseData) => {
-      if (responseData) {
-        return responseData;
-      } else {
-        console.log(responseData.message);
-      }
-    })
-    .catch((error) => console.log(error));
+  }).then(async (response) => {
+    const data = await response.json();
+    if (response.status === 403) {
+      throw new Error(data.message);
+    }
+    return data;
+  });
 
   return res;
 }
@@ -28,23 +24,18 @@ export async function fetchUser(token, id) {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ id }),
-  })
-    .then((response) => response.json())
-
-    .then((responseData) => {
-      if (responseData) {
-        return responseData;
-      } else {
-        console.log(responseData.message);
-      }
-    })
-    .catch((error) => console.log(error));
+  }).then(async (response) => {
+    const data = await response.json();
+    if (response.status === 403) {
+      throw new Error(data.message);
+    }
+    return data;
+  });
 
   return res;
 }
 
 export async function fetchUsers(token, search) {
-  console.log(search);
   const res = await fetch("http://localhost:3030/api/get-users", {
     method: "POST",
     headers: {
@@ -52,17 +43,49 @@ export async function fetchUsers(token, search) {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ search }),
-  })
-    .then((response) => response.json())
+  }).then(async (response) => {
+    const data = await response.json();
+    if (response.status === 403) {
+      throw new Error(data.message);
+    }
+    return data;
+  });
 
-    .then((responseData) => {
-      if (responseData) {
-        return responseData;
-      } else {
-        console.log(responseData.message);
-      }
-    })
-    .catch((error) => console.log(error));
+  return res;
+}
+
+export async function fetchLogin(formState) {
+  const res = await fetch("http://localhost:3030/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formState),
+  }).then(async (response) => {
+    const data = await response.json();
+    if (response.status === 400) {
+      throw new Error(data.message);
+    }
+    return data;
+  });
+
+  return res;
+}
+
+export async function fetchRegistration(formState) {
+  const res = await fetch("http://localhost:3030/registration", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formState),
+  }).then(async (response) => {
+    const data = await response.json();
+    if (response.status === 400) {
+      throw new Error(data.message);
+    }
+    return data;
+  });
 
   return res;
 }
