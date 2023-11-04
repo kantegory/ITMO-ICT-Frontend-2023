@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-2">
-        <img class="__profile_image" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt=""/>
+        <img class="profile_image" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt=""/>
       </div>
       <div class="col-4">
         <h2>{{ user.name }}</h2>
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style scoped>
-.__profile_image {
+.profile_image {
   padding:0;
   height: 130px;
   width:130px;

@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="row __last_listened">
-      <div class="__image_cover col-1 __last_listened_image_container">
+    <div class="row last-listened">
+      <div class="last-listened__image_cover col-1 last-listened__image_container">
         <div style="margin:auto; position:relative">
-          <div class="__hover_content">
+          <div class="hover-content">
             <play-icon class="__play_icon" @click="play"/>
           </div>
 
-          <img class="__last_listened_image" :src="song.cover_url" alt="">
+          <img class="last-listened__image" :src="song.cover_url" alt="">
         </div>
       </div>
 
@@ -15,7 +15,7 @@
         <h5>{{ song.name }}</h5>
         <p>{{ song.artist.name }}</p>
       </div>
-      <div class="col-2 offset-7 __button_container">
+      <div class="col-2 offset-7 button-container">
         <button>
           <thumb-up-icon @click="addToFavorite"/>
         </button>
@@ -81,32 +81,32 @@ export default {
   top: 25%;
   left: 25%;
 }
-.__last_listened_image {
+.last-listened__image {
   max-height: 50px;
   margin: auto;
 }
-.__last_listened_image_container {
+.last-listened__image_container {
   display: flex;
   align-items: center;
   align-content: center;
 }
-.__button_container {
+.button-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
-.__last_listened {
+.last-listened {
   max-height: 60px;
 }
-.__image_cover {
+.last-listened__image_cover {
   max-height: 50px;
   position: relative;
 }
-.__image_cover:hover .__hover_content {
+.last-listened__image_cover:hover .hover-content {
   opacity: 60%;
 }
-.__hover_content {
+.hover-content {
   background-color: black;
   position: absolute;
   top: 0;

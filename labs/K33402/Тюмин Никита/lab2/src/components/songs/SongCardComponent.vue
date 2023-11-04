@@ -2,16 +2,16 @@
   <div
     class="col-12 col-xl-2 col-md-4"
   >
-    <div class="__image_cover">
-      <div class="__hover_content">
-        <play-icon class="__play_icon" @click="play"/>
+    <div class="image-cover">
+      <div class="image-cover__hover_content">
+        <play-icon class="image-cover__play_icon" @click="play"/>
       </div>
       <img
         :src="song.cover_url"
         class="card-img-top __image"
       >
     </div>
-    <div class="__song_info">
+    <div class="image-cover__song_info">
       <div>
         <h5>{{ song.name }}</h5>
         <p>{{ song.artist.name }}</p>
@@ -53,13 +53,13 @@ export default {
 </script>
 
 <style scoped>
-.__image_cover {
+.image-cover {
   position: relative;
 }
-.__image_cover:hover .__hover_content {
+.image-cover:hover .image-cover__hover_content {
   opacity: 60%;
 }
-.__hover_content {
+.image-cover__hover_content {
   background-color: black;
   position: absolute;
   top: 0;
@@ -70,19 +70,19 @@ export default {
   transition: 0.3s;
   cursor: pointer;
 }
-.__play_icon {
+.image-cover__play_icon {
   position: relative;
   width: 50%;
   height: 50%;
   top: 25%;
   left: 25%;
 }
-.__song_info {
+.image-cover__song_info {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.__song_info:hover .__dots_icon {
+.image-cover__song_info:hover .__dots_icon {
   opacity: 100%;
 }
 .__dots_icon {

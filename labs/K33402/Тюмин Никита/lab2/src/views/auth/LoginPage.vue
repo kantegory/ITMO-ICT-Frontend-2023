@@ -1,5 +1,5 @@
 <template>
-  <div class="container __container">
+  <div class="container form-container">
     <h2>Log in</h2>
 
     <form>
@@ -21,8 +21,8 @@
           class="form-control __input"
         >
       </div>
-      <div class="__buttons">
-        <button @click.prevent="login" class="btn __submit_button">Log in</button>
+      <div class="form-container__buttons">
+        <button @click.prevent="login" class="btn form-container__buttons__submit_button">Log in</button>
         <a href="/register">New here?</a>
       </div>
     </form>

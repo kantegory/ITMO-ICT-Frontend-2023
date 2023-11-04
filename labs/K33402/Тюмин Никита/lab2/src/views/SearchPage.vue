@@ -1,24 +1,24 @@
 <template>
   <div class="container">
 
-    <div class="row">
+    <div class="row filters-block">
       <button
-        class="col-1 __filters_item"
-        :class="{__filter_item_active: isFilterActive('songs')}"
+        class="col-1 filters-block__filters_item"
+        :class="{'filters-block__filter_item_active': isFilterActive('songs')}"
         @click="changeFilter('songs')"
       >
         Songs
       </button>
       <button
-        class="col-1 __filters_item"
-        :class="{__filter_item_active: isFilterActive('playlists')}"
+        class="col-1 filters-block__filters_item"
+        :class="{'filters-block__filter_item_active': isFilterActive('playlists')}"
         @click="changeFilter('playlists')"
       >
         Playlists
       </button>
       <button
-        class="col-1 __filters_item"
-        :class="{__filter_item_active: isFilterActive('artists')}"
+        class="col-1 filters-block__filters_item"
+        :class="{'filters-block__filter_item_active': isFilterActive('artists')}"
         @click="changeFilter('artists')"
       >
         Artists
@@ -155,13 +155,13 @@ hr {
   color: #FAF0E6;
   margin: 10px;
 }
-.__filters_item {
+.filters-block__filters_item {
   background-color: #FAF0E6;
   border-radius: 15px;
   text-align: center;
   margin: 0 5px 0 5px;
 }
-.__filter_item_active {
+.filters-block__filter_item_active {
   background-color: #B9B4C7;
 }
 </style>

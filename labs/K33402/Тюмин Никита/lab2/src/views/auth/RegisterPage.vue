@@ -1,5 +1,5 @@
 <template>
-  <div class="container __container">
+  <div class="container form-container">
     <h2>Register</h2>
 
     <form>
@@ -11,7 +11,7 @@
           v-model="user.name"
           class="form-control __input"
         >
-        <span v-if="errors.name" class="__form_error_message">{{ errors.name }}</span>
+        <span v-if="errors.name" class="form-container__error-message">{{ errors.name }}</span>
       </div>
       <div class="mb-3">
         <label class="form-label">Email address</label>
@@ -21,7 +21,7 @@
           v-model="user.email"
           class="form-control __input"
         >
-        <span v-if="errors.name" class="__form_error_message">{{ errors.email }}</span>
+        <span v-if="errors.name" class="form-container__error-message">{{ errors.email }}</span>
       </div>
       <div class="mb-3">
         <label class="form-label">Password</label>
@@ -31,7 +31,7 @@
           v-model="user.password"
           class="form-control __input"
         >
-        <span v-if="errors.password" class="__form_error_message">{{ errors.password }}</span>
+        <span v-if="errors.password" class="form-container__error-message">{{ errors.password }}</span>
       </div>
       <div class="mb-3">
         <label class="form-label">Repeat password</label>
@@ -41,10 +41,10 @@
           v-model="user.password_confirm"
           class="form-control __input"
         >
-        <span v-if="errors.password_confirm" class="__form_error_message">{{ errors.password_confirm }}</span>
+        <span v-if="errors.password_confirm" class="form-container__error-message">{{ errors.password_confirm }}</span>
       </div>
-      <div class="__buttons">
-        <button @click.prevent="register" class="btn __submit_button">Register</button>
+      <div class="form-container__buttons">
+        <button @click.prevent="register" class="btn form-container__submit_button">Register</button>
         <a href="/login">Already registered?</a>
       </div>
     </form>
@@ -126,7 +126,7 @@ export default {
 </script>
 
 <style scoped>
-.__form_error_message {
+.form-container__error-message {
   color: #B9B4C7;
 }
 </style>

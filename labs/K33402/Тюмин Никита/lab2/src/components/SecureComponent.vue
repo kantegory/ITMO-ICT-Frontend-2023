@@ -1,12 +1,12 @@
 <template>
   <header-component
-    class="__header"
+    class="header"
   />
   <router-view
-    class="__content"
+    class="content"
   />
   <footer-component
-    class="__footer"
+    class="footer"
   />
 </template>
 
@@ -23,20 +23,20 @@ export default {
 </script>
 
 <style>
-.__header {
+.header {
   background-color : #352F44;
   position: absolute;
   width: 100%;
   height: 60px;
 }
-.__footer {
+.footer {
   position: fixed;
   bottom: 0;
   height: 60px;
   width: 100%;
   background-color : #2a2536;
 }
-.__content {
+.content {
   margin-bottom: 60px;
   margin-top: 100px;
 }

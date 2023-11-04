@@ -1,6 +1,6 @@
 <template>
   <div class="container" v-if="!progress">
-    <div class="__music__section">
+    <div class="music__section">
       <h2>Songs for you</h2>
 
       <div class="row">
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style scoped>
-.__music__section {
+.music__section {
   margin-top: 60px;
 }
 </style>

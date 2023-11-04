@@ -2,8 +2,8 @@
   <div
     class="col-12 col-xl-2 col-md-4"
   >
-    <div class="__image_cover">
-      <div class="__hover_content">
+    <div class="image-cover">
+      <div class="image-cover__hover_content">
         <play-icon class="__play_icon" @click="play"/>
       </div>
       <img
@@ -37,13 +37,13 @@ export default {
 </script>
 
 <style scoped>
-.__image_cover {
+.image-cover {
   position: relative;
 }
-.__image_cover:hover .__hover_content {
+.image-cover:hover .image-cover__hover_content {
   opacity: 60%;
 }
-.__hover_content {
+.image-cover__hover_content {
   background-color: black;
   position: absolute;
   top: 0;
