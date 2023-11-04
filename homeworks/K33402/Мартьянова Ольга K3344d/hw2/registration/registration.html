@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="reg_styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.ru/docs/5.1/components/navbar/">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header class="bg-dark text-white text-center">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="/">Calorie calculator</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Open dropdown menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <a class="nav-link" href="../calorie_table/calorie_table.html">Calorie table</a>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item" id="profileButton">
+                            <a class="btn btn-custom" href="../account/account.html">Account</a>
+                        </li>
+                        <li class="nav-item" id="loginButton">
+                            <a class="btn btn-outline-custom" href="../authentication/autentification.html"
+                                role="button">Log in</a>
+                        </li>
+                        <li class="nav-item" id="registerButton">
+                            <a class="btn btn-custom" href="../registration/registration.html" role="button">Sign up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="light-background">
+        <div class="reg-container">
+            <div class="col-lg-6 col-md-8">
+                <h2 class="reg-title">Registration</h2>
+                <form class="auth-form" id="registrationForm">
+                    <div class="mb-3">
+                        <label for="InputName" class="form-label">Name*</label>
+                        <input type="text" class="form-control" required id="InputName" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputEmail" class="form-label">Email*</label>
+                        <input type="email" class="form-control" required id="InputEmail" aria-describedby="emailHelp"
+                            name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputDateOfBirth" class="form-label">Date of birth</label>
+                        <input type="date" class="form-control" id="InputDateOfBirth" name="dateOfBirth">
+                    </div>
+                    <label>Gender</label>
+                    <div class="mb-3 custom-radio">
+                        <label for="male">Male</label>
+                        <input type="radio" id="male" name="gender" value="male" aria-checked="false">
+                        <label for="female">Female</label>
+                        <input type="radio" id="female" name="gender" value="female" aria-checked="false">
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputHeight" class="form-label">Height</label>
+                        <input type="number" class="form-control" id="InputHeight" name="height">
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputWeight" class="form-label">Weight</label>
+                        <input type="number" class="form-control" id="InputWeight" name="weight">
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputPassword1" class="form-label">Password*</label>
+                        <input type="password" class="form-control" required id="InputPassword1" name="password1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputPassword2" class="form-label">Repeat password*</label>
+                        <input type="password" class="form-control" required id="InputPassword2" name="password2">
+                    </div>
+                    <div class="mb-3">* - required fields</div>
+                    <button type="submit" class="btn btn-custom" value="save">Sign up</button>
+                </form>
+                <div class="link-container">Already have an account? <a
+                        href="../authentication/autentification.html">Log in</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="../auth_script.js"></script>
+</body>
+
+</html>
