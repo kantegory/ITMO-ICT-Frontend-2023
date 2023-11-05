@@ -6,93 +6,152 @@
 
   <title>Маршрут путешествия</title>
   <style>
-    #map {
-      width: 50%;
-      height: 400px;
-      margin-top: 40px;
-      margin-left: 50px;
-      z-index: 1;
+
+    :root {
+      --map-width: 50%;
+      --map-height: 400px;
+      --map-margin-top: 40px;
+      --map-margin-left: 50px;
+      --map-z-index: 1;
+      --halloween-btn-color: #F6F8FF;
+      --halloween-btn-box-shadow: 0px 0px 10px #ff7518;
+      --halloween-btn-background: linear-gradient(120deg, #ffa801, #ff7518);
+      --halloween-btn-border-radius: 15px;
+      --halloween-btn-width: 250px;
+      --halloween-btn-height: 50px;
+      --navigation-margin-top: 20px;
+      --navigation-align-items: flex-start;
+      --navigation-margin-right: 150px;
+      --navigation-gap: 30px;
+      --navigation-a-font-size: 1.25em;
+      --navigation-a-color: #fff;
+      --navigation-a-font-weight: 500;
+      --navigation-a-transition: .5s;
+      --navigation-a-hover-color: #fff3cd;
+      --navigation-a-hover-text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+      --navigation-a-span-top: 0;
+      --navigation-a-span-left: 200px;
+      --navigation-a-span-width: 100%;
+      --navigation-a-span-height: 100%;
+      --navigation-a-span-background: #ffffff fixed;
+      --navigation-a-span-border-radius: 25px;
+      --navigation-a-span-z-index: -1;
+      --navigation-a-span-transform: scale(0);
+      --navigation-a-span-opacity: 0;
+      --navigation-a-span-transition: .5s;
+      --navigation-a-span-hover-transform: scale(1);
+      --navigation-a-span-hover-opacity: 0.25;
+      --h1-margin-top: 40px;
+      --h1-margin-left: 50px;
+      --h1-font-size: 2em;
+      --h1-color: #fff3cd;
+      --h1-text-shadow: 0px 0px 10px #fe3901, 0px 0px 20px #ff7518, 0px 0px 30px #ffa801;
+      --p-color: #fff3cd;
+      --p-margin-top: 90px;
+      --p-margin-left: 750px;
+      --background-img-background: url("../css/img/358.png") center;
+      --background-img-background-size: cover;
+      --background-img-width: 100%;
+      --background-img-height: 100%;
+      --background-img-z-index: -3;
+      --background-img-content: "";
+      --background-img-position: fixed;
+      --background-img-top: 0;
+      --background-img-left: 0;
+      --background-img-overflow: hidden;
     }
+
+    #map {
+      width: var(--map-width);
+      height: var(--map-height);
+      margin-top: var(--map-margin-top);
+      margin-left: var(--map-margin-left);
+      z-index: var(--map-z-index);
+    }
+
     .halloween-btn {
-       color: #F6F8FF;
-       border: none;
-       box-shadow: 0px 0px 10px #ff7518;
-       background: linear-gradient(120deg, #ffa801, #ff7518);
-       border-radius: 15px;
-       width: 250px;
-       height: 50px;
-       cursor: pointer;
-     }
+      color: var(--halloween-btn-color);
+      border: none;
+      box-shadow: var(--halloween-btn-box-shadow);
+      background: var(--halloween-btn-background);
+      border-radius: var(--halloween-btn-border-radius);
+      width: var(--halloween-btn-width);
+      height: var(--halloween-btn-height);
+      cursor: pointer;
+    }
+
     .halloween-btn:hover {
       box-shadow: none;
     }
 
     .navigation {
       display: flex;
-      margin-top: 20px;
+      margin-top: var(--navigation-margin-top);
       flex-direction: column;
-      align-items: flex-start;
-      margin-right: 150px;
+      align-items: var(--navigation-align-items);
+      margin-right: var(--navigation-margin-right);
       float: right;
-      gap: 30px;
+      gap: var(--navigation-gap);
     }
 
     .navigation a {
-      font-size: 1.25em;
-      color: #fff;
-      font-weight: 500;
-      transition: .5s;
+      font-size: var(--navigation-a-font-size);
+      color: var(--navigation-a-color);
+      font-weight: var(--navigation-a-font-weight);
+      transition: var(--navigation-a-transition);
     }
 
     .navigation a:hover {
-      color: #fff3cd;
-      text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+      color: var(--navigation-a-hover-color);
+      text-shadow: var(--navigation-a-hover-text-shadow);
     }
 
     .navigation a span {
-      top: 0;
-      left: 200px;
-      width: 100%;
-      height: 100%;
-      background: #ffffff fixed;
-      border-radius: 25px;
-      z-index: -1;
-      transform: scale(0);
-      opacity: 0;
-      transition: .5s;
+      top: var(--navigation-a-span-top);
+      left: var(--navigation-a-span-left);
+      width: var(--navigation-a-span-width);
+      height: var(--navigation-a-span-height);
+      background: var(--navigation-a-span-background);
+      border-radius: var(--navigation-a-span-border-radius);
+      z-index: var(--navigation-a-span-z-index);
+      transform: var(--navigation-a-span-transform);
+      opacity: var
+      (--navigation-a-span-opacity);
+      transition: var(--navigation-a-span-transition);
     }
 
     .navigation a:hover span {
-      transform: scale(1);
-      opacity: 0.25;
+      transform: var(--navigation-a-span-hover-transform);
+      opacity: var(--navigation-a-span-hover-opacity);
     }
 
     h1 {
-      margin-top: 40px;
-      margin-left: 50px;
-      font-size: 2em;
-      color: #fff3cd;
-      text-shadow: 0px 0px 10px #fe3901, 0px 0px 20px #ff7518, 0px 0px 30px #ffa801;
+      margin-top: var(--h1-margin-top);
+      margin-left: var(--h1-margin-left);
+      font-size: var(--h1-font-size);
+      color: var(--h1-color);
+      text-shadow: var(--h1-text-shadow);
     }
 
     p {
-      color: #fff3cd;
-      margin-top: 90px;
-      margin-left: 750px;
+      color: var(--p-color);
+      margin-top: var(--p-margin-top);
+      margin-left: var(--p-margin-left);
     }
 
     .background-img {
-      background: url("../css/img/358.png") center;
-      background-size: cover;
-      width: 100%;
-      height: 100%;
-      z-index: -3;
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      overflow: hidden;
+      background: var(--background-img-background);
+      background-size: var(--background-img-background-size);
+      width: var(--background-img-width);
+      height: var(--background-img-height);
+      z-index: var(--background-img-z-index);
+      content: var(--background-img-content);
+      position: var(--background-img-position);
+      top: var(--background-img-top);
+      left: var(--background-img-left);
+      overflow: var(--background-img-overflow);
     }
+
   </style>
 </head>
 <body>
