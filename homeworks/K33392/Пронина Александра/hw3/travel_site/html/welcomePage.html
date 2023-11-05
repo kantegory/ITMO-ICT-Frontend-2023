@@ -12,70 +12,125 @@
   <title>Аккаунт</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    .background{
-      color: black;
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      height: 100%;
-      width: 100%;
-      z-index: 1;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+    :root {
+      --color-black: black;
+      --background-size-cover: cover;
+      --background-position-center: center;
+      --background-attachment-fixed: fixed;
+      --height-100percent: 100%;
+      --width-100percent: 100%;
+      --z-index-1: 1;
+      --font-family-poppins: 'Poppins', sans-serif;
+      --margin-0: 0;
+      --padding-0: 0;
+      --box-sizing-border-box: border-box;
+      --position-absolute: absolute;
+      --top-0: 0;
+      --left-0: 0;
+      --padding-20px-40px: 20px 40px;
+      --display-flex: flex;
+      --justify-content-space-between: space-between;
+      --align-items-center: center;
+      --z-index-100: 100;
+      --user-select-none: none;
+      --color-fff3cd: #fff3cd;
+      --text-shadow-fog: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+      --animation-fog: fog 20s;
+      --color-fe3901: #fe3901;
+      --font-size-5em: 5em;
+      --text-shadow-2px-4px-10px: 2px 4px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+      --pointer-events-none: none;
+      --position-relative: relative;
+      --transform-translateX-minus310px: translateX(-310px);
+      --transform-translateX-270px: translateX(270px);
+      --list-style-none: none;
+      --margin-left-40px: 40px;
+      --font-size-12px: 12px;
+      --font-weight-300: 300;
+      --color-f1f1f1: #f1f1f1;
+      --background-020912: #020912;
+      --padding-30px-100px: 30px 100px;
+      --font-size-2.5em: 2.5em;
+      --color-fff: #fff;
+      --margin-bottom-15px: 15px;
+      --font-size-1em: 1em;
+      --text-align-justify: justify;
     }
+
+    * {
+      margin: var(--margin-0);
+      padding: var(--padding-0);
+      box-sizing: var(--box-sizing-border-box);
+      font-family: var(--font-family-poppins);
+    }
+
+    .background {
+      color: var(--color-black);
+      background-size: var(--background-size-cover);
+      background-position: var(--background-position-center);
+      background-attachment: var(--background-attachment-fixed);
+      height: var(--height-100percent);
+      width: var(--width-100percent);
+      z-index: var(--z-index-1);
+    }
+
     body {
       min-height: 100vh;
     }
-    header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
-      user-select: none;
-    }
-    h5 {
 
-      color: #fff3cd; /* Зеленый цвет */
-      text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
-      animation: fog 20s;
+    header {
+      position: var(--position-absolute);
+      top: var(--top-0);
+      left: var(--left-0);
+      width: var(--width-100percent);
+      padding: var(--padding-20px-40px);
+      display: var(--display-flex);
+      justify-content: var(--justify-content-space-between);
+      align-items: var(--align-items-center);
+      z-index: var(--z-index-100);
+      user-select: var(--user-select-none);
     }
-    h2{
-      color: #fff3cd; /* Зеленый цвет */
-      text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+
+    h5 {
+      color: var(--color-fff3cd);
+      text-shadow: var(--text-shadow-fog);
+      animation: var(--animation-fog);
     }
+
+    h2 {
+      color: var(--color-fff3cd);
+      text-shadow: var(--text-shadow-fog);
+    }
+
     .logo {
       font-size: 1.75em;
-      color: #fff;
+      color: var(--color-fff);
     }
+
     .navigation {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0px;
+      display: var(--display-flex);
+      align-items: var(--align-items-center);
+      justify-content: var(--justify-content-center);
+      gap: var(--margin-0);
     }
+
     .navigation a {
-      position: relative;
+      position: var(--position-relative);
       font-size: 1.25em;
-      color: #fff;
+      color: var(--color-fff);
       font-weight: 500;
       margin-left: 75px;
       padding: 5px 25px;
-      transition: .5s;
+      transition: var(--transition-0.5s);
     }
+
     .navigation a:hover {
-      color: #fff3cd;
-      text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+      color: var(--color-fff3cd);
+      text-shadow: var(--text-shadow-fog);
     }
+
     .navigation a span {
       position: absolute;
       top: 0;
@@ -87,15 +142,17 @@
       z-index: -1;
       transform: scale(0);
       opacity: 0;
-      transition: .5s;
+      transition: var(--transition-0.5s);
     }
+
     .navigation a:hover span {
       transform: scale(1);
       opacity: 0.25;
     }
+
     .parallax {
-      position: relative;
-      display: flex;
+      position: var(--position-relative);
+      display: var(--display-flex);
       justify-content: center;
       align-items: center;
       height: 115vh;
@@ -103,65 +160,72 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      width: 100%;
-      z-index: -1;
+      width: var(--width-100percent);
+      z-index: var(--z-index--1);
     }
+
     #text {
-      position: fixed;
-      font-size: 5em;
-      color: #fff3cd;
-      text-shadow: 2px 4px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+      position: var(--position-fixed);
+      font-size: var(--font-size-5em);
+      color: var(--color-fff3cd);
+      text-shadow: var(--text-shadow-2px-4px-10px);
     }
 
     .parallax img {
-      position: absolute;
+      position: var(--position-absolute);
       top: 0;
       left: 0;
-      width: 100%;
-      pointer-events: none;
+      width: var(--width-100percent);
+      pointer-events: var(--pointer-events-none);
     }
-    .parallax img#gate-left {
-      transform: translateX(-310px);
 
+    .parallax img#gate-left {
+      transform: var(--transform-translateX-minus310px);
     }
+
     .parallax img#gate-right {
-      transform: translateX(270px);
-    ;
+      transform: var(--transform-translateX-270px);
     }
+
     .navigation ul {
-      display: flex;
-      list-style: none;
+      display: var(--display-flex);
+      list-style: var(--list-style-none);
     }
+
     .navigation ul li {
-      margin-left: 40px;
+      margin-left: var(--margin-left-40px);
     }
+
     .navigation ul li a {
-      color: #fff;
-      font-size: 12px;
-      font-weight: 300;
+      color: var(--color-fff);
+      font-size: var(--font-size-12px);
+      font-weight: var(--font-weight-300);
       text-decoration: none;
     }
+
     .navigation ul li a:hover {
-      color: #f1f1f1;
+      color: var(--color-f1f1f1);
     }
-    .seс {
-      position: relative;
-      background: #020912;
-      padding: 30px 100px;
 
+    .sec {
+      position: var(--position-relative);
+      background: var(--background-020912);
+      padding: var(--padding-30px-100px);
     }
-    .sec h2{
-      font-size: 2.5em;
-      color: #fff;
-      margin-bottom: 15px;
-    }
-    .sec p{
-      font-size: 1em;
-      color: #fe3901;
-      font-weight: 300;
-      text-align: justify;
 
+    .sec h2 {
+      font-size: var(--font-size-2.5em);
+      color: var(--color-fff);
+      margin-bottom: var(--margin-bottom-15px);
     }
+
+    .sec p {
+      font-size: var(--font-size-1em);
+      color: var(--color-fe3901);
+      font-weight: var(--font-weight-300);
+      text-align: var(--text-align-justify);
+    }
+
   </style>
 </head>
 <body>

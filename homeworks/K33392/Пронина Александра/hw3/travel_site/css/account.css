@@ -1,23 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --font-family: 'Poppins', sans-serif;
+    --background-color: black;
+    --background-size: cover;
+    --background-position: center;
+    --background-attachment: fixed;
+    --primary-color: #fff3cd;
+    --shadow-color: #ff7518;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-family);
 }
-.background{
-    color: black;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+
+.background {
+    color: var(--background-color);
+    background-size: var(--background-size);
+    background-position: var(--background-position);
+    background-attachment: var(--background-attachment);
     height: 100%;
     width: 100%;
     z-index: 1;
-
 }
+
 body {
     min-height: 100vh;
 }
+
 header {
     position: absolute;
     top: 0;
@@ -30,26 +43,25 @@ header {
     z-index: 100;
     user-select: none;
 }
-h5 {
 
-    color: #fff3cd; /* Зеленый цвет */
-    text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+h5, h2 {
+    color: var(--primary-color);
+    text-shadow: 0px 0px 10px var(--shadow-color), 0px 0px 20px var(--shadow-color), 0px 0px 30px var(--shadow-color);
     animation: fog 20s;
 }
-h2{
-    color: #fff3cd; /* Зеленый цвет */
-    text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
-}
+
 .logo {
     font-size: 1.75em;
     color: #fff;
 }
+
 .navigation {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0px;
 }
+
 .navigation a {
     position: relative;
     font-size: 1.25em;
@@ -59,10 +71,12 @@ h2{
     padding: 5px 25px;
     transition: .5s;
 }
+
 .navigation a:hover {
-    color: #fff3cd;
-    text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+    color: var(--primary-color);
+    text-shadow: 0px 0px 10px var(--shadow-color), 0px 0px 20px var(--shadow-color), 0px 0px 30px var(--shadow-color);
 }
+
 .navigation a span {
     position: absolute;
     top: 0;
@@ -76,10 +90,12 @@ h2{
     opacity: 0;
     transition: .5s;
 }
+
 .navigation a:hover span {
     transform: scale(1);
     opacity: 0.25;
 }
+
 .parallax {
     position: relative;
     display: flex;
@@ -93,11 +109,12 @@ h2{
     width: 100%;
     z-index: -1;
 }
+
 #text {
     position: fixed;
     font-size: 5em;
-    color: #fff3cd;
-    text-shadow: 2px 4px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+    color: var(--primary-color);
+    text-shadow: 2px 4px 10px var(--shadow-color), 0px 0px 20px var(--shadow-color), 0px 0px 30px var(--shadow-color);
 }
 
 .parallax img {
@@ -107,45 +124,50 @@ h2{
     width: 100%;
     pointer-events: none;
 }
+
 .parallax img#gate-left {
     transform: translateX(-310px);
-
 }
+
 .parallax img#gate-right {
     transform: translateX(270px);
-;
 }
+
 .navigation ul {
     display: flex;
     list-style: none;
 }
+
 .navigation ul li {
     margin-left: 40px;
 }
+
 .navigation ul li a {
     color: #fff;
     font-size: 12px;
     font-weight: 300;
     text-decoration: none;
 }
+
 .navigation ul li a:hover {
     color: #f1f1f1;
 }
-.seс {
+
+.sec {
     position: relative;
     background: #020912;
     padding: 30px 100px;
-
 }
-.sec h2{
+
+.sec h2 {
     font-size: 2.5em;
     color: #fff;
     margin-bottom: 15px;
 }
-.sec p{
+
+.sec p {
     font-size: 1em;
     color: #fe3901;
     font-weight: 300;
     text-align: justify;
-
 }
