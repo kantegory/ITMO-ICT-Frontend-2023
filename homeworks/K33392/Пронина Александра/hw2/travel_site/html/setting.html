@@ -18,70 +18,59 @@
     }</style>
 </head>
 <body>
-
 <div class="container">
-    <h1 class="mt-4">Настройки профиля</h1>
+    <h1 class="mt-4" aria-label="Настройки профиля">Настройки профиля</h1>
 
-    <!-- Форма для настроек профиля -->
     <form id="profileSettingsForm">
 
-        <!-- Имя пользователя -->
         <div class="form-group">
-            <label for="username">Имя пользователя</label>
-            <input type="text" class="form-control" id="username" placeholder="Введите ваше имя" required>
+            <label for="username" id="username-label">Имя пользователя</label>
+            <input type="text" class="form-control" id="username" placeholder="Введите ваше имя" required aria-labelledby="username-label" aria-required="true" aria-invalid="true">
         </div>
 
-        <!-- Email -->
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Введите ваш email" required>
+            <label for="email" id="email-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Введите ваш email" required aria-labelledby="email-label" aria-required="true">
         </div>
-
         <!-- Пароль -->
         <div class="form-group">
-            <label for="password">Пароль</label>
-            <input type="password" class="form-control" id="password" placeholder="Введите ваш пароль" required>
+            <label for="password" id="password-label">Пароль</label>
+            <input type="password" class="form-control" id="password" placeholder="Введите ваш пароль" required aria-labelledby="password-label" aria-required="true">
         </div>
-
         <!-- Кнопка Сохранить -->
-        <button type="submit" class="halloween-btn">Сохранить</button>
+        <button type="submit" class="halloween-btn" aria-describedby="status-message">Сохранить</button>
     </form>
+    <div id="status-message"></div>
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-    $("#profileSettingsForm").submit(function(event) {
+    document.getElementById("profileSettingsForm").addEventListener("submit", function(event) {
         event.preventDefault();
+
         // Получение значений полей формы
-        let username = $("#username").val();
-        let email = $("#email").val();
-        let password = $("#password").val();
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
         // Здесь можно добавить код для валидации значений полей формы
+
         let postData = {
             username: username,
             email: email,
             password: password
         };
 
-        $.ajax({
-            url: "http://127.0.0.1:5000/save_profile_settings",
-            type: "POST",
-            dataType: "json",
-            contentType: "application/json",
-            data: JSON.stringify(postData),
-            success: function(response) {
+        axios.post("http://127.0.0.1:5000/save_profile_settings", postData)
+            .then(function(response) {
                 // Обработка успешного ответа от сервера
                 Swal.fire("Успешно", "Настройки профиля сохранены.", "success");
-            },
-            error: function(error) {
+            })
+            .catch(function(error) {
                 Swal.fire("Ошибка", "Произошла ошибка при сохранении настроек профиля.", "error");
-            }
-        });
+            });
     });
 </script>
-
 </body>
 </html>
