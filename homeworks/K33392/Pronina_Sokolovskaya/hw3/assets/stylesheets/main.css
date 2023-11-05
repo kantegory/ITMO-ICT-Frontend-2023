@@ -7,7 +7,7 @@
 
 * {
     font-family: "Bebas Neue Cyrillic", sans-serif;
-}
+}x
 
 html {
     scroll-behavior: smooth;
@@ -294,6 +294,10 @@ Colors
 
 .color3 {
     color: var(--text-color1);
+}
+
+.color4 {
+    color: var(--text-color4);
 }
 
 .bg-color1 {

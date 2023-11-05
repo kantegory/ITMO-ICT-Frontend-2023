@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     name.textContent = quest["name"];
 
                     let description = questContent.appendChild(document.createElement("p"));
-                    description.className = "text-center color3 quest_description";
+                    description.className = "text-center color4 quest_description";
                     description.textContent = quest["description"];
 
                     let categoryBlock = questContent.appendChild(document.createElement("div"));
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     categotyWord.className = "text-black quest_description filter";
                     categotyWord.textContent = "Категория:";
                     let questCategory = categoryBlock.appendChild(document.createElement("p"));
-                    questCategory.className = "color3 quest_description";
+                    questCategory.className = "color4 quest_description";
                     questCategory.textContent = parseCategory(quest["category"]);
 
                     let durationBlock = questContent.appendChild(document.createElement("div"));
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     durationWord.className = "text-black quest_description filter"
                     durationWord.textContent = "Время в пути:";
                     let questDuration = durationBlock.appendChild(document.createElement("p"));
-                    questDuration.className = "color3 quest_description"
+                    questDuration.className = "color4 quest_description"
                     questDuration.textContent = quest["duration"];
 
 
