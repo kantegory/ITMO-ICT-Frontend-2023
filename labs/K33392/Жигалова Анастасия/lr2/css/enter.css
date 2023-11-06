@@ -1,5 +1,5 @@
 footer {
-	color: rgb(100, 83, 6);
+	color:var( --text-color);
 	position: fixed;
 	left: 0;
 	bottom: 0;
@@ -24,11 +24,11 @@ footer {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color:var(--bg-color);
   }
   
   .modal-content {
-    background-color: #fefefe;
+    background-color: #beadad;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
