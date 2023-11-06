@@ -1,0 +1,163 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "images": [
+    {
+      "imageUrl": "https://i.pinimg.com/564x/61/4b/73/614b73bab37859a7e048001fc96d6211.jpg",
+      "imageTitle": "0c7b8865450",
+      "userId": 3,
+      "id": 1
+    },
+    {
+      "imageUrl": "https://i.pinimg.com/564x/61/4b/73/614b73bab37859a7e048001fc96d6211.jpg",
+      "imageTitle": "0c7b8865450",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "imageUrl": "https://i.pinimg.com/564x/61/4b/73/614b73bab37859a7e048001fc96d6211.jpg",
+      "imageTitle": "0c7b8865450",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "imageUrl": "https://i.pinimg.com/564x/61/4b/73/614b73bab37859a7e048001fc96d6211.jpg",
+      "imageTitle": "0c7b8865450",
+      "userId": 4,
+      "id": 4
+    },
+    {
+      "imageUrl": "https://i.pinimg.com/564x/8e/ca/3b/8eca3b3c5d7d46fbf4a27819c7829a41.jpg",
+      "imageTitle": "Ночь",
+      "userId": 4,
+      "id": 5
+    },
+    {
+      "imageUrl": "https://i.pinimg.com/564x/75/9b/9d/759b9d5e45625847e0dc63acbcce57cd.jpg",
+      "imageTitle": "Аниме",
+      "userId": 10,
+      "id": 6
+    },
+    {
+      "imageUrl": "https://i.pinimg.com/564x/a5/78/1c/a5781c5d410237d043100b3c3b044e5c.jpg",
+      "imageTitle": "Lighthouse",
+      "userId": 10,
+      "id": 7
+    },
+    {
+      "imageUrl": "https://64.media.tumblr.com/adca63e236d23364c8f8951e2954344f/51b4df1338dcd316-ce/s1280x1920/e1abb69cdaa26ff274d6446cc09a84e804bd5e4b.png",
+      "imageTitle": "Wednesday ",
+      "userId": 11,
+      "id": 8
+    }
+  ],
+  "users": [
+    {
+      "email": "register@mail.ru",
+      "password": "$2a$10$ek4ZqldazzeApRJ.0G7tXuAT.om31cKE39Johi2KDLAuc8AHA2GrG",
+      "firstname": "Степан",
+      "lastname": "Кононов",
+      "id": 1
+    },
+    {
+      "email": "check@mail.ru",
+      "password": "$2a$10$d7O9wb2/m6sDHYSU8AFHB.y9PHuBk/4C0su9u5dEAtRg6aErsAndG",
+      "firstname": "Соня",
+      "lastname": "Авокадо",
+      "id": 2
+    },
+    {
+      "email": "0c7b8865450947@lamasticots.com",
+      "password": "$2a$10$eJ2Y9Q1Zow6dvADVMxY60Ol5yh6Z6GyBG8mJ1lxgXiXo6.RUjI1yu",
+      "firstname": "Степан",
+      "lastname": "Кононов",
+      "id": 3
+    },
+    {
+      "email": "dna91643@omeie.com",
+      "password": "$2a$10$G88fEVAm.dkioEyyS6RhceOlk0hz6JMq1/M.PDbm7IPCe4z54ij4i",
+      "firstname": "Наталья",
+      "lastname": "Кононова",
+      "id": 4
+    },
+    {
+      "email": "gnz83945@omeie.com",
+      "password": "$2a$10$bF1X5b6oIJCcUCilwAV69uFJkYR5bDFYm.JPIVTLgqdwzUXE2oKHO",
+      "firstname": "Катя",
+      "lastname": "Ш",
+      "id": 5
+    },
+    {
+      "email": "nyntqnz781@ipahive.org",
+      "password": "$2a$10$jrvFd.6etHNcuw2ITapeXuC3nZAjOPoJM4bTnU4xmqETPqcG9OmFi",
+      "firstname": "Катя",
+      "lastname": "Рин",
+      "gender": "female",
+      "id": 6
+    },
+    {
+      "email": "nyntqz781@ipahive.org",
+      "password": "$2a$10$qgzXxVkkSkcsUCjVt/Hu3OB8k3QQNiYn31zVIL23oVEmOzegqH01i",
+      "firstname": "nyntqnz781@ipahive.org",
+      "lastname": "nyntqnz781@ipahive.org",
+      "gender": "female",
+      "avatar": 65,
+      "id": 7
+    },
+    {
+      "email": "nynz781@ipahive.org",
+      "password": "$2a$10$b2Mcw9VT1T6.zSLxZVvh0Ovn3xbtCO56521BLiiCZcZyMfneugbC2",
+      "firstname": "Алеша",
+      "lastname": "Алешович",
+      "gender": "male",
+      "avatar": 45,
+      "id": 8
+    },
+    {
+      "email": "nyntqnz781@ipahive.or",
+      "password": "$2a$10$oLt3t2BQefq6BTa8lgumvOurg6q3VaQzn29cWO8pkfGrch5uDrNG.",
+      "firstname": "Степан",
+      "lastname": "К",
+      "gender": "male",
+      "avatar": 32,
+      "id": 9
+    },
+    {
+      "email": "stepan.kononov.2003@mail.ru",
+      "password": "$2a$10$EHCItBAolEmtFOWHbArd9eQo0HGnIynkdjfOdc87parAzEBuFGNX.",
+      "firstname": "Алеq1111",
+      "lastname": "Алешев",
+      "gender": "male",
+      "avatar": 5,
+      "id": 10,
+      "newUsername": "Але",
+      "company": "q234",
+      "location": "234"
+    },
+    {
+      "email": "stepan.kononov.2003@gmail.com",
+      "password": "$2a$10$8q1BamlNb/cUQ1I.KU7NMu2gQ.LwDW2/Wkr66hMRCySqfSxv4mCH6",
+      "firstname": "Mauі",
+      "gender": "male",
+      "avatar": 21,
+      "id": 11,
+      "company": "",
+      "location": ""
+    }
+  ]
+}
