@@ -1,3 +1,33 @@
+:root[data-theme="light"] {
+  --fg-color: black;
+  --bg-color: white;
+  --modal-bg-color: #212529;
+  --outline-color: black;
+  --profile-image-bg-color: #212529;
+}
+
+:root[data-theme="dark"] {
+  --fg-color: #f8f9fa;
+  --bg-color: black;
+  --modal-bg-color: #212529;
+  --outline-color: white;
+  --profile-image-bg-color: #f8f9fa;
+}
+
 body {
   font-family: Georgia, serif;
+  background: var(--bg-color);
+  color: var(--fg-color);
+}
+
+p {
+  color: var(--fg-color);
+}
+
+.modal-content {
+  background: var(--modal-bg-color);
+}
+
+.btn-close {
+  color: white !important;
 }

@@ -161,9 +161,7 @@ export function ProfileLayout() {
           <h1 className="h3 mt-3 fw-normal">@{userData.username}</h1>
           <div className={styles.bioBlock}>
             {!isEditingBio && (
-              <h1 className="h5 blockquote-footer mt-2 text-muted">
-                {userData.bio}
-              </h1>
+              <h1 className="h5 blockquote-footer mt-2">{userData.bio}</h1>
             )}
             {isEditingBio && (
               <input

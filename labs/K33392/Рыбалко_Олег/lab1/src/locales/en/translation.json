@@ -38,7 +38,10 @@
     "feed": "Feed",
     "profile": "Profile",
     "signIn": "Sign In",
-    "search": "Search"
+    "search": "Search",
+    "themeButton": "Theme",
+    "darkThemeButton": "Dark",
+    "lightThemeButton": "Light"
   },
   "feed": {
     "headerFollowing": "Following",

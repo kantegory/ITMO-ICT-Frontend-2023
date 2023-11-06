@@ -102,6 +102,7 @@ export function Post({
           <FontAwesomeIcon
             icon={isLiked ? faHeartSolid : faHeartRegular}
             size="xl"
+            style={{ color: 'var(--outline-color)' }}
           />
           <p>{likesCount}</p>
         </button>
