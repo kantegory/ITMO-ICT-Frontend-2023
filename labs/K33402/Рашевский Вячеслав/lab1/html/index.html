@@ -6,8 +6,8 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <title>Smart house of your dream</title>
 </head>
-<body>
-<header id="header" class="fixed-top">
+<body data-bs-theme="dark" class="overflow-y-hidden">
+<header id="header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Smarthouse</a>
@@ -19,19 +19,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Actions
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="lighting.html">Lighting</a></li>
                             <li><a class="dropdown-item" href="cctv.html">CCTV</a></li>
                             <li><a class="dropdown-item" href="locks.html">Door locks</a></li>
                             <li><a class="dropdown-item" href="temperature.html">Temperature</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="actions.html">All actions</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="services.html">All services</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -39,12 +36,55 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <a class="nav-link active align-content-end ms-auto" aria-current="page"
-                   href="account.html">Account</a>
+                <a class="nav-link active align-content-end ms-auto" aria-current="page" href="account.html">Account</a>
             </div>
         </div>
     </nav>
 </header>
+<div class="container-fluid align-content-center row vh-100">
+    <div class="justify-content-center row">
+        <div class="card col-12 col-xl-5 col-md-6 my-5 mx-auto">
+            <h5 class="card-header">Key use cases</h5>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Retail</li>
+                    <li class="list-group-item">Healthcare</li>
+                    <li class="list-group-item">Smart home</li>
+                    <li class="list-group-item">Logistics & transportation</li>
+                    <li class="list-group-item">Agriculture</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container card col-12 col-xl-5 col-md-6 my-5 mx-auto">
+            <h5 class="card-header">What you can achieve using ours services?</h5>
+            <div class="row row-cols-2 my-auto">
+                <div class="col" onclick="location.href='lighting.html'">
+                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto">Lighting</h5>
+                </div>
+                <div class="col" onclick="location.href='locks.html'">
+                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto">Door locks</h5>
+                </div>
+                <div class="col" onclick="location.href='cctv.html'">
+                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto">CCTV</h5>
+                </div>
+                <div class="col" onclick="location.href='temperature.html'">
+                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto">Temperature</h5>
+                </div>
+            </div>
+            <div class="card border border-light text-center w-100 py-2 my-auto" onclick="location.href='services.html'">
+                Check out all services
+            </div>
+        </div>
+        <div class="card col-12 col-xl-5 col-md-6 my-5 mx-auto">
+            <h5 class="card-header">About us</h5>
+            <div class="card-body">
+                <h5 class="card-title">What can we do for you?</h5>
+                <p class="card-text">You can control your area, light, door locks and temperature in house.</p>
+            </div>
+        </div>
+    </div>
+    <img src="../src/home.jpg" class="img-fluid position-absolute z-n1 vh-100 vw-100 d-grid mx-auto" alt="Smart house">
+</div>
 <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
