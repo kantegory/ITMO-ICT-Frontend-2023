@@ -1,0 +1,17 @@
+.border-hover:hover {
+    border-color: #ffc107;
+}
+
+.border-focus:focus {
+    border-color: #ffc107;
+}
+
+.border-hover {
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.border-focus {
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+}
