@@ -6,15 +6,16 @@
   <title>Рекомендации</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=font1|font2|etc" type="text/css">
   <style>
-    *, html, body {
+
+    *,
+    html,
+    body {
       padding: 0;
       margin: 0;
       color: white;
       box-sizing: border-box;
       font-family: 'Ubuntu', sans-serif;
       font-weight: bold;
-
-
     }
 
     #toggleContainer label {
@@ -29,7 +30,6 @@
       position: relative;
       z-index: 1;
     }
-
 
     #toggleContainer {
       z-index: 1;
@@ -52,7 +52,6 @@
       flex-wrap: wrap;
       box-sizing: border-box;
       align-content: center;
-
     }
 
     .tileItem {
@@ -60,17 +59,15 @@
       height: 250px;
       margin: 5px;
       border-radius: 5px;
-
       transition: all 0.5s ease;
     }
 
     .tileItem:hover {
       transform: scale(1.05);
-      transition: all 0.5s ease;
     }
 
     #galleryContainer {
-      top:30px;
+      top: 30px;
       height: 500px;
       width: 800px;
       background: transparent;
@@ -100,18 +97,17 @@
       z-index: -1;
       background: url("../css/img/background.png") no-repeat center center fixed;
       background-size: cover;
-
     }
 
     #galleryView {
-
       right: 0;
       bottom: 0;
       z-index: -1;
       background: url("../css/img/background.png") no-repeat center center fixed;
-      background-size: cover; display: flex;
+      background-size: cover;
+      display: flex;
       justify-content: center;
-      align-items: center ;
+      align-items: center;
     }
 
     #outer3 {
@@ -133,18 +129,13 @@
     }
 
     #slider3.active {
-      -webkit-transform: translatex(50px);
-      -ms-transform: translatex(50px);
-      -o-transform: translatex(50px);
-      transform: translatex(50px);
-      transition: all 0.5s;
+      transform: translateX(50px);
       background-color: orange;
     }
 
     #outer3.outerActive {
       background-color: white;
       border: 2px solid white;
-      transition: all 0.5s;
     }
 
     #mainView {
@@ -160,7 +151,6 @@
 
     #mainView:hover {
       transform: scale(1.2);
-      transition: all 1s;
     }
 
     #leftView {
@@ -168,7 +158,7 @@
       width: 150px;
       opacity: 0.5;
       border-radius: 5px;
-      transform: skewy(5deg);
+      transform: skewY(5deg);
       transform-origin: top right;
       background-color: #eb9100;
       display: flex;
@@ -179,7 +169,6 @@
 
     #leftView:hover {
       opacity: 1;
-      transition: all 1s;
     }
 
     #rightView {
@@ -187,7 +176,7 @@
       width: 150px;
       opacity: 0.5;
       border-radius: 5px;
-      transform: skewy(-5deg);
+      transform: skewY(-5deg);
       transform-origin: top left;
       background-color: #eb9100;
       display: flex;
@@ -198,7 +187,6 @@
 
     #rightView:hover {
       opacity: 1;
-      transition: all 1s;
     }
 
     .navBtns {
@@ -215,7 +203,6 @@
 
     .navBtns:hover {
       opacity: 1;
-      transition: all 1s;
       background-color: #eb9100;
     }
 
@@ -230,91 +217,126 @@
     #linkTag {
       cursor: pointer;
       z-index: 1;
+    }
+
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
+
+    section {
+      position: 0;
+    }
+
   </style>
 </head>
 <body>
-
-<div id="container">
-
-  <div id="toggleContainer">
-
-    <label>Карусель</label>
-    <div id="toggle">
-      <div id="outer3">
-        <div id="slider3"></div>
+<section>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide swiper-slide--one">
+        <span>domestic</span>
+        <div>
+          <h2>Enjoy the exotic of sunny Hawaii</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Maui, Hawaii
+          </p>
+        </div>
       </div>
-      <label>Плитка </label>
-    </div>
-  </div>
-  <div id="galleryView">
-    <div id="galleryContainer">
-      <div id="leftView"></div>
-      <button id="navLeft" class="navBtns"><i class="fas fa-arrow-left fa-3x"></i></button>
-      <a id="linkTag">
-        <div id="mainView"></div>
-      </a>
-      <div id="rightView"></div>
-      <button id="navRight" class="navBtns"><i class="fas fa-arrow-right fa-3x"></i></button>
-    </div>
-  </div>
-  <div id="tilesView">
-    <div id="tilesContainer"></div>
-  </div>
-</div>
+      <div class="swiper-slide swiper-slide--two">
+        <span>subtropical</span>
+        <div>
+          <h2>The Island of Eternal Spring</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Lanzarote, Spanien
+          </p>
+        </div>
+      </div>
 
+      <div class="swiper-slide swiper-slide--three">
+        <span>history</span>
+        <div>
+          <h2>Awesome Eiffel Tower</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Paris, France
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper-slide--four">
+        <span>Mayans</span>
+        <div>
+          <h2>One of the safest states in Mexico</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            The Yucatan, Mexico
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper-slide--five">
+        <span>native</span>
+        <div>
+          <h2>The most popular yachting destination</h2>
+          <p>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Whitsunday Islands, Australia
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
 <script>
-  document.getElementById("outer3").addEventListener("click", toggleState3);
-  function toggleState3() {
-    let galleryView = document.getElementById("galleryView");
-    let tilesView = document.getElementById("tilesView");
-    let outer = document.getElementById("outer3");
-    let slider = document.getElementById("slider3");
-    let tilesContainer = document.getElementById("tilesContainer");
-    if (slider.classList.contains("active")) {
-      slider.classList.remove("active");
-      outer.classList.remove("outerActive");
-      galleryView.style.display = "flex";
-      tilesView.style.display = "none";
-      while (tilesContainer.hasChildNodes()) {
-        tilesContainer.removeChild(tilesContainer.firstChild);
-      }
-    } else {
-      slider.classList.add("active");
-      outer.classList.add("outerActive");
-      galleryView.style.display = "none";
-      tilesView.style.display = "flex";
-      for (let i = 0; i < imgObject.length - 1; i++) {
-        let tileItem = document.createElement("div");
-        tileItem.classList.add("tileItem");
-        tileItem.style.background = "url(" + imgObject[i] + ")";
-        tileItem.style.backgroundSize = "contain";
-        tilesContainer.appendChild(tileItem);
-      }
+  var swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2,
+      slideShadows: true
+    },
+    keyboard: {
+      enabled: true
+    },
+    mousewheel: {
+      thresholdDelta: 70
+    },
+    spaceBetween: 60,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
     }
-  }
-
-  fetch('images.json')
-          .then(response => response.json())
-          .then(data => {
-            let imgObject = data.images;
-            let mainImg = 0;
-            let prevImg = imgObject.length - 1;
-            let nextImg = 1;
-            loadGallery();
-
-            function loadGallery() {
-              let mainView = document.getElementById("mainView");
-              mainView.style.background = "url(" + imgObject[mainImg] + ")";
-              let leftView = document.getElementById("leftView");
-              leftView.style.background = "url(" + imgObject[prevImg] + ")";
-              let rightView = document.getElementById("rightView");
-              rightView.style.background = "url(" + imgObject[nextImg] + ")";
-              let linkTag = document.getElementById("linkTag");
-              linkTag.href = imgObject[mainImg];
-            }
-          });
+  });
 </script>
-</body>
+  </body>
 </html>
