@@ -43,9 +43,6 @@
     </div>
 </div>
 
-<div class="bottom-right-container">
-    <img src="" alt="Theme Icon" id="themeIcon" style="cursor: pointer; width: 50px; height: 50px;">
-</div>
 
 <!-- Модальное окно для увеличения изображения -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
@@ -61,7 +58,11 @@
         </div>
     </div>
 </div>
-
+<div class="bottom-right-container">
+    <svg class="themeIcon" id="themeIcon" role="img">
+        <use xlink:href="images/icons.svg#ic_moon"></use>
+    </svg>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
