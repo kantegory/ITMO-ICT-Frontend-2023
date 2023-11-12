@@ -11,8 +11,7 @@ import { Button, Modal, Form } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import { pb } from '@/constants'
 import { useNavigate } from 'react-router-dom'
-import { faPencil } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Sprite } from '@/sprites/Sprite'
 
 export function ProfileLayout() {
   const { t } = useTranslation('profile')
@@ -181,7 +180,7 @@ export function ProfileLayout() {
               onClick={() => setEditingBio(!isEditingBio)}
               aria-label={t('editBioButton')}
             >
-              <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
+              <Sprite id="pencil" color="#0d6efd" width="1em" />
             </Button>
           </div>
         </div>

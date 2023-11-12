@@ -1,10 +1,4 @@
 import styles from './Post.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faHeart as faHeartSolid,
-  faTrashCan,
-} from '@fortawesome/free-solid-svg-icons'
-import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons'
 import { useCallback, useEffect, useState } from 'react'
 import { PostType } from '@/types'
 import { useSelector } from 'react-redux'
@@ -13,6 +7,7 @@ import { AuthState } from '@/store/slices/auth'
 import { pb } from '@/constants'
 import { RecordModel } from 'pocketbase'
 import { useTranslation } from 'react-i18next'
+import { Sprite } from '@/sprites/Sprite'
 
 export function Post({
   className,
@@ -94,15 +89,14 @@ export function Post({
             onClick={() => onDelete!(post)}
             aria-label={t('deleteButtonAriaLabel')}
           >
-            <FontAwesomeIcon icon={faTrashCan} size="xl" color="red" />
+            <Sprite id="trash" color="red" />
             <p>&nbsp;</p>
           </button>
         )}
         <button className={styles.likeButton} onClick={like}>
-          <FontAwesomeIcon
-            icon={isLiked ? faHeartSolid : faHeartRegular}
-            size="xl"
-            style={{ color: 'var(--outline-color)' }}
+          <Sprite
+            id={isLiked ? 'solid-heart' : 'regular-heart'}
+            color={'var(--outline-color)'}
           />
           <p>{likesCount}</p>
         </button>
