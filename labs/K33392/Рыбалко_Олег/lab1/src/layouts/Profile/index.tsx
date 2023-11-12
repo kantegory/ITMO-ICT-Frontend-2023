@@ -11,7 +11,7 @@ import { Button, Modal, Form } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import { pb } from '@/constants'
 import { useNavigate } from 'react-router-dom'
-import { Sprite } from '@/sprites/Sprite'
+import { PencilIcon } from '@/sprites/PencilIcon'
 
 export function ProfileLayout() {
   const { t } = useTranslation('profile')
@@ -180,7 +180,7 @@ export function ProfileLayout() {
               onClick={() => setEditingBio(!isEditingBio)}
               aria-label={t('editBioButton')}
             >
-              <Sprite id="pencil" color="#0d6efd" width="1em" />
+              <PencilIcon color="#0d6efd" width="1em" />
             </Button>
           </div>
         </div>

@@ -7,7 +7,8 @@ import { AuthState } from '@/store/slices/auth'
 import { pb } from '@/constants'
 import { RecordModel } from 'pocketbase'
 import { useTranslation } from 'react-i18next'
-import { Sprite } from '@/sprites/Sprite'
+import { TrashIcon } from '@/sprites/TrashIcon'
+import { HeartIcon } from '@/sprites/HeartIcon'
 
 export function Post({
   className,
@@ -89,13 +90,13 @@ export function Post({
             onClick={() => onDelete!(post)}
             aria-label={t('deleteButtonAriaLabel')}
           >
-            <Sprite id="trash" color="red" />
+            <TrashIcon />
             <p>&nbsp;</p>
           </button>
         )}
         <button className={styles.likeButton} onClick={like}>
-          <Sprite
-            id={isLiked ? 'solid-heart' : 'regular-heart'}
+          <HeartIcon
+            type={isLiked ? 'solid' : 'regular'}
             color={'var(--outline-color)'}
           />
           <p>{likesCount}</p>
