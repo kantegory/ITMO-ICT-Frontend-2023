@@ -13,6 +13,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 /*
 ===========================================
 Header
@@ -35,8 +36,14 @@ Header
     width: 150px;
 }
 
-.logo_container img {
-    width: 100%;
+.logo_container img, svg {
+    width: 155px;
+    height: 80px;
+}
+
+.account_icon {
+    width: 42px;
+    height: 42px;
 }
 
 /*
@@ -726,7 +733,7 @@ Quests
 
 .search-form {
     background-color: var(--bg-color3);
-    background-image: url(../images/searchIcon.svg);
+    background-image: url(../images/searchIcon.png);
     background-repeat: no-repeat;
     background-position: 5% 50%;
     text-indent: 50px;
@@ -983,7 +990,7 @@ Media
         font-size: 25px;
     }
 
-    .logo_container img {
+    .logo_container svg {
         width: 300px;
     }
 
