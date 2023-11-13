@@ -131,3 +131,8 @@ form {
     margin-right: calc(var(--bs-gutter-x)/ -2);
     margin-left: calc(var(--bs-gutter-x)/ -2);
   }
+
+  .icon{
+	height: 30px;
+	width: 30px;
+  }

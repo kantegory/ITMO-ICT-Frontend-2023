@@ -40,14 +40,23 @@
 
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><span class="sr-only">Регистрация и вход</span><i class="far fa-user"></i></a>
+						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+						  <span class="sr-only">Регистрация и вход</span>
+						  <svg class = "icon">
+							<use xlink:href="sprite.svg#user"></use>
+						  </svg>
+						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item active" href="registration.html">Регистрация</a></li>
-							<li><a class="dropdown-item" href="entrance.html">Вход</a></li>
+						  <li><a class="dropdown-item" href="registration.html">Регистрация</a></li>
+						  <li><a class="dropdown-item" href="entrance.html">Вход</a></li>
 						</ul>
-					</li>
+					  </li>
 					<li class="nav-item">
-						<a class="nav-link" href="cart.html"><span class="sr-only">Корзина</span><i class="fas fa-shopping-cart"></i></a>
+						<a class="nav-link" href="cart.html"><span class="sr-only">Корзина</span>
+							<svg class="icon">
+								<use xlink:href="sprite.svg#cart"></use>
+							</svg>
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -130,10 +139,18 @@
 
 		  <div class="col-4">
 			<h5>Мы в сети</h5>
-			<div class="footer-icons">
-			  <a href="#"><i class="fab fa-instagram"></i></a>
-			  <a href="https://t.me/aanazhi"><i class="fab fa-telegram"></i></a>
-			</div>
+
+			<svg class="icon">
+			<a href="https://t.me/aanazhi">
+				<use xlink:href="sprite.svg#telegram"></use>
+			</a>
+			</svg>
+
+
+			<svg class = "icon">
+				<use xlink:href="sprite.svg#instagram"></use>
+			</svg>
+
 		  </div>
 		</div>
 	  </div>
