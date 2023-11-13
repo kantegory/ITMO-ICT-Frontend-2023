@@ -15,7 +15,7 @@ const Root = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   gap: theme.spacing(2),
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
 }))
 
 type DeviceControlsPageParams = {
