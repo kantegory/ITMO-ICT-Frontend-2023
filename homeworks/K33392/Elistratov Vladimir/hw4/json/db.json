@@ -1,0 +1,230 @@
+{
+  "users": [
+    {
+      "email": "123kek@gmail.com",
+      "firstName": "Михаил__3",
+      "userName": "Misha1123_2",
+      "capCount": 1,
+      "lastUpdate": 1698329218715,
+      "id": 1,
+      "password": "$2a$10$JRGzc2ToKkzzIGFkwZ6HeeUZ3v7TdFwvDJqu7tFV4vw8hnKw1qmmu"
+    },
+    {
+      "email": "itmo@ru",
+      "firstName": "Володя",
+      "userName": "vova123_3",
+      "capCount": 1,
+      "lastUpdate": 1698410044085,
+      "id": 2,
+      "password": "$2a$10$NnPeOjOvdSSuWds7.ESRnuWiG4oU76MntSlzMJ9asOtWBK/1VkZ6O"
+    },
+    {
+      "email": "2itmo@ru",
+      "password": "$2a$10$7BV/9e3TpYCgpUnehDeLNej3v3C972KsI56PVYxgbhrhGo72/36rS",
+      "firstName": "Анастасия Ананасовна",
+      "userName": "Nasty",
+      "capCount": 0,
+      "lastUpdate": 1698661398823,
+      "id": 3
+    },
+    {
+      "email": "3itmo@ru",
+      "firstName": "Володя 3",
+      "userName": "vova1234_1",
+      "capCount": 1,
+      "lastUpdate": 1698670868832,
+      "id": 4,
+      "password": "$2a$10$oeC3OggztlG7jNFrjtZ/JeM.gbV1jo2eHzLG8hPmzzw835.LEfYT6"
+    },
+    {
+      "email": "14itmo@ru",
+      "password": "$2a$10$RBNKeMZH8vNvBn4dyQ7/WuUde6zMav2M8LRQTOzHN4veJltIOAGz2",
+      "firstName": "Володя",
+      "userName": "12312312",
+      "capCount": 0,
+      "lastUpdate": 1699437789748,
+      "id": 5
+    }
+  ],
+  "capsules": [
+    {
+      "name": "231231231231232",
+      "openDate": "2023-10-27T15:19",
+      "description": "12312312312312",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "userId": 1,
+      "userName": "Misha1123_2",
+      "id": 1
+    },
+    {
+      "name": "12321321321",
+      "openDate": "2023-10-19T15:21",
+      "description": "123213213213",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "": "",
+      "userId": 1,
+      "userName": "Misha1123_2",
+      "id": 4
+    },
+    {
+      "name": "Тексты",
+      "openDate": "2023-10-06T16:25",
+      "description": "цуцйуйцуйцуйцуц",
+      "access": "my",
+      "text": "ф\n\nфф\nф\nф\nф\nф\nф\nф\nф\nф\nф\n",
+      "files": "",
+      "": "",
+      "userId": 1,
+      "userName": "Misha1123_2",
+      "id": 5
+    },
+    {
+      "name": "Мистер ЗЛОООООООО YJDSQ",
+      "openDate": "2023-10-29T15:36",
+      "description": "123213213123123123",
+      "access": "FFA",
+      "text": "123123213123",
+      "files": "",
+      "": "",
+      "userId": 2,
+      "userName": "vova123_3",
+      "id": 6
+    },
+    {
+      "name": "Для всех 1",
+      "openDate": "2023-10-02T14:03",
+      "description": "123213123412124124",
+      "access": "FFA",
+      "text": "Ничего",
+      "files": "",
+      "": "",
+      "userId": 3,
+      "userName": "Nasty",
+      "id": 7
+    },
+    {
+      "name": "Для всех 2 Nasty",
+      "openDate": "2023-11-05T14:06",
+      "description": "ООООООООООООООООООООООООООООООООООООООООООООООООООООчень длинное",
+      "access": "FFA",
+      "text": "Ничего 2.0",
+      "files": "",
+      "": "",
+      "userId": 3,
+      "userName": "Nasty",
+      "id": 8
+    },
+    {
+      "name": "Артас",
+      "openDate": "2023-10-14T14:07",
+      "description": "Жалкий глупец.\nЗа моего отца!",
+      "access": "my",
+      "text": "-Проклятье, Утер! Как будущий король, я приказываю очистить этот город от солдат Тьмы!\n-Ты еще не король, юноша, но это тприказ я не выполнил бы, будь ты хоть трижды королем!\n-Что ж... Тогда я должен расценивать это, как измену...\n-Измену?! Артес, ты совсем лишился рассудка?!\n-Да? Лорд Утер, властью данной мне, по праву рождения я отстраняю тебя от службы, и освобождаю твоих рыцарей!\n-Артес, ты же не можешь просто...\n-Это уже сделано! Теперь, те кто действительно хочет спасти эту землю - оставайтесь. Остальные - убирайтесь с глаз!!!",
+      "files": "",
+      "": "",
+      "userId": 3,
+      "userName": "Nasty",
+      "id": 9
+    },
+    {
+      "name": "Новая 12345",
+      "openDate": "2023-11-05T16:00",
+      "description": "аывавыпмывпмавып",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "": "",
+      "userId": 4,
+      "userName": "vova1234",
+      "id": 10
+    },
+    {
+      "name": "123123",
+      "openDate": "2023-11-29T09:37",
+      "description": "123123",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "": "",
+      "userId": 3,
+      "userName": "Nasty",
+      "id": 11
+    },
+    {
+      "name": "1232131",
+      "openDate": "2023-11-22T09:38",
+      "description": "123213",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "": "",
+      "userId": 3,
+      "userName": "Nasty",
+      "id": 12
+    },
+    {
+      "name": "wqewqewqe",
+      "openDate": "2023-12-22T09:39",
+      "description": "wqeqwewe",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "": "",
+      "userId": 3,
+      "userName": "Nasty",
+      "id": 13
+    },
+    {
+      "name": "312321312",
+      "openDate": "2023-11-22T09:39",
+      "description": "123123213",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "": "",
+      "userId": 3,
+      "userName": "Nasty",
+      "id": 14
+    },
+    {
+      "name": "aaaaaaaaaaaa",
+      "openDate": "2023-11-22T09:40",
+      "description": "12312313",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "": "",
+      "userId": 3,
+      "userName": "Nasty",
+      "id": 15
+    },
+    {
+      "name": "1231233333333333",
+      "openDate": "2023-11-22T09:43",
+      "description": "123213213213",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "": "",
+      "userId": 3,
+      "userName": "Nasty",
+      "id": 16
+    },
+    {
+      "name": "123123123123",
+      "openDate": "2023-11-22T09:44",
+      "description": "1231231",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "": "",
+      "userId": 3,
+      "userName": "Nasty",
+      "id": 17
+    }
+  ]
+}
