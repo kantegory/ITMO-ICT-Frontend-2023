@@ -39,8 +39,15 @@
                         </ul>
                     </li>
                 </ul>
-                <a class="nav-link active align-content-end ms-auto" aria-current="page"
-                   href="account.html">Account</a>
+                <form class="d-flex ms-auto" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <div class="d-flex ms-auto">
+                    <a id="account" class="nav-link active align-content-end ms-3" href="account.html">Account</a>
+                    <a id="auth" class="nav-link active align-content-end ms-3" href="auth.html">Auth</a>
+                    <a id="exit" class="nav-link active align-content-end ms-3" href="index.html" onclick="exit()">Exit</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -53,6 +60,8 @@
         </div>
     </div>
 </div>
+<script src="../js/auth.js"></script>
+<script src="../js/auth_script.js"></script>
 <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

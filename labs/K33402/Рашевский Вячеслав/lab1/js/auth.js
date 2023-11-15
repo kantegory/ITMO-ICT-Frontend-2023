@@ -1,6 +1,20 @@
-function auth() {
-    // Javascript reGex for Email Validation.
-    const regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
-    const regPhone=/^\d{10}$/;   // Javascript reGex for Phone Number validation.
-    const regName = /\d+$/g;      // Javascript reGex for Name validation
+const signinForm = document.getElementById("signinForm");
+if (signinForm){
+    signinForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (signinUser()) {
+            window.location.href = "../html/account.html";
+        }
+    })
+}
+
+
+const signupForm = document.getElementById("signupForm");
+if (signupForm) {
+    signupForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (registerUser()) {
+            window.location.href = "../html/account.html";
+        }
+    })
 }
