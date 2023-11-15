@@ -32,3 +32,32 @@
   cursor: pointer;
   width: 12rem;
 }
+
+.custom-button {
+  color: #fff;
+  background-color: #3c3c5b;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 6px 12px;
+  font-size: 16px;
+}
+
+.custom-button:hover {
+  background-color: #555577;
+}
+
+.text-limit {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title-text-limit {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

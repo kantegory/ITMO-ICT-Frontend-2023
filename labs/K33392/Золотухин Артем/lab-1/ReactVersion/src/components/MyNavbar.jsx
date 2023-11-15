@@ -38,7 +38,7 @@ export default function MyNavbar() {
       cName: 'nav-text',
     },
     {
-      title: 'About this page',
+      title: 'Cashious',
       path: '/about_page',
       icon: <AiIcons.AiOutlineWarning />,
       cName: 'nav-text',
