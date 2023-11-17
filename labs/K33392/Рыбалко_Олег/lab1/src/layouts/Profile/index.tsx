@@ -7,10 +7,12 @@ import { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/store'
 import { AuthState } from '@/store/slices/auth'
-import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
-import Form from 'react-bootstrap/Form'
+import { Button, Modal, Form } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
+import { pb } from '@/constants'
+import { useNavigate } from 'react-router-dom'
+import { faPencil } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export function ProfileLayout() {
   const { t } = useTranslation('profile')
@@ -20,73 +22,132 @@ export function ProfileLayout() {
   const authStore = useSelector<RootState>((state) => state.auth) as AuthState
   const [isAdmin, setAdmin] = useState(false)
   const [posts, setPosts] = useState<PostType[]>([])
-  const [newPost, setNewPost] = useState<{ title: string; body: string }>({
+  const [newPost, setNewPost] = useState<{
+    title: string
+    body: string
+  }>({
     body: '',
     title: '',
   })
+  const [newBio, setNewBio] = useState<string>()
+  const navigate = useNavigate()
 
   const [showNewPostModal, setShowNewPostModal] = useState(false)
   const [isFollowed, setFollowed] = useState(false)
+  const [isEditingBio, setEditingBio] = useState(false)
 
-  // TODO: fetch user data
   useEffect(() => {
-    setUserData({
-      username: username!,
-      bio: 'Frontend develop from Saint-P',
-    })
-  }, [username])
+    pb.collection('users')
+      .getFirstListItem(`username="${username}"`)
+      .then((record) => {
+        setUserData({
+          username: record.username,
+          bio: record.bio,
+          id: record.id,
+        })
+      })
+      .catch((err) => console.log(err))
+    // .catch(() => navigate('/notfound'))
+  }, [username, navigate])
+
+  useEffect(() => {
+    setNewBio(userData.bio)
+  }, [userData])
 
   useEffect(() => {
     setAdmin(authStore.username === username)
   }, [authStore, username])
 
-  // TODO: fetch posts
   useEffect(() => {
-    setPosts([
-      {
-        id: '1',
-        title: 'MARS',
-        body: `Mars is one of the most explored bodies in our solar system, and it's the only planet where we've sent rovers to roam the alien landscape. NASA missions have found lots of evidence that Mars was much wetter and warmer, with a thicker atmosphere, billions of years ago.
+    pb.collection('posts')
+      .getFullList({
+        filter: `author="${userData.id}"`,
+        expand: 'author',
+        sort: '-created',
+      })
+      .then((records) =>
+        setPosts(
+          records.map((r) => {
+            return {
+              id: r.id,
+              title: r.title,
+              body: r.body,
+              authorUsername: r.expand!.author.username,
+              likesCount: r.likesCount,
+            }
+          })
+        )
+      )
+  }, [userData])
 
-        Mars was named by the Romans for their god of war because its reddish color was reminiscent of blood. The Egyptians called it "Her Desher," meaning "the red one."
-        
-        Even today, it is frequently called the "Red Planet" because iron minerals in the Martian dirt oxidize, or rust, causing the surface to look red.`,
-        authorUsername: 'rybalkooleg',
-        likesCount: 100,
-      },
-      {
-        id: '2',
-        title: 'MERCURY',
-        body: `Mercury—the smallest planet in our solar system and nearest to the Sun—is only slightly larger than Earth's Moon. Its surface is covered in tens of thousands of impact craters.
-
-        From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as 11 times brighter.
-        
-        Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system— that title belongs to nearby Venus, thanks to its dense atmosphere. But Mercury is the fastest planet, zipping around the Sun every 88 Earth days. Mercury is appropriately named for the swiftest of the ancient Roman gods.`,
-        authorUsername: 'rybalkooleg',
-        likesCount: 158,
-      },
-    ])
-  }, [])
+  useEffect(() => {
+    pb.collection('follows')
+      .getFirstListItem(
+        `follower="${authStore.id}" && followee="${userData.id}"`
+      )
+      .then(() => setFollowed(true))
+  }, [authStore, userData])
 
   const publishNewPost = useCallback(() => {
-    // TODO: use api
-    setPosts([
-      {
-        id: 'test',
+    pb.collection('posts')
+      .create({
         title: newPost.title,
         body: newPost.body,
-        authorUsername: authStore.username,
-        likesCount: 0,
-      },
-      ...posts,
-    ])
-    setShowNewPostModal(false)
-    setNewPost({ title: '', body: '' })
+        author: authStore.id,
+      })
+      .then((record) => {
+        setPosts([
+          {
+            id: record.id,
+            title: record.title,
+            body: record.body,
+            authorUsername: authStore.username,
+            likesCount: 0,
+          },
+          ...posts,
+        ])
+        setShowNewPostModal(false)
+        setNewPost({ title: '', body: '' })
+      })
+      .catch(() => alert('failed to publish'))
   }, [newPost, authStore, posts])
 
   const deletePost = (post: PostType) => {
-    setPosts(posts.filter((val) => val.id !== post.id))
+    pb.collection('posts')
+      .delete(post.id)
+      .then(() => setPosts(posts.filter((el) => el.id !== post.id)))
+      .catch(() => alert('failed to delete the post'))
   }
+
+  const updateBio = useCallback(() => {
+    pb.collection('users')
+      .update(authStore.id, { bio: newBio })
+      .then((record) => {
+        setUserData({ ...userData, bio: record.bio })
+        setEditingBio(false)
+      })
+      .catch(() => alert('failed to save'))
+  }, [userData, authStore, newBio])
+
+  const followUser = useCallback(() => {
+    if (isFollowed) {
+      pb.collection('follows')
+        .getFirstListItem(
+          `follower="${authStore.id}" && followee="${userData.id}"`
+        )
+        .then((record) => {
+          pb.collection('follows').delete(record.id)
+          setFollowed(false)
+        })
+    } else {
+      pb.collection('follows')
+        .create({
+          follower: authStore.id,
+          followee: userData.id,
+        })
+        .then(() => setFollowed(true))
+    }
+  }, [isFollowed, authStore, userData])
 
   return (
     <>
@@ -98,9 +159,26 @@ export function ProfileLayout() {
             alt="Profile image"
           />
           <h1 className="h3 mt-3 fw-normal">@{userData.username}</h1>
-          <h1 className="h5 blockquote-footer mt-2 text-muted">
-            {userData.bio}
-          </h1>
+          <div className={styles.bioBlock}>
+            {!isEditingBio && (
+              <h1 className="h5 blockquote-footer mt-2 text-muted">
+                {userData.bio}
+              </h1>
+            )}
+            {isEditingBio && (
+              <input
+                type="text"
+                value={newBio}
+                onChange={(e) => setNewBio(e.currentTarget.value)}
+              />
+            )}
+            {isEditingBio && (
+              <Button onClick={updateBio}>{t('saveButton')}</Button>
+            )}
+            <Button variant="link" onClick={() => setEditingBio(!isEditingBio)}>
+              <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
+            </Button>
+          </div>
         </div>
         <div className={styles.postsHeader}>
           <h1 className="h3">{t('postsHeader')}</h1>
@@ -110,7 +188,7 @@ export function ProfileLayout() {
             </Button>
           )}
           {!isAdmin && (
-            <Button variant="link" onClick={() => setFollowed(!isFollowed)}>
+            <Button variant="link" onClick={followUser}>
               {isFollowed ? t('unfollowButton') : t('followButton')}
             </Button>
           )}
@@ -124,6 +202,7 @@ export function ProfileLayout() {
                 post={post}
                 showDeleteButton={isAdmin}
                 onDelete={deletePost}
+                posts={posts}
               />
             </div>
           ))}

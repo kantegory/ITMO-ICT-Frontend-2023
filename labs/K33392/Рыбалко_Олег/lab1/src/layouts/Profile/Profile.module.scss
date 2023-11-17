@@ -24,6 +24,11 @@
   margin-top: $topMargin;
 }
 
+.bioBlock {
+  display: flex;
+  gap: 16px;
+}
+
 @media screen and (max-width: 600px) {
   .profileImage {
     width: 100px;

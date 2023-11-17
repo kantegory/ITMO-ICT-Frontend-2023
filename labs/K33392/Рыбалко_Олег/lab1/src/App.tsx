@@ -9,6 +9,7 @@ import {
   ProfileLayout,
   SearchLayout,
 } from './layouts'
+import { PageNotFound } from './layouts/NotFound'
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/signin" element={<SignInLayout />} />
           <Route path="/signup" element={<SignUpLayout />} />
           <Route path="/search" element={<SearchLayout />} />
+          <Route path="/notfound" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </Provider>

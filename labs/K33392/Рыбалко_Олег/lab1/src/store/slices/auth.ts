@@ -4,11 +4,13 @@ export type AuthState = {
   username: string
   password: string
   email: string
+  id: string
 }
 const initialState: AuthState = {
   username: localStorage.getItem('username') ?? '',
   password: localStorage.getItem('password') ?? '',
   email: localStorage.getItem('email') ?? '',
+  id: localStorage.getItem('userId') ?? '',
 }
 
 const authSlice = createSlice({
@@ -19,10 +21,12 @@ const authSlice = createSlice({
       state.username = action.payload.username
       state.password = action.payload.password
       state.email = action.payload.email
+      state.id = action.payload.id
 
       localStorage.setItem('username', action.payload.username)
       localStorage.setItem('password', action.payload.password)
       localStorage.setItem('email', action.payload.email)
+      localStorage.setItem('userId', action.payload.id)
 
       return state
     },

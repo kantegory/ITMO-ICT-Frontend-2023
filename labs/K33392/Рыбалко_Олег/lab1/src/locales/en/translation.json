@@ -1,6 +1,7 @@
 {
   "global": {
-    "title": "Mumblr"
+    "title": "Mumblr",
+    "notFound": "Not Found"
   },
   "signup": {
     "signupButton": "Sign Up",
@@ -26,7 +27,8 @@
     "newPostModalTitleLabel": "Title",
     "newPostModalBodyLabel": "Body",
     "followButton": "Follow",
-    "unfollowButton": "Unfollow"
+    "unfollowButton": "Unfollow",
+    "saveButton": "Save"
   },
   "navbar": {
     "feed": "Feed",
