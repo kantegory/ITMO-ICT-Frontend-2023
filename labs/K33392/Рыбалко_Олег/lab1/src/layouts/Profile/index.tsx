@@ -11,8 +11,7 @@ import { Button, Modal, Form } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import { pb } from '@/constants'
 import { useNavigate } from 'react-router-dom'
-import { faPencil } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { PencilIcon } from '@/sprites/PencilIcon'
 
 export function ProfileLayout() {
   const { t } = useTranslation('profile')
@@ -156,39 +155,52 @@ export function ProfileLayout() {
           <img
             className={`mt-3 ${styles.profileImage}`}
             src={`https://robohash.org/${userData.username ?? ''}`}
-            alt="Profile image"
+            alt={t('profileImageAriaLabel')}
           />
           <h1 className="h3 mt-3 fw-normal">@{userData.username}</h1>
           <div className={styles.bioBlock}>
             {!isEditingBio && (
-              <h1 className="h5 blockquote-footer mt-2 text-muted">
-                {userData.bio}
-              </h1>
+              <h1 className="h5 blockquote-footer mt-2">{userData.bio}</h1>
             )}
             {isEditingBio && (
               <input
                 type="text"
                 value={newBio}
                 onChange={(e) => setNewBio(e.currentTarget.value)}
+                aria-label={t('newBioAriaLabel')}
               />
             )}
             {isEditingBio && (
-              <Button onClick={updateBio}>{t('saveButton')}</Button>
+              <Button onClick={updateBio} aria-label={t('saveBioAriaLabel')}>
+                {t('saveButton')}
+              </Button>
             )}
-            <Button variant="link" onClick={() => setEditingBio(!isEditingBio)}>
-              <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
+            <Button
+              variant="link"
+              onClick={() => setEditingBio(!isEditingBio)}
+              aria-label={t('editBioButton')}
+            >
+              <PencilIcon color="#0d6efd" width="1em" />
             </Button>
           </div>
         </div>
         <div className={styles.postsHeader}>
           <h1 className="h3">{t('postsHeader')}</h1>
           {isAdmin && (
-            <Button variant="link" onClick={() => setShowNewPostModal(true)}>
+            <Button
+              variant="link"
+              onClick={() => setShowNewPostModal(true)}
+              aria-label={t('newPostButton')}
+            >
               {t('newPostButton')}
             </Button>
           )}
           {!isAdmin && (
-            <Button variant="link" onClick={followUser}>
+            <Button
+              variant="link"
+              onClick={followUser}
+              aria-label={isFollowed ? t('unfollowButton') : t('followButton')}
+            >
               {isFollowed ? t('unfollowButton') : t('followButton')}
             </Button>
           )}
@@ -202,7 +214,6 @@ export function ProfileLayout() {
                 post={post}
                 showDeleteButton={isAdmin}
                 onDelete={deletePost}
-                posts={posts}
               />
             </div>
           ))}
@@ -240,7 +251,11 @@ export function ProfileLayout() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={publishNewPost}>
+          <Button
+            variant="primary"
+            onClick={publishNewPost}
+            aria-label={t('newPostModalPostButton')}
+          >
             {t('newPostModalPostButton')}
           </Button>
         </Modal.Footer>

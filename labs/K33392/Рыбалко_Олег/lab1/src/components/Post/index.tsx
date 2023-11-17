@@ -1,10 +1,4 @@
 import styles from './Post.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faHeart as faHeartSolid,
-  faTrashCan,
-} from '@fortawesome/free-solid-svg-icons'
-import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons'
 import { useCallback, useEffect, useState } from 'react'
 import { PostType } from '@/types'
 import { useSelector } from 'react-redux'
@@ -12,11 +6,13 @@ import { RootState } from '@/store'
 import { AuthState } from '@/store/slices/auth'
 import { pb } from '@/constants'
 import { RecordModel } from 'pocketbase'
+import { useTranslation } from 'react-i18next'
+import { TrashIcon } from '@/sprites/TrashIcon'
+import { HeartIcon } from '@/sprites/HeartIcon'
 
 export function Post({
   className,
   post,
-  posts,
   onDelete,
   showDeleteButton,
 }: {
@@ -24,12 +20,12 @@ export function Post({
   post: PostType
   onDelete?: (post: PostType) => void
   showDeleteButton: boolean
-  posts: PostType[]
 }) {
   const [isLiked, setLiked] = useState(false)
   const [likedRecord, setLikedRecord] = useState<RecordModel | undefined>()
   const authStore = useSelector<RootState>((state) => state.auth) as AuthState
   const [isOpen, setOpen] = useState(false)
+  const { t } = useTranslation('post')
   const textPreviewLength = 500
 
   useEffect(() => {
@@ -50,7 +46,7 @@ export function Post({
       .then((records) => {
         setLikesCount(records.length)
       })
-  }, [posts, post])
+  }, [post])
 
   const like = useCallback(() => {
     if (!isLiked) {
@@ -92,15 +88,16 @@ export function Post({
           <button
             className={styles.deleteButton}
             onClick={() => onDelete!(post)}
+            aria-label={t('deleteButtonAriaLabel')}
           >
-            <FontAwesomeIcon icon={faTrashCan} size="xl" color="red" />
+            <TrashIcon />
             <p>&nbsp;</p>
           </button>
         )}
         <button className={styles.likeButton} onClick={like}>
-          <FontAwesomeIcon
-            icon={isLiked ? faHeartSolid : faHeartRegular}
-            size="xl"
+          <HeartIcon
+            type={isLiked ? 'solid' : 'regular'}
+            color={'var(--outline-color)'}
           />
           <p>{likesCount}</p>
         </button>

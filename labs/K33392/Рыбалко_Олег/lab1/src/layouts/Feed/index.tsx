@@ -28,6 +28,7 @@ export function FeedLayout() {
       .then((follows) => {
         const users: string[] = follows.map((el) => el.followee)
         if (users.length === 0) {
+          setFeed([])
           return
         }
         pb.collection('posts')
