@@ -1,5 +1,11 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "test@mail.ru",
+      "password": "Bakugan102!",
+      "id": 1
+    }
+  ],
   "cart": [],
   "clothes": [
     {

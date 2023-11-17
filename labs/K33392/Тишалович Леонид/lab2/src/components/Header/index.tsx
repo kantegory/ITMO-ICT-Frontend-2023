@@ -5,7 +5,9 @@ import userSvg from "../../assets/user.svg";
 import shoppingCartSvg from "../../assets/shoppingСart.svg";
 import { CartPopup } from "../CartPopup";
 import { CartItem } from "../../pages/Main";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import lightTheme from "../../assets/lightTheme.png";
+import darkTheme from "../../assets/darkTheme.png";
 
 type HeaderProps = {
   setSelectedGender: (gender: string) => void;
@@ -18,8 +20,19 @@ export const Header = ({
   cartItems,
   onSearch,
 }: HeaderProps) => {
-  const [isCartPopupVisible, setCartPopupVisible] = useState(false);
+  const [isCartPopupVisible, setCartPopupVisible] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [theme, setTheme] = useState<string>("light");
+  const [icon, setIcon] = useState(lightTheme);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setIcon((prevIcon) => (prevIcon === lightTheme ? darkTheme : lightTheme));
+  };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -61,6 +74,9 @@ export const Header = ({
             <img src={shoppingCartSvg} />
             {isCartPopupVisible && <CartPopup items={cartItems} />}
           </div>
+        </button>
+        <button onClick={toggleTheme}>
+          <img className={style.themeImg} alt="Лого темы" src={icon} />
         </button>
       </div>
     </header>

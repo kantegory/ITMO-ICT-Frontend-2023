@@ -4,43 +4,43 @@
     flex-direction: column
     justify-content: center
     align-items: center
-    gap: 50px
+    gap: var(--spacing-large)
 
     h1
-        font-weight: bold
-        font-size: 34px
+        font-weight: var(--font-weight-bold)
+        font-size: var(--font-size-large)
 
     .inputs
         display: flex
         flex-direction: column
-        gap: 30px
+        gap: var(--spacing-medium)
 
         .inputText
             display: flex
             flex-direction: column
-            gap: 10px
+            gap: var(--spacing-small)
 
         p
-            font-size: 18px
+            font-size: var(--font-size-small)
 
         input
-            width: 567px
-            height: 58px
-            border-radius: 8px
-            font-size: 22px
-            border: #3C4242 solid 1px
-            padding: 14px
+            width: var(--input-width)
+            height: var(--input-height)
+            border-radius: var(--input-border-radius)
+            font-size: var(--font-size-medium)
+            border: var(--border-color) solid 1px
+            padding: var(--input-padding)
 
     .buttons
         display: flex
         flex-direction: row
-        gap: 10px
+        gap: var(--spacing-small)
 
         button
-            background-color: #8A33FD
+            background-color: var(--button-background)
             border: none
-            border-radius: 8px
-            color: white
-            width: 167px
-            height: 54px
+            border-radius: var(--button-border-radius)
+            color: var(--color-white)
+            width: var(--button-width)
+            height: var(--button-height)
             cursor: pointer

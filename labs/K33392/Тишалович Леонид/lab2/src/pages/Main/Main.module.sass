@@ -2,16 +2,19 @@
     width: 100%
     display: flex
     flex-direction: column
-    gap: 50px
+    gap: var(--spacing-large)
+    color: var(--text-color)
+    background-color: var(--background-color)
 
     .feed
         display: flex
         flex-direction: column
-        gap: 30px
+        gap: var(--spacing-medium)
         padding-left: 100px
+
         .title
-            font-weight: bold
-            font-size: 34px
+            font-weight: var(--font-weight-bold)
+            font-size: var(--font-size-large)
 
         .itemSelection
             display: flex
