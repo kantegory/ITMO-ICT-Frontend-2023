@@ -1,4 +1,4 @@
-const REGEXP_EMAIL = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const REGEXP_EMAIL = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 window.addEventListener("DOMContentLoaded", updateNavigationButtons, false);
 
 function signinUser() {
@@ -70,6 +70,7 @@ function updateNavigationButtons() {
             if (readySoonCard) readySoonCard.style.display = "block";
             if (forbiddenCard) forbiddenCard.style.display = "none";
         } else if (window.location.href.includes("auth.html")) {
+            console.log("redirected from auth to account for logged in user")
             window.location.href = "../html/account.html";
         }
     } else {
