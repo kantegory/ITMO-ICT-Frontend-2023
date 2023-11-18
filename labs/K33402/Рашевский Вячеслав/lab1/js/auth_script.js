@@ -64,10 +64,27 @@ function updateNavigationButtons() {
         if (auth) auth.style.display = "none";
         if (account) account.style.display = "block";
         if (exit) exit.style.display = "block";
+        if (window.location.href.includes("account.html")) {
+            const readySoonCard = document.getElementById("ready-soon-card");
+            const forbiddenCard = document.getElementById("forbidden-card");
+            if (readySoonCard) readySoonCard.style.display = "block";
+            if (forbiddenCard) forbiddenCard.style.display = "none";
+        } else if (window.location.href.includes("auth.html")) {
+            window.location.href = "../html/account.html";
+        }
     } else {
         if (auth) auth.style.display = "block";
         if (account) account.style.display = "none";
         if (exit) exit.style.display = "none";
+        if (window.location.href.includes("account.html")) {
+            const readySoonCard = document.getElementById("ready-soon-card");
+            const forbiddenCard = document.getElementById("forbidden-card");
+            if (readySoonCard) readySoonCard.style.display = "none";
+            if (forbiddenCard) forbiddenCard.style.display = "block";
+        } else if (window.location.href.includes("auth.html")) {
+            const toastRedirected = document.getElementById('liveToast')
+            if (toastRedirected) toastRedirected.style.display = "none";
+        }
     }
 }
 
