@@ -9,10 +9,11 @@
     border-bottom: var(--border-color-gray) solid 1px
     background-color: var(--background-color)
 
-    img
-        width: var(--image-width-small)
-        height: var(--image-height-small)
-        cursor: pointer
+    .logoWrapper
+        svg
+            width: var(--logo-width)
+            height: var(--logo-height)
+            cursor: pointer
 
     .categories
         display: flex
@@ -54,8 +55,10 @@
             border: none
             background-color: var(--input-btn-color)
 
-            .themeImg
+            svg
                 background: var(--input-btn-color)
+                width: var(--icon-size-small)
+                height: var(--icon-size-small)
 
         img 
             width: var(--icon-size-small)

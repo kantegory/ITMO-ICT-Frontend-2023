@@ -1,13 +1,10 @@
 import style from "./Header.module.sass";
-import logoSvg from "../../assets/Logo.svg";
-import heratSvg from "../../assets/heart.svg";
-import userSvg from "../../assets/user.svg";
-import shoppingCartSvg from "../../assets/shoppingСart.svg";
 import { CartPopup } from "../CartPopup";
 import { CartItem } from "../../pages/Main";
 import { useState, useEffect } from "react";
 import lightTheme from "../../assets/lightTheme.png";
 import darkTheme from "../../assets/darkTheme.png";
+import { Icon } from "../index";
 
 type HeaderProps = {
   setSelectedGender: (gender: string) => void;
@@ -52,7 +49,12 @@ export const Header = ({
 
   return (
     <header className={style.wrapper}>
-      <img onClick={() => handleGenderClick("all")} src={logoSvg} alt="Лого" />
+      <div
+        className={style.logoWrapper}
+        onClick={() => handleGenderClick("all")}
+      >
+        <Icon id="Euphoria" />
+      </div>
       <nav className={style.categories}>
         <button onClick={() => handleGenderClick("male")}>Men</button>
         <button onClick={() => handleGenderClick("female")}>Women</button>
@@ -64,14 +66,14 @@ export const Header = ({
       />
       <div className={style.headerBtns}>
         <button>
-          <img src={heratSvg} alt="Избранное" />
+          <Icon id="Heart" />
         </button>
         <button>
-          <img src={userSvg} alt="Профиль" />
+          <Icon id="User" />
         </button>
-        <button className={style.cartWrapper}>
+        <button>
           <div onClick={handleCartIconClick}>
-            <img src={shoppingCartSvg} />
+            <Icon id="Cart" />
             {isCartPopupVisible && <CartPopup items={cartItems} />}
           </div>
         </button>
