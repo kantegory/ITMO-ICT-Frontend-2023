@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom'
 import styled from '@emotion/styled'
-import { useEffect, useState } from 'react'
-
+// import { useEffect, useState } from 'react'
+// import axios from 'axios'
+import { useQuery } from '@tanstack/react-query'
 const ContainerDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,52 +26,51 @@ const Detail = styled.p`
 `
 
 export default function UserDescription() {
-  let { userId } = useParams()
-  const [userData, setUserData] = useState(undefined)
+  const { userId } = useParams()
 
-  async function getUserData() {
-    const response = await fetch(
-      `http://localhost:3000/results?id=${userId}`
-    ).then((resp) => resp.json())
-    setUserData(response[0]) // Assuming the response is an array with the user object at index 0
-  }
-
-  useEffect(() => {
-    getUserData().catch((e) => console.error(e))
-  }, [userId])
+  const { data, isLoading, error, isError } = useQuery({
+    queryKey: ['userData', { userId: userId }],
+    queryFn: () =>
+      fetch(`http://localhost:3000/results?id=${userId}`)
+        .then((response) => response.json())
+        .then((res) => res[0]),
+  })
 
   return (
     <ContainerDiv>
-      {userData === undefined ? (
+      {isLoading ? (
         <span>Loading user data, please wait...</span>
+      ) : isError ? (
+        <span>Error: {error.message}</span>
       ) : (
         <>
           <Avatar
-            src={userData.avatar}
-            alt={`${userData.first_name} ${userData.last_name}`}
+            src={data.avatar}
+            alt={`${data.first_name} ${data.last_name}`}
           />
           <h1>
-            {userData.first_name} {userData.last_name}
+            {data.first_name} {data.last_name}
           </h1>
-          <Detail>Gender: {userData.gender}</Detail>
-          <Detail>Birthdate: {userData.birthdate}</Detail>
-          <Detail>Languages: {userData.languages}</Detail>
-          <Detail>Education: {userData.education}</Detail>
-          <Detail>Email: {userData.email}</Detail>
-          <Detail>Phone: {userData.phone}</Detail>
-          <Detail>Address: {userData.address}</Detail>
+          <Detail>Gender: {data.gender}</Detail>
+          <Detail>Birthdate: {data.birthdate}</Detail>
+          <Detail>Languages: {data.languages}</Detail>
+          <Detail>Education: {data.education}</Detail>
+          <Detail>Email: {data.email}</Detail>
+          <Detail>Phone: {data.phone}</Detail>
+          <Detail>Address: {data.address}</Detail>
           <Detail>
             Website:{' '}
-            <a
-              href={userData.website}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              {userData.website}
+            <a href={data.website} target='_blank' rel='noopener noreferrer'>
+              {data.website}
             </a>
           </Detail>
-          <Detail>Job: {userData.job}</Detail>
-          <Detail>Skills: {userData.skills.join(', ')}</Detail>
+          <Detail>Job: {data.job}</Detail>
+          <Detail>
+            Skills:{' '}
+            {data.skills && Array.isArray(data.skills)
+              ? data.skills.join(', ')
+              : 'No skills available'}
+          </Detail>
         </>
       )}
     </ContainerDiv>

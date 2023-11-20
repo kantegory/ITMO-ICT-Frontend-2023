@@ -71,7 +71,7 @@ export default function MyNavbar() {
             </li>
             <li>
               <div className='navbar_logo'>
-                <img src='src/assets/logo.svg' alt='Logo' />
+                <img src='/src/assets/logo.svg' alt='Logo' />
               </div>
             </li>
             {SidebarData.map((item, index) => {

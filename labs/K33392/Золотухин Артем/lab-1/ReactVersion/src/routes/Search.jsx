@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom' // Import useNavigate
 import './styles/search.css'
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import CircularProgress from '@mui/material/CircularProgress'
+import axios from 'axios'
 
 function Search() {
   const [randomPeople, setRandomPeople] = useState(null)
@@ -14,14 +16,13 @@ function Search() {
   }, [peopleAmount])
 
   function handleDescriptionClick(userId) {
-    // Navigate to the description page with the user's ID
     navigate(`/description/${userId}`)
   }
 
   async function fetchUsersFromLocalServer() {
-    const response = await fetch(
-      `http://localhost:3000/results?_limit=${peopleAmount}`
-    ).then((resp) => resp.json())
+    const response = await axios
+      .get(`http://localhost:3000/results?_limit=${peopleAmount}`)
+      .then((resp) => resp.data)
 
     setRandomPeople(
       response.map((user) => (
@@ -67,7 +68,11 @@ function Search() {
       </div>
 
       <div className='search-users_list'>
-        {randomPeople || <h1>Loading...</h1>}
+        {randomPeople || (
+          <>
+            <h1>Loading...</h1> <CircularProgress />
+          </>
+        )}
       </div>
     </div>
   )
