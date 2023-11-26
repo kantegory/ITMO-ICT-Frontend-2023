@@ -8,7 +8,11 @@ import { useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useUser from "../../hooks/useUser";
 import { setCookie } from "../../utils/cookiesUtils";
-import { fetchAuthUser } from "../../utils/fetchUtils";
+import {
+  fetchAuthUser,
+  fetchLogin,
+  fetchRegistration,
+} from "../../utils/fetchUtils";
 
 function Registration() {
   const navigate = useNavigate();
@@ -23,7 +27,7 @@ function Registration() {
   });
 
   const [error, setError] = React.useState("");
-  const [validated, setValidated] = React.useState(false);
+  //const [validated, setValidated] = React.useState(false);
 
   const onFormChange = (e) => {
     const { id, value } = e.target;
@@ -33,64 +37,43 @@ function Registration() {
     }));
   };
 
+  const onGetUser = (data) => {
+    console.log(data.token);
+    setCookie("token", JSON.stringify(data.token));
+
+    fetchAuthUser(data.token).then((user) => {
+      setUser(user);
+      setAuth(true);
+      navigate("/");
+    });
+  };
+
   const onLogin = async (event) => {
     event.preventDefault();
-    const res = await fetch("http://localhost:3030/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formState),
-    })
-      .then((response) => response.json())
-
+    fetchLogin(formState)
       .then((data) => {
         if (data.token) {
           console.log(data.token);
-          setCookie("token", JSON.stringify(data.token));
-
-          fetchAuthUser(data.token).then((user) => {
-            setUser(user);
-            setAuth(true);
-            navigate("/");
-          });
-        } else {
-          console.log(data.message);
-          setError(data.message);
+          onGetUser(data);
         }
       })
-      .catch((error) => console.log(error));
-
-    return res;
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
   };
 
   const onRegistration = async (event) => {
     event.preventDefault();
-    const res = await fetch("http://localhost:3030/registration", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formState),
-    })
-      .then((response) => response.json())
+    fetchRegistration(formState)
       .then((data) => {
         if (data.token) {
-          setCookie("token", JSON.stringify(data.token));
-          console.log(data.token);
-          fetchAuthUser(data.token).then((user) => {
-            console.log(user);
-            setUser(user);
-            setAuth(true);
-            navigate("/");
-          });
+          onGetUser(data);
         } else {
           console.log(data.message);
         }
       })
       .catch((error) => console.log(error));
-
-    return res;
   };
 
   const onClickBackToReg = () => {
@@ -102,7 +85,7 @@ function Registration() {
   };
 
   return (
-    <div className="form-container">
+    <div className="form-container text">
       {params.isLogin === "login" && (
         <>
           <Row>

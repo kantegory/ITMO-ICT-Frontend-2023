@@ -1,5 +1,5 @@
 import "./Search.css";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import { useParams } from "react-router-dom";
 import { getCookie } from "../../utils/cookiesUtils";
@@ -12,6 +12,7 @@ function Search() {
   const token = getCookie("token");
 
   const [data, setData] = useState([]);
+  const [error, setError] = useState();
 
   const searchLoad = React.useCallback(
     (token, query) => fetchUsers(token, query),
@@ -19,20 +20,29 @@ function Search() {
   );
 
   useEffect(() => {
-    searchLoad(token, sliceQuery).then((res) => {
-      setData(res);
-    });
+    searchLoad(token, sliceQuery)
+      .then((res) => {
+        setData(res);
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
   }, [searchLoad, token, sliceQuery]);
 
-  return (
-    <ListGroup>
-      <div>Результат поиска по запросу: {sliceQuery}</div>
+  return error ? (
+    <h4 className="full-page-div text">{error}</h4>
+  ) : (
+    <ListGroup className="full-page-div">
       {data.length === 0 ? (
-        <>Ничего не найдено</>
+        <h4 className="full-page-div text">Загрузка</h4>
       ) : (
         <>
           {data.map((element, index) => (
-            <ListGroup.Item key={index}>
+            <ListGroup.Item
+              style={{ backgroundColor: "var(--body-background)" }}
+              key={index}
+            >
               <UserCell user={element} />
             </ListGroup.Item>
           ))}

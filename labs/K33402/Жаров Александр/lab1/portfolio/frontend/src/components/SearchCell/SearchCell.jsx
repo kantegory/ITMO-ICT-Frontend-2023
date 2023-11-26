@@ -1,5 +1,4 @@
 import "./SearchCell.css";
-import { Navigate, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import Form from "react-bootstrap/Form";
@@ -29,7 +28,7 @@ const SearchCell = ({ searchQuery, setSearchQuery }) => {
         value={searchQuery}
         onChange={handleChange}
       />
-      <Button variant="outline-success" onClick={handleSubmit}>
+      <Button variant="success" onClick={handleSubmit}>
         Search
       </Button>
     </Form>

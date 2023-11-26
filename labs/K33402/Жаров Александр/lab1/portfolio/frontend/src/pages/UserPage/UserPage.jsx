@@ -3,11 +3,9 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/esm/Container";
-import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
 import Avatar from "../../components/Avatar";
 import AvatarImg from "../../img/avatar.jpg";
-import useUser from "../../hooks/useUser";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchUser } from "../../utils/fetchUtils";
 import { getCookie } from "../../utils/cookiesUtils";
@@ -19,17 +17,13 @@ function UserPage() {
   const token = getCookie("token");
   const [user, setUser] = React.useState({});
 
-  const fetchUserCallback = React.useCallback((token, id) => {
-    fetchUser(token, id).then((res) => {
+  React.useEffect(() => {
+    fetchUser(token, userId).then((res) => {
       setUser(res);
     });
-  }, []);
+  }, [token, userId]);
 
-  React.useEffect(() => {
-    fetchUserCallback(token, userId);
-  }, [fetchUserCallback, token, userId]);
-
-  return (
+  return user.name ? (
     <>
       <Container className="mt-2">
         <Row>
@@ -82,6 +76,8 @@ function UserPage() {
         </Col>
       </Container>
     </>
+  ) : (
+    <>Загрузка</>
   );
 }
 

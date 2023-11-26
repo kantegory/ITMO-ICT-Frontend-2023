@@ -1,6 +1,7 @@
 {
   "global": {
-    "title": "Mumblr"
+    "title": "Mumblr",
+    "notFound": "Not Found"
   },
   "signup": {
     "signupButton": "Sign Up",
@@ -26,13 +27,21 @@
     "newPostModalTitleLabel": "Title",
     "newPostModalBodyLabel": "Body",
     "followButton": "Follow",
-    "unfollowButton": "Unfollow"
+    "unfollowButton": "Unfollow",
+    "saveButton": "Save",
+    "editBioButton": "Edit bio",
+    "saveBioAriaLabel": "Save new bio",
+    "newBioAriaLabel": "Input for new bio",
+    "profileImageAriaLabel": "Profile image"
   },
   "navbar": {
     "feed": "Feed",
     "profile": "Profile",
     "signIn": "Sign In",
-    "search": "Search"
+    "search": "Search",
+    "themeButton": "Theme",
+    "darkThemeButton": "Dark",
+    "lightThemeButton": "Light"
   },
   "feed": {
     "headerFollowing": "Following",
@@ -44,5 +53,8 @@
     "titleRadioLabel": "title",
     "usernameFilterPlaceholder": "Example: rybalkooleg",
     "titleFilterPlaceholder": "Example: CI/CD"
+  },
+  "post": {
+    "deleteButtonAriaLabel": "Delete post"
   }
 }

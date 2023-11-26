@@ -10,7 +10,9 @@ module.exports = function (req, res, next) {
     const token = req.headers.authorization.split(" ")[1];
 
     if (!token) {
-      return res.status(403).json({ message: "Пользователь не авторизован" });
+      return res.status(403).json({
+        message: "Пользователь не авторизован, необходимо войти заново",
+      });
     }
     const decodeData = jwt.verify(token, secret);
 
@@ -20,6 +22,8 @@ module.exports = function (req, res, next) {
     console.log(error);
     return res
       .status(403)
-      .json({ message: "Пользователь не авторизован ошибка" });
+      .json({
+        message: "Пользователь не авторизован, необходимо войти заново",
+      });
   }
 };

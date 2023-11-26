@@ -11,7 +11,9 @@ class apiController {
       } else {
         users = await User.find();
       }
-      res.send(users);
+      if (users.length > 0) {
+        res.send(users);
+      } else res.status(403).send({ message: "Ничего не найдено" });
     } catch (error) {
       console.error(error);
       res.status(500).send("Internal Server Error");
