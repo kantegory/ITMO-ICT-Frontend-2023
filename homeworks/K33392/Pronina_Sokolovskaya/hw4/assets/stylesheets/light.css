@@ -1,0 +1,23 @@
+:root {
+    --bg-color1: #fff;
+    --bg-color2: #FEBCA4;
+    --bg-color3: #EFEFEF;
+    --bg-color4: #e9e9e9;
+    --bg-color5: #D9D9D9;
+    --bg-color6: #000;
+    --bg-color6-opacity: #00000066;
+    --bg-color-accent1: #FEBA00;
+    --bg-color-accent2: #F85A59;
+    --bg-color-accent3: #FE8F67;
+
+    --text-color1: #949393;
+    --text-color2: #292929;
+    --text-color3: #fff;
+    --text-color4: #949393;
+    --text-color5: #000;
+    --text-color6: #aaa;
+    --text-color7: #3c3c3c;
+
+    --text-color-accent2: #F85A59;
+    --text-color-accent1: #FEBA00;
+}

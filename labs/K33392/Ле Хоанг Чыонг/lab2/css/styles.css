@@ -1,0 +1,210 @@
+body {
+    padding-top: 80px;
+    background-color: #fff
+}
+
+
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+
+}
+
+.result {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+
+}
+
+.mb-3 {
+    font-weight: bold;
+}
+
+.text-center {
+    padding-top:30px;
+    padding-bottom: 30px;
+    
+}
+
+.info-box,
+.history-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-header strong {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.history-date {
+    font-size: 14px;
+    color: #666;
+}
+
+.history-details {
+    margin-top: 10px;
+}
+
+.avatar {
+    position: absolute;
+    top: 8rem;
+    right: 10rem;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #3498db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Đảm bảo vùng chứa không hiển thị nội dung vượt khỏi khung */
+}
+
+.avatar img {
+    width: 100%; /* Đảm bảo ảnh luôn chiếm toàn bộ kích thước của vùng chứa */
+    height: 100%; /* Đảm bảo ảnh luôn chiếm toàn bộ kích thước của vùng chứa */
+    object-fit: cover; /* Hiển thị toàn bộ ảnh trong vùng chứa, tự động phóng to hoặc thu nhỏ để vừa khung */
+    object-position: center center; /* Canh ảnh giữa vùng chứa */
+    border-radius: 50%;
+}
+
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.login-button2 {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px 70px;
+    border-radius: none;
+    cursor: pointer;
+
+
+}
+
+.login-button3 {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px 79px;
+    border-radius: none;
+    cursor: pointer;
+
+}
+
+.login-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+
+}
+
+
+.form-label {
+    display: flex;
+    align-items: center;
+
+}
+
+
+.login-button2:hover,
+.login-button3:hover {
+    opacity: 0.8;
+
+}
+
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    
+}
+
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+    height: 200px;
+}
+
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.meal-search-box {
+    display: flex;
+}
+
+
+#search-btn {
+    background: #28a745;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+}
+
+
+.card-title {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+}
+
+.recipe-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: #ff5733; /* Change this to your desired color */
+    color: #ffffff; /* Text color */
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    width: 175px;
+    margin: 0 auto;
+    border-radius: 2rem;
+}
+
+
+

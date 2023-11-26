@@ -1,0 +1,60 @@
+{
+  "global": {
+    "title": "Mumblr",
+    "notFound": "Not Found"
+  },
+  "signup": {
+    "signupButton": "Sign Up",
+    "createAccount": "Create new account",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "retypePasswordLabel": "Retype password",
+    "usernameLabel": "Username"
+  },
+  "signin": {
+    "signinButton": "Sign In",
+    "signinToAccount": "Sign In",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "usernameLabel": "Username",
+    "createAccountButton": "Create account"
+  },
+  "profile": {
+    "postsHeader": "Posts",
+    "newPostButton": "New Post",
+    "newPostModalHeader": "New Post",
+    "newPostModalPostButton": "Post",
+    "newPostModalTitleLabel": "Title",
+    "newPostModalBodyLabel": "Body",
+    "followButton": "Follow",
+    "unfollowButton": "Unfollow",
+    "saveButton": "Save",
+    "editBioButton": "Edit bio",
+    "saveBioAriaLabel": "Save new bio",
+    "newBioAriaLabel": "Input for new bio",
+    "profileImageAriaLabel": "Profile image"
+  },
+  "navbar": {
+    "feed": "Feed",
+    "profile": "Profile",
+    "signIn": "Sign In",
+    "search": "Search",
+    "themeButton": "Theme",
+    "darkThemeButton": "Dark",
+    "lightThemeButton": "Light"
+  },
+  "feed": {
+    "headerFollowing": "Following",
+    "headerForYou": "For you"
+  },
+  "search": {
+    "searchButton": "Search",
+    "usernameRadioLabel": "username",
+    "titleRadioLabel": "title",
+    "usernameFilterPlaceholder": "Example: rybalkooleg",
+    "titleFilterPlaceholder": "Example: CI/CD"
+  },
+  "post": {
+    "deleteButtonAriaLabel": "Delete post"
+  }
+}

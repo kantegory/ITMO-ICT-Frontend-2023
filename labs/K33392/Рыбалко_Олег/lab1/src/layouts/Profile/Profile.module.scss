@@ -1,0 +1,36 @@
+@import "@/vars.scss";
+@import "@/styles/post.scss";
+
+.profileImage {
+  border: none;
+  border-radius: 50%;
+  width: 200px;
+  background-color: var(--profile-image-bg-color);
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.postsHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.container {
+  margin-top: $topMargin;
+}
+
+.bioBlock {
+  display: flex;
+  gap: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  .profileImage {
+    width: 100px;
+  }
+}

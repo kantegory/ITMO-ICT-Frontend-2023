@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;700&display=swap"
+          rel="stylesheet"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="assets/stylesheets/main.css"/>
+    <link rel="icon" href="assets/images/puzzles_logo.png" type="image/x-icon">
+
+    <title>City Puzzle | Личный кабинет</title>
+</head>
+
+<body>
+<header id="header">
+    <div class="logo_container">
+        <img src="assets/images/logo.png" alt="">
+    </div>
+
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</header>
+
+<section class="user_account_page">
+    <div class="container">
+        <div class="row">
+
+            <nav id="nav-bar" class="col-xl-3 col-md-0 col-sm-0">
+                <ul class="nav_links nav_links_column">
+                    <li class="nav_item">
+                        <a href="main.html" class="nav-link">Главная</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="shop.html" class="nav-link">Магазин</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#" class="nav-link">Инструкция к боту</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#" class="nav-link color1">Бесплатный квеcт</a>
+                    </li>
+                    <li class="nav_item btn" id="logout_btn">
+                        <a href="#" class="nav-link">Выйти из кабинета</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="user_account_body col-xl-9 col-md-12 col-sm-12">
+                <div class="user_greeting">
+                    <div class="card greeting_card bg-color3">
+                        <p class="text-center text-white text">ПРИВЕТ, ПУТЕШЕСТВЕННИК!</p>
+                        <img src="assets/images/greeting_people.svg" alt="">
+                    </div>
+                </div>
+                <div class="user_stats">
+                    <div class="card stats_item bg-color1">
+                        <img src="assets/images/distance_stats_icon.svg" alt="">
+                        <div class="stats_text">
+                            <p class="stats_number">
+                                20 <span style=font-size:20px>км</span>
+                            </p>
+                            <p class="stats_desc">
+                                Ты прошел
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card stats_item bg-color2">
+                        <img src="assets/images/step_stats_icon.png" alt="">
+                        <div class="stats_text">
+                            <p class="stats_number">
+                                30000
+                            </p>
+                            <p class="stats_desc">
+                                Шагов пройдено
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card stats_item bg-color4">
+                        <img src="assets/images/quests_stats_icon.png" alt="">
+                        <div class="stats_text">
+                            <p class="stats_number">
+                                4
+                            </p>
+                            <p class="stats_desc">
+                                Квестов завершено
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card user_quests bg-color5">
+                    <p class="user_quest_text">Пройденные квесты</p>
+                    <div class="user_quests_items">
+                        <div class="card user_quest_item">
+                            <img src="assets/images/questimg1.jpg" alt="">
+                            <p class="user_quest_name">Бандитский<br>Петербург</p>
+                        </div>
+                        <div class="card user_quest_item">
+                            <img src="assets/images/questimg1.jpg" alt="">
+                            <p class="user_quest_name">Бандитский<br>Петербург</p>
+                        </div>
+                        <div class="card user_quest_item">
+                            <img src="assets/images/questimg1.jpg" alt="">
+                            <p class="user_quest_name">Бандитский<br>Петербург</p>
+                        </div>
+                        <div class="card user_quest_item">
+                            <img src="assets/images/questimg1.jpg" alt="">
+                            <p class="user_quest_name">Бандитский<br>Петербург</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card user_quests bg-color5">
+                    <p class="user_quest_text">Купленные квесты</p>
+                    <div class="user_quests_items" id="purchased_items">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <p class="footer_group color3">Партнерам</p>
+                <ul class="footer_links">
+                    <li><a href="#" class="footer_link color3">Предложить сотрудничество</a></li>
+                </ul>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <p class=" footer_group color3">Правовая информация</p>
+                <ul class="footer_links">
+                    <li><a href="#" class="footer_link color3">Пользовательское соглашение</a></li>
+                    <li><a href="#" class="footer_link color3">Обработка персональных данных</a></li>
+                    <li><a href="#" class="footer_link color3">Публичная оферта</a></li>
+                </ul>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <p class="footer_group color3">Возникли вопросы? <br> Свяжитесь с нами</p>
+                <ul class="footer_links">
+                    <li><a href="mailto:citypuzzzle@gmail.com?subject="
+                           class="footer_link color3">citypuzzzle@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="social">
+                    <p class="copy color3">citypuzzle &copy2023</p>
+                    <div class="social_nets">
+                        <img class="social_icon" src="assets/images/instagramIcon.png" alt="">
+                        <img class="social_icon" src="assets/images/telegramIcon.png" alt="">
+                        <img class="social_icon" src="assets/images/tiktokIcon.png" alt="">
+                        <img class="social_icon" src="assets/images/VKIcon.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="logout.js"></script>
+<script src="show_purchased_quests.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

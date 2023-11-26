@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Calorie Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Here is a page to show the result.">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="../css/light.css" media="(prefers-color-scheme: light)">
+    <script src="../js/result.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
+                aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="foods.html">Foods</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="diary.html">Diary</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                                <use xlink:href="../icons/icons.svg#icon-login"></use>
+                            </svg>
+                            Log in
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                                <use xlink:href="../icons/icons.svg#icon-signup"></use> 
+                            </svg>
+                            Sign up
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                                <use xlink:href="../icons/icons.svg#icon-profile"></use> 
+                            </svg>
+                            Profile
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center">Calorie Calculator Results</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h3 class="text-center mb-4">Lose weight</h3>
+                        <img src="https://assets.yazio.com/frontend/images/calculator/icon-negative-dynamic.svg"
+                            class="card-img-small" alt="lose-weight">
+                        <h5>Calorie intake per day</h5>
+                        <h2 class="text-primary" id="lose-weight"></h2>
+                        <p>This range of daily calories will enable you to lose 1-2 lbs per week in a healthy and
+                            sustainable way.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h3 class="text-center mb-4">Maintain weight</h3>
+                        <img src="https://assets.yazio.com/frontend/images/calculator/icon-neutral-dynamic.svg"
+                            class="card-img-small" alt="maintain-weight">
+                        <h5>Calorie intake per day</h5>
+                        <h2 class="text-primary" id="maintain-weight"></h2>
+                        <p>This range of daily calories will enable you to maintain your current weight.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h3 class="text-center mb-4">Gain weight</h3>
+                        <img src="https://assets.yazio.com/frontend/images/calculator/icon-positive-dynamic.svg"
+                            class="card-img-small" alt="gain-weight">
+                        <h5>Calorie intake per day</h5>
+                        <h2 class="text-primary" id="gain-weight"></h2>
+                        <p>This range of daily calories will enable you to gain 1-2 lbs per week.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 h-100">
+                    <div class="card-body text-center">
+                        <h3 class="text-center mb-4">New calculation</h3>
+                        <img src="/images/calorie-calculator.jpg" class="card-img-small img-fluid" alt="food" style="max-width: 100px; max-height: 100px;">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="/html/index.html" style="text-decoration: none;">
+                            <i class="fas fa-arrow-left" style="font-size: 24px; border: 2px solid #000; padding: 10px; border-radius: 50%;"></i>
+                        </a>
+                    </div>
+                    <div class="my-3"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 h-100">
+                    <div class="card-body text-center">
+                        <h3 class="text-center mb-4">Graph</h3>
+                        <div class="chart-container">
+                            <canvas id="calorieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 h-100">
+                    <div class="card-body text-center">
+                        <h3 class="text-center mb-4">List Food</h3>
+                        <img src="/images/food" class="card-img-small img-fluid" alt="food" style="max-width: 100px; max-height: 100px;">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="/html/foods.html" style="text-decoration: none;">
+                            <i class="fas fa-arrow-right" style="font-size: 24px; border: 2px solid #000; padding: 10px; border-radius: 50%;"></i>
+                        </a>
+                    </div>
+                    <div class="my-3"></div>
+                </div>
+            </div>
+
+            
+            
+            
+        </div>
+    </div>
+    <script>
+        showResult();
+        displayCalorieChart();
+    </script>
+    
+</body>
+
+</html>
