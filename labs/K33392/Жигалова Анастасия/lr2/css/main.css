@@ -6,7 +6,7 @@
 body {
 
 	font-family: Roboto, sans-serif;
-	font-size: 18px;
+	font-size: 20px;
 	color:black;
 	background-color:rgb(226, 216, 204);
 	min-width: 320px;
@@ -80,7 +80,7 @@ form {
 
   footer {
 	color: rgb(100, 83, 6);
-	font-size:  15px;
+	font-size:  18px;
 
   }
 
@@ -109,7 +109,7 @@ form {
   }
 
   .btn-primary {
-	background-color: rgb(141, 111, 4);
+	background-color: rgb(72, 58, 4);
 	padding: 10px 20px;
 	margin-right: 10px;
   }
