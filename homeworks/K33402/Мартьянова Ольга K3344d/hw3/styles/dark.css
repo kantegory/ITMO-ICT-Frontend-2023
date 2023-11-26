@@ -1,0 +1,9 @@
+:root {
+  --background-image: url("../images/dark-background.png");
+  --background-color: rgba(41, 36, 30, 0.907);
+  --text-color: #e1dddd;
+  --border-color: rgb(66, 65, 62);
+  --nav-color: rgba(41, 36, 30, 0.907);
+  --text-filter:  #eeaf51d3;
+  --header-color: #8f2313;
+}
