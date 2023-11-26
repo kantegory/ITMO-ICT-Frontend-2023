@@ -7,8 +7,8 @@ body {
 
 	font-family: Roboto, sans-serif;
 	font-size: 20px;
-	color:black;
-	background-color:rgb(226, 216, 204);
+	color:var( --text-color);
+	background-color:var(--bg-color);
 	min-width: 320px;
 
   }
@@ -21,18 +21,18 @@ img {
 
 a {
 
-	color:rgb(100, 83, 6);
+	color:var( --text-color);
 
 }
 
 a:hover{
 
-	color: rgb(110, 47, 2);
+	color:var( --hover-color);
 }
 
 .navbar-light .navbar-nav .nav-link{
 
-	color:rgb(100, 6, 29);
+	color: var( --text-color);
 	font-weight: 500;
 	text-transform: uppercase;
 
@@ -48,7 +48,7 @@ a:hover{
 	content: 0;
 	display: block;
 	width: 100%;
-	background-color:rgb(100, 6, 29) ;
+	background-color:var(--bg-color);
 	height: 1px;
 	transition: all .3s;
 	transform: scale(0);
@@ -79,25 +79,25 @@ form {
   }
 
   footer {
-	color: rgb(100, 83, 6);
+	color: var(--text-color);
 	font-size:  18px;
 
   }
 
   footer:hover{
 
-	color: rgb(110, 47, 2);
+	color:var( --hover-color);
 }
 
 .form-group{
-
-	font-size: 18px;
-	color:rgb(83, 51, 4);
+	color: var( --text-color);
+	font-size: 20px;
+	
 
 }
 .mb-3{
 	font-size: 18px;
-	color:rgb(83, 51, 4);
+	color: var( --text-color);
 
 }
 
@@ -105,18 +105,18 @@ form {
 	border: 1px solid rgb(141, 111, 4);
 	padding: 10px;
 	display: inline-block;
-	color: rgb(83, 51, 4);
+	color: var(--text-color);
   }
 
   .btn-primary {
-	background-color: rgb(72, 58, 4);
+	background-color:var(--bg-color);
 	padding: 10px 20px;
 	margin-right: 10px;
   }
 
   .btn-primary:hover {
 
-	background-color: rgb(83, 51, 4);
+	background-color:var(--bg-color);
   }
   .col-md-3 {
     flex: 0 0 auto;
