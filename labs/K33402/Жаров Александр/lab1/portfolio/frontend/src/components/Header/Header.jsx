@@ -1,28 +1,28 @@
 import "./Header.css";
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/esm/Button";
-import icon from "../../img/main-icon.svg";
 import { Link } from "react-router-dom";
-import { useNavigate, useParams } from "react-router-dom";
 import SearchCell from "../SearchCell";
+import useTheme from "../../hooks/useTheme";
+import { Icon } from "../Icon";
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState("");
 
+  const { theme, setTheme } = useTheme();
+
+  const ChangeTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   return (
     <>
-      <Navbar expand="md" className="body" data-bs-theme="dark" sticky="top">
+      <Navbar expand="md" className="header" data-bs-theme="dark" sticky="top">
         <Container>
           <Navbar.Brand>
-            <img
-              src={icon}
-              className="d-inline-block align-top"
-              alt="React Bootstrap logo"
-            />
+            <Icon id="main" height={40} width={40} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
@@ -35,6 +35,13 @@ function Header() {
                 Личный кабинет
               </Link>
             </Nav>
+            <button className="theme-button" onClick={ChangeTheme}>
+              {theme === "dark" ? (
+                <Icon id="moon" height={24} width={24} />
+              ) : (
+                <Icon id="sun" height={24} width={24} />
+              )}
+            </button>
             <div className="md-block">
               <SearchCell
                 searchQuery={searchQuery}

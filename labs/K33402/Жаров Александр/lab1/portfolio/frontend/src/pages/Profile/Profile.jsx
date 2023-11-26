@@ -3,9 +3,6 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/esm/Container";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/esm/Button";
-import { useParams } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import AvatarImg from "../../img/avatar.jpg";
 import useUser from "../../hooks/useUser";
@@ -39,7 +36,7 @@ function Profile() {
         <hr />
         <Row>
           <Col className="d-flex justify-content-start">
-            <h5>Места работы</h5>
+            <h4>Места работы</h4>
           </Col>
         </Row>
 
@@ -49,7 +46,7 @@ function Profile() {
         <hr />
         <Row>
           <Col className="d-flex justify-content-start">
-            <h5>Проекты</h5>
+            <h4>Проекты</h4>
           </Col>
         </Row>
         <Col className="d-flex justify-content-start">
@@ -58,7 +55,7 @@ function Profile() {
         <hr />
         <Row>
           <Col className="d-flex justify-content-start">
-            <h5>Контакты</h5>
+            <h4>Контакты</h4>
           </Col>
         </Row>
         <Col className="d-flex justify-content-start">

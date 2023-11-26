@@ -9,10 +9,12 @@ const UserCell = ({ user }) => {
   return (
     <Card>
       <Card.Body className="cell-body">
-        <Card.Title>{user.name}</Card.Title>
-        <Card.Text>{user.about}</Card.Text>
-        <Card.Text>Опыт работы: {user.experience}</Card.Text>
-        <div className="d-flex justify-content-end">
+        <Card.Title style={{ color: "var(--body-text)" }}>
+          {user.name}
+        </Card.Title>
+        <Card.Text className="text">{user.about}</Card.Text>
+        <Card.Text className="text">Опыт работы: {user.experience}</Card.Text>
+        <div className="d-flex justify-content-end text">
           <Button
             variant="primary"
             onClick={() => {
