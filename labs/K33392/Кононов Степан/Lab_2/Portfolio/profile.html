@@ -112,7 +112,7 @@
 <!-- Модальное окно для увеличения изображения -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">  stroke="#808080" fill="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        <div class="modal-content" >
             <div class="modal-header">
                 <h5 class="modal-title" id="imageModalLabel">Увеличенное изображение</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -137,17 +137,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form onsubmit="uploadImage(event)">
+                <form onsubmit="uploadImage(event)" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="imageUrl" class="form-label">URL изображения:</label>
-                        <input type="text" class="form-control" id="imageUrl" name="imageUrl">
+                        <label for="imageFile" class="form-label">Выберите файл изображения (jpg/png):</label>
+                        <input type="file" class="form-control" id="imageFile" name="imageFile" accept=".jpg, .jpeg, .png">
                     </div>
                     <div class="mb-3">
                         <label for="imageTitle" class="form-label">Название изображения:</label>
                         <input type="text" class="form-control" id="imageTitle" name="imageTitle">
                     </div>
-                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Добавить
-                    </button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Добавить</button>
                 </form>
             </div>
 
