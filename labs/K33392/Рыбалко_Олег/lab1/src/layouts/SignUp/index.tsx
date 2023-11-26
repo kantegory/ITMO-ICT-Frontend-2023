@@ -4,37 +4,39 @@ import { useState, useCallback } from 'react'
 import store from '@/store'
 import { loginAction } from '@/store/slices/auth'
 import { useNavigate } from 'react-router-dom'
-
-type UserData = {
-  email: string
-  username: string
-  password: string
-  retypedPassword: string
-}
+import { pb } from '@/constants'
+import { SignUpDataType } from '@/types'
 
 export function SignUpLayout() {
   const { t } = useTranslation('signup')
   const { t: tGlobal } = useTranslation('global')
   const navigate = useNavigate()
-  const [userData, setUserData] = useState<UserData>({
+  const [userData, setUserData] = useState<SignUpDataType>({
     email: '',
+    emailVisibility: true,
     username: '',
     password: '',
-    retypedPassword: '',
+    passwordConfirm: '',
   })
 
   const signUp = useCallback(() => {
-    // TODO: validate data and use API
-
-    store.dispatch(loginAction(userData))
-    navigate(`/profile/${userData.username}`)
+    pb.collection('users')
+      .create(userData)
+      .then((record) => {
+        store.dispatch(loginAction({ ...userData, id: record.id }))
+        navigate(`/signin`)
+      })
+      .catch((err) => {
+        console.log(err)
+        alert('failed to sign up. try again later')
+      })
   }, [userData, navigate])
 
   return (
     <div
       className={`container d-flex justify-content-center align-items-center ${styles.signupContainer}`}
     >
-      <form className={styles.signupForm}>
+      <div className={styles.signupForm}>
         <h1>{tGlobal('title')}</h1>
         <h2 className="h3 mb-3 fw-normal">{t('createAccount')}</h2>
 
@@ -83,11 +85,11 @@ export function SignUpLayout() {
             className={`form-control ${styles.formRetypePassword}`}
             placeholder={t('retypePasswordLabel')}
             id="floatingRetypePassword"
-            value={userData.retypedPassword}
+            value={userData.passwordConfirm}
             onChange={(e) =>
               setUserData({
                 ...userData,
-                retypedPassword: e.currentTarget.value,
+                passwordConfirm: e.currentTarget.value,
               })
             }
           />
@@ -98,7 +100,7 @@ export function SignUpLayout() {
         <button className="w-100 btn btn-lg btn-primary" onClick={signUp}>
           {t('signupButton')}
         </button>
-      </form>
+      </div>
     </div>
   )
 }

@@ -7,7 +7,16 @@ export type PostType = {
 }
 
 export type UserDataType = {
+  id: string | undefined
   username: string | undefined
   bio: string | undefined
+}
+
+export type SignUpDataType = {
+  email: string
+  emailVisibility: boolean
+  username: string
+  password: string
+  passwordConfirm: string
 }
 

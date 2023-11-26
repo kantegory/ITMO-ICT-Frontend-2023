@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 200px;
+  background-color: var(--body-background);
 }
 
 body::-webkit-scrollbar {
@@ -14,4 +16,18 @@ body::-webkit-scrollbar {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body {
+  --header-backgrond: #000;
+  --header-text: #fff;
+  --body-background: #fff;
+  --body-text: #000;
+}
+
+body.dark {
+  --header-backgrond: #000;
+  --header-text: #fff;
+  --body-background: #383636 ;
+  --body-text: #fff;
 }

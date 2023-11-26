@@ -1,0 +1,28 @@
+.secondary-content {
+    background-color:  var(--navbar-backgroud-color) !important;
+}
+
+.text-color-primary {
+    color: var(--text-primary) !important;
+}
+
+.text-color-secondary {
+    color: var(--text-secondary) !important;
+}
+
+.background-secondary {
+    background-color: var(--background-color-secondary) !important;
+}
+
+.main-content {
+    background-color: var(--body-backgroud-color) !important;
+}
+
+.icon-music {
+    height: 25px;
+    filter: brightness(0) var(--icon-filter);
+}
+
+li {
+    list-style-type: none;
+}
