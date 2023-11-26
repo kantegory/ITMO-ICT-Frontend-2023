@@ -41,17 +41,43 @@ async function getCountryCode() {
     getTopSongsByCountry(userCountry);
 })();
 
+// Function to apply accessibility settings
+function applyAccessibilitySettings() {
+    const fontSize = document.getElementById('fontSize').value;
+    const textColor = document.getElementById('textColor').value;
+    const backgroundColor = document.getElementById('backgroundColor').value;
+    const fontFamily = document.getElementById('fontFamily').value;
 
+    document.body.style.fontSize = fontSize;
+    document.body.style.color = textColor;
+    document.body.style.backgroundColor = backgroundColor;
+    document.body.style.fontFamily = fontFamily;
 
-function getTopSongsByCountry(country) {
-    fetch(`http://localhost:3000/api/top-songs/${country}`)
-        .then(response => response.json())
-        .then(data => {
-            displayTopSongs(data);
-        })
-        .catch(error => console.error("Ошибка при получении данных: ", error));
+    // Close the modal
+    $('#accessibilityModal').modal('hide');
 }
 
+// Add an event listener to open the accessibility modal
+document.addEventListener('DOMContentLoaded', function () {
+    const accessibilityBtn = document.getElementById('accessibilityBtn');
+    accessibilityBtn.addEventListener('click', function () {
+        const modal = new bootstrap.Modal(document.getElementById('accessibilityModal'));
+        modal.show();
+    });
+
+    // Add an event listener to apply accessibility settings on modal apply button click
+    const applyBtn = document.getElementById('applyBtn');
+    applyBtn.addEventListener('click', applyAccessibilitySettings);
+
+    // Close modal on close button click
+    const closeButton = document.querySelector('.modal .btn-close');
+    closeButton.addEventListener('click', function () {
+        const modal = bootstrap.Modal.getInstance(document.getElementById('accessibilityModal'));
+        modal.hide();
+    });
+});
+
+// Функция отображения полученных данных о топе песен
 function displayTopSongs(topSongs) {
     const topSongsContainer = document.getElementById("top-songs-container");
 
@@ -60,6 +86,11 @@ function displayTopSongs(topSongs) {
     topSongs.forEach(song => {
         const card = document.createElement("div");
         card.className = "card mb-3";
+        card.style.cursor = "pointer"; // Добавим карточке стиль указывающий на возможность клика
+
+        card.addEventListener("click", () => {
+            playSong(song.audio);
+        });
 
         const cardBody = document.createElement("div");
         cardBody.className = "card-body";
@@ -77,6 +108,19 @@ function displayTopSongs(topSongs) {
         card.appendChild(cardBody);
         topSongsContainer.appendChild(card);
     });
+}
+
+// Загружаем данные о топе песен для данной страны
+getTopSongsByCountry(userCountry);
+
+
+function getTopSongsByCountry(country) {
+    fetch(`http://localhost:3000/api/top-songs/${country}`)
+        .then(response => response.json())
+        .then(data => {
+            displayTopSongs(data);
+        })
+        .catch(error => console.error("Ошибка при получении данных: ", error));
 }
 
 const userCountry = getCountryCode();
