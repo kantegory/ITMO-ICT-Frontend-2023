@@ -1,0 +1,71 @@
+{
+  "users": [
+    {
+      "email": "123kek@gmail.com",
+      "firstName": "Михаил__3",
+      "userName": "Misha1123_2",
+      "capCount": 1,
+      "lastUpdate": 1698329218715,
+      "id": 1,
+      "password": "$2a$10$JRGzc2ToKkzzIGFkwZ6HeeUZ3v7TdFwvDJqu7tFV4vw8hnKw1qmmu"
+    },
+    {
+      "email": "itmo@ru",
+      "firstName": "Володя",
+      "userName": "vova123_3",
+      "capCount": 1,
+      "lastUpdate": 1698410044085,
+      "id": 2,
+      "password": "$2a$10$NnPeOjOvdSSuWds7.ESRnuWiG4oU76MntSlzMJ9asOtWBK/1VkZ6O"
+    }
+  ],
+  "capsules": [
+    {
+      "name": "231231231231232",
+      "openDate": "2023-10-27T15:19",
+      "description": "12312312312312",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "userId": 1,
+      "userName": "Misha1123_2",
+      "id": 1
+    },
+    {
+      "name": "12321321321",
+      "openDate": "2023-10-19T15:21",
+      "description": "123213213213",
+      "access": "my",
+      "text": "",
+      "files": "",
+      "": "",
+      "userId": 1,
+      "userName": "Misha1123_2",
+      "id": 4
+    },
+    {
+      "name": "Тексты",
+      "openDate": "2023-10-06T16:25",
+      "description": "цуцйуйцуйцуйцуц",
+      "access": "my",
+      "text": "ф\n\nфф\nф\nф\nф\nф\nф\nф\nф\nф\nф\n",
+      "files": "",
+      "": "",
+      "userId": 1,
+      "userName": "Misha1123_2",
+      "id": 5
+    },
+    {
+      "name": "Мистер ЗЛОООООООО YJDSQ",
+      "openDate": "2023-10-29T15:36",
+      "description": "123213213123123123",
+      "access": "FFA",
+      "text": "123123213123",
+      "files": "",
+      "": "",
+      "userId": 2,
+      "userName": "vova123_3",
+      "id": 6
+    }
+  ]
+}

@@ -66,10 +66,11 @@ form {
 	margin: 0 auto; 
   }
 
+  
   input {
 	width: 100%; 
   }
-
+  
   label {
 	display: block; 
   }

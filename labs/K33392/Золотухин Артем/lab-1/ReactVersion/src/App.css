@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: flex;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.about,
+.about_page,
+.blog,
+.notes,
+.search,
+.work {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-color: #464567;
+  color: #fff;
+}
+
+/* Top Navbar CSS */
+.navbar {
+  background-color: #2e2e47;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Top Navbar icons */
+.menu-bars {
+  margin-left: 20px;
+  font-size: 2rem;
+  background: #2e2e47;
+  color: #fff;
+}
+
+/* side Navbar */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background-color: #2e2e47;
+  width: 200px;
+  height: 100vh;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.navbar_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 16px;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 250ms;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 16px;
+}
+
+.nav-text a:hover {
+  background-color: #464567;
+  color: #fff;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background-color: #2e2e47;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+span {
+  margin-left: 16px;
+}
+
+.navbar-footer {
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+}
+.navbar-footer h5 {
+  color: rgba(255, 255, 255, 0.32);
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.spacer {
+  flex-grow: 1; /* The spacer grows to fill the remaining space */
+}
