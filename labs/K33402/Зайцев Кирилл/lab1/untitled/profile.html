@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            /* ... (предыдущие стили) ... */
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: #f00;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .profile-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .playlist-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .playlist-item {
+            display: inline-block;
+            margin: 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            background-color: #eee;
+            cursor: pointer;
+        }
+
+        .playlist-item:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>Личный кабинет</h2>
+    <a href="main.html">Вернуться на главную</a>
+    <div class="profile-info">
+        <p>Имя: Кирилл Зайцев</p>
+        <p>Email: lioishka@ya.ru</p>
+        <h2>Плейлисты пользователя</h2>
+        <div class="playlist-container">
+            <h3>Плейлисты</h3>
+            <button onclick="createPlaylist()">Создать плейлист</button>
+            <ul id="playlistContainer">
+                <!-- Список плейлистов пользователя -->
+            </ul>
+        </div>
+        <button onclick="logout()">Выйти из аккаунта</button>
+    </div>
+</div>
+    <script src="js/profile.js"></script>
+    <script>
+        // Загрузка плейлистов пользователя из localStorage
+        const currentUser = 'user123'; // Предполагаем, что у вас есть текущий пользователь
+        const userPlaylists = JSON.parse(localStorage.getItem(currentUser)) || {};
+        const playlistContainer = document.getElementById('playlistContainer');
+
+        for (let playlist in userPlaylists) {
+            const li = document.createElement('li');
+            li.textContent = playlist;
+            li.classList.add('playlist-item');
+            li.onclick = function () {
+                // Логика открытия плейлиста
+                alert('Открыт плейлист: ' + playlist);
+            };
+            playlistContainer.appendChild(li);
+        }
+    </script>
+<script src="js/profile.js"></script>
+<script>
+    // Предполагаем, что эта часть кода будет использоваться для загрузки плейлистов пользователя
+    // Пока оставим для наглядности
+    const currentUser = 'user123'; // Предполагаем, что у вас есть текущий пользователь
+    const userPlaylists = JSON.parse(localStorage.getItem(currentUser)) || {};
+    const playlistContainer = document.getElementById('playlistContainer');
+
+    for (let playlist in userPlaylists) {
+        const li = document.createElement('li');
+        li.textContent = playlist;
+        playlistContainer.appendChild(li);
+    }
+</script>
+<script>
+    function createPlaylist() {
+        // Добавление нового плейлиста (для примера, пока только имитация)
+        const newPlaylistName = prompt('Введите название плейлиста:');
+        if (newPlaylistName) {
+            const playlistContainer = document.querySelector('.playlist-container');
+            const newPlaylist = document.createElement('div');
+            newPlaylist.classList.add('playlist-item');
+            newPlaylist.textContent = newPlaylistName;
+            newPlaylist.addEventListener('click', function() {
+                // Здесь можно добавить логику для открытия плейлиста
+                alert('Открыт плейлист: ' + newPlaylistName);
+            });
+            playlistContainer.appendChild(newPlaylist);
+        }
+    }
+
+    function logout() {
+        // Перенаправление на страницу входа (имитация выхода из аккаунта)
+        window.location.href = 'login.html';
+    }
+</script>
+</body>
+</html>
