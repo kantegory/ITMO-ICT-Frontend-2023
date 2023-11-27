@@ -1,54 +1,90 @@
-// profile.js
-
-// Функция для загрузки информации о пользователе и плейлистах с сервера
-function loadUserProfile() {
-    // Здесь можно отправить запрос на сервер, чтобы получить данные о пользователе и плейлистах
-    // Замените этот блок на реальный код
-
-    const userData = {
-        username: 'John Doe',
-        email: 'johndoe@example.com',
-        // Добавьте другие данные о пользователе
-    };
-
-    const playlists = [
-        { name: 'Плейлист 1', tracks: ['Песня 1', 'Песня 2'] },
-        { name: 'Плейлист 2', tracks: ['Песня 3', 'Песня 4'] },
-        // Добавьте другие плейлисты и их треки
-    ];
-
-    // Вызов функций для отображения информации о пользователе и плейлистах
-    displayUserInfo(userData);
-    displayPlaylists(playlists);
+// Функция для добавления нового плейлиста
+function createPlaylist() {
+    const newPlaylistName = prompt('Введите название плейлиста:');
+    if (newPlaylistName) {
+        // Логика создания нового плейлиста
+        // Здесь можно добавить код для отправки запроса на сервер для создания плейлиста
+    }
 }
 
-// Функция для отображения информации о пользователе
-function displayUserInfo(userData) {
-    const usernameElement = document.getElementById('username');
-    const emailElement = document.getElementById('userEmail');
-    // Добавьте другие элементы для отображения данных о пользователе
+// Функция для выхода из аккаунта
+function logout() {
+    // Логика выхода из аккаунта
+    // Здесь можно добавить код для очистки сессии пользователя или перенаправления на страницу входа
+}
+// Функция для отображения плейлистов пользователя
+function displayUserPlaylists() {
+    // Здесь предполагается, что у вас есть текущий пользователь
+    const currentUser = 'user123';
 
-    usernameElement.textContent = userData.username;
-    emailElement.textContent = userData.email;
-    // Обновите другие элементы с данными о пользователе
+    // Получаем плейлисты текущего пользователя из localStorage
+    const userPlaylists = JSON.parse(localStorage.getItem(currentUser)) || {};
+
+    // Выводим список плейлистов на странице профиля
+    const playlistContainer = document.getElementById('playlistContainer');
+
+    for (let playlist in userPlaylists) {
+        const option = document.createElement('option');
+        option.value = playlist;
+        option.textContent = playlist;
+        playlistContainer.appendChild(option);
+    }
+}
+// Функция для создания нового плейлиста
+function createPlaylist() {
+    const newPlaylistName = prompt('Введите название плейлиста:');
+    if (newPlaylistName) {
+        const playlistContainer = document.getElementById('playlistContainer');
+        const newPlaylist = document.createElement('li');
+        newPlaylist.textContent = newPlaylistName;
+        newPlaylist.classList.add('playlist-item');
+        newPlaylist.onclick = function () {
+            // Логика открытия плейлиста
+            alert('Открыт плейлист: ' + newPlaylistName);
+        };
+        playlistContainer.appendChild(newPlaylist);
+        savePlaylist(newPlaylistName); // Сохранение плейлиста
+    }
 }
 
-// Функция для отображения плейлистов
-function displayPlaylists(playlists) {
-    const playlistContainer = document.getElementById('playlist');
+// Функция для сохранения плейлиста в localStorage
+function savePlaylist(playlistName) {
+    const currentUser = 'user123'; // Предполагаем, что у вас есть текущий пользователь
+    let userPlaylists = JSON.parse(localStorage.getItem(currentUser)) || {};
+    userPlaylists[playlistName] = []; // Создаем пустой плейлист
+    localStorage.setItem(currentUser, JSON.stringify(userPlaylists));
+}
 
-    // Очистка содержимого контейнера перед отображением плейлистов
-    playlistContainer.innerHTML = '';
+// Функция для удаления плейлиста
+function deletePlaylist(playlistName) {
+    const currentUser = 'user123'; // Предполагаем, что у вас есть текущий пользователь
+    let userPlaylists = JSON.parse(localStorage.getItem(currentUser)) || {};
+    delete userPlaylists[playlistName];
+    localStorage.setItem(currentUser, JSON.stringify(userPlaylists));
 
-    // Перебор плейлистов и создание элементов списка
-    playlists.forEach((playlist) => {
-        const playlistItem = document.createElement('li');
-        playlistItem.textContent = playlist.name;
-        // Можно также добавить обработчик клика для перехода к плейлисту или другие действия
-
-        playlistContainer.appendChild(playlistItem);
+    // Удаляем плейлист из интерфейса
+    const playlistItems = document.querySelectorAll('.playlist-item');
+    playlistItems.forEach(function (item) {
+        if (item.textContent === playlistName) {
+            item.remove();
+        }
     });
 }
 
-// Вызываем функцию загрузки профиля при загрузке страницы
-window.addEventListener('load', loadUserProfile);
+// Функция для добавления трека в плейлист
+function addTrackToPlaylist(track, playlistName) {
+    const currentUser = 'user123'; // Предполагаем, что у вас есть текущий пользователь
+    let userPlaylists = JSON.parse(localStorage.getItem(currentUser)) || {};
+    userPlaylists[playlistName].push(track);
+    localStorage.setItem(currentUser, JSON.stringify(userPlaylists));
+}
+
+// Функция для удаления трека из плейлиста
+function removeTrackFromPlaylist(track, playlistName) {
+    const currentUser = 'user123'; // Предполагаем, что у вас есть текущий пользователь
+    let userPlaylists = JSON.parse(localStorage.getItem(currentUser)) || {};
+    userPlaylists[playlistName] = userPlaylists[playlistName].filter(function (item) {
+        return item !== track;
+    });
+    localStorage.setItem(currentUser, JSON.stringify(userPlaylists));
+}
