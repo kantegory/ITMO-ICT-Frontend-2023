@@ -3,6 +3,12 @@ html, body{
     overflow-x: hidden;
     overflow-y: hidden;
 }
+.scrollspy-example{
+    max-height: 650px;
+    min-height: 100px;
+    margin-top: 0.5rem;
+    overflow: auto;
+}
 .main{
     -webkit-background-size: cover;
     background-size: cover;
@@ -72,8 +78,63 @@ html, body{
     align-items: flex-start;
     justify-content: center;
 }
+.mb-3{
+    display: flex;
+    flex-direction: column;
+}
+.nav{
+    margin-top: 20px;
+}
+.audio-track {
+    width: 150px;
+    height: 3px;
+    background-color: #dddddd;
+    margin: 20px 0
+}
+
+.time {
+    width: 0;
+    height: 3px;
+    background-color: #474747
+}
+.container-song-photo{
+    display: flex;
+    gap: 20px;
+}
+.play{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 70%;
+}
+.button-player{
+    width: 25px;
+    height: 25px;
+    background-color: unset;
+    border: none;
+    background-size: cover;
+}
+.play-pause::before{
+    content: "";
+}
+.buttons .play-pause{
+    cursor: pointer;
+}
+.buttons #prev{
+    cursor: pointer;
+}
+.buttons #next{
+    cursor: pointer;
+}
+.progress{
+    width: 100%;
+}
 .buttons{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 .form-label-text{
     font-size: 170%;
@@ -99,7 +160,52 @@ html, body{
     font-family: Montserrat-SemiBold;
 }
 
-
+.progress-area{
+    height: 6px;
+    width: 60%;
+    border-radius: 50px;
+    background: #f0f0f0;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.progress-area .progress-bar{
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background-color: #745EE1;
+}
+.song-timer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.progress-bar::before{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    top: 50%;
+    right: -5px;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+    background: inherit;
+    transition: opacity 0.2s ease;
+}
+.progress-area:hover .progress-bar::before{
+    opacity: 1;
+    pointer-events: auto;
+}
+.progress-area .song-timer{
+    margin-top: 2px;
+}
+.song-timer span{
+    font-size: 13px;
+    color: grey;
+}
 
 @-webkit-keyframes sk-pulseScaleOut {
     0% {

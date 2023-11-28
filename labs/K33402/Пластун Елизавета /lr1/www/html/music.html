@@ -18,7 +18,10 @@
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/styleshit.css">
-    <script defer src="../js/index.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer src="../js/music-list.js"></script>
+    <script defer src="../js/music.js"></script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -46,41 +49,152 @@
                 <div class="mb-3">
                     <label class="form-label-text">my music</label>
                 </div>
+                <div class="song-container-main wrapper">
+                    <div class="container-song-photo">
+                        <div class="song-container">
+                            <img id="current-img" src="../../src/img/1.png" class="img-thumbnail resize" alt="...">
+                        </div>
+                        <div class="song-container">
+                            <div id="current-autor" class="nav-link black">composition</div>
+                            <div  id="current-song-name" class="nav-link grey">egor egoror</div>
+                        </div>
+                    </div>
+                    <audio id="audio" src="../../src/music/aigel-pyyala-mp3.mp3"></audio>
+                    <div class="progress-area">
+                        <div class="progress-bar">
+                            <audio id="main-audio" src=""></audio>
+                        </div>
+                        <div class="song-timer">
+                            <span class="current-time">0:00</span>
+                            <span class="max-duration">0:00</span>
+                        </div>
+                    </div>
+<!--                    <div class="audio-track play"><div class="time"></div></div>-->
+                    <div class="song-container">
+                        <div class="buttons" id="controls">
+                            <i id ="prev" class="material-icons">skip_previous</i>
+                            <i class="material-icons play-pause">play_arrow</i>
+                            <i id ="next" class="material-icons">skip_next</i>
+<!--                            <button class="prev button-player"></button>-->
+<!--                            <button class="play-pause button-player"></button>-->
+<!--                            <button class="pause button-player"></button>-->
+<!--                            <button class="next button-player"></button>-->
+                        </div>
+                    </div>
+                </div>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">all music</button>
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                                aria-selected="true">all music
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">my music</button>
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                aria-controls="profile-tab-pane" aria-selected="false">my music
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">playlists</button>
+                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                aria-controls="contact-tab-pane" aria-selected="false">playlists
+                        </button>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                        <div class="song-container-main">
-                            <div class="song-container">
-                                <img src="../../src/img/1.png" class="img-thumbnail resize" alt="...">
-                            </div>
-                            <div class="song-container">
-                                <div class="nav-link black">composition</div>
-                                <div class="nav-link grey">egor egoror</div>
-                            </div>
-                            <div class="song-container">
-                                <div class="buttons">
-
+                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                         tabindex="0">
+                        <div data-bs-spy="scroll" data-bs-root-margin="0px 0px -40%"
+                             data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2"
+                             tabindex="0">
+                            <div id="scrollspyHeading1"></div>
+                            <div class="song-container-main">
+                                <div class="container-song-photo">
+                                    <div class="song-container">
+                                        <img src="../../src/img/1.png" class="img-thumbnail resize" alt="...">
+                                    </div>
+                                    <div class="song-container">
+                                        <div class="nav-link black">composition</div>
+                                        <div class="nav-link grey">egor egoror</div>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="song-container-main">
+                                <div class="container-song-photo">
+                                    <div class="song-container">
+                                        <img src="../../src/img/1.png" class="img-thumbnail resize" alt="...">
+                                    </div>
+                                    <div class="song-container">
+                                        <div class="nav-link black">composition</div>
+                                        <div class="nav-link grey">egor egoror</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="song-container-main">
+                                <div class="container-song-photo">
+                                    <div class="song-container">
+                                        <img src="../../src/img/1.png" class="img-thumbnail resize" alt="...">
+                                    </div>
+                                    <div class="song-container">
+                                        <div class="nav-link black">composition</div>
+                                        <div class="nav-link grey">egor egoror</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="song-container-main">
+                                <div class="container-song-photo">
+                                    <div class="song-container">
+                                        <img src="../../src/img/1.png" class="img-thumbnail resize" alt="...">
+                                    </div>
+                                    <div class="song-container">
+                                        <div class="nav-link black">composition</div>
+                                        <div class="nav-link grey">egor egoror</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="song-container-main">
+                                <div class="container-song-photo">
+                                    <div class="song-container">
+                                        <img src="../../src/img/1.png" class="img-thumbnail resize" alt="...">
+                                    </div>
+                                    <div class="song-container">
+                                        <div class="nav-link black">composition</div>
+                                        <div class="nav-link grey">egor egoror</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="song-container-main">
+                                <div class="container-song-photo">
+                                    <div class="song-container">
+                                        <img src="../../src/img/1.png" class="img-thumbnail resize" alt="...">
+                                    </div>
+                                    <div class="song-container">
+                                        <div class="nav-link black">composition</div>
+                                        <div class="nav-link grey">egor egoror</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="song-container-main">
+                                <div class="container-song-photo">
+                                    <div class="song-container">
+                                        <img src="../../src/img/1.png" class="img-thumbnail resize" alt="...">
+                                    </div>
+                                    <div class="song-container">
+                                        <div class="nav-link black">composition</div>
+                                        <div class="nav-link grey">egor egoror</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="scrollspyHeading2"></div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
-                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="mb-3">
-                    <label class="form-label-text">play now</label>
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                         tabindex="0">...
+                    </div>
+                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+                         tabindex="0">...
+                    </div>
                 </div>
             </div>
         </div>
