@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 function HomePage() {
 
     return (
-        <Container>
+        <Container className="justify-content-center mt-3">
             <Row>
                 <Col>
                     <h1>Добро пожаловать</h1>
@@ -13,8 +13,7 @@ function HomePage() {
             </Row>
             <Row>
                 <Col>
-                    Данный сайт был создан для отображения резюме, для дальнейшей работы, пожалуйста
-                    пройдите <Link to="/register">регистрацию</Link> или <Link to="/login">войдите</Link> в свой аккаунт
+                    Данный сайт был создан для отображения резюме, для дальнейшей работы, пожалуйста <Link to="/register">аутентифицируйтесь</Link>
                 </Col>
             </Row>
         </Container>
