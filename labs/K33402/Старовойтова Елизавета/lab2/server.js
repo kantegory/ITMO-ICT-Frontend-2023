@@ -13,6 +13,7 @@ server.use(express.json());
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 
+
 server.db = router.db;
 
 // Регистрация нового пользователя
@@ -42,7 +43,9 @@ server.post('/register', (req, res) => {
   server.db.get('users').push(newUser).write();
 
   res.json({ success: true, user: newUser });
+
 });
+
 
 // Обработка маршрута /login
 server.post('/login', (req, res) => {

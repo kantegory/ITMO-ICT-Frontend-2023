@@ -381,12 +381,17 @@
               const data = await response.json();
               console.log('Registration successful!', data);
 
+              const user = data.user; // Извлекаем объект пользователя из данных
+
               localStorage.setItem('token', data.token);
-              localStorage.setItem('name', data.name);
-              localStorage.setItem('email', data.email);
+              localStorage.setItem('name', user.name); // Обращаемся к свойству name в объекте user
+              localStorage.setItem('email', user.email); // Обращаемся к свойству email в объекте user
+
+              console.log('localStorage name:', localStorage.getItem('name'));
+              console.log('localStorage email:', localStorage.getItem('email'));
 
               // После успешной регистрации перенаправляем на страницу профиля
-              window.location.href = `profile.html?name=${data.name}&email=${data.email}`;
+              window.location.href = `profile.html?name=${user.name}&email=${user.email}`;
             } else {
               const errorData = await response.json();
               console.error('Registration failed:', errorData);
