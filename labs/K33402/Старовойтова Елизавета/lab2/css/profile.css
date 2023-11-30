@@ -39,6 +39,12 @@
     margin-top: 0.5em;
 }
 
+.form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
+    height: calc(3.5rem + calc(var(--bs-border-width) * 18));
+    min-height: calc(3.5rem + calc(var(--bs-border-width) * 2));
+    line-height: 1.25;
+}
+
 .footer-section {
     width: 96vw;
     margin: auto;
