@@ -1,0 +1,8 @@
+:root {
+  --background-image: url("../images/light-background.png");
+  --background-color: #f4f1f1d3;
+  --text-color: #2b2d30;
+  --nav-color: #343a40;
+  --header-color: #eeaf51;
+  --border-color: #e1dddd;
+}
