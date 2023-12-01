@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light)">
     <title>Smart house of your dream</title>
 </head>
-<body data-bs-theme="dark" class="overflow-y-hidden">
+<body class="overflow-y-hidden">
 <header id="header">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="home.html">Smarthouse</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -70,20 +73,20 @@
         <div class="container card col-12 col-xl-5 col-md-6 my-5 mx-auto">
             <h5 class="card-header">What you can achieve using ours services?</h5>
             <div class="row row-cols-2 my-auto">
-                <a class="col text-white link-underline-light" onclick="location.href='lighting.html'">
-                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto" tabindex="0">Lighting</h5>
+                <a class="card" onclick="location.href='lighting.html'">
+                    <h5 class="card-title text-center py-4 my-auto mx-auto" tabindex="0">Lighting</h5>
                 </a>
-                <a class="col text-white link-underline-light" onclick="location.href='locks.html'">
-                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto" tabindex="0">Door locks</h5>
+                <a class="card" onclick="location.href='locks.html'">
+                    <h5 class="card-title text-center py-4 my-auto mx-auto" tabindex="0">Door locks</h5>
                 </a>
-                <a class="col text-white link-underline-light" onclick="location.href='cctv.html'">
-                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto" tabindex="0">CCTV</h5>
+                <a class="card" onclick="location.href='cctv.html'">
+                    <h5 class="card-title text-center py-4 my-auto mx-auto" tabindex="0">CCTV</h5>
                 </a>
-                <a class="col text-white link-underline-light" onclick="location.href='temperature.html'">
-                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto" tabindex="0">Temperature</h5>
+                <a class="card" onclick="location.href='temperature.html'">
+                    <h5 class="card-title text-center py-4 my-auto mx-auto" tabindex="0">Temperature</h5>
                 </a>
             </div>
-            <a class="card text-center border border-light py-2 my-auto fw-semibold w-100"
+            <a class="card text-center border py-2 my-auto fw-semibold w-100"
                  onclick="location.href='all_services.html'" tabindex="0">
                 Check out all services
             </a>
