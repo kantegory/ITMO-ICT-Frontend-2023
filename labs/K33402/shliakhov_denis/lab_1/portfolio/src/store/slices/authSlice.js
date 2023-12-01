@@ -2,35 +2,36 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-    email : null,
+    user : null,
     status : 'Idle',
+    error : null,
     token: null
 }
 
 export const authUser = createAsyncThunk(
     'post/authUser',
-    async (payload, {rejectedWithValue}) => {
+    async (payload, {rejectWithValue}) => {
         try {
             const {user , params} = payload
             const res = await axios.post(`http://localhost:8080/${params}` , user)
 
-            if (res.status !== 201) {
+            if (res.status !== 201 && params === "register") {
                 throw new Error('Ошибка при регистрации')
             }
 
-            if (res.status !== 200) {
+            if (res.status !== 200 && params === "login") {
                 throw new Error('Ошибка при входе')
             }
 
-            return res
+            return res.data
         } catch (e) {
-            return rejectedWithValue(e.message)
+            return rejectWithValue(e.message)
         }
     }
 )
 
-const userSlice = createSlice({
-    name:'user',
+const authSlice = createSlice({
+    name:'auth',
     initialState,
     reducers:{},
     extraReducers : (builder) => {
@@ -45,11 +46,11 @@ const userSlice = createSlice({
             state.error = action.payload
         })
         builder.addCase(authUser.fulfilled, (state, action) => {
-            state.status = action.payload.status
-            state.email = action.payload.email
+            state.status = "connect"
             state.token = action.payload.accessToken
+            state.user = action.payload.user
         })
     }
 })
 
-export default userSlice.reducer
+export default authSlice.reducer

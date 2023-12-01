@@ -1,10 +1,19 @@
 import {configureStore} from "@reduxjs/toolkit";
-import userReducer from "./slices/userSlice";
+import authSlice from "./slices/authSlice";
+import {rememberEnhancer, rememberReducer} from "redux-remember";
+
+const rememberedKeys = ['auth'];
+
 
 const store = configureStore({
-    reducer: {
-        user : userReducer
-    }
+    reducer: rememberReducer({
+        auth : authSlice
+    }),
+    enhancers: [rememberEnhancer(
+        window.localStorage,
+        rememberedKeys,
+        {persistWholeStore:true}
+    )]
 })
 
 export default store

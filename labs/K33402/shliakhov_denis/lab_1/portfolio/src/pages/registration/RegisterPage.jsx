@@ -1,15 +1,18 @@
 import React, {useState} from "react";
-import {Button, Col, Container, Row, Tab, TabContainer, Tabs} from "react-bootstrap";
+import {Button, Col, Container, Row, Tab, Tabs} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import {useDispatch} from "react-redux";
-import {authUser} from "../../store/slices/userSlice";
+import {authUser} from "../../store/slices/authSlice";
+import {useForm} from "react-hook-form";
 
 function RegisterPage() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
     const [status, setStatus] = useState('login')
 
     const dispatch = useDispatch()
+
+    const {
+        register ,
+        handleSubmit} = useForm({mode: "onBlur"})
     const requestAuthUser = (data) => {
         dispatch(authUser({user: data, params: status}))
         console.log(data)
@@ -22,13 +25,11 @@ function RegisterPage() {
                     {
                         status === "login" &&
                         <Container fluid>
-                            <Form onSubmit={requestAuthUser}>
+                            <Form onSubmit={handleSubmit(requestAuthUser)}>
                                 <Row className="justify-content-center mb-1">
                                     <Col md={4}>
-                                        <Form.Control className="mb-2" placeholder="Email" value={email}
-                                                      onChange={(e) => setEmail(e.target.value)} type="email"/>
-                                        <Form.Control placeholder="Пароль" value={password}
-                                                      onChange={(e) => setPassword(e.target.value)} type="password"/>
+                                        <Form.Control {...register('email')} className="mb-2" placeholder="Email" type="email"/>
+                                        <Form.Control {...register('password')} placeholder="Пароль" type="password"/>
                                     </Col>
                                 </Row>
                                 <Row className="justify-content-center">
@@ -44,17 +45,13 @@ function RegisterPage() {
                     {
                         status === 'register' &&
                         <Container fluid>
-                            <Form onSubmit={requestAuthUser}>
+                            <Form onSubmit={handleSubmit(requestAuthUser)}>
                                 <Row className="justify-content-center mb-1">
                                     <Col md={4}>
-                                        <Form.Control className="mb-2" placeholder="Email" value={email}
-                                                      onChange={(e) => setEmail(e.target.value)} type="email"/>
-                                        <Form.Control className="mb-2" placeholder="Пароль" value={password}
-                                                      onChange={(e) => setPassword(e.target.value)} type="password"/>
-                                        <Form.Control className="mb-2" placeholder="Email" value={email}
-                                                      onChange={(e) => setEmail(e.target.value)} type="email"/>
-                                        <Form.Control placeholder="Пароль" value={password}
-                                                      onChange={(e) => setPassword(e.target.value)} type="password"/>
+                                        <Form.Control {...register('name')} className="mb-2" placeholder="Имя" type="text"/>
+                                        <Form.Control {...register('lastName')} className="mb-2" placeholder="Фамилия" type="text"/>
+                                        <Form.Control {...register('email')} className="mb-2" placeholder="Email" type="email"/>
+                                        <Form.Control {...register('password')} className="mb-2" placeholder="Пароль" type="password"/>
                                     </Col>
                                 </Row>
                                 <Row className="justify-content-center">
