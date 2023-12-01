@@ -1,5 +1,5 @@
 body {
-		background: #ffffff;
+		background: var(--backgound-color);
     font-family: 'Lora', serif;
     font-style: normal;
 		font-weight: 300;
@@ -294,13 +294,13 @@ a:hover, a:active, a:focus {
 -----------------------------------------*/
 
 .navbar-default {
-    background: #ffffff;
+    background: var(--backgound-color);
     margin: 0 !important;
     padding: 18px 0;
 }
 
 .navbar-default .navbar-brand {
-  color: #555;
+  color: var(--main-label-color);
   font-family: 'Merriweather', serif;
   font-weight: bold;
   text-transform: uppercase;
@@ -309,7 +309,7 @@ a:hover, a:active, a:focus {
 }
 
 .navbar-default .navbar-nav li a {
-    color: #777;
+    color: var(--navigation-text-color);
     font-size: 16px;
     letter-spacing: 1px;
     -webkit-transition: all 0.4s ease-in-out;
@@ -623,8 +623,8 @@ a:hover, a:active, a:focus {
 -----------------------------------------*/
 
 footer {
-    background: #000;
-    color: #ffffff;
+    background: var(--footer-background);
+    color: var(--footer-text-color);
     padding: 80px 0px;
     position: relative;
 }
