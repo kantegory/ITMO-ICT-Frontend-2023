@@ -234,7 +234,10 @@ https://www.youtube.com/watch?v=8LFbS78a4Rw
 
 Видео-лекция: https://www.youtube.com/watch?v=0jPwrj5f8no (то же самое видео, что и по компонентому подходу, всё верно)
 
-### Фреймворк Vue.JS: миксины
+### Фреймворк Vue.JS: миксины, composable, маршрутизация (navigation guards, meta)
+
+Презентация: https://docs.google.com/presentation/d/1HxMVbwfaDYVesUwKhoDwluXDwxt7bEOt7G2epSzOpgc/edit?usp=sharing  
+
 ### Фреймворк Vue.JS: управление состоянием
 
 Замечательный плейлист о том, что такое управление состоянием и для чего это нужно: https://www.youtube.com/watch?v=lwec8maPrrI&list=PLvTBThJr861wYlwBaaMy3tZUWpUvtJ9xE
@@ -253,6 +256,7 @@ https://www.youtube.com/watch?v=8LFbS78a4Rw
 - Должен быть подключён роутер
 - Должна быть реализована работа с внешним API
 - Разумное деление на компоненты
+- Использование composable
 
 ### Контрольная работа 2
 
