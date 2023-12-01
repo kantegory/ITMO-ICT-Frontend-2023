@@ -1,0 +1,50 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Lighting",
+      "desc": "You can control light in your house using our website."
+    },
+    {
+      "id": 2,
+      "title": "CCTV",
+      "desc": "You can use CCTV using our website."
+    },
+    {
+      "id": 3,
+      "title": "Door locks",
+      "desc": "You can close and open your door lock using our website."
+    },
+    {
+      "id": 4,
+      "title": "Temperature",
+      "desc": "You can control temperature in your house using our website."
+    }
+  ],
+  "use_cases": [
+    {
+      "id": 1,
+      "use_case": "Retail"
+    },
+    {
+      "id": 2,
+      "use_case": "Healthcare"
+    },
+    {
+      "id": 3,
+      "use_case": "Smart home"
+    },
+    {
+      "id": 4,
+      "use_case": "Logistics & transportation"
+    },
+    {
+      "id": 5,
+      "use_case": "Agriculture"
+    }
+  ],
+  "about": {
+    "title": "What can we do for you?",
+    "desc": "You can control your area, light, door locks and temperature in house."
+  }
+}
