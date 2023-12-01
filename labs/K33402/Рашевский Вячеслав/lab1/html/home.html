@@ -21,7 +21,7 @@
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
+                           aria-expanded="false" tabindex="0">
                             Services
                         </a>
                         <ul class="dropdown-menu">
@@ -32,7 +32,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="all_services.html">All services</a></li>
+                            <li><a class="dropdown-item" href="all_services.html" tabindex="0">All services</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -53,7 +53,7 @@
         </div>
     </nav>
 </header>
-<div class="container-fluid align-content-center row vh-100">
+<main class="container-fluid align-content-center row vh-100">
     <div class="justify-content-center row">
         <div class="card col-12 col-xl-5 col-md-6 my-5 mx-auto">
             <h5 class="card-header">Key use cases</h5>
@@ -70,25 +70,25 @@
         <div class="container card col-12 col-xl-5 col-md-6 my-5 mx-auto">
             <h5 class="card-header">What you can achieve using ours services?</h5>
             <div class="row row-cols-2 my-auto">
-                <div class="col" onclick="location.href='lighting.html'">
-                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto">Lighting</h5>
-                </div>
-                <div class="col" onclick="location.href='locks.html'">
-                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto">Door locks</h5>
-                </div>
-                <div class="col" onclick="location.href='cctv.html'">
-                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto">CCTV</h5>
-                </div>
-                <div class="col" onclick="location.href='temperature.html'">
-                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto">Temperature</h5>
-                </div>
+                <a class="col text-white link-underline-light" onclick="location.href='lighting.html'">
+                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto" tabindex="0">Lighting</h5>
+                </a>
+                <a class="col text-white link-underline-light" onclick="location.href='locks.html'">
+                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto" tabindex="0">Door locks</h5>
+                </a>
+                <a class="col text-white link-underline-light" onclick="location.href='cctv.html'">
+                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto" tabindex="0">CCTV</h5>
+                </a>
+                <a class="col text-white link-underline-light" onclick="location.href='temperature.html'">
+                    <h5 class="card-title text-center border border-light py-4 my-auto mx-auto" tabindex="0">Temperature</h5>
+                </a>
             </div>
-            <div class="card border border-light text-center w-100 py-2 my-auto"
-                 onclick="location.href='services.html'">
+            <a class="card text-center border border-light py-2 my-auto fw-semibold w-100"
+                 onclick="location.href='all_services.html'" tabindex="0">
                 Check out all services
-            </div>
+            </a>
         </div>
-        <div class="card col-12 col-xl-5 col-md-6 my-5 mx-auto">
+        <div class="card col-12 col-xl-5 col-md-6 my-5 mx-auto m-lg-0">
             <h5 class="card-header">About us</h5>
             <div class="card-body">
                 <h5 class="card-title">What can we do for you?</h5>
@@ -96,14 +96,13 @@
             </div>
         </div>
     </div>
-    <img src="../src/home.jpg" class="img-fluid position-absolute z-n1 vh-100 vw-100 d-grid mx-auto" alt="Smart house">
-</div>
+    <img src="../src/home.jpg" class="img-fluid position-absolute z-n1 vh-100 vw-100 d-grid mx-auto" alt="Smart house outside the city on a green, well-kept area">
+</main>
 <script src="../js/search.js"></script>
 <script src="../js/auth.js"></script>
 <script src="../js/auth_script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-
 </body>
 </html>
