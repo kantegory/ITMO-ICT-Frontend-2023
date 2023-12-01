@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react'
 import { Route } from 'react-router-dom'
 import FullScreenSpinner from 'src/components/FullScreenSpinner'
+import Login from 'src/pages/Login'
 
 const withSuspense = (Component: React.FC) => {
   const ComponentWithSuspense = () => (
@@ -34,7 +35,6 @@ const Devices = lazy(() => import('src/pages/Devices'))
 const AddDevice = lazy(() => import('src/pages/AddDevice'))
 const DeviceControls = lazy(() => import('src/pages/DeviceControls'))
 const Settings = lazy(() => import('src/pages/Settings'))
-const Login = lazy(() => import('src/pages/Login'))
 const Register = lazy(() => import('src/pages/Register'))
 
 const LazyFavorites = withSuspense(Favorites)
@@ -42,7 +42,6 @@ const LazyDevices = withSuspense(Devices)
 const LazyAddDevice = withSuspense(AddDevice)
 const LazyDeviceControls = withSuspense(DeviceControls)
 const LazySettings = withSuspense(Settings)
-const LazyLogin = withSuspense(Login)
 const LazyRegister = withSuspense(Register)
 
 export const routes: {
@@ -86,7 +85,7 @@ export const routes: {
   login: {
     alias: 'login',
     path: '/login',
-    element: <LazyLogin />,
+    element: <Login />,
     withBottomNavigation: false,
     withFixedAppBar: false,
   },

@@ -1,6 +1,7 @@
-import { createTheme } from '@mui/material'
+import { createTheme, Theme as MUITheme } from '@mui/material'
 import { CSSProperties } from 'react'
 import { BUTTON_MAX_WIDTH } from './constants'
+import { Theme } from 'src/types/Theme'
 
 declare module '@mui/material' {
   interface TypeText {
@@ -11,7 +12,7 @@ declare module '@mui/material' {
   }
 }
 
-export const theme = createTheme({
+export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
@@ -86,3 +87,8 @@ export const darkTheme = createTheme({
     },
   },
 })
+
+export const THEME_NAME_TO_MUI_THEME: Record<Theme, MUITheme> = {
+  [Theme.LIGHT]: lightTheme,
+  [Theme.DARK]: darkTheme,
+}

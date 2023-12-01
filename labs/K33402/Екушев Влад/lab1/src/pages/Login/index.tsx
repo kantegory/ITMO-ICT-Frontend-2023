@@ -8,6 +8,10 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
 import { getRouteByAlias } from 'src/utils/getRoutePath'
 import Button from 'src/components/Button'
+import { useLoginMutation } from 'src/api'
+import { useAppDispatch } from 'src/store'
+import { setUser, setUserFetchingState } from 'src/store/auth'
+import { FetchingState } from 'src/types/FetchingState'
 
 const Root = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -51,11 +55,37 @@ const Login: React.FC = () => {
     formState: { errors },
     getValues,
   } = useForm<{ email: string; password: string }>()
+  const [login] = useLoginMutation()
+  const dispatch = useAppDispatch()
 
   const onSubmit = () => {
     const { email, password } = getValues()
+    const reject = () => {
+      dispatch(setUser(null))
+      dispatch(setUserFetchingState(FetchingState.REJECTED))
+    }
+
+    dispatch(setUserFetchingState(FetchingState.PENDING))
+
     console.log('Entered credentials:', email, password)
-    navigate(getRouteByAlias('favorites').path)
+
+    login({
+      email,
+      password,
+    })
+      .unwrap()
+      .then((data) => {
+        if (!data.success) {
+          return reject()
+        }
+
+        dispatch(setUser(data.user))
+        dispatch(setUserFetchingState(FetchingState.FULFILLED))
+        navigate(getRouteByAlias('favorites').path)
+      })
+      .catch(() => {
+        return reject()
+      })
   }
 
   const handleGoToRegisterClick = () => {

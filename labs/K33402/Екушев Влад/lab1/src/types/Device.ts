@@ -100,6 +100,7 @@ export interface BasicDevice {
   id: string
   name: string
   state: DeviceState
+  favorite: boolean
   capabilities: {
     [Type in DeviceCapabilityType]?: DeviceCapabilityByType<Type>
   }

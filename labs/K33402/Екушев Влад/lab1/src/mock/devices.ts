@@ -10,6 +10,7 @@ export const devices: Device[] = [
     type: DeviceType.LIGHT_BULB,
     name: 'Xiaomi Yeelight LED Smart Bulb',
     state: DeviceState.ONLINE,
+    favorite: true,
     capabilities: {
       [DeviceCapabilityType.COLOR_SETTING]: {
         type: DeviceCapabilityType.COLOR_SETTING,
@@ -36,6 +37,7 @@ export const devices: Device[] = [
     type: DeviceType.LIGHT_BULB,
     name: 'Xiaomi Yeelight LED Smart Bulb',
     state: DeviceState.ONLINE,
+    favorite: true,
     capabilities: {
       [DeviceCapabilityType.COLOR_SETTING]: {
         type: DeviceCapabilityType.COLOR_SETTING,
@@ -62,6 +64,7 @@ export const devices: Device[] = [
     type: DeviceType.KETTLE,
     name: 'Xiaomi Kettle 2',
     state: DeviceState.ONLINE,
+    favorite: false,
     capabilities: {
       [DeviceCapabilityType.ON_OFF]: {
         type: DeviceCapabilityType.ON_OFF,
@@ -77,6 +80,7 @@ export const devices: Device[] = [
     type: DeviceType.THERMOSTAT,
     name: 'Xiaomi Warn Floor',
     state: DeviceState.ONLINE,
+    favorite: true,
     capabilities: {
       [DeviceCapabilityType.ON_OFF]: {
         type: DeviceCapabilityType.ON_OFF,
@@ -106,6 +110,7 @@ export const devices: Device[] = [
     type: DeviceType.THERMOSTAT,
     name: 'Elgato Eve Degree Connected',
     state: DeviceState.OFFLINE,
+    favorite: false,
     capabilities: {
       [DeviceCapabilityType.ON_OFF]: {
         type: DeviceCapabilityType.ON_OFF,
@@ -125,6 +130,7 @@ export const devices: Device[] = [
     type: DeviceType.CAMERA_OUTDOOR,
     name: 'D-link Omna 180 Cam',
     state: DeviceState.ONLINE,
+    favorite: true,
     capabilities: {
       [DeviceCapabilityType.VIDEO_STREAM]: {
         type: DeviceCapabilityType.VIDEO_STREAM,
