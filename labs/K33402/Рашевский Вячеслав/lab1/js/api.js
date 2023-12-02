@@ -34,3 +34,22 @@ if (aboutTitle && aboutDesc) {
         aboutDesc.textContent = about.desc;
     });
 }
+
+const ulUseCases = document.getElementById('useCasesList');
+if (ulUseCases) {
+    const list = document.createDocumentFragment();
+    fetchUseCases().then((data) => {
+        console.log(data);
+        data.map(function (useCase) {
+            const li = document.createElement('li');
+
+            li.innerHTML = `${useCase.use_case}`;
+            li.className = "list-group-item";
+
+            list.appendChild(li);
+        });
+    }).finally(() => {
+        ulUseCases.appendChild(list);
+    });
+}
+
