@@ -3,22 +3,34 @@
     {
       "id": 1,
       "title": "Lighting",
-      "desc": "You can control light in your house using our website."
+      "text": "You can control light in your house using our website.",
+      "src": "../src/light.jpg",
+      "alt": "Lighting controller in smartphone",
+      "href": "lighting.html"
     },
     {
       "id": 2,
       "title": "CCTV",
-      "desc": "You can use CCTV using our website."
+      "text": "You can use CCTV using our website.",
+      "src": "../src/camera.jpg",
+      "alt": "CCTV at front door",
+      "href":  "cctv.html"
     },
     {
       "id": 3,
       "title": "Door locks",
-      "desc": "You can close and open your door lock using our website."
+      "text": "You can close and open your door lock using our website.",
+      "src": "../src/lock.jpg",
+      "alt": "Smart door locks",
+      "href":  "door_locks.html"
     },
     {
       "id": 4,
       "title": "Temperature",
-      "desc": "You can control temperature in your house using our website."
+      "text": "You can control temperature in your house using our website.",
+      "src": "../src/temperature.jpg",
+      "alt": "Temperature controller at wall",
+      "href":  "temperature.html"
     }
   ],
   "use_cases": [
