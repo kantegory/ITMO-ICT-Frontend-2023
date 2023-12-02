@@ -2,47 +2,47 @@ const REGEXP_EMAIL = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 window.addEventListener("DOMContentLoaded", updateNavigationButtons, false);
 
 function signinUser() {
-    const passwordField = document.getElementById("password-in")
-    const emailField = document.getElementById("email-in")
+    const passwordField = document.getElementById("password-in");
+    const emailField = document.getElementById("email-in");
 
     if (!REGEXP_EMAIL.test(emailField.value)) {
-        alert("Email is incorrect")
-        return false
+        alert("Email is incorrect");
+        return false;
     }
 
     if (localStorage.getItem(emailField.value)) {
         if (localStorage.getItem(emailField.value) === passwordField.value) {
-            setUserLoggedIn(true)
+            setUserLoggedIn(true);
             updateNavigationButtons();
-            return true
+            return true;
         } else {
-            alert("Passwords does not match")
-            return false
+            alert("Passwords does not match");
+            return false;
         }
     } else {
-        alert("There is no user with this email")
-        return false
+        alert("There is no user with this email");
+        return false;
     }
 }
 
 function registerUser() {
-    const passwordField = document.getElementById("password-up")
-    const passwordConfirmationField = document.getElementById("confirmation-password-up")
-    const emailField = document.getElementById("email-up")
+    const passwordField = document.getElementById("password-up");
+    const passwordConfirmationField = document.getElementById("confirmation-password-up");
+    const emailField = document.getElementById("email-up");
 
     if (!REGEXP_EMAIL.test(emailField.value)) {
-        alert("Email is incorrect")
-        return false
+        alert("Email is incorrect");
+        return false;
     }
 
     if (passwordField.value === passwordConfirmationField.value) {
-        localStorage.setItem(emailField.value, passwordField.value)
-        setUserLoggedIn(true)
+        localStorage.setItem(emailField.value, passwordField.value);
+        setUserLoggedIn(true);
         updateNavigationButtons();
         return true
     } else {
-        alert("Passwords does not match")
-        return false
+        alert("Passwords does not match");
+        return false;
     }
 }
 
@@ -56,9 +56,9 @@ function isUserLoggedIn() {
 }
 
 function updateNavigationButtons() {
-    const auth = document.getElementById("auth")
-    const account = document.getElementById("account")
-    const exit = document.getElementById("exit")
+    const auth = document.getElementById("auth");
+    const account = document.getElementById("account");
+    const exit = document.getElementById("exit");
 
     if (isUserLoggedIn()) {
         if (auth) auth.style.display = "none";
@@ -70,7 +70,7 @@ function updateNavigationButtons() {
             if (readySoonCard) readySoonCard.style.display = "block";
             if (forbiddenCard) forbiddenCard.style.display = "none";
         } else if (window.location.href.includes("auth.html")) {
-            console.log("redirected from auth to account for logged in user")
+            console.log("redirected from auth to account for logged in user");
             window.location.href = "../html/account.html";
         }
     } else {
@@ -83,7 +83,7 @@ function updateNavigationButtons() {
             if (readySoonCard) readySoonCard.style.display = "none";
             if (forbiddenCard) forbiddenCard.style.display = "block";
         } else if (window.location.href.includes("auth.html")) {
-            const toastRedirected = document.getElementById('liveToast')
+            const toastRedirected = document.getElementById('liveToast');
             if (toastRedirected) toastRedirected.style.display = "none";
         }
     }
