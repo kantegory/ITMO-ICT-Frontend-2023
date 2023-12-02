@@ -1,18 +1,26 @@
 {
   "users": [
     {
-      "email": "puro@mail.ru",
-      "password": "$2a$10$wQh/RPC7h/HPwR/djxPMkezm7q2jb1S6GgpCGLc2QXocaUU4wvx1O",
-      "name": "Denis",
-      "lastName": "SHLIAKHOV",
+      "email": "puroblast97@mail.ru",
+      "password": "$2a$10$iDAwMOkTqNzNhkfW/xlkt.cEyx69zSr0qwkqRmOoMi89GWpudD0SC",
+      "name": "Шляхов",
+      "lastName": "Олегович",
+      "projects": [
+        {
+          "name": "Фейсбук",
+          "description": "Мой первый проект",
+          "image": "https://icon-library.com/images/icon-50x50/icon-50x50-12.jpg",
+          "link": ""
+        },
+        {
+          "name": "Фейсбук",
+          "description": "Мой первый проект",
+          "image": "https://icon-library.com/images/icon-50x50/icon-50x50-12.jpg",
+          "link": ""
+        }
+
+      ],
       "id": 1
-    },
-    {
-      "email": "puro1@mail.ru",
-      "password": "$2a$10$98cZZg.KmMpNa9RGb67q7.85cG8xfaLnxFHJWI/f4pVkiQ6XomUeq",
-      "name": "Denis",
-      "lastName": "SHLIAKHOV",
-      "id": 2
     }
   ]
 }

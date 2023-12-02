@@ -1,6 +1,5 @@
-import React, {useState} from "react";
-import {Button, Col, Container, Modal, Nav, Navbar, Row} from "react-bootstrap";
-import Form from "react-bootstrap/Form";
+import React from "react";
+import {Container, Nav, Navbar} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import SearchBar from "../searchbar/SearchBar";
 
@@ -11,9 +10,7 @@ function Header() {
                 <h3>Портфолио</h3>
                 <Nav>
                     <Link className="m-1" to="/">Главная</Link>
-                    <Link className="m-1" to="/account">Личный кабинет</Link>
-                    <Link className="m-1" to="/login">Вход</Link>
-                    <Link className="m-1" to="/register">Регистрация</Link>
+                    <Link className="m-1" to="/projects">Проекты</Link>
                 </Nav>
                 <SearchBar/>
             </Container>

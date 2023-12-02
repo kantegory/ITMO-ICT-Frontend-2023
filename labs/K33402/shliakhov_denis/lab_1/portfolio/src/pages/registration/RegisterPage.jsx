@@ -4,19 +4,25 @@ import Form from "react-bootstrap/Form";
 import {useDispatch} from "react-redux";
 import {authUser} from "../../store/slices/authSlice";
 import {useForm} from "react-hook-form";
+import {useNavigate} from "react-router-dom";
 
 function RegisterPage() {
     const [status, setStatus] = useState('login')
 
     const dispatch = useDispatch()
 
+    const navigate = useNavigate()
+
     const {
-        register ,
+        register = {"projects" : []} ,
         handleSubmit} = useForm({mode: "onBlur"})
+
     const requestAuthUser = (data) => {
-        dispatch(authUser({user: data, params: status}))
-        console.log(data)
+        dispatch(authUser({user: data, params: status})).then(() => {
+            navigate("/")
+        })
     }
+
 
     return (
         <Container className="justify-content-center mt-3">
