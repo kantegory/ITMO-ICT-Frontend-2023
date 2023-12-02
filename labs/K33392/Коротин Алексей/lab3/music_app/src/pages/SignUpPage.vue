@@ -2,33 +2,74 @@
     <q-page>
         <div class="q-pa-md column flex-center">
             <p class="text-h3">Sign up</p>
-            <q-form ref="form" @submit.prevent="signUp" class="login-container q-gutter-y-md column">
-                <q-input class="input-field" type="text" v-model="form.login" label="Login"
-                    placeholder="example@example.com"></q-input>
-                <q-input class="input-field" type="password" v-model="form.password" label="Password"></q-input>
-                <q-input class="input-field" type="password" v-model="form.passwordRepeat" label="Repeat password"></q-input>
-                <q-btn color="secondary">Sign up</q-btn>
+            <q-form ref="form" @submit.prevent="trySignUp" class="login-container q-gutter-y-md column">
+                <q-input class="input-field" type="text" v-model="form.email" label="Login"
+                    placeholder="example@example.com" error-message="Please enter a valid email"
+                    :rules="[val => isValidEmail(val) || 'Invalid email address']"></q-input>
+                <q-input class="input-field" type="password" v-model="form.password" label="Password"
+                    error-message="Should be at least 6 characters" :rules="[val => isValidPassword(val)]"></q-input>
+                <q-input class="input-field" type="password" v-model="form.passwordRepeat" label="Repeat password"
+                    error-message="Passwords don't match" :rules="[() => passwordMatch()]"></q-input>
+                <q-btn type="submit" color="secondary">Sign up</q-btn>
                 <p class="text-subtitle1">Alreay have an account? <router-link to="/auth/login">Log in</router-link></p>
             </q-form>
         </div>
     </q-page>
-
 </template>
 <script>
+
+import { emailValidator } from '@/mixins/email'
+import { authStore } from '@/stores/authStore'
+import { mapActions, mapState } from 'pinia'
+import { Notify } from 'quasar'
+
 export default {
+
+    mixins: [emailValidator],
+
     data() {
         return {
             form: {
-                login: '',
+                email: '',
                 password: '',
                 passwordRepeat: ''
             }
         }
     },
 
+    computed: {
+        ...mapState(authStore, ['user', 'accessToken'])
+    },
+
     methods: {
-        signUp() {
-            
+        ...mapActions(authStore, ['signUp']),
+
+        trySignUp() {
+            if (!(this.isValidEmail(this.form.email) && this.isValidPassword(this.form.password) && this.passwordMatch())) {
+                return
+            }
+
+            this.signUp(this.form)
+                .then((r) => {
+                    this.user = r.data.user
+                    this.accessToken = r.data.accessToken
+                })
+                .catch((reason) => {
+                    if (reason.response.status === 400) {
+                        Notify.create({ message: "This email is occupied", position: "top" });
+                    }
+                    else {
+                        Notify.create({ message: "Server is not available right now.", position: "top" })
+                    }
+                })
+        },
+
+        isValidPassword(p) {
+            return p.length >= 6
+        },
+
+        passwordMatch() {
+            return this.form.password === this.form.passwordRepeat;
         }
     },
 }

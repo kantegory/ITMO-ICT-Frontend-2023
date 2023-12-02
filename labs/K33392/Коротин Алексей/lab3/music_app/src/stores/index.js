@@ -13,7 +13,7 @@ import { persist } from 'pinia-persists'
 
 export default store((/* { ssrContext } */) => {
   const pinia = createPinia()
-  pinia.use(persist)
+  pinia.use(persist())
 
 
   return pinia
