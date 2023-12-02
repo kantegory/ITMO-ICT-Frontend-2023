@@ -16,6 +16,8 @@
   "dependencies": {
     "-": "^0.0.1",
     "@quasar/extras": "^1.16.4",
+    "@vuelidate/core": "^2.0.3",
+    "@vuelidate/validators": "^2.0.4",
     "axios": "^1.6.2",
     "json-server": "^0.17.4",
     "json-server-auth": "^2.1.0",
