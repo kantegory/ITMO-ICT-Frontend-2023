@@ -29,9 +29,10 @@
                 <a class="nav-link" href="about.html">About</a>
               </li>
             </ul>
-            <form class="d-flex mx-1" role="search">
-              <input class="form-control me-2 header-search-text" type="text" placeholder="Search" name="Search">
+            <form class="d-flex mx-1" role="search" onsubmit="searchArticles(event)">
+              <input class="form-control me-2 header-search-text" type="text" placeholder="Search" name="Search" id="searchInput">
               <button class="btn btn-outline-primary" type="submit">Submit</button>
+              <div id="searchResults"></div>
             </form>
           </div>
         </div>
@@ -46,7 +47,7 @@
                 <div class="first-section-featured-article-meta">
                   <span class="first-section-featured-article-author">Ralph Hawkins</span><br>
                   <span class="first-section-featured-article-date card-subtitle mb-2 text-body-secondary">December 7, 2023 (10 mins read)</span><br>
-                  <p class="first-section-featured-article-textp card-text">Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.</p>
+                  <p class="first-section-featured-article-textp card-text">Proident aliquip qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.</p>
                 </div>
               </div>
             </article>
@@ -67,7 +68,7 @@
                   <div class="second-section-article-meta">
                     <small class="second-section-article-author">Ralph Hawkins</small><br>
                     <small class="second-section-article-date card-subtitle mb-2 text-body-secondary">December 7, 2023 (10 mins read)</small><br>
-                    <p class="second-section-article-textp card-text">Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim.</p>
+                    <p class="second-section-article-textp card-text">Proident aliquip velit qui commodo hello officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim.</p>
                   </div>
                 </div>
               </div>

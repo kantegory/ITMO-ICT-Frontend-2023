@@ -25,6 +25,10 @@
     margin-top: 0.3%;
 }
 
+#first-section {
+    position: relative;
+}
+
 .first-section-text {
     background-color: #f8f9fa;
     margin-left: 55px;
@@ -38,6 +42,22 @@
 
 .first-section-featured-article-date {
     color: #0d6efd !important;
+}
+
+.highlighted {
+    background-color: yellow;
+    font-weight: bold;
+  }
+
+#searchResults {
+    position: absolute;
+    top: 100%; /* Отображать результаты под полем поиска */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1000; /* Добавлен z-index для правильного отображения поверх других элементов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .editors-picks-h2 {

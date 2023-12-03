@@ -93,3 +93,49 @@ async function register(event) {
     console.error('Registration failed:', error);
   }
 }
+
+
+function searchArticles(event) {
+  event.preventDefault();
+
+  const searchInput = document.getElementById('searchInput').value.toLowerCase();
+  const articles = document.querySelectorAll('.editors-picks-card');
+
+  const searchResults = [];
+
+  articles.forEach((article) => {
+    const title = article.querySelector(".second-section-article-h2").textContent.toLowerCase();
+    const text = article.querySelector('.second-section-article-textp').textContent.toLowerCase();
+
+    if (title.includes(searchInput) || text.includes(searchInput)) {
+      searchResults.push({
+        title: title,
+        text: text,
+      });
+    }
+  });
+
+  displaySearchResults(searchResults, searchInput);
+}
+
+function displaySearchResults(results, searchInput) {
+  const searchResultsContainer = document.getElementById('searchResults');
+  searchResultsContainer.innerHTML = '';
+
+  if (results.length === 0) {
+    searchResultsContainer.innerHTML = 'No results found.';
+    return;
+  }
+
+  results.forEach((result) => {
+    const resultItem = document.createElement('div');
+    const highlightedText = highlightSearchTerm(result.text, searchInput);
+    resultItem.innerHTML = `<h3>${result.title}</h3><p>${highlightedText}</p>`;
+    searchResultsContainer.appendChild(resultItem);
+  });
+}
+
+function highlightSearchTerm(text, searchTerm) {
+  const regex = new RegExp(`(${searchTerm})`, 'gi');
+  return text.replace(regex, '<span class="highlighted">$1</span>');
+}
