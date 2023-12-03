@@ -2,9 +2,9 @@ import React, {useState} from "react";
 import {Button, Col, Container, Row, Tab, Tabs} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import {useDispatch} from "react-redux";
-import {authUser} from "../../store/slices/authSlice";
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
+import {authUser} from "../../store/slices/authSlice";
 
 function RegisterPage() {
     const [status, setStatus] = useState('login')
@@ -14,15 +14,15 @@ function RegisterPage() {
     const navigate = useNavigate()
 
     const {
-        register = {"projects" : []} ,
-        handleSubmit} = useForm({mode: "onBlur"})
+        register = {} ,
+        handleSubmit
+    } = useForm({mode: "onBlur"})
 
     const requestAuthUser = (data) => {
         dispatch(authUser({user: data, params: status})).then(() => {
             navigate("/")
         })
     }
-
 
     return (
         <Container className="justify-content-center mt-3">

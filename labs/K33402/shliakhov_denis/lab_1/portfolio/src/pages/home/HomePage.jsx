@@ -4,11 +4,10 @@ import {Link} from "react-router-dom";
 import store from "../../store";
 
 function HomePage() {
-
     return (
         <>
             {
-                store.getState().auth.status !== "connect" &&
+                store.getState().authSlice.status !== "connect" &&
                 <Container className="justify-content-center mt-3">
                     <Row>
                         <Col>
@@ -25,11 +24,11 @@ function HomePage() {
             }
 
             {
-                store.getState().auth.status === "connect" &&
+                store.getState().authSlice.status === "connect" &&
                 <Container>
                     <Row>
                         <Col>
-                            Добро пожаловать , {store.getState().auth.user.name}
+                            Добро пожаловать , {store.getState().authSlice.user.name}
                         </Col>
                     </Row>
                 </Container>
