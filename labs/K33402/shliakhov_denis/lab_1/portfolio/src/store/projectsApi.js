@@ -2,7 +2,7 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
 export const projectsApi = createApi({
     reducerPath: 'projectsApi',
-    tagTypes: ['Projects'],
+    tagTypes: ['Project'],
     baseQuery: fetchBaseQuery({baseUrl: "http://localhost:8080/"}),
     endpoints: build => ({
         getProjects: build.query({
@@ -10,13 +10,7 @@ export const projectsApi = createApi({
                 url:`projects?userId=${userId}`,
                 method: "GET"
             }),
-            providesTags: (result) =>
-                result
-                    ? [
-                        ...result.map(({ id }) => ({ type: 'Projects', id })),
-                        { type: 'Projects', id: 'LIST' },
-                    ]
-                    : [{ type: 'Projects', id: 'LIST' }],
+            providesTags: ["Project"]
         }),
         addProject: build.mutation({
             query: (project) => ({
@@ -24,7 +18,7 @@ export const projectsApi = createApi({
                 method: 'POST',
                 body: project,
             }),
-            invalidateTags: [{type: "Projects", id : "LIST"}]
+            invalidatesTags: ["Project"]
         })
     })
 })

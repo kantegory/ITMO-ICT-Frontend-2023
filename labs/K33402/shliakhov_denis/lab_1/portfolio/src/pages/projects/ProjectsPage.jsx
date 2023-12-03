@@ -11,6 +11,7 @@ function Account() {
     const [addProject] = useAddProjectMutation()
     const {data, isLoading} = useGetProjectsQuery(userId)
 
+
     const handleAddProject = async (data) => {
         data.userId = userId
         await addProject(data).unwrap()
