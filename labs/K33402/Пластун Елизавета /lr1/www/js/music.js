@@ -1,5 +1,4 @@
-let mainAudio = document.getElementById("audio");    // Берём элемент audio
-let time = document.querySelector(".time");      // Берём аудио дорожку
+let mainAudio = document.getElementById("audio");    // Берём элемент audio // Берём аудио дорожку
 let playPauseBtn = document.querySelector(".play-pause");   // Берём кнопку проигрывания // Берём кнопку паузы
 let prevBtn = document.getElementById("prev");   // Берём кнопку переключения предыдущего трека
 let nextBtn = document.getElementById("next");   // Берём кнопку переключение следующего трека
@@ -9,6 +8,15 @@ let musicImg = document.getElementById("current-img");
 let wrapper = document.querySelector(".wrapper");
 let progressArea = document.querySelector(".progress-area");
 let progressBar = document.querySelector(".progress-bar");
+let volumeScale = document.getElementById("volume");
+let allMusic = {};
+// В браузере
+fetch('../json/musicData.json')
+    .then(response => response.json())
+    .then(data => {allMusic = data;
+    })
+    .catch(error => console.error('Ошибка загрузки файла:', error));
+
 
 let musicIndex = Math.floor((Math.random() * allMusic.length) + 1);
 isMusicPaused = true;
@@ -21,9 +29,15 @@ window.addEventListener("load", ()=>{
 function loadMusic(indexNumb){
     musicName.innerText = allMusic[indexNumb - 1].name;
     musicArtist.innerText = allMusic[indexNumb - 1].artist;
-    musicImg.src = `../../src/img/${allMusic[indexNumb - 1].src}.png`;
-    mainAudio.src = `../../src/music/${allMusic[indexNumb - 1].src}.mp3`;
+    musicImg.src = allMusic[indexNumb - 1].img;
+    mainAudio.src = `../../src/music/${allMusic[indexNumb - 1].filename}`;
 }
+// function loadMusic(indexNumb){
+//     musicName.innerText = allMusic[indexNumb - 1].name;
+//     musicArtist.innerText = allMusic[indexNumb - 1].artist;
+//     musicImg.src = `../../src/img/${allMusic[indexNumb - 1].src}.png`;
+//     mainAudio.src = `../../src/music/${allMusic[indexNumb - 1].src}.mp3`;
+// }
 
 //play music function
 function playMusic(){
@@ -140,3 +154,9 @@ mainAudio.addEventListener("ended", ()=>{
             break;
     }
 });
+
+function ChangeVolume() { //Меняем громкость
+    var volume=  volumeScale.value / 100;
+    mainAudio.volume = parseFloat(volume.toString());
+}
+volumeScale.addEventListener('change',ChangeVolume);

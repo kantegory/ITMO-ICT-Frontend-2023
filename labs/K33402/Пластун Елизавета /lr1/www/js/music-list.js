@@ -1,7 +1,8 @@
-let allMusic = [
+
+let aallMusic = [
     {
-        name: "Harley Bird - Home",
-        artist: "Jordan Schor",
+        name: "пыяла",
+        artist: "АИГЕЛ",
         img: "aigel-pyyala-mp3",
         src: "aigel-pyyala-mp3"
     },
