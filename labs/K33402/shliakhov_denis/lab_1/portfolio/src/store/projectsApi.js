@@ -19,8 +19,14 @@ export const projectsApi = createApi({
                 body: project,
             }),
             invalidatesTags: ["Project"]
+        }),
+        getOneProject: build.query({
+            query: (projectName) => ({
+                url: `projects?name=${projectName}`,
+                method : "GET"
+            })
         })
     })
 })
 
-export const {useGetProjectsQuery, useAddProjectMutation} = projectsApi
+export const {useGetProjectsQuery, useAddProjectMutation, useGetOneProjectQuery} = projectsApi

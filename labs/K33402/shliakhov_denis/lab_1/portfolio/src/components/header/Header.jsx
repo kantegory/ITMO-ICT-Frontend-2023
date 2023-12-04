@@ -5,7 +5,7 @@ import SearchBar from "../searchbar/SearchBar";
 
 function Header() {
     return (
-        <Navbar bg="light" data-bs-theme="light">
+        <Navbar className="mb-2" bg="light" data-bs-theme="light">
             <Container>
                 <h3>Портфолио</h3>
                 <Nav>

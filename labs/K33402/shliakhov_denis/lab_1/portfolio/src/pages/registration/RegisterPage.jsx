@@ -2,12 +2,13 @@ import React, {useState} from "react";
 import {Button, Col, Container, Row, Tab, Tabs} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import {useDispatch} from "react-redux";
-import {useForm} from "react-hook-form";
+import {set, useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 import {authUser} from "../../store/slices/authSlice";
 
 function RegisterPage() {
     const [status, setStatus] = useState('login')
+    const [hideLabel , setHide] = useState(true)
 
     const dispatch = useDispatch()
 
@@ -15,12 +16,19 @@ function RegisterPage() {
 
     const {
         register = {} ,
-        handleSubmit
+        handleSubmit,
+        reset
     } = useForm({mode: "onBlur"})
 
     const requestAuthUser = (data) => {
-        dispatch(authUser({user: data, params: status})).then(() => {
-            navigate("/")
+        dispatch(authUser({user: data, params: status})).then((value) => {
+            if (!value.error){
+                reset()
+                setHide(true)
+                navigate("/")
+            } else {
+                setHide(false)
+            }
         })
     }
 
@@ -41,6 +49,11 @@ function RegisterPage() {
                                 <Row className="justify-content-center">
                                     <Col md={4}>
                                         <Button type="submit">Войти</Button>
+                                    </Col>
+                                </Row>
+                                <Row className="justify-content-center">
+                                    <Col Col md={4}>
+                                        <Form.Label hidden={hideLabel} style={{color:"red"}}>Неверные данные</Form.Label>
                                     </Col>
                                 </Row>
                             </Form>
