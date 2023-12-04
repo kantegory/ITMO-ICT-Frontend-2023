@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Подключение Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Личный кабинет пользователя</h1>
+  <p>Здесь может быть информация о пользователе, его заказы, настройки и т.д.</p>
+</div>
+
+<!-- Bootstrap JS и пользовательский JavaScript -->
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Личный кабинет</h1>
+        <h2>Мои выбранные товары</h2>
+        <ul id="selectedItemsList">
+          <!-- Сюда будут добавляться выбранные товары -->
+        </ul>
+        <button onclick="openFilterPage()">Открыть страницу с фильтрацией</button>
+
+        <!-- Использование Bootstrap для модального окна -->
+        <button class="btn btn-primary" data-toggle="modal" data-target="#confirmationModal">Оформить заказ на выбранные товары</button>
+
+        <button onclick="openMainPage()">Назад</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Модальное окно для подтверждения заказа -->
+  <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmationModalLabel">Подтверждение заказа</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Вы уверены, что хотите оформить заказ на выбранные товары?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+          <button type="button" class="btn btn-primary" onclick="confirmOrder()">Подтвердить заказ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Подключение Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const selectedItems = JSON.parse(localStorage.getItem('selectedItems'));
+    const selectedItemsList = document.getElementById('selectedItemsList');
+
+    if (selectedItems && selectedItems.length > 0) {
+      selectedItems.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        selectedItemsList.appendChild(listItem);
+      });
+    } else {
+      const noItemsMessage = document.createElement('li');
+      noItemsMessage.textContent = 'Нет выбранных товаров';
+      selectedItemsList.appendChild(noItemsMessage);
+    }
+  });
+
+  function openFilterPage() {
+    // Перенаправление на страницу с фильтрацией
+    window.location.href = "search.html";
+  }
+
+  function openMainPage() {
+    // Перенаправление на главную
+    window.location.href = "main.html";
+  }
+
+function confirmOrder() {
+
+  // Очищаем список выбранных товаров
+  const selectedItemsList = document.getElementById('selectedItemsList');
+  selectedItemsList.innerHTML = '';
+
+  // Очищаем данные о выбранных товарах в Local Storage
+  localStorage.removeItem('selectedItems');
+  
+  
+  // Скрываем модальное окно
+  $('#confirmationModal').modal('hide');
+}
+</script>
+
+</body>
+</html>

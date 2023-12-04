@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+</head>
+<body>
+
+<!-- Фильтр поиска -->
+<div id="searchFilter" class="card">
+  <div class="card-body">
+    <h5 class="card-title">Фильтр поиска</h5>
+    <form id="searchFilterForm">
+      <div class="mb-3">
+        <label for="searchQuery" class="form-label">Введите запрос</label>
+        <input type="text" class="form-control" id="searchQuery" placeholder="Например, 'футболка'">
+      </div>
+      <button type="submit" class="btn btn-primary">Поиск</button>
+    </form>
+  </div>
+</div>
+	  
+	  
+	  
+	  
+	  
+<!-- Список товаров -->
+<ul id="itemsList">
+  <li>
+    <label><input type="checkbox" value="Футболка Adidas"> Футболка Adidas</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Джинсы Levi's"> Джинсы Levi's</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Куртка Columbia"> Куртка Columbia</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Шорты Nike"> Шорты Nike</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Платье Vera Wang"> Платье Vera Wang</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Рубашка Hugo Boss"> Рубашка Hugo Boss</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Брюки Gucci"> Брюки Gucci</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Пальто Burberry"> Пальто Burberry</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Жакет Chanel"> Жакет Chanel</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Шапка Nike"> Шапка Nike</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Туфли Christian Louboutin"> Туфли Christian Louboutin</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Сапоги Timberland"> Сапоги Timberland</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Кеды Converse"> Кеды Converse</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Панама Tommy Hilfiger"> Панама Tommy Hilfiger</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Топ Versace"> Топ Versace</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Жилет Armani"> Жилет Armani</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Бейсболка New Era"> Бейсболка New Era</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Шорты-бермуды Puma"> Шорты-бермуды Puma</label>
+  </li>
+  <li>
+    <label><input type="checkbox" value="Леггинсы Adidas"> Леггинсы Adidas</label>
+  </li>
+</ul>
+
+
+<!-- Кнопка "выбрать товары" -->
+<button id="selectItemsButton">Выбрать товары</button>
+
+
+<script>
+  function back() {
+    // Перенаправление на профиль
+    window.location.href = "profile.html";
+  }
+  
+    function closeThisPage() {
+    // Перенаправление на главную
+    window.location.href = "main.html";
+  }
+</script>
+
+
+
+
+
+
+<script>
+  document.getElementById('selectItemsButton').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const selectedItems = [];
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        selectedItems.push(checkbox.value);
+      }
+    });
+
+    // Сохраняем выбранные товары в Local Storage
+    localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
+  });
+</script>
+
+
+
+          <button type="submit" class="btn btn-primary mt-3">Применить фильтры</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button onclick="back()">Назад</button>
+		
+		<button onclick="closeThisPage()">Закрыть</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  document.getElementById('filterForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Предотвращаем перезагрузку страницы
+
+    const selectedItems = [];
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        selectedItems.push(checkbox.value);
+      }
+    });
+
+    // Сохраняем выбранные товары в Local Storage
+    localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
+
+    // Перенаправляем на страницу пользователя
+    window.location.href = 'profile.html';
+  });
+</script>
+
+<script>
+  document.getElementById('searchFilterForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Предотвращаем перезагрузку страницы
+
+    const searchQuery = document.getElementById('searchQuery').value.toLowerCase();
+
+    const items = document.querySelectorAll('#itemsList li');
+    items.forEach(item => {
+      const itemName = item.innerText.toLowerCase();
+      if (itemName.includes(searchQuery)) {
+        item.style.display = 'block'; // Показываем товар, если соответствует запросу
+      } else {
+        item.style.display = 'none'; // Скрываем товар, если не соответствует запросу
+      }
+    });
+  });
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
