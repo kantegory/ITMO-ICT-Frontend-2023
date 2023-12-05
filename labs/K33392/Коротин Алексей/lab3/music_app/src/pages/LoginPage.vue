@@ -19,6 +19,7 @@ import { authStore } from '@/stores/authStore'
 import { emailValidator } from '@/mixins/email'
 import { Notify } from 'quasar'
 import { mapActions, mapState } from 'pinia'
+import { useRedirect } from '@/composables/redirect'
 
 export default {
 
@@ -44,6 +45,7 @@ export default {
 
         async tryLogin() {
             const response = await this.login(this.form)
+                .then(() => useRedirect('/'))
                 .catch((reason) => {
                     if (!reason.response) {
                         return;

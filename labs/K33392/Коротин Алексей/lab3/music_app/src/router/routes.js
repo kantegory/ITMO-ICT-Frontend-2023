@@ -13,7 +13,10 @@ const routes = [
     component: () => import("@/layouts/MainLayout.vue"),
     meta: {
       requiresAuth: true
-    }
+    },
+    children: [
+      {path: 'collection', name: 'Collection', component: () => import('@/pages/CollectionPage.vue'), meta: {requiresAuth: true}}
+    ]
   },
 
   // Always leave this as last one,

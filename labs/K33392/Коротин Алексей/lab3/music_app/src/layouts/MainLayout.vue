@@ -1,7 +1,51 @@
 <template>
     <q-layout view="hHh lpR fFf">
+        <q-header elevated class="bg-primary text-white" height-hint="98">
+            <q-toolbar class="row justify-between">
+                <div class="row flex-center">
+                    <q-toolbar-title shrink>
+                        Music App
+                    </q-toolbar-title>
+                    <q-tabs indicator-color="secondary" shrink stretch>
+                        <q-route-tab to="/collection" label="Recommended" />
+                        <q-route-tab to="/collection" label="Collection" />
+                        <q-route-tab to="/collection" label="Search" />
+                    </q-tabs>
+                </div>
+                <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
+            </q-toolbar>
+        </q-header>
+
+        <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
+            <DrawerPlaylist></DrawerPlaylist>
+        </q-drawer>
+
         <q-page-container>
             <router-view />
         </q-page-container>
+
+        <q-footer elevated class="text-white">
+            <FooterPlayer></FooterPlayer>
+        </q-footer>
+
     </q-layout>
 </template>
+  
+<script>
+import { ref } from 'vue'
+import FooterPlayer from '@/components/main/FooterPlayer.vue'
+import DrawerPlaylist from '@/components/main/DrawerPlaylist.vue'
+
+export default {
+    setup() {
+        const rightDrawerOpen = ref(false);
+        return {
+            rightDrawerOpen,
+            toggleRightDrawer() {
+                rightDrawerOpen.value = !rightDrawerOpen.value;
+            }
+        };
+    },
+    components: { FooterPlayer, DrawerPlaylist }
+}
+</script>
