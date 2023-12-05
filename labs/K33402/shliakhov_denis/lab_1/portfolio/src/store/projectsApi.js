@@ -7,7 +7,7 @@ export const projectsApi = createApi({
     endpoints: build => ({
         getProjects: build.query({
             query: (userId) => ({
-                url:`projects?userId=${userId}`,
+                url: `projects?userId=${userId}`,
                 method: "GET"
             }),
             providesTags: ["Project"]
@@ -23,10 +23,38 @@ export const projectsApi = createApi({
         getOneProject: build.query({
             query: (projectName) => ({
                 url: `projects?name=${projectName}`,
-                method : "GET"
+                method: "GET"
             })
+        }),
+        getUsers: build.query({
+            query: () => ({
+                url: 'users',
+                method: "GET"
+            })
+        }),
+        editProject: build.mutation({
+            query: (project) => ({
+                url: `projects/${project[1]}`,
+                method: "PUT",
+                body: project[0]
+            }),
+            invalidatesTags: ["Project"]
+        }),
+        deleteProject: build.mutation({
+            query: (projectId) => ({
+                url: `projects/${projectId}`,
+                method: "DELETE"
+            }),
+            invalidatesTags: ["Project"]
         })
     })
 })
 
-export const {useGetProjectsQuery, useAddProjectMutation, useGetOneProjectQuery} = projectsApi
+export const {
+    useGetProjectsQuery,
+    useAddProjectMutation,
+    useGetOneProjectQuery,
+    useGetUsersQuery,
+    useEditProjectMutation,
+    useDeleteProjectMutation
+} = projectsApi

@@ -28,7 +28,6 @@ function Account() {
     }
 
 
-
     const [show, setShow] = useState(false)
 
     const handleClose = () => setShow(false)
@@ -45,33 +44,40 @@ function Account() {
     }
 
     return (
-        <Container className="justify-content-around">
+        <Container className="justify-content-start" style={{height: "100%"}}>
             <Row>
-                <Col className="d-flex justify-content-center" md={6}>
+                <Col className="d-flex justify-content-center" md={12}>
                     <h1>Мои проекты</h1>
                 </Col>
-                <Col className={"d-flex justify-content-center"} md={6}>
-                    <Button onClick={handleShow}>Добавить проект</Button>
+                <Col className={"d-flex justify-content-center"} md={12}>
+                    <Button onClick={handleShow} variant={"success"}>Добавить проект</Button>
                 </Col>
             </Row>
+
             <Row>
                 {data.length !== 0 ? data.map((project) =>
                         <Col className={"d-flex justify-content-center mt-2"} md={4} lg={2} xs={6}>
-                            <Project name={project.name} description={project.description} image={project.image !== "" ? project.image : defaultImage}
-                                     link={project.link}/>
-                        </Col>) :
+                            <Project name={project.name} description={project.description}
+                                     image={project.image !== "" ? project.image : defaultImage}
+                                     link={project.link} id={project.id}/>
+                        </Col>
+                    ) :
                     <Col>
                         <h2>Пока проектов нет</h2>
                     </Col>}
             </Row>
 
-            <Modal  centered show={show} onHide={handleClose}>
+            <Modal centered show={show} onHide={handleClose}>
                 <Modal.Body>
                     <Form onSubmit={handleSubmit(handleAddProject)}>
-                        <Form.Control className="mb-1" {...register('name')} placeholder="Название проекта" type="text" required={true}/>
-                        <Form.Control className="mb-1" {...register('description')} placeholder="Описание проекта" type="text" required={true}/>
-                        <Form.Control className="mb-1" {...register('image')} placeholder="Ссылка на фото проекта" type="text"/>
-                        <Form.Control className="mb-1" {...register('link')} placeholder="Ссылка на гитхаб" type="text" required={true}/>
+                        <Form.Control className="mb-1" {...register('name')} placeholder="Название проекта" type="text"
+                                      required={true}/>
+                        <Form.Control className="mb-1" {...register('description')} placeholder="Описание проекта"
+                                      type="text" required={true}/>
+                        <Form.Control className="mb-1" {...register('image')} placeholder="Ссылка на фото проекта"
+                                      type="text"/>
+                        <Form.Control className="mb-1" {...register('link')} placeholder="Ссылка на гитхаб" type="text"
+                                      required={true}/>
                         <Row className="justify-content-center">
                             <Col className="d-flex justify-content-center" md={2}>
                                 <Button type="submit">Добавить</Button>
@@ -80,7 +86,6 @@ function Account() {
                     </Form>
                 </Modal.Body>
             </Modal>
-
         </Container>
 
 

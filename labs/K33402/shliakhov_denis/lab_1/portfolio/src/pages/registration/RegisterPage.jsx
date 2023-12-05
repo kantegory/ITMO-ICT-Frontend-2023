@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Button, Col, Container, Row, Tab, Tabs} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import {useDispatch} from "react-redux";
-import {set, useForm} from "react-hook-form";
+import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 import {authUser} from "../../store/slices/authSlice";
 
@@ -15,7 +15,7 @@ function RegisterPage() {
     const navigate = useNavigate()
 
     const {
-        register = {} ,
+        register = {},
         handleSubmit,
         reset
     } = useForm({mode: "onBlur"})

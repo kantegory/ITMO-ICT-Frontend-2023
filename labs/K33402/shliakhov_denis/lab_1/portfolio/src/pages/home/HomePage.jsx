@@ -2,8 +2,32 @@ import React from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import store from "../../store";
+import {useGetUsersQuery} from "../../store/projectsApi";
+import HomeUserProjects from "../../components/home_user/HomeUserProjects";
 
 function HomePage() {
+
+    const {data, isLoading} = useGetUsersQuery()
+
+    const getRandomUsers = () => {
+        const shuffledUsers = data.map(user => {
+            return {id: user.id, name: user.name, lastName: user.lastName}
+        }).sort(() => {
+            return 0.5 - Math.random()
+        })
+        return shuffledUsers.slice(0, 5)
+    }
+
+    if (isLoading) {
+        return <Container>
+            <Row>
+                <Col>
+                    <h1>Загрузка...</h1>
+                </Col>
+            </Row>
+        </Container>
+    }
+
     return (
         <>
             {
@@ -26,10 +50,17 @@ function HomePage() {
             {
                 store.getState().authSlice.status === "connect" &&
                 <Container>
-                    <Row>
-                        <Col>
-                            Добро пожаловать , {store.getState().authSlice.user.name}
+                    <Row className="d-flex justify-content-center">
+                        <Col className="d-flex justify-content-center">
+                            <h1>Рекомендуем посмотреть</h1>
                         </Col>
+                    </Row>
+                    <Row>
+                        {getRandomUsers().map((user) =>
+                            <Row>
+                                <HomeUserProjects user={user}/>
+                            </Row>
+                        )}
                     </Row>
                 </Container>
             }

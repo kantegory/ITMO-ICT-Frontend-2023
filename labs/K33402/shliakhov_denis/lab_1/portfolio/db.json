@@ -3,83 +3,45 @@
     {
       "email": "test@test.ru",
       "password": "$2a$10$PhmVFXyKIxxZmmKh5Iktuet9g2baaDDc4iiIlS1Z9Sj4zlQCZgTFG",
-      "name": "Dejnis",
+      "name": "1",
       "lastName": "Shliakhov",
-      "id": 1
-    }
-  ],
-  "projects": [
-    {
-      "name": "asdasdasd",
-      "description": "asdasdasd",
-      "image": "asdadasdasd",
-      "link": "asdasd",
-      "userId": 1,
       "id": 1
     },
     {
-      "name": "asdad",
-      "description": "asdasd",
-      "image": "asdasd",
-      "link": "asdasd",
-      "userId": 1,
+      "email": "test@test.ru",
+      "password": "$2a$10$PhmVFXyKIxxZmmKh5Iktuet9g2baaDDc4iiIlS1Z9Sj4zlQCZgTFG",
+      "name": "2",
+      "lastName": "Shliakhov",
       "id": 2
     },
     {
-      "name": "asdad",
-      "description": "asdasd",
-      "image": "asdasd",
-      "link": "asdasd",
-      "userId": 1,
+      "email": "puroblast97@mail.ru",
+      "password": "$2a$10$CoKPktQwZiJtCqUqHfYXwOcocsPXhdtCqOzcQ7ps2sUF9JbzQoWmq",
+      "name": "3",
+      "lastName": "Олегович",
       "id": 3
     },
     {
-      "name": "asdad",
-      "description": "asdasd",
-      "image": "asdasd",
-      "link": "asdasd",
-      "userId": 1,
+      "email": "test@test.ru",
+      "password": "$2a$10$PhmVFXyKIxxZmmKh5Iktuet9g2baaDDc4iiIlS1Z9Sj4zlQCZgTFG",
+      "name": "4",
+      "lastName": "Shliakhov",
       "id": 4
     },
     {
-      "name": "asdad",
-      "description": "asdasd",
-      "image": "asdasd",
-      "link": "asdasd",
-      "userId": 1,
+      "email": "test@test.ru",
+      "password": "$2a$10$PhmVFXyKIxxZmmKh5Iktuet9g2baaDDc4iiIlS1Z9Sj4zlQCZgTFG",
+      "name": "5",
+      "lastName": "Shliakhov",
       "id": 5
     },
     {
-      "description": "asdasd",
-      "image": "asdasd",
-      "link": "asdasd",
-      "name": "Denis",
-      "userId": 1,
+      "email": "puroblast97@mail.ru",
+      "password": "$2a$10$CoKPktQwZiJtCqUqHfYXwOcocsPXhdtCqOzcQ7ps2sUF9JbzQoWmq",
+      "name": "6",
+      "lastName": "Олегович",
       "id": 6
-    },
-    {
-      "description": "asdasd",
-      "image": "asdasd",
-      "link": "asdasd",
-      "name": "Denis",
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "name": "asdasd",
-      "description": "asdasd",
-      "image": "asdasd",
-      "link": "asdasd",
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "name": "Шляхов",
-      "description": "asdasd",
-      "image": "",
-      "link": "asdasd",
-      "userId": 1,
-      "id": 9
     }
-  ]
+  ],
+  "projects": []
 }
