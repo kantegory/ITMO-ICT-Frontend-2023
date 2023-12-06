@@ -6,7 +6,7 @@ import store from "../../store";
 import Form from "react-bootstrap/Form";
 import {useForm} from "react-hook-form";
 
-function Account() {
+function ProjectsPage() {
     const userId = store.getState().authSlice.user.id
     const defaultImage = "https://static.vecteezy.com/system/resources/previews/005/337/799/non_2x/icon-image-not-found-free-vector.jpg"
     const [addProject] = useAddProjectMutation()
@@ -92,4 +92,4 @@ function Account() {
     )
 }
 
-export default Account
+export default ProjectsPage
