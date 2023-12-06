@@ -2,35 +2,46 @@
     <div class="col">
         <q-linear-progress rounded size="15px" :value="0.4" animation-speed="500" color="secondary"
             track-color="accent"></q-linear-progress>
-        <div class="row align-center justify-between q-pa-sm">
-            <div class="row">
-                <div class="row align-center">
-                    <svg role="button" alt="Play pervious">
+        <div class="row align-center justify-between q-pa-xs">
+            <div class="row align-center">
+                <div class="row flex-center q-ml-sm-xs q-ml-md-sm">
+                    <svg class="icon grey-filter q-mr-md" role="button" alt="Play pervious">
                         <use xlink:href="@/assets/icons.svg#play-previous"></use>
                     </svg>
-                    <svg @click="onPlayPauseClick()" v-if="!isPlaying" role="button" alt="Play">
+                    <svg class="icon grey-filter q-mr-md" @click="onPlayPauseClick()" v-if="!isPlaying" role="button" alt="Play">
                         <use xlink:href="@/assets/icons.svg#play"></use>
                     </svg>
-                    <svg @click="onPlayPauseClick()" v-if="isPlaying" role="button" alt="Pause">
+                    <svg class="icon grey-filter q-mr-md" @click="onPlayPauseClick()" v-if="isPlaying" role="button" alt="Pause">
                         <use xlink:href="@/assets/icons.svg#pause"></use>
                     </svg>
-                    <svg role="button" alt="Pause">
+                    <svg class="icon grey-filter q-mr-md" role="button" alt="Pause">
                         <use xlink:href="@/assets/icons.svg#play-next"></use>
                     </svg>
 
                 </div>
-                <div class="row">
-                    <div class="column q-ps-sm">
-                        <div>{{ currentSong.name }}</div>
-                        <div>{{ currentSong.artist }}</div>
+                <div class="row q-ml-md-sm q-ml-sm-xs">
+                    <div class="row flex-center">
+                        <img class="gt-xs song-cover q-mr-md" v-bind:src="currentSong.cover" />
                     </div>
-
-                    <img class="song-cover" v-bind:src="currentSong.cover"/>
-
+                    <div class="column q-mr-sm justify-center">
+                        <div class="song-info ellipsis q-mb-xs">{{ currentSong.name }}</div>
+                        <div class="song-info ellipsis">{{ currentSong.artist }}</div>
+                    </div>
+                    <div class="q-ml-sm row flex-center">
+                        <svg id="icon-like" class="icon grey-filter" role="button" alt="Like">
+                            <use xlink:href="@/assets/icons.svg#like"></use>
+                        </svg>
+                    </div>
                 </div>
             </div>
-            <div>
-                Management
+            <div class="row right-section flex-center gt-xs">
+                <svg id="icon-repeat" @click="onRepeatClick()" :class="{ active: repeat }" class="icon" role="button" alt="Repeat">
+                    <use xlink:href="@/assets/icons.svg#repeat"></use>
+                </svg>
+                <div class="row flex-center q-pa-md">
+                    <q-slider id="volume-slider" v-model="volume" :min="0" :max="100" :step="1" label color="secondary" />
+                </div>
+
             </div>
         </div>
     </div>
@@ -45,7 +56,8 @@ export default {
     data() {
         return {
             repeat: false,
-            isPlaying: false
+            isPlaying: false,
+            volume: 100
         }
     },
 
@@ -58,23 +70,62 @@ export default {
 
         onPlayPauseClick() {
             this.isPlaying = !this.isPlaying;
-            console.log("Clicked");
+        },
+
+        onRepeatClick() {
+            this.repeat = !this.repeat
         }
+
+
     }
 
 }
 </script>
 
-<style scoped>
-svg {
-    height: 35px;
-    width: 35px;
-    filter: brightness(0) invert(1);
+<style scoped lang="scss">
+@import '@/css/quasar.variables.scss';
+
+.icon {
+    height: 40px;
+    width: 40px;
     cursor: pointer;
+    transition: stroke 0.2s, fill 0.2s;
+}
+
+.grey-filter {
+    filter: brightness(0) invert(0.7);
 }
 
 .song-cover {
     height: 50px;
     width: 50px;
+}
+
+.song-info {
+    font-size: 16px;
+    max-width: 150px;
+}
+
+#icon-like,
+#icon-repeat {
+    height: 25px;
+    width: 25px;
+}
+
+#icon-repeat {
+    stroke: $accent
+}
+
+#volume-slider {
+    min-width: 100px;
+}
+
+.right-section {
+    min-width: 150px;
+}
+
+.active {
+    stroke: $secondary !important;
+    fill: $secondary !important;
 }
 </style>
