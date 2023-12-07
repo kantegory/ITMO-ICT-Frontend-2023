@@ -18,11 +18,12 @@ async function login(event) {
   const password = document.getElementById('inputPassword1').value;
 
   try {
-    const response = await fetch('http://localhost:4000/login', {
+    const response = await fetch('http://localhost:8081/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      mode: 'cors',
       body: JSON.stringify({ email, password }),
     });
 
@@ -34,19 +35,16 @@ async function login(event) {
       localStorage.setItem('name', data.name);
       localStorage.setItem('email', data.email);
 
-      // После успешного входа перенаправляем на страницу профиля
       window.location.href = `profile.html?name=${data.name}&email=${data.email}`;
     } else {
       const errorData = await response.json();
       console.error('Login failed:', errorData);
-      // Обработка ошибок входа
     }
   } catch (error) {
     console.error('Login failed:', error);
   }
 }
 
-// Ваш код для регистрации
 async function register(event) {
   event.preventDefault();
 
@@ -61,11 +59,12 @@ async function register(event) {
   }
 
   try {
-    const response = await fetch('http://localhost:4000/register', {
+    const response = await fetch('http://localhost:8081/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      mode: 'cors',
       body: JSON.stringify({ name, email, password, repeatPassword }),
     });
 
@@ -73,21 +72,19 @@ async function register(event) {
       const data = await response.json();
       console.log('Registration successful!', data);
 
-      const user = data.user; // Извлекаем объект пользователя из данных
+      const user = data.user;
 
       localStorage.setItem('token', data.token);
-      localStorage.setItem('name', user.name); // Обращаемся к свойству name в объекте user
-      localStorage.setItem('email', user.email); // Обращаемся к свойству email в объекте user
+      localStorage.setItem('name', user.name);
+      localStorage.setItem('email', user.email);
 
       console.log('localStorage name:', localStorage.getItem('name'));
       console.log('localStorage email:', localStorage.getItem('email'));
 
-      // После успешной регистрации перенаправляем на страницу профиля
       window.location.href = `profile.html?name=${user.name}&email=${user.email}`;
     } else {
       const errorData = await response.json();
       console.error('Registration failed:', errorData);
-      // Обработка ошибок регистрации
     }
   } catch (error) {
     console.error('Registration failed:', error);

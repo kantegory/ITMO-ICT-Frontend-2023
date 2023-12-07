@@ -64,7 +64,7 @@ server.use(auth);
 
 server.use(router);
 
-const PORT = 4000;
+const PORT = 8081;
 server.listen(PORT, () => {
   console.log(`JSON Server with Auth is running on port ${PORT}`);
 });
