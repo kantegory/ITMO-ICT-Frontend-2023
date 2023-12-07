@@ -12,6 +12,7 @@ function ProjectsPage() {
     const [addProject] = useAddProjectMutation()
     const {data, isLoading} = useGetProjectsQuery(userId)
 
+
     const {
         register = {},
         reset,
@@ -54,7 +55,7 @@ function ProjectsPage() {
                 </Col>
             </Row>
 
-            <Row>
+            <Row className={"d-flex justify-content-center"}>
                 {data.length !== 0 ? data.map((project) =>
                         <Col className={"d-flex justify-content-center mt-2"} md={4} lg={2} xs={6}>
                             <Project name={project.name} description={project.description}
@@ -74,10 +75,10 @@ function ProjectsPage() {
                                       required={true}/>
                         <Form.Control className="mb-1" {...register('description')} placeholder="Описание проекта"
                                       type="text" required={true}/>
-                        <Form.Control className="mb-1" {...register('image')} placeholder="Ссылка на фото проекта"
-                                      type="text"/>
                         <Form.Control className="mb-1" {...register('link')} placeholder="Ссылка на гитхаб" type="text"
                                       required={true}/>
+                        <Form.Control className="mb-1" {...register('image')} type="text" placeholder="Ссылка на фото проекта"/>
+
                         <Row className="justify-content-center">
                             <Col className="d-flex justify-content-center" md={2}>
                                 <Button type="submit">Добавить</Button>

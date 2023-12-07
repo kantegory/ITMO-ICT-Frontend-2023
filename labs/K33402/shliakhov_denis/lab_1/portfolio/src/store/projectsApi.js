@@ -2,7 +2,7 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
 export const projectsApi = createApi({
     reducerPath: 'projectsApi',
-    tagTypes: ['Project'],
+    tagTypes: ['Project', 'Profile'],
     baseQuery: fetchBaseQuery({baseUrl: "http://localhost:8080/"}),
     endpoints: build => ({
         getProjects: build.query({
@@ -46,7 +46,30 @@ export const projectsApi = createApi({
                 method: "DELETE"
             }),
             invalidatesTags: ["Project"]
+        }),
+        editProfileData: build.mutation({
+            query: (user) => ({
+                url: `profileData/${user[1]}`,
+                method : "PUT",
+                body: user[0]
+            }),
+            invalidatesTags: ["Profile"]
+        }),
+        addProfileData: build.mutation({
+            query: (data) => ({
+                url: `profileData`,
+                method : "POST",
+                body: data
+            })
+        }),
+        getProfileData: build.query({
+            query: (profileId) => ({
+                url: `profileData/${profileId}`,
+                method: "GET"
+            }),
+            providesTags: ["Profile"]
         })
+
     })
 })
 
@@ -56,5 +79,8 @@ export const {
     useGetOneProjectQuery,
     useGetUsersQuery,
     useEditProjectMutation,
-    useDeleteProjectMutation
+    useDeleteProjectMutation,
+    useEditProfileDataMutation,
+    useAddProfileDataMutation,
+    useGetProfileDataQuery
 } = projectsApi

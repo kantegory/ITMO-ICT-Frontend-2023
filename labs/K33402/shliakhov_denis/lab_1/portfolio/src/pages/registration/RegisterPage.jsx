@@ -5,10 +5,12 @@ import {useDispatch} from "react-redux";
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 import {authUser} from "../../store/slices/authSlice";
+import {useAddProfileDataMutation} from "../../store/projectsApi";
 
 function RegisterPage() {
     const [status, setStatus] = useState('login')
-    const [hideLabel , setHide] = useState(true)
+    const [hideLabel, setHide] = useState(true)
+    const [addProfileData] = useAddProfileDataMutation()
 
     const dispatch = useDispatch()
 
@@ -20,9 +22,19 @@ function RegisterPage() {
         reset
     } = useForm({mode: "onBlur"})
 
-    const requestAuthUser = (data) => {
-        dispatch(authUser({user: data, params: status})).then((value) => {
-            if (!value.error){
+    const requestAuthUser = async (data) => {
+        await dispatch(authUser({user: data, params: status})).then(value => {
+            if (!value.error) {
+                if (status === "register") {
+                    const profileData = {
+                        name: data.name,
+                        lastName: data.lastName,
+                        email: data.email,
+                        about: "",
+                        image: ""
+                    }
+                    addProfileData(profileData)
+                }
                 reset()
                 setHide(true)
                 navigate("/")
@@ -30,6 +42,7 @@ function RegisterPage() {
                 setHide(false)
             }
         })
+
     }
 
     return (
@@ -42,7 +55,8 @@ function RegisterPage() {
                             <Form onSubmit={handleSubmit(requestAuthUser)}>
                                 <Row className="justify-content-center mb-1">
                                     <Col md={4}>
-                                        <Form.Control {...register('email')} className="mb-2" placeholder="Email" type="email"/>
+                                        <Form.Control {...register('email')} className="mb-2" placeholder="Email"
+                                                      type="email"/>
                                         <Form.Control {...register('password')} placeholder="Пароль" type="password"/>
                                     </Col>
                                 </Row>
@@ -53,7 +67,8 @@ function RegisterPage() {
                                 </Row>
                                 <Row className="justify-content-center">
                                     <Col Col md={4}>
-                                        <Form.Label hidden={hideLabel} style={{color:"red"}}>Неверные данные</Form.Label>
+                                        <Form.Label hidden={hideLabel} style={{color: "red"}}>Неверные
+                                            данные</Form.Label>
                                     </Col>
                                 </Row>
                             </Form>
@@ -67,10 +82,14 @@ function RegisterPage() {
                             <Form onSubmit={handleSubmit(requestAuthUser)}>
                                 <Row className="justify-content-center mb-1">
                                     <Col md={4}>
-                                        <Form.Control {...register('name')} className="mb-2" placeholder="Имя" type="text"/>
-                                        <Form.Control {...register('lastName')} className="mb-2" placeholder="Фамилия" type="text"/>
-                                        <Form.Control {...register('email')} className="mb-2" placeholder="Email" type="email"/>
-                                        <Form.Control {...register('password')} className="mb-2" placeholder="Пароль" type="password"/>
+                                        <Form.Control {...register('name')} className="mb-2" placeholder="Имя"
+                                                      type="text"/>
+                                        <Form.Control {...register('lastName')} className="mb-2" placeholder="Фамилия"
+                                                      type="text"/>
+                                        <Form.Control {...register('email')} className="mb-2" placeholder="Email"
+                                                      type="email"/>
+                                        <Form.Control {...register('password')} className="mb-2" placeholder="Пароль"
+                                                      type="password"/>
                                     </Col>
                                 </Row>
                                 <Row className="justify-content-center">

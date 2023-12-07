@@ -2,7 +2,7 @@ import React from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import store from "../../store";
-import {useGetUsersQuery} from "../../store/projectsApi";
+import {useGetProfileDataQuery, useGetUsersQuery} from "../../store/projectsApi";
 import HomeUserProjects from "../../components/home_user/HomeUserProjects";
 
 function HomePage() {
@@ -49,15 +49,15 @@ function HomePage() {
 
             {
                 store.getState().authSlice.status === "connect" &&
-                <Container>
+                <Container fluid className={"justify-content-center"}>
                     <Row className="d-flex justify-content-center">
                         <Col className="d-flex justify-content-center">
                             <h1>Рекомендуем посмотреть</h1>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row className={"d-flex justify-content-center"}>
                         {getRandomUsers().map((user) =>
-                            <Row>
+                            <Row className={"d-flex justify-content-evenly"}>
                                 <HomeUserProjects user={user}/>
                             </Row>
                         )}

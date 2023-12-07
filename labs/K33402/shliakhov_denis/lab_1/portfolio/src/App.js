@@ -8,6 +8,7 @@ import ProjectsPage from "./pages/projects/ProjectsPage";
 import SearchResultPage from "./pages/search/SearchResultPage";
 import {Container} from "react-bootstrap";
 import {useSelector} from "react-redux";
+import AccountPage from "./pages/account/AccountPage";
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
                 <Route element={<ProtectedRoute/>} >
                     <Route path="/projects" element={<ProjectsPage/>}/>
                     <Route path="/search/:searchText" element={<SearchResultPage/>}/>
+                    <Route path="/account" element={<AccountPage/>}/>
                 </Route>
             </Routes>
         </Container>

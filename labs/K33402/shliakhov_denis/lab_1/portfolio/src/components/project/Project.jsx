@@ -48,7 +48,7 @@ function Project({id, name, description, image, link, isHomePage = false}) {
 
     return (
         <>
-            <Card className="text-center p-1" bg={'light'} text={'dark'} style={{width: '200px', minHeight: '300px'}}>
+            <Card className="text-center p-1" bg={'light'} text={'dark'} style={{width: '200px', minHeight: '300px' ,minWidth : "200px"}}>
                 <Card.Img variant="top" src={image} height="100%"/>
                 <Card.Body>
                     <Card.Title>
