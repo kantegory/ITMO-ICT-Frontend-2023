@@ -1,0 +1,202 @@
+{
+  "all_music": [
+    {
+      "id": "1",
+      "name": "конечности",
+      "artist": "8th",
+      "filename": "8th-konechnosti.mp3"
+    },
+    {
+      "id": "2",
+      "name": "loveshit",
+      "artist": "8th",
+      "filename": "8th-loveshit.mp3"
+    },
+    {
+      "id": "3",
+      "name": "Пыяла",
+      "artist": "АИГЕЛ",
+      "filename": "aigel-pyyala-mp3.mp3"
+    },
+    {
+      "id": "4",
+      "name": "Slavic Blood",
+      "artist": "Kraenkova",
+      "filename": "kraenkova-slavic-blood-mp3.mp3"
+    },
+    {
+      "id": "5",
+      "name": "Zaritsa",
+      "artist": "Kraenkova",
+      "filename": "kraenkova-zaritsa-mp3.mp3"
+    },
+    {
+      "id": "6",
+      "name": "Солнечная сторона",
+      "artist": "Loqiemean",
+      "filename": "loqiemean-solnechnaya-storona-mp3.mp3"
+    }
+  ],
+  "my_music": [
+    {
+      "id": "1",
+      "name": "конечности",
+      "artist": "8th",
+      "filename": "8th-konechnosti.mp3"
+    },
+    {
+      "id": "2",
+      "name": "loveshit",
+      "artist": "8th",
+      "filename": "8th-loveshit.mp3"
+    },
+    {
+      "id": "6",
+      "name": "Солнечная сторона",
+      "artist": "Loqiemean",
+      "filename": "loqiemean-solnechnaya-storona-mp3.mp3"
+    }
+  ],
+  "playlists": [
+    {
+      "id": "1",
+      "name": "playlist1",
+      "list": [
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "playlist2",
+      "list": [
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "playlist3",
+      "list": [
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "playlist4",
+      "list": [
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        },
+        {
+          "id": "4",
+          "name": "Slavic Blood",
+          "artist": "Kraenkova",
+          "filename": "kraenkova-slavic-blood-mp3.mp3"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "lizaplastun@gmail.com",
+      "password": "fdghjk56dFfe",
+      "name": "Oleg oleg"
+    },
+    {
+      "id": "2",
+      "email": "lizaplastunn@gmail.com",
+      "password": "fdghjk56dFfe",
+      "name": "Liza"
+    },
+    {
+      "id": "3",
+      "email": "lizaplaastun@gmail.com",
+      "password": "fdghjk56dFfe",
+      "name": "JJJJJJJ"
+    }
+  ]
+}
