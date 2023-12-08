@@ -1,1 +1,19 @@
-// app global css in SCSS form
+@import '@/css/quasar.variables.scss';
+
+.mw-100 {
+    max-width: 100vw;
+}
+
+.mw-90 {
+    max-width: 90vw;
+}
+
+.border-hover:hover {
+    border-color: $secondary;
+}
+
+.border-hover {
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+

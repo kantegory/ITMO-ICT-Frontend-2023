@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { playlistApi } from '@/api/index'
 
 export const playerStore = defineStore('player', {
     state: () => ({
@@ -7,12 +8,24 @@ export const playerStore = defineStore('player', {
             artist: "Artist",
             cover: "https://placekitten.com/50/50"
         },
-        queue: []  
+        queue: [],
+        playlists: [{
+            id: 1,
+            name: "Test playlist"
+        }]
     }),
 
     actions: {
         enqueue(song) {
             this.queue.push(song);
+        },
+
+        async loadPlaylists(token) {
+            const playlists = await playlistApi.getPlaylists(token);
+            if (playlists.data) {
+                this.playlists = playlists.data;
+            }
+            return playlists;
         }
     }
 

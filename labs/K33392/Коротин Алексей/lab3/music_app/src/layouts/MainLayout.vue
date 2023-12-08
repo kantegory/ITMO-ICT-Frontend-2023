@@ -6,17 +6,17 @@
                     <q-toolbar-title shrink>
                         Music App
                     </q-toolbar-title>
-                    <q-tabs indicator-color="secondary" shrink stretch>
-                        <q-route-tab to="/collection" label="Recommended" />
-                        <q-route-tab to="/collection" label="Collection" />
-                        <q-route-tab to="/collection" label="Search" />
+                    <q-tabs class="row justfiy-between" indicator-color="secondary" >
+                        <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/collection" label="Recommended" />
+                        <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/collection" label="Collection" />
+                        <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/collection" label="Search" />
                     </q-tabs>
                 </div>
                 <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
             </q-toolbar>
         </q-header>
 
-        <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
+        <q-drawer overlay v-model="rightDrawerOpen" side="right" bordered>
             <DrawerPlaylist></DrawerPlaylist>
         </q-drawer>
 

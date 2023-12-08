@@ -1,43 +1,54 @@
 <template>
-    <main class="container bg-primary">
-        <section class="column q-pt-xl">
-            <div class="row">
+    <main class="container bg-primary column">
+        <section class="fit column inline q-pt-xl">
+            <div class="row ">
                 <div>
-                    <img class="user-avatar" src="https://avatars.mds.yandex.net/get-yapic/0/0-0/islands-200">
+                    <img class="gt-xs user-avatar" src="@/assets/collection/avatar.png">
                 </div>
-                <div class="column justify-center q-ml-lg">
-                    <p class="text-accent">Collection</p>
-                    <p class="text-h4 ellipsis"> {{ user.email }} </p>
+                <div class="column justify-center q-pl-lg">
+                    <p class="text-accent text-subtitle1">Collection</p>
+                    <p class="text-h3 ellipsis text-wrap mw-90 q-pb-xs"> {{ user.email }} </p>
                     <div>
                         <q-btn class="play-collection-button" text-color="primary" rounded color="secondary" label="Play" />
                     </div>
                 </div>
             </div>
         </section>
+        <p class="text-h4 q-ml-md q-mt-lg">Playlists</p>
+        <section class="fit row inline q-px-sm" v-for="playlist in playlists" v-bind:key="playlist.id">
+            <PlaylistCard :name="playlist.name" />
+        </section>
     </main>
 </template>
 <script>
+import PlaylistCard from '@/components/PlaylistCard.vue'
 import { authStore } from '@/stores/authStore'
-import { mapState } from 'pinia'
+import { playerStore } from '@/stores/playerStore'
+import { mapState, mapActions } from 'pinia'
 export default {
     data() {
         return ({
 
-        })
+        });
     },
-
     computed: {
-        ...mapState(authStore, ['user'])
+        ...mapState(authStore, ['user', 'accessToken']),
+        ...mapState(playerStore, ['playlists'])
+    },
+    methods: {
+        ...mapActions(playerStore, ['loadPlaylists']),
     },
 
-    actions: {
+    async mounted() {
+        this.loadPlaylists(this.accessToken);
+    },
 
-    }
-
+    components: { PlaylistCard }
 }
 </script>
 <style scoped lang="scss">
 @import '@/css/quasar.variables.scss';
+@import '@/css/app.scss';
 
 .play-collection-button {
     min-width: 120px;
@@ -47,6 +58,4 @@ export default {
     min-height: 100vh;
     color: $text;
 }
-
-.user-avatar {}
 </style>
