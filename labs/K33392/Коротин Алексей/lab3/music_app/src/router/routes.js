@@ -15,7 +15,19 @@ const routes = [
       requiresAuth: true
     },
     children: [
-      {path: 'collection', name: 'Collection', component: () => import('@/pages/CollectionPage.vue'), meta: {requiresAuth: true}}
+      {
+        path: 'collection',
+        name: 'Collection',
+        component: () => import('@/pages/CollectionPage.vue'),
+        meta: { requiresAuth: true }
+      },
+      {
+        path: 'search',
+        name: 'Search',
+        component: () => import('@/pages/SearchPage.vue'),
+        meta: { requiresAuth: true },
+        props: (route) => ({ query: route.query.q })
+      }
     ]
   },
 

@@ -7,9 +7,8 @@
                         Music App
                     </q-toolbar-title>
                     <q-tabs class="row justfiy-between" indicator-color="secondary" >
-                        <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/collection" label="Recommended" />
                         <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/collection" label="Collection" />
-                        <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/collection" label="Search" />
+                        <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/search" label="Search" />
                     </q-tabs>
                 </div>
                 <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />

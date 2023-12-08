@@ -25,7 +25,7 @@
                     </div>
                     <div class="column q-mr-sm justify-center">
                         <div class="song-info ellipsis q-mb-xs">{{ currentSong.name }}</div>
-                        <div class="song-info ellipsis">{{ currentSong.artist }}</div>
+                        <div class="song-info ellipsis text-accent">{{ currentSong.artist }}</div>
                     </div>
                     <div class="q-ml-sm row flex-center">
                         <svg id="icon-like" class="icon grey-filter" role="button" alt="Like">

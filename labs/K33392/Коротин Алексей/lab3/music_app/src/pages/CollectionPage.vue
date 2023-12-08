@@ -53,9 +53,4 @@ export default {
 .play-collection-button {
     min-width: 120px;
 }
-
-.container {
-    min-height: 100vh;
-    color: $text;
-}
 </style>

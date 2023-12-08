@@ -4,7 +4,7 @@ export class DeezerApi {
     }
 
     async search(query) {
-        const apiKeys = await fetch('@/assets/API_KEY.JSON').then(r => r.json());
+        const apiKeys = await fetch('/src/assets/API_KEY.JSON').then(r => r.json());
 
         const options = {
             method: 'GET',
