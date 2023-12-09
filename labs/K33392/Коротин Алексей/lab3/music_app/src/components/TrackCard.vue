@@ -1,15 +1,15 @@
 <template>
-    <div class="border-hover row q-pa-sm justify-between items-center cursor-pointer" @click="setCurrent">
-        <div class="row items-center">
+    <div class="border-hover row q-pa-sm justify-between items-center cursor-pointer no-wrap" @click="setCurrent">
+        <div class="row items-center no-wrap">
             <div :class="{ bouncing: isPlaying }" class="circle q-mr-sm">
             </div>
             <img v-bind:src="cover">
-            <div class="q-ml-md column">
-                <div class="">{{ name }}</div>
-                <div class="text-accent">{{ artist }}</div>
+            <div class="q-ml-md column track-card">
+                <div class="text ellipsis">{{ name }}</div>
+                <div class="text text-accent ellipsis">{{ artist }}</div>
             </div>
         </div>
-        <div>
+        <div class="text">
             {{ durationRepresentation }}
         </div>
     </div>
@@ -86,6 +86,10 @@ export default {
 <style scoped lang="scss">
 @import '@/css/quasar.variables.scss';
 
+.text {
+    color: $text;
+    max-width: 100%;
+}
 .circle {
     width: 15px;
     height: 15px;

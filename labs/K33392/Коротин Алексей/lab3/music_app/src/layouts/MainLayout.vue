@@ -6,12 +6,20 @@
                     <q-toolbar-title shrink>
                         Music App
                     </q-toolbar-title>
-                    <q-tabs class="row justfiy-between" indicator-color="secondary" >
+                    <q-tabs class="row justfiy-between" indicator-color="secondary">
                         <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/collection" label="Collection" />
                         <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/search" label="Search" />
                     </q-tabs>
                 </div>
-                <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
+                <div class="row no-wrap">
+                    <q-input dark dense standout v-model="searchText" label="Search" input-class="text-left"
+                        class="q-mr-md">
+                        <template v-slot:append>
+                            <q-icon name="search" class="cursor-pointer" @click="search" />
+                        </template>
+                    </q-input>
+                    <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
+                </div>
             </q-toolbar>
         </q-header>
 
@@ -36,6 +44,18 @@ import FooterPlayer from '@/components/main/FooterPlayer.vue'
 import DrawerPlaylist from '@/components/main/DrawerPlaylist.vue'
 
 export default {
+    data() {
+        return {
+            searchText: ''
+        }
+    },
+
+    methods: {
+        search() {
+            this.$router.push({ path: '/search', query: { q: this.searchText } })
+        }
+    },
+
     setup() {
         const rightDrawerOpen = ref(false);
         return {
@@ -45,6 +65,7 @@ export default {
             }
         };
     },
+
     components: { FooterPlayer, DrawerPlaylist }
 }
 </script>

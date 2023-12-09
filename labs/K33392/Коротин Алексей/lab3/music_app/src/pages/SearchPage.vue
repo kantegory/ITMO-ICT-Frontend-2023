@@ -18,10 +18,12 @@
 <script>
 
 import { mapWritableState, mapActions } from 'pinia'
+import { toRef } from 'vue'
 import { playerStore } from '@/stores/playerStore'
 import { deezerApi } from '@/api/index'
 import TrackCard from '@/components/TrackCard.vue'
 import ArtistCard from '@/components/ArtistCard.vue'
+
 export default {
     data() {
         return {
@@ -36,6 +38,11 @@ export default {
             default: 'Bones'
         }
     },
+    setup(props) {
+        const reactiveQuery = toRef(props, 'query');
+        return { reactiveQuery };
+    },
+
     computed: {
         ...mapWritableState(playerStore, ['queue'])
     },
@@ -52,6 +59,7 @@ export default {
             totalArtists = Array.from(new Set(totalArtists)).slice(0, 5);
             return totalArtists.map(a => JSON.parse(a));
         },
+
         onTrackPlay() {
             this.queue = this.tracks
         }
@@ -62,6 +70,18 @@ export default {
         const tracks = response.data.data;
         this.tracks = tracks;
         this.artists = this.filterArtists(tracks);
+    },
+
+    watch: {
+        reactiveQuery: {
+            async handler(oldValue, newValue) {
+                console.log(oldValue, newValue);
+                const response = await deezerApi.search(this.query);
+                const tracks = response.data.data;
+                this.tracks = tracks;
+                this.artists = this.filterArtists(tracks);
+            }
+        }
     },
 
     components: { TrackCard, ArtistCard }

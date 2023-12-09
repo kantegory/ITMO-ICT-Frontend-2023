@@ -108,29 +108,29 @@ export default {
         initAudio() {
             this.audio.src = this.currentSong.preview;
             this.audio.load();
-            this.audio.addEventListener('timeupdate', (e) => {
-                const duration = e.currentTarget.duration;
-                const currentTime = e.currentTarget.currentTime;
-                this.currentTime = currentTime;
-                this.duration = duration;
-            });
+
             this.duration = this.audio.duration;
-
-            this.audio.addEventListener('ended', (e) => {
-                if (this.repeat) {
-                    this.audio.currentTime = 0;
-                    this.audio.play();
-                    return;
-                }
-
-                this.playNext();
-            })
-
         }
     },
 
     beforeMount() {
         this.initAudio();
+        this.audio.addEventListener('timeupdate', (e) => {
+            const duration = e.currentTarget.duration;
+            const currentTime = e.currentTarget.currentTime;
+            this.currentTime = currentTime;
+            this.duration = duration;
+        });
+
+        this.audio.addEventListener('ended', (e) => {
+            if (this.repeat) {
+                this.audio.currentTime = 0;
+                this.audio.play();
+                return;
+            }
+
+            this.playNext();
+        })
     },
 
     updated() {
