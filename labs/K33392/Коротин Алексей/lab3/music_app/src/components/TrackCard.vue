@@ -16,7 +16,7 @@
 </template>
 <script>
 
-import { mapWritableState } from 'pinia';
+import { mapState, mapActions } from 'pinia';
 import { playerStore } from '@/stores/playerStore';
 
 export default {
@@ -43,7 +43,11 @@ export default {
         },
         preview: {
             type: String,
-            required: false
+            required: true
+        },
+        index: {
+            type: Number,
+            required: true
         }
     },
 
@@ -55,7 +59,7 @@ export default {
 
             return `${minutes}:${seconds}`;
         },
-        ...mapWritableState(playerStore, ['currentSong']),
+        ...mapState(playerStore, ['currentSong']),
 
         isPlaying() {
             return this.id === this.currentSong.id;
@@ -63,20 +67,18 @@ export default {
     },
 
     methods: {
+        ...mapActions(playerStore, ['changeCurrentIndex']),
+
+        onPlayClick() {
+            this.changeCurrentIndex(this.index);
+        },
+
         setCurrent() {
-            const current = {
-                id: this.id,
-                name: this.name,
-                artist: this.artist,
-                cover: this.cover,
-                duration: this.duration,
-                preview: this.preview
-            }
-            if (this.currentSong.id === current.id) {
+            if (this.currentSong.id === this.id) {
                 return; // already playing this song
             }
 
-            this.currentSong = current;
+            this.changeCurrentIndex(this.index);
         }
     },
 }
