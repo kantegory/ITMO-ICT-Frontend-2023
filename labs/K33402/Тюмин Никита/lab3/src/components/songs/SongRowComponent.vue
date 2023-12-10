@@ -34,41 +34,27 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import db from '@/services/db'
-import {mapStores} from "pinia";
-import usePlayerStore from "../../pinia/player";
 import useAuthStore from "../../pinia/auth";
+import {defineProps} from "vue";
+import {useSongActions} from "../../../composables/songActions";
+import {computed} from "vue";
 
-export default {
-  props: {
-    song: { type: Object, required: true }
-  },
+const props = defineProps({
+  song: {type: Object, required: true},
+})
+const emits = defineEmits(['addedToFav'])
 
-  emits: [
-    'addedToFav',
-  ],
 
-  computed: {
-    ...mapStores(usePlayerStore, useAuthStore),
-    user() {
-      return this.authStore.user
-    }
-  },
+const authStore = useAuthStore()
+const user = computed(() => authStore.user)
 
-  methods: {
-    play() {
-      this.playerStore.setCurrentSong(this.song)
-    },
-    addToCurrentPlaylist() {
-      this.playerStore.addToPlaylist(this.song)
-    },
-    addToFavorite() {
-      db.addToFavorite(this.user.uid, this.song.id).then(() => {
-        this.$emit('addedToFav')
-      })
-    },
-  },
+const { play, addToCurrentPlaylist } = useSongActions(props)
+function addToFavorite() {
+  db.addToFavorite(this.user.uid, this.song.id).then(() => {
+    this.$emit('addedToFav')
+  })
 }
 </script>
 

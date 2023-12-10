@@ -30,8 +30,9 @@
 </template>
 
 <script>
-import { auth } from '@/firebase/firebase'
-import { setPersistence, signInWithEmailAndPassword, browserSessionPersistence  } from "firebase/auth";
+
+import {mapStores} from "pinia";
+import useAuthStore from "../../pinia/auth";
 
 export default {
   data: () => ({
@@ -41,19 +42,13 @@ export default {
     }
   }),
 
+  computed: {
+    ...mapStores(useAuthStore)
+  },
+
   methods: {
     login() {
-      setPersistence(auth, browserSessionPersistence)
-        .then(() => {
-          signInWithEmailAndPassword(auth, this.user.email, this.user.password).then(res => {
-            this.$router.push({name: 'home'})
-          }).catch(err => {
-          })
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-        });
+      this.authStore.login(this.user)
     }
   }
 }

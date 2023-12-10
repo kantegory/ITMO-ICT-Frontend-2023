@@ -39,6 +39,7 @@ const usePlayerStore = defineStore('player', {
       }
     },
   },
+  persist: true,
 })
 
 export default usePlayerStore

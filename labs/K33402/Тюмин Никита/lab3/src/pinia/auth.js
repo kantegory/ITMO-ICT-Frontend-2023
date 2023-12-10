@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 
 import { auth } from '@/firebase/firebase'
-import { signOut } from "firebase/auth";
+import {browserSessionPersistence, setPersistence, signInWithEmailAndPassword, signOut} from "firebase/auth";
 import router from "../router";
 
 const useAuthStore = defineStore('auth', {
@@ -17,6 +17,20 @@ const useAuthStore = defineStore('auth', {
     setUser(user) {
       this.user = user
     },
+    login(user) {
+      setPersistence(auth, browserSessionPersistence)
+        .then(() => {
+          signInWithEmailAndPassword(auth, user.email, user.password).then(res => {
+            router.push({name: 'home'})
+          }).catch(err => {
+            console.log(err)
+          })
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    },
     logout() {
       signOut(auth).then(() => {
         router.push({name: 'login'})
@@ -26,6 +40,7 @@ const useAuthStore = defineStore('auth', {
       });
     }
   },
+  persist: true,
 })
 
 export default useAuthStore

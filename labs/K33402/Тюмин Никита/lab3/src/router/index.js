@@ -10,22 +10,27 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from) => {
-  let user = await new Promise((resolve, reject) =>
-    auth.onAuthStateChanged(
-      user => {
-        if (user) {
-          resolve(user)
-        } else {
-          resolve(null)
-        }
-      },
-      error => reject(error)
+  let user
+  let authStore = useAuthStore()
+
+  user = authStore.user
+  if (!user) {
+    user = await new Promise((resolve, reject) =>
+      auth.onAuthStateChanged(
+        user => {
+          if (user) {
+            resolve(user)
+          } else {
+            resolve(null)
+          }
+        },
+        error => reject(error)
+      )
     )
-  )
-  if (user) {
-    let userData = await db.find('users', user.uid)
-    let authStore = useAuthStore()
-    authStore.setUser(userData)
+    if (user) {
+      let userData = await db.find('users', user.uid)
+      authStore.setUser(userData)
+    }
   }
 
   if(to.meta.requiresAuth && !user) {

@@ -29,28 +29,15 @@
   </div>
 </template>
 
-<script>
-import { mapStores } from "pinia";
-import usePlayerStore from "../../pinia/player";
+<script setup>
+import {useSongActions} from "../../../composables/songActions";
+import {defineProps} from "vue";
 
-export default {
-  props: {
-    song: { type: Object, required: true },
-  },
+const props = defineProps({
+  song: {type: Object, required: true},
+})
 
-  computed: {
-    ...mapStores(usePlayerStore)
-  },
-
-  methods: {
-    play() {
-      this.playerStore.setCurrentSong(this.song)
-    },
-    addToCurrentPlaylist() {
-      this.playerStore.addToPlaylist(this.song)
-    },
-  }
-}
+const { play, addToCurrentPlaylist } = useSongActions(props)
 </script>
 
 <style scoped>
