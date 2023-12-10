@@ -1,13 +1,13 @@
 <template>
     <main class="container bg-primary column">
-        <q-dialog  v-model="playlistOpen" transition-show="rotate" transition-hide="rotate">
+        <q-dialog v-model="playlistOpen" transition-show="rotate" transition-hide="rotate">
             <q-card class="modal-dialog">
                 <q-card-section class="bg-primary" :key="playlistOpen">
                     <p class="text items-center text-h6 q-mb-sm">{{ playlistName }}</p>
                     <p class="text row flex-center text-h6" v-if="playlistTracks.length === 0">Empty</p>
-                    <TrackCard v-for="(track, index) in playlistTracks" v-bind:key="track.id" :id="track.id" :name="track.title"
-                        :artist="track.artist.name" :cover="track.album.cover_small" :duration="track.duration"
-                        :preview="track.preview" :index="index" @click="onPlayClick"/>
+                    <TrackCard v-for="(track, index) in playlistTracks" v-bind:key="track.id" :id="track.id"
+                        :name="track.title" :artist="track.artist.name" :cover="track.album.cover_small"
+                        :duration="track.duration" :preview="track.preview" :index="index" @click="onPlayClick" />
                 </q-card-section>
                 <q-card-actions class="bg-primary" align="right">
                     <q-btn flat label="Close" color="secondary" v-close-popup />
@@ -51,6 +51,11 @@ export default {
             playlistName: ''
         });
     },
+
+    setup() {
+
+    },
+
     computed: {
         ...mapState(authStore, ['user', 'accessToken']),
         ...mapState(playerStore, ['playlists']),
@@ -86,12 +91,13 @@ export default {
 .text {
     color: $text;
 }
+
 .play-collection-button {
     min-width: 120px;
 }
 
 .modal-dialog {
-    width: 700px; 
+    width: 700px;
     max-width: 80vw;
 }
 </style>

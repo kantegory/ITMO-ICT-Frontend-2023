@@ -78,7 +78,6 @@ export default {
 
         isCurrentLiked() {
             const likedTracks = this.playlists.find((p) => p.name === 'Liked').tracks;
-            console.log(likedTracks);
             return likedTracks.some((t) => t.id === this.currentSong.id);
         }
     },
@@ -104,7 +103,6 @@ export default {
             const song = { ...this.currentSong };
             song['userId'] = this.user.id;
             const response = this.likeTrack(this.accessToken, song);
-            response.then((r) => console.log(r));
         },
 
         playNext() {

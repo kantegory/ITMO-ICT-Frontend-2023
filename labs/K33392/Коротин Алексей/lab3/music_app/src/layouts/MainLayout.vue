@@ -24,7 +24,7 @@
             </q-toolbar>
         </q-header>
 
-        <q-drawer overlay v-model="rightDrawerOpen" side="right" bordered>
+        <q-drawer width="500" overlay v-model="rightDrawerOpen" side="right" bordered>
             <DrawerPlaylist></DrawerPlaylist>
         </q-drawer>
 
@@ -70,3 +70,5 @@ export default {
     components: { FooterPlayer, DrawerPlaylist }
 }
 </script>
+<style scoped lang="scss">
+</style>
