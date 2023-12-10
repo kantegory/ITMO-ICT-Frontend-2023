@@ -1,5 +1,6 @@
 <template>
     <main class="container bg-primary column q-pl-sm">
+        <q-ajax-bar ref="bar" position="top" color="secondary" size="5px" />
         <h6>Artists</h6>
         <section class="row fit inline">
             <ArtistCard v-for="artist in artists" v-bind:key="artist.id" :name="artist.name" :picture="artist.picture" />

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { playlistApi } from '@/api/index'
+import { playlistApi, trackApi } from '@/api/index'
 
 export const playerStore = defineStore('player', {
     state: () => ({
@@ -9,14 +9,25 @@ export const playerStore = defineStore('player', {
             artist: {
                 name: "Artist"
             },
-            cover: "https://placekitten.com/50/50"
+            album: {
+                cover: "https://placekitten.com/50/50"
+            }
         },
         currentSongIndex: 0,
-        queue: [],
+        queue: [{
+            id: 168295413,
+            title: "Song name",
+            artist: {
+                name: "Artist"
+            },
+            album: {
+                cover: "https://placekitten.com/50/50"
+            }
+        }],
         playlists: [{
             id: 1,
             name: "Test playlist"
-        }]
+        }],
     }),
 
     actions: {
@@ -30,13 +41,33 @@ export const playerStore = defineStore('player', {
             this.currentSong = this.queue[this.currentSongIndex];
         },
 
-        
+        async createPlaylist(token, playlist) {
+            const created = await playlistApi.createPlaylist(token, playlist);
+            if (playlist.data) {
+                await this.loadPlaylists(token);
+            }
+
+            return created;
+        },
+
+
         async loadPlaylists(token) {
             const playlists = await playlistApi.getPlaylists(token);
             if (playlists.data) {
                 this.playlists = playlists.data;
             }
             return playlists;
+        },
+
+        async likeTrack(token, track) {
+            let likedPlaylist = this.playlists.find((p) => p.name === 'Liked');
+            if (likedPlaylist === undefined) {
+                likedPlaylist = await this.createPlaylist(token, { name: 'Liked', userId: track['userId'] }).data;
+            }
+
+            const response = await trackApi.addToPlaylist(token, track, likedPlaylist.id);
+            likedPlaylist.tracks.push(response.data);
+            return response;
         }
     }
 

@@ -52,6 +52,8 @@ export default {
     },
 
     computed: {
+        ...mapState(playerStore, ['currentSong', 'playlists']),
+
         durationRepresentation() {
             const minutes = Math.floor(this.duration / 60);
             let seconds = Math.floor(this.duration - minutes * 60);
@@ -59,7 +61,6 @@ export default {
 
             return `${minutes}:${seconds}`;
         },
-        ...mapState(playerStore, ['currentSong']),
 
         isPlaying() {
             return this.id === this.currentSong.id;
@@ -79,7 +80,8 @@ export default {
             }
 
             this.changeCurrentIndex(this.index);
-        }
+        },
+
     },
 }
 </script>

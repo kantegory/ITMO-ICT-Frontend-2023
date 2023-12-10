@@ -28,7 +28,8 @@
                         <div class="song-info ellipsis text-accent">{{ currentSong.artist.name }}</div>
                     </div>
                     <div class="q-ml-sm row flex-center">
-                        <svg id="icon-like" class="icon grey-filter" role="button" alt="Like">
+                        <svg id="icon-like" class="icon grey-filter" :class="{ active: isCurrentLiked }" role="button"
+                            alt="Like" @click="onLikeClick">
                             <use xlink:href="@/assets/icons.svg#like"></use>
                         </svg>
                     </div>
@@ -53,6 +54,7 @@
 
 import { mapState, mapActions } from 'pinia'
 import { playerStore } from '@/stores/playerStore'
+import { authStore } from '@/stores/authStore'
 
 export default {
     data() {
@@ -66,16 +68,23 @@ export default {
     },
 
     computed: {
-        ...mapState(playerStore, ['currentSong', 'queue', 'currentSongIndex']),
+        ...mapState(playerStore, ['currentSong', 'queue', 'currentSongIndex', 'playlists']),
+        ...mapState(authStore, ['accessToken', 'user']),
 
         playerPercentage() {
             const percentage = this.currentTime / this.duration;
             return isNaN(percentage) ? 0 : percentage
+        },
+
+        isCurrentLiked() {
+            const likedTracks = this.playlists.find((p) => p.name === 'Liked').tracks;
+            console.log(likedTracks);
+            return likedTracks.some((t) => t.id === this.currentSong.id);
         }
     },
 
     methods: {
-        ...mapActions(playerStore, ['enqueue', 'changeCurrentIndex']),
+        ...mapActions(playerStore, ['enqueue', 'changeCurrentIndex', 'likeTrack']),
 
         onPlayClick() {
             this.isPlaying = true;
@@ -89,6 +98,13 @@ export default {
 
         onRepeatClick() {
             this.repeat = !this.repeat
+        },
+
+        onLikeClick() {
+            const song = { ...this.currentSong };
+            song['userId'] = this.user.id;
+            const response = this.likeTrack(this.accessToken, song);
+            response.then((r) => console.log(r));
         },
 
         playNext() {
@@ -189,6 +205,7 @@ export default {
 }
 
 .active {
+    filter: none;
     stroke: $secondary !important;
     fill: $secondary !important;
 }

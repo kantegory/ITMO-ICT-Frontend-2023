@@ -35,19 +35,4 @@ export class PlaylistApi {
 
         return this.api(options);
     }
-
-    async createPlaylist(accessToken, track, playlistId) {
-        track.playlistId = playlistId;
-        
-        const options = {
-            method: 'POST',
-            headers: {
-                Authorization: `Bearer ${accessToken}`
-            },
-            url: '/600/tracks',
-            data: track
-        }
-
-        return this.api(options);
-    }
 }

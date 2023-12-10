@@ -8,7 +8,8 @@
                     </q-toolbar-title>
                     <q-tabs class="row justfiy-between" indicator-color="secondary">
                         <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/collection" label="Collection" />
-                        <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/search" label="Search" />
+                        <q-route-tab class="q-px-xs-xs q-px-sm-md" to="/search"
+                            label="Search" />
                     </q-tabs>
                 </div>
                 <div class="row no-wrap">
