@@ -20,13 +20,14 @@ function Header() {
     }
 
     return (
-        <Navbar className="mb-2" bg="light" data-bs-theme="light">
-            <Container fluid className={"d-flex px-2"}>
-                <Row className={"d-flex justify-content-around"} style={{minWidth: "100%"}}>
-                    <Col md={2} className={"d-flex justify-content-center"}>
-                        <h3>Портфолио</h3>
-                    </Col>
-                    <Col md={6} className={"d-flex justify-content-center"}>
+        <Navbar collapseOnSelect expand="lg" className="mb-2">
+            <Container className={"d-flex justify-content-start px-2"}>
+                <Col className={"d-flex"}>
+                    <h3>Портфолио</h3>
+                </Col>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Col className={"d-flex justify-content-center"}>
                         <Nav className={"d-flex align-items-center"}>
                             <Link className="mx-2 active" to={"/"} onClick={handleHomePage}
                                   style={{
@@ -34,18 +35,25 @@ function Header() {
                                       textDecoration: 'none'
                                   }}>Главная</Link>
                             <Link className="mx-2 active" to="/projects" onClick={handleProjectsPage}
-                                  style={{color: activePage === "projects" ? "blue" : "black", textDecoration: 'none'}}>
+                                  style={{
+                                      color: activePage === "projects" ? "blue" : "black",
+                                      textDecoration: 'none'
+                                  }}>
                                 Мои Проекты
                             </Link>
-                            <Link className="mx-2" to={"/account"} onClick={handleAccountPage} style={{color: activePage === "account" ? "blue" : "black", textDecoration: 'none'}}>
+                            <Link className="mx-2" to={"/account"} onClick={handleAccountPage} style={{
+                                color: activePage === "account" ? "blue" : "black",
+                                textDecoration: 'none'
+                            }}>
                                 Личный кабинет
                             </Link>
                         </Nav>
+
                     </Col>
-                    <Col md={2}>
+                    <Col className="d-flex justify-content-center">
                         <SearchBar/>
                     </Col>
-                </Row>
+                </Navbar.Collapse>
             </Container>
         </Navbar>
     )

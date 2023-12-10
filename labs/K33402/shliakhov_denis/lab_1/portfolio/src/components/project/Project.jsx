@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, Card, Col, Modal, Row} from "react-bootstrap";
+import {Button, Card, Col, Image, Modal, Row} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import {useForm} from "react-hook-form";
 import {useDeleteProjectMutation, useEditProjectMutation} from "../../store/projectsApi";
@@ -48,8 +48,10 @@ function Project({id, name, description, image, link, isHomePage = false}) {
 
     return (
         <>
-            <Card className="text-center p-1" bg={'light'} text={'dark'} style={{width: '200px', minHeight: '300px' ,minWidth : "200px"}}>
-                <Card.Img variant="top" src={image} height="100%"/>
+            <Card className="text-center p-1" bg={'light'} text={'dark'} style={{width: '200px', height: '300px' ,minWidth : "200px"}}>
+                <div style={{height : "150px"}}>
+                    <Image style={{objectFit : "cover", zIndex:"-1", height : "115px", maxHeight: "120px" , maxWidth:"190px"}} variant="top" src={image}/>
+                </div>
                 <Card.Body>
                     <Card.Title>
                         {name}
@@ -77,7 +79,7 @@ function Project({id, name, description, image, link, isHomePage = false}) {
                                       required={true}/>
                         <Row className="justify-content-evenly">
                             <Col className="d-flex flex-fill justify-content-center" md={2}>
-                                <Button type="submit">Добавить</Button>
+                                <Button type="submit">Сохранить</Button>
                             </Col>
                             <Col className="d-flex flex-fill justify-content-center" md={2}>
                                 <Button variant={"danger"} type="button" onClick={handleDeleteProject}>Удалить</Button>

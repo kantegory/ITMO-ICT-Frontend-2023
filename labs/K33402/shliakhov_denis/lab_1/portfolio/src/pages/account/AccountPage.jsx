@@ -80,7 +80,7 @@ function AccountPage() {
                                       type="text"/>
                     </FloatingLabel>
                     <Row>
-                        <Col className={"d-flex justify-content-center"}>
+                        <Col className={"d-flex justify-content-center gap-2"}>
                             <Button type={"submit"}>Сохранить</Button>
                             <Button variant={"secondary"} onClick={handleSetInput}>Редактировать</Button>
                         </Col>

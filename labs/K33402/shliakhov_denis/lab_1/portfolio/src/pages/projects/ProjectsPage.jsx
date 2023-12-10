@@ -5,6 +5,7 @@ import {useAddProjectMutation, useGetProjectsQuery} from "../../store/projectsAp
 import store from "../../store";
 import Form from "react-bootstrap/Form";
 import {useForm} from "react-hook-form";
+import "./ProjectsPage.css"
 
 function ProjectsPage() {
     const userId = store.getState().authSlice.user.id
@@ -45,23 +46,21 @@ function ProjectsPage() {
     }
 
     return (
-        <Container className="justify-content-start" style={{height: "100%"}}>
+        <Container className="" style={{height: "100%"}}>
             <Row>
                 <Col className="d-flex justify-content-center" md={12}>
                     <h1>Мои проекты</h1>
                 </Col>
-                <Col className={"d-flex justify-content-center"} md={12}>
+                <Col className={"d-flex justify-content-start"} md={12}>
                     <Button onClick={handleShow} variant={"success"}>Добавить проект</Button>
                 </Col>
             </Row>
 
-            <Row className={"d-flex justify-content-center"}>
+            <Row className={"myProjectsCol"}>
                 {data.length !== 0 ? data.map((project) =>
-                        <Col className={"d-flex justify-content-center mt-2"} md={4} lg={2} xs={6}>
-                            <Project name={project.name} description={project.description}
-                                     image={project.image !== "" ? project.image : defaultImage}
-                                     link={project.link} id={project.id}/>
-                        </Col>
+                        <Project name={project.name} description={project.description}
+                                 image={project.image !== "" ? project.image : defaultImage}
+                                 link={project.link} id={project.id}/>
                     ) :
                     <Col>
                         <h2>Пока проектов нет</h2>
@@ -77,7 +76,8 @@ function ProjectsPage() {
                                       type="text" required={true}/>
                         <Form.Control className="mb-1" {...register('link')} placeholder="Ссылка на гитхаб" type="text"
                                       required={true}/>
-                        <Form.Control className="mb-1" {...register('image')} type="text" placeholder="Ссылка на фото проекта"/>
+                        <Form.Control className="mb-1" {...register('image')} type="text"
+                                      placeholder="Ссылка на фото проекта"/>
 
                         <Row className="justify-content-center">
                             <Col className="d-flex justify-content-center" md={2}>

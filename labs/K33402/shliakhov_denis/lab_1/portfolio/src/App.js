@@ -1,4 +1,3 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/header/Header";
 import {Navigate, Outlet, Route, Routes, useLocation} from "react-router-dom";
@@ -24,7 +23,7 @@ function App() {
     }
 
     return (
-        <Container fluid style={{height: "100vh"}}>
+        <Container fluid style={{height: "100vh" , width : "100vw"}}>
             <Header/>
             <Routes>
                 <Route index element={<HomePage/>} />

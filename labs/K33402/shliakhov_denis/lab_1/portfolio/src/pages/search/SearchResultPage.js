@@ -27,10 +27,10 @@ function SearchResultPage() {
                     <h1>Результат поиска</h1>
                 </Col>
             </Row>
-            <Row>
+            <Row className="d-flex flex-row">
                 {
                     data.length !== 0 ? data.map( (project) =>
-                        <Col md={4} lg={3}>
+                        <Col className="py-2">
                             <Project name={project.name} description={project.description} image={project.image} link={project.link}/>
                         </Col> ) :
                         <Col>
