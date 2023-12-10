@@ -31,7 +31,7 @@ function HomeUserProjects(userData) {
                 <Container className={"py-4"}>
                     <Row>
                         <Col className="d-flex py-2">
-                            <Image className={"d-flex m-1"} roundedCircle src={profileData.image} height={100}
+                            <Image alt="user image" className={"d-flex m-1"} roundedCircle src={profileData.image} height={100}
                                    width={100}/>
                             <h2 className={"d-flex align-items-center m-1"}>{userData.user.name} {userData.user.lastName}</h2>
                         </Col>
