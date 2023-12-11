@@ -9,11 +9,15 @@ import {
   styled,
   Fade,
   ButtonBase,
+  CircularProgress,
 } from '@mui/material'
 import { getRouteByAlias } from 'src/utils/getRoutePath'
 import { useNavigate } from 'react-router'
 import { BUTTON_MAX_WIDTH } from 'src/config/constants'
 import { APP_BAR_HEIGHT } from '../AppBar'
+import { useAppSelector } from 'src/store'
+import { FetchingState } from 'src/types/FetchingState'
+import axios from 'axios'
 
 const ModalContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -97,15 +101,24 @@ const AccountInfo = styled(Box)(() => ({
 const AddDeviceAndAvatar: React.FC = () => {
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
-  const handleOpen = () => setOpen(true)
+  const user = useAppSelector((store) => store.auth.user)
+  const userFetchState = useAppSelector((store) => store.auth.state)
+
+  const handleOpen = () => {
+    if (userFetchState === FetchingState.FULFILLED) {
+      setOpen(true)
+    }
+  }
 
   const handleClose = () => {
     setOpen(false)
   }
 
   const handleLogout = () => {
-    setOpen(false)
-    navigate(getRouteByAlias('login').path)
+    axios('/api/user/logout').then(() => {
+      setOpen(false)
+      navigate(getRouteByAlias('login').path)
+    })
   }
 
   const goToAddDevice = () => {
@@ -114,12 +127,30 @@ const AddDeviceAndAvatar: React.FC = () => {
 
   return (
     <>
-      <IconButton onClick={goToAddDevice}>
+      <IconButton aria-label="Add device" onClick={goToAddDevice}>
         <Add />
       </IconButton>
-      <IconButton onClick={handleOpen} sx={{ padding: 0.5 }}>
-        <Avatar sx={{ width: 32, height: 32 }} src="avatar.png" />
-      </IconButton>
+      {userFetchState !== FetchingState.REJECTED && (
+        <IconButton
+          aria-label="Open user modal"
+          aria-expanded={open}
+          onClick={handleOpen}
+          sx={{ padding: 0.5 }}
+        >
+          {userFetchState === FetchingState.PENDING && (
+            <Box sx={{ display: 'flex' }} p={0.5}>
+              <CircularProgress size={24} thickness={5} />
+            </Box>
+          )}
+          {userFetchState === FetchingState.FULFILLED && (
+            <Avatar
+              alt="User avatar"
+              sx={{ width: 32, height: 32 }}
+              src={user?.avatarUrl}
+            />
+          )}
+        </IconButton>
+      )}
       <Modal open={open} onClose={handleClose} closeAfterTransition>
         <Fade in={open}>
           <ModalContainer>
@@ -131,20 +162,20 @@ const AddDeviceAndAvatar: React.FC = () => {
                 Аккаунт
               </ModalPageHeader>
               <AccountBox>
-                <Avatar src={'avatar.png'} />
+                <Avatar src={user?.avatarUrl} />
                 <AccountInfo>
                   <Typography
                     variant="body2"
                     sx={{ fontWeight: 500, lineHeight: '18px', fontSize: 13 }}
                   >
-                    Гостевой аккаунт
+                    {user?.fullname}
                   </Typography>
                   <Typography
                     variant="caption"
                     sx={{ lineHeight: '15px' }}
                     color="text.secondary"
                   >
-                    example@gmail.com
+                    {user?.email}
                   </Typography>
                 </AccountInfo>
                 <IconButton onClick={handleLogout}>

@@ -1,12 +1,14 @@
-import { styled } from '@mui/material'
-import React, { useEffect, useMemo } from 'react'
+import { IconButton, styled } from '@mui/material'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { AppBarExtended } from 'src/components/AppBar'
-import { devices as MOCK_DEVICES } from 'src/config/devices'
 import { DeviceCapabilityType, DeviceType } from 'src/types/Device'
 import { getRouteByAlias } from 'src/utils/getRoutePath'
 import ColorSetting from './ColorSetting'
 import OnOff from './OnOff'
+import { useToggleFavoriteDeviceMutation, useGetDevicesQuery } from 'src/api'
+import FullScreenSpinner from 'src/components/FullScreenSpinner'
+import { Favorite, FavoriteBorder } from '@mui/icons-material'
 
 const Root = styled('div')(({ theme }) => ({
   padding: theme.spacing(1, 2),
@@ -15,7 +17,7 @@ const Root = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   gap: theme.spacing(2),
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
 }))
 
 type DeviceControlsPageParams = {
@@ -23,10 +25,14 @@ type DeviceControlsPageParams = {
 }
 
 const DeviceControls: React.FC = () => {
+  const [favoriteToggle] = useToggleFavoriteDeviceMutation()
   const navigate = useNavigate()
   const { id } = useParams<DeviceControlsPageParams>()
-  // TODO: fixme remove mock data
-  const device = useMemo(() => MOCK_DEVICES.find((e) => e.id === id), [id])
+  const { data: devices, isSuccess } = useGetDevicesQuery({})
+  const device = useMemo(() => {
+    return devices?.devices.find((e) => e.id === id)
+  }, [devices?.devices, id])
+  const [isFavorite, setIsFavorite] = useState(device?.favorite || false)
 
   const supportsColorSettings =
     device &&
@@ -37,19 +43,38 @@ const DeviceControls: React.FC = () => {
     device.type !== DeviceType.CAMERA_OUTDOOR &&
     device.capabilities[DeviceCapabilityType.ON_OFF]
 
+  const toggleFavoriteDevice = () => {
+    if (!id) return
+
+    favoriteToggle({ id })
+      .unwrap()
+      .then((data) => {
+        setIsFavorite(data.state)
+      })
+  }
+
   useEffect(() => {
-    if (!device) {
+    if (!device && isSuccess) {
       navigate(getRouteByAlias('devices').path)
     }
   })
 
   if (!device) {
-    return null
+    return <FullScreenSpinner />
   }
 
   return (
     <>
-      <AppBarExtended fixed withBackButton header={device.name} />
+      <AppBarExtended
+        fixed
+        toolbar={
+          <IconButton onClick={toggleFavoriteDevice}>
+            {isFavorite ? <Favorite /> : <FavoriteBorder />}
+          </IconButton>
+        }
+        withBackButton
+        header={device.name}
+      />
       <Root>
         {supportsColorSettings && <ColorSetting device={device} />}
         {supportsOnOff && <OnOff device={device} />}

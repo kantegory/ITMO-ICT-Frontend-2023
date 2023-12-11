@@ -21,6 +21,6 @@
     "jsxImportSource": "@emotion/react"
   },
   "exclude": ["node_modules", "dist"],
-  "include": ["src"],
+  "include": ["src", "src/mock"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
