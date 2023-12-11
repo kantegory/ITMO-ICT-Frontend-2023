@@ -1,127 +1,93 @@
 
-document.getElementById('playButton').addEventListener('click', function () {
-    const audio = document.getElementById('musicPlayer');
-    audio.play();
-});
 
-document.getElementById('pauseButton').addEventListener('click', function () {
-    const audio = document.getElementById('musicPlayer');
-    audio.pause();
-});
+    // Функция для воспроизведения музыки
+function playMusic(song) {
+    const audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.src = song;
+    audioPlayer.play();
+}
 
-document.getElementById('volumeControl').addEventListener('input', function () {
-    const audio = document.getElementById('musicPlayer');
-    audio.volume = this.value;
-});
-async function getCountryCode() {
-    try {
-        const position = await new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(resolve, reject);
-        });
+// Функция для фильтрации музыки
+function filterMusic() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const genreFilter = document.getElementById('genreFilter').value.toLowerCase();
+    const musicItems = document.querySelectorAll('.music-item');
 
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-
-        const response = await fetch(`https://geocode.xyz/${latitude},${longitude}?json=1`);
-        const data = await response.json();
-
-        if (data.country) {
-            return data.country;
+    musicItems.forEach(function(item) {
+        const songInfo = item.textContent.toLowerCase();
+        const songGenre = songInfo.includes(genreFilter) || genreFilter === 'all';
+        const songMatch = songInfo.includes(searchInput) || searchInput === '';
+        if (songGenre && songMatch) {
+            item.style.display = 'flex';
         } else {
-            return 'RU';
+            item.style.display = 'none';
         }
-    } catch (error) {
-        console.error("Ошибка при определении страны: ", error);
-        return 'RU';
+    });
+}
+
+// Функция для добавления песни в плейлист профиля
+function addToPlaylist(song) {
+    const currentUser = 'user123'; // Замените это на вашего пользователя
+
+    let userPlaylist = JSON.parse(localStorage.getItem(currentUser)) || [];
+    userPlaylist.push(song);
+    localStorage.setItem(currentUser, JSON.stringify(userPlaylist));
+
+    alert('Песня добавлена в ваш плейлист!');
+}
+
+// Функция для открытия модального окна при клике на трек
+function openModal() {
+    const myModal = new bootstrap.Modal(document.getElementById('playlistModal'));
+    myModal.show();
+}
+
+function closeModal() {
+    const myModal = new bootstrap.Modal(document.getElementById('playlistModal'));
+    myModal.hide();
+}
+
+
+// Функция для добавления трека в выбранный плейлист
+function addToSelectedPlaylist() {
+    const selectedPlaylist = document.getElementById('modalPlaylistSelect').value;
+    // Логика добавления трека в плейлист
+    alert('Трек добавлен в плейлист');
+    closeModal(); // Закрытие модального окна после добавления
+}
+
+// Функция для переключения темы
+    // Функция для переключения темы
+    function toggleTheme() {
+        const body = document.body;
+        const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+
+        if (currentTheme === 'dark') {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        }
     }
-}
 
-(async () => {
-    const userCountry = await getCountryCode();
-    getTopSongsByCountry(userCountry);
-})();
 
-// Function to apply accessibility settings
-function applyAccessibilitySettings() {
-    const fontSize = document.getElementById('fontSize').value;
-    const textColor = document.getElementById('textColor').value;
-    const backgroundColor = document.getElementById('backgroundColor').value;
-    const fontFamily = document.getElementById('fontFamily').value;
-
-    document.body.style.fontSize = fontSize;
-    document.body.style.color = textColor;
-    document.body.style.backgroundColor = backgroundColor;
-    document.body.style.fontFamily = fontFamily;
-
-    // Close the modal
-    $('#accessibilityModal').modal('hide');
-}
-
-// Add an event listener to open the accessibility modal
-document.addEventListener('DOMContentLoaded', function () {
-    const accessibilityBtn = document.getElementById('accessibilityBtn');
-    accessibilityBtn.addEventListener('click', function () {
-        const modal = new bootstrap.Modal(document.getElementById('accessibilityModal'));
-        modal.show();
-    });
-
-    // Add an event listener to apply accessibility settings on modal apply button click
-    const applyBtn = document.getElementById('applyBtn');
-    applyBtn.addEventListener('click', applyAccessibilitySettings);
-
-    // Close modal on close button click
-    const closeButton = document.querySelector('.modal .btn-close');
-    closeButton.addEventListener('click', function () {
-        const modal = bootstrap.Modal.getInstance(document.getElementById('accessibilityModal'));
-        modal.hide();
-    });
+// Проверка сохраненной темы в localStorage при загрузке страницы
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.classList.add(savedTheme + '-mode');
+    } else {
+        // По умолчанию используется тема, установленная в браузере
+        const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (userPrefersDark) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.add('light-mode');
+        }
+    }
 });
 
-// Функция отображения полученных данных о топе песен
-function displayTopSongs(topSongs) {
-    const topSongsContainer = document.getElementById("top-songs-container");
 
-    topSongsContainer.innerHTML = "";
-
-    topSongs.forEach(song => {
-        const card = document.createElement("div");
-        card.className = "card mb-3";
-        card.style.cursor = "pointer"; // Добавим карточке стиль указывающий на возможность клика
-
-        card.addEventListener("click", () => {
-            playSong(song.audio);
-        });
-
-        const cardBody = document.createElement("div");
-        cardBody.className = "card-body";
-
-        const title = document.createElement("h5");
-        title.className = "card-title";
-        title.textContent = song.title;
-        cardBody.appendChild(title);
-
-        const artist = document.createElement("p");
-        artist.className = "card-text";
-        artist.textContent = `Исполнитель: ${song.artist}`;
-        cardBody.appendChild(artist);
-
-        card.appendChild(cardBody);
-        topSongsContainer.appendChild(card);
-    });
-}
-
-// Загружаем данные о топе песен для данной страны
-getTopSongsByCountry(userCountry);
-
-
-function getTopSongsByCountry(country) {
-    fetch(`http://localhost:3000/api/top-songs/${country}`)
-        .then(response => response.json())
-        .then(data => {
-            displayTopSongs(data);
-        })
-        .catch(error => console.error("Ошибка при получении данных: ", error));
-}
-
-const userCountry = getCountryCode();
-getTopSongsByCountry(userCountry);

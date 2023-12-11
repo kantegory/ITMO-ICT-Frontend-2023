@@ -1,39 +1,38 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const port = 3000;
+const PORT = 3000;
 
-// Фиктивные данные о топе песен по странам
-const topSongsData = {
-    "USA": [
-        { title: "Song 1 (USA)", artist: "Artist 1" },
-        { title: "Song 2 (USA)", artist: "Artist 2" },
-        { title: "Song 3 (USA)", artist: "Artist 3" }
-    ],
-    "UK": [
-        { title: "Song 1 (UK)", artist: "Artist 1" },
-        { title: "Song 2 (UK)", artist: "Artist 2" },
-        { title: "Song 3 (UK)", artist: "Artist 3" }
-    ]
-    ,
-    "RU": [
-        { title: "Song 1 (RU)", artist: "Artist 1" },
-        { title: "Song 2 (RU)", artist: "Artist 2" },
-        { title: "Song 3 (RU)", artist: "Artist 3" }
-    ]
-};
-
+app.use('/music', express.static(__dirname + '/music'));
+app.use('/covers', express.static(__dirname + '/covers'));
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
 });
 
-app.get("/api/top-songs/:country", (req, res) => {
-    const country = req.params.country;
-    const topSongs = topSongsData[country] || [];
+// Фиктивные данные о топ-треках для разных регионов
+const topTracksData = {
+    'RU': [
+        { title: 'Kaer Morhen1', artist: 'witcher_3', genre: 'Rock', cover: '/covers/song1.jpg', audio: '/music/the_witcher_3_wild_hunt_16 Kaer Morhen.mp3' },
+        { title: 'Kaer Morhen2', artist: 'witcher_3', genre: 'Pop', cover: '/covers/song2.jpg', audio: '/music/the_witcher_3_wild_hunt_16 Kaer Morhen.mp3' },
+        // Добавьте другие треки для России
+    ],
+    'US': [
+        { title: 'Kaer Morhen', artist: 'witcher_3', genre: 'Rock', cover: '/covers/song1.jpg', audio: '/music/the_witcher_3_wild_hunt_16 Kaer Morhen.mp3' },
+        { title: 'Kaer Morhen', artist: 'witcher_3', genre: 'Pop', cover: '/covers/song2.jpg', audio: '/music/the_witcher_3_wild_hunt_16 Kaer Morhen.mp3' },
+],
+    // Добавьте данные для других регионов по аналогии
+};
 
-    res.json(topSongs);
+// Эндпоинт для получения топ-треков по региону
+app.get('/api/top-tracks/:region', (req, res) => {
+    const region = req.params.region.toUpperCase();
+    const tracks = topTracksData[region] || [];
+    res.json(tracks);
 });
 
-app.listen(port, () => {
-    console.log(`Сервер запущен на порту ${port}`);
+// Стартуем сервер
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
