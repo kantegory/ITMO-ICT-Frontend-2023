@@ -109,8 +109,8 @@
                 />
                 <div class="card-body">
                   <h5 class="card-title">{{ product.title }}</h5>
-                  <p class="card-text">{{ product.price }} руб.</p>
-                  <p class="card-text">{{ product.description }}</p>
+                  <p class="card-text">{{ product.price }} </p>
+                  <p class="card-decsript">{{ product.description }}</p>
                 </div>
               </div>
             </div>
@@ -124,6 +124,7 @@
 
 <script>
 import { useProductCards } from "@/composables/useProductCards";
+import { watchEffect } from "vue";
 
 export default {
   setup() {
@@ -133,8 +134,12 @@ export default {
       sortByPriceDescending,
       sortByPriceAscending,
     } = useProductCards();
-    console.log("Я тут!");
-    console.log("Полученный массив:", productCards);
+
+    // Вывод в консоль, когда данные приходят
+    watchEffect(() => {
+      console.log("Данные пришли:", productCards);
+    });
+
     return {
       productCards,
       fetchProductData,
