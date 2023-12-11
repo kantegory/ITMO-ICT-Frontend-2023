@@ -1,0 +1,76 @@
+.btn-my-lightgreen{
+    --bs-btn-color: var(--text-color);
+    --bs-btn-bg: var(--btn-background-color);
+    --bs-btn-border-color: var(--btn-border-color);
+    --bs-btn-hover-color: var(--text-color);
+    --bs-btn-hover-bg: var(--btn-background-hover);
+    --bs-btn-hover-border-color: var(--btn-border-color);
+    --bs-btn-active-color: var(--text-color);
+    --bs-btn-active-bg: var(--btn-background-active);
+    --bs-btn-active-border-color: var(--btn-border-color-active);
+    --bs-btn-disabled-color: var(--text-color);
+    --bs-btn-disabled-border-color: var(--btn-border-color-disable);
+    --bs-btn-disabled-bg: var(--btn-background-disable);
+}
+
+.btn-my-lightgreen-outline{
+    --bs-btn-color: var(--text-outline-color);
+    --bs-btn-bg: var(--btn-outline-background-color);
+    --bs-btn-border-color: var(--btn-border-color);
+    --bs-btn-hover-color: var(--text-color);
+    --bs-btn-hover-bg: var(--btn-background-hover);
+    --bs-btn-hover-border-color: var(--btn-border-outline-color-hover1);
+    --bs-btn-active-color: var(--text-color);
+    --bs-btn-active-bg: var(--btn-background-active);
+    --bs-btn-active-border-color: var(--btn-border-color-active);
+}
+
+.btn-my-lightgreen-outline-v2{
+    --bs-btn-color: var(--text-outline-color);
+    --bs-btn-bg: var(--btn-outline-background-color);
+    --bs-btn-border-color: var(--btn-border-color);
+    --bs-btn-hover-color: var(--text-color);
+    --bs-btn-hover-bg: var(--btn-background-hover);
+    --bs-btn-hover-border-color: var(--btn-border-outline-color-hover2);
+    --bs-btn-active-color: var(--text-color);
+    --bs-btn-active-bg: var(--btn-background-color);
+    --bs-btn-active-border-color: var(--btn-border-color);
+}
+
+.change-border-lightgreen{
+    border-color: var(--btn-border-color);
+}
+
+.change-bg-verylightgreen{
+    background-color: var(--bg-lightgreen);
+}
+
+.change-box-shadow-lightgreen:focus{
+    border-color: var(--btn-border-color-disable);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--bg-lightgreen);
+    outline: 0 none;
+}
+
+.back-ground-main{
+    background-color: var(--main-bg);
+}
+
+.back-ground-header{
+    background-color: var(--header-bg);
+    background: var(--header-bg);
+    --bs-tertiary-bg-rgb: var(--header-bg);
+}
+
+.back-ground-modal{
+    background: var(--modals-bg);
+}
+.back-ground-modal-boxes{
+    background: var(--modals-boxes-bg);
+    background-color: var(--modals-boxes-bg);
+    border-color: var(--modal-boxes-border);
+}
+
+.main-text{
+    color: var(--main-text);
+    --bs-navbar-active-color: var(--main-text);
+}
