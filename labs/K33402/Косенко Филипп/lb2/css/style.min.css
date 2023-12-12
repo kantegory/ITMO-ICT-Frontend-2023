@@ -1,10 +1,6 @@
-:root {
-  --main-color:#c70101;
-}
-
 .button {
   margin-top: 5px;
-  background: var(--main-color);
+  background: #c70101;
   width: 153px;
   height: 30px;
   padding: 7px 3px 4px 3px;
@@ -72,7 +68,6 @@
 }
 
 .advantages {
-  background: #F6F6F6;
   min-height: 473px;
 }
 .advantages__wrapper {
@@ -90,7 +85,7 @@
   fill: #fff;
 }
 .advantages_img path {
-  fill: var(--main-color);
+  fill: #c70101;
 }
 .advantages_title_i {
   margin-top: 30px;
@@ -106,7 +101,7 @@
 }
 
 .them__nigth {
-  --bg-color: rgba(0, 0,0 ,0.8 );
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
 }
 .them__nigth .advantages_img path {
