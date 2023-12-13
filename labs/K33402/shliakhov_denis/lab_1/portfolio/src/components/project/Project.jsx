@@ -50,7 +50,7 @@ function Project({id, name, description, image, link, isHomePage = false}) {
         <>
             <Card className="text-center p-1" bg={'light'} text={'dark'} style={{width: '200px', height: '300px' ,minWidth : "200px"}}>
                 <div style={{height : "150px"}}>
-                    <Image style={{objectFit : "cover", zIndex:"-1", height : "115px", maxHeight: "120px" , maxWidth:"190px"}} variant="top" src={image}/>
+                    <Image alt = "image of project" style={{objectFit : "cover", zIndex:"-1", height : "115px", maxHeight: "120px" , maxWidth:"190px"}} variant="top" src={image}/>
                 </div>
                 <Card.Body>
                     <Card.Title>
