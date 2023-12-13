@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CircularProgress from '@mui/material/CircularProgress'
 import axios from 'axios'
-
+// 3 лаб - Add filtering, post and make this CV editable/ заявка на работу. Redux - познакомиться.
 function Search() {
   const [randomPeople, setRandomPeople] = useState(null)
   const [peopleAmount, setPeopleAmount] = useState(10)
@@ -37,7 +37,7 @@ function Search() {
             console.log(`${user.first_name} ${user.last_name} was clicked`)
           }}
         >
-          <Card.Img variant='top' src={user.avatar} />
+          <Card.Img variant='top' alt='user profile image' src={user.avatar} />
           <Card.Body>
             <Card.Title className='title-text-limit'>
               {user.first_name} {user.last_name} - {user.job}

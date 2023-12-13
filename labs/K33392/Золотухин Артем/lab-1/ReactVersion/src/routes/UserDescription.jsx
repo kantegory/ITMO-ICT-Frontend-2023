@@ -1,7 +1,5 @@
 import { useParams } from 'react-router-dom'
 import styled from '@emotion/styled'
-// import { useEffect, useState } from 'react'
-// import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
 const ContainerDiv = styled.div`
   display: flex;

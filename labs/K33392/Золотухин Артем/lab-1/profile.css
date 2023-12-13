@@ -31,7 +31,7 @@ body {
   display: -webkit-flex;
   display: flex;
   align-items: center;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-color);
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -91,7 +91,7 @@ body {
   flex: 0 1 calc(50% - 4px);
   max-height: 100%;
   padding: 120px 16px 120px 0px;
-  color: white;
+  color: var(--text-color);
   box-sizing: border-box;
   border-radius: 8px;
   overflow-y: auto;
@@ -125,7 +125,7 @@ body {
   align-items: center;
   border-radius: 16px;
   background: var(--primary-container);
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-color-link);
   text-transform: uppercase;
 }
 
@@ -150,4 +150,12 @@ body {
   gap: 10px;
   border-radius: 16px;
   background: var(--primary-container);
+}
+
+.nav-item a,
+.footer h5,
+.lowvisibilitytext,
+.button_email,
+.contact_btn {
+  color: var(--text-color);
 }

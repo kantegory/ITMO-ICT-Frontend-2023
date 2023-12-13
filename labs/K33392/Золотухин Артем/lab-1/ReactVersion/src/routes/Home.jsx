@@ -93,7 +93,9 @@ function Home() {
               className='column-contact_button'
               onClick={copyEmailToClipboard}
             >
-              <img src='src/assets/email.svg' alt='blog SVG' />
+              <svg width={30} height={30}>
+                <use href='src/assets/sprite.svg#email' fill='#1DFF9E' />
+              </svg>
               EMAIL
             </button>
           </div>

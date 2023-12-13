@@ -37,7 +37,6 @@
 
 /* Top Navbar icons */
 .menu-bars {
-  margin-left: 20px;
   font-size: 2rem;
   background: #2e2e47;
   color: #fff;
@@ -75,8 +74,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 8px;
-  padding-right: 8px;
   list-style: none;
   height: 60px;
 }
@@ -89,7 +86,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+
   border-radius: 16px;
 }
 
