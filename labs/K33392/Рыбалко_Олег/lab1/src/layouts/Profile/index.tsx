@@ -2,15 +2,13 @@ import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import styles from './Profile.module.scss'
 import { Post } from '@/components/Post'
-import { PostType, UserDataType } from '@/types'
+import { PostType } from '@/types'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/store'
 import { AuthState } from '@/store/slices/auth'
 import { Button, Modal, Form } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
-import { pb } from '@/constants'
-import { useNavigate } from 'react-router-dom'
 import { PencilIcon } from '@/sprites/PencilIcon'
 import {
   PostsState,
@@ -18,11 +16,11 @@ import {
   fetchByAuthorId,
   publishNewPost,
 } from '@/store/slices/posts'
+import { getByUsername, updateBio } from '@/store/slices/users'
 
 export function ProfileLayout() {
   const { t } = useTranslation('profile')
   const { username } = useParams<{ username: string }>()
-  const [userData, setUserData] = useState<UserDataType>({} as UserDataType)
 
   const authStore = useSelector<RootState>((state) => state.auth) as AuthState
   const [isAdmin, setAdmin] = useState(false)
@@ -34,49 +32,33 @@ export function ProfileLayout() {
     title: '',
   })
   const [newBio, setNewBio] = useState<string>()
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   const postsStore = useSelector<RootState>(
     (state) => state.posts
   ) as PostsState
+  const usersStore = useSelector<RootState>((state) => state.users)
 
   const [showNewPostModal, setShowNewPostModal] = useState(false)
-  const [isFollowed, setFollowed] = useState(false)
+  const [isFollowed] = useState(false)
   const [isEditingBio, setEditingBio] = useState(false)
 
   useEffect(() => {
-    pb.collection('users')
-      .getFirstListItem(`username="${username}"`)
-      .then((record) => {
-        setUserData({
-          username: record.username,
-          bio: record.bio,
-          id: record.id,
-        })
-      })
-      .catch((err) => console.log(err))
-    // .catch(() => navigate('/notfound'))
-  }, [username, navigate])
+    dispatch(getByUsername(username))
+  }, [username, dispatch])
 
   useEffect(() => {
-    setNewBio(userData.bio)
-  }, [userData])
+    setNewBio(usersStore[username].bio)
+  }, [usersStore, dispatch, username])
 
   useEffect(() => {
     setAdmin(authStore.username === username)
   }, [authStore, username])
 
   useEffect(() => {
-    dispatch(fetchByAuthorId(userData.id))
-  }, [userData, dispatch])
-
-  useEffect(() => {
-    pb.collection('follows')
-      .getFirstListItem(
-        `follower="${authStore.id}" && followee="${userData.id}"`
-      )
-      .then(() => setFollowed(true))
-  }, [authStore, userData])
+    if (usersStore[username].id !== undefined) {
+      dispatch(fetchByAuthorId(usersStore[username].id))
+    }
+  }, [usersStore, dispatch, username])
 
   const publishNewPostCallback = useCallback(() => {
     dispatch(
@@ -90,39 +72,17 @@ export function ProfileLayout() {
     setNewPost({ title: '', body: '' })
   }, [newPost, authStore, dispatch])
 
-  const deletePostCallback = (post: PostType) => {
-    dispatch(deletePost(userData.id, post.id))
-  }
+  const deletePostCallback = useCallback(
+    (post: PostType) => {
+      dispatch(deletePost(usersStore[username].id, post.id))
+    },
+    [dispatch, usersStore, username]
+  )
 
-  const updateBio = useCallback(() => {
-    pb.collection('users')
-      .update(authStore.id, { bio: newBio })
-      .then((record) => {
-        setUserData({ ...userData, bio: record.bio })
-        setEditingBio(false)
-      })
-      .catch(() => alert('failed to save'))
-  }, [userData, authStore, newBio])
-
-  const followUser = useCallback(() => {
-    if (isFollowed) {
-      pb.collection('follows')
-        .getFirstListItem(
-          `follower="${authStore.id}" && followee="${userData.id}"`
-        )
-        .then((record) => {
-          pb.collection('follows').delete(record.id)
-          setFollowed(false)
-        })
-    } else {
-      pb.collection('follows')
-        .create({
-          follower: authStore.id,
-          followee: userData.id,
-        })
-        .then(() => setFollowed(true))
-    }
-  }, [isFollowed, authStore, userData])
+  const updateBioCallback = useCallback(() => {
+    dispatch(updateBio(username, newBio))
+    setEditingBio(false)
+  }, [newBio, dispatch, username])
 
   return (
     <>
@@ -130,13 +90,15 @@ export function ProfileLayout() {
         <div className={styles.profileInfo}>
           <img
             className={`mt-3 ${styles.profileImage}`}
-            src={`https://robohash.org/${userData.username ?? ''}`}
+            src={`https://robohash.org/${username ?? ''}`}
             alt={t('profileImageAriaLabel')}
           />
-          <h1 className="h3 mt-3 fw-normal">@{userData.username}</h1>
+          <h1 className="h3 mt-3 fw-normal">@{username}</h1>
           <div className={styles.bioBlock}>
             {!isEditingBio && (
-              <h1 className="h5 blockquote-footer mt-2">{userData.bio}</h1>
+              <h1 className="h5 blockquote-footer mt-2">
+                {usersStore[username].bio}
+              </h1>
             )}
             {isEditingBio && (
               <input
@@ -147,7 +109,10 @@ export function ProfileLayout() {
               />
             )}
             {isEditingBio && (
-              <Button onClick={updateBio} aria-label={t('saveBioAriaLabel')}>
+              <Button
+                onClick={updateBioCallback}
+                aria-label={t('saveBioAriaLabel')}
+              >
                 {t('saveButton')}
               </Button>
             )}
@@ -174,7 +139,6 @@ export function ProfileLayout() {
           {!isAdmin && (
             <Button
               variant="link"
-              onClick={followUser}
               aria-label={isFollowed ? t('unfollowButton') : t('followButton')}
             >
               {isFollowed ? t('unfollowButton') : t('followButton')}
@@ -183,9 +147,9 @@ export function ProfileLayout() {
         </div>
         <div>
           <hr />
-          {(postsStore.byAuthorId[userData.id] === undefined
+          {(postsStore.byAuthorId[usersStore[username].id] === undefined
             ? []
-            : (postsStore.byAuthorId[userData.id] as PostType[])
+            : (postsStore.byAuthorId[usersStore[username].id] as PostType[])
           ).map((post) => (
             <div className="row">
               <Post
