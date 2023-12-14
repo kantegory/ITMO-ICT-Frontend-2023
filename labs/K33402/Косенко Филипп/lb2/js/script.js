@@ -70,6 +70,23 @@ $(document).ready(function(){
       }, "xml");
   });
 
+
+  $('[data-modal=consultation]').on('click', function(){
+    $('.overlay , #consultation').fadeIn();
+  });
+  
+  
+  $('.button_mini').each(function(i){
+    $(this).on('click', function(){
+      $('#order .modal__descr').text($('.catalog-item__title').eq(i).text());
+      $('.overlay, #order').fadeIn();
+    })
+  })
+  
+  $('.modal__exit').on('click', function(){
+    $('.overlay , #consultation, #order, #sencs').fadeOut();
+  });
+
   });
 
 
