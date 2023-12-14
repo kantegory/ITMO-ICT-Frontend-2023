@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom'
 import { PencilIcon } from '@/sprites/PencilIcon'
 import {
   PostsState,
+  deletePost,
   fetchByAuthorId,
   publishNewPost,
 } from '@/store/slices/posts'
@@ -25,7 +26,6 @@ export function ProfileLayout() {
 
   const authStore = useSelector<RootState>((state) => state.auth) as AuthState
   const [isAdmin, setAdmin] = useState(false)
-  const [posts, setPosts] = useState<PostType[]>([])
   const [newPost, setNewPost] = useState<{
     title: string
     body: string
@@ -88,13 +88,10 @@ export function ProfileLayout() {
     )
     setShowNewPostModal(false)
     setNewPost({ title: '', body: '' })
-  }, [newPost, authStore, userData, dispatch])
+  }, [newPost, authStore, dispatch])
 
-  const deletePost = (post: PostType) => {
-    pb.collection('posts')
-      .delete(post.id)
-      .then(() => setPosts(posts.filter((el) => el.id !== post.id)))
-      .catch(() => alert('failed to delete the post'))
+  const deletePostCallback = (post: PostType) => {
+    dispatch(deletePost(userData.id, post.id))
   }
 
   const updateBio = useCallback(() => {
@@ -195,7 +192,7 @@ export function ProfileLayout() {
                 className={styles.post}
                 post={post}
                 showDeleteButton={isAdmin}
-                onDelete={deletePost}
+                onDelete={deletePostCallback}
               />
             </div>
           ))}

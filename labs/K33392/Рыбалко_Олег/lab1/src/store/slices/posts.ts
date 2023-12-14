@@ -40,6 +40,15 @@ export default function postsReducer(state = initialState, action) {
         },
       }
     }
+    case 'posts/delete': {
+      const posts = state.byAuthorId[action.payload.authorId].filter(
+        (el) => el.id !== action.payload.postId
+      )
+      return {
+        ...state,
+        byAuthorId: { ...state.byAuthorId, [action.payload.authorId]: posts },
+      }
+    }
     default:
       return state
   }
@@ -131,6 +140,16 @@ export function publishNewPost(data: object): AnyAction {
   return async function publishNewPostThunk(dispatch: () => void) {
     const record = await pb.collection('posts').create(data)
     dispatch({ type: 'posts/publish', payload: record })
+  }
+}
+
+export function deletePost(authorId: string, id: string): AnyAction {
+  return async function deletePostThunk(dispatch: () => void) {
+    await pb.collection('posts').delete(id)
+    dispatch({
+      type: 'posts/delete',
+      payload: { postId: id, authorId: authorId },
+    })
   }
 }
 
