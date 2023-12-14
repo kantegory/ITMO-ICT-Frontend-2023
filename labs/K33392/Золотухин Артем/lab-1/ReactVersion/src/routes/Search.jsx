@@ -1,49 +1,54 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom' // Import useNavigate
 import './styles/search.css'
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import CircularProgress from '@mui/material/CircularProgress'
 import axios from 'axios'
-
+// 3 лаб - Add filtering, post and make this CV editable/ заявка на работу. Redux - познакомиться.
 function Search() {
   const [randomPeople, setRandomPeople] = useState(null)
   const [peopleAmount, setPeopleAmount] = useState(10)
+  const navigate = useNavigate()
+
   useEffect(() => {
-    fetchUserData().catch((e) => console.error(e))
+    fetchUsersFromLocalServer().catch((e) => console.error(e))
   }, [peopleAmount])
 
-  async function fetchRandomTextData() {
-    const response = await axios.get('https://loripsum.net/api/1/short/ol')
-    return response.data
+  function handleDescriptionClick(userId) {
+    navigate(`/description/${userId}`)
   }
 
-  async function fetchUserData() {
-    const userData = await fetch(
-      `https://randomuser.me/api/?results=${peopleAmount}`
-    ).then((response) => response.json())
-
-    const userText = await fetchRandomTextData()
+  async function fetchUsersFromLocalServer() {
+    const response = await axios
+      .get(`http://localhost:3000/results?_limit=${peopleAmount}`)
+      .then((resp) => resp.data)
 
     setRandomPeople(
-      userData.results.map((user, index) => (
+      response.map((user) => (
         <Card
-          key={index}
+          key={user.id}
           style={{
             width: '24rem',
             background: '#464567',
             color: 'white',
           }}
           onClick={() => {
-            console.log(`${user.name.first} ${user.name.last} was clicked`)
+            console.log(`${user.first_name} ${user.last_name} was clicked`)
           }}
         >
-          <Card.Img variant='top' src={user.picture.large} />
+          <Card.Img variant='top' alt='user profile image' src={user.avatar} />
           <Card.Body>
-            <Card.Title>
-              {user.name.first} {user.name.last}
+            <Card.Title className='title-text-limit'>
+              {user.first_name} {user.last_name} - {user.job}
             </Card.Title>
-            <Card.Text
-              dangerouslySetInnerHTML={{ __html: userText }}
-            ></Card.Text>
+            <Card.Text className='text-limit'>{user.description}</Card.Text>
+            <button
+              className='custom-button'
+              onClick={() => handleDescriptionClick(user.id)}
+            >
+              View Description
+            </button>
           </Card.Body>
         </Card>
       ))
@@ -56,14 +61,18 @@ function Search() {
         <input
           className='search-field-input'
           type='number'
-          placeholder='How many people to find '
+          placeholder='How many people to find'
           value={peopleAmount}
           onChange={(e) => setPeopleAmount(e.target.value)}
         />
       </div>
 
       <div className='search-users_list'>
-        {randomPeople || <h1>Loading</h1>}
+        {randomPeople || (
+          <>
+            <h1>Loading...</h1> <CircularProgress />
+          </>
+        )}
       </div>
     </div>
   )

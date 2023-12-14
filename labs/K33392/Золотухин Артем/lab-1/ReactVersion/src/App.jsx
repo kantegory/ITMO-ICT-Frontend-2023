@@ -15,12 +15,16 @@ import Home from './routes/Home'
 import Notes from './routes/Notes'
 import Search from './routes/Search'
 import Work from './routes/Work'
-
+import UserDescription from './routes/UserDescription'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 function App() {
+  const queryClient = new QueryClient()
   const AppLayout = () => (
     <>
-      <MyNavbar />
-      <Outlet />
+      <QueryClientProvider client={queryClient}>
+        <MyNavbar />
+        <Outlet />
+      </QueryClientProvider>
     </>
   )
 
@@ -34,6 +38,7 @@ function App() {
         <Route path='/notes' element={<Notes />} />
         <Route path='/about_page' element={<AboutPage />} />
         <Route path='/search' element={<Search />} />
+        <Route path='/description/:userId' element={<UserDescription />} />
       </Route>
     )
   )
