@@ -7,27 +7,46 @@ import { AnyAction } from '@reduxjs/toolkit'
 export type PostsState = {
   forYou: Array<PostType>
   following: Array<PostType>
+  byAuthorId: object
 }
 const initialState: PostsState = {
   forYou: [],
   following: [],
+  byAuthorId: new Object({}),
 }
 
 export default function postsReducer(state = initialState, action) {
   switch (action.type) {
     case 'posts/following':
+      return { ...state, following: action.payload }
     case 'posts/forYou':
-      console.log('got ' + action.type)
-      console.log(action.payload)
-      return action.payload
+      return { ...state, forYou: action.payload }
+    case 'posts/byAuthorId':
+      return {
+        ...state,
+        byAuthorId: {
+          ...state.byAuthorId,
+          [action.payload.authorId]: action.payload.data,
+        },
+      }
+    case 'posts/publish': {
+      const posts = state.byAuthorId[action.payload.author]
+      return {
+        ...state,
+        byAuthorId: {
+          ...state.byAuthorId,
+          [action.payload.author]:
+            posts === undefined ? [action.payload] : [action.payload, ...posts],
+        },
+      }
+    }
     default:
       return state
   }
 }
 
 export function fetchForYou(authorId: string): AnyAction {
-  return async function fetchForYouThunk(dispatch, getState) {
-    const state = getState()
+  return async function fetchForYouThunk(dispatch: () => void) {
     const posts = await pb.collection('posts').getList(1, 30, {
       sort: '-created',
       filter: `author!="${authorId}"`,
@@ -35,25 +54,21 @@ export function fetchForYou(authorId: string): AnyAction {
     })
     dispatch({
       type: 'posts/forYou',
-      payload: {
-        ...state.posts,
-        forYou: posts.items.map((el) => {
-          return {
-            authorUsername: el.expand!.author.username,
-            body: el.body,
-            title: el.title,
-            id: el.id,
-            likesCount: 0,
-          }
-        }),
-      },
+      payload: posts.items.map((el) => {
+        return {
+          authorUsername: el.expand!.author.username,
+          body: el.body,
+          title: el.title,
+          id: el.id,
+          likesCount: 0,
+        }
+      }),
     })
   }
 }
 
 export function fetchFollowing(authorId: string): AnyAction {
-  return async function fetchFollowingThunk(dispatch, getState) {
-    const state = getState()
+  return async function fetchFollowingThunk(dispatch: () => void) {
     const follows = await pb
       .collection('follows')
       .getFullList({ filter: `follower="${authorId}"` })
@@ -62,7 +77,7 @@ export function fetchFollowing(authorId: string): AnyAction {
     if (users.length === 0) {
       dispatch({
         type: 'posts/following',
-        payload: { ...state.posts, following: [] },
+        payload: [],
       })
       return
     }
@@ -74,19 +89,48 @@ export function fetchFollowing(authorId: string): AnyAction {
 
     dispatch({
       type: 'posts/following',
+      payload: posts.map((el) => {
+        return {
+          authorUsername: el.expand!.author.username,
+          body: el.body,
+          title: el.title,
+          id: el.id,
+          likesCount: 0,
+        }
+      }),
+    })
+  }
+}
+
+export function fetchByAuthorId(authorId: string): AnyAction {
+  return async function fetchByAuthorIdThunk(dispatch: () => void) {
+    const posts = await pb.collection('posts').getFullList({
+      filter: `author="${authorId}"`,
+      expand: 'author',
+      sort: '-created',
+    })
+    dispatch({
+      type: 'posts/byAuthorId',
       payload: {
-        ...state.posts,
-        following: posts.map((el) => {
+        authorId: authorId,
+        data: posts.map((r) => {
           return {
-            authorUsername: el.expand!.author.username,
-            body: el.body,
-            title: el.title,
-            id: el.id,
-            likesCount: 0,
+            id: r.id,
+            title: r.title,
+            body: r.body,
+            authorUsername: r.expand!.author.username,
+            likesCount: r.likesCount,
           }
         }),
       },
     })
+  }
+}
+
+export function publishNewPost(data: object): AnyAction {
+  return async function publishNewPostThunk(dispatch: () => void) {
+    const record = await pb.collection('posts').create(data)
+    dispatch({ type: 'posts/publish', payload: record })
   }
 }
 

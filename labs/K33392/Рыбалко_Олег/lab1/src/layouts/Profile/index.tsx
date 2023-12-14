@@ -4,7 +4,7 @@ import styles from './Profile.module.scss'
 import { Post } from '@/components/Post'
 import { PostType, UserDataType } from '@/types'
 import { useCallback, useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/store'
 import { AuthState } from '@/store/slices/auth'
 import { Button, Modal, Form } from 'react-bootstrap'
@@ -12,6 +12,11 @@ import Container from 'react-bootstrap/Container'
 import { pb } from '@/constants'
 import { useNavigate } from 'react-router-dom'
 import { PencilIcon } from '@/sprites/PencilIcon'
+import {
+  PostsState,
+  fetchByAuthorId,
+  publishNewPost,
+} from '@/store/slices/posts'
 
 export function ProfileLayout() {
   const { t } = useTranslation('profile')
@@ -30,6 +35,10 @@ export function ProfileLayout() {
   })
   const [newBio, setNewBio] = useState<string>()
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const postsStore = useSelector<RootState>(
+    (state) => state.posts
+  ) as PostsState
 
   const [showNewPostModal, setShowNewPostModal] = useState(false)
   const [isFollowed, setFollowed] = useState(false)
@@ -58,26 +67,8 @@ export function ProfileLayout() {
   }, [authStore, username])
 
   useEffect(() => {
-    pb.collection('posts')
-      .getFullList({
-        filter: `author="${userData.id}"`,
-        expand: 'author',
-        sort: '-created',
-      })
-      .then((records) =>
-        setPosts(
-          records.map((r) => {
-            return {
-              id: r.id,
-              title: r.title,
-              body: r.body,
-              authorUsername: r.expand!.author.username,
-              likesCount: r.likesCount,
-            }
-          })
-        )
-      )
-  }, [userData])
+    dispatch(fetchByAuthorId(userData.id))
+  }, [userData, dispatch])
 
   useEffect(() => {
     pb.collection('follows')
@@ -87,29 +78,17 @@ export function ProfileLayout() {
       .then(() => setFollowed(true))
   }, [authStore, userData])
 
-  const publishNewPost = useCallback(() => {
-    pb.collection('posts')
-      .create({
+  const publishNewPostCallback = useCallback(() => {
+    dispatch(
+      publishNewPost({
         title: newPost.title,
         body: newPost.body,
         author: authStore.id,
       })
-      .then((record) => {
-        setPosts([
-          {
-            id: record.id,
-            title: record.title,
-            body: record.body,
-            authorUsername: authStore.username,
-            likesCount: 0,
-          },
-          ...posts,
-        ])
-        setShowNewPostModal(false)
-        setNewPost({ title: '', body: '' })
-      })
-      .catch(() => alert('failed to publish'))
-  }, [newPost, authStore, posts])
+    )
+    setShowNewPostModal(false)
+    setNewPost({ title: '', body: '' })
+  }, [newPost, authStore, userData, dispatch])
 
   const deletePost = (post: PostType) => {
     pb.collection('posts')
@@ -207,7 +186,10 @@ export function ProfileLayout() {
         </div>
         <div>
           <hr />
-          {posts.map((post) => (
+          {(postsStore.byAuthorId[userData.id] === undefined
+            ? []
+            : (postsStore.byAuthorId[userData.id] as PostType[])
+          ).map((post) => (
             <div className="row">
               <Post
                 className={styles.post}
@@ -253,7 +235,7 @@ export function ProfileLayout() {
         <Modal.Footer>
           <Button
             variant="primary"
-            onClick={publishNewPost}
+            onClick={publishNewPostCallback}
             aria-label={t('newPostModalPostButton')}
           >
             {t('newPostModalPostButton')}
