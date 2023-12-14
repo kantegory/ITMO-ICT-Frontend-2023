@@ -1,10 +1,16 @@
 import { Form, InputGroup, Button, Container } from 'react-bootstrap'
-import { ChangeEvent, ReactElement, useCallback, useState } from 'react'
+import { ChangeEvent, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styles from './Search.module.scss'
-import { FeedPost } from '@/components/FeedPost'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  SearchState,
+  searchByTitle,
+  searchByUsername,
+} from '@/store/slices/search'
+import { RootState } from '@/store'
 import { UserSearchResult } from '@/components/UserSearchResult'
-import { pb } from '@/constants'
+import { FeedPost } from '@/components/FeedPost'
 
 enum Filter {
   username,
@@ -14,8 +20,11 @@ enum Filter {
 export function SearchLayout() {
   const [currentFilter, setCurrentFilter] = useState<Filter>(Filter.username)
   const { t } = useTranslation('search')
-  const [searchResults, setSearchResults] = useState<ReactElement[]>()
   const [query, setQuery] = useState<string>('')
+  const dispatch = useDispatch()
+  const searchStore = useSelector<RootState>(
+    (state) => state.search
+  ) as SearchState
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const val = parseInt(e.target.value)
@@ -39,41 +48,12 @@ export function SearchLayout() {
   const search = useCallback(() => {
     switch (currentFilter) {
       case Filter.title:
-        pb.collection('posts')
-          .getFullList({
-            filter: `title~"${query}"`,
-            sort: '-created',
-            expand: 'author',
-          })
-          .then((records) => {
-            setSearchResults(
-              records
-                .map((el) => {
-                  return {
-                    authorUsername: el.expand!.author.username,
-                    body: el.body,
-                    title: el.title,
-                    id: el.id,
-                    likesCount: 0,
-                  }
-                })
-                .map((post) => <FeedPost post={post} />)
-            )
-          })
+        dispatch(searchByTitle(query))
         break
       case Filter.username:
-        pb.collection('users')
-          .getFullList({
-            filter: `username~"${query}"`,
-            sort: '-created',
-          })
-          .then((records) =>
-            setSearchResults(
-              records.map((el) => <UserSearchResult username={el.username} />)
-            )
-          )
+        dispatch(searchByUsername(query))
     }
-  }, [currentFilter, query])
+  }, [currentFilter, query, dispatch])
 
   return (
     <Container className={styles.container}>
@@ -110,7 +90,23 @@ export function SearchLayout() {
         />
       </Form>
 
-      <div className="mt-4">{searchResults}</div>
+      <div className="mt-4">
+        {currentFilter === Filter.username
+          ? searchStore.byUsername.map((el) => (
+              <UserSearchResult username={el.username} />
+            ))
+          : searchStore.byTitle
+              .map((el) => {
+                return {
+                  authorUsername: el.expand!.author.username,
+                  body: el.body,
+                  title: el.title,
+                  id: el.id,
+                  likesCount: 0,
+                }
+              })
+              .map((post) => <FeedPost post={post} />)}
+      </div>
     </Container>
   )
 }
