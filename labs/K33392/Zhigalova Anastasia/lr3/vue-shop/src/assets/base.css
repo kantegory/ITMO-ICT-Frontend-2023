@@ -1,0 +1,14 @@
+body {
+
+font-family: Roboto, sans-serif;
+font-size: 20px;
+min-width: 320px;
+background-color: var(--bg-color);
+
+}
+
+img {
+
+max-width: 100%;
+height: auto;
+}
