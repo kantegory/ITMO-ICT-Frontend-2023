@@ -65,6 +65,7 @@ form {
 	width: 50%;
 	margin: 0 auto; 
   }
+
   
   input {
 	width: 100%; 
@@ -73,7 +74,7 @@ form {
   label {
 	display: block; 
   }
-  
+
   .form-check-label {
 	margin-left: 0; 
   }
