@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: raw;
+  justify-content: space-between;
+  height: 500px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 100px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

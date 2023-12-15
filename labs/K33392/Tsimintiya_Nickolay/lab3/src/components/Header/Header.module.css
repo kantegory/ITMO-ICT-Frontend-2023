@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 130px;
+  padding-right: 130px;
+}
+
+.title {
+  color: black;
+}
+
+.inputHeader {
+  height: 35px;
+  width: 320px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(225, 213, 213);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: raw;
+  gap: 40px;
+}
+
+.headerBtn {
+  background-color: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+}
