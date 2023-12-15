@@ -4,10 +4,11 @@ import { useTranslation } from 'react-i18next'
 import { useCallback, useEffect, useState } from 'react'
 import { RootState } from '@/store'
 import { AuthState } from '@/store/slices/auth'
-import { PostType } from '@/types'
 import { FeedPost } from '@/components/FeedPost'
-import { pb } from '@/constants'
 import { useSelector } from 'react-redux'
+import { PostsState } from '@/store/slices/posts'
+import { useDispatch } from 'react-redux'
+import { fetchForYou, fetchFollowing } from '@/store/slices/posts'
 
 enum Tab {
   following,
@@ -17,69 +18,23 @@ enum Tab {
 export function FeedLayout() {
   const { t } = useTranslation('feed')
   const [currentTab, setCurrentTab] = useState<Tab>(Tab.following)
-  const [feed, setFeed] = useState<PostType[]>([])
   const authStore = useSelector<RootState>((state) => state.auth) as AuthState
+  const postsStore = useSelector<RootState>(
+    (state) => state.posts
+  ) as PostsState
+  const dispatch = useDispatch()
 
-  const fetchFollowing = useCallback(() => {
+  const fetchFollowingData = useCallback(() => {
     setCurrentTab(Tab.following)
+    dispatch(fetchFollowing(authStore.id))
+  }, [authStore, dispatch])
 
-    pb.collection('follows')
-      .getFullList({ filter: `follower="${authStore.id}"` })
-      .then((follows) => {
-        const users: string[] = follows.map((el) => el.followee)
-        if (users.length === 0) {
-          setFeed([])
-          return
-        }
-        pb.collection('posts')
-          .getFullList({
-            filter:
-              '(' + users.map((el) => `author="${el}"`).join(' || ') + ')',
-            expand: 'author',
-            sort: '-created',
-          })
-          .then((records) => {
-            setFeed(
-              records.map((el) => {
-                return {
-                  authorUsername: el.expand!.author.username,
-                  body: el.body,
-                  title: el.title,
-                  id: el.id,
-                  likesCount: 0,
-                }
-              })
-            )
-          })
-      })
-      .catch((err) => console.log(err))
-  }, [authStore])
-
-  const fetchForYou = () => {
+  const fetchForYouData = () => {
     setCurrentTab(Tab.forYou)
-
-    pb.collection('posts')
-      .getList(1, 30, {
-        sort: '-created',
-        filter: `author!="${authStore.id}"`,
-        expand: 'author',
-      })
-      .then((records) =>
-        setFeed(
-          records.items.map((el) => {
-            return {
-              authorUsername: el.expand!.author.username,
-              body: el.body,
-              title: el.title,
-              id: el.id,
-              likesCount: 0,
-            }
-          })
-        )
-      )
+    dispatch(fetchForYou(authStore.id))
   }
 
-  useEffect(fetchFollowing, [fetchFollowing])
+  useEffect(fetchFollowingData, [fetchFollowingData])
 
   return (
     <Container className={styles.container}>
@@ -88,14 +43,14 @@ export function FeedLayout() {
           <Button
             variant="dark"
             active={currentTab === Tab.following}
-            onClick={fetchFollowing}
+            onClick={fetchFollowingData}
           >
             {t('headerFollowing')}
           </Button>
           <Button
             variant="dark"
             active={currentTab === Tab.forYou}
-            onClick={fetchForYou}
+            onClick={fetchForYouData}
           >
             {t('headerForYou')}
           </Button>
@@ -103,7 +58,10 @@ export function FeedLayout() {
       </Row>
 
       <div className="posts mt-5">
-        {feed.map((post) => (
+        {(currentTab === Tab.following
+          ? postsStore.following
+          : postsStore.forYou
+        ).map((post) => (
           <Row>
             <FeedPost post={post} />
           </Row>

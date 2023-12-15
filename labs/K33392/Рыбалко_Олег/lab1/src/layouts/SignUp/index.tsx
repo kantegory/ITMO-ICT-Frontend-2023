@@ -1,11 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import styles from './SignUp.module.scss'
 import { useState, useCallback } from 'react'
-import store from '@/store'
-import { loginAction } from '@/store/slices/auth'
 import { useNavigate } from 'react-router-dom'
-import { pb } from '@/constants'
 import { SignUpDataType } from '@/types'
+import { useDispatch } from 'react-redux'
+import { createUser } from '@/store/slices/users'
 
 export function SignUpLayout() {
   const { t } = useTranslation('signup')
@@ -18,19 +17,12 @@ export function SignUpLayout() {
     password: '',
     passwordConfirm: '',
   })
+  const dispatch = useDispatch()
 
   const signUp = useCallback(() => {
-    pb.collection('users')
-      .create(userData)
-      .then((record) => {
-        store.dispatch(loginAction({ ...userData, id: record.id }))
-        navigate(`/signin`)
-      })
-      .catch((err) => {
-        console.log(err)
-        alert('failed to sign up. try again later')
-      })
-  }, [userData, navigate])
+    dispatch(createUser(userData))
+    navigate(`/signin`)
+  }, [userData, navigate, dispatch])
 
   return (
     <div
