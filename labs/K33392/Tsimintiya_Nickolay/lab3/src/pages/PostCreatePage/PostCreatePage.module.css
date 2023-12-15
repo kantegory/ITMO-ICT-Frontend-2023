@@ -1,0 +1,31 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.formInput {
+  width: 200px;
+  height: 30px;
+}
+
+.formButton {
+  background-color: rgb(92, 92, 216);
+  width: 150px;
+  border: none;
+  color: white;
+  height: 25px;
+  border-radius: 8px;
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.container {
+  width: 1050px;
+  height: fit-content;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.postCover {
+  width: 800px;
+  height: 500px;
+  border-radius: 8px;
+}
