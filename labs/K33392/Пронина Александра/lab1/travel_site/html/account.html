@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аккаунт</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .background{
+            color: black;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+
+        }
+        body {
+            min-height: 100vh;
+        }
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            user-select: none;
+        }
+        h5 {
+
+            color: #fff3cd; /* Зеленый цвет */
+            text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+            animation: fog 20s;
+        }
+        h2{
+            color: #fff3cd; /* Зеленый цвет */
+            text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+        }
+        .logo {
+            font-size: 1.75em;
+            color: #fff;
+        }
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0px;
+        }
+        .navigation a {
+            position: relative;
+            font-size: 1.25em;
+            color: #fff;
+            font-weight: 500;
+            margin-left: 75px;
+            padding: 5px 25px;
+            transition: .5s;
+        }
+        .navigation a:hover {
+            color: #fff3cd;
+            text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+        }
+        .navigation a span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff fixed;
+            border-radius: 50px;
+            z-index: -1;
+            transform: scale(0);
+            opacity: 0;
+            transition: .5s;
+        }
+        .navigation a:hover span {
+            transform: scale(1);
+            opacity: 0.25;
+        }
+        .parallax {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 115vh;
+            background: url("../css/img/background.png") center center no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            width: 100%;
+            z-index: -1;
+        }
+        #text {
+            position: fixed;
+            font-size: 5em;
+            color: #fff3cd;
+            text-shadow: 2px 4px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+        }
+
+        .parallax img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+        }
+        .parallax img#gate-left {
+            transform: translateX(-310px);
+
+        }
+        .parallax img#gate-right {
+            transform: translateX(270px);
+        ;
+        }
+        .navigation ul {
+            display: flex;
+            list-style: none;
+        }
+        .navigation ul li {
+            margin-left: 40px;
+        }
+        .navigation ul li a {
+            color: #fff;
+            font-size: 12px;
+            font-weight: 300;
+            text-decoration: none;
+        }
+        .navigation ul li a:hover {
+            color: #f1f1f1;
+        }
+        .seс {
+            position: relative;
+            background: #020912;
+            padding: 30px 100px;
+
+        }
+        .sec h2{
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .sec p{
+            font-size: 1em;
+            color: #fe3901;
+            font-weight: 300;
+            text-align: justify;
+
+        }
+    </style>
+</head>
+<body>
+<section class="parallax">
+    <h4 id="text">Let's Travel</h4>
+    <img src="../css/img/tree-left.png" id="tree-left">
+    <img src="../css/img/tree-right.png" id="tree-right">
+    <img src="../css/img/gate-left.png" id="gate-left">
+    <img src="../css/img/gate-right.png" id="gate-right">
+    <img src="../css/img/grass.png" id="grass">
+</section>
+
+<header>
+    <h5 class="logo"> Profile of $(name)</h5>
+    <nav class="navigation">
+        <a href="">Поиск путешествий<span></span></a>
+        <a href="http://localhost:63342/labs/K33392/%D0%9F%D1%80%D0%BE%D0%BD%D0%B8%D0%BD%D0%B0%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0/lab1/travel_site/html/account.html?_ijt=tc9mqhdr7k7lf0hc84lfb8klo">Мои путешествия<span></span></a>
+        <a href="http://localhost:63342/labs/K33392/%D0%9F%D1%80%D0%BE%D0%BD%D0%B8%D0%BD%D0%B0%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0/lab1/travel_site/html/setting.html?_ijt=62v8lh5t4tlf76eqjoi783hn5r">Настройки профиля<span></span></a>
+    </nav>
+</header>
+<section class="sec">
+
+</section>
+
+<script>
+    let text = document.getElementById('text');
+    let treeLeft = document.getElementById('tree-left');
+    let treeRight = document.getElementById('tree-right');
+    let gateLeft = document.getElementById('gate-left');
+    let gateRight = document.getElementById('gate-right');
+
+    window.addEventListener('scroll',()=>
+        {
+            let value = window.scrollY;
+
+            text.style.marginTop = value * 2 +'px';
+            treeLeft.style.left = value * -1.5 +'px';
+            gateLeft.style.left = value * 0.5 +'px';
+            treeRight.style.left = value * 1.5 +'px';
+            gateRight.style.left = value * -0.5 +'px';
+        }
+
+    );
+
+</script>
+
+</body>
+</html>

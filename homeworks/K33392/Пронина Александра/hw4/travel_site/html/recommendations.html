@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Рекомендации</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap">  <style>
+  .icon {      stroke: currentColor;
+    width: 24px;      height: 24px;
+    fill: none;    }
+  .icon--rotate {
+    transform: rotate(90deg);    }
+  * {      margin: 0;
+    padding: 0;      box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;    }
+  main {      position: relative;
+    width: calc(min(90rem, 90%));      margin: 0 auto;
+    min-height: 100vh;      column-gap: 3rem;
+    padding: min(20vh, 3rem) 0;    }
+  .bg {      position: fixed;
+    top: -4rem;      left: -12rem;
+    z-index: -1;      opacity: 0;
+  }    .bg2 {
+         position: fixed;      bottom: -2rem;
+         right: -3rem;
+         z-index: -1;      width: 9.375rem;
+         opacity: 0;    }
+  main > div span {      text-transform: uppercase;
+    letter-spacing: 1.5px;      font-size: 1rem;
+    color: #717171;    }
+  main > div h1 {      text-transform: capitalize;
+    letter-spacing: 0.8px;
+    font-family: "Roboto", sans-serif;      font-weight: 900;
+    font-size: clamp(3.4375rem, 3.25rem + 0.75vw, 4rem);      background-color: #005baa;
+    background-image: linear-gradient(45deg, #005baa, #000000);      background-size: 100%;
+    background-repeat: repeat;      -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;      -moz-background-clip: text;
+    -moz-text-fill-color: transparent;    }
+  main > div hr {
+    display: block;      background: #005baa;
+    height: 0.25rem;      width: 6.25rem;
+    border: none;      margin: 1.125rem 0 1.875rem 0;
+  }    main > div p {
+         line-height: 1.6;    }
+  main a {      display: inline-block;
+    text-decoration: none;      text-transform: uppercase;
+    color: #717171;      font-weight: 500;
+    background: #fff;      border-radius: 3.125rem;
+    transition: 0.3s ease-in-out;    }
+  main > div > a {      border: 2px solid #c2c2c2;
+    margin-top: 2.188rem;      padding: 0.625rem 1.875rem;
+  }    main > div > a:hover {
+         border: 0.125rem solid #005baa;      color: #005baa;
+       }    .swiper {
+              width: 100%;      padding-top: 3.125rem;
+            }    .swiper-pagination-bullet,
+                 .swiper-pagination-bullet-active {      background: #fff;
+                 }    .swiper-pagination {
+                        bottom: 1.25rem !important;    }
+  .swiper-slide {      width: 18.75rem;
+    height: 28.125rem;      display: flex;
+    flex-direction: column;      justify-content: end;
+    align-items: self-start;    }
+  .swiper-slide h2 {      color: #fff;
+    font-family: "Roboto", sans-serif;      font-weight: 400;
+    font-size: 1.4rem;      line-height: 1.4;
+    margin-bottom: 0.625rem;      padding: 0 0 0 1.563rem;
+    text-transform: uppercase;    }
+  .swiper-slide p {      color: #dadada;
+    font-family: "Roboto", sans-serif;      font-weight: 300;
+    padding: 0 1.563rem;      line-height: 1.6;
+    font-size: 0.75rem;      display: -webkit-box;
+    -webkit-line-clamp: 4;      -webkit-box-orient: vertical;
+    overflow: hidden;    }
+  .swiper-slide a {      margin: 1.25rem 1.563rem 3.438rem 1.563rem;
+    padding: 0.438em 1.875rem;      font-size: 0.9rem;
+  }    .swiper-slide a:hover {
+         color: #005baa;    }
+  .swiper-slide div {
+    display:none;
+    opacity :0 ;
+    padding-bottom :0.625 rem ;
+  }
+  .swiper-slide-active div {
+    display:block ;
+    opacity :1 ;
+  }
+  .swiper-slide--one {
+    background :linear-gradient(to top, #00227b,#00227b,#00227b00,#21212100), url("https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663146001_13-mykaleidoscope-ru-p-strani-avstralii-instagram-14.jpg")
+    no-repeat 50%50%/cover ;
+    }
+    .swiper-slide--two {
+    background :linear-gradient(to top, #00227b, #00227b, #00227b00, #21212100), url("https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663146001_13-mykaleidoscope-ru-p-strani-avstralii-instagram-14.jpg") no-repeat 50% 50%/cover;
+  }
+  .swiper-slide--three {
+    background: linear-gradient(to top, #00227b, #00227b, #00227b00, #21212100), url("https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663146001_13-mykaleidoscope-ru-p-strani-avstralii-instagram-14.jpg") no-repeat 50% 50%/cover;
+  }
+</style>
+  <title>Кнопка "назад"</title>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="back" viewBox="0 0 24 24">
+    <path d="M20 11H7.414l3.293-3.293a1 1 0 0 0-1.414-1.414l-5 5a1 1 0 0 0 0 1.414l5 5a1 1 0 0 0 1.414-1.414L7.414 13H20a1 1 0 0 0 0-2z"/>
+  </symbol>
+</svg>
+<a href="http://localhost:63343/ITMO-ICT-Frontend-2023/homeworks/K33392/%D0%9F%D1%80%D0%BE%D0%BD%D0%B8%D0%BD%D0%B0%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0/hw4/travel_site/html/account.html?_ijt=n3hdtoa6ul0kmt3joj825dotu7">
+  <svg class="icon">
+    <use xlink:href="#back"></use>
+  </svg>
+  Назад
+</a>
+<main>
+  <div>
+    <span>Рекомендации</span>
+    <h1>Лучшие места для посещения в 2022 году</h1>
+    <hr>
+    <p>Планируете отпуск? Вот список лучших мест для посещения в 2022 году. Не упустите возможность посетить эти удивительные места!</p>
+    <a href="#">Узнать больше</a>
+  </div>
+  <div class="swiper">
+    <div class="swiper-slide swiper-slide--one">
+      <h2>Австралия</h2>
+      <p>Откройте для себя удивительные пляжи, разнообразную фауну и флору и уникальную культуру Австралии.</p>
+      <a href="#">Подробнее</a>
+    </div>
+    <div class="swiper-slide swiper-slide--two">
+      <h2>Япония</h2>
+      <p>Исследуйте современные города, традиционные храмы и великолепные сады Японии.</p>
+      <a href="#">Подробнее</a>
+    </div>
+    <div class="swiper-slide swiper-slide--three">
+      <h2>Италия</h2>
+      <p>Погрузитесь в богатую историю, наслаждайтесь изысканной кухней и исследуйте живописные пейзажи Италии.</p>
+      <a href="#">Подробнее</a>
+    </div>
+  </div>
+</main>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
+</body></html>

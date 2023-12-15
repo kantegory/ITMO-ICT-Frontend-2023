@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Маршрут путешествия</title>
+  <style>
+
+    :root {
+      --map-width: 50%;
+      --map-height: 400px;
+      --map-margin-top: 40px;
+      --map-margin-left: 50px;
+      --map-z-index: 1;
+      --halloween-btn-color: #F6F8FF;
+      --halloween-btn-box-shadow: 0px 0px 10px #ff7518;
+      --halloween-btn-background: linear-gradient(120deg, #ffa801, #ff7518);
+      --halloween-btn-border-radius: 15px;
+      --halloween-btn-width: 250px;
+      --halloween-btn-height: 50px;
+      --navigation-margin-top: 20px;
+      --navigation-align-items: flex-start;
+      --navigation-margin-right: 150px;
+      --navigation-gap: 30px;
+      --navigation-a-font-size: 1.25em;
+      --navigation-a-color: #fff;
+      --navigation-a-font-weight: 500;
+      --navigation-a-transition: .5s;
+      --navigation-a-hover-color: #fff3cd;
+      --navigation-a-hover-text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+      --navigation-a-span-top: 0;
+      --navigation-a-span-left: 200px;
+      --navigation-a-span-width: 100%;
+      --navigation-a-span-height: 100%;
+      --navigation-a-span-background: #ffffff fixed;
+      --navigation-a-span-border-radius: 25px;
+      --navigation-a-span-z-index: -1;
+      --navigation-a-span-transform: scale(0);
+      --navigation-a-span-opacity: 0;
+      --navigation-a-span-transition: .5s;
+      --navigation-a-span-hover-transform: scale(1);
+      --navigation-a-span-hover-opacity: 0.25;
+      --h1-margin-top: 40px;
+      --h1-margin-left: 50px;
+      --h1-font-size: 2em;
+      --h1-color: #fff3cd;
+      --h1-text-shadow: 0px 0px 10px #fe3901, 0px 0px 20px #ff7518, 0px 0px 30px #ffa801;
+      --p-color: #fff3cd;
+      --p-margin-top: 90px;
+      --p-margin-left: 750px;
+      --background-img-background: url("../css/img/358.png") center;
+      --background-img-background-size: cover;
+      --background-img-width: 100%;
+      --background-img-height: 100%;
+      --background-img-z-index: -3;
+      --background-img-content: "";
+      --background-img-position: fixed;
+      --background-img-top: 0;
+      --background-img-left: 0;
+      --background-img-overflow: hidden;
+    }
+
+    #map {
+      width: var(--map-width);
+      height: var(--map-height);
+      margin-top: var(--map-margin-top);
+      margin-left: var(--map-margin-left);
+      z-index: var(--map-z-index);
+    }
+
+    .halloween-btn {
+      color: var(--halloween-btn-color);
+      border: none;
+      box-shadow: var(--halloween-btn-box-shadow);
+      background: var(--halloween-btn-background);
+      border-radius: var(--halloween-btn-border-radius);
+      width: var(--halloween-btn-width);
+      height: var(--halloween-btn-height);
+      cursor: pointer;
+    }
+
+    .halloween-btn:hover {
+      box-shadow: none;
+    }
+
+    .navigation {
+      display: flex;
+      margin-top: var(--navigation-margin-top);
+      flex-direction: column;
+      align-items: var(--navigation-align-items);
+      margin-right: var(--navigation-margin-right);
+      float: right;
+      gap: var(--navigation-gap);
+    }
+
+    .navigation a {
+      font-size: var(--navigation-a-font-size);
+      color: var(--navigation-a-color);
+      font-weight: var(--navigation-a-font-weight);
+      transition: var(--navigation-a-transition);
+    }
+
+    .navigation a:hover {
+      color: var(--navigation-a-hover-color);
+      text-shadow: var(--navigation-a-hover-text-shadow);
+    }
+
+    .navigation a span {
+      top: var(--navigation-a-span-top);
+      left: var(--navigation-a-span-left);
+      width: var(--navigation-a-span-width);
+      height: var(--navigation-a-span-height);
+      background: var(--navigation-a-span-background);
+      border-radius: var(--navigation-a-span-border-radius);
+      z-index: var(--navigation-a-span-z-index);
+      transform: var(--navigation-a-span-transform);
+      opacity: var
+      (--navigation-a-span-opacity);
+      transition: var(--navigation-a-span-transition);
+    }
+
+    .navigation a:hover span {
+      transform: var(--navigation-a-span-hover-transform);
+      opacity: var(--navigation-a-span-hover-opacity);
+    }
+
+    h1 {
+      margin-top: var(--h1-margin-top);
+      margin-left: var(--h1-margin-left);
+      font-size: var(--h1-font-size);
+      color: var(--h1-color);
+      text-shadow: var(--h1-text-shadow);
+    }
+
+    p {
+      color: var(--p-color);
+      margin-top: var(--p-margin-top);
+      margin-left: var(--p-margin-left);
+    }
+
+    .background-img {
+      background: var(--background-img-background);
+      background-size: var(--background-img-background-size);
+      width: var(--background-img-width);
+      height: var(--background-img-height);
+      z-index: var(--background-img-z-index);
+      content: var(--background-img-content);
+      position: var(--background-img-position);
+      top: var(--background-img-top);
+      left: var(--background-img-left);
+      overflow: var(--background-img-overflow);
+    }
+
+  </style>
+</head>
+<body>
+<div class="background-img">
+  <h1>Маршрут путешествия по городу</h1>
+  <nav class="navigation">
+    <a href="#">Мои воспоминания<span></span></a>
+    <a href="">Мои маршруты<span></span></a>
+    <a href="#">Проживание и питание<span></span></a>
+    <button type="submit" class="halloween-btn" onclick="window.location.href='http://localhost:63342/labs/K33392/%D0%9F%D1%80%D0%BE%D0%BD%D0%B8%D0%BD%D0%B0%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0/lab_2/travel_site/html/finding.html?_ijt=kg56fj745cm8oou312a6unl0m'" role="button">назад</button>
+  </nav>
+  <div id="map"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abbcefd6f30234b7cc77a40445c5c4c129e767cb8c046aaa6b4933fb9346391d0&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+  </div>
+</div>
+<script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 55.7558, lng: 37.6176 },
+      zoom: 12
+    });
+
+    var locations = [
+      {lat: 55.7558, lng: 37.6176},
+      {lat: 55.7522, lng: 37.6156},
+      {lat: 55.7517, lng: 37.6109},
+      {lat: 55.7495, lng: 37.6051},
+      {lat: 55.7539, lng: 37.6226}
+    ];
+
+    locations.forEach(function (location) {
+      new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    });
+
+    var path = new google.maps.Polyline({
+      path: locations,
+      geodesic: true,
+      strokeColor: '#ff0000',
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+    });
+
+    path.setMap(map);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Generator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 400px;
+      height: 300px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .password {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+    button {
+      width: 100%;
+      height: 40px;
+      background-color: #209cff;
+      color: #ffffff;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Password Generator</h2>
+  <div class="password"></div>
+  <button onclick="generatePassword()">Generate Password</button>
+</div>
+
+<script>
+  function generatePassword() {
+    var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+    var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var numbers = '0123456789';
+    var symbols = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
+
+    var length = 10; // Длина пароля по умолчанию
+    var password = '';
+    var characters = '';
+
+    // Получаем значение выбранной длины пароля
+    var select = document.getElementById("length");
+    length = parseInt(select.value);
+
+    // Проверяем, какие параметры выбраны
+    if (document.getElementById("lowercase").checked)
+      characters += lowercase;
+    if (document.getElementById("uppercase").checked)
+      characters += uppercase;
+    if (document.getElementById("numbers").checked)
+      characters += numbers;
+    if (document.getElementById("symbols").checked)
+      characters += symbols;
+
+    // Генерируем пароль из выбранных параметров
+    for (var i = 0; i < length; i++) {
+      var randomIndex = Math.floor(Math.random() * characters.length);
+      password += characters[randomIndex];
+    }
+
+    // Выводим сгенерированный пароль
+    var passwordField = document.querySelector(".password");
+    passwordField.textContent = password;
+  }
+</script>
+</body>
+</html>

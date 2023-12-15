@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - Настройки</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    .halloween-btn {
+        background-color: #ff7518;
+        color: #ffffff;
+        border: none;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        animation: fog 20s ;
+    }
+    .halloween-btn:hover {
+        box-shadow: none;
+    }</style>
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-4" aria-label="Настройки профиля">Настройки профиля</h1>
+
+    <form id="profileSettingsForm">
+
+        <div class="form-group">
+            <label for="username" id="username-label">Имя пользователя</label>
+            <input type="text" class="form-control" id="username" placeholder="Введите ваше имя" required aria-labelledby="username-label" aria-required="true" aria-invalid="true">
+        </div>
+
+        <div class="form-group">
+            <label for="email" id="email-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Введите ваш email" required aria-labelledby="email-label" aria-required="true">
+        </div>
+        <!-- Пароль -->
+        <div class="form-group">
+            <label for="password" id="password-label">Пароль</label>
+            <input type="password" class="form-control" id="password" placeholder="Введите ваш пароль" required aria-labelledby="password-label" aria-required="true">
+        </div>
+        <!-- Кнопка Сохранить -->
+        <button type="submit" class="halloween-btn" aria-describedby="status-message">Сохранить</button>
+    </form>
+    <div id="status-message"></div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    document.getElementById("profileSettingsForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Получение значений полей формы
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        // Здесь можно добавить код для валидации значений полей формы
+
+        let postData = {
+            username: username,
+            email: email,
+            password: password
+        };
+
+        axios.post("http://127.0.0.1:5000/save_profile_settings", postData)
+            .then(function(response) {
+                // Обработка успешного ответа от сервера
+                Swal.fire("Успешно", "Настройки профиля сохранены.", "success");
+            })
+            .catch(function(error) {
+                Swal.fire("Ошибка", "Произошла ошибка при сохранении настроек профиля.", "error");
+            });
+    });
+</script>
+</body>
+</html>

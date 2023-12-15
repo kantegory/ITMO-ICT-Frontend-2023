@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рекомендации</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=font1|font2|etc" type="text/css">
+  <style>
+
+    *,
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      color: white;
+      box-sizing: border-box;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: bold;
+    }
+
+    #toggleContainer label {
+      text-align: center;
+      width: 70px;
+    }
+
+    #container {
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+    }
+
+    #toggleContainer {
+      z-index: 1;
+      height: 10vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 95vw;
+      position: absolute;
+    }
+
+    #tilesContainer {
+      z-index: 1;
+      min-height: 90vh;
+      width: 100%;
+      margin-top: 10vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      align-content: center;
+    }
+
+    .tileItem {
+      width: 250px;
+      height: 250px;
+      margin: 5px;
+      border-radius: 5px;
+      transition: all 0.5s ease;
+    }
+
+    .tileItem:hover {
+      transform: scale(1.05);
+    }
+
+    #galleryContainer {
+      top: 30px;
+      height: 500px;
+      width: 800px;
+      background: transparent;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+    }
+
+    #toggle {
+      height: 10vh;
+      width: 200px;
+      display: flex;
+      align-items: center;
+      margin: 10px;
+    }
+
+    #tilesView {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background: url("../css/img/background.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    #galleryView {
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background: url("../css/img/background.png") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #outer3 {
+      width: 100px;
+      height: 40px;
+      background-color: white;
+      margin: 10px auto;
+      border-radius: 3px;
+      border: 2px solid white;
+      transition: all 0.5s;
+    }
+
+    #slider3 {
+      height: 36px;
+      width: 46px;
+      background-color: orange;
+      border-radius: 3px;
+      transition: all 0.5s;
+    }
+
+    #slider3.active {
+      transform: translateX(50px);
+      background-color: orange;
+    }
+
+    #outer3.outerActive {
+      background-color: white;
+      border: 2px solid white;
+    }
+
+    #mainView {
+      height: 450px;
+      width: 450px;
+      border-radius: 5px;
+      background-color: #eb9100;
+      margin-left: 10px;
+      margin-right: 10px;
+      z-index: 1;
+      transition: all 1s;
+    }
+
+    #mainView:hover {
+      transform: scale(1.2);
+    }
+
+    #leftView {
+      height: 400px;
+      width: 150px;
+      opacity: 0.5;
+      border-radius: 5px;
+      transform: skewY(5deg);
+      transform-origin: top right;
+      background-color: #eb9100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 1s;
+    }
+
+    #leftView:hover {
+      opacity: 1;
+    }
+
+    #rightView {
+      height: 400px;
+      width: 150px;
+      opacity: 0.5;
+      border-radius: 5px;
+      transform: skewY(-5deg);
+      transform-origin: top left;
+      background-color: #eb9100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 1s;
+    }
+
+    #rightView:hover {
+      opacity: 1;
+    }
+
+    .navBtns {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: none;
+      position: absolute;
+      opacity: 0.8;
+      background-color: transparent;
+      cursor: pointer;
+      color: white;
+    }
+
+    .navBtns:hover {
+      opacity: 1;
+      background-color: #eb9100;
+    }
+
+    #navLeft {
+      left: 50px;
+    }
+
+    #navRight {
+      right: 50px;
+    }
+
+    #linkTag {
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    section {
+      position: 0;
+    }
+
+  </style>
+</head>
+<body>
+<section>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide swiper-slide--one">
+        <span>domestic</span>
+        <div>
+          <h2>Enjoy the exotic of sunny Hawaii</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Maui, Hawaii
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide swiper-slide--two">
+        <span>subtropical</span>
+        <div>
+          <h2>The Island of Eternal Spring</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Lanzarote, Spanien
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper-slide--three">
+        <span>history</span>
+        <div>
+          <h2>Awesome Eiffel Tower</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Paris, France
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper-slide--four">
+        <span>Mayans</span>
+        <div>
+          <h2>One of the safest states in Mexico</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            The Yucatan, Mexico
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper-slide--five">
+        <span>native</span>
+        <div>
+          <h2>The most popular yachting destination</h2>
+          <p>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Whitsunday Islands, Australia
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<script>
+  var swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2,
+      slideShadows: true
+    },
+    keyboard: {
+      enabled: true
+    },
+    mousewheel: {
+      thresholdDelta: 70
+    },
+    spaceBetween: 60,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  });
+</script>
+  </body>
+</html>
