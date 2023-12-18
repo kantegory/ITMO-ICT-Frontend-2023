@@ -24,7 +24,7 @@ export default {
 
 <style>
 .header {
-  background-color : #352F44;
+  background-color : var(--bg-color);
   position: absolute;
   width: 100%;
   height: 60px;
@@ -34,7 +34,7 @@ export default {
   bottom: 0;
   height: 60px;
   width: 100%;
-  background-color : #2a2536;
+  background-color : var(--player-color);
 }
 .content {
   margin-bottom: 60px;
@@ -45,11 +45,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #352F44;        /* color of the tracking area */
+  background: var(--bg-color);        /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #B9B4C7;    /* color of the scroll thumb */
+  background-color: var(--text-color);    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
   border: 3px transparent;  /* creates padding around scroll thumb */
 }

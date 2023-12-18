@@ -4,11 +4,12 @@
   >
     <div class="image-cover">
       <div class="image-cover__hover_content">
-        <play-icon class="image-cover__play_icon" @click="play"/>
+        <play-icon class="image-cover__play_icon" @click="play" aria-label="Play"/>
       </div>
       <img
         :src="song.cover_url"
         class="card-img-top __image"
+        alt="Song cover"
       >
     </div>
     <div class="image-cover__song_info">
@@ -18,7 +19,7 @@
       </div>
 
       <div class="dropdown show">
-        <button role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Actions">
           <three-dots-icon/>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
