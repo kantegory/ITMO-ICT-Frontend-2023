@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/myOwnCSS.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <header>
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+         <div class="container-fluid">
+             <a class="navbar-brand" href="#">Time capsules</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                         <a class="nav-link active" aria-current="page" href="#">Home</a>
+                     </li>
+                     <li class="nav-item">
+                         <button type="button" class="btn btn-my-lightgreen me-1 " data-bs-toggle="modal" data-bs-target="#createCapsuleModal">
+                             Create capsule
+                         </button>
+                     </li>
+                 </ul>
+                 <form class="d-flex border-end border-2 me-2" role="search">
+                     <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+                     <button class="btn btn-my-lightgreen-outline me-2" type="submit">Search</button>
+                 </form>
+                 <ul class="navbar-nav">
+                     <li class="nav-item">
+                         <button type="button" class="btn btn-my-lightgreen me-1" data-bs-target="#registerModal" data-bs-toggle="modal">
+                             Register
+                         </button>
+                     </li>
+                     <li class="nav-item">
+                         <button type="button" class="btn btn-my-lightgreen-outline me-1" data-bs-target="#logInModal" data-bs-toggle="modal">
+                             Log in
+                         </button>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+     </nav>
+ </header>
+
+ <div class="container mt-3">
+     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+         <input type="radio" class="btn-check" name="btnradiot" id="btnradio1" autocomplete="off" checked>
+         <label class="btn btn-my-lightgreen-outline-v2" for="btnradio1">All capsules</label>
+
+         <input type="radio" class="btn-check" name="btnradiot" id="btnradio2" autocomplete="off">
+         <label class="btn btn-my-lightgreen-outline-v2" for="btnradio2">My capsules</label>
+
+         <input type="radio" class="btn-check" name="btnradiot" id="btnradio3" autocomplete="off">
+         <label class="btn btn-my-lightgreen-outline-v2" for="btnradio3">Opened</label>
+     </div>
+     <div class="btn-group dropend">
+         <button type="button" class="btn btn-my-lightgreen dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+             Sorted by
+         </button>
+         <ul class="dropdown-menu change-dropdown-menu-lightgreen">
+             <li><button class="dropdown-item btn-my-lightgreen active" type="button" href="#">default</button></li>
+             <li><button class="dropdown-item btn-my-lightgreen" type="button" href="#">opening date</button></li>
+             <li><a class="dropdown-item" href="#">creation date</a></li>
+             <li><a class="dropdown-item" href="#">author name</a></li>
+         </ul>
+     </div>
+ </div>
+
+ <main>
+     <div class="container">
+         <div class="row">
+             <div class="col-12 col-xl-4 col-md-6 col-sm-6 mb-3 mb-sm-0 mt-3">
+                 <div class="card border-2 change-border-lightgreen">
+                     <div class="card-header change-border-lightgreen change-bg-verylightgreen"><h5 class="card-title">Name of time capsule</h5></div>
+                     <div class="card-body">
+                         <p class="card-text text-truncate">Any time capsule text you want</p>
+                         <div class="row justify-content-between gx-1">
+                             <a href="#" class="btn btn-my-lightgreen w-25">Open</a>
+                             <a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover text-truncate w-25 g-2">@alex</a>
+                         </div>
+                     </div>
+                     <div class="card-footer">
+                         <div class="row justify-content-between gx-5">
+                             <p class="card-text w-50">Packing: <cite>25.09.21</cite></p>
+                             <p class="card-text w-50 text-success">Opening: <cite>02.11.23</cite></p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-12 col-xl-4 col-md-6 col-sm-6 mb-3 mb-sm-0 mt-3">
+                 <div class="card border-2 change-border-lightgreen">
+                     <div class="card-header change-border-lightgreen change-bg-verylightgreen"><h5 class="card-title">Really cool name</h5></div>
+                     <div class="card-body">
+                         <p class="card-text text-truncate">There is soooo long text, that's why u don`t see it full. And I will write a lot of text here, just some abnormal amount</p>
+                         <div class="row justify-content-between gx-1">
+                             <a href="#" class="btn btn-my-lightgreen w-25 disabled">Open</a>
+                             <a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover text-truncate w-25 g-2">@alex</a>
+                         </div>
+                     </div>
+                     <div class="card-footer">
+                         <div class="row justify-content-between gx-5">
+                             <p class="card-text w-50 ">Packing: <cite>25.09.21</cite></p>
+                             <p class="card-text w-50 text-warning">Opening: <cite>02.11.25</cite></p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-12 col-xl-4 col-md-6 col-sm-6 mb-3 mb-sm-0 mt-3">
+                 <div class="card border-2 change-border-lightgreen">
+                     <div class="card-header change-border-lightgreen change-bg-verylightgreen"><h5 class="card-title">A little bit long name for time capsule, but it's not a problem</h5></div>
+                     <div class="card-body">
+                         <p class="card-text text-truncate">Shrt txt</p>
+                         <div class="row justify-content-between gx-1">
+                             <a href="#" class="btn btn-my-lightgreen w-25">Open</a>
+                             <a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover text-truncate w-25 g-2">@alex</a>
+                         </div>
+                     </div>
+                     <div class="card-footer">
+                         <div class="row justify-content-between gx-5">
+                             <p class="card-text w-50 ">Packing: <cite>25.09.21</cite></p>
+                             <p class="card-text w-50 text-success">Opening: <cite>02.11.22</cite></p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-12 col-xl-4 col-md-6 col-sm-6 mb-3 mb-sm-0 mt-3">
+                 <div class="card border-2 change-border-lightgreen">
+                     <div class="card-header change-border-lightgreen change-bg-verylightgreen"><h5 class="card-title">Story about my last summer holidays</h5></div>
+                     <div class="card-body">
+                         <p class="card-text text-truncate">It all started many centuries ago...</p>
+                         <div class="row justify-content-between gx-1">
+                             <a href="#" class="btn btn-my-lightgreen w-25 disabled">Open</a>
+                             <a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover text-truncate w-25 g-2">@alex</a>
+                         </div>
+                     </div>
+                     <div class="card-footer">
+                         <div class="row justify-content-between gx-5">
+                             <p class="card-text w-50 ">Packing: <cite>25.09.21</cite></p>
+                             <p class="card-text w-50 text-warning">Opening: <cite>02.11.25</cite></p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-12 col-xl-4 col-md-6 col-sm-6 mb-3 mb-sm-0 mt-3">
+                 <div class="card border-2 change-border-lightgreen">
+                     <div class="card-header change-border-lightgreen change-bg-verylightgreen"><h5 class="card-title">How I do that fronted lab</h5></div>
+                     <div class="card-body">
+                         <p class="card-text text-truncate">And I won't tell you, think for yourself</p>
+                         <div class="row justify-content-between gx-1">
+                             <a href="#" class="btn btn-my-lightgreen w-25">Open</a>
+                             <a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover text-truncate w-25 g-2">@alex</a>
+                         </div>
+                     </div>
+                     <div class="card-footer">
+                         <div class="row justify-content-between gx-5">
+                             <p class="card-text w-50 ">Packing: <cite>25.09.21</cite></p>
+                             <p class="card-text w-50 text-success">Opening: <cite>02.11.22</cite></p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-12 col-xl-4 col-md-6 col-sm-6 mb-3 mb-sm-0 mt-3">
+                 <div class="card border-2 change-border-lightgreen">
+                     <div class="card-header change-border-lightgreen change-bg-verylightgreen"><h5 class="card-title">And some more capsule name</h5></div>
+                     <div class="card-body">
+                         <p class="card-text text-truncate">Your advertisement could be here</p>
+                         <div class="row justify-content-between gx-1">
+                             <a href="#" class="btn btn-my-lightgreen w-25">Open</a>
+                             <a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover text-truncate w-25 g-2">@alex</a>
+                         </div>
+                     </div>
+                     <div class="card-footer">
+                         <div class="row justify-content-between gx-5">
+                             <p class="card-text w-50 ">Packing: <cite>25.09.21</cite></p>
+                             <p class="card-text w-50 text-success">Opening: <cite>02.11.22</cite></p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </main>
+
+ <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-header change-bg-verylightgreen">
+                 <h1 class="modal-title fs-5" id="registrationModalLabel">Registration</h1>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+                 <div class="input-group mb-3">
+                     <span class="input-group-text">@</span>
+                     <div class="form-floating">
+                         <input type="text" class="form-control change-box-shadow-lightgreen" id="floatingInputUserNameReg" placeholder="Username">
+                         <label for="floatingInputUserNameReg">Username</label>
+                     </div>
+                 </div>
+                 <div class="form-floating mb-3">
+                     <input type="email" class="form-control change-box-shadow-lightgreen" id="floatingInputEmailReg" placeholder="name@example.com">
+                     <label for="floatingInputEmailReg">Email address</label>
+                 </div>
+                 <div class="form-floating">
+                     <input type="password" class="form-control change-box-shadow-lightgreen" id="floatingPasswordReg" placeholder="Password">
+                     <label for="floatingPasswordReg">Password</label>
+                 </div>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                 <button type="button" class="btn btn-my-lightgreen" data-bs-dismiss="modal">Register</button>
+             </div>
+         </div>
+     </div>
+ </div>
+
+ <div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-header change-bg-verylightgreen">
+                 <h1 class="modal-title fs-5" id="logInModalLabel">Log in</h1>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+                 <div class="input-group mb-3">
+                     <span class="input-group-text">@</span>
+                     <div class="form-floating">
+                         <input type="text" class="form-control change-box-shadow-lightgreen" id="floatingInputUserNameLogIn" placeholder="Username">
+                         <label for="floatingInputUserNameLogIn">Username</label>
+                     </div>
+                 </div>
+                 <div class="form-floating">
+                     <input type="password" class="form-control change-box-shadow-lightgreen" id="floatingPasswordLogIn" placeholder="Password">
+                     <label for="floatingPasswordLogIn">Password</label>
+                 </div>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                 <button type="button" class="btn btn-my-lightgreen" data-bs-dismiss="modal">Log in</button>
+             </div>
+         </div>
+     </div>
+ </div>
+
+ <div class="modal fade" id="createCapsuleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-header change-bg-verylightgreen">
+                 <h1 class="modal-title fs-5" id="createCapsuleModalLabel">Create capsule</h1>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+                 <div class="input-group mb-3">
+                     <div class="form-floating">
+                         <input type="text" class="form-control change-box-shadow-lightgreen" id="floatingInputCapsuleTitle" placeholder="Title of the capsule">
+                         <label for="floatingInputCapsuleTitle">Title</label>
+                     </div>
+                 </div>
+                 <div class="form-floating mb-3">
+                     <textarea class="form-control change-box-shadow-lightgreen" placeholder="Main text of the capsule" id="floatingInputCapsuleText"></textarea>
+                     <label for="floatingInputCapsuleText">Text</label>
+                 </div>
+                 <div class="form-floating mb-3">
+                     <input type="date" class="form-control change-box-shadow-lightgreen" id="floatingInputCapsuleOpeningDate" placeholder="Opening date">
+                     <label for="floatingInputCapsuleOpeningDate">Opening date</label>
+                 </div>
+                 <div class="input-group mb-3">
+                     <label class="input-group-text" for="inputGroupFile">Attachment</label>
+                     <input type="file" class="form-control change-box-shadow-lightgreen" id="inputGroupFile">
+                 </div>
+                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                     <input type="radio" class="btn-check" name="btnradio" id="btnRadioPublic" autocomplete="off" checked>
+                     <label class="btn btn-my-lightgreen-outline-v2" for="btnRadioPublic">Public</label>
+
+                     <input type="radio" class="btn-check" name="btnradio" id="btnRadioPrivate" autocomplete="off">
+                     <label class="btn btn-my-lightgreen-outline-v2" for="btnRadioPrivate">Private</label>
+
+                     <input type="radio" class="btn-check" name="btnradio" id="btnRadioFriendsOnly" autocomplete="off">
+                     <label class="btn btn-my-lightgreen-outline-v2" for="btnRadioFriendsOnly">Friends only</label>
+                 </div>
+             </div>
+
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                 <button type="button" class="btn btn-my-lightgreen" data-bs-dismiss="modal">Create</button>
+             </div>
+         </div>
+     </div>
+ </div>
+</body>
+</html>
