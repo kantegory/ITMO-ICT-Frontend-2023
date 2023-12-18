@@ -1,7 +1,9 @@
 <template>
   <div class="row __player_container">
     <div class="col-2 __player_section">
-      <button>
+      <button
+        aria-label="Previous"
+      >
         <skip-start-icon
           @click="playPrevious"
           :width="25"
@@ -12,6 +14,7 @@
       <button
         @click="playPause"
         v-if="isPlaying"
+        aria-label="Pause"
       >
         <pause-icon
           :width="40"
@@ -22,6 +25,7 @@
       <button
         @click="playPause"
         v-else
+        aria-label="Play"
       >
         <play-icon
           :width="40"
@@ -29,7 +33,9 @@
         />
       </button>
 
-      <button>
+      <button
+        aria-label="Next"
+      >
         <skip-end-icon
           @click="playNext"
           :width="25"
@@ -43,7 +49,7 @@
     </div>
     <div class="col-2 __player_section">
       <div class="__volume_section">
-        <button>
+        <button aria-label="Mute">
           <volume-up-icon
             @click="muteUnmute"
             v-if="!isMuted"
@@ -60,7 +66,7 @@
           />
         </button>
         <div class="__volume_drag">
-          <input v-model="volume" type="range" :min="0" :max="1" step="0.01">
+          <input aria-label="Volume" v-model="volume" type="range" :min="0" :max="1" step="0.01">
         </div>
       </div>
     </div>

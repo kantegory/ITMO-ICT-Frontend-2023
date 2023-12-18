@@ -10,6 +10,7 @@
           v-model="user.email"
           type="email"
           class="form-control __input"
+          aria-label="Email"
         >
       </div>
       <div class="mb-3">
@@ -19,6 +20,7 @@
           v-model="user.password"
           type="password"
           class="form-control __input"
+          aria-label="Password"
         >
       </div>
       <div class="form-container__buttons">
