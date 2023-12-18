@@ -179,7 +179,7 @@ export default {
   opacity: 0;
 }
 .__volume_drag input::-webkit-slider-runnable-track {
-  background: #FAF0E6;
+  background: var(--header-color);
   border-radius: 15px;
   border: none;
 }

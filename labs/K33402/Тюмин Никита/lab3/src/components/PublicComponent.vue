@@ -14,8 +14,8 @@ export default {
   max-width: 30%;
 }
 .__submit_button {
-  background-color: #FAF0E6;
-  color: #352F44;
+  background-color: var(--header-color);
+  color: var(--bg-color);
 }
 .__buttons {
   display: flex;

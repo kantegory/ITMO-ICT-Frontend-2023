@@ -11,10 +11,10 @@ export default {
 <style>
 #app {
   min-height: 100vh;
-  background-color: #352F44;
+  background-color: var(--bg-color);
 }
 html {
-  background-color: #352F44;
+  background-color: var(--bg-color);
 }
 body {
   overflow: auto;
@@ -24,24 +24,24 @@ button  {
   background-color: transparent;
 }
 h2 {
-  color: #FAF0E6;
+  color: var(--header-color);
 }
 h5, h4 {
-  color: #FAF0E6;
+  color: var(--header-color);
   margin-bottom: 0;
   margin-top: 0.5rem;
 }
 p {
-  color: #B9B4C7;
+  color: var(--text-color);
 }
 label {
-  color: #FAF0E6;
+  color: var(--header-color);
 }
 a {
-  color: #B9B4C7;
+  color: var(--text-color);
   text-decoration: none;
 }
 input {
-  background-color: #FAF0E6 !important;
+  background-color: var(--header-color) !important;
 }
 </style>

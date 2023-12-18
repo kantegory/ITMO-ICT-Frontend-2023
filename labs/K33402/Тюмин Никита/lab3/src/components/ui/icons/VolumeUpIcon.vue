@@ -3,9 +3,8 @@
        :width="width"
        :height="height"
        fill="currentColor"
-       class="bi bi-volume-up-fill"
+       class="bi bi-volume-up-fill svg-icon"
        viewBox="0 0 16 16"
-       color="#FAF0E6"
   >
     <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
     <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
@@ -26,4 +25,7 @@ export default {
 
 <style scoped>
 
+.svg-icon {
+  color: var(--header-color)
+}
 </style>
