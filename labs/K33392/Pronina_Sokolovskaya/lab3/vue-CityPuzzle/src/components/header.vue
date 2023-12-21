@@ -1,0 +1,51 @@
+<template>
+<header id="header">
+    <div class="logo_container">
+        <img src="../assets/images/logo.png">
+    </div>
+    <nav id="nav-bar">
+        <ul class="nav_links" ref="navLinks">
+            <li class="nav_item active">
+                <a href="main.html" class="nav-link">Главная</a>
+            </li>
+            <li class="nav_item">
+                <a href="shop.html" class="nav-link">Магазин</a>
+            </li>
+            <li class="nav_item">
+                <a href="#" class="nav-link">Инструкция к боту</a>
+            </li>
+            <li class="nav_item">
+                <a href="#" class="nav-link color1">Бесплатный квеcт</a>
+            </li>
+        </ul>
+    </nav>
+    <a href="#" class="link" id="account_icon" ref="userAccountLink">
+        <img src="../assets/images/account.png" alt="personal account"> 
+    </a>
+    <div class="hamburger" ref="hamburger" @click="showNavbar">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</header>
+</template>
+
+<script>
+    export default {
+        methods: {
+            showNavbar() {
+                const hamburger = this.$refs.hamburger;
+                const navLinks = this.$refs.navLinks;
+                const userAccountLink = this.$refs.userAccountLink;
+
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+                userAccountLink.classList.toggle("active");
+            }
+        }
+    };
+</script>
+
+
+<style scoped>
+</style>
