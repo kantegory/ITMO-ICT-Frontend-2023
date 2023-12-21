@@ -90,7 +90,7 @@ export default {
         checkCode() {
             this.closeModal();
             sessionStorage.setItem('status', 'loggedIn');
-            window.location.href = "user_account.html";
+            this.$router.push('/personal');
         }
     },
 }

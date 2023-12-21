@@ -6,10 +6,10 @@
     <nav id="nav-bar">
         <ul class="nav_links" ref="navLinks">
             <li class="nav_item active">
-                <a href="main.html" class="nav-link">Главная</a>
+                <router-link to="/home" class="nav-link">Главная</router-link>
             </li>
             <li class="nav_item">
-                <a href="shop.html" class="nav-link">Магазин</a>
+                <router-link to="/shop" class="nav-link">Магазин</router-link>
             </li>
             <li class="nav_item">
                 <a href="#" class="nav-link">Инструкция к боту</a>
@@ -52,7 +52,7 @@ export default {
 
         handleAccountClick() {
             if (sessionStorage.getItem("status") !== null) {
-                window.location.href = "user_account.html";
+                this.$router.push('/personal');
             } else {
                 this.$refs.enterModal.openModal('first');
             }
