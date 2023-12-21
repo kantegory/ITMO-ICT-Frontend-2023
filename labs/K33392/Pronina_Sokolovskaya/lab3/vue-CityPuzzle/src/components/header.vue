@@ -19,7 +19,7 @@
             </li>
         </ul>
     </nav>
-    <a href="#" class="link" id="account_icon" ref="userAccountLink">
+    <a href="#" class="link" id="account_icon" ref="userAccountLink" @click="handleAccountClick">
         <img src="../assets/images/account.png" alt="personal account"> 
     </a>
     <div class="hamburger" ref="hamburger" @click="showNavbar">
@@ -27,25 +27,36 @@
         <span class="bar"></span>
         <span class="bar"></span>
     </div>
+
+    <EnterModal ref="enterModal"/>
 </header>
 </template>
 
 <script>
-    export default {
-        methods: {
-            showNavbar() {
-                const hamburger = this.$refs.hamburger;
-                const navLinks = this.$refs.navLinks;
-                const userAccountLink = this.$refs.userAccountLink;
+import EnterModal from "./enterModal.vue";
 
-                hamburger.classList.toggle("active");
-                navLinks.classList.toggle("active");
-                userAccountLink.classList.toggle("active");
+export default {
+    components: { 
+        EnterModal 
+    },
+    methods: {
+        showNavbar() {
+            const hamburger = this.$refs.hamburger;
+            const navLinks = this.$refs.navLinks;
+            const userAccountLink = this.$refs.userAccountLink;
+
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+            userAccountLink.classList.toggle("active");
+        },
+
+        handleAccountClick() {
+            if (sessionStorage.getItem("status") !== null) {
+                window.location.href = "user_account.html";
+            } else {
+                this.$refs.enterModal.openModal('first');
             }
         }
-    };
+    }
+};
 </script>
-
-
-<style scoped>
-</style>
