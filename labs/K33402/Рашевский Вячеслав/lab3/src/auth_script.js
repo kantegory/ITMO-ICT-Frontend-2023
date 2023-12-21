@@ -3,7 +3,6 @@ const REGEXP_EMAIL = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 // window.addEventListener("DOMContentLoaded", updateNavigationButtons, false);
 document.addEventListener('DOMContentLoaded', () => checkAuth())
 
-
 export function checkAuth() {
     return !!localStorage.accessToken;
 

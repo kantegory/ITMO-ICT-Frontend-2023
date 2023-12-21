@@ -23,6 +23,13 @@ router.beforeEach(updateNav);
 import {useDark, useToggle} from "@vueuse/core";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
+
+function search() {
+  const searchInput = document.getElementById('searchInput');
+  const searchString = searchInput.value;
+
+  localStorage.setItem('searchString', searchString);
+}
 </script>
 
 <template>
@@ -62,7 +69,7 @@ const toggleDark = useToggle(isDark);
           </ul>
         </li>
       </ul>
-      <form class="d-flex ms-auto" role="search" id="searchForm">
+      <form class="d-flex ms-auto" role="search" id="searchForm" @submit="search">
         <input class="form-control me-2" list="datalistOptions" type="search" placeholder="Search"
                aria-label="Search" id="searchInput">
         <datalist id="datalistOptions">
@@ -79,7 +86,3 @@ const toggleDark = useToggle(isDark);
     </div>
   </nav>
 </template>
-
-<style scoped>
-
-</style>

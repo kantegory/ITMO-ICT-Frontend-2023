@@ -1,6 +1,27 @@
 <script setup>
-async function fetchServices() {
-  const response = await fetch("http://localhost:3000/services");
+if (localStorage.searchString !== "") {
+  fetchServices(localStorage.searchString);
+} else {
+  fetchServices();
+}
+</script>
+
+<template>
+  <main id="cards" class="container-fluid row  text-start">
+  </main>
+</template>
+<script>
+ async function fetchServices(searchString = "") {
+
+  let url = "http://localhost:3000/services";
+  if (searchString) {
+    const searchParams = new URLSearchParams();
+    searchParams.set('title', searchString);
+    const searchParamsString = searchParams.toString();
+    url = `${url}?${searchParamsString}`;
+  }
+
+  const response = await fetch(url);
   if (!response.ok) {
     const msg = `An error has occurred: ${response.status}, ${response.statusText}`;
     throw new Error(msg);
@@ -8,6 +29,7 @@ async function fetchServices() {
   const responseJson = await response.json();
 
   const mainContainer = document.getElementById('cards');
+  mainContainer.innerHTML = "";
   const list = document.createDocumentFragment();
   responseJson.map(function (service) {
     const div1 = document.createElement('div');
@@ -54,15 +76,6 @@ async function fetchServices() {
   });
   mainContainer.appendChild(list);
 }
-
-fetchServices();
-</script>
-
-<template>
-  <main id="cards" class="container-fluid row  text-start">
-  </main>
-</template>
-<script>
 export default {
   name: 'ServicesComponent'
 }
