@@ -20,7 +20,7 @@
         </ul>
     </nav>
     <a href="#" class="link" id="account_icon" ref="userAccountLink" @click="handleAccountClick">
-        <img src="../assets/images/account.png" alt="personal account"> 
+        <img src="../assets/images/person_icon.png" alt="personal account"> 
     </a>
     <div class="hamburger" ref="hamburger" @click="showNavbar">
         <span class="bar"></span>

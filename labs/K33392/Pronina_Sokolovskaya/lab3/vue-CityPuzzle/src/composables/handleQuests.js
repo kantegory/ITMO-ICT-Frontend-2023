@@ -31,6 +31,20 @@ export function handleQuests() {
         });
     }
 
+    const purchaseQuest = (questId) => {
+        fetch('http://127.0.0.1:8090/api/collections/purchased_quest/records', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({quest_id: questId})
+        })
+        .then(response => response.json())
+        .then(data => {
+
+        })
+    }
+
     function parseCategory(category) {
         let result = "";
         if (category === "art") {
@@ -48,6 +62,7 @@ export function handleQuests() {
     return {
         questsData,
         fetchQuests,
-        parseCategory
+        parseCategory,
+        purchaseQuest,
     };
 }

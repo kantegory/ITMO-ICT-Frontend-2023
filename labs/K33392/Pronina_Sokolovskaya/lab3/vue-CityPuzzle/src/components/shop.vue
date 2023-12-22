@@ -44,7 +44,7 @@
                                     <p class="color4 quest_description">{{ quest.duration }}</p>
                                 </div>
 
-                                <button @click="addToCart(quest.id)" class="btn btn-primary primary-button questcard-button">Купить</button>
+                                <button @click="purchaseQuest(quest.id)" class="btn btn-primary primary-button questcard-button">Купить</button>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ export default{
         const filters = ref(null);
         const filtersButton = ref(null);
 
-        const { questsData, fetchQuests, parseCategory } = handleQuests();
+        const { questsData, fetchQuests, parseCategory, purchaseQuest } = handleQuests();
 
         onMounted(() => {
             fetchQuests();
@@ -181,7 +181,7 @@ export default{
             }).filter(Boolean);
         });
 
-        return { questsData, parseCategory, searchFilter, filteredQuests, displayFilters, filterByCategory, displayFiltered, displayAllCards, filters, filtersButton };
+        return { questsData, parseCategory, searchFilter, filteredQuests, displayFilters, filterByCategory, displayFiltered, displayAllCards, filters, filtersButton, purchaseQuest };
     },
 }
 

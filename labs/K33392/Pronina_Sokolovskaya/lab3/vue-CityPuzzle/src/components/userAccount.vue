@@ -101,6 +101,10 @@
                 <div class="card user_quests bg-color5">
                     <p class="user_quest_text">Купленные квесты</p>
                     <div class="user_quests_items" id="purchased_items">
+                        <div v-for="quest in purchasedQuestsData" :key="quest.id" class="card user_quest_item">
+                            <img src="../assets/images/questimg1.jpg">
+                            <p class="user_quest_name">{{ quest.name }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,7 +115,22 @@
 </template>
 
 <script>
+import { onMounted, ref } from 'vue';
+import { handleAccount } from '../composables/handleAccount'
+
 export default {
+    setup() {
+        const { fetchQuests, purchasedQuestsData } = handleAccount();
+
+        onMounted(() => {
+            fetchQuests();
+        });
+
+        console.log(purchasedQuestsData);
+
+        return { purchasedQuestsData };
+    },
+
     methods: {
         showNavbar() {
             const hamburger = this.$refs.hamburger;
@@ -125,6 +144,6 @@ export default {
             sessionStorage.clear();
             this.$router.push('/home');
         }
-    }
+    },
 };
 </script>
