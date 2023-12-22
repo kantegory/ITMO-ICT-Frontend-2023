@@ -5,6 +5,7 @@ import { usersApi } from "@/api";
 const capsulesStore = defineStore('capsules', {
     state: () => ({
         capsules: [],
+        capsule: {},
         sorting: "allCapsules"
     }),
 
@@ -27,6 +28,13 @@ const capsulesStore = defineStore('capsules', {
         async createCapsule(data){
             const response = await capsulesApi.createCapsule(data)
             //this.capsules = response.data
+            return response
+        },
+
+        async loadOneCapsuleById(data){
+            const response = await capsulesApi.getOneCapsuleById(data)
+            this.capsule = response.data[0]
+            console.log(response)
             return response
         },
 

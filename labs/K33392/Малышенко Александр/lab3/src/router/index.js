@@ -1,5 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import usersStore from "@/stores/users.js";
+import {createRouter, createWebHistory} from 'vue-router'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,10 +16,6 @@ const router = createRouter({
             component: () => import('../views/profilePage.vue')
         }
     ]
-})
-
-router.beforeEach(async (to, from) => {
-    const store = usersStore()
 })
 
 export default router

@@ -1,12 +1,10 @@
-import data from "bootstrap/js/src/dom/data.js";
-
-class CapsulesApi{
+class CapsulesApi {
     constructor(instance) {
         this.API = instance
     }
 
     getAllCapsules = async (searchString = '') => {
-        if (!searchString){
+        if (!searchString) {
             return this.API({
                 url: '/capsules'
             })
@@ -15,11 +13,15 @@ class CapsulesApi{
                 url: `/capsules?title=${searchString}`
             })
         }
-
-
     }
 
-    getPublicCapsules = async (data) =>{
+    getOneCapsuleById = async (data) => {
+        return this.API({
+            url: `/capsules?id=${data}`
+        })
+    }
+
+    getPublicCapsules = async (data) => {
         return this.API({
             url: '/capsules?capsuleAvailability=public'
         })
@@ -30,7 +32,7 @@ class CapsulesApi{
             method: 'POST',
             url: '/capsules',
             data,
-            headers: { 'Content-Type': 'application/json' }
+            headers: {'Content-Type': 'application/json'}
         })
     }
 }

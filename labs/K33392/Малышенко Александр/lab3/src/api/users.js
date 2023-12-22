@@ -1,6 +1,4 @@
-import data from "bootstrap/js/src/dom/data.js";
-
-class UsersApi{
+class UsersApi {
     constructor(instance) {
         this.API = instance
     }
@@ -22,7 +20,7 @@ class UsersApi{
             method: 'POST',
             url: '/users',
             data,
-            headers: { 'Content-Type': 'application/json' }
+            headers: {'Content-Type': 'application/json'}
         })
     }
 
