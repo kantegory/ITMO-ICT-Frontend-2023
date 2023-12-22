@@ -1,0 +1,1081 @@
+@font-face {
+    font-family: Bebas Neue Cyrillic;
+    src: url(../fonts/ofont.ru_Bebas_Neue.ttf);
+}
+
+* {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+===========================================
+Header
+===========================================
+*/
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 150px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--bg-color1);
+    z-index: 69;
+}
+
+.logo_container {
+    width: 150px;
+}
+
+.logo_container img {
+    width: 100%;
+}
+
+/*
+===========================================
+Hamburger
+===========================================
+*/
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px auto;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: var(--bg-color-accent1);
+}
+
+/*
+===========================================
+Navigation
+===========================================
+*/
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-link {
+    font-size: 24px;
+    color: var(--text-color1);
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links .nav_item a:hover {
+    color: var(--text-color1);
+    text-decoration: underline;
+}
+
+.nav_links .nav_item.active a {
+    color: var(--text-color2);
+}
+
+.nav_links .nav_item a.color1:hover {
+    color: var(--text-color-accent1);
+}
+
+.nav_links_column {
+    padding-top: 99px;
+    padding-left: 67px;
+    gap: 92px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    background-color: var(--bg-color1);
+}
+
+/*
+===========================================
+Typography
+===========================================
+*/
+
+h1 {
+    font-size: 120px;
+    line-height: 0.5;
+}
+
+h2 {
+    font-size: 100px;
+    line-height: 0.6;
+}
+
+h2.text-subtitle {
+    font-family: "Caveat", sans-serif;
+}
+
+h3 {
+    font-size: 80px;
+    padding: 78px 0;
+}
+
+h3.no-padding {
+    padding: 0;
+}
+
+h4 {
+    font-size: 50px;
+}
+
+h5 {
+    font-size: 35px;
+}
+
+h6 {
+    font-size: 30px;
+}
+
+p {
+    font-family: 'Caveat', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+}
+
+p .highlight {
+    display: inline-block;
+    height: 60px;
+    padding-right: 3px;
+    border-radius: 24px;
+
+    line-height: 60px;
+    color: var(--text-color3);
+    font-family: 'Caveat', sans-serif;
+}
+
+.number p {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-size: 200px;
+    text-shadow: 0px 4px 4px #0000002c;
+
+    margin: 40px 0;
+}
+
+.greeting_card p {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-size: 60px;
+}
+
+.footer_link {
+    font-family: 'Caveat', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.footer_group {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 30px;
+    text-align: left;
+    margin: 25px 0;
+}
+
+p.copy {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 35px;
+}
+
+p.price {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 40px;
+}
+
+p.quest_description {
+    font-size: 25px;
+    font-weight: 400;
+    text-align: left;
+}
+
+p.filter {
+    font-size: 20px;
+}
+
+.filters p {
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.stats_number  {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 40px;
+}
+.stats_desc  {
+    font-family: 'Caveat', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.user_quest_text {
+    font-family: 'Caveat', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 37px;
+    padding-top: 6px;
+    color: var(--text-color2);
+}
+
+.user_quest_name {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-color4);
+    line-height: 1.5;
+}
+
+.form_title {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+.form_label {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.form_clue_text {
+    font-family: "Caveat", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-color4);
+}
+
+.form_clue_highlighted {
+    color: var(--text-color-accent2);
+    text-decoration: underline;
+}
+
+.code_label {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+/*
+===========================================
+Colors
+===========================================
+*/
+
+.color1 {
+    color: var(--text-color-accent1);
+}
+
+.color2 {
+    color: var(--text-color-accent2);
+}
+
+.color3 {
+    color: var(--text-color1);
+}
+
+.color4 {
+    color: var(--text-color4);
+}
+
+.bg-color1 {
+    background-color: var(--bg-color-accent1);
+}
+
+.bg-color2 {
+    background-color: var(--bg-color-accent2);
+}
+
+.bg-color3 {
+    background-color: var(--bg-color-accent3)
+}
+
+.bg-color4 {
+    background-color: var(--bg-color2);
+}
+
+.bg-color5 {
+    background-color: var(--bg-color3);
+}
+
+
+
+/*
+===========================================
+Main page
+===========================================
+*/
+
+
+/*
+===========================================
+User account page
+===========================================
+*/
+
+.user_account_body {
+    display: flex;
+    flex-direction: column;
+}
+.greeting_card {
+    border: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 68px;
+    justify-content: flex-start;
+    width: 100%;
+    height: 199px;
+    margin-top: 97px;
+    border-radius: 24px
+}
+
+.user_stats {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 113px;
+}
+
+.stats_item {
+    width: 300px;
+    height: 119px;
+    border-radius: 20px;
+    /*margin-top: 113px;*/
+    display: flex;
+    flex-direction: row;;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 22px;
+}
+
+.stats_item img {
+    width: 79px;
+    height: 79px;
+}
+
+.stats_text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+
+
+.user_quest_item img {
+    height: 127px;
+    width: 127px;
+    border-radius: 30px;
+}
+
+.user_quest_item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color3);
+    border: 0;
+    gap: 12px;
+}
+
+.user_quests_items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 23px;
+    padding-left: 37px;
+    padding-top: 5px;
+}
+
+.user_quests {
+    width: 100%;
+    border-radius: 24px;
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 6px;
+    gap:5px;
+    border: 0;
+}
+
+.user_account_body {
+    padding-bottom: 150px;
+}
+
+/*
+===========================================
+About Us
+===========================================
+*/
+
+img.center {
+    display: block;
+    margin: 107px auto;
+}
+
+/*
+===========================================
+Links page
+===========================================
+*/
+
+.qrcode {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.qrcode img {
+    width: 638px;
+}
+
+/*
+===========================================
+Numbers page
+===========================================
+*/
+
+.numbers_page {
+    margin-bottom: 50px;
+}
+
+/*
+===========================================
+Footer
+===========================================
+*/
+
+footer {
+    background-color: var(--bg-color4);
+    padding: 50px 0;
+}
+
+.footer_links li a.footer_link {
+    margin-top: 100px;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.social_nets {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_icon {
+    width: 38px;
+}
+
+/*
+===========================================
+Buttons
+===========================================
+*/
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    margin: 33px 0;
+}
+
+.btn-primary {
+    --bs-btn-active-bg: #FEBA00;
+}
+
+.primary-button {
+    background-color: var(--bg-color-accent1);
+    border: 0;
+    width: 415px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+.primary-button:hover {
+    background-color: var(--bg-color-accent1);
+    text-decoration: underline;
+}
+
+.primary-button:active {
+    background-color: var(--bg-color-accent1);
+    text-decoration: none;
+}
+
+.primary-button:focus {
+    background-color: var(--bg-color1);
+    color: var(--text-color-accent1);
+    text-decoration: underline;
+    border: 0;
+}
+
+.outline-button {
+    width: 415px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.outline-button:hover {
+    background-color: transparent;
+    text-decoration: underline;
+    color: var(--text-color3);
+    border: 1px solid #fff;
+}
+
+.primary-button:active {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.outline-button:active {
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+
+.questcard-button {
+    height: 38px;
+    font-size: 25px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 20px;
+    /*right: 0;*/
+    /*margin-bottom: 50px;*/
+
+    width: 80%;
+}
+
+.button-filters {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: var(--text-color5);
+    font-family: 'Caveat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.category-button {
+    border: 0;
+    background-color: var(--bg-color3);
+    border-radius: 30px;
+    padding: 2px 15px;
+
+    color: var(--text-color4);
+    font-family: 'Caveat', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.category-button.chosen {
+    background-color: var(--bg-color-accent2);
+    color: var(--text-color3);
+}
+
+.primary-button:active {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+#submit_btn {
+    width: 80%;
+    height: 10%;
+    font-size: 20px;
+    border: 0px;
+    padding: 10px 50px;
+    background-color: var(--bg-color-accent1);
+    border-radius: 90px;
+    margin-top: 30px;
+    color: var(--text-color3);
+}
+
+#submit_code_btn {
+    width: 80%;
+    height: 10%;
+    font-size: 20px;
+    border: 0px;
+    padding: 10px 50px;
+    background-color: var(--bg-color-accent1);
+    border-radius: 90px;
+    margin-top: 30px;
+    color: var(--text-color3);
+}
+
+#submit_btn:hover, #submit_code_btn:hover {
+    text-decoration: underline;
+}
+
+#submit_btn:active, #submit_code_btn:active {
+    text-decoration: underline;
+}
+
+#submit_btn:focus, #submit_code_btn:focus {
+    background-color: var(--bg-color4);
+    color: var(--text-color4);
+    text-decoration: underline;
+}
+
+/*
+===========================================
+Quests
+===========================================
+*/
+
+.quest-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    gap: 70px;
+}
+
+.quest-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color3);
+    border-radius: 30px;
+    filter: drop-shadow(0 4px 4px #0000002c);
+    margin-top: 25px;
+    margin-bottom: 100px;
+    height: 770px;
+    position: relative;
+}
+
+.quest-card img {
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+}
+
+.quest-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 0 32px;
+}
+
+.hide {
+    display: none;
+}
+
+.search-form {
+    background-color: var(--bg-color3);
+    background-image: url(./images/searchIcon.svg);
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    text-indent: 50px;
+    border: 0px;
+    border-radius: 30px;
+    margin: 50px 0;
+    height: 50px;
+    font-family: 'Caveat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: none;
+}
+
+.search-form:active {
+    box-shadow: none;
+    background-color: var(--bg-color3);
+}
+
+.search-form::placeholder {
+    font-family: 'Caveat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.filters {
+    display: none;
+    margin-top: 30px;
+}
+
+.category-filter {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/*
+===========================================
+Enter modal window
+===========================================
+*/
+
+
+.enter_form {
+    display: flex;
+    flex-direction:  column;
+    justify-content: space-between;
+    /*align-content: center;*/
+    align-items: flex-start;
+}
+
+
+.input_email {
+    width: 60vw;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--bg-color5);
+
+}
+
+/* The Modal (background) */
+.enter_modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: var(--bg-color6); /* Fallback color */
+    background-color: var(--bg-color6-opacity)    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.enter_modal_content {
+    background-color: var(--bg-color3);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: var(--text-color6);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--text-color5);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+===========================================
+Media
+===========================================
+*/
+@media (max-width: 1008px) {
+    #header {
+        padding: 10px 36px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 146px;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 123px;
+        line-height: 1;
+    }
+
+    h2.text-subtitle {
+        font-family: "Caveat", sans-serif;
+        margin-top: -100px;
+    }
+
+    h4 {
+        font-size: 70px;
+        line-height: 1.1;
+    }
+
+    p {
+        font-size: 60px;
+    }
+
+    #about_us p.color3 {
+        color: var(--text-color5);
+    }
+
+    li,
+    a {
+        font-size: 14px;
+    }
+
+    .link {
+        padding: 10px 20px;
+        position: fixed;
+        left: -100%;
+        top: 510px;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        background-color: var(--bg-color1);
+    }
+
+    .link img {
+        width: 84px;
+    }
+
+    .link.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(18px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-18px) rotate(-45deg);
+    }
+
+    .hamburger .bar {
+        width: 60px;
+        height: 6px;
+        margin: 12px auto;
+    }
+
+    .nav_links {
+        position: fixed;
+        left: -100%;
+        top: 190px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        background-color: var(--bg-color1);
+        z-index: 40;
+    }
+
+    .nav-link {
+        font-size: 50px;
+    }
+
+    .nav_item {
+        margin: 8px 0;
+    }
+
+    .nav_links.active {
+        left: 0;
+    }
+
+    .primary-button,
+    .outline-button {
+        width: 830px;
+        height: 130px;
+        font-size: 60px;
+        margin-top: 50px;
+        border-radius: 90px;
+    }
+
+    #submit_btn {
+        width: 80%;
+        height: 10%;
+        font-size: 20px;
+        color: var(--text-color3);
+        border: 0px;
+        padding: 10px 0;
+        background-color: var(--bg-color-accent1);
+        border-radius: 90px;
+        margin-top: 30px;
+    }
+
+    #submit_code_btn {
+        width: 80%;
+        height: 10%;
+        font-size: 20px;
+        color: var(--text-color3);
+        border: 0px;
+        padding: 10px 0;
+        background-color: var(--bg-color-accent1);
+        border-radius: 90px;
+        margin-top: 30px;
+    }
+
+    .questcard-button {
+        width: 80%;
+        height: 38px;
+        font-size: 25px;
+    }
+
+    .logo_container img {
+        width: 300px;
+    }
+
+    .main_page {
+        height: calc(100vh - 190px);
+    }
+
+    .user_stats {
+        margin-top: 70px;
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .stats_item {
+        width: 95%;
+        height: 130px;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        border: 0px;
+        /*padding-left: 22px;*/
+    }
+
+    .stats_item img {
+        width: 79px;
+        height: 79px;
+    }
+
+    .stats_text {
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+/*
+===========================================
+Code input modal window
+===========================================
+*/
+
+.code_input_modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: var(--bg-color6);
+    background-color: var(--bg-color6-opacity);
+}
+
+.code_input_modal_content {
+    background-color: var(--bg-color3);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+
+
+form {
+    border: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 0;
+}
+
+input[data-number-code-input] + input[data-number-code-input] {
+    margin-left: 0.9rem;
+}
+
+input[data-number-code-input] {
+    width: 2.8rem;
+    height: 3rem;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #d6d6d6;
+    border-radius: 0.2rem;
+    color: var(--text-color7);
+    font-weight: 500;
+}
+
+input[data-number-code-input]:focus {
+    outline: none !important;
+    border:1px solid #2d8cf0;
+    box-shadow: 0 0 3px 2px #bddcfc;
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[data-number-code-input]::-webkit-outer-spin-button,
+input[data-number-code-input]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[data-number-code-input] {
+    -moz-appearance: textfield;
+}
