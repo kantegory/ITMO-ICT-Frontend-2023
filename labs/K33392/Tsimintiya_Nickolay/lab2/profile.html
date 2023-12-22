@@ -53,8 +53,8 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="images/prof_placeholder.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4>Mr. X</h4>
-                      <p class="text-secondary mb-1">Head of the Mystery Inc.</p>
+                      <h4 id = "name">Mr. X</h4>
+                      <p class="text-secondary mb-1" id = "descr">Head of the Mystery Inc.</p>
                     </div>
                   </div>
                 </div>
@@ -68,7 +68,7 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0">Full Name</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9 text-secondary" id = "fullname">
                       classifield
                     </div>
                   </div>
@@ -77,7 +77,7 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0">Email</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9 text-secondary" id = "mail">
                       classifield
                     </div>
                   </div>
@@ -86,16 +86,7 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0">Phone</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
-                      ***********
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Mobile</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9 text-secondary" id = "phone">
                       ***********
                     </div>
                   </div>
@@ -157,4 +148,30 @@
 <a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
 
 </body>
+
+<script src="dist/pocketbase.umd.js"></script>
+<script type="text/javascript">
+  const pb = new PocketBase('http://127.0.0.1:8090');
+
+  async function getProfile() {
+    username = document.getElementById("name")
+    description = document.getElementById("descr")
+    fullname = document.getElementById("fullname")
+    mail = document.getElementById("mail")
+    phone = document.getElementById("phone")
+
+    const response = await pb.collection('users').getList();
+    const users = response.items
+    const user = users[0]
+    
+    username.innerHTML = `${user.username}`
+    description.innerHTML = `${user.Description}`
+    fullname.innerHTML = `${user.name}`
+    mail.innerHTML = `${user.email}`
+    phone.innerHTML = `${user.phone}`
+  }
+
+  getProfile();
+</script>
+
 </html>
