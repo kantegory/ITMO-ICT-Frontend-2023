@@ -71,31 +71,4 @@ nav a:first-of-type {
   }
 }
 
-.dark body {
-  background-color: #222;
-}
-
-.dark .card, .dark span {
-  background-color: #222;
-  color: #fff;
-  border-color: #fff;
-}
-
-.dark .card ul, .dark .card li, .dark .card ul li {
-  background-color: #222;
-  color: #fff;
-  border-color: #fff;
-}
-
-.dark .navbar * {
-  background-color: #222;
-  color: #fff;
-  border-color: #fff;
-}
-
-.dark .navbar input.form-control {
-  background-color: #fff;
-  color: #fff;
-  border-color: #fff;
-}
 </style>

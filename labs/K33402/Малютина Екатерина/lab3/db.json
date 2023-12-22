@@ -47,6 +47,24 @@
       "about": "desc",
       "login": "kate@mail.ru",
       "id": 6
+    },
+    {
+      "nickname": "Kate",
+      "about": "Kate",
+      "login": "kate@mail.ru",
+      "id": 7
+    },
+    {
+      "nickname": "Kate",
+      "about": "Kate",
+      "login": "kate@mail.ru",
+      "id": 8
+    },
+    {
+      "nickname": "Kate",
+      "about": "Kate",
+      "login": "kate@mail.ru",
+      "id": 9
     }
   ],
   "articles": [

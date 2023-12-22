@@ -1,7 +1,6 @@
 <script setup>
 import router from "@/router";
 import {checkAuth, exit} from "@/auth_script.js";
-import {fetchArticles} from "@/components/HomeComp.vue";
 
 function updateNav() {
   const account = document.getElementById('accountLink');
@@ -33,7 +32,7 @@ const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-  <nav class="navbar container-fluid navbar-expand-md navbar-dark bg-dark m-0" data-bs-theme="dark">
+  <nav class="navbar container-fluid navbar-expand-md navbar-dark bg-dark m-0">
       <RouterLink to="/" class="navbar-brand">
         <img src="@/assets/вход_фото.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
         MyBlOGGg

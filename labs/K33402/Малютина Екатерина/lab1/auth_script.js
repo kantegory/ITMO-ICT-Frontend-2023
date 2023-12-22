@@ -25,7 +25,7 @@ function signinUser() {
     }
 }
 
-function registerUser() {
+function 1registerUser() {
     const passwordField = document.getElementById("password-up")
     const passwordConfirmationField = document.getElementById("confirmation-password-up")
     const emailField = document.getElementById("email-up")
@@ -46,16 +46,16 @@ function registerUser() {
     }
 }
 
-function exit() {
+function exit1() {
     localStorage.setItem("loggedIn", "false");
     updateNavigationButtons();
 }
 
-function isUserLoggedIn() {
+function isUserLoggedIn1() {
     return localStorage.getItem("loggedIn") === "true";
 }
 
-function updateNavigationButtons() {
+function updateNavigationButtons1() {
     const auth = document.getElementById("authBtn")
     const account = document.getElementById("accountBtn")
     const exit = document.getElementById("exitBtn")
@@ -71,7 +71,7 @@ function updateNavigationButtons() {
     }
 }
 
-function setUserLoggedIn(status) {
+function setUserLoggedIn1(status) {
     localStorage.setItem("loggedIn", status);
     updateNavigationButtons();
 }

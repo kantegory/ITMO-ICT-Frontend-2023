@@ -47,7 +47,7 @@ export async function fetchArticles(searchString = "") {
     pText.innerHTML = `${article.text}`;
 
     const p = document.createElement('p');
-    p.className = "card-text text-body-secondary";
+    p.className = "card-text ";
     p.innerHTML = `${article.author}`;
 
     divBody.appendChild(h5Title);
