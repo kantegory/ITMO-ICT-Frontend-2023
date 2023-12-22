@@ -6,10 +6,10 @@
     <nav id="nav-bar">
         <ul class="nav_links" ref="navLinks">
             <li class="nav_item active">
-                <a href="main.html" class="nav-link">Главная</a>
+                <router-link to="/home" class="nav-link">Главная</router-link>
             </li>
             <li class="nav_item">
-                <a href="shop.html" class="nav-link">Магазин</a>
+                <router-link to="/shop" class="nav-link">Магазин</router-link>
             </li>
             <li class="nav_item">
                 <a href="#" class="nav-link">Инструкция к боту</a>
@@ -19,7 +19,7 @@
             </li>
         </ul>
     </nav>
-    <a href="#" class="link" id="account_icon" ref="userAccountLink">
+    <a href="#" class="link" id="account_icon" ref="userAccountLink" @click="handleAccountClick">
         <img src="../assets/images/account.png" alt="personal account"> 
     </a>
     <div class="hamburger" ref="hamburger" @click="showNavbar">
@@ -27,25 +27,36 @@
         <span class="bar"></span>
         <span class="bar"></span>
     </div>
+
+    <EnterModal ref="enterModal"/>
 </header>
 </template>
 
 <script>
-    export default {
-        methods: {
-            showNavbar() {
-                const hamburger = this.$refs.hamburger;
-                const navLinks = this.$refs.navLinks;
-                const userAccountLink = this.$refs.userAccountLink;
+import EnterModal from "./enterModal.vue";
 
-                hamburger.classList.toggle("active");
-                navLinks.classList.toggle("active");
-                userAccountLink.classList.toggle("active");
+export default {
+    components: { 
+        EnterModal 
+    },
+    methods: {
+        showNavbar() {
+            const hamburger = this.$refs.hamburger;
+            const navLinks = this.$refs.navLinks;
+            const userAccountLink = this.$refs.userAccountLink;
+
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+            userAccountLink.classList.toggle("active");
+        },
+
+        handleAccountClick() {
+            if (sessionStorage.getItem("status") !== null) {
+                this.$router.push('/personal');
+            } else {
+                this.$refs.enterModal.openModal('first');
             }
         }
-    };
+    }
+};
 </script>
-
-
-<style scoped>
-</style>
