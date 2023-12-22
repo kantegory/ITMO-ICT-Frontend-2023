@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио</title>
+    <meta name="description"
+          content="Это портфолио пользователя. Просмотрите работы, редактируйте профиль и многое другое.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="scripts/theme-switcher.js"></script>
+    <link rel="stylesheet" href="styles/profile-styles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <img src="images/logo.png" alt="Логотип компании" class="img-fluid" style="max-height: 50px;" width="50"
+         height="50">
+    <a class="navbar-brand" href="#">Портфолио</a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Главная</a>
+            </li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <img src="" alt="Фото профиля" class="img-fluid rounded-circle"
+             style="width: 40px; height: 40px; margin-right: 10px;" id="avatar-small" onclick="toggleDropdown()"
+             width="40" height="40">
+
+        <ul class="dropdown-menu" id="avatar-dropdown">
+            <li><a class="dropdown-item" id="logout-link">Выйти</a></li>
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row" id="full_avatar"></div>
+            <img src="" alt="Фото профиля" class="img-fluid rounded-circle mb-3" id="avatar-full" width="350"
+                 height="350">
+
+            <h3 id="user-name">Имя пользователя</h3>
+            <div class="color-fg-muted mt-2 d-flex flex-items-center" id="company-name-container">
+                <svg class="icon">
+                    <use xlink:href="images/icons.svg#ic_company"></use>
+                </svg>
+                <p id="company-name"></p>
+            </div>
+
+            <div class="color-fg-muted mt-2 d-flex flex-items-center" id="location-container">
+                <svg class="icon">
+                    <use xlink:href="images/icons.svg#ic_location"></use>
+                </svg>
+                <p id="location"></p>
+            </div>
+            <button class="btn btn-outline-secondary" id="edit-profile-button">Редактировать профиль</button>
+
+            <div id="edit-profile-form" style="display: none;">
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="new-username">Новое имя пользователя:</label>
+                        <input type="text" class="form-control" id="new-username" name="new-username">
+                    </div>
+                    <div class="color-fg-muted mt-2 d-flex flex-items-center">
+                        <img src="images/ic_company.svg"
+                             style="max-width: 100px; height: auto;">
+                        <input class="ml-2 form-control flex-auto input-sm" placeholder="Company" aria-label="Company"
+                               name="company" value="" id="new-company">
+                    </div>
+                    <div class="color-fg-muted mt-2 d-flex flex-items-center">
+                        <img src="images/ic_location.svg"
+                             style="max-width: 100px; height: auto;">
+                        <input class="ml-2 form-control flex-auto input-sm" placeholder="Location" aria-label="Location"
+                               name="location" value="" id="new-location">
+                    </div>
+                    <button type="submit" class="btn btn-success mt-3">Сохранить</button>
+                    <button type="button" class="btn btn-outline-secondary mt-3" id="cancel-edit">Отменить</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <h2>Работы пользователя</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#addImageModal">
+                        <div style=" border-radius: 32px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div style="border-radius: 32px; max-width: 220px; text-align: center;">
+                                <img src="images/ic_add.svg" alt="Добавьте файлы"
+                                     style="max-width: 100px " width="40" height="40">
+                                <div>Выберите файл или кликните здесь</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="images"></div>
+
+        </div>
+
+
+
+    </div>
+</div>
+
+<!-- Модальное окно для увеличения изображения -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">Увеличенное изображение</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="Увеличенное изображение" class="modal-image">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-right-container">
+    <svg class="themeIcon" id="themeIcon" role="img">
+        <use xlink:href="images/icons.svg#ic_moon"></use>
+    </svg>
+</div>
+<div class="modal fade" id="addImageModal" tabindex="-1" aria-labelledby="addImageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addImageModalLabel">Добавить изображение</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="uploadImage(event)" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="imageFile" class="form-label">Выберите файл изображения (jpg/png):</label>
+                        <input type="file" class="form-control" id="imageFile" name="imageFile" accept=".jpg, .jpeg, .png">
+                    </div>
+                    <div class="mb-3">
+                        <label for="imageTitle" class="form-label">Название изображения:</label>
+                        <input type="text" class="form-control" id="imageTitle" name="imageTitle">
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Добавить</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts/profile-script.js"></script>
+</body>
+</html>
