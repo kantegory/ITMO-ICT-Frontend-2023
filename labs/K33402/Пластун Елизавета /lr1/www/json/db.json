@@ -181,22 +181,16 @@
   ],
   "users": [
     {
-      "id": "1",
       "email": "lizaplastun@gmail.com",
-      "password": "fdghjk56dFfe",
-      "name": "Oleg oleg"
+      "password": "fdghjk56dFfe"
     },
     {
-      "id": "2",
       "email": "lizaplastunn@gmail.com",
-      "password": "fdghjk56dFfe",
-      "name": "Liza"
+      "password": "fdghjk56dFfe"
     },
     {
-      "id": "3",
       "email": "lizaplaastun@gmail.com",
-      "password": "fdghjk56dFfe",
-      "name": "JJJJJJJ"
+      "password": "fdghjk56dFfe"
     }
   ]
 }
