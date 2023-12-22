@@ -1,0 +1,116 @@
+<template>
+  <div class="container mt-5 d-flex justify-content-center align-items-center">
+    <h2>Вход</h2>
+    <form @submit.prevent="login">
+      <div class="mb-3">
+        <input v-model="email" type="email" class="form-control" placeholder="Введите email" aria-describedby="emailHelp" autocomplete="off">
+      </div>
+      <div class="mb-3">
+        <input v-model="password" type="password" class="form-control" placeholder="Введите пароль" autocomplete="on">
+      </div>
+      <button type="submit" class="halloween-btn">Войти</button>
+    </form>
+  </div>
+  <div class="fog"></div>
+</template>
+
+<script>
+import useLogin from './composable/useLogin';
+
+export default {
+  name: 'HelloWorld',
+  setup() {
+    const { email, password, login } = useLogin();
+
+    return {
+      email,
+      password,
+      login
+    };
+  }
+};
+</script>
+
+<style>
+.container {
+  margin-top: 50px;
+  max-width: 400px;
+  position: relative;
+}
+.fog {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: repeat-x;
+  background-image: url("../fog-2.png");
+  background: url("../background.png") center center;
+  background-size: cover;
+  z-index: -1;
+  animation: fog 7s;
+}
+@keyframes fog {
+  0% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.form {
+  position: relative;
+  z-index: 1;
+}
+.halloween-btn {
+  background-color: #ff7518;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  animation: fog 5s;
+}
+.halloween-btn:hover {
+  box-shadow: none;
+}
+/* Custom CSS for neon letters */
+h2 {
+  color: #fff3cd; /* Зеленый цвет */
+  text-shadow: 0px 0px 10px #ff7518, 0px 0px 20px #ff7518, 0px 0px 30px #ff7518;
+  animation: fog 5s;
+}
+.form-control {
+  color: #ff7518; /* Зеленый цвет */
+  background-color: #ffffff; /* Черный фон */
+  border-color: #ff7518; /* Зеленая граница */
+  box-shadow: 0px 0px 10px #ff7518;
+  animation: fog 5s;
+}
+.form-control:not(:last-child) {
+  margin-bottom: 20px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.fog:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.75) 100%
+  );
+}
+</style>
