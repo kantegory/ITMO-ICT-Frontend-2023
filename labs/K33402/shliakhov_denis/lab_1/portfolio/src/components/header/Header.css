@@ -1,3 +1,7 @@
 .header {
     width: 100vw;
 }
+
+.navTittles {
+    flex-basis: auto;
+}

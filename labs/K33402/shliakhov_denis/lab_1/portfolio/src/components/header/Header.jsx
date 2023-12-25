@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import SearchBar from "../searchbar/SearchBar";
 import "./Header.css"
 import {ThemeContext} from "../../ThemeProvider";
+import {Icon} from "../icon/Icon";
 
 function Header() {
     const [theme,setTheme] = useContext(ThemeContext)
@@ -17,11 +18,12 @@ function Header() {
         <Navbar collapseOnSelect expand="lg" className="header mb-2">
             <Container className={"d-flex justify-content-start px-2"}>
                 <Col className={"d-flex"} >
-                    <h3>Портфолио</h3>
+                    <Icon height={40} width={40} id="portfolio"></Icon>
+                    <h2>Портфолио</h2>
                 </Col>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Col className={"d-flex justify-content-center"}>
+                    <Col className={"navTittles d-flex justify-content-center"}>
                         <Nav className={"d-flex align-items-center"}>
                             <Link className="mx-2 active" to={"/"}
                                   style={{
@@ -45,7 +47,10 @@ function Header() {
                         <SearchBar/>
                     </Col>
                     <Col className="d-flex justify-content-center">
-                        <Button onClick={handleTheme}>Переключить тему</Button>
+                        <Button style={{backgroundColor : "transparent" , borderColor: "transparent"}} onClick={handleTheme}>
+                            <Icon height={40} width={40} id={theme === "light" ? "darkSun" : "lightMoon"}></Icon>
+                        </Button>
+
                     </Col>
                 </Navbar.Collapse>
             </Container>
