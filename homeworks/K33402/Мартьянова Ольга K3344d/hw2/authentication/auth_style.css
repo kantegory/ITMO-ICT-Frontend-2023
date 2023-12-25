@@ -1,0 +1,37 @@
+.light-background {
+    min-height: 100vh;
+}
+
+.form-control {
+    margin-bottom: 7px;
+    margin-right: 8px;
+}
+
+.auth-container{
+    margin: 3% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-form, .link-container {
+    border: 1px solid #8f241341;
+    padding: 20px;
+    background-color: #f4f1f1d3;
+    border-radius: 10px;
+    margin: 15px 0px;
+}
+
+@media (max-width: 425px) {
+    .navbar {
+        margin: 0 0.5%;
+    }
+}
+
+@media (max-width: 530px) {
+
+    .light-background {
+        height: 150vh;
+        padding: 0;
+    }
+}
