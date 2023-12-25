@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeVault</title>
+
+    <link type="Image/x-icon" href="/img/logo/Logo_INC_Black-O.ico" rel="icon">
+
+    <link rel="stylesheet" href="/../css/bootstrap.min.css">
+    <link rel="stylesheet" href="/../css/light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="/../css/dark.css" media="(prefers-color-scheme: dark)">
+
+    <link rel="stylesheet" href="/../css/profileMyStyle.css">
+</head>
+<body onload="loadProfilePage(event, 0)">
+    <header class="rounded">
+      <div class="row">
+        <div class="col-12 justify-s-b"> 
+          <div class="col-xl-9 col-md-7 col-sm-5 justify-f-s me-2" >
+            <h1>TimeVault</h1>
+          </div>
+          <div class="col-xl-3 col-md-5 col-sm-7 justify-s-a"> 
+            <button type="button" class="btn btn-lg btn-my-main" onclick="location.href='/html/index.html';">На главную</button>
+            <button type="button" class="btn btn-lg btn-my-logout" onclick="LogOut(event)">Выйти</button>
+          </div>
+          
+      </div>
+    </header>
+
+    <main class="rounded">
+      <div class="card col-12" id="profileCard">
+        
+      </div>
+    </main>
+
+    <footer class="rounded text-lg-start">
+          <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)" aria-hidden="True">
+        © 2023 Copyright:
+        <a class="text-white" href="index.html">TimeVault</a>
+      </div>
+    </footer>
+
+    <svg>
+      <symbol id="redactIcon" viewBox="0 0 16 16">
+        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+      </symbol>
+    </svg>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/loadPages.js"></script>
+    <script src="/js/index.js"></script>
+    
+</body>
+</html>
