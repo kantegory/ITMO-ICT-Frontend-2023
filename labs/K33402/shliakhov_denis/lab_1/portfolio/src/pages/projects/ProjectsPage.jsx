@@ -36,7 +36,7 @@ function ProjectsPage() {
     const handleShow = () => setShow(true)
 
     if (isLoading) {
-        return <Container>
+        return <Container className="loading">
             <Row>
                 <Col>
                     <h1>Загрузка...</h1>
@@ -46,7 +46,7 @@ function ProjectsPage() {
     }
 
     return (
-        <Container className="" style={{height: "100%"}}>
+        <Container className="projects" style={{height: "100%", minHeight: "100%" , minWidth: "100%"}}>
             <Row>
                 <Col className="d-flex justify-content-center" md={12}>
                     <h1>Мои проекты</h1>
@@ -56,7 +56,7 @@ function ProjectsPage() {
                 </Col>
             </Row>
 
-            <Row className={"myProjectsCol"}>
+            <Row className={"myProjectsCol"} style={{height: "100%"}}>
                 {data.length !== 0 ? data.map((project) =>
                         <Project name={project.name} description={project.description}
                                  image={project.image !== "" ? project.image : defaultImage}

@@ -6,3 +6,8 @@
     padding-right: calc(var(--bs-gutter-x) * .5);
     padding-left: calc(var(--bs-gutter-x) * .5);
 }
+
+.loading {
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+}

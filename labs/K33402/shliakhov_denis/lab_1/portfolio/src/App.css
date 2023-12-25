@@ -1,0 +1,24 @@
+.container-fluid {
+    --bs-gutter-x : 0
+}
+body {
+    --header-background-color : #ffffff;
+    --header-text-color : #000536;
+
+    --main-background-color : #ffffff;
+    --main-text-color : #000536;
+
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
+
+}
+
+body.dark {
+
+    --header-background-color : #000536;
+    --header-text-color : #ffffff;
+
+    --main-background-color : #000536;
+    --main-text-color : #ffffff;
+
+}

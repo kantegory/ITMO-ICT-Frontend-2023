@@ -8,6 +8,7 @@ import SearchResultPage from "./pages/search/SearchResultPage";
 import {Container} from "react-bootstrap";
 import {useSelector} from "react-redux";
 import AccountPage from "./pages/account/AccountPage";
+import "./App.css"
 
 function App() {
 
