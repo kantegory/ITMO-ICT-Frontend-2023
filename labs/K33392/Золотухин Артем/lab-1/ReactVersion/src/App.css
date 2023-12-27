@@ -12,7 +12,6 @@
 }
 
 .about,
-.about_page,
 .blog,
 .notes,
 .search,
@@ -26,6 +25,13 @@
   color: #fff;
 }
 
+.open-menu-icon {
+  color: white;
+  padding-left: 24px;
+  width: 45.61px !important;
+  height: 45.61px !important;
+}
+
 /* Top Navbar CSS */
 .navbar {
   background-color: #2e2e47;
@@ -33,6 +39,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.navbar-elements {
+  padding-left: 0;
+  width: 65%;
 }
 
 /* Top Navbar icons */
@@ -50,7 +61,7 @@
   align-items: center;
   position: fixed;
   background-color: #2e2e47;
-  width: 200px;
+  width: 160px;
   height: 100vh;
   top: 0;
   left: -100%;
@@ -60,7 +71,6 @@
 
 .navbar_logo {
   display: flex;
-  justify-content: center;
   align-items: center;
   padding-bottom: 16px;
 }

@@ -19,7 +19,7 @@
     },
     {
       "id": 1,
-      "gender": "Demi-woman",
+      "gender": "Women",
       "first_name": "Mya",
       "last_name": "Hansen",
       "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
@@ -36,7 +36,7 @@
     },
     {
       "id": 2,
-      "gender": "F2M",
+      "gender": "Man",
       "first_name": "Chance",
       "last_name": "Walsh",
       "avatar": "https://randomuser.me/api/portraits/men/2.jpg",
@@ -53,7 +53,7 @@
     },
     {
       "id": 3,
-      "gender": "Cisgender woman",
+      "gender": "Woman",
       "first_name": "Berenice",
       "last_name": "Berge",
       "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
@@ -70,7 +70,7 @@
     },
     {
       "id": 4,
-      "gender": "Demi-woman",
+      "gender": "Women",
       "first_name": "Declan",
       "last_name": "Lowe-Emard",
       "avatar": "https://randomuser.me/api/portraits/men/4.jpg",
@@ -104,7 +104,7 @@
     },
     {
       "id": 6,
-      "gender": "Two-spirit person",
+      "gender": "Man",
       "first_name": "Furman",
       "last_name": "Kemmer",
       "avatar": "https://randomuser.me/api/portraits/men/6.jpg",
@@ -121,7 +121,7 @@
     },
     {
       "id": 7,
-      "gender": "Demi-woman",
+      "gender": "Women",
       "first_name": "Cordell",
       "last_name": "Bauch",
       "avatar": "https://randomuser.me/api/portraits/men/7.jpg",
@@ -138,7 +138,7 @@
     },
     {
       "id": 8,
-      "gender": "Demi-boy",
+      "gender": "Man",
       "first_name": "Quinn",
       "last_name": "Miller",
       "avatar": "https://randomuser.me/api/portraits/men/8.jpg",
@@ -155,7 +155,7 @@
     },
     {
       "id": 9,
-      "gender": "Bigender",
+      "gender": "Trans",
       "first_name": "Velda",
       "last_name": "Walsh",
       "avatar": "https://randomuser.me/api/portraits/men/9.jpg",
@@ -189,7 +189,7 @@
     },
     {
       "id": 11,
-      "gender": "Cisgender",
+      "gender": "Trans",
       "first_name": "Patrick",
       "last_name": "Kuhlman",
       "avatar": "https://randomuser.me/api/portraits/men/11.jpg",
@@ -212,7 +212,7 @@
     },
     {
       "id": 12,
-      "gender": "Androgynous",
+      "gender": "Trans",
       "first_name": "Madison",
       "last_name": "Veum",
       "avatar": "https://randomuser.me/api/portraits/men/12.jpg",
@@ -229,7 +229,7 @@
     },
     {
       "id": 13,
-      "gender": "Intersex woman",
+      "gender": "Man",
       "first_name": "Jan",
       "last_name": "Franey",
       "avatar": "https://randomuser.me/api/portraits/men/13.jpg",
@@ -246,7 +246,7 @@
     },
     {
       "id": 14,
-      "gender": "Cisgender male",
+      "gender": "Trans",
       "first_name": "Drake",
       "last_name": "Kiehn",
       "avatar": "https://randomuser.me/api/portraits/men/14.jpg",
@@ -263,7 +263,7 @@
     },
     {
       "id": 15,
-      "gender": "Demi-man",
+      "gender": "Man",
       "first_name": "Caroline",
       "last_name": "Miller",
       "avatar": "https://randomuser.me/api/portraits/men/15.jpg",
@@ -280,7 +280,7 @@
     },
     {
       "id": 16,
-      "gender": "Two-spirit",
+      "gender": "Man",
       "first_name": "Brooks",
       "last_name": "Wuckert",
       "avatar": "https://randomuser.me/api/portraits/men/16.jpg",
@@ -297,7 +297,7 @@
     },
     {
       "id": 17,
-      "gender": "Cis male",
+      "gender": "Man",
       "first_name": "Raymond",
       "last_name": "Abernathy",
       "avatar": "https://randomuser.me/api/portraits/men/17.jpg",
@@ -314,7 +314,7 @@
     },
     {
       "id": 18,
-      "gender": "Intersex",
+      "gender": "Trans",
       "first_name": "Lorenz",
       "last_name": "Wintheiser",
       "avatar": "https://randomuser.me/api/portraits/men/18.jpg",
@@ -331,7 +331,7 @@
     },
     {
       "id": 19,
-      "gender": "Transexual person",
+      "gender": "Trans",
       "first_name": "Ila",
       "last_name": "Ritchie",
       "avatar": "https://randomuser.me/api/portraits/men/19.jpg",
@@ -348,7 +348,7 @@
     },
     {
       "id": 20,
-      "gender": "Transexual female",
+      "gender": "Woman",
       "first_name": "Laverne",
       "last_name": "Little",
       "avatar": "https://randomuser.me/api/portraits/men/20.jpg",
@@ -365,7 +365,7 @@
     },
     {
       "id": 21,
-      "gender": "Cisgender female",
+      "gender": "Trans",
       "first_name": "Sophie",
       "last_name": "Runolfsson",
       "avatar": "https://randomuser.me/api/portraits/men/21.jpg",
@@ -399,7 +399,7 @@
     },
     {
       "id": 23,
-      "gender": "Androgynous",
+      "gender": "Trans",
       "first_name": "Trever",
       "last_name": "Rolfson",
       "avatar": "https://randomuser.me/api/portraits/men/23.jpg",
@@ -416,7 +416,7 @@
     },
     {
       "id": 24,
-      "gender": "Cis male",
+      "gender": "Man",
       "first_name": "Talon",
       "last_name": "Beier",
       "avatar": "https://randomuser.me/api/portraits/men/24.jpg",
@@ -433,7 +433,7 @@
     },
     {
       "id": 25,
-      "gender": "Female to male transgender man",
+      "gender": "Man",
       "first_name": "Anibal",
       "last_name": "Johnson-Hayes",
       "avatar": "https://randomuser.me/api/portraits/men/25.jpg",
@@ -450,7 +450,7 @@
     },
     {
       "id": 26,
-      "gender": "Demi-boy",
+      "gender": "Man",
       "first_name": "Albertha",
       "last_name": "Hodkiewicz",
       "avatar": "https://randomuser.me/api/portraits/men/26.jpg",
@@ -467,7 +467,7 @@
     },
     {
       "id": 27,
-      "gender": "Polygender",
+      "gender": "Woman",
       "first_name": "Dorothy",
       "last_name": "Upton-Greenfelder",
       "avatar": "https://randomuser.me/api/portraits/men/27.jpg",
@@ -484,7 +484,7 @@
     },
     {
       "id": 28,
-      "gender": "Trigender",
+      "gender": "Woman",
       "first_name": "Brigitte",
       "last_name": "Dach",
       "avatar": "https://randomuser.me/api/portraits/men/28.jpg",
@@ -501,7 +501,7 @@
     },
     {
       "id": 29,
-      "gender": "MTF",
+      "gender": "Woman",
       "first_name": "Mossie",
       "last_name": "Swaniawski",
       "avatar": "https://randomuser.me/api/portraits/men/29.jpg",
@@ -518,7 +518,7 @@
     },
     {
       "id": 30,
-      "gender": "Demi-man",
+      "gender": "Man",
       "first_name": "Brett",
       "last_name": "Simonis",
       "avatar": "https://randomuser.me/api/portraits/men/30.jpg",
@@ -535,7 +535,7 @@
     },
     {
       "id": 31,
-      "gender": "Gender fluid",
+      "gender": "Woman",
       "first_name": "Audra",
       "last_name": "Kshlerin",
       "avatar": "https://randomuser.me/api/portraits/men/31.jpg",
@@ -552,7 +552,7 @@
     },
     {
       "id": 32,
-      "gender": "Trans female",
+      "gender": "Trans",
       "first_name": "Dock",
       "last_name": "Larson",
       "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
@@ -569,7 +569,7 @@
     },
     {
       "id": 33,
-      "gender": "Transexual female",
+      "gender": "Woman",
       "first_name": "Mervin",
       "last_name": "Fahey",
       "avatar": "https://randomuser.me/api/portraits/men/33.jpg",
@@ -586,7 +586,7 @@
     },
     {
       "id": 34,
-      "gender": "Male to female transgender woman",
+      "gender": "Woman",
       "first_name": "Camryn",
       "last_name": "Heller-Hodkiewicz",
       "avatar": "https://randomuser.me/api/portraits/men/34.jpg",
@@ -603,7 +603,7 @@
     },
     {
       "id": 35,
-      "gender": "Demi-boy",
+      "gender": "Man",
       "first_name": "Richie",
       "last_name": "Jaskolski",
       "avatar": "https://randomuser.me/api/portraits/men/35.jpg",
@@ -620,7 +620,7 @@
     },
     {
       "id": 36,
-      "gender": "Two-spirit person",
+      "gender": "Man",
       "first_name": "Jordan",
       "last_name": "Dicki",
       "avatar": "https://randomuser.me/api/portraits/men/36.jpg",
@@ -637,7 +637,7 @@
     },
     {
       "id": 37,
-      "gender": "FTM",
+      "gender": "Man",
       "first_name": "Dusty",
       "last_name": "Bins",
       "avatar": "https://randomuser.me/api/portraits/men/37.jpg",
@@ -654,7 +654,7 @@
     },
     {
       "id": 38,
-      "gender": "Female to male trans man",
+      "gender": "Female to male Man",
       "first_name": "Otto",
       "last_name": "Schowalter",
       "avatar": "https://randomuser.me/api/portraits/men/38.jpg",
@@ -671,7 +671,7 @@
     },
     {
       "id": 39,
-      "gender": "Transgender person",
+      "gender": "Trans",
       "first_name": "Oran",
       "last_name": "Tillman",
       "avatar": "https://randomuser.me/api/portraits/men/39.jpg",
@@ -688,7 +688,7 @@
     },
     {
       "id": 40,
-      "gender": "Intersex person",
+      "gender": "Trans",
       "first_name": "Fay",
       "last_name": "Larson-Lockman",
       "avatar": "https://randomuser.me/api/portraits/men/40.jpg",
@@ -705,7 +705,7 @@
     },
     {
       "id": 41,
-      "gender": "Neutrois",
+      "gender": "Trans",
       "first_name": "Ollie",
       "last_name": "Gislason",
       "avatar": "https://randomuser.me/api/portraits/men/41.jpg",
@@ -728,7 +728,7 @@
     },
     {
       "id": 42,
-      "gender": "Androgyne",
+      "gender": "Trans",
       "first_name": "Wilber",
       "last_name": "Schmidt",
       "avatar": "https://randomuser.me/api/portraits/men/42.jpg",
@@ -745,7 +745,7 @@
     },
     {
       "id": 43,
-      "gender": "Male to female",
+      "gender": "Woman",
       "first_name": "Edyth",
       "last_name": "Spinka",
       "avatar": "https://randomuser.me/api/portraits/men/43.jpg",
@@ -768,7 +768,7 @@
     },
     {
       "id": 44,
-      "gender": "Transgender female",
+      "gender": "Woman",
       "first_name": "Jedidiah",
       "last_name": "Rempel",
       "avatar": "https://randomuser.me/api/portraits/men/44.jpg",
@@ -791,7 +791,7 @@
     },
     {
       "id": 45,
-      "gender": "Androgyne",
+      "gender": "Trans",
       "first_name": "Alvis",
       "last_name": "Bernier",
       "avatar": "https://randomuser.me/api/portraits/men/45.jpg",
@@ -808,7 +808,7 @@
     },
     {
       "id": 46,
-      "gender": "Non-binary",
+      "gender": "Woman",
       "first_name": "Jocelyn",
       "last_name": "Carroll",
       "avatar": "https://randomuser.me/api/portraits/men/46.jpg",
@@ -842,7 +842,7 @@
     },
     {
       "id": 48,
-      "gender": "Cisgender male",
+      "gender": "Trans",
       "first_name": "Alexa",
       "last_name": "Rohan",
       "avatar": "https://randomuser.me/api/portraits/men/48.jpg",
@@ -859,7 +859,7 @@
     },
     {
       "id": 49,
-      "gender": "Omnigender",
+      "gender": "Woman",
       "first_name": "Lexi",
       "last_name": "Cremin",
       "avatar": "https://randomuser.me/api/portraits/men/49.jpg",
@@ -876,7 +876,7 @@
     },
     {
       "id": 50,
-      "gender": "Xenogender",
+      "gender": "Woman",
       "first_name": "Ollie",
       "last_name": "Feil",
       "avatar": "https://randomuser.me/api/portraits/men/50.jpg",
@@ -893,7 +893,7 @@
     },
     {
       "id": 51,
-      "gender": "Two* person",
+      "gender": "Man",
       "first_name": "Lazaro",
       "last_name": "Tillman",
       "avatar": "https://randomuser.me/api/portraits/men/51.jpg",
@@ -910,7 +910,7 @@
     },
     {
       "id": 52,
-      "gender": "MTF",
+      "gender": "Woman",
       "first_name": "Jordyn",
       "last_name": "Ebert",
       "avatar": "https://randomuser.me/api/portraits/men/52.jpg",
@@ -927,7 +927,7 @@
     },
     {
       "id": 53,
-      "gender": "Trans man",
+      "gender": "Man",
       "first_name": "Stephany",
       "last_name": "Wyman",
       "avatar": "https://randomuser.me/api/portraits/men/53.jpg",
@@ -950,7 +950,7 @@
     },
     {
       "id": 54,
-      "gender": "Pangender",
+      "gender": "Man",
       "first_name": "Gregory",
       "last_name": "Lang",
       "avatar": "https://randomuser.me/api/portraits/men/54.jpg",
@@ -967,7 +967,7 @@
     },
     {
       "id": 55,
-      "gender": "Cisgender male",
+      "gender": "Trans",
       "first_name": "Sofia",
       "last_name": "Hegmann",
       "avatar": "https://randomuser.me/api/portraits/men/55.jpg",
@@ -984,7 +984,7 @@
     },
     {
       "id": 56,
-      "gender": "Bigender",
+      "gender": "Trans",
       "first_name": "Russ",
       "last_name": "Rippin",
       "avatar": "https://randomuser.me/api/portraits/men/56.jpg",
@@ -1007,7 +1007,7 @@
     },
     {
       "id": 57,
-      "gender": "Gender questioning",
+      "gender": "Woman",
       "first_name": "Hillary",
       "last_name": "Schowalter",
       "avatar": "https://randomuser.me/api/portraits/men/57.jpg",
@@ -1030,7 +1030,7 @@
     },
     {
       "id": 58,
-      "gender": "Trigender",
+      "gender": "Woman",
       "first_name": "Matt",
       "last_name": "Sipes",
       "avatar": "https://randomuser.me/api/portraits/men/58.jpg",
@@ -1047,7 +1047,7 @@
     },
     {
       "id": 59,
-      "gender": "Intersex woman",
+      "gender": "Man",
       "first_name": "Marcelo",
       "last_name": "Fahey",
       "avatar": "https://randomuser.me/api/portraits/men/59.jpg",
@@ -1064,7 +1064,7 @@
     },
     {
       "id": 60,
-      "gender": "Trans person",
+      "gender": "Trans",
       "first_name": "Bella",
       "last_name": "Robel",
       "avatar": "https://randomuser.me/api/portraits/men/60.jpg",
@@ -1081,7 +1081,7 @@
     },
     {
       "id": 61,
-      "gender": "Two-spirit person",
+      "gender": "Man",
       "first_name": "Franco",
       "last_name": "Schultz",
       "avatar": "https://randomuser.me/api/portraits/men/61.jpg",
@@ -1098,7 +1098,7 @@
     },
     {
       "id": 62,
-      "gender": "Multigender",
+      "gender": "Man",
       "first_name": "Itzel",
       "last_name": "Gleason",
       "avatar": "https://randomuser.me/api/portraits/men/62.jpg",
@@ -1115,7 +1115,7 @@
     },
     {
       "id": 63,
-      "gender": "Female to male transsexual man",
+      "gender": "Man",
       "first_name": "Mia",
       "last_name": "Kautzer",
       "avatar": "https://randomuser.me/api/portraits/men/63.jpg",
@@ -1132,7 +1132,7 @@
     },
     {
       "id": 64,
-      "gender": "Male to female trans woman",
+      "gender": "Woman",
       "first_name": "Vivianne",
       "last_name": "Goyette",
       "avatar": "https://randomuser.me/api/portraits/men/64.jpg",
@@ -1166,7 +1166,7 @@
     },
     {
       "id": 66,
-      "gender": "Intersex woman",
+      "gender": "Man",
       "first_name": "Irwin",
       "last_name": "Stamm",
       "avatar": "https://randomuser.me/api/portraits/men/66.jpg",
@@ -1183,7 +1183,7 @@
     },
     {
       "id": 67,
-      "gender": "Genderqueer",
+      "gender": "Woman",
       "first_name": "Antonia",
       "last_name": "Funk",
       "avatar": "https://randomuser.me/api/portraits/men/67.jpg",
@@ -1200,7 +1200,7 @@
     },
     {
       "id": 68,
-      "gender": "Pangender",
+      "gender": "Man",
       "first_name": "Kathlyn",
       "last_name": "Boyer",
       "avatar": "https://randomuser.me/api/portraits/men/68.jpg",
@@ -1217,7 +1217,7 @@
     },
     {
       "id": 69,
-      "gender": "Transexual person",
+      "gender": "Trans",
       "first_name": "Darien",
       "last_name": "Dietrich",
       "avatar": "https://randomuser.me/api/portraits/men/69.jpg",
@@ -1234,7 +1234,7 @@
     },
     {
       "id": 70,
-      "gender": "Bigender",
+      "gender": "Trans",
       "first_name": "Loyal",
       "last_name": "Schroeder",
       "avatar": "https://randomuser.me/api/portraits/men/70.jpg",
@@ -1251,7 +1251,7 @@
     },
     {
       "id": 71,
-      "gender": "Intersex man",
+      "gender": "Man",
       "first_name": "Daron",
       "last_name": "Moore",
       "avatar": "https://randomuser.me/api/portraits/men/71.jpg",
@@ -1268,7 +1268,7 @@
     },
     {
       "id": 72,
-      "gender": "Transexual woman",
+      "gender": "Woman",
       "first_name": "Thomas",
       "last_name": "Hayes",
       "avatar": "https://randomuser.me/api/portraits/men/72.jpg",
@@ -1285,7 +1285,7 @@
     },
     {
       "id": 73,
-      "gender": "Trans man",
+      "gender": "Man",
       "first_name": "Mckenna",
       "last_name": "Bins",
       "avatar": "https://randomuser.me/api/portraits/men/73.jpg",
@@ -1302,7 +1302,7 @@
     },
     {
       "id": 74,
-      "gender": "Demi-man",
+      "gender": "Man",
       "first_name": "Aryanna",
       "last_name": "Schowalter",
       "avatar": "https://randomuser.me/api/portraits/men/74.jpg",
@@ -1319,7 +1319,7 @@
     },
     {
       "id": 75,
-      "gender": "Androgynous",
+      "gender": "Trans",
       "first_name": "Kirsten",
       "last_name": "Kertzmann",
       "avatar": "https://randomuser.me/api/portraits/men/75.jpg",
@@ -1342,7 +1342,7 @@
     },
     {
       "id": 76,
-      "gender": "Two-spirit person",
+      "gender": "Man",
       "first_name": "Aniya",
       "last_name": "Schuppe",
       "avatar": "https://randomuser.me/api/portraits/men/76.jpg",
@@ -1359,7 +1359,7 @@
     },
     {
       "id": 77,
-      "gender": "Trans man",
+      "gender": "Man",
       "first_name": "Cheyanne",
       "last_name": "Moen",
       "avatar": "https://randomuser.me/api/portraits/men/77.jpg",
@@ -1382,7 +1382,7 @@
     },
     {
       "id": 78,
-      "gender": "Gender fluid",
+      "gender": "Woman",
       "first_name": "Arianna",
       "last_name": "Cole",
       "avatar": "https://randomuser.me/api/portraits/men/78.jpg",
@@ -1399,7 +1399,7 @@
     },
     {
       "id": 79,
-      "gender": "Cisgender",
+      "gender": "Trans",
       "first_name": "Johanna",
       "last_name": "Harris",
       "avatar": "https://randomuser.me/api/portraits/men/79.jpg",
@@ -1416,7 +1416,7 @@
     },
     {
       "id": 80,
-      "gender": "Genderflux",
+      "gender": "Woman",
       "first_name": "Myrtle",
       "last_name": "Stehr",
       "avatar": "https://randomuser.me/api/portraits/men/80.jpg",
@@ -1439,7 +1439,7 @@
     },
     {
       "id": 81,
-      "gender": "Trans male",
+      "gender": "Trans",
       "first_name": "Jaylan",
       "last_name": "Fahey",
       "avatar": "https://randomuser.me/api/portraits/men/81.jpg",
@@ -1473,7 +1473,7 @@
     },
     {
       "id": 83,
-      "gender": "Gender neutral",
+      "gender": "Woman",
       "first_name": "Lacy",
       "last_name": "Ruecker",
       "avatar": "https://randomuser.me/api/portraits/men/83.jpg",
@@ -1490,7 +1490,7 @@
     },
     {
       "id": 84,
-      "gender": "Omnigender",
+      "gender": "Woman",
       "first_name": "Herminio",
       "last_name": "Heidenreich",
       "avatar": "https://randomuser.me/api/portraits/men/84.jpg",
@@ -1507,7 +1507,7 @@
     },
     {
       "id": 85,
-      "gender": "Demi-girl",
+      "gender": "Woman",
       "first_name": "Perry",
       "last_name": "O'Connell",
       "avatar": "https://randomuser.me/api/portraits/men/85.jpg",
@@ -1524,7 +1524,7 @@
     },
     {
       "id": 86,
-      "gender": "Androgyne",
+      "gender": "Trans",
       "first_name": "Kavon",
       "last_name": "Casper",
       "avatar": "https://randomuser.me/api/portraits/men/86.jpg",
@@ -1541,7 +1541,7 @@
     },
     {
       "id": 87,
-      "gender": "F2M",
+      "gender": "Man",
       "first_name": "Kameron",
       "last_name": "Jenkins",
       "avatar": "https://randomuser.me/api/portraits/men/87.jpg",
@@ -1558,7 +1558,7 @@
     },
     {
       "id": 88,
-      "gender": "Gender fluid",
+      "gender": "Woman",
       "first_name": "Aliyah",
       "last_name": "Moore",
       "avatar": "https://randomuser.me/api/portraits/men/88.jpg",
@@ -1575,7 +1575,7 @@
     },
     {
       "id": 89,
-      "gender": "Xenogender",
+      "gender": "Woman",
       "first_name": "Heber",
       "last_name": "Connelly",
       "avatar": "https://randomuser.me/api/portraits/men/89.jpg",
@@ -1592,7 +1592,7 @@
     },
     {
       "id": 90,
-      "gender": "Gender fluid",
+      "gender": "Woman",
       "first_name": "Ubaldo",
       "last_name": "Lehner",
       "avatar": "https://randomuser.me/api/portraits/men/90.jpg",
@@ -1609,7 +1609,7 @@
     },
     {
       "id": 91,
-      "gender": "Trans person",
+      "gender": "Trans",
       "first_name": "Kristian",
       "last_name": "Kessler-Abshire",
       "avatar": "https://randomuser.me/api/portraits/men/91.jpg",
@@ -1632,7 +1632,7 @@
     },
     {
       "id": 92,
-      "gender": "Demi-girl",
+      "gender": "Woman",
       "first_name": "Era",
       "last_name": "Hane-Gerhold",
       "avatar": "https://randomuser.me/api/portraits/men/92.jpg",
@@ -1649,7 +1649,7 @@
     },
     {
       "id": 93,
-      "gender": "Transexual",
+      "gender": "Trans",
       "first_name": "Nigel",
       "last_name": "Mraz",
       "avatar": "https://randomuser.me/api/portraits/men/93.jpg",
@@ -1666,7 +1666,7 @@
     },
     {
       "id": 94,
-      "gender": "Pangender",
+      "gender": "Man",
       "first_name": "Domenick",
       "last_name": "Collins",
       "avatar": "https://randomuser.me/api/portraits/men/94.jpg",
@@ -1683,7 +1683,7 @@
     },
     {
       "id": 95,
-      "gender": "Genderqueer",
+      "gender": "Woman",
       "first_name": "Brooke",
       "last_name": "Goodwin-Schinner",
       "avatar": "https://randomuser.me/api/portraits/men/95.jpg",
@@ -1700,7 +1700,7 @@
     },
     {
       "id": 96,
-      "gender": "Cisgender man",
+      "gender": "Man",
       "first_name": "Hershel",
       "last_name": "Block",
       "avatar": "https://randomuser.me/api/portraits/men/96.jpg",
@@ -1717,7 +1717,7 @@
     },
     {
       "id": 97,
-      "gender": "MTF",
+      "gender": "Woman",
       "first_name": "Melvin",
       "last_name": "Schroeder",
       "avatar": "https://randomuser.me/api/portraits/men/97.jpg",
@@ -1734,7 +1734,7 @@
     },
     {
       "id": 98,
-      "gender": "Intersex woman",
+      "gender": "Man",
       "first_name": "Katrine",
       "last_name": "Kovacek",
       "avatar": "https://randomuser.me/api/portraits/men/98.jpg",
@@ -1751,7 +1751,7 @@
     },
     {
       "id": 99,
-      "gender": "Two-spirit person",
+      "gender": "Man",
       "first_name": "Muhammad",
       "last_name": "Lesch",
       "avatar": "https://randomuser.me/api/portraits/men/99.jpg",

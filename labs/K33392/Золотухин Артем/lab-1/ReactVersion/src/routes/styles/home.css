@@ -29,14 +29,11 @@ h5 {
 .content {
   display: flex;
   padding: 0.5em 1em;
-  justify-content: space-between; /* Distribute space evenly between columns */
-  gap: 16px; /* Add a margin between columns */
+  justify-content: space-between;
+  gap: 16px;
   flex: 1 0 0;
   align-self: stretch;
-  overflow-y: auto; /* Add a scrollbar if the content overflows vertically */
-  background-color: var(
-    --primary
-  ); /* Set a background color for the content area */
+  background-color: var(--primary);
 }
 
 .column {
@@ -46,7 +43,6 @@ h5 {
   align-items: start; /* Horizontally center the content in both columns */
   flex: 0 1 calc(50% - 4px); /* Each column takes up half the width with margin */
   max-height: 100%; /* Columns fill the maximum height available */
-  border-radius: 8px; /* Add rounded corners for a better look */
   box-sizing: border-box; /* Include padding and border in the width calculation */
   overflow-y: hidden; /* Add a scrollbar if the content inside columns overflows */
   overflow-x: hidden; /* Add a scrollbar if the content inside columns overflows */

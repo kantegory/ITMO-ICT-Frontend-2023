@@ -23,7 +23,11 @@
 }
 
 .search-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   padding: 1rem;
+  gap: 20px;
 }
 .search-field-input {
   border-radius: 12px;
@@ -60,4 +64,16 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  gap: 6px;
+}
+.checkbox-label {
+  font: 16px Lato, sans-serif;
 }

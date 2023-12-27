@@ -1,3 +1,4 @@
+import MyNavbar from '../components/MyNavbar'
 import './styles/home.css'
 import swal from 'sweetalert'
 
@@ -19,7 +20,14 @@ function Home() {
     },
     frontend: {
       title: 'Frontend:',
-      skills: ['HTML+CSS+JS', 'Bootstrap', 'React/Router'],
+      skills: [
+        'HTML+CSS+JS+TS',
+        'Bootstrap',
+        'React',
+        'VKMiniapps',
+        'Lottie',
+        'Redux',
+      ],
     },
     languages: {
       title: 'Languages:',
@@ -47,85 +55,93 @@ function Home() {
   }
 
   return (
-    <div className='home'>
-      <div className='content'>
-        <div className='column one'>
-          <div>
-            <h1>
-              Hi, I'm <span className='green_text'>Artem</span>
-            </h1>
-            <p className='low_visibility_text'>Welcome to my page</p>
+    <>
+      <MyNavbar />
+      <div className='home'>
+        <div className='content'>
+          <div className='column one'>
+            <div>
+              <h1>
+                Hi, I`m <span className='green_text'>Artem</span>
+              </h1>
+              <p className='low_visibility_text'>Welcome to my page</p>
+            </div>
+
+            <h4>
+              I`m:
+              <span className='green_text'>
+                Junior Native Android Developer
+              </span>
+              , third year ITMO Student on Mobile and network technologies
+              faculty, who also just started learning front-end development.
+            </h4>
+
+            <div className='skills'>
+              <h5>My skills:</h5>
+              <div className='skills-list'>
+                {Object.keys(skillsData).map((category, index) => (
+                  <div key={index} className='skills-column'>
+                    <h4>{skillsData[category].title}</h4>
+                    <ul>
+                      {skillsData[category].skills.map((skill, skillIndex) => (
+                        <li
+                          className='skills-list-column_text'
+                          key={skillIndex}
+                        >
+                          {skill}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <h4>
-            I'm:
-            <span className='green_text'>Junior Native Android Developer</span>,
-            third year ITMO Student on Mobile and network technologies faculty,
-            who also just started learning front-end development.
-          </h4>
+          <div className='column two'>
+            <h1>Want to hire me?</h1>
+            <div className='column-email_segment'>
+              <p className='low_visibility_text'>
+                I strive to reply within an hour.
+              </p>
+              <button
+                className='column-contact_button'
+                onClick={copyEmailToClipboard}
+              >
+                <svg width={30} height={30}>
+                  <use href='src/assets/sprite.svg#email' fill='#1DFF9E' />
+                </svg>
+                EMAIL
+              </button>
+            </div>
 
-          <div className='skills'>
-            <h5>My skills:</h5>
-            <div className='skills-list'>
-              {Object.keys(skillsData).map((category, index) => (
-                <div key={index} className='skills-column'>
-                  <h4>{skillsData[category].title}</h4>
-                  <ul>
-                    {skillsData[category].skills.map((skill, skillIndex) => (
-                      <li className='skills-list-column_text' key={skillIndex}>
-                        {skill}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <div className='separator_row'>
+              <hr />
+              or
+              <hr />
+            </div>
+            <div className='contacts_row'>
+              {Object.entries(socialLinks).map(([network, link], index) => (
+                <a
+                  href={link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  key={index}
+                >
+                  <button className='column-contact_button'>
+                    <img
+                      src={`src/assets/${network}.png`}
+                      alt={`${network} SVG`}
+                      className='icon'
+                    />
+                  </button>
+                </a>
               ))}
             </div>
           </div>
         </div>
-
-        <div className='column two'>
-          <h1>Want to hire me?</h1>
-          <div className='column-email_segment'>
-            <p className='low_visibility_text'>
-              I strive to reply within an hour.
-            </p>
-            <button
-              className='column-contact_button'
-              onClick={copyEmailToClipboard}
-            >
-              <svg width={30} height={30}>
-                <use href='src/assets/sprite.svg#email' fill='#1DFF9E' />
-              </svg>
-              EMAIL
-            </button>
-          </div>
-
-          <div className='separator_row'>
-            <hr />
-            or
-            <hr />
-          </div>
-          <div className='contacts_row'>
-            {Object.entries(socialLinks).map(([network, link], index) => (
-              <a
-                href={link}
-                target='_blank'
-                rel='noopener noreferrer'
-                key={index}
-              >
-                <button className='column-contact_button'>
-                  <img
-                    src={`src/assets/${network}.png`}
-                    alt={`${network} SVG`}
-                    className='icon'
-                  />
-                </button>
-              </a>
-            ))}
-          </div>
-        </div>
       </div>
-    </div>
+    </>
   )
 }
 

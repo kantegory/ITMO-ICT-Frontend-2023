@@ -38,12 +38,6 @@ export default function MyNavbar() {
       cName: 'nav-text',
     },
     {
-      title: 'Cashious',
-      path: '/about_page',
-      icon: <AiIcons.AiOutlineWarning width={24} height={24} />,
-      cName: 'nav-text',
-    },
-    {
       title: 'Search',
       path: '/search',
       icon: <AiIcons.AiOutlineSearch width={24} height={24} />,
@@ -57,13 +51,11 @@ export default function MyNavbar() {
     <>
       <IconContext.Provider value={{ color: 'undefined' }}>
         <div className='navbar'>
-          <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
+          <FaIcons.FaBars className='open-menu-icon' onClick={showSidebar} />
         </div>
 
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul>
+          <ul className='navbar-elements'>
             <li className='navbar-toggle' onClick={showSidebar}>
               <Link to='#' className='menu-bars'>
                 <AiIcons.AiOutlineClose />
