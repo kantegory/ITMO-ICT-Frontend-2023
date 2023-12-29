@@ -152,16 +152,16 @@ export default {
 
 <style scoped>
 hr {
-  color: #FAF0E6;
+  color: var(--header-color);
   margin: 10px;
 }
 .filters-block__filters_item {
-  background-color: #FAF0E6;
+  background-color: var(--header-color);
   border-radius: 15px;
   text-align: center;
   margin: 0 5px 0 5px;
 }
 .filters-block__filter_item_active {
-  background-color: #B9B4C7;
+  background-color: var(--text-color);
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" @click="$router.push({name: 'home'})" style="color: #FAF0E6;cursor:pointer">Musec</a>
+      <a class="navbar-brand" @click="$router.push({name: 'home'})" style="color: var(--header-color);cursor:pointer">Musec</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
               <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy" />
             </a>
 
-            <ul class="dropdown-menu dropdown-menu-end" style="background-color: #FAF0E6;">
+            <ul class="dropdown-menu dropdown-menu-end" style="background-color: var(--header-color);">
               <li><a class="dropdown-item" @click="$router.push({name: 'profile'})">Profile</a></li>
               <li><a class="dropdown-item" href="#" @click.prevent="logout">Logout</a></li>
             </ul>

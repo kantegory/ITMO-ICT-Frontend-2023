@@ -4,7 +4,9 @@
       <div class="last-listened__image_cover col-1 last-listened__image_container">
         <div style="margin:auto; position:relative">
           <div class="hover-content">
-            <play-icon class="__play_icon" @click="play"/>
+            <button aria-label="Play">
+              <play-icon class="__play_icon" @click="play"/>
+            </button>
           </div>
 
           <img class="last-listened__image" :src="song.cover_url" alt="">
@@ -16,11 +18,11 @@
         <p>{{ song.artist.name }}</p>
       </div>
       <div class="col-2 offset-7 button-container">
-        <button>
+        <button aria-label="Add to favorite">
           <thumb-up-icon @click="addToFavorite"/>
         </button>
         <div class="dropdown show">
-          <button role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Actions">
             <three-dots-icon/>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
