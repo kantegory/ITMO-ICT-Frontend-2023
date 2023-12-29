@@ -1,0 +1,65 @@
+.wrapper
+    width: 100%
+    height: var(--header-height)
+    display: flex
+    flex-direction: row
+    gap: var(--gap-large)
+    align-items: center
+    justify-content: center
+    border-bottom: var(--border-color-gray) solid 1px
+    background-color: var(--background-color)
+
+    .logoWrapper
+        svg
+            width: var(--logo-width)
+            height: var(--logo-height)
+            cursor: pointer
+
+    .categories
+        display: flex
+        flex-direction: row
+        gap: var(--category-gap)
+
+        button
+            font-size: var(--font-size-regular)
+            font-weight: var(--font-weight-medium)
+            cursor: pointer
+            background-color: var(--color-white)
+            border: none
+            color: var(--text-color)
+            background-color: var(--background-color)
+
+    input
+        width: var(--input-width-small)
+        height: var(--input-height-small)
+        border-radius: var(--border-radius-medium)
+        border: none
+        background-color: var(--background-light-gray)
+        padding-left: var(--input-padding-left)
+        background-color: var(--input-btn-color)
+
+    .headerBtns
+        display: flex
+        flex-direction: row
+        gap: var(--button-gap)
+
+        button
+            width: var(--button-size-small)
+            height: var(--button-size-small)
+            background-color: var(--background-light-gray)
+            border-radius: var(--border-radius-medium)
+            align-items: center
+            display: flex
+            justify-content: center
+            cursor: pointer
+            border: none
+            background-color: var(--input-btn-color)
+
+            svg
+                background: var(--input-btn-color)
+                width: var(--icon-size-small)
+                height: var(--icon-size-small)
+
+        img 
+            width: var(--icon-size-small)
+            height: var(--icon-size-small)

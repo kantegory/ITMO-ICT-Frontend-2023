@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Black SweatShort",
+    "img": "/src/assets/itemsCovers/blackSweatshort.svg",
+    "price": 123,
+    "brand": "Jhanvi's Brand",
+    "gender": "female"
+  },
+  {
+    "title": "Black Hoodie",
+    "img": "/src/assets/itemsCovers/blackHoodie.svg",
+    "price": 37,
+    "brand": "As Brand",
+    "gender": "female"
+  },
+  {
+    "title": "Black Shorts",
+    "img": "/src/assets/itemsCovers/blackShorts.svg",
+    "price": 37,
+    "brand": "MM Brand",
+    "gender": "female"
+  },
+  {
+    "title": "White T-Shirt",
+    "img": "/src/assets/itemsCovers/whiteTshirt.svg",
+    "price": 30,
+    "brand": "As Brand",
+    "gender": "male"
+  },
+  {
+    "title": "Denim Blue Shirt",
+    "img": "/src/assets/itemsCovers/denimBlueShirt.svg",
+    "price": 40,
+    "brand": "MM Brand",
+    "gender": "male"
+  },
+  {
+    "title": "White Urban Jacket",
+    "img": "/src/assets/itemsCovers/urbanJacket.svg",
+    "price": 60,
+    "brand": "Jhanvi's Brand",
+    "gender": "male"
+  }
+]
