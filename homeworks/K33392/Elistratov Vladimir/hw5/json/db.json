@@ -1,0 +1,20 @@
+{
+  "notes": [
+    {
+      "name": "3213123",
+      "text": "13123123",
+      "userId": 1,
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
