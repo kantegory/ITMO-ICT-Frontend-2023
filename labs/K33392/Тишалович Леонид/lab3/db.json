@@ -4,6 +4,11 @@
       "email": "test@mail.ry",
       "password": "1234567890",
       "id": 1
+    },
+    {
+      "email": "testnew@mail.ru",
+      "password": "1234567890",
+      "id": 2
     }
   ],
   "clothes": [
