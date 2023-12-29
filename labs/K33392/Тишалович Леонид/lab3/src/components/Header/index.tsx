@@ -65,19 +65,19 @@ export const Header = ({
         onChange={handleSearchChange}
       />
       <div className={style.headerBtns}>
-        <button>
+        <button className={style.bookmarkBtn}>
           <Icon id="Heart" />
         </button>
-        <button>
+        <button className={style.profileBtn}>
           <Icon id="User" />
         </button>
-        <button>
+        <button className={style.cartBtn}>
           <div onClick={handleCartIconClick}>
             <Icon id="Cart" />
             {isCartPopupVisible && <CartPopup items={cartItems} />}
           </div>
         </button>
-        <button onClick={toggleTheme}>
+        <button onClick={toggleTheme} className={style.themeBtn}>
           <img className={style.themeImg} alt="Лого темы" src={icon} />
         </button>
       </div>
