@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link href="../css/style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+  <link rel="shortcut icon" href="img/logoicon.ico" type="image/x-icon">
+</head>
+
+
+<body>
+
+  <header class="header">
+    <div class="d-flex align-items-center header-cont">
+      <div class="nav-item" id="logo">
+
+        <img src="../img/logo.png" alt="siteLogo" style="margin-left: 10px;"></img>
+
+      </div>
+
+      <div class="nav-item">
+        <a href="about.html" class="nav-links">
+          <h3 class="nav-text">ABOUT</h3>
+        </a>
+      </div>
+      <div class="nav-item">
+        <a href="portfolio.html" class="nav-links">
+          <h3 class="nav-text">PORTFOLIO</h3>
+        </a>
+      </div>
+      <div class="nav-item">
+        <a href="services.html" class="nav-links">
+          <h3 class="nav-text">SERVICES</h3>
+        </a>
+      </div>
+      <div class="nav-item" id="contacts">
+        <a href="#footer" class="nav-links">
+          <h3 class="nav-text">CONTACTS</h3>
+        </a>
+      </div>
+      <div class="nav-item ms-auto">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal-reg" class="nav-links">
+          <h3 class="nav-text">SIGN IN</h3>
+        </a>
+
+        <div class="modal fade modal-reg" id="modal-reg" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form onsubmit="login(event)">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid modal-login">
+                  <div class="row">
+                    <div class="col-3 loginicon">
+                      <img src="img/login.png" width="60" height="60">
+                    </div>
+                    <div class="col-9">
+                      <input type="email" class="form-control" id="usernameLogin" placeholder="Username..." name="email"
+                        autocomplete="on">
+  
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3 passwordicon">
+                      <img src="img/password.png" width="40" height="40">
+                    </div>
+                    <div class="col-9">
+                      <input type="password" autocomplete="on" class="form-control" id="passwordLogin" name="password"
+                        style="padding-top: 5px; margin: auto;margin-top: 10px" placeholder="Password...">
+                    </div>
+                  </div>
+  
+                  <div class="row" style="padding-top: 15px;">
+                    <div class="col-6">
+                      <h6 style="padding-left: 25px; white-space: nowrap;">
+                        Dont have an account?
+                      </h6>
+                    </div>
+                    <div class="col-6">
+                      <a href="register.html">
+                        <h6 style="text-align: left; padding-left: 30px;">
+                          Sign up
+                        </h6>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-login" id = "loginButton">login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+  </header>
+  <div class="container-fluid textabout">
+    <div class="d-flex flex-row justify-content-evenly align-items-center">
+      <div class="d-flex flex-column border-top flex-fill">
+        <h1 style="text-align: center; padding-top: 10px">About me</h1>
+        <h2 style="text-align: center">
+          I`m front-end developer from Saints-Petersburg
+        </h2>
+        <h3 style="line-height: 1.5; padding-top: 15px">
+          I`m striving to create innovative and visually appealing user
+          interfaces<br />
+          with over two years of experience in frontend development.<br />
+          I have a deep understanding of modern web technologies, standards
+          and trends,<br />
+          as well as experience in working in a team to achieve outstanding
+          results
+        </h3>
+        <a type="button" class="buybutton text-uppercase" href="services.html" style="padding-top: 33px">
+          <h3>View my services</h3>
+        </a>
+      </div>
+      <img class="myphoto flex-fill" src="img/myphoto.jpg" id="myphoto"/>
+    </div>
+  </div>
+
+  <footer class="footer" id="footer">
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+      <li class="footer-img" style="padding-left: 100px;">
+        <a href="https://github.com/Ilya3716"  target="_blank">
+          <img src="img/git.png" alt="github"></img>
+        </a>
+      </li>
+      <li class="footer-img">
+        <a href="https://vk.com/ilya_77" target="_blank">
+          <img src="img/vk.png" alt="vk"></img>
+        </a>
+      </li>
+      <li class="footer-img">
+        <a href="https://instagram.com/il_ya37?igshid=aHlydWlsZGlkb2Uz" target="_blank">
+          <img src="img/inst.png" width="90px" height="90px" alt="instagram"></img>
+        </a>
+      </li>
+      <li class="footer-img" style="padding-right: 100px;">
+        <a href="https://t.me/I_lya_77"  target="_blank">
+          <img src="img/pngwing.com.png" alt="Telegram" width="90px" height="90px"></img>
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+  <script src="adapt.js"></script>
+  <script>
+    adapt()
+    window.addEventListener('resize', (e) => {
+      adapt();
+    });
+  </script>
+</body>
+
+</html>

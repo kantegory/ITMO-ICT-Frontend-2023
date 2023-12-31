@@ -1,0 +1,124 @@
+header,
+footer {
+  background-color: #02011e;
+}
+.nav-item {
+  box-sizing: border-box;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-style: inherit;
+}
+.nav-links {
+  text-decoration: none;
+}
+.nav-img,
+.footer-img {
+  box-sizing: border-box;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  font-style: inherit;
+}
+.footer-img {
+  margin: auto;
+}
+
+.nav-text {
+  color: #8738f8;
+}
+
+.modal-text {
+  align-items: flex-start;
+}
+.modal-login {
+  margin: auto;
+  padding-left: 70px;
+}
+
+.btn-login {
+  margin: auto;
+  display: block;
+  background-color: #02011e;
+  color: #8738f8;
+  width: 300px;
+}
+
+.service-item {
+  border-color: #8738f8;
+  height: 200px;
+  margin-bottom: 2%;
+  margin-left: 0%;
+}
+.search-bar {
+  max-width: 15%;
+  min-width: 5%;
+  background-color: #02011e;
+  padding-left: 2%;
+}
+.input-group {
+  width: 90%;
+  height: 50px;
+}
+.search-item {
+  padding-top: 5%;
+  color: #8738f8;
+}
+.search {
+  padding-top: 5%;
+}
+.service-img {
+  width: 300px;
+  height: 200px;
+}
+.service-text {
+  padding-left: 2%;
+}
+NoChecks {
+  margin-right: 100%;
+}
+.profileDropdown {
+  font-size: 30px;
+  font-weight: 500;
+  font-style: inherit;
+}
+.drop {
+  background-color: #02011e;
+}
+.orderbutton {
+  display: block;
+  background-color: #02011e;
+  color: #8738f8;
+  width: 10em;
+  height: 30px;
+  margin-top: auto;
+  margin-bottom: 30px;
+}
+.searchInput {
+  position: relative;
+  width: 80%;
+}
+.icon {
+  stroke: currentColor;
+  width: 18px;
+  height: 18px;
+  fill: none;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 10px;
+  left: 85%;
+}
+.loginIcon {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  width: 40px;
+  height: 40px;
+}
+.passwordIcon {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  width: 40px;
+  height: 40px;
+}
