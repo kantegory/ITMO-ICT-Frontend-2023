@@ -1,0 +1,98 @@
+.header-cont {
+  height: 120px;
+}
+header,
+footer {
+  background-color: #02011e;
+}
+.nav-item {
+  box-sizing: border-box;
+  padding-right: 2%;
+  padding-left: 2%;
+  white-space: nowrap;
+}
+.nav-links {
+  text-decoration: none;
+  font-size: small;
+}
+.loginicon {
+  margin: auto;
+  padding-left: 25px;
+}
+.passwordicon {
+  margin: auto;
+  padding-left: 35px;
+}
+.nav-img,
+.footer-img {
+  box-sizing: border-box;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  font-style: inherit;
+}
+.footer-img {
+  margin: auto;
+}
+
+.nav-text {
+  color: #8738f8;
+}
+
+.modal-text {
+  align-items: flex-start;
+}
+.modal-login {
+  margin: auto;
+  padding-left: 70px;
+}
+
+.btn-login {
+  margin: auto;
+  display: block;
+  background-color: #02011e;
+  color: #8738f8;
+  width: 300px;
+}
+
+.profileDropdown {
+  font-size: 30px;
+  font-weight: 500;
+  font-style: inherit;
+}
+.drop {
+  background-color: #02011e;
+}
+.textabout {
+  height: 1000px;
+  padding-top: 100px;
+}
+.buybutton {
+  display: block;
+  background-color: #02011e;
+  color: #8738f8;
+  margin: auto;
+  width: 66%;
+  height: 100px;
+  margin-top: 10%;
+  font: inherit;
+  font-size: xx-large;
+  text-align: center;
+  text-decoration: none;
+}
+.myphoto {
+  max-width: 30%;
+  max-height: 50%;
+  min-width: 500px;
+}
+.aboutmetext {
+  padding-top: 150px;
+}
+.orderbutton {
+  display: block;
+  background-color: #02011e;
+  color: #8738f8;
+  width: 10em;
+  height: 30px;
+  margin-top: auto;
+  margin-bottom: 30px;
+}
