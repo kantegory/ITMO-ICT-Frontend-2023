@@ -1,16 +1,9 @@
+import {useFetchRequests} from "@/composables/useFetchRequests";
+import {useCheckAuth} from "@/composables/useCheckAuth";
 
 const REGEXP_EMAIL = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 // window.addEventListener("DOMContentLoaded", updateNavigationButtons, false);
-document.addEventListener('DOMContentLoaded', () => checkAuth())
-
-export function checkAuth() {
-    return !!localStorage.accessToken;
-
-}
-
-function getAuthToken() {
-    return localStorage.accessToken;
-}
+document.addEventListener('DOMContentLoaded', () => useCheckAuth())
 
 export async function signinUser() {
     const passwordField = document.getElementById("password-in");
@@ -24,29 +17,14 @@ export async function signinUser() {
     const body = {};
     body['email'] = emailField.value;
     body['password'] = passwordField.value;
-
-    const response = await fetch('http://localhost:3000/signin', {
-        method: "POST",
-        body: JSON.stringify(body),
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${getAuthToken()}`
-        }
-    });
-    const responseJson = await response.json();
-    const responseStatus = response.status;
-
-    console.log(responseStatus);
-    console.log(responseJson);
-    if (responseStatus === 200 || responseStatus === 201) {
-        const {accessToken, user} = responseJson
-        localStorage.accessToken = accessToken
-        localStorage.user = JSON.stringify(user)
-        return true;
-    } else {
-        alert("Something went wrong");
+    const {response, error} = useFetchRequests('http://localhost:3000/signin', "POST", JSON.stringify(body));
+    if (error.value !== null) {
         return false;
     }
+    const {accessToken, user} = await response;
+    localStorage.accessToken = accessToken;
+    localStorage.user = JSON.stringify(user);
+    return true;
 }
 
 export async function registerUser() {
@@ -59,41 +37,21 @@ export async function registerUser() {
         return false;
     }
 
-    if (passwordField.value === passwordConfirmationField.value) {
-        const body = {};
-        body['email'] = emailField.value;
-        body['password'] = passwordField.value;
-
-        const response = await fetch('http://localhost:3000/signup', {
-            method: "POST",
-            body: JSON.stringify(body),
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${getAuthToken()}`
-            }
-        });
-        const responseJson = await response.json();
-        const responseStatus = response.status;
-
-        console.log(responseStatus);
-        console.log(responseJson);
-        if (responseStatus === 200 || responseStatus === 201) {
-            const {accessToken, user} = responseJson
-            localStorage.accessToken = accessToken
-            localStorage.user = JSON.stringify(user)
-            return true;
-        } else {
-            alert("Something went wrong");
-            return false;
-        }
-    } else {
+    if (passwordField.value !== passwordConfirmationField.value) {
         alert("Passwords does not match");
         return false;
     }
-}
 
-export function exit() {
-    delete localStorage.accessToken;
-    delete localStorage.user;
-}
+    const body = {};
+    body['email'] = emailField.value;
+    body['password'] = passwordField.value;
 
+    const {response, error} = useFetchRequests('http://localhost:3000/signup', "POST", JSON.stringify(body));
+    if (error.value !== null) {
+        return false;
+    }
+    const {accessToken, user} = await response;
+    localStorage.accessToken = accessToken;
+    localStorage.user = JSON.stringify(user);
+    return true;
+}

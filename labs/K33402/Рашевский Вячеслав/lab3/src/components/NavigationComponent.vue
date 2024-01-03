@@ -1,35 +1,15 @@
 <script setup>
-import {checkAuth, exit} from "@/auth_script";
 import router from "@/router";
 
-function updateNav() {
-  const account = document.getElementById('accountLink');
-  const auth = document.getElementById('authLink');
-  const exit = document.getElementById('exitLink');
-
-  if (checkAuth()) {
-    account.style.display = 'block';
-    auth.style.display = 'none';
-    exit.style.display = 'block';
-  } else {
-    account.style.display = 'none';
-    auth.style.display = 'block';
-    exit.style.display = 'none';
-  }
-}
-
-router.beforeEach(updateNav);
-
 import {useDark, useToggle} from "@vueuse/core";
+import {useExit} from "@/composables/useExit";
+import {useSearch} from "@/composables/useSearch";
+import {useUpdateNav} from "@/composables/useUpdateNav";
+
+router.beforeEach(useUpdateNav);
+
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-
-function search() {
-  const searchInput = document.getElementById('searchInput');
-  const searchString = searchInput.value;
-
-  localStorage.setItem('searchString', searchString);
-}
 </script>
 
 <template>
@@ -69,7 +49,7 @@ function search() {
           </ul>
         </li>
       </ul>
-      <form class="d-flex ms-auto" role="search" id="searchForm" @submit="search">
+      <form class="d-flex ms-auto" role="search" id="searchForm" @submit="useSearch">
         <input class="form-control me-2" list="datalistOptions" type="search" placeholder="Search"
                aria-label="Search" id="searchInput">
         <datalist id="datalistOptions">
@@ -80,7 +60,7 @@ function search() {
       <div class="d-flex ms-auto">
         <router-link id="accountLink" to="/account" class="nav-link active align-content-end ms-3">Account</router-link>
         <router-link id="authLink" to="/auth" class="nav-link active align-content-end ms-3">Auth</router-link>
-        <router-link id="exitLink" to="/home" class="nav-link active align-content-end ms-3" @click="exit()">Exit
+        <router-link id="exitLink" to="/home" class="nav-link active align-content-end ms-3" @click="useExit()">Exit
         </router-link>
       </div>
     </div>
