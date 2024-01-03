@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "email": "rashevskiivv@gmail.com",
+      "password": "$2a$10$kAoPP8kWadj9pQUHvF7pqe1nSDPucdmND3Yyt20D51YpoJTtYBQ5.",
+      "id": 1
+    },
+    {
+      "email": "svetlvis@mail.ru",
+      "password": "$2a$10$TsH29O1YD0lfnEa2fW7QlusL/9NPf/aJ.umPXLBeK3mZ/Ddg5LS3C",
+      "id": 2
+    },
+    {
+      "email": "slava121231@mail.ru",
+      "password": "$2a$10$HUhmWOKEq2HrEoWTggE0.OU6qVd0yG.0QXz7i33Ku9ahhNDPYKkqG",
+      "id": 3
+    },
+    {
+      "email": "svet1lvis@mail.ru",
+      "password": "$2a$10$tKyZ3Hup1Mq5XV2w9TLY7.AgyV10arS9RKSm4rfm7DawjWva5C4.e",
+      "id": 4
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Lighting",
+      "text": "You can control light in your house using our website.",
+      "src": "assets/lighting.jpg",
+      "alt": "Lighting controller in smartphone",
+      "href": "lighting.html"
+    },
+    {
+      "id": 2,
+      "title": "CCTV",
+      "text": "You can use CCTV using our website.",
+      "src": "assets/cctv.jpg",
+      "alt": "CCTV at front door",
+      "href": "cctv.html"
+    },
+    {
+      "id": 3,
+      "title": "Door locks",
+      "text": "You can close and open your door lock using our website.",
+      "src": "assets/door_locks.jpg",
+      "alt": "Smart door locks",
+      "href": "door_locks.html"
+    },
+    {
+      "id": 4,
+      "title": "Temperature",
+      "text": "You can control temperature in your house using our website.",
+      "src": "assets/temperature.jpg",
+      "alt": "Temperature controller at wall",
+      "href": "temperature.html"
+    }
+  ],
+  "use_cases": [
+    {
+      "id": 1,
+      "use_case": "Retail"
+    },
+    {
+      "id": 2,
+      "use_case": "Healthcare"
+    },
+    {
+      "id": 3,
+      "use_case": "Smart home"
+    },
+    {
+      "id": 4,
+      "use_case": "Logistics & transportation"
+    },
+    {
+      "id": 5,
+      "use_case": "Agriculture"
+    }
+  ],
+  "about": {
+    "title": "What can we do for you?",
+    "desc": "You can control your area, light, door locks and temperature in house."
+  }
+}

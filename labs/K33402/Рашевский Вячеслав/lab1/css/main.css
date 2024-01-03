@@ -1,0 +1,27 @@
+body {
+    background-color: var(--bg-color);
+}
+
+.card {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.card ul, .card li, .card ul li {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.navbar * {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.navbar input.form-control {
+    background-color: var(--bg-color-search);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
