@@ -1,0 +1,132 @@
+{
+  "users": [
+    {
+      "id": 1698773685561,
+      "name": "Kua",
+      "email": "1@mail.ru",
+      "password": "$2b$10$L71iqqy87kDIXQrMbIU9muSe.eS2ATFugOa5Pep/Y8lpk5KDaDKqO",
+      "height": "170",
+      "weight": "65",
+      "dateOfBirth": "2003-07-24",
+      "favorites": [
+        "beef",
+        "carrot",
+        null,
+        "onion"
+      ],
+      "daily_rations": [
+        {
+          "date": "1111-11-11",
+          "breakfast": 44.7,
+          "lunch": 0,
+          "dinner": 0,
+          "snacks": 0
+        },
+        {
+          "date": "1111-11-11",
+          "breakfast": 44.7,
+          "lunch": 92.7,
+          "dinner": 34,
+          "snacks": 291.9
+        }
+      ]
+    },
+    {
+      "id": 1698874147937,
+      "name": "Kuakua",
+      "email": "2@mail.ru",
+      "password": "$2b$10$pNAiiV5ig.77uMtqjLGb7uQCQio.VeovlwaXmcaBqLmUdxvcGU7V2",
+      "gender": "female",
+      "height": "170",
+      "weight": "60",
+      "dateOfBirth": "2003-07-24",
+      "favorites": [
+        "onion",
+        "carrot"
+      ],
+      "daily_rations": [
+        {
+          "date": "1111-11-11",
+          "breakfast": 44.7,
+          "lunch": 34,
+          "dinner": 92.7,
+          "snacks": 291.9
+        }
+      ]
+    },
+    {
+      "id": 1699865019639,
+      "name": "Lyalya",
+      "email": "3@mail.ru",
+      "password": "$2b$10$xyt3nIv0f7zLP.Cx6pKMv.Y0lV8jGTObcpvC/WBFVK0MMEpkPVsf2",
+      "gender": "female",
+      "height": "170",
+      "weight": "50",
+      "dateOfBirth": "2003-07-24",
+      "favorites": [
+        "beef",
+        "carrot"
+      ],
+      "daily_rations": [
+        {
+          "date": "2023-11-13",
+          "breakfast": 92.7,
+          "lunch": 794.1999999999999,
+          "dinner": 289.2,
+          "snacks": 234.5
+        },
+        {
+          "date": "2023-11-12",
+          "breakfast": 139.1,
+          "lunch": 289.2,
+          "dinner": 34,
+          "snacks": 0
+        }
+      ]
+    },
+    {
+      "id": 1703663646429,
+      "name": "Una",
+      "email": "4@mail.ru",
+      "password": "$2b$10$zo/7XlVdIT9CslYdDnP8q.BJgkSwFClXUYxQEq0sV2EX5F7ubxiNG",
+      "gender": "",
+      "height": 0,
+      "weight": 0,
+      "dateOfBirth": "",
+      "favorites": [],
+      "daily_rations": []
+    },
+    {
+      "id": 1704460937422,
+      "name": "Kua",
+      "email": "11@mail.ru",
+      "password": "$2b$10$e3LmvZaHHOnApO5GqvO65us5l1SZf1UAT3HBazc4yztj5SYTodurO",
+      "gender": "female",
+      "height": 180,
+      "weight": 70,
+      "dateOfBirth": "2011-11-01",
+      "favorites": [
+        "carrot",
+        "apple",
+        "beef"
+      ],
+      "daily_rations": [
+        {},
+        {
+          "date": "1111-11-11",
+          "breakfast": 44.7,
+          "lunch": 0,
+          "dinner": 0,
+          "snacks": 0
+        },
+        {
+          "date": "1111-11-11",
+          "breakfast": 44.7,
+          "lunch": 0,
+          "dinner": 0,
+          "snacks": 0
+        }
+      ]
+    }
+  ]
+}
