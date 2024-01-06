@@ -1,0 +1,9 @@
+{
+  "registration": {
+    "success": true,
+    "response": {
+      "token": "someReallyCoolToken",
+      "userId": "first-cool-user"
+    }
+  }
+}

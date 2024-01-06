@@ -1,7 +1,13 @@
 <script>
 import BaseLayout from "@/layouts/BaseLayout.vue";
+import authorizationRepository from "@/domain/repository/authorization/instance";
+import {useRouter} from "vue-router";
 
 export default {
+  setup() {
+    const router = useRouter()
+    return {router};
+  },
   components: {BaseLayout},
   data() {
     return {
@@ -21,7 +27,13 @@ export default {
       } else {
         this.form.wasValidated = false
         this.form.showLoading = true
-        //todo(отправка на сервер)
+        try {
+          await authorizationRepository.sendRegistrationData(this.form.username, this.form.password)
+          await this.router.push('/bodyParams');
+        } catch (e) {
+          console.log(e)
+        }
+        this.form.showLoading = false
       }
     },
     formIsValid() {
@@ -45,11 +57,6 @@ export default {
         return 'Username can only have alphabetic symbols, numbers and underscores.';
       }
       return '';
-    }
-  },
-  computed: {
-    isCreateButtonDisabled() {
-      return this.form.showLoading
     }
   }
 };
@@ -103,7 +110,6 @@ export default {
           </div>
         </div>
       </div>
-      <div>{{ form.wasValidated }}</div>
       <button class="btn btn-primary w-100" type="submit" :disabled="form.showLoading">
         <span class="spinner-border spinner-border-sm" aria-hidden="true"
               :class="{'invisible': !form.showLoading}"></span>
