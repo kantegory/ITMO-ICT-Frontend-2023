@@ -1,6 +1,7 @@
-import {BaseResponse} from "@/domain/model/BaseResponse";
-import {ErrorResponse} from "@/domain/model/ErrorResponse";
-import {UserDataRequestModel} from "@/domain/model/UserDataRequestModel";
+import {BaseResponse} from "@/domain/model/baseResponse";
+import {ErrorResponse} from "@/domain/model/errorResponse";
+import {UserDataRequestModel} from "@/domain/model/userDataRequestModel";
+import {UserInfo} from "@/domain/model/userInfo";
 
 export class AuthorizationRepository {
 
@@ -19,5 +20,6 @@ export class AuthorizationRepository {
             const errorResponse = new ErrorResponse(baseResponse)
             throw Error(errorResponse.errorMessage)
         }
+        return new UserInfo(baseResponse.response.userId, baseResponse.response.token);
     }
 }

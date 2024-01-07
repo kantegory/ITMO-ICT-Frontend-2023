@@ -1,4 +1,4 @@
-import {AuthorizationRepository} from "@/domain/repository/authorization/AuthorizationRepository";
+import {AuthorizationRepository} from "@/domain/repository/authorization/authorizationRepository";
 import {caloriesApi} from "@/domain/api"
 
 const authorizationRepository = new AuthorizationRepository(caloriesApi)
