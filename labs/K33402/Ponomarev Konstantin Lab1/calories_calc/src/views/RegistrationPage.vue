@@ -2,11 +2,13 @@
 import BaseLayout from "@/layouts/BaseLayout.vue";
 import authorizationRepository from "@/domain/repository/authorization/instance";
 import {useRouter} from "vue-router";
+import {useUserInfoStore} from "@/stores/userInfoStore";
 
 export default {
   setup() {
     const router = useRouter()
-    return {router};
+    const userInfoStore = useUserInfoStore()
+    return {router, userInfoStore};
   },
   components: {BaseLayout},
   data() {
@@ -28,7 +30,11 @@ export default {
         this.form.wasValidated = false
         this.form.showLoading = true
         try {
-          await authorizationRepository.sendRegistrationData(this.form.username, this.form.password)
+          const userInfo = await authorizationRepository.sendRegistrationData(
+              this.form.username,
+              this.form.password
+          )
+          this.userInfoStore.userInfo = userInfo
           await this.router.push('/bodyParams');
         } catch (e) {
           console.log(e)
