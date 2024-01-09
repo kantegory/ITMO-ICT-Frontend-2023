@@ -1,0 +1,162 @@
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+header,
+footer {
+  background-color: #02011e;
+}
+
+.nav-item {
+  box-sizing: border-box;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-style: inherit;
+}
+.nav-links {
+  text-decoration: none;
+}
+.nav-img,
+.footer-img {
+  box-sizing: border-box;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  font-style: inherit;
+}
+.footer-img {
+  margin: auto;
+}
+.nav-signin {
+  box-sizing: border-box;
+  margin: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-style: inherit;
+  padding-left: 550px;
+}
+
+.nav-text {
+  color: #8738f8;
+}
+
+.ml-md-auto,
+.mx-md-auto {
+  margin: auto;
+  margin-left: 30px;
+}
+
+.textabout {
+  height: 1000px;
+  padding-top: 100px;
+}
+.myphoto {
+  max-width: 900px;
+  max-height: 700px;
+}
+.aboutmetext {
+  padding-top: 150px;
+}
+
+.modal-text {
+  align-items: flex-start;
+}
+.modal-login {
+  margin: auto;
+  padding-left: 70px;
+}
+.loginicon {
+  margin: auto;
+  padding-left: 25px;
+}
+.passwordicon {
+  margin: auto;
+  padding-left: 35px;
+}
+.btn-login {
+  margin: auto;
+  display: block;
+  background-color: #02011e;
+  color: #8738f8;
+  width: 300px;
+}
+.register {
+  height: 1000px;
+  padding-left: 10%;
+}
+.btn-signup {
+  display: block;
+  width: 30%;
+  height: 50px;
+  margin-left: 25%;
+  background-color: #02011e;
+  color: #8738f8;
+}
+.singup-text {
+  font: inherit;
+}
+.buybutton {
+  display: block;
+  background-color: #02011e;
+  color: #8738f8;
+  margin: auto;
+  width: 66%;
+  height: 100px;
+  margin-top: 10%;
+  font: inherit;
+  font-size: xx-large;
+  text-align: center;
+  text-decoration: none;
+}
+.port-subh {
+  color: grey;
+  font-size: large;
+}
+.port-subt {
+  color: grey;
+}
+mark {
+  background: silver;
+}
+.service-item {
+  border-color: #8738f8;
+  height: 200px;
+  margin-bottom: 2%;
+  margin-left: 0%;
+}
+.search-bar {
+  max-width: 25%;
+  min-width: 15%;
+  background-color: #02011e;
+  padding-left: 2%;
+}
+.search-item {
+  padding-top: 5%;
+  color: #8738f8;
+}
+.service-img {
+  width: 300px;
+  height: 200px;
+}
+.service-text {
+  padding-left: 2%;
+}
+NoChecks {
+  margin-right: 100%;
+}
+.profileDropdown {
+  font-size: 30px;
+  font-weight: 500;
+  font-style: inherit;
+}
+.drop {
+  background-color: #02011e;
+}
+.orderbutton {
+  display: block;
+  background-color: #02011e;
+  color: #8738f8;
+  width: 10em;
+  height: 30px;
+  margin-top: auto;
+  margin-bottom: 30px;
+}

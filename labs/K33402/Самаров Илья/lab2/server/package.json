@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "json-server-auth": "^2.1.0"
+  },
+  "scripts": {
+    "start": "json-server --watch db.json -m ./node_modules/json-server-auth -r routes.json"
+  }
+}
