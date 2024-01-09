@@ -1,18 +1,10 @@
 <script setup>
-import { inject } from 'vue'
-const IsLogined = inject('IsLogined')
+import useLogin from '@/composable/useLogin'
+const { logout, profile } = useLogin()
 var user = localStorage.getItem("user")
 console.log(user)
 const profileUsername = JSON.parse(user).id
 
-const logout = () => {
-  localStorage.clear()
-  IsLogined.value = false
-}
-const OpenProfile = () =>{
-  console.log('click')
-  location.replace('/profile')
-}
 </script>
 <template>
     <p class="dropdown-toggle nav-item ms-auto nav-links nav-text " href="#" role="button" id="ProfileDD"
@@ -23,8 +15,8 @@ const OpenProfile = () =>{
     font-weight: bold;
     padding-right: 100px;">
     {{ profileUsername }}
-    <ul class="dropdown-menu border-blue" aria-labelledby="dropdownMenuLink" style="background-color: #02011e;">
-      <li><a @click="OpenProfile" to="/profile" class="dropdown-item nav-text" >View profile</a></li>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="background-color: #02011e;">
+      <li><a @click="profile" class="dropdown-item nav-text" >View profile</a></li>
       <li><a class="dropdown-item nav-text" @click="logout">Log out</a></li>
     </ul>
   </p>
@@ -38,15 +30,6 @@ const OpenProfile = () =>{
 }
 .nav-links {
   text-decoration: none;
-}
-
-.nav-signin {
-  box-sizing: border-box;
-  margin: auto;
-  padding-right: 30px;
-  padding-left: 30px;
-  font-style: inherit;
-  padding-left: 550px;
 }
 
 .nav-text {

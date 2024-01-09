@@ -21,7 +21,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes
 })
-
+export { router }
 const app = createApp(App)
 app.use(router)
 app.use(bootstrap)

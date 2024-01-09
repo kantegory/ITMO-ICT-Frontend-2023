@@ -1,14 +1,10 @@
 <script setup>
 import MyHeader from './components/MyHeader.vue'
 import MyFooter from './components/MyFooter.vue'
-import { provide, ref } from 'vue'
-const IsLogined = ref()
-IsLogined.value = true
-provide('IsLogined', IsLogined)
 </script>
 
 <template>
-  <MyHeader :IsLogined="IsLogined" />
+  <MyHeader />
   <router-view></router-view>
   <MyFooter />
 </template>

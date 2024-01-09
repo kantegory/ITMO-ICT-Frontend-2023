@@ -1,4 +1,7 @@
 <script setup>
+import useApi from '@/composable/useApi'
+
+const { currentName, orderApiPost } = useApi()
 const CheckAuth = async (event) => {
   event.preventDefault()
   if (
@@ -7,33 +10,9 @@ const CheckAuth = async (event) => {
   ) {
     alert('Please SIGN IN')
   } else {
-    console.log(localStorage.getItem('accessToken'))
-    event.preventDefault()
-    order(event)
+    event.preventDefault() 
+    orderApiPost(event)
   }
-}
-const order = async (event) => {
-  event.preventDefault()
-  // alert("ok")
-  const Head = document.getElementById('inputGroupSelect01').value
-  const date = document.getElementById('startDate').value
-  const type = document.getElementById('comType').value
-  var user = localStorage.getItem('user')
-  var profileUsername = JSON.parse(user).id
-  console.log(profileUsername)
-  await fetch('http://localhost:3000/orders', {
-    method: 'POST',
-    body: JSON.stringify({
-      Head: Head,
-      date: date,
-      type: type,
-      username: profileUsername
-    }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  alert('Ordered!')
 }
 </script>
 <template>
@@ -54,6 +33,7 @@ const order = async (event) => {
               class="btn-close"
               data-bs-dismiss="modal"
               aria-label="Закрыть"
+              id="closeOrderModal"
             ></button>
           </div>
           <div class="modal-body container-fluid">
@@ -61,18 +41,7 @@ const order = async (event) => {
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Service</label>
               </div>
-              <select class="custom-select" id="inputGroupSelect01">
-                <option selected>Choose...</option>
-                <option value="Website development">Website development</option>
-                <option value="Corporate website">Corporate website</option>
-                <option value="Fixed price website">Fixed price website</option>
-                <option value="Web Design">Web Design</option>
-                <option value="Mobile app design">Mobile app design</option>
-                <option value="Brand Identity">Brand Identity</option>
-                <option value="Tech SEO">Tech SEO</option>
-                <option value="on-page SEO">On-page SEO</option>
-                <option value="off-page SEO">Off-page SEO</option>
-              </select>
+              <h4 style="padding-top: 3px; padding-left: 25px">{{ currentName }}</h4>
             </div>
             <div>Choose prefered date and type of communication</div>
             <div class="input-group">

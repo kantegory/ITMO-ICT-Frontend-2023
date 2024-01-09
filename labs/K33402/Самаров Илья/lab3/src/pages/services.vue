@@ -1,47 +1,18 @@
 <script setup>
 import CardList from '../components/CardList.vue'
 import modalOrder from '../components/modalOrder.vue'
-import axios from 'axios'
-const checkedNames = ref([])
-const items = ref([])
-const SearchQuery = ref('')
-import { onMounted, ref, watch } from 'vue'
+import useApi from '@/composable/useApi'
+import { onMounted, watch } from 'vue'
+
+const { servicesApi, SearchQuery, filters, items } = useApi()
+
 const onChangeSearchInput = (event) => {
   SearchQuery.value = event.target.value
 }
-const loadItems = async () => {
-  try {
-    let checks = []
-    let url = `http://localhost:3000/services?q=${SearchQuery.value}`
-    for (let check of checkedNames.value) {
-      checks.push(check)
-    }
 
-    if (checks.length == 1) {
-      url = url + `&Group=${checks[0]}`
-    }
-    if (checks.length == 2) {
-      console.log(checks)
-      if (checks.includes('1') && checks.includes('2')) {
-        url = url + `&Group_ne=3`
-      }
-      if (checks.includes('1') && checks.includes('3')) {
-        url = url + `&Group_ne=2`
-      }
-      if (checks.includes('2') && checks.includes('3')) {
-        url = url + `&Group_ne=1`
-      }
-    }
-
-    const { data } = await axios.get(url)
-    items.value = data
-  } catch (err) {
-    console.log(err)
-  }
-}
-onMounted(loadItems)
-watch(SearchQuery, loadItems)
-watch(checkedNames, loadItems)
+onMounted(servicesApi)
+watch(SearchQuery, servicesApi)
+watch(filters, servicesApi)
 </script>
 
 <template>
@@ -64,7 +35,7 @@ watch(checkedNames, loadItems)
       </div>
 
       <div class="search-item">
-        <input type="checkbox" id="checkbox1" value="1" checked="checked" v-model="checkedNames" />
+        <input type="checkbox" id="checkbox1" value="1" v-model="filters" />
         <label for="checkbox1" style="padding-left: 10px">
           <h5 style="font: inherit; font-size: medium">web-development</h5>
         </label>
@@ -74,8 +45,7 @@ watch(checkedNames, loadItems)
           type="checkbox"
           id="checkbox2"
           value="2"
-          checked="checked"
-          v-model="checkedNames"
+          v-model="filters"
           @change="onChangeChecks"
         />
         <label for="checkbox2" style="padding-left: 10px">
@@ -83,7 +53,7 @@ watch(checkedNames, loadItems)
         </label>
       </div>
       <div class="search-item">
-        <input type="checkbox" id="checkbox3" value="3" checked="checked" v-model="checkedNames" />
+        <input type="checkbox" id="checkbox3" value="3" v-model="filters" />
         <label for="checkbox3" style="padding-left: 10px">
           <h5 style="font: inherit; font-size: medium">seo services</h5>
         </label>

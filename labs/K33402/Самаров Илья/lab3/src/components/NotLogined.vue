@@ -1,48 +1,6 @@
 <script setup>
-import { inject } from 'vue'
-const IsLogined = inject('IsLogined')
-const login = async (event) => {
-  event.preventDefault()
-  let reload = true
-  const inputs = Array.from(event.target.querySelectorAll('input'))
-  const loginData = {}
-
-  for (const input of inputs) {
-    loginData[input.name] = input.value
-  }
-
-  console.log('login data', loginData)
-
-  const response = await fetch('http://localhost:3000/login', {
-    method: 'POST',
-    body: JSON.stringify(loginData),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  console.log(response)
-  const responseJson = await response.json()
-
-  const { accessToken, user } = responseJson
-
-  console.log('response', responseJson)
-  if (responseJson == 'Cannot find user') {
-    alert('User not found')
-    reload = false
-  } else {
-    if (responseJson == 'Incorrect password') {
-      alert('password is incorrect')
-      reload = false
-    }
-  }
-  if (reload) {
-    reload = true
-    localStorage.accessToken = accessToken
-    localStorage.user = JSON.stringify(user)
-    IsLogined.value = true
-    location.reload()
-  }
-}
+import useLogin from '@/composable/useLogin'
+const { openReg, login } = useLogin()
 </script>
 <template>
   <div class="nav-item ms-auto" style="padding-right: 100px">
@@ -67,6 +25,7 @@ const login = async (event) => {
                 class="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Закрыть"
+                id="btnClose"
               ></button>
             </div>
             <div class="modal-body">
@@ -108,9 +67,18 @@ const login = async (event) => {
                     <h6 style="padding-left: 25px; white-space: nowrap">Dont have an account?</h6>
                   </div>
                   <div class="col-6">
-                    <router-link to="/registration">
-                      <h6 style="text-align: left; padding-left: 30px">Sign up</h6>
-                    </router-link>
+                    <a @click="openReg">
+                      <h6
+                        style="
+                          text-align: left;
+                          padding-left: 30px;
+                          color: #8738f8;
+                          text-decoration: underline;
+                        "
+                      >
+                        Sign up
+                      </h6>
+                    </a>
                   </div>
                 </div>
               </div>

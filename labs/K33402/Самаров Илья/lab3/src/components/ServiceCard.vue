@@ -4,6 +4,17 @@ defineProps({
   imgSrc: String,
   text: String
 })
+import useApi from '@/composable/useApi'
+
+const { currentName, currentSrc } = useApi()
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js'
+const openOrderModal = (title, imgSrc) => {
+  console.log(title, imgSrc)
+  const modal = new bootstrap.Modal(document.getElementById('modal-order'))
+  currentName.value = title
+  currentSrc.value = imgSrc
+  modal.show()
+}
 </script>
 <template>
   <div class="d-flex flex-row border service-item">
@@ -12,9 +23,7 @@ defineProps({
       <h3>{{ title }}</h3>
       <br />
       {{ text }}
-      <button class="orderbutton" data-bs-toggle="modal" data-bs-target="#modal-order">
-        Order right now
-      </button>
+      <button class="orderbutton" @click="openOrderModal(title, imgSrc)">Order right now</button>
     </div>
   </div>
 </template>

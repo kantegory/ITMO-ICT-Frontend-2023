@@ -1,8 +1,8 @@
 <script setup>
 import Logined from './Logined.vue'
 import NotLogined from './NotLogined.vue'
-import { inject } from 'vue'
-const IsLogined = inject('IsLogined')
+import useLogin from '@/composable/useLogin'
+const { username } = useLogin()
 </script>
 <template>
   <header>
@@ -31,7 +31,7 @@ const IsLogined = inject('IsLogined')
           <h3 class="nav-text">CONTACTS</h3>
         </a>
       </div>
-      <div v-if="IsLogined" class="ms-auto">
+      <div v-if="username" class="ms-auto">
         <Logined />
       </div>
       <div v-else class="ms-auto">

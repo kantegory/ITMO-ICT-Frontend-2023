@@ -1,24 +1,7 @@
 <script setup>
-const register = async (event) => {
-  event.preventDefault()
+import useApi from '@/composable/useApi'
 
-  const inputs = Array.from(event.target.querySelectorAll('input'))
-  const loginData = {}
-
-  for (const input of inputs) {
-    loginData[input.name] = input.value
-  }
-
-  console.log('login data', loginData)
-
-  await fetch('http://localhost:3000/users', {
-    method: 'POST',
-    body: JSON.stringify(loginData),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-}
+const { registerApi } = useApi()
 </script>
 
 <template>
@@ -28,7 +11,7 @@ const register = async (event) => {
       <br />Thanks for using my website, I hope you enjoy my services and we can cooperate!
     </h4>
     <hr />
-    <form @submit="register">
+    <form @submit="registerApi">
       <div class="d-flex flex-column justify-content-center border-right" style="padding-left: 33%">
         <div class="d-flex flex-column RegObj">
           <label for="regusername">Username</label>
