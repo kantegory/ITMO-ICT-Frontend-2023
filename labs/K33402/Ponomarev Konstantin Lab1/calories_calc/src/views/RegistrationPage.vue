@@ -35,7 +35,7 @@ export default {
               this.form.password
           )
           this.userInfoStore.userInfo = userInfo
-          await this.router.push('/bodyParams');
+          await this.router.push('/calculatorParams');
         } catch (e) {
           console.log(e)
         }

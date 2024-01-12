@@ -1,7 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import AuthPage from '../views/AuthPage.vue'
 import RegistrationPage from "@/views/RegistrationPage.vue";
-import BodyParametersPage from "@/views/BodyParametersPage.vue";
+import CalculatorParamsPage from "@/views/CalculatorParamsPage.vue";
 import MainPage from "@/views/MainPage.vue";
 import {useUserInfoStore} from "@/stores/userInfoStore";
 
@@ -24,9 +24,9 @@ const router = createRouter({
             component: RegistrationPage
         },
         {
-            path: '/bodyParams',
-            name: 'bodyParametersPage',
-            component: BodyParametersPage
+            path: '/calculatorParams',
+            name: 'calculatorParamsPage',
+            component: CalculatorParamsPage
         }
     ]
 })
