@@ -5,5 +5,16 @@
       "token": "someReallyCoolToken",
       "userId": "first-cool-user"
     }
+  },
+  "bodyParams": {
+    "success": true,
+    "response": {}
+  },
+  "auth": {
+    "success": true,
+    "response": {
+      "token": "someReallyCoolToken",
+      "userId": "first-cool-user"
+    }
   }
 }
