@@ -1,20 +1,84 @@
+<script>
+import BaseLayout from "@/layouts/BaseLayout.vue";
+import authorizationRepository from "@/domain/repository/authorization/instance";
+import {useRouter} from "vue-router";
+import {useUserInfoStore} from "@/stores/userInfoStore";
+
+export default {
+  setup() {
+    const router = useRouter()
+    const userInfoStore = useUserInfoStore()
+    return {router, userInfoStore};
+  },
+  components: {BaseLayout},
+  data() {
+    return {
+      form: {
+        username: null,
+        password: null,
+        showLoading: false,
+        wasValidated: false,
+      }
+    }
+  },
+  methods: {
+    async submitForm() {
+      this.form.showLoading = true
+      if (!this.formIsValid()) {
+        this.form.wasValidated = true
+      } else {
+        this.form.wasValidated = false
+        try {
+          this.userInfoStore.userInfo = await authorizationRepository.authorizeUser(
+              this.form.username,
+              this.form.password
+          )
+          await this.router.push('/');
+        } catch (e) {
+          console.log(e)
+        }
+      }
+      this.form.showLoading = false
+    },
+    formIsValid() {
+      return this.form.password && this.form.username
+    },
+    primaryButtonText() {
+      if (this.form.showLoading) {
+        return "Загрузка"
+      } else {
+        return "Войти"
+      }
+    }
+  }
+};
+</script>
+
 <template>
   <base-layout>
     <h1>Login to calculator</h1>
-    <div>
+    <form class="needs-validation" @submit.prevent="submitForm"
+          :class="{ 'was-validated': form.wasValidated }"
+          novalidate>
       <div class="mb-2">
         <label for="authLogin" class="form-label">Username</label>
-        <input type="text" id="authLogin" class="form-control">
+        <input type="text" id="authLogin" class="form-control" required v-model="form.username">
+        <div class="invalid-feedback">Please input correct name</div>
       </div>
       <div class="mb-2">
         <label for="inputPassword5" class="form-label">Password</label>
-        <input type="password" id="inputPassword5" class="form-control">
+        <input type="password" id="inputPassword5" class="form-control" required v-model="form.password">
+        <div class="invalid-feedback">Please input correct password</div>
       </div>
-    </div>
-    <div class="d-grid gap-2 mt-5">
-      <button class="btn btn-primary" type="button">Sign in</button>
-      <button class="btn btn-link" type="button">Create an account</button>
-    </div>
+      <div class="d-grid gap-2 mt-5">
+        <button class="btn btn-primary w-100" type="submit" :disabled="form.showLoading">
+        <span class="spinner-border spinner-border-sm" aria-hidden="true"
+              :class="{'invisible': !form.showLoading}"></span>
+          <span role="status">{{ primaryButtonText() }}</span>
+        </button>
+        <router-link class="btn btn-link" to="/registration">Create new account</router-link>
+      </div>
+    </form>
   </base-layout>
 </template>
 
@@ -23,7 +87,3 @@ h1 {
   margin-bottom: 20px;
 }
 </style>
-
-<script setup>
-import BaseLayout from '@/layouts/BaseLayout.vue'
-</script>
