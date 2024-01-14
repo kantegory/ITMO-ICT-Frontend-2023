@@ -23,7 +23,11 @@
 }
 
 .search-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   padding: 1rem;
+  gap: 20px;
 }
 .search-field-input {
   border-radius: 12px;
@@ -31,4 +35,45 @@
   color: #fff;
   cursor: pointer;
   width: 12rem;
+}
+
+.custom-button {
+  color: #fff;
+  background-color: #3c3c5b;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 6px 12px;
+  font-size: 16px;
+}
+
+.custom-button:hover {
+  background-color: #555577;
+}
+
+.text-limit {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title-text-limit {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  gap: 6px;
+}
+.checkbox-label {
+  font: 16px Lato, sans-serif;
 }
