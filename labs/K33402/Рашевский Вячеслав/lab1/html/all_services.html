@@ -38,70 +38,34 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex ms-auto" role="search" id="searchForm">
+                <form class="d-flex mx-auto" role="search" id="searchForm">
+                    <svg display="none">
+                        <symbol id="searchIcon" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                        </symbol>
+                    </svg>
+                    <svg class="icon">
+                        <use xlink:href="#searchIcon"></use>
+                    </svg>
+
                     <input class="form-control me-2" list="datalistOptions" type="search" placeholder="Search"
                            aria-label="Search" id="searchInput">
                     <datalist id="datalistOptions">
                     </datalist>
                     <input class="btn btn-outline-success" type="submit" value="Search">
                 </form>
-                <div class="d-flex ms-auto">
-                    <a id="account" class="nav-link active align-content-end ms-3" href="account.html">Account</a>
-                    <a id="auth" class="nav-link active align-content-end ms-3" href="auth.html">Auth</a>
-                    <a id="exit" class="nav-link active align-content-end ms-3" href="home.html"
-                       onclick="exit()">Exit</a>
+                <div class="d-flex me-0">
+                    <a id="account" class="nav-link active align-content-end" href="account.html">Account</a>
+                    <a id="auth" class="nav-link active align-content-end" href="auth.html">Auth</a>
+                    <a id="exit" class="nav-link active align-content-end" href="home.html" onclick="exit()">Exit</a>
                 </div>
             </div>
         </div>
     </nav>
 </header>
 <main id="cards" class="container-fluid row">
-    <div class="col-12 col-xl-4 col-md-6 my-3">
-        <div id="card-lighting" class="card">
-            <img src="../src/light.jpg" alt="Lighting controller in smartphone" class="card-img-top object-fit-contain"
-                 height="500" width="500">
-            <div class="card-body">
-                <h5 class="card-title">Lighting</h5>
-                <p class="card-text">You can control light in your house using our website.</p>
-                <a href="lighting.html" class="btn btn-primary">Check Lighting service</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-xl-4 col-md-6 my-3">
-        <div id="card-cctv" class="card">
-            <img src="../src/camera.jpg" alt="CCTV at front door" class="card-img-top object-fit-contain" height="500"
-                 width="500">
-            <div class="card-body">
-                <h5 class="card-title">CCTV</h5>
-                <p class="card-text">You can use CCTV using our website.</p>
-                <a href="cctv.html" class="btn btn-primary">Check CCTV service</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-xl-4 col-md-6 my-3">
-        <div id="card-locks" class="card">
-            <img src="../src/lock.jpg" alt="Smart door locks" class="card-img-top object-fit-contain" height="500"
-                 width="500">
-            <div class="card-body">
-                <h5 class="card-title">Door locks</h5>
-                <p class="card-text">You can close and open your door lock using our website.</p>
-                <a href="door_locks.html" class="btn btn-primary">Check Door locks service</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-xl-4 col-md-6 my-3">
-        <div id="card-temperature" class="card">
-            <img src="../src/temperature.jpg" alt="Temperature controller at wall"
-                 class="card-img-top object-fit-contain" height="500"
-                 width="500">
-            <div class="card-body">
-                <h5 class="card-title">Temperature</h5>
-                <p class="card-text">You can control temperature in your house using our website.</p>
-                <a href="temperature.html" class="btn btn-primary">Check Temperature service</a>
-            </div>
-        </div>
-    </div>
 </main>
+<script src="../js/api.js"></script>
 <script src="../js/search.js"></script>
 <script src="../js/auth.js"></script>
 <script src="../js/auth_script.js"></script>

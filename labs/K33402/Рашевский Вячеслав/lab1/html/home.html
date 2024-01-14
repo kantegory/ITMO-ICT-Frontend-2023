@@ -39,18 +39,26 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex ms-auto" role="search" id="searchForm">
+                <form class="d-flex mx-auto" role="search" id="searchForm">
+                    <svg display="none">
+                        <symbol id="searchIcon" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                        </symbol>
+                    </svg>
+                    <svg class="icon">
+                        <use xlink:href="#searchIcon"></use>
+                    </svg>
+
                     <input class="form-control me-2" list="datalistOptions" type="search" placeholder="Search"
                            aria-label="Search" id="searchInput">
                     <datalist id="datalistOptions">
                     </datalist>
                     <input class="btn btn-outline-success" type="submit" value="Search">
                 </form>
-                <div class="d-flex ms-auto">
-                    <a id="account" class="nav-link active align-content-end ms-3" href="account.html">Account</a>
-                    <a id="auth" class="nav-link active align-content-end ms-3" href="auth.html">Auth</a>
-                    <a id="exit" class="nav-link active align-content-end ms-3" href="home.html"
-                       onclick="exit()">Exit</a>
+                <div class="d-flex me-0">
+                    <a id="account" class="nav-link active align-content-end" href="account.html">Account</a>
+                    <a id="auth" class="nav-link active align-content-end" href="auth.html">Auth</a>
+                    <a id="exit" class="nav-link active align-content-end" href="home.html" onclick="exit()">Exit</a>
                 </div>
             </div>
         </div>
@@ -61,12 +69,7 @@
         <div class="card col-12 col-xl-5 col-md-6 my-5 mx-auto">
             <h5 class="card-header">Key use cases</h5>
             <div class="card-body">
-                <ul class="list-group">
-                    <li class="list-group-item">Retail</li>
-                    <li class="list-group-item">Healthcare</li>
-                    <li class="list-group-item">Smart home</li>
-                    <li class="list-group-item">Logistics & transportation</li>
-                    <li class="list-group-item">Agriculture</li>
+                <ul class="list-group" id="useCasesList">
                 </ul>
             </div>
         </div>
@@ -87,20 +90,22 @@
                 </a>
             </div>
             <a class="card text-center border py-2 my-auto fw-semibold w-100"
-                 onclick="location.href='all_services.html'" tabindex="0">
+               onclick="location.href='all_services.html'" tabindex="0">
                 Check out all services
             </a>
         </div>
         <div class="card col-12 col-xl-5 col-md-6 my-5 mx-auto m-lg-0">
             <h5 class="card-header">About us</h5>
             <div class="card-body">
-                <h5 class="card-title">What can we do for you?</h5>
-                <p class="card-text">You can control your area, light, door locks and temperature in house.</p>
+                <h5 id="aboutTitle" class="card-title"></h5>
+                <p id="aboutDesc" class="card-text"></p>
             </div>
         </div>
     </div>
-    <img src="../src/home.jpg" class="img-fluid position-absolute z-n1 vh-100 vw-100 d-grid mx-auto" alt="Smart house outside the city on a green, well-kept area">
+    <img src="../src/home.jpg" class="img-fluid position-absolute z-n1 vh-100 vw-100 d-grid mx-auto"
+         alt="Smart house outside the city on a green, well-kept area">
 </main>
+<script src="../js/api.js"></script>
 <script src="../js/search.js"></script>
 <script src="../js/auth.js"></script>
 <script src="../js/auth_script.js"></script>
