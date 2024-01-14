@@ -1,48 +1,41 @@
-import React, {useState} from "react";
-import {Col, Container, Nav, Navbar, Row} from "react-bootstrap";
+import React, {useContext} from "react";
+import {Button, Col, Container, Nav, Navbar} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import SearchBar from "../searchbar/SearchBar";
+import "./Header.css"
+import {ThemeContext} from "../../ThemeProvider";
+import {Icon} from "../icon/Icon";
 
 function Header() {
-    const [activePage, setActivePage] = useState(localStorage.getItem("activePage") || "home")
-    const handleProjectsPage = () => {
-        setActivePage("projects")
-        localStorage.setItem("activePage", "projects")
-    }
-    const handleHomePage = () => {
-        setActivePage("home")
-        localStorage.setItem("activePage", "home")
+    const [theme,setTheme] = useContext(ThemeContext)
+
+    const handleTheme = () => {
+        setTheme(theme === "light" ? "dark" : "light")
     }
 
-    const handleAccountPage = () => {
-        setActivePage("account")
-        localStorage.setItem("activePage", "account")
-    }
 
     return (
-        <Navbar collapseOnSelect expand="lg" className="mb-2">
+        <Navbar collapseOnSelect expand="lg" className="header mb-2">
             <Container className={"d-flex justify-content-start px-2"}>
-                <Col className={"d-flex"}>
-                    <h3>Портфолио</h3>
+                <Col className={"d-flex"} >
+                    <Icon height={40} width={40} id="portfolio"></Icon>
+                    <h2>Портфолио</h2>
                 </Col>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Col className={"d-flex justify-content-center"}>
+                    <Col className={"navTittles d-flex justify-content-center"}>
                         <Nav className={"d-flex align-items-center"}>
-                            <Link className="mx-2 active" to={"/"} onClick={handleHomePage}
+                            <Link className="mx-2 active" to={"/"}
                                   style={{
-                                      color: activePage === "home" ? "blue" : "black",
                                       textDecoration: 'none'
                                   }}>Главная</Link>
-                            <Link className="mx-2 active" to="/projects" onClick={handleProjectsPage}
+                            <Link className="mx-2 active" to="/projects"
                                   style={{
-                                      color: activePage === "projects" ? "blue" : "black",
                                       textDecoration: 'none'
                                   }}>
                                 Мои Проекты
                             </Link>
-                            <Link className="mx-2" to={"/account"} onClick={handleAccountPage} style={{
-                                color: activePage === "account" ? "blue" : "black",
+                            <Link className="mx-2" to={"/account"} style={{
                                 textDecoration: 'none'
                             }}>
                                 Личный кабинет
@@ -52,6 +45,12 @@ function Header() {
                     </Col>
                     <Col className="d-flex justify-content-center">
                         <SearchBar/>
+                    </Col>
+                    <Col className="d-flex justify-content-center">
+                        <Button style={{backgroundColor : "transparent" , borderColor: "transparent"}} onClick={handleTheme}>
+                            <Icon height={40} width={40} id={theme === "light" ? "darkSun" : "lightMoon"}></Icon>
+                        </Button>
+
                     </Col>
                 </Navbar.Collapse>
             </Container>
