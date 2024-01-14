@@ -50,7 +50,7 @@ function AccountPage() {
             {
                 data.image &&
                 <Row className={"d-flex justify-content-center"}>
-                        <Image src={data.image} style={{width: 300, height: 300,borderRadius: 300 / 2}}/>
+                        <Image alt="profile image" src={data.image} style={{width: 300, height: 300,borderRadius: 300 / 2}}/>
                 </Row>
             }
             <Row className={"d-flex justify-content-center"}>
