@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "axios": "^1.6.0",
+    "bcrypt": "^5.1.1",
+    "json-server": "^0.17.4",
+    "jsonwebtoken": "^9.0.2",
+    "module": "^1.2.5"
+  }
+}
