@@ -1,0 +1,50 @@
+
+    
+.overlay
+    display: block
+    position: fixed
+    top: 0
+    left: 0px
+    height: 100%
+    width: 100%
+    background: rgba(0, 0, 0, 0.5)
+.modal
+    display: block
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 382px
+    min-height: 402px
+    background: #F2F2F2
+    padding: 38px 40px 40px 40px
+    &_mini
+        min-height: 143px    
+    &__exit
+        position: absolute
+        top: -20px
+        right: -25px
+        font-size: 34px
+        color: red
+        cursor: pointer
+    &__title
+        color: #0D0D0D
+        text-align: center
+        font-family: MuseoModerno
+        font-size: 19px
+        font-style: normal
+        font-weight: 700
+        line-height: 19px
+        margin-bottom: 10px
+    &__descr
+        color: #0D0D0D
+        text-align: center
+        font-family: MuseoModerno
+        font-size: 14px
+        font-style: normal
+        font-weight: 700
+        line-height: 14px
+        margin-bottom: 25px
+    .error
+        text-align: center
+        border-color: red
