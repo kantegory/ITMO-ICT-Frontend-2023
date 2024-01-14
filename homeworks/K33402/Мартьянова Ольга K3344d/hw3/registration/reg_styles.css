@@ -1,0 +1,52 @@
+.light-background {
+    height: 100%;
+}
+
+.form-control {
+    margin-bottom: 7px;
+    margin-right: 8px;
+}
+
+.reg-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5%;
+    color: var(--text-color);
+}
+
+.auth-form, .link-container {
+    border: 1px solid #8f241341;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    margin: 15px 0px;
+}
+
+.reg-title {
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+.form-control {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+}
+
+@media (max-width: 425px) {
+    .navbar {
+        margin: 0 0.5%;
+    }
+
+    .light-background {
+        min-width: auto;
+        min-height: auto;
+    }
+
+}
+
+@media (min-height: 960px) {
+    .light-background {
+        height: 100vh;
+    }
+}
