@@ -1,0 +1,154 @@
+{
+  "users": [
+    {
+      "email": "test@mail.ru",
+      "password": "1234567890",
+      "id": 1
+    },
+    {
+      "email": "fil@m.e",
+      "password": "qwerty1234",
+      "id": 2
+    }
+  ],
+  "requests": [
+    {
+      "name": "Леонид",
+      "phoneNumber": "+79119064548",
+      "email": "leonid.tishalovich2003@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "we",
+      "phoneNumber": "we",
+      "email": "we",
+      "id": 2
+    },
+    {
+      "name": "we",
+      "phoneNumber": "823",
+      "email": "we@d.ry",
+      "id": 3
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "",
+      "id": 4
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "",
+      "id": 7
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "w",
+      "id": 8
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "s",
+      "id": 9
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "",
+      "id": 11
+    },
+    {
+      "name": "sd",
+      "phoneNumber": "sd",
+      "email": "sd",
+      "id": 12
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "",
+      "id": 13
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "",
+      "id": 14
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "",
+      "id": 15
+    },
+    {
+      "name": "",
+      "phoneNumber": "",
+      "email": "",
+      "id": 16
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "title": "Пульсометр Polar FT1",
+      "itemImg": "/src/assets/photo.png",
+      "description": "Для первых шагов в тренировках, основанных на сердечном ритме",
+      "price": 4500,
+      "filter": "fitness"
+    },
+    {
+      "id": 2,
+      "title": "Venu Sq 2 Music Edition",
+      "itemImg": "/src/assets/b483673f21d333f4870116ade65c46b3.png",
+      "description": "Для первых шагов в тренировках, основанных на сердечном ритме",
+      "price": 9000,
+      "filter": "triathlon"
+    },
+    {
+      "id": 3,
+      "title": "INSTINCT 2 Solar",
+      "itemImg": "/src/assets/a1b3a1f34ed374b6fa9ea8dc8efbd11d.png",
+      "description": "Для первых шагов в тренировках, основанных на сердечном ритме",
+      "price": 8000,
+      "filter": "running"
+    },
+    {
+      "id": 4,
+      "title": "Пульсометр Polar FT1",
+      "itemImg": "/src/assets/a1b3a1f34ed374b6fa9ea8dc8efbd11d.png",
+      "description": "Для первых шагов в тренировках, основанных на сердечном ритме",
+      "price": 3400,
+      "filter": "fitness"
+    },
+    {
+      "id": 5,
+      "title": "Venu Sq 2 Music Edition",
+      "itemImg": "/src/assets/b483673f21d333f4870116ade65c46b3.png",
+      "description": "Для первых шагов в тренировках, основанных на сердечном ритме",
+      "price": 9320,
+      "filter": "triathlon"
+    }
+  ]
+}
