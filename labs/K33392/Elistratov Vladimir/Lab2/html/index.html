@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash</title>
+    <link rel="stylesheet" href="/../css/bootstrap.min.css">
+    <link rel="stylesheet" href="/../css/indexMyStyle.css">
+</head>
+<body onload="loadMainPage()">
+    <header class="rounded" id="pageHeader">
+      <div class="row">
+        <div class="col-12 justify-f-s"> 
+          <div class="col-xl-9 col-md-7 col-sm-5">
+            <h1>NOW I DON'T KNOW WHAT I WANT TO WRITE HERE</h1>
+          </div>
+          <div class="col-xl-3 col-md-5 col-sm-7 justify-s-a">
+            <div class="justify-s-a" id="pageHeaderButtons">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="capsuleAddButton">
+        
+      </div>
+    </header>
+    
+    <section class="rounded">
+        <div class="container">
+            <div class="row justify-s-a" id="capsuleSelector">
+              
+            </div>
+            <div class="mt-2 row">
+                <div class="justify-c"></div>
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <option selected disabled>Сортировать по:</option>
+                      <option value="conservationDate">Дата консервации</option>
+                      <option value="openingDate">Дата открытия</option>
+                  </select>
+                </div>
+            </div>
+          
+            <hr class="content-dividing-line rounded mt-3 mb-3"/>
+
+            <div class="row" id="capsules">
+              <div class="col-xl-3 col-md-4 col-sm-6 mb-3">
+                <div class="card capsule-param">
+                    <div class="card-header">
+                        <img src="../img/pattern.jpg" alt="..." class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">${name}</h5>
+                        <p class="card-text mb-2">${description}</p>
+                        <form onsubmit="decapsulate(event)" class="justify-f-e" data-card-id="${id}" data-ownerUser-id="${userId}">
+                            <button type="submit" class="btn btn-my-main btn-block btn-sm">Открыть</button>
+                        </form>
+                    </div>
+                    <div class="card-footer justify-s-b">
+                        <p>${openDate}</p>
+                        <p>@${userName}</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <footer class="rounded text-lg-start">
+      
+          <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2023 Copyright:
+        <a class="text-white" href="https://www.google.com/">something</a>
+      </div>
+          <!-- Copyright -->
+    </footer>
+
+    <div class="modal fade modal-my-config" id="regFormModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="regFormModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Регистрация</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <form id="RegistrationForm" onsubmit="registration(event)">
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="registerName">Имя</label>
+                  <input type="text" id="registerName" class="form-control" name="firstName"/>
+                </div>
+          
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="registerUsername">Логин</label>
+                  <input type="text" id="registerUsername" class="form-control" name="userName"/>
+                </div>
+          
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="registerEmail">Email</label>
+                  <input type="email" id="registerEmail" class="form-control" name="email"/>
+                </div>
+          
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="registerPassword">Пароль</label>
+                  <input type="password" id="registerPassword" class="form-control" name="password"/>
+                </div>
+          
+                <button type="submit" class="btn btn-my-main btn-block mb-3" data-bs-dismiss="modal">Зарегистрироваться</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade modal-my-config" id="CreateCapsuleFormModalId" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="#CreateCapsuleFormModalId" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Создание капсулы</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <form id="CreateCapsuleForm" onsubmit="encapsulate(event)">
+              <div class="form-outline mb-4">
+                <label class="form-label" for="CreateCapsuleNameID">Название:</label>
+                <input type="text" id="CreateCapsuleNameID" class="form-control" name="name" required/>
+              </div>
+        
+              <div class="form-outline mb-4">
+                <label class="form-label" for="CreateCapsuleEndDateBoxID">Дата и время открытия:</label>
+                <input type="datetime-local" id="CreateCapsuleEndDateBoxID" class="form-control" name="openDate" required/>
+              </div>
+        
+              <div class="form-outline mb-4">
+                <label class="form-label" for="CreateCapsuleDescriptionID">Краткое описание капсулы:</label>
+                <textarea type="text" id="CreateCapsuleDescriptionID" class="form-control" name="description" required></textarea>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-check-label" for="RadioBtnMy"> Сделать капсулу общедоступной: </label>
+                <input class="form-check-input" type="checkbox" id="capsuleAccessPoint" name="access" />
+              </div>
+              
+              <hr class="content-dividing-line rounded mt-3 mb-3"/>
+              <div class="form-outline mb-10">
+                <p class="fw-bold">Содержимое капсулы</p>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="CreateCapsuleTextID">Запечатанный текст</label>
+                <textarea type="text" id="CreateCapsuleTextID" class="form-control" name="text"></textarea>
+              </div>
+        
+              <div class="form-outline mb-4">
+                <label class="form-label" for="CreateCapsuleFiles">Прикрепленные файлы</label>
+                <input type="file" id="CreateCapsuleFiles" class="form-control" multiple name="files"/>
+                
+              </div>
+        
+              <button type="submit" class="btn btn-my-main btn-block mb-3" data-bs-dismiss="modal">Запечатать</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade modal-my-config-light" id="openCapsuleFormModalId" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="openCapsuleFormModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalCapsuleOpenedTitle"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body" id="modalCapsuleOpenedBody">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="modal fade modal-my-config" id="loginFormModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginFormModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Авторизация</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <form id="LogInForm" onsubmit="login(event)">
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="LogInFormEmail">Email</label>
+                  <input type="email" id="LogInFormEmail" class="form-control" name="email"/>
+                </div>
+          
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="LogInFormPassword">Пароль</label>
+                  <input type="password" id="LogInFormPassword" class="form-control" name="password"/>
+                </div>
+                <button type="submit" class="btn btn-my-main btn-block mb-3" id="LogInFormBTN" data-bs-dismiss="modal">Sign in</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/DataScan.js"></script>
+    <script src="../js/loadPages.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/capsuleAddOpen.js"></script>
+</body>
+</html>
