@@ -1,0 +1,73 @@
+@import url(MyStyleO.css);
+
+.modal-my-config{
+  --bs-modal-bg: var(--color3);
+  --bs-modal-color: var(--color4);
+  --bs-modal-border-color: var(--color1);
+  --bs-modal-header-border-color: var(--color1);
+  --bs-modal-footer-border-color: var(--color1);
+}
+
+.card-footer{
+  font-size: small;
+  height: 35px;
+}
+
+.card-header{
+  max-height: 170px;
+  display: flex;
+  align-items: center;
+}
+
+.card-img-top{
+  max-height: 170px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-body{
+  padding: 9px;
+  max-height: 255px;
+}
+
+.content-dividing-line{
+  border: none; /* Убираем границу для браузера Firefox */
+  color: var(--color2); /* Цвет линии для остальных браузеров */
+  background-color: var(--color2); /* Цвет линии для браузера Firefox и Opera */
+  height: 10px; /* Толщина линии */
+}
+
+.capsule-param{
+  background-color: var(--color1);
+  color: var(--color4);
+  max-height: 460px;
+}
+
+.btn-my-favourite{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --bs-btn-hover-bg: var(--color8);
+  --bs-btn-active-bg: var(--color8);
+  --bs-btn-active-border-color: var(--color8);
+}
+
+.btn-my-card{
+  --bs-btn-color: var(--color4);
+  --bs-btn-bg: var(--color2);
+  --bs-btn-border-color: var(--color3);
+  --bs-btn-hover-color: var(--color4);
+  --bs-btn-hover-bg: var(--color11);
+  --bs-btn-hover-border-color: var(--color1);
+  --bs-btn-active-color: var(--color4);
+  --bs-btn-active-bg: var(--color11);
+  --bs-btn-active-border-color: var(--color1);
+}
