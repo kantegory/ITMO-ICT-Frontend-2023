@@ -3,6 +3,16 @@ class CapsulesApi {
         this.API = instance;
     }
 
+<<<<<<< Updated upstream
+=======
+    getOneCapsule = async(id) => {
+        return this.API({
+            method: "GET",
+            url: `/664/capsules?id=${id}`,
+        });
+    }
+
+>>>>>>> Stashed changes
     getAllCapsules = async () => {
         return this.API({
             method: "GET",

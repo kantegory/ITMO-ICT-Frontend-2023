@@ -45,9 +45,14 @@
   <footer>
     <footer-c/>
   </footer>
+<<<<<<< Updated upstream
   <reg-modal/>
   <login-modal/>
   <vault-creation-modal/>
+=======
+
+  <open-vault-modal/>
+>>>>>>> Stashed changes
 
 </template>
 
@@ -65,10 +70,19 @@
   import Selector from "@/components/Main/Selector/selector.vue";
   import usersStore from "@/stores/user.js";
   import LoggedMainHeader from "@/components/Main/Header/loggedHeader.vue";
+<<<<<<< Updated upstream
   import VaultCreationModal from "@/components/Vaults/creationCapsuleModal.vue";
   import VaultOpened from "@/components/Vaults/vaultOpened.vue";
   import VaultClosed from "@/components/Vaults/vaultClosed.vue";
   import FooterC from "@/components/footerC.vue";
+=======
+  import VaultCreationModal from "@/components/Main/Vaults/creationCapsuleModal.vue";
+  import VaultOpened from "@/components/Main/Vaults/vaultOpened.vue";
+  import VaultClosed from "@/components/Main/Vaults/vaultClosed.vue";
+  import FooterC from "@/components/footerC.vue";
+  import OpenVaultModal from "@/components/Main/Vaults/openCapsuleModal.vue";
+  import {Modal} from "bootstrap";
+>>>>>>> Stashed changes
 
   export default {
     name: "homaPage",
@@ -79,6 +93,10 @@
       }
     },
     components: {
+<<<<<<< Updated upstream
+=======
+      OpenVaultModal,
+>>>>>>> Stashed changes
       FooterC,
       VaultCreationModal, LoggedMainHeader, LoggedSelector, LoginModal, RegModal, Selector, MainHeader, VaultClosed, VaultOpened,},
     computed: {
@@ -105,5 +123,29 @@
       this.capState.loadCapsules()
     },
   };
+<<<<<<< Updated upstream
 
+=======
+  export function oneCapsule(id = -1){
+    const capsule = {
+      "name":"None",
+      "openDate":1701644520000,
+      "description":"None",
+      "access":false,
+      "text":"None",
+      "files":"None",
+      "userId": undefined,
+      "userName": "None",
+      "id": undefined
+    };
+
+    localStorage.capsule = capsule
+    if (id !== -1){
+      const vautState = capsulesStore();
+      capsule.value = vautState.loadOneCapsule(id);
+    }
+
+    return capsule;
+  }
+>>>>>>> Stashed changes
 </script>

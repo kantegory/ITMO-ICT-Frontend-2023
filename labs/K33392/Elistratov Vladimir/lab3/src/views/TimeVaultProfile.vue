@@ -26,7 +26,11 @@
   import ProfileHeader from "@/components/Profile/Header/ProfileHeader.vue";
   import FooterC from "@/components/footerC.vue";
   import ProfileInfo from "@/components/Profile/info/profileInfo.vue";
+<<<<<<< Updated upstream
   import VaultOpened from "@/components/Vaults/vaultOpened.vue";
+=======
+  import VaultOpened from "@/components/Main/Vaults/vaultOpened.vue";
+>>>>>>> Stashed changes
 
   export default {
     name: "profilePage",
@@ -41,7 +45,10 @@
       ProfileInfo,
       FooterC,
       ProfileHeader
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     },
 
   };

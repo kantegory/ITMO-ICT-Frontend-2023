@@ -9,7 +9,11 @@
         type: String,
       },
       email: {
+<<<<<<< Updated upstream
         type: Date,
+=======
+        type: String,
+>>>>>>> Stashed changes
       },
       capCount: {
         type: String,

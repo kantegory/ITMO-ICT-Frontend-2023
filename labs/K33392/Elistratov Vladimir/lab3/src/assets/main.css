@@ -101,6 +101,23 @@ header, section, footer, main{
   fill: none;
 }
 
+<<<<<<< Updated upstream
+=======
+.close-btn{
+  stroke: currentColor;
+  width: 25px;
+  height: 25px;
+  fill: none;
+  transform: rotate(45deg);
+}
+
+.navbar-toggler-icon{
+  stroke: var(--color4);
+  width: 30px;
+  height: 30px;
+  fill: none;
+}
+>>>>>>> Stashed changes
 
 .close-btn{
   stroke: currentColor;
