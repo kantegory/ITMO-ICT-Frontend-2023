@@ -10,7 +10,7 @@ class CapsulesApi {
             })
         } else {
             return this.API({
-                url: `/capsules?title=${searchString}`
+                url: `/capsules?q=${searchString}`
             })
         }
     }
@@ -23,7 +23,7 @@ class CapsulesApi {
 
     getPublicCapsules = async (data) => {
         return this.API({
-            url: '/capsules?capsuleAvailability=public'
+            url: `/capsules?capsuleAvailability=public&q=${data}`
         })
     }
 

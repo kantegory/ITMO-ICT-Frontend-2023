@@ -21,15 +21,14 @@ export default {
       userState: usersStore(),
     }
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     async register() {
       const response = (await this.userState.createUser(this.form))
       if (response) {
         const {accessToken, user} = response
         localStorage.accessToken = accessToken
-        localStorage.user = user
+        localStorage.user = JSON.stringify(user)
       }
 
       this.form.username = ''

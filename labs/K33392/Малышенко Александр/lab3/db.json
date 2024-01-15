@@ -47,20 +47,6 @@
       "id": 3
     },
     {
-      "email": "hgfh@gmail.com",
-      "password": "$2a$10$W6B9.bCFt4fPe/ajDL4ZVOgJEZSj7kV7uLWeFgsONJIw0OjQUp/1G",
-      "username": "alex",
-      "accountCreationDate": "2023-12-11",
-      "friendsList": [],
-      "ownCapsulesList": [],
-      "fullUsername": "",
-      "phoneNumber": "",
-      "address": "",
-      "extraProfileInfo1": "",
-      "extraProfileInfo2": "",
-      "id": 4
-    },
-    {
       "email": "testoviy@gmail.com",
       "password": "$2a$10$SkEmqkeq7VgkvfmP3VYOOuJiEIRdCdBAck0mLkWgK.mfe.2sIzoBq",
       "username": "xard",
@@ -89,10 +75,10 @@
       "id": 6
     },
     {
-      "email": "299@gmail.com",
-      "password": "$2a$10$7jHqSB1eLQQlI/3YcxHIiOFjtDjL0Tmgmk7VaGRrfX9h.0RiqEYhi",
-      "username": "newUser228",
-      "accountCreationDate": "16.12.2023",
+      "email": "gfdgfd@gmail.com",
+      "password": "$2a$10$C8qaXAk3lzD.arlUl.vl3exvbBPzphrHcX/GmdYCEiCzU06GTF4D.",
+      "username": "123",
+      "accountCreationDate": "22.12.2023",
       "friendsList": [],
       "ownCapsulesList": [],
       "fullUsername": "",
@@ -103,10 +89,10 @@
       "id": 7
     },
     {
-      "email": "fdsfsd@gmail.com",
-      "password": "$2a$10$YJ/718dxNqM4.8d4hOQieuAR0KolpHi.pH/.pWbnm5qOC6.2USfKu",
-      "username": "fsdf",
-      "accountCreationDate": "16.12.2023",
+      "email": "dsfgdf@gmail.com",
+      "password": "$2a$10$m455yE7Z1zwalkzHVNbmjO107N.b2NXFTStkgF5X0Vf9sXYtIDeGq",
+      "username": "123",
+      "accountCreationDate": "22.12.2023",
       "friendsList": [],
       "ownCapsulesList": [],
       "fullUsername": "",
@@ -115,132 +101,6 @@
       "extraProfileInfo1": "",
       "extraProfileInfo2": "",
       "id": 8
-    },
-    {
-      "email": "123456@gmail.com",
-      "password": "$2a$10$9xNzZFnRJwXdv7u0IRE16OGRcbFlmOhF0dRcuk9gxPzuR39NPWcBK",
-      "username": "resrs",
-      "accountCreationDate": "16.12.2023",
-      "friendsList": [],
-      "ownCapsulesList": [],
-      "fullUsername": "",
-      "phoneNumber": "",
-      "address": "",
-      "extraProfileInfo1": "",
-      "extraProfileInfo2": "",
-      "id": 9
-    },
-    {
-      "email": "dfgdxsfghfgx@gmail.com",
-      "password": "$2a$10$uJhvmTIpvN0Ed/Jm8PFTEO4U.ftRqHEH00H4SL8pHLnTV5q2Nxz.y",
-      "username": "gfdggfdg",
-      "accountCreationDate": "16.12.2023",
-      "friendsList": [],
-      "ownCapsulesList": [],
-      "fullUsername": "",
-      "phoneNumber": "",
-      "address": "",
-      "extraProfileInfo1": "",
-      "extraProfileInfo2": "",
-      "id": 10
-    },
-    {
-      "email": "dsfdsf@gmail.com",
-      "password": "$2a$10$Rvcuz7GxOY638EAwxMwU.OydLiVdv.1AQSWuRiYejJR/Dp3vDTw6q",
-      "username": "dsfds",
-      "accountCreationDate": "16.12.2023",
-      "friendsList": [],
-      "ownCapsulesList": [],
-      "fullUsername": "",
-      "phoneNumber": "",
-      "address": "",
-      "extraProfileInfo1": "",
-      "extraProfileInfo2": "",
-      "id": 11
-    },
-    {
-      "email": "gdjghnjzgb@gmail.com",
-      "password": "$2a$10$bD18gBIY0SMK2XSgZrKaw.1KE2AGFmnyJ847prMYPBVW.X6PImpzK",
-      "username": "fsdfsdfsdf",
-      "accountCreationDate": "16.12.2023",
-      "friendsList": [],
-      "ownCapsulesList": [],
-      "fullUsername": "",
-      "phoneNumber": "",
-      "address": "",
-      "extraProfileInfo1": "",
-      "extraProfileInfo2": "",
-      "id": 12
-    },
-    {
-      "email": "kjhlpkhk@gmail.com",
-      "password": "$2a$10$Zrkr8CtIMWuWJ7.DzxiPI.VYD.ScRWIstex3s9vAgMJ7VWYDmeSyG",
-      "username": "hgfghgfh",
-      "accountCreationDate": "16.12.2023",
-      "friendsList": [],
-      "ownCapsulesList": [],
-      "fullUsername": "",
-      "phoneNumber": "",
-      "address": "",
-      "extraProfileInfo1": "",
-      "extraProfileInfo2": "",
-      "id": 13
-    },
-    {
-      "email": "kjmhnfg@gmail.com",
-      "password": "$2a$10$YlwzXqJqmTFWaZ5VfBRF2OjHN47fC0dXCrpa4S/RCkPRkfCSMUIsy",
-      "username": "ghhhh",
-      "accountCreationDate": "16.12.2023",
-      "friendsList": [],
-      "ownCapsulesList": [],
-      "fullUsername": "",
-      "phoneNumber": "",
-      "address": "",
-      "extraProfileInfo1": "",
-      "extraProfileInfo2": "",
-      "id": 14
-    },
-    {
-      "email": "jhjg@gmail.com",
-      "password": "$2a$10$svz4CMwnokZ9vX6TwPDfSOuMxnOKc55F6FuJzGIXta/jmVA6r/NYy",
-      "username": "fdzfdsfsd",
-      "accountCreationDate": "16.12.2023",
-      "friendsList": [],
-      "ownCapsulesList": [],
-      "fullUsername": "",
-      "phoneNumber": "",
-      "address": "",
-      "extraProfileInfo1": "",
-      "extraProfileInfo2": "",
-      "id": 15
-    },
-    {
-      "email": "jkhlghjko@gmail.com",
-      "password": "$2a$10$DxMQ5bn8ZLH4D5vRnKZVue8IlqHg306VH1a3n8z.kU50lkFxvtK8C",
-      "username": "fyhlk;kl",
-      "accountCreationDate": "16.12.2023",
-      "friendsList": [],
-      "ownCapsulesList": [],
-      "fullUsername": "",
-      "phoneNumber": "",
-      "address": "",
-      "extraProfileInfo1": "",
-      "extraProfileInfo2": "",
-      "id": 16
-    },
-    {
-      "email": "fsdfsgdfg@gmail.com",
-      "password": "$2a$10$0AQFNabxgq.KrPsm4Zdfj.9kxVIC1cPvWeJDWjY5PQ2NQLYwaa/gO",
-      "username": "boba",
-      "accountCreationDate": "18.12.2023",
-      "friendsList": [],
-      "ownCapsulesList": [],
-      "fullUsername": "",
-      "phoneNumber": "",
-      "address": "",
-      "extraProfileInfo1": "",
-      "extraProfileInfo2": "",
-      "id": 17
     }
   ],
   "capsules": [
@@ -311,17 +171,6 @@
       "id": 6
     },
     {
-      "title": "пвыпвыч",
-      "openingDate": "2023-12-22",
-      "file": "",
-      "text": "пвапвыа",
-      "capsuleAvailability": "friendsOnly",
-      "creationDate": "2023-12-11",
-      "userId": 1,
-      "creatorName": "alex",
-      "id": 7
-    },
-    {
       "title": "newVue",
       "openingDate": "2024-01-01",
       "file": "",
@@ -333,26 +182,26 @@
       "id": 8
     },
     {
-      "title": "newfsdzf",
-      "openingDate": "2023-12-06",
+      "title": "Capsule for admin",
+      "openingDate": "2024-02-23",
       "file": "",
-      "text": "dgsfdgbf",
+      "text": "only for friends capsule",
       "capsuleAvailability": "friendsOnly",
-      "creationDate": "2023-12-18",
+      "creationDate": "2023-12-22",
       "userId": 1,
       "creatorName": "alex",
-      "id": 9
+      "id": 11
     },
     {
-      "title": "1234",
-      "openingDate": "2023-12-16",
+      "title": "test",
+      "openingDate": "2023-12-06",
       "file": "",
       "text": "1234",
       "capsuleAvailability": "friendsOnly",
-      "creationDate": "2023-12-18",
+      "creationDate": "2023-12-22",
       "userId": 1,
       "creatorName": "alex",
-      "id": 10
+      "id": 12
     }
   ]
 }

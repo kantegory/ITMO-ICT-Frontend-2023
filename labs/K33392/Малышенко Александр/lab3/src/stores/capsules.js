@@ -20,7 +20,7 @@ const capsulesStore = defineStore('capsules', {
             } else {
                 this.capsules
                 const response = await capsulesApi.getAllCapsules(searchString)
-                this._loadLoginUserCapsules(response.data, JSON.parse(JSON.parse(localStorage.pinia_users)['user']), (await usersApi.getAllUsers())['data'])
+                this._loadLoginUserCapsules(response.data, JSON.parse(JSON.parse(localStorage.pinia_users)['user']), (await usersApi.getAllUsers())['data']) //изменить JSON.parse(JSON.parse(localStorage.pinia_users)['user'])
                 return response
             }
         },

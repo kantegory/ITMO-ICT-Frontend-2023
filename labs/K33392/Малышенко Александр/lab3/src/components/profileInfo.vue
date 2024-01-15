@@ -1,4 +1,6 @@
 <script>
+  import {mouseOnAvatar} from "@/profileAvatarMouseCheck.js";
+
   export default{
     name: 'profileInfo',
 
@@ -35,12 +37,19 @@
   }
 </script>
 
+<script setup>
+  import {mouseOnAvatar} from "@/profileAvatarMouseCheck.js";
+
+  const {onAvatar} = mouseOnAvatar()
+</script>
+
 <template>
   <div class="col-lg-4">
     <div class="card mb-4 change-border-lightgreen">
       <div class="card-body text-center">
         <img src="https://placekitten.com/528/560" alt="avatar"
              class="rounded-circle img-fluid" style="width: 150px;">
+        <div class="text-on-img" v-if="onAvatar">edit</div>
         <h5 class="my-3">{{username}}</h5>
         <p class="text-muted mb-1">{{extraInfo1}}</p>
         <p class="text-muted mb-4">{{extraInfo2}}</p>
@@ -98,3 +107,25 @@
     </div>
   </div>
 </template>
+
+<style>
+div#text-on-img {
+  position: relative;
+}.text-on-img {
+  position: absolute;
+  top: 17.5%;
+  left: 38%;
+  color: lightgray;
+  width: 100px;
+  height: 100px;
+  background: #00000094;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font: bold 24px/34px Helvetica, Sans-Serif;
+  border-radius: 50%;
+  user-select: none;
+ }
+</style>
