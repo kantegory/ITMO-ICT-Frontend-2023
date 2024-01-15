@@ -45,6 +45,20 @@
       "extraProfileInfo1": "",
       "extraProfileInfo2": "",
       "id": 3
+    },
+    {
+      "email": "hgfh@gmail.com",
+      "password": "$2a$10$W6B9.bCFt4fPe/ajDL4ZVOgJEZSj7kV7uLWeFgsONJIw0OjQUp/1G",
+      "username": "alex",
+      "accountCreationDate": "2023-12-11",
+      "friendsList": [],
+      "ownCapsulesList": [],
+      "fullUsername": "",
+      "phoneNumber": "",
+      "address": "",
+      "extraProfileInfo1": "",
+      "extraProfileInfo2": "",
+      "id": 4
     }
   ],
   "capsules": [
@@ -113,6 +127,17 @@
       "userId": 1,
       "creatorName": "alex",
       "id": 6
+    },
+    {
+      "title": "пвыпвыч",
+      "openingDate": "2023-12-22",
+      "file": "",
+      "text": "пвапвыа",
+      "capsuleAvailability": "friendsOnly",
+      "creationDate": "2023-12-11",
+      "userId": 1,
+      "creatorName": "alex",
+      "id": 7
     }
   ]
 }
