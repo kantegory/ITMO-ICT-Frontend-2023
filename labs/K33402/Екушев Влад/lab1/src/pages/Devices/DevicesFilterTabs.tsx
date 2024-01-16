@@ -39,6 +39,7 @@ const TabRoot = styled('button')(({ theme }) => ({
   fontWeight: 500,
   fontSize: 15,
   backgroundColor: theme.palette.background.default,
+  color: theme.palette.text.primary,
   '&.DeviceFilterTabs__tab--active': {
     backgroundColor: theme.palette.primary.main,
     '& .DeviceFilterTabs__iconContainer': {

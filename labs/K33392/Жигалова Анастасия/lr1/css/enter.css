@@ -26,7 +26,6 @@ footer {
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
   }
-
   .modal-content {
     background-color: #fefefe;
     margin: 10% auto;
@@ -34,14 +33,12 @@ footer {
     border: 1px solid #888;
     width: 50%;
   }
-
   .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
-
   .close:hover,
   .close:focus {
     color: black;

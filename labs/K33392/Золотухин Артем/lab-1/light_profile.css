@@ -1,0 +1,7 @@
+.light-theme {
+  --side-menu-background-color: #4e4e7a;
+  --primary-container: #6a689b;
+  --primary: #2c2c42;
+  --text-color-link: rgba(0, 0, 0, 0.87);
+  --text-color: rgb(255, 255, 255);
+}

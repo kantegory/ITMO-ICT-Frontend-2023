@@ -1,10 +1,13 @@
-import React from 'react'
+import MyNavbar from '../components/MyNavbar'
 
 function Work() {
   return (
-    <div className='work'>
-      <h1>Work</h1>
-    </div>
+    <>
+      <MyNavbar />
+      <div className='work'>
+        <h1>Work</h1>
+      </div>
+    </>
   )
 }
 

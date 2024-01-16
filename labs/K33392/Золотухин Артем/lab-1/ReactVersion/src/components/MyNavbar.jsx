@@ -10,43 +10,37 @@ export default function MyNavbar() {
     {
       title: 'Home',
       path: '/',
-      icon: <AiIcons.AiOutlineHome />,
+      icon: <AiIcons.AiOutlineHome width={24} height={24} />,
       cName: 'nav-text',
     },
     {
       title: 'About',
       path: '/about',
-      icon: <AiIcons.AiOutlineIdcard />,
+      icon: <AiIcons.AiOutlineIdcard width={24} height={24} />,
       cName: 'nav-text',
     },
     {
       title: 'Work',
       path: '/work',
-      icon: <AiIcons.AiOutlineLaptop />,
+      icon: <AiIcons.AiOutlineLaptop width={24} height={24} />,
       cName: 'nav-text',
     },
     {
       title: 'Blog',
       path: '/blog',
-      icon: <AiIcons.AiOutlinePicRight />,
+      icon: <AiIcons.AiOutlinePicRight width={24} height={24} />,
       cName: 'nav-text',
     },
     {
       title: 'Notes',
       path: '/notes',
-      icon: <AiIcons.AiOutlineFile />,
-      cName: 'nav-text',
-    },
-    {
-      title: 'About this page',
-      path: '/about_page',
-      icon: <AiIcons.AiOutlineWarning />,
+      icon: <AiIcons.AiOutlineFile width={24} height={24} />,
       cName: 'nav-text',
     },
     {
       title: 'Search',
       path: '/search',
-      icon: <AiIcons.AiOutlineSearch />,
+      icon: <AiIcons.AiOutlineSearch width={24} height={24} />,
       cName: 'nav-text',
     },
   ]
@@ -57,13 +51,11 @@ export default function MyNavbar() {
     <>
       <IconContext.Provider value={{ color: 'undefined' }}>
         <div className='navbar'>
-          <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
+          <FaIcons.FaBars className='open-menu-icon' onClick={showSidebar} />
         </div>
 
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul>
+          <ul className='navbar-elements'>
             <li className='navbar-toggle' onClick={showSidebar}>
               <Link to='#' className='menu-bars'>
                 <AiIcons.AiOutlineClose />
@@ -71,7 +63,7 @@ export default function MyNavbar() {
             </li>
             <li>
               <div className='navbar_logo'>
-                <img src='src/assets/logo.svg' alt='Logo' />
+                <img src='/src/assets/logo.svg' alt='Logo' />
               </div>
             </li>
             {SidebarData.map((item, index) => {

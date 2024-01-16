@@ -1,10 +1,13 @@
-import React from 'react'
+import MyNavbar from '../components/MyNavbar'
 
 function Blog() {
   return (
-    <div className='blog'>
-      <h1>Blog</h1>
-    </div>
+    <>
+      <MyNavbar />
+      <div className='blog'>
+        <h1>Blog</h1>
+      </div>
+    </>
   )
 }
 

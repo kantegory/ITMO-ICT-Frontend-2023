@@ -20,6 +20,7 @@ const Item = styled('button')(({ theme }) => ({
   fontWeight: 500,
   backgroundColor: theme.palette.background.default,
   borderRadius: 100,
+  color: theme.palette.text.primary,
   ...theme.mixins.button,
   ['&.Tabs__item--active']: {
     backgroundColor: theme.palette.primary.main,

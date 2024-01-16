@@ -5,10 +5,13 @@
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
+  --side-menu-background-color: #2e2e47;
+  --primary-container: #464567;
+  --primary: #3c3c5b;
+  --primary-btn-hover: #555577;
 }
 
 .about,
-.about_page,
 .blog,
 .notes,
 .search,
@@ -22,6 +25,13 @@
   color: #fff;
 }
 
+.open-menu-icon {
+  color: white;
+  padding-left: 24px;
+  width: 45.61px !important;
+  height: 45.61px !important;
+}
+
 /* Top Navbar CSS */
 .navbar {
   background-color: #2e2e47;
@@ -31,9 +41,13 @@
   align-items: center;
 }
 
+.navbar-elements {
+  padding-left: 0;
+  width: 65%;
+}
+
 /* Top Navbar icons */
 .menu-bars {
-  margin-left: 20px;
   font-size: 2rem;
   background: #2e2e47;
   color: #fff;
@@ -47,16 +61,16 @@
   align-items: center;
   position: fixed;
   background-color: #2e2e47;
-  width: 200px;
+  width: 160px;
   height: 100vh;
   top: 0;
   left: -100%;
   transition: 850ms;
+  z-index: 100;
 }
 
 .navbar_logo {
   display: flex;
-  justify-content: center;
   align-items: center;
   padding-bottom: 16px;
 }
@@ -70,8 +84,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 8px;
-  padding-right: 8px;
   list-style: none;
   height: 60px;
 }
@@ -84,7 +96,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+
   border-radius: 16px;
 }
 

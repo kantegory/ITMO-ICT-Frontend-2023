@@ -10,6 +10,7 @@ Smart home application to control your smart devices over Zigby, Z-Wave, Things 
    ```bash
    yarn
    ```
+
 3. Start the project
 
    ```bash
