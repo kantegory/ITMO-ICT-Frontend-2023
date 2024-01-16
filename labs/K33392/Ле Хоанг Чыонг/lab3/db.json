@@ -1,0 +1,93 @@
+{
+  "login": [
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "123",
+      "accessToken": "your_token"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "456",
+      "accessToken": "another_token"
+    },
+    {
+      "username": "user1",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "username": "tramhuong1511",
+      "password": "H!pCtekj!Uc2w",
+      "id": 4
+    },
+    {
+      "username": "tramhuong151",
+      "password": "H!pCtekj!Uc2w",
+      "id": 5
+    }
+  ],
+  "calculations": [
+    {
+      "data": {
+        "weight": 50,
+        "height": 179,
+        "age": 23,
+        "gender": "male",
+        "activityLevel": "sedentary",
+        "caloriesNeeded": "1783.99",
+        "date": "12:40:39 11/12/2023"
+      },
+      "id": 1
+    },
+    {
+      "data": {
+        "weight": 50,
+        "height": 179,
+        "age": 23,
+        "gender": "male",
+        "activityLevel": "sedentary",
+        "caloriesNeeded": "1783.99",
+        "date": "12:51:16 11/12/2023"
+      },
+      "id": 2
+    },
+    {
+      "data": {
+        "weight": 50,
+        "height": 179,
+        "age": 23,
+        "gender": "male",
+        "activityLevel": "sedentary",
+        "caloriesNeeded": "1783.99",
+        "date": "12:54:44 11/12/2023"
+      },
+      "id": 3
+    },
+    {
+      "data": {
+        "weight": 89,
+        "height": 189,
+        "age": 23,
+        "gender": "male",
+        "activityLevel": "sedentary",
+        "caloriesNeeded": "2468.56",
+        "date": "13:19:40 11/12/2023"
+      },
+      "id": 4
+    },
+    {
+      "data": {
+        "weight": 50,
+        "height": 179,
+        "age": 23,
+        "gender": "male",
+        "activityLevel": "sedentary",
+        "caloriesNeeded": "1783.99",
+        "date": "13:52:55 11/12/2023"
+      },
+      "id": 5
+    }
+  ]
+}

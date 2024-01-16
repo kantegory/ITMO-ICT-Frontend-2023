@@ -1,0 +1,8 @@
+.myProjectsCol {
+    flex-wrap: wrap;
+    display: flex;
+    margin-top: 2vh;
+    gap: 2vw;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+}

@@ -1,0 +1,42 @@
+.wrapper
+    display: flex
+    flex-direction: column
+    cursor: pointer
+    gap: var(--spacing-medium)
+
+    .cover
+        width: var(--cover-width)
+        height: var(--cover-height)
+
+    .textInfo
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+
+        .infoHolder
+            display: flex
+            flex-direction: column
+            gap: var(--spacing-small)
+
+            .title
+                font-weight: var(--font-weight-bold)
+                font-size: var(--font-size-small)
+
+            .brand
+                color: var(--color-gray)
+                font-size: var(--font-size-xsmall)
+
+        .priceHolder
+            width: fit-content
+            height: var(--price-holder-height)
+            background-color: var(--background-light-gray)
+            padding: var(--padding-small) var(--padding-medium)
+            border-radius: var(--border-radius-medium)
+            cursor: pointer
+            border: none
+            background-color: var(--input-btn-color)
+
+            .price
+                font-weight: var(--font-weight-bold)
+                font-size: var(--font-size-xsmall)

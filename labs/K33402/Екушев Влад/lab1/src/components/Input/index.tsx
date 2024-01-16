@@ -35,6 +35,12 @@ const StyledInput = styled(Input)(({ theme }) => ({
   '&::before, &::after': {
     display: 'none',
   },
+  '&.MuiInput-root .MuiInput-input:-webkit-autofill': {
+    borderRadius: '100px !important',
+  },
+  '&.MuiInput-root.Mui-focused .MuiInput-input:-webkit-autofill': {
+    boxShadow: '0 0 0 2px inset ' + alpha(theme.palette.text.primary, 1),
+  },
 }))
 
 export default StyledInput

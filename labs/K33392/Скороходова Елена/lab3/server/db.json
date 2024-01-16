@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "email": "helenpupir2ka@gmail.com",
+      "password": "12345",
+      "id": 1
+    },
+    {
+      "email": "vutia@gmail.com",
+      "password": "12345",
+      "id": 2
+    },
+    {
+      "email": "lala@gmail.com",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "email": "vu6tia@gmail.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "email": "v453utia@gmail.com",
+      "password": "123",
+      "id": 5
+    }
+  ]
+}

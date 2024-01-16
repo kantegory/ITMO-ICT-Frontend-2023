@@ -1,10 +1,13 @@
-import React from 'react'
+import MyNavbar from '../components/MyNavbar'
 
 function Notes() {
   return (
-    <div className='notes'>
-      <h1>Notes</h1>
-    </div>
+    <>
+      <MyNavbar />
+      <div className='notes'>
+        <h1>Notes</h1>
+      </div>
+    </>
   )
 }
 

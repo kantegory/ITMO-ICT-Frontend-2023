@@ -1,6 +1,8 @@
 import react from '@vitejs/plugin-react'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
+import mockServer from 'vite-plugin-mock-server'
+import bodyParser from 'body-parser'
 
 export default defineConfig(() => {
   return {
@@ -10,6 +12,16 @@ export default defineConfig(() => {
         babel: {
           plugins: ['@emotion/babel-plugin'],
         },
+      }),
+      mockServer({
+        logLevel: 'info',
+        middlewares: [
+          bodyParser.json(),
+          bodyParser.urlencoded(),
+          bodyParser.text(),
+          bodyParser.raw(),
+        ],
+        mockRootDir: './src/mock',
       }),
     ],
     build: {

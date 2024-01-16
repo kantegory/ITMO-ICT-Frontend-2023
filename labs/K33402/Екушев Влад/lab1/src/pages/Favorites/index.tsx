@@ -1,13 +1,14 @@
 import { Unstable_Grid2 as Grid, styled } from '@mui/material'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { generatePath, useNavigate } from 'react-router'
 import AddDeviceAndAvatar from 'src/components/AddDeviceAndAvatar'
 import { AppBar } from 'src/components/AppBar'
 import DeviceCard, { DeviceCardClickHandler } from 'src/components/DeviceCard'
-import { Device } from 'src/types/Device'
 import { getRouteByAlias } from 'src/utils/getRoutePath'
 import NoDevicesIllustration from 'src/components/svg/NoDevicesIllustration'
 import { BUTTON_MAX_WIDTH } from 'src/config/constants'
+import { useGetFavoritesDevicesQuery } from 'src/api'
+import FullScreenSpinner from 'src/components/FullScreenSpinner'
 
 const PlaceholderRoot = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -43,8 +44,11 @@ const Root = styled(Grid)(({ theme }) => ({
 
 const Favorites: React.FC = () => {
   const navigate = useNavigate()
-  // TODO: fixme remove mock data
-  const favoriteDevices: Device[] = []
+  const { data, isSuccess, isLoading } = useGetFavoritesDevicesQuery({})
+  const devices = useMemo(
+    () => (isSuccess ? data?.devices : []),
+    [data?.devices, isSuccess]
+  )
 
   const handleDeviceCardClick: DeviceCardClickHandler = (_event, device) => {
     navigate(
@@ -57,10 +61,11 @@ const Favorites: React.FC = () => {
   return (
     <>
       <AppBar fixed header="Избранное" toolbar={<AddDeviceAndAvatar />} />
-      {favoriteDevices.length === 0 && <Placeholder />}
-      {favoriteDevices.length > 0 && (
+      {isLoading && <FullScreenSpinner />}
+      {isSuccess && devices.length === 0 && <Placeholder />}
+      {isSuccess && devices.length > 0 && (
         <Root disableEqualOverflow container spacing={1}>
-          {favoriteDevices.map((device) => (
+          {devices.map((device) => (
             <Grid xs={6} md={4} lg={3} xl={2} key={device.id}>
               <DeviceCard onClick={handleDeviceCardClick} device={device} />
             </Grid>

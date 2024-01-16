@@ -11,11 +11,12 @@ import AddDeviceAndAvatar from 'src/components/AddDeviceAndAvatar'
 import { AppBar } from 'src/components/AppBar'
 import DeviceCard, { DeviceCardClickHandler } from 'src/components/DeviceCard'
 import Input from 'src/components/Input'
-import { devices as MOCK_DEVICES } from 'src/config/devices'
 import { getRouteByAlias } from 'src/utils/getRoutePath'
 import DevicesFilterTabs from './DevicesFilterTabs'
 import { Device, DeviceType } from 'src/types/Device'
 import { useDebounce } from 'src/hooks/useDebounce'
+import { useGetDevicesQuery } from 'src/api'
+import FullScreenSpinner from 'src/components/FullScreenSpinner'
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
   padding: theme.spacing(2),
@@ -58,12 +59,15 @@ const filterDevices: (props: {
 
 const Devices: React.FC = () => {
   const navigate = useNavigate()
+  const { data, isSuccess, isLoading } = useGetDevicesQuery({})
+  const devices = useMemo(
+    () => (isSuccess ? data?.devices : []),
+    [data?.devices, isSuccess]
+  )
   const [query, setQuery] = useState('')
   const [activeFilterDeviceTypes, setActiveFilterDeviceTypes] = useState(
     new Set<DeviceType>()
   )
-  // TODO: fixme remove mock data
-  const devices = MOCK_DEVICES
   const debouncedQuery = useDebounce(query, 200)
   const queryIsWaitingForDebounce = useMemo(
     () => query !== debouncedQuery,
@@ -118,6 +122,7 @@ const Devices: React.FC = () => {
         </InputContainer>
         <DevicesFilterTabs onChange={handleFilterChange} />
       </SearchAndFiltersContainer>
+      {isLoading && <FullScreenSpinner />}
       <StyledGrid disableEqualOverflow container spacing={1}>
         {filteredDevices.map((device) => (
           <Grid xs={6} md={4} lg={3} xl={2} key={device.id}>

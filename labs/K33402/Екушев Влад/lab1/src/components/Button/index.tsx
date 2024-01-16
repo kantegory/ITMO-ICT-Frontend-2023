@@ -2,6 +2,7 @@ import {
   styled,
   ButtonBase as MUIButtonBase,
   ButtonBaseProps,
+  alpha,
 } from '@mui/material'
 import cx from 'classnames'
 import React from 'react'
@@ -14,7 +15,7 @@ const Root = styled(MUIButtonBase)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   padding: theme.spacing(2),
-  borderRadius: 100,
+  borderRadius: 32,
   fontWeight: 500,
   fontFamily: theme.typography.fontFamily,
   fontSize: 15,
@@ -22,6 +23,10 @@ const Root = styled(MUIButtonBase)(({ theme }) => ({
   width: '100%',
   '&.Button--primary': {
     background: theme.palette.primary.main,
+  },
+  '&.Button--primaryTransparent': {
+    background: alpha(theme.palette.primary.main, 0.16),
+    color: theme.palette.primary.dark,
   },
   '&.Button--secondary': {
     background: theme.palette.secondary.main,
@@ -32,7 +37,7 @@ const Root = styled(MUIButtonBase)(({ theme }) => ({
 }))
 
 type ButtonProps = ButtonBaseProps & {
-  variant?: 'primary' | 'default' | 'secondary'
+  variant?: 'primary' | 'default' | 'secondary' | 'primaryTransparent'
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -48,6 +53,7 @@ const Button: React.FC<ButtonProps> = ({
         'Button--primary': variant === 'primary',
         'Button--default': variant === 'default',
         'Button--secondary': variant === 'secondary',
+        'Button--primaryTransparent': variant === 'primaryTransparent',
       })}
     >
       {children}

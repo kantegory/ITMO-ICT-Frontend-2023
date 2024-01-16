@@ -1,11 +1,10 @@
 import { useTranslation } from 'react-i18next'
-import store from '@/store'
-import { loginAction } from '@/store/slices/auth'
 import { useState, useCallback } from 'react'
 import styles from './SignIn.module.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
-import { pb } from '@/constants'
+import { useDispatch } from 'react-redux'
+import { authWithPassword } from '@/store/slices/users'
 
 type UserData = {
   username: string
@@ -20,16 +19,12 @@ export function SignInLayout() {
     username: '',
     password: '',
   })
+  const dispatch = useDispatch()
 
   const signIn = useCallback(() => {
-    pb.collection('users')
-      .authWithPassword(userData.username, userData.password)
-      .then((model) => {
-        store.dispatch(loginAction({ ...userData, id: model.record.id }))
-        navigate(`/profile/${userData.username}`)
-      })
-      .catch(() => alert('failed to log in. check your credentials'))
-  }, [userData, navigate])
+    dispatch(authWithPassword(userData.username, userData.password))
+    navigate(`/profile/${userData.username}`)
+  }, [userData, navigate, dispatch])
 
   return (
     <div

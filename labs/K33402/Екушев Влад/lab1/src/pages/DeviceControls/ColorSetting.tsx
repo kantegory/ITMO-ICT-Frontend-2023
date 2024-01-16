@@ -52,6 +52,9 @@ const RainbowSlider = styled(GradientSlider)({
       rgba(186, 12, 248, 1) 80%,
       rgba(251, 7, 217, 1) 90%,
       rgba(255, 0, 0, 1) 100%`,
+  [`& .${sliderClasses.thumb}`]: {
+    backgroundColor: 'var(--thumbBackgroundColor) !important',
+  },
 })
 
 const COLOR_MODES = ['warm_light', 'cold_light', 'hsv'] as const
@@ -77,10 +80,10 @@ const ColorSetting: React.FC<{ device: LightBulb }> = ({ device }) => {
       case 'hsv':
         return (
           <RainbowSlider
-            sx={{
-              [`& .${sliderClasses.thumb}`]: {
-                backgroundColor: `hsl(${360 - value}deg 100% 50%)`,
-              },
+            style={{
+              ['--thumbBackgroundColor' as string]: `hsl(${
+                360 - value
+              }deg 100% 50%)`,
             }}
             orientation="vertical"
             min={0}

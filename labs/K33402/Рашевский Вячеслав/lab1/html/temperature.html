@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light)">
+    <title>Control temperature in house</title>
+</head>
+<body>
+<header id="header">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">Smarthouse</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false" tabindex="0">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="lighting.html">Lighting</a></li>
+                            <li><a class="dropdown-item" href="cctv.html">CCTV</a></li>
+                            <li><a class="dropdown-item" href="door_locks.html">Door locks</a></li>
+                            <li><a class="dropdown-item" href="temperature.html">Temperature</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="all_services.html">All services</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex mx-auto" role="search" id="searchForm">
+                    <svg display="none">
+                        <symbol id="searchIcon" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                        </symbol>
+                    </svg>
+                    <svg class="icon">
+                        <use xlink:href="#searchIcon"></use>
+                    </svg>
+
+                    <input class="form-control me-2" list="datalistOptions" type="search" placeholder="Search"
+                           aria-label="Search" id="searchInput">
+                    <datalist id="datalistOptions">
+                    </datalist>
+                    <input class="btn btn-outline-success" type="submit" value="Search">
+                </form>
+                <div class="d-flex me-0">
+                    <a id="account" class="nav-link active align-content-end" href="account.html">Account</a>
+                    <a id="auth" class="nav-link active align-content-end" href="auth.html">Auth</a>
+                    <a id="exit" class="nav-link active align-content-end" href="home.html" onclick="exit()">Exit</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main class="container-fluid col-3 my-3">
+    <div id="ready-soon-card" class="card">
+        <div class="card-body text-center">
+            <h5 class="card-title">Will be ready soon</h5>
+            <p class="card-text">Sorry, this page is not available now. Check out later.</p>
+        </div>
+    </div>
+</main>
+<script src="../js/search.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/auth_script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>

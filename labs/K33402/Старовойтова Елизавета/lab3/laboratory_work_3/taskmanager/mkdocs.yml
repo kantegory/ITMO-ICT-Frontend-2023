@@ -1,0 +1,12 @@
+
+site_name: TASK MANAGER
+nav:
+ - Home: index.md
+ - Models: models.md
+ - API:
+    - API for tasks: tasks.md
+    - API for users: users.md
+    - API for task_user_relations: taskuser.md
+    - API for comments: comments.md
+
+

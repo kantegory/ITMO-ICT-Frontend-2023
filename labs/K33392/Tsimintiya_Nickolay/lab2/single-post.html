@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>Post</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Lora|Merriweather:300,400" rel="stylesheet">
+
+</head>
+<body>
+
+
+<!-- Navigation section  -->
+
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+     <div class="container">
+
+          <div class="navbar-header">
+               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               </button>
+               <a href="index.html" class="navbar-brand">Gravity Blogs</a>
+          </div>
+          <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="auth.html">Auth</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+
+               </ul>
+          </div>
+
+  </div>
+</div>
+
+<!-- Blog Single Post Section -->
+
+<section id="blog-single-post">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                    <div class="blog-single-post-thumb", id = "post">
+                    </div>
+          </div>
+     </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-5 col-md-offset-1 col-sm-6">
+                    <h3>Mystery Inc.</h3>
+                    <p>Mbiofxh'n bupy wigy byly</p>
+               </div>
+
+               <div class="col-md-4 col-md-offset-1 col-sm-6">
+                    <h3>Talk to us</h3>
+                    <p><i class="fa fa-globe"></i> 26°37′45″ с. ш. 70°53′01″ з. д.</p>
+                    <p><i class="fa fa-phone"></i> 000-010-100</p>
+                    <p><i class="fa fa-save"></i> info@company.com</p>
+               </div>
+
+               <div class="clearfix col-md-12 col-sm-12">
+                    <hr>
+               </div>
+
+               <div class="col-md-12 col-sm-12">
+                    <ul class="social-icon">
+                         <li><a href="#" class="fa fa-facebook"></a></li>
+                         <li><a href="#" class="fa fa-twitter"></a></li>
+                         <li><a href="#" class="fa fa-google-plus"></a></li>
+                    </ul>
+               </div>
+          </div>
+     </div>
+</footer>
+
+<!-- Back top -->
+<a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+</body>
+
+<script src="dist/pocketbase.umd.js"></script>
+<script type="text/javascript">
+     const pb = new PocketBase('http://127.0.0.1:8090');
+
+     async function getPost() {
+          const response = await pb.collection('posts').getList(1, 30, { expand: "author" });
+          const posts = response.items;
+          const post = posts[0]
+          console.log(post)
+
+          let title = post.title
+          let preview = post.preview
+          let text = post.text
+          let imageURL = post.imageURL
+          let author = post.expand.author
+          let date = post.created
+
+          let elem = document.getElementById("post")
+          elem.innerHTML = `
+                         <div class="blog-post-title">
+                              <h2>${title}</a></h2>
+                         </div>
+
+                         <div class="blog-post-format">
+                              <span><a href="#"><img src="images/anonim.png" class="img-responsive img-circle"> ${author.name}</a></span>
+                              <span><i class="fa fa-date"></i>${date}</span>
+                              <span><a href="#"><i class="fa fa-comment-o"></i> 124 Comments</a></span>
+                         </div>
+
+                         <div class="blog-post-des">
+                              <p>${text}</p>
+                              <div class="blog-post-image">
+                              <img src=${imageURL} class="img-responsive" alt="Blog Image 3">
+                         </div>
+                         
+                         </div>
+
+                         <div class="blog-author">
+                              <div class="media">
+                                   <div class="media-object pull-left">
+                                        <img src="images/anonim.png" class="img-circle img-responsive" alt="blog">
+                                   </div>
+                                   <div class="media-body">
+                                        <h3 class="media-heading"><a href="#">${author.name}</a></h3>
+                                        <p>${author.preview}</p>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="blog-comment", id = "comments">
+                              <h3>Comments</h3>
+                         </div>
+
+                         <div class="blog-comment-form">
+                              <h3>Leave a Comment</h3>
+                                   <form action="#" method="post", id = "form">
+                                        <input type="text" class="form-control" placeholder="Name" name="name" required>
+                                        <input type="email" class="form-control" placeholder="Email" name="email" required>
+                                        <textarea name="message" rows="5" class="form-control" id="message" placeholder="Message" message="message" required="required"></textarea>
+                                        <div class="col-md-3 col-sm-4">
+                                             <input name="submit" type="submit" class="form-control" id="submit" value="Post Your Comment" onclick="saveComment()">
+                                        </div>
+                                   </form>
+                         </div>
+          `
+
+          await getComments();
+     }
+
+     async function getComments() {
+          const response = await pb.collection('comments').getList();
+          const comments = response.items;
+          console.log(comments)
+
+          comments.forEach((comment) => {
+               let name = comment.name
+               let message = comment.message
+               let date = comment.created
+          
+               let elem = document.getElementById("comments")
+               elem.innerHTML += `
+                    <div class="media">
+                         <div class="media-object pull-left">
+                              <img src="images/anonim.png" class="img-responsive img-circle" alt="Blog Image 11">
+                         </div>
+
+                         <div class="media-body">
+                              <h3 class="media-heading">${name}</h3>
+                              <span>${date}</span>
+                              <p>${message}</p>
+                         </div>
+                    </div>
+               `
+          })
+     }
+
+     async function saveComment() {
+          const formElement = document.getElementById('form');
+
+          formElement.addEventListener('submit', (e) => {
+               e.preventDefault()
+               const formData = new FormData(formElement)
+               const name = formData.get('name')
+               const mail = formData.get('email')
+               const message = formData.get('message')
+
+               const record = pb.collection('comments').create({
+                    name: name,
+                    mail: mail,
+                    message: message
+               });
+
+               location.reload()
+          })
+     }
+
+     getPost();
+</script>
+</html>
