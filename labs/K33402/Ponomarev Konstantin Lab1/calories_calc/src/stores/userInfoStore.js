@@ -7,5 +7,13 @@ export const useUserInfoStore = defineStore('userInfo', {
             userInfo: null
         }
     },
+    actions: {
+        async login(userInfo) {
+            this.userInfo = userInfo
+        },
+        async logout() {
+            this.userInfo = null
+        }
+    },
     persist: true,
 })

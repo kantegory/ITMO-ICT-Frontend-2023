@@ -4,6 +4,7 @@ import RegistrationPage from "@/views/RegistrationPage.vue";
 import CalculatorParamsPage from "@/views/CalculatorParamsPage.vue";
 import MainPage from "@/views/MainPage.vue";
 import {useUserInfoStore} from "@/stores/userInfoStore";
+import FoodSearchPage from "@/views/FoodSearchPage.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,6 +28,11 @@ const router = createRouter({
             path: '/calculatorParams',
             name: 'calculatorParamsPage',
             component: CalculatorParamsPage
+        },
+        {
+            path: '/search',
+            name: 'foodSearchPage',
+            component: FoodSearchPage
         }
     ]
 })

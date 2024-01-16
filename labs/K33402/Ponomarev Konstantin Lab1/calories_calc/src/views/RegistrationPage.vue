@@ -30,11 +30,10 @@ export default {
         this.form.wasValidated = false
         this.form.showLoading = true
         try {
-          const userInfo = await authorizationRepository.sendRegistrationData(
+          await authorizationRepository.sendRegistrationData(
               this.form.username,
               this.form.password
           )
-          this.userInfoStore.userInfo = userInfo
           await this.router.push('/calculatorParams');
         } catch (e) {
           console.log(e)

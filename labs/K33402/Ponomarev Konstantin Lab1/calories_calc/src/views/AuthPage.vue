@@ -29,7 +29,7 @@ export default {
       } else {
         this.form.wasValidated = false
         try {
-          this.userInfoStore.userInfo = await authorizationRepository.authorizeUser(
+          await authorizationRepository.authorizeUser(
               this.form.username,
               this.form.password
           )

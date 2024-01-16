@@ -40,6 +40,20 @@ class CaloriesApi {
             }
         )
     }
+
+    getBodyParameters = async (userId) => {
+        return await this.API.get(
+            'userBodyParams',
+            userId
+        )
+    }
+    getCalculatedRation = async (userId) => {
+        return await this.API.get(
+            'calculatedRation',
+            userId
+        )
+    }
+
 }
 
 

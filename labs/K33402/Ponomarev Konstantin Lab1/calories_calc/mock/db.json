@@ -8,13 +8,39 @@
   },
   "bodyParams": {
     "success": true,
-    "response": {}
+    "response": {
+      "calories": 2500,
+      "proteins": 100,
+      "fats": 100,
+      "carbohydrates": 100
+    }
+  },
+  "calculatedRation": {
+    "success": true,
+    "response": {
+      "calories": 2500,
+      "proteins": 100,
+      "fats": 100,
+      "carbohydrates": 100
+    }
   },
   "auth": {
     "success": true,
     "response": {
       "token": "someReallyCoolToken",
       "userId": "first-cool-user"
+    }
+  },
+  "userBodyParams": {
+    "success": true,
+    "response": {
+      "sex": "Male",
+      "height": 170,
+      "weight": 70,
+      "age": 21,
+      "bodyActivity": "Medium",
+      "goal": "Loss",
+      "formula": "Harris"
     }
   }
 }

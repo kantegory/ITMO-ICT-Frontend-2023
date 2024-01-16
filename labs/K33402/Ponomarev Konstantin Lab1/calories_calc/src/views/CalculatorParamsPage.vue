@@ -14,8 +14,10 @@ export default {
   components: {BaseLayout},
   setup() {
     const router = useRouter()
-
     return {router}
+  },
+  mounted() {
+    this.prefilledParams()
   },
   data() {
     return {
@@ -35,6 +37,14 @@ export default {
     }
   },
   methods: {
+    async prefilledParams() {
+      try {
+        const userId = useUserInfoStore().userInfo.userId
+        this.form = await caloriesRepository.getBodyParameters(userId)
+      } catch (e) {
+        console.log(e)
+      }
+    },
     primaryButtonText() {
       if (this.form.showLoading) {
         return "Загрузка"
