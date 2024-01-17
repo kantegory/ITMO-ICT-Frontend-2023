@@ -1,0 +1,203 @@
+.home {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-color: var(--primary-container);
+  color: #fff;
+}
+
+h1 {
+  font-size: 3.5vw;
+}
+h4 {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 1.8vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+h5 {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 1.6vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.content {
+  display: flex;
+  padding: 0.5em 1em;
+  justify-content: space-between;
+  gap: 16px;
+  flex: 1 0 0;
+  align-self: stretch;
+  background-color: var(--primary);
+}
+
+.column {
+  display: flex;
+  flex-direction: column; /* Stack content vertically within each column */
+  justify-content: space-between; /* Vertically center the content in both columns */
+  align-items: start; /* Horizontally center the content in both columns */
+  flex: 0 1 calc(50% - 4px); /* Each column takes up half the width with margin */
+  max-height: 100%; /* Columns fill the maximum height available */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  overflow-y: hidden; /* Add a scrollbar if the content inside columns overflows */
+  overflow-x: hidden; /* Add a scrollbar if the content inside columns overflows */
+  padding: 100px 0px 100px 0px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .column {
+    overflow: scroll;
+  }
+}
+
+.column.two {
+  align-items: center;
+}
+
+.low_visibility_text {
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 1vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.column-email_segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.column-contact_button {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  border-radius: 16px;
+  gap: 10px;
+  background: var(--primary-container);
+  color: rgba(255, 255, 255, 0.87);
+  text-align: center;
+  font-size: 1vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.column-contact_button:hover {
+  background: var(--primary-btn-hover);
+}
+
+.separator_row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: rgba(255, 255, 255, 0.87);
+  text-align: center;
+  font-size: 1.4vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 16px;
+}
+
+.separator_row hr {
+  width: 25%;
+  margin: 16px;
+}
+
+.contacts_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.green_text {
+  font-weight: 700;
+  color: #1dff9e;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1vw;
+}
+.skills h5 {
+  font-size: 2.5vw;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: row;
+  color: rgba(255, 255, 255, 0.87);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  gap: 32px;
+}
+
+.skills h4 {
+  margin-bottom: 8px;
+  font-size: 1.5vw;
+}
+
+.skills-list-column_text {
+  font-size: 1vw;
+  margin-left: 32px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+}
+
+@media (min-width: 576px) {
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+}

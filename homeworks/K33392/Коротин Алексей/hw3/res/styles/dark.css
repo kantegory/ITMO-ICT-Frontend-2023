@@ -1,0 +1,9 @@
+:root {
+    --navbar-backgroud-color: rgb(43, 48, 53);
+    --navbar-text-color:  white;
+    --text-primary: white;
+    --text-secondary: black;
+    --body-backgroud-color:rgb(33, 37, 41);
+    --background-color-secondary: rgb(233, 236, 239);
+    --icon-filter: invert(1);
+}

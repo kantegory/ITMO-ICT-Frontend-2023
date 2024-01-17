@@ -25,3 +25,11 @@ body {
     color: var(--text-color);
     border-color: var(--border-color);
 }
+
+.icon {
+    stroke: none;
+    width: 40px;
+    height: 40px;
+    fill: currentColor;
+    margin-right: 10px;
+}

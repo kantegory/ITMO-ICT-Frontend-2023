@@ -1,0 +1,50 @@
+.wrapper
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: var(--spacing-large)
+    border: none
+
+    h1
+        font-weight: var(--font-weight-bold)
+        font-size: var(--font-size-large)
+
+    fieldset
+        border: none
+
+    .inputs
+        display: flex
+        flex-direction: column
+        gap: var(--spacing-medium)
+
+        .inputText
+            display: flex
+            flex-direction: column
+            gap: var(--spacing-small)
+
+        p
+            font-size: var(--font-size-small)
+
+        input
+            width: var(--input-width)
+            height: var(--input-height)
+            border-radius: var(--input-border-radius)
+            font-size: var(--font-size-medium)
+            border: var(--border-color) solid 1px
+            padding: var(--input-padding)
+
+    .buttons
+        display: flex
+        flex-direction: row
+        gap: var(--spacing-small)
+
+        button
+            background-color: var(--button-background)
+            border: none
+            border-radius: var(--button-border-radius)
+            color: var(--color-white)
+            width: var(--button-width)
+            height: var(--button-height)
+            cursor: pointer

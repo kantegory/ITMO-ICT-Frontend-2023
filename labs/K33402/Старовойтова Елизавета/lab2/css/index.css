@@ -1,0 +1,246 @@
+#container {
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    color: #212529 !important;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: #0d6efd;
+}
+
+.btn-rounded {
+    border-radius: 19px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+}
+
+.first-section-img {
+    background-image: url(../img/ArticleImage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 96vw;
+    height: 35vw;
+    margin: auto;
+    margin-top: 0.3%;
+}
+
+#first-section {
+    position: relative;
+}
+
+.first-section-text {
+    background-color: #f8f9fa;
+    margin-left: 55px;
+    border-radius: 0%;
+    border: none;
+}
+
+.first-section-featured-article-author {
+    color: #0d6efd;
+}
+
+.first-section-featured-article-date {
+    color: #0d6efd !important;
+}
+
+.highlighted {
+    background-color: yellow;
+    font-weight: bold;
+  }
+
+#searchResults {
+    position: absolute;
+    top: 100%; /* Отображать результаты под полем поиска */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1000; /* Добавлен z-index для правильного отображения поверх других элементов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.editors-picks-h2 {
+    margin: auto;
+    text-align: center;
+    color: #212529;
+    margin-top: 50px;
+    margin-bottom: 17px;
+}
+
+.editors-picks hr {
+    margin: auto;
+    width: 190px;
+    height: 5px;
+    background-color: #212529;
+    opacity: 1;
+    margin-bottom: 54px;
+}
+
+.editors-picks-card {
+    margin: auto;
+    max-width: 856px;
+    border: none;
+    background-color: #f8f9fa;
+    margin-bottom: 63px !important;
+}
+
+.second-section-article-author {
+    color: #0d6efd;
+}
+
+.second-section-article-date {
+    color: #0d6efd !important;
+}
+
+.third-section {
+    margin-bottom: 104px auto;
+}
+
+.third-section-img {
+    background-image: url(../img/ArticleImage2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 96vw;
+    height: 35vw;
+    padding-top: 3em;
+    margin: auto;
+}
+
+.third-section-text {
+    background-color: #f8f9fa;
+    margin-left: 62%;
+    border: none;
+    border-radius: 0%;
+}
+
+.third-section-article-author {
+    color: #0d6efd;
+}
+
+.third-section-article-date {
+    color: #0d6efd !important;
+}
+
+.fourth-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 104px;
+}
+
+.fourth-section-blocks {
+    position: relative;
+}
+
+.fourth-section-block {
+    margin: auto;
+    max-width: 812px;
+    border: none;
+    border-radius: 0% !important;
+    background-color: #f8f9fa;
+    margin-bottom: 66px !important;
+}
+
+.fourth-section-img {
+    width: 237px !important;
+}
+
+.fourth-section-text-block {
+    width: 559px !important;
+    max-height: 177px;
+    padding-top: 0px;
+}
+
+.fourth-section-article-h2 {
+    margin-bottom: 0px;
+    margin-top: -4px;
+}
+
+.fourth-section-tags {
+    margin-right: 123px;
+}
+
+.fourth-section-tags-ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.fourth-section-tags-li {
+    padding-left: 0px;
+    padding-top: 2em;
+}
+
+.fourth-section-tags-link {
+    text-decoration: none;
+    color: #212529;
+}
+
+.fourth-section-tags-link:hover {
+    text-decoration: none;
+}
+
+.footer-section {
+    width: 96vw;
+    margin: auto;
+    color: #f8f9fa;
+    height: auto;
+    padding-top: 3%;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 3em;
+    padding-left: 3em;
+}
+
+#login {
+    position: relative;
+    left: 50px;
+}
+
+#register {
+    position: relative;
+    left: 450px;
+    top: -220px;
+}
+
+.input-group {
+    display: block;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+    background-color: transparent;
+}
+
+.hero {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-form-login, .btn-form-register {
+    margin-top: 1em;
+    margin-left: 0px !important;
+    border-radius: 6px !important;
+}
+
+.label-remember {
+    color: lightslategray;
+}
+
+.form-choose-btn {
+    margin-left: 16%;
+}
+
+.footer-list-item {
+    background-color: transparent;
+    color: #f8f9fa;
+    border: none;
+    padding-left: 0;
+}
+
+

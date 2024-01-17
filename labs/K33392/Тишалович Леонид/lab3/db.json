@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "email": "test@mail.ry",
+      "password": "1234567890",
+      "id": 1
+    },
+    {
+      "email": "testnew@mail.ru",
+      "password": "1234567890",
+      "id": 2
+    }
+  ],
+  "clothes": [
+    {
+      "id": 0,
+      "title": "Black SweatShort",
+      "img": "/src/assets/itemsCovers/blackSweatshort.svg",
+      "price": 123,
+      "brand": "Jhanvi's Brand",
+      "gender": "female"
+    },
+    {
+      "id": 1,
+      "title": "Black Hoodie",
+      "img": "/src/assets/itemsCovers/blackHoodie.svg",
+      "price": 37,
+      "brand": "As Brand",
+      "gender": "female"
+    },
+    {
+      "id": 2,
+      "title": "Black Shorts",
+      "img": "/src/assets/itemsCovers/blackShorts.svg",
+      "price": 37,
+      "brand": "MM Brand",
+      "gender": "female"
+    },
+    {
+      "id": 3,
+      "title": "White T-Shirt",
+      "img": "/src/assets/itemsCovers/whiteTshirt.svg",
+      "price": 30,
+      "brand": "As Brand",
+      "gender": "male"
+    },
+    {
+      "id": 4,
+      "title": "Denim Blue Shirt",
+      "img": "/src/assets/itemsCovers/denimBlueShirt.svg",
+      "price": 40,
+      "brand": "MM Brand",
+      "gender": "male"
+    },
+    {
+      "id": 5,
+      "title": "White Urban Jacket",
+      "img": "/src/assets/itemsCovers/urbanJacket.svg",
+      "price": 60,
+      "brand": "Jhanvi's Brand",
+      "gender": "male"
+    }
+  ]
+}

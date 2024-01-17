@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John",
+      "email": "mail@example.com",
+      "password": "1234"
+    },
+    {
+      "id": 1701039268701,
+      "name": "Lizaveta",
+      "email": "lstarovoytova17@gmail.com",
+      "password": "likast1233"
+    },
+    {
+      "id": 1701376625112,
+      "name": "Katerina",
+      "email": "starovoytova12@gmail.com",
+      "password": "betastar12"
+    },
+    {
+      "id": 1701377178759,
+      "name": "Tatsiana",
+      "email": "tata@mail.com",
+      "password": "sycheva123"
+    },
+    {
+      "id": 1701379502243,
+      "name": "Nikita",
+      "email": "korotki@mail.ru",
+      "password": "geniy12"
+    },
+    {
+      "id": 1701385530700,
+      "name": "frida",
+      "email": "shaha@gmail.com",
+      "password": "liza123"
+    }
+  ]
+}

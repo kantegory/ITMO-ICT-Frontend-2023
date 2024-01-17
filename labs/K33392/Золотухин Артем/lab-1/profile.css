@@ -1,0 +1,161 @@
+body {
+  display: flex;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Vendor prefixes for Flexbox, just in case - mb will help someone with old Safari  :) */
+.sidemenu {
+  display: -webkit-flex;
+  display: flex;
+  width: 280px;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  background-color: var(--side-menu-background-color);
+  height: 100vh;
+}
+
+.navbar_logo {
+  width: 120px;
+  height: 120px;
+}
+
+.nav-item {
+  margin-bottom: 16px;
+}
+
+.nav-item a {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.nav-link.active {
+  border-radius: 16px;
+  background-color: var(--primary-container);
+}
+
+.nav-item a img {
+  margin-right: 20px;
+}
+
+.footer {
+  display: -webkit-flex;
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+}
+
+.footer h5 {
+  color: rgba(255, 255, 255, 0.32);
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.content {
+  display: -webkit-flex;
+  display: flex;
+  padding: 1em 1em;
+  justify-content: space-between;
+  gap: 8px;
+  flex: 1 0 0;
+  align-self: stretch;
+  overflow-y: auto;
+  background-color: var(--primary-container);
+}
+
+.column {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  flex: 0 1 calc(50% - 4px);
+  max-height: 100%;
+  padding: 120px 16px 120px 0px;
+  color: var(--text-color);
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+.column.two {
+  align-items: center;
+}
+
+.bio {
+  font-size: 24px;
+}
+
+.lowvisibilitytext {
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 20px;
+}
+
+.segment_email {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button_email {
+  display: -webkit-flex;
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  border-radius: 16px;
+  background: var(--primary-container);
+  color: var(--text-color-link);
+  text-transform: uppercase;
+}
+
+.button_email img {
+  margin-right: 8px;
+}
+
+.contacts_row {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact_btn {
+  display: -webkit-flex;
+  display: flex;
+  height: 62px;
+  padding: 16px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 16px;
+  background: var(--primary-container);
+}
+
+.nav-item a,
+.footer h5,
+.lowvisibilitytext,
+.button_email,
+.contact_btn {
+  color: var(--text-color);
+}
