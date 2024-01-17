@@ -29,6 +29,15 @@ export const useCalculatedCaloriesStore = defineStore('calculatedStore', {
         },
         addAteFoodToUser(eat) {
             this.dailyAteFood = [...this.dailyAteFood, eat];
+        },
+        async resetStore() {
+            this.calculatedRation = {
+                calories: 0,
+                proteins: 0,
+                fats: 0,
+                carbohydrates: 0
+            }
+            this.dailyAteFood = []
         }
     },
     getters: {

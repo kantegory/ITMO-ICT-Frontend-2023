@@ -1,12 +1,15 @@
 <script setup>
 import {useRouter} from "vue-router";
 import {useUserInfoStore} from "@/stores/userInfoStore";
+import {useCalculatedCaloriesStore} from "@/stores/calculatedCaloriesStore";
 
 const router = useRouter()
 const userInfoStore = useUserInfoStore()
+const calculatedCaloriesStore = useCalculatedCaloriesStore()
 
 const logout = async () => {
   await userInfoStore.logout()
+  await calculatedCaloriesStore.resetStore()
   await router.push('/login')
 }
 </script>
