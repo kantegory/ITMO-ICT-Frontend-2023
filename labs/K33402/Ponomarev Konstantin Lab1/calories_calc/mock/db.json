@@ -39,7 +39,7 @@
       "weight": 70,
       "age": 21,
       "bodyActivity": "Medium",
-      "goal": "Loss",
+      "weightGoal": "Stay",
       "formula": "Harris"
     }
   }
