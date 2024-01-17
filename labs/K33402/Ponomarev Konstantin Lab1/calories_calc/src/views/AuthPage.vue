@@ -66,7 +66,7 @@ export default {
         <div class="invalid-feedback">Введите корректное имя</div>
       </div>
       <div class="mb-2">
-        <label for="inputPassword5" class="form-label">Password</label>
+        <label for="inputPassword5" class="form-label">Пароль</label>
         <input type="password" id="inputPassword5" class="form-control" required v-model="form.password">
         <div class="invalid-feedback">Введите корректный пароль</div>
       </div>
