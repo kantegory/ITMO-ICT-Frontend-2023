@@ -27,6 +27,9 @@ const logout = async () => {
           <li class="nav-item" v-if="!userInfoStore.userInfo">
             <a class="nav-link" aria-current="page" href="/registration">Зарегистрироваться</a>
           </li>
+          <li class="nav-item" v-if="userInfoStore.userInfo">
+            <a class="nav-link" aria-current="page" href="/search">Поиск еды</a>
+          </li>
           <li class="nav-item dropdown" v-if="userInfoStore.userInfo">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Профиль
