@@ -1,0 +1,19 @@
+.foodWrapper {
+  width: 250px;
+  height: 350px;
+  padding: 10px;
+  border: 1px solid;
+  border-color: var(--card-border-color);
+  background-color: var(--card-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  gap: 10px;
+  justify-content: space-around;
+
+  .foodImg {
+    width: 200px;
+    height: 200px;
+  }
+}
