@@ -27,7 +27,7 @@ export default {
         weight: 0,
         age: 0,
         bodyActivity: BodyActivity.LOW,
-        goal: WeightGoal.LOSS,
+        weightGoal: WeightGoal.LOSS,
         formula: Formula.HARRIS
       },
       uiState: {
@@ -64,7 +64,7 @@ export default {
               this.form.age,
               this.form.formula,
               this.form.sex,
-              this.form.goal
+              this.form.weightGoal
           )
           console.log("sending")
           const userId = useUserInfoStore().userInfo.id
@@ -242,7 +242,7 @@ export default {
                    id="lossWeight"
                    autocomplete="off"
                    :value="WeightGoal.LOSS"
-                   v-model="form.goal">
+                   v-model="form.weightGoal">
             <label class="btn btn-outline-primary me-2" for="lossWeight">Сбросить вес</label>
             <input type="radio"
                    class="btn-check"
@@ -250,7 +250,7 @@ export default {
                    id="controlWeight"
                    autocomplete="off"
                    :value="WeightGoal.STAY"
-                   v-model="form.goal">
+                   v-model="form.weightGoal">
             <label class="btn btn-outline-primary me-2" for="controlWeight">Сохранить вес</label>
             <input type="radio"
                    class="btn-check"
@@ -258,7 +258,7 @@ export default {
                    id="upWeight"
                    autocomplete="off"
                    :value="WeightGoal.UP"
-                   v-model="form.goal">
+                   v-model="form.weightGoal">
             <label class="btn btn-outline-primary me-2" for="upWeight">Набрать вес</label>
           </div>
         </fieldset>
@@ -294,6 +294,10 @@ export default {
 </template>
 
 <style scoped>
+h1 {
+  margin-bottom: 20px;
+}
+
 fieldset {
   margin-top: 30px;
 }

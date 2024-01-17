@@ -56,19 +56,19 @@ export default {
 
 <template>
   <base-layout>
-    <h1>Login to calculator</h1>
+    <h1>Вход в калькулятор калорий</h1>
     <form class="needs-validation" @submit.prevent="submitForm"
           :class="{ 'was-validated': form.wasValidated }"
           novalidate>
       <div class="mb-2">
-        <label for="authLogin" class="form-label">Username</label>
+        <label for="authLogin" class="form-label">Имя пользователя</label>
         <input type="text" id="authLogin" class="form-control" required v-model="form.username">
-        <div class="invalid-feedback">Please input correct name</div>
+        <div class="invalid-feedback">Введите корректное имя</div>
       </div>
       <div class="mb-2">
         <label for="inputPassword5" class="form-label">Password</label>
         <input type="password" id="inputPassword5" class="form-control" required v-model="form.password">
-        <div class="invalid-feedback">Please input correct password</div>
+        <div class="invalid-feedback">Введите корректный пароль</div>
       </div>
       <div class="d-grid gap-2 mt-5">
         <button class="btn btn-primary w-100" type="submit" :disabled="form.showLoading">
@@ -76,7 +76,7 @@ export default {
               :class="{'invisible': !form.showLoading}"></span>
           <span role="status">{{ primaryButtonText() }}</span>
         </button>
-        <router-link class="btn btn-link" to="/registration">Create new account</router-link>
+        <router-link class="btn btn-link" to="/registration">Создать новый аккаунт</router-link>
       </div>
     </form>
   </base-layout>

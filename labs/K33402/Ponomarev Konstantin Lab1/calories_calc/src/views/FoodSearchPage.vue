@@ -102,5 +102,7 @@ export default {
 </template>
 
 <style scoped>
-
+h1 {
+  margin-bottom: 20px;
+}
 </style>

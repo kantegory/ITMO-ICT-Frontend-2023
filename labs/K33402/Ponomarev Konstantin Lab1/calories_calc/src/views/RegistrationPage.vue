@@ -46,9 +46,9 @@ export default {
     },
     primaryButtonText() {
       if (this.form.showLoading) {
-        return "Proccesing"
+        return "Загрузка"
       } else {
-        return "Create"
+        return "Создать"
       }
     },
     passwordMatch() {
@@ -57,9 +57,9 @@ export default {
     usernameError() {
       const usernamePattern = /^[a-zA-Z0-9_]+$/;
       if (!this.form.username) {
-        return 'Please input your username';
+        return 'Введите имя';
       } else if (!usernamePattern.test(this.form.username)) {
-        return 'Username can only have alphabetic symbols, numbers and underscores.';
+        return 'Имя пользователя может содержать буквы, цифры, а также нижнее подчеркивание';
       }
       return '';
     }
@@ -69,14 +69,14 @@ export default {
 
 <template>
   <base-layout>
-    <h1>Create new account</h1>
+    <h1>Создать новый аккаунт</h1>
     <form class="mb-5 needs-validation"
           :class="{ 'was-validated': form.wasValidated }"
           ref="registrationForm"
           @submit.prevent="submitForm"
           novalidate>
       <div class="mb-2">
-        <label for="registrationLogin" class="form-label">Username</label>
+        <label for="registrationLogin" class="form-label">Имя пользователя</label>
         <div class="input-group has-validation">
           <input
               type="text"
@@ -89,7 +89,7 @@ export default {
       </div>
 
       <div class="mb-2">
-        <label for="registrationPassword" class="form-label">Password</label>
+        <label for="registrationPassword" class="form-label">Пароль</label>
         <div class="input-group has-validation">
           <input
               type="password"
@@ -97,12 +97,12 @@ export default {
               class="form-control"
               v-model="form.password"
               required>
-          <div class="invalid-feedback">Please input your password</div>
+          <div class="invalid-feedback">Введите ваш пароль</div>
         </div>
       </div>
 
       <div class="mb-4">
-        <label for="repeatRegistrationPassword" class="form-label">Repeat your password</label>
+        <label for="repeatRegistrationPassword" class="form-label">Повторите пароль</label>
         <div class="input-group has-validation">
           <input
               type="password"
@@ -111,7 +111,7 @@ export default {
               v-model="form.repeatPassword"
               required>
           <div class="invalid-feedback">
-            The passwords do not match
+            Пароли не совпадают
           </div>
         </div>
       </div>
