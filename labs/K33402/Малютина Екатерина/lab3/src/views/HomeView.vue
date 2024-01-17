@@ -4,6 +4,6 @@ import HomeComp from "@/components/HomeComp.vue";
 
 <template>
   <main>
-    <HomeComp />
+    <HomeComp/>
   </main>
 </template>

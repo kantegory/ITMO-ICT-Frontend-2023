@@ -1,48 +1,5 @@
 <script setup>
-import router from "@/router";
-import {getAuthToken} from "@/auth_script.js";
-
-async function postArticle() {
-  const titleField = document.getElementById('title');
-  const textField = document.getElementById('text');
-
-  const responseGet = await fetch(`http://localhost:3000/accounts/?login=${JSON.parse(localStorage.user).email}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${getAuthToken()}`
-    }
-  });
-  const responseGetJson = await responseGet.json();
-
-  let author = "";
-  let i = responseGetJson.length;
-  responseGetJson.map(function (account){
-    if (i === 1) {
-      author = account.nickname;
-      return;
-    }
-    i--;
-  });
-
-  const body = {}
-  body["title"] = titleField.value;
-  body["text"] = textField.value;
-  body["author"] = author;
-  const response = await fetch('http://localhost:3000/articles', {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${getAuthToken()}`
-    }
-  });
-  const responseJson = await response.json();
-  const responseStatus = response.status;
-  console.log(responseJson, responseStatus);
-  router.push('/');
-}
-
+import {postArticle} from "@/composable/postArticle.js";
 </script>
 
 <template>

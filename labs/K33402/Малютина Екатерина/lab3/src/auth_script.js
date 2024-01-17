@@ -1,3 +1,6 @@
+import {getAuthToken} from "@/composable/getAuthToken.js";
+import {checkAuth} from "@/composable/checkAuth.js";
+
 const REGEXP_EMAIL = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 document.addEventListener('DOMContentLoaded', () => checkAuth());
 
@@ -81,17 +84,4 @@ export async function registerUser() {
         alert("Passwords does not match");
         return false;
     }
-}
-
-export function exit() {
-    delete localStorage.accessToken;
-    delete localStorage.user;
-}
-
-export function checkAuth() {
-    return !!localStorage.accessToken;
-}
-
-export function getAuthToken() {
-    return localStorage.accessToken;
 }

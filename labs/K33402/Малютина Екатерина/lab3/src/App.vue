@@ -1,6 +1,11 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import {RouterView} from 'vue-router'
 import NavComp from "@/components/NavComp.vue";
+
+import router from "@/router";
+import {updateNav} from "@/composable/updateNav.js";
+
+router.beforeEach(updateNav);
 </script>
 
 <template>

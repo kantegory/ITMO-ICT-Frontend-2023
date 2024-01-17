@@ -5,18 +5,18 @@ import router from "@/router";
 async function signUp() {
   const ans = await registerUser();
   if (!ans) {
-    await router.push('/auth');
+    router.push('/auth');
   } else {
-    await router.push('/account');
+    router.push('/account');
   }
 }
 
 async function signIn() {
   const ans = await signinUser();
   if (!ans) {
-    await router.push('/auth');
+    router.push('/auth');
   } else {
-    await router.push('/account');
+    router.push('/account');
   }
 }
 </script>

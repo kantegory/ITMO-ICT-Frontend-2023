@@ -65,6 +65,24 @@
       "about": "Kate",
       "login": "kate@mail.ru",
       "id": 9
+    },
+    {
+      "nickname": "malyutaa",
+      "about": "about malyutaa",
+      "login": "kate@mail.ru",
+      "id": 10
+    },
+    {
+      "nickname": "kate",
+      "about": "about",
+      "login": "kate@mail.ru",
+      "id": 11
+    },
+    {
+      "nickname": "malyuta",
+      "about": "about malyuta ",
+      "login": "kate@mail.ru",
+      "id": 12
     }
   ],
   "articles": [
