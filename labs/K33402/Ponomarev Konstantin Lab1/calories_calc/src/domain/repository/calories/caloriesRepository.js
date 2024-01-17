@@ -111,7 +111,7 @@ export class CaloriesRepository {
     #getFoodArray() {
         return [
             {
-                image: "https://thecanterburyhub.co.uk/wp-content/uploads/2018/02/200-x-200.jpg",
+                image: "https://i.pinimg.com/564x/db/e6/69/dbe66923ee531b01b4bd39308b604fb0.jpg",
                 name: "Творог",
                 category: FoodCategory.MILK,
                 calories: 350,
