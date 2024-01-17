@@ -60,7 +60,7 @@ export default {
 
 <template>
   <div class="card">
-    <img :src="data.image" class="card-img" alt="EatPicture" style="width: 100px">
+    <img :src="data.image" class="card-img ms-2 mt-2" alt="EatPicture" style="width: 100px">
     <div class="card-body">
       <h5 class="card-title">{{ data.name }}</h5>
       <div class="row mt-2 justify-content-between">
@@ -84,7 +84,12 @@ export default {
       <form class="row mt-3 justify-content-between" :class="{ 'was-validated': wasValidated }"
             v-if="isAddButtonVisible" novalidate>
         <div class="col">
-          <a class="btn btn-primary" type="button" @click="addToUser">Добавить</a>
+          <a class="btn btn-primary" type="button" @click="addToUser">
+            <svg class="icon" fill="currentColor">
+              <use xlink:href="src/svg/sprite.svg#addIcon"/>
+            </svg>
+            Добавить
+          </a>
         </div>
         <div class="col">
           <input type="number" class="form-control" id="curGrams" min="1" v-model="currentGrams" required>
@@ -96,5 +101,10 @@ export default {
 </template>
 
 <style scoped>
-
+.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: -0.125em
+}
 </style>

@@ -14,7 +14,12 @@ const logout = async () => {
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">Калькулятор калорий</a>
+      <a class="navbar-brand" href="/">
+        <svg class="icon d-inline-block align-text-top" fill="currentColor">
+          <use xlink:href="src/svg/sprite.svg#calculatorIcon"/>
+        </svg>
+        Калькулятор калорий
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -49,5 +54,8 @@ const logout = async () => {
 </template>
 
 <style scoped>
-
+.icon {
+  width: 24px;
+  height: 24px;
+}
 </style>
