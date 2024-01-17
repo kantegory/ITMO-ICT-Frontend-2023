@@ -1,5 +1,5 @@
 <template>
-  <main class="container my-2">
+  <main class="container-fluid mt-2">
     <slot/>
   </main>
 </template>
