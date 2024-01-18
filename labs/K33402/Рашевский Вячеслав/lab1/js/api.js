@@ -23,6 +23,9 @@ async function fetchAbout() {
     return await response.json();
 }
 
+//add post
+//add auth
+
 
 const aboutTitle = document.getElementById("aboutTitle");
 const aboutDesc = document.getElementById("aboutDesc");
