@@ -1,0 +1,126 @@
+{
+  "users": [
+    {
+      "email": "dmitry0224@gmail.com",
+      "password": "$2a$10$WDb/3RJIj62xsFHtYjYQJ.eHqPZgl0odl5.ZYfq4KUL9buO61Rcq.",
+      "id": "dmitry0224",
+      "phonenumber": "+79612791247"
+    }
+  ],
+  "products": [
+    {
+      "name": "super cool coat",
+      "price": "199$",
+      "isOnSale": "yes",
+      "sale": "999$",
+      "imgSrc": "img/catalog/coat.jpg",
+      "type": "2"
+    },
+    {
+      "name": "super cool shirt",
+      "price": "199$",
+      "isOnSale": "yes",
+      "sale": "399$",
+      "imgSrc": "img/catalog/shirt.jpeg",
+      "type": "4"
+    },
+    {
+      "name": "super cool jeans",
+      "price": "99$",
+      "isOnSale": "yes",
+      "sale": "299$",
+      "imgSrc": "img/catalog/jeans.jpg",
+      "type": "3"
+    },
+    {
+      "name": "super cool jacket",
+      "price": "499$",
+      "isOnSale": "yes",
+      "sale": "999$",
+      "imgSrc": "img/catalog/jacket.jpg",
+      "type": "1"
+    },
+    {
+      "name": "super cool puffer",
+      "price": "99$",
+      "isOnSale": "yes",
+      "sale": "99$",
+      "imgSrc": "img/catalog/puffer.jpg",
+      "type": "1"
+    },
+    {
+      "name": "super cool leather jacket",
+      "price": "999$",
+      "isOnSale": "no",
+      "sale": "",
+      "imgSrc": "img/catalog/leatherjacket.jpg",
+      "type": "2"
+    },
+    {
+      "name": "super cool fur coat",
+      "price": "799$",
+      "isOnSale": "no",
+      "sale": "",
+      "imgSrc": "img/catalog/furcoat.jpg",
+      "type": "1"
+    },
+    {
+      "name": "super cool blazer",
+      "price": "1499$",
+      "isOnSale": "no",
+      "sale": "",
+      "imgSrc": "img/catalog/blazer.jpg",
+      "type": "2"
+    },
+    {
+      "name": "super cool zip-hoodie",
+      "price": "399$",
+      "isOnSale": "no",
+      "sale": "",
+      "imgSrc": "img/catalog/zip-hoodie.jpg",
+      "type": "2"
+    },
+    {
+      "name": "super cool hoodie",
+      "price": "499$",
+      "isOnSale": "no",
+      "sale": "",
+      "imgSrc": "img/catalog/hoodie.jpg",
+      "type": "2"
+    },
+    {
+      "name": "super cool t-shirt",
+      "price": "299$",
+      "isOnSale": "no",
+      "sale": "",
+      "imgSrc": "img/catalog/t-shirt.jpg",
+      "type": "4"
+    },
+    {
+      "name": "super cool pants",
+      "price": "899$",
+      "isOnSale": "no",
+      "sale": "",
+      "imgSrc": "img/catalog/pants.jpg",
+      "type": "3"
+    }
+  ],
+  "orders": [
+    {
+      "name": "super cool shirt",
+      "date": "Fri Jan 19 2024",
+      "price": "199$",
+      "imgSrc": "img/catalog/shirt.jpeg",
+      "username": "dmitry0224",
+      "id": 1
+    },
+    {
+      "name": "super cool jacket",
+      "date": "Fri Jan 19 2024",
+      "price": "499$",
+      "imgSrc": "img/catalog/jacket.jpg",
+      "username": "dmitry0224",
+      "id": 2
+    }
+  ]
+}
