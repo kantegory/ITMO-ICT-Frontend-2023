@@ -82,7 +82,7 @@ export default {
   border-radius: 50%;
 }
 hr {
-  color: #FAF0E6;
+  color: var(--header-color);
   margin: 10px;
 }
 </style>

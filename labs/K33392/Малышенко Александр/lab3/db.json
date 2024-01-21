@@ -1,0 +1,207 @@
+{
+  "users": [
+    {
+      "email": "cazas123toy@gmail.com",
+      "password": "$2a$10$OjzLSt3RFwbaDSUHbyuZSep0cwTGOlIbXhngJAQCO4G9ElXjT442q",
+      "username": "alex",
+      "accountCreationDate": "14/11/2023",
+      "friendsList": [
+        2
+      ],
+      "ownCapsulesList": [],
+      "fullUsername": "",
+      "phoneNumber": "",
+      "address": "",
+      "extraProfileInfo1": "",
+      "extraProfileInfo2": "",
+      "id": 1
+    },
+    {
+      "email": "example@gmail.com",
+      "password": "$2a$10$ZvuGmCqMGuWQ6H2M24GhNeFUyiVnaOAqX390pDHH9tlD8S9OV1Fb.",
+      "username": "admin",
+      "accountCreationDate": "2023-11-16",
+      "friendsList": [
+        1
+      ],
+      "ownCapsulesList": [],
+      "fullUsername": "",
+      "phoneNumber": "",
+      "address": "",
+      "extraProfileInfo1": "",
+      "extraProfileInfo2": "",
+      "id": 2
+    },
+    {
+      "email": "123@gmail.com",
+      "password": "$2a$10$IG2FYDq2RpoxQ2zkoaaYmuJhkPbxa/AyTI9Ksg9OM.0UkLZPpwijW",
+      "username": "alex2",
+      "accountCreationDate": "2023-11-28",
+      "friendsList": [],
+      "ownCapsulesList": [],
+      "fullUsername": "",
+      "phoneNumber": "",
+      "address": "",
+      "extraProfileInfo1": "",
+      "extraProfileInfo2": "",
+      "id": 3
+    },
+    {
+      "email": "testoviy@gmail.com",
+      "password": "$2a$10$SkEmqkeq7VgkvfmP3VYOOuJiEIRdCdBAck0mLkWgK.mfe.2sIzoBq",
+      "username": "xard",
+      "accountCreationDate": "16.12.2023",
+      "friendsList": [],
+      "ownCapsulesList": [],
+      "fullUsername": "",
+      "phoneNumber": "",
+      "address": "",
+      "extraProfileInfo1": "",
+      "extraProfileInfo2": "",
+      "id": 5
+    },
+    {
+      "email": "cazas1234toy@gmail.com",
+      "password": "$2a$10$tcdEwq1txjsRetPkvjwXxuh3e.m7Kx.fG/9HC1Owi/KDj0W6T19Oq",
+      "username": "alex",
+      "accountCreationDate": "16.12.2023",
+      "friendsList": [],
+      "ownCapsulesList": [],
+      "fullUsername": "",
+      "phoneNumber": "",
+      "address": "",
+      "extraProfileInfo1": "",
+      "extraProfileInfo2": "",
+      "id": 6
+    },
+    {
+      "email": "gfdgfd@gmail.com",
+      "password": "$2a$10$C8qaXAk3lzD.arlUl.vl3exvbBPzphrHcX/GmdYCEiCzU06GTF4D.",
+      "username": "123",
+      "accountCreationDate": "22.12.2023",
+      "friendsList": [],
+      "ownCapsulesList": [],
+      "fullUsername": "",
+      "phoneNumber": "",
+      "address": "",
+      "extraProfileInfo1": "",
+      "extraProfileInfo2": "",
+      "id": 7
+    },
+    {
+      "email": "dsfgdf@gmail.com",
+      "password": "$2a$10$m455yE7Z1zwalkzHVNbmjO107N.b2NXFTStkgF5X0Vf9sXYtIDeGq",
+      "username": "123",
+      "accountCreationDate": "22.12.2023",
+      "friendsList": [],
+      "ownCapsulesList": [],
+      "fullUsername": "",
+      "phoneNumber": "",
+      "address": "",
+      "extraProfileInfo1": "",
+      "extraProfileInfo2": "",
+      "id": 8
+    }
+  ],
+  "capsules": [
+    {
+      "title": "tets",
+      "openingDate": "2023-11-17",
+      "file": "",
+      "text": "testtsttw",
+      "capsuleAvailability": "private",
+      "creationDate": "2023-11-14",
+      "userId": 1,
+      "creatorName": "alex",
+      "id": 1
+    },
+    {
+      "title": "NewAdminCapsule",
+      "openingDate": "2023-11-17",
+      "file": "",
+      "text": "test text",
+      "capsuleAvailability": "private",
+      "creationDate": "2023-11-16",
+      "userId": 2,
+      "creatorName": "admin",
+      "id": 2
+    },
+    {
+      "title": "SpecialForFriend",
+      "openingDate": "2024-04-27",
+      "file": "",
+      "text": "Its text for my friend Alex",
+      "capsuleAvailability": "friendsOnly",
+      "creationDate": "2023-11-16",
+      "userId": 2,
+      "creatorName": "admin",
+      "id": 3
+    },
+    {
+      "title": "Public for all capsule",
+      "openingDate": "2023-11-16",
+      "file": "",
+      "text": "Yeah, u all can read it, its not a problem",
+      "capsuleAvailability": "public",
+      "creationDate": "2023-11-16",
+      "userId": 1,
+      "creatorName": "alex",
+      "id": 4
+    },
+    {
+      "title": "Capsule with very long text",
+      "openingDate": "2023-11-15",
+      "file": "",
+      "text": "Then there will be a huge amount of random typing of the letter: bjhklgfdb d;pfgjpdfkgbmepd;nh rp;hjmbd;bhpmjdi mid;tr,bhfkld'kb,f;hk ,jdf,jbhdklhbj'fhj gf',hbkldfg;/b,jkdfhjb,jf;dhbjf;gdhfgd,bjkdj ,mmfkh;kdbd;vhmgbmgfdvkjhgbscjfhkgd jfbfc juicsbfngfosicbhsgkb nfkhcgvbfhkdvng fdbvcgsrk f khgbfdbgvf bghfdibvsisudgvdfg sdvfg",
+      "capsuleAvailability": "private",
+      "creationDate": "2023-11-27",
+      "userId": 1,
+      "creatorName": "alex",
+      "id": 5
+    },
+    {
+      "title": "New public capsule",
+      "openingDate": "2023-11-09",
+      "file": "",
+      "text": "ok, more public for peoples",
+      "capsuleAvailability": "public",
+      "creationDate": "2023-11-28",
+      "userId": 1,
+      "creatorName": "alex",
+      "id": 6
+    },
+    {
+      "title": "newVue",
+      "openingDate": "2024-01-01",
+      "file": "",
+      "text": "NewVueCapsule",
+      "capsuleAvailability": "private",
+      "creationDate": "2023-12-18",
+      "userId": 1,
+      "creatorName": "alex",
+      "id": 8
+    },
+    {
+      "title": "Capsule for admin",
+      "openingDate": "2024-02-23",
+      "file": "",
+      "text": "only for friends capsule",
+      "capsuleAvailability": "friendsOnly",
+      "creationDate": "2023-12-22",
+      "userId": 1,
+      "creatorName": "alex",
+      "id": 11
+    },
+    {
+      "title": "test",
+      "openingDate": "2023-12-06",
+      "file": "",
+      "text": "1234",
+      "capsuleAvailability": "friendsOnly",
+      "creationDate": "2023-12-22",
+      "userId": 1,
+      "creatorName": "alex",
+      "id": 12
+    }
+  ]
+}

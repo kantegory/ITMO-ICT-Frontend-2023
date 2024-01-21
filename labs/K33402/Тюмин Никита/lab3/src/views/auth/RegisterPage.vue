@@ -130,6 +130,6 @@ export default {
 
 <style scoped>
 .form-container__error-message {
-  color: #B9B4C7;
+  color: var(--text-color);
 }
 </style>

@@ -3,7 +3,7 @@
     <slot name="toggler"></slot>
   </a>
 
-  <ul class="dropdown-menu dropdown-menu-end" style="background-color: #FAF0E6;">
+  <ul class="dropdown-menu dropdown-menu-end" style="background-color: var(--header-color);">
     <slot name="content"></slot>
   </ul>
 </template>

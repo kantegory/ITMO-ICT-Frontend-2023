@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "email": "test@mail.ru",
+      "password": "1234",
+      "sessionToken": "f38d2a64-9339-4d12-ad56-cdf0f6050182",
+      "id": 1
+    },
+    {
+      "email": "xx@mail.ru",
+      "password": "xx",
+      "sessionToken": "acb6dccc-130f-42d5-9c41-ad0196cbf7fa",
+      "id": 2
+    }
+  ],
+  "foods": [
+    {
+      "title": "Яблоко",
+      "foodImg": "https://i.ibb.co/sQjWRxp/image.png",
+      "calories": 47
+    },
+    {
+      "title": "Банан",
+      "foodImg": "https://i.ibb.co/MhrNJ0z/image.jpg",
+      "calories": 96
+    },
+    {
+      "title": "Киви",
+      "foodImg": "https://i.ibb.co/VvdMrQT/image.jpg",
+      "calories": 48
+    },
+    {
+      "title": "Яблоко",
+      "foodImg": "https://i.ibb.co/sQjWRxp/image.png",
+      "calories": 47
+    },
+    {
+      "title": "Банан",
+      "foodImg": "https://i.ibb.co/MhrNJ0z/image.jpg",
+      "calories": 96
+    },
+    {
+      "title": "Киви",
+      "foodImg": "https://i.ibb.co/VvdMrQT/image.jpg",
+      "calories": 48
+    },
+    {
+      "title": "Яблоко",
+      "foodImg": "https://i.ibb.co/sQjWRxp/image.png",
+      "calories": 47
+    },
+    {
+      "title": "Банан",
+      "foodImg": "https://i.ibb.co/MhrNJ0z/image.jpg",
+      "calories": 96
+    },
+    {
+      "title": "Киви",
+      "foodImg": "https://i.ibb.co/VvdMrQT/image.jpg",
+      "calories": 48
+    }
+  ],
+  "foodsEaten": [
+    {
+      "title": "Киви",
+      "id": 1
+    },
+    {
+      "title": "Банан",
+      "id": 2
+    },
+    {
+      "title": "Банан",
+      "id": 3
+    }
+  ],
+  "caloriesLeft": [
+    {
+      "value": 1858,
+      "id": 1
+    }
+  ]
+}

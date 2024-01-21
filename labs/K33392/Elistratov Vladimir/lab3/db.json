@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "email": "test1@gmail.com",
+      "password": "$2a$10$mxehQ3cxke2SmOg5COAxUeqdatpYBVdyHOSqF/aNjnmwXF/xRTjo6",
+      "firstname": "Сантос",
+      "username": "Sasha",
+      "capCount": 0,
+      "id": 1
+    }
+  ],
+  "capsules": [
+    {
+      "name": "Vue first",
+      "openDate": 1701644520000,
+      "description": "fffffffffffffffffffffffff",
+      "access": true,
+      "text": "",
+      "files": "",
+      "userId": 1,
+      "userName": "Sasha",
+      "id": 1
+    },
+    {
+      "name": "fsdfsdf",
+      "openDate": 1703631720000,
+      "description": "fsdfsdfsdfd",
+      "access": "false",
+      "text": "",
+      "files": "",
+      "userId": 1,
+      "userName": "Sasha",
+      "id": 2
+    },
+    {
+      "name": "New Vue 3",
+      "openDate": 1702944180000,
+      "description": "Alarm",
+      "access": true,
+      "text": "",
+      "files": "",
+      "userId": 1,
+      "userName": "Sasha",
+      "id": 3
+    },
+    {
+      "name": "fsdgfdsgfsdgsdg",
+      "openDate": 1703780400000,
+      "description": "fsdfsdfsdfsdf",
+      "access": "false",
+      "text": "",
+      "files": "",
+      "userId": 1,
+      "userName": "Sasha",
+      "id": 4
+    }
+  ]
+}

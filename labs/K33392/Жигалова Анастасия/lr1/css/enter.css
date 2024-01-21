@@ -6,7 +6,6 @@ footer {
 	width: 100%;
     height:auto;
   }
-
 .form-group{
     margin-top: 3%;
 }
@@ -14,7 +13,6 @@ footer {
     margin-top: 3%;
     margin-bottom: 0%;
 }
-
 .modal {
     display: none;
     position: fixed;
@@ -46,4 +44,3 @@ footer {
     cursor: pointer;
 
   }
-
