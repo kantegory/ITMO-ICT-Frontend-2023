@@ -1,0 +1,71 @@
+header,
+footer {
+  background-color: #4a4a4a;
+}
+header {
+  height: 150px;
+}
+.nav-item {
+  /* padding-top: 50px; */
+  box-sizing: border-box;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.nav-links {
+  text-decoration: none;
+  color: white;
+  font-size: xx-large;
+  white-space: nowrap;
+}
+.nav-links:hover {
+  color: #82898f;
+}
+.btn-login {
+  margin: auto;
+  height: 40px;
+  display: block;
+  background-color: #4a4a4a;
+  color: white;
+  width: 50%;
+  margin-bottom: 15px;
+}
+.cat-item {
+  padding-right: 3%;
+  padding-bottom: 3%;
+}
+.cat-img {
+  width: 350px;
+  height: 500px;
+}
+.certificate-img {
+  width: 500px;
+}
+.certificate-item {
+  padding-left: 3%;
+  padding-bottom: 3%;
+}
+.RegObj {
+  padding-top: 1.5%;
+}
+.btn-reg {
+  background-color: #4a4a4a;
+  color: white;
+  margin-top: 3%;
+  width: 25%;
+}
+.cat-container {
+  margin: 3%;
+}
+button {
+  border: none;
+}
+.cartIcon {
+  transform: scale(-1, 1);
+  width: 60px;
+  position: absolute;
+  top: 0;
+}
+.footerIcon {
+  width: 100px;
+  color: white;
+}
