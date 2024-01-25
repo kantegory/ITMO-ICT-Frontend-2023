@@ -1,0 +1,89 @@
+<div class="d-flex align-items-center">
+  <div class="nav-item">
+
+    <img src="./img/logo.png" style="margin-left: 10px;"></img>
+
+  </div>
+
+  <div class="nav-item">
+    <a href="about.html" class="nav-links">
+      <h3 class="nav-text">ABOUT</h3>
+    </a>
+  </div>
+  <div class="nav-item">
+    <a href="portfolio.html" class="nav-links">
+      <h3 class="nav-text">PORTFOLIO</h3>
+    </a>
+  </div>
+  <div class="nav-item">
+    <a href="services.html" class="nav-links">
+      <h3 class="nav-text">SERVICES</h3>
+    </a>
+  </div>
+  <div class="nav-item">
+    <a href="#footer" class="nav-links">
+      <h3 class="nav-text">CONTACTS</h3>
+    </a>
+  </div>
+  <div class="nav-item ms-auto" style="padding-right: 100px;">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-reg" class="nav-links">
+      <h3 class="nav-text">SIGN IN</h3>
+    </a>
+
+    <div class="modal fade modal-reg" id="modal-reg" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form onsubmit="login(event)">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid modal-login">
+                <div class="row">
+                  <div class="col-3 loginicon">
+                    <img src="img/login.png" width="60" height="60">
+                  </div>
+                  <div class="col-9">
+                    <input type="email" class="form-control" id="usernameLogin" placeholder="Username..." name="email"
+                      autocomplete="on">
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3 passwordicon">
+                    <img src="img/password.png" width="40" height="40">
+                  </div>
+                  <div class="col-9">
+                    <input type="password" autocomplete="on" class="form-control" id="passwordLogin" name="password"
+                      style="padding-top: 5px; margin: auto;margin-top: 10px" placeholder="Password...">
+                  </div>
+                </div>
+
+                <div class="row" style="padding-top: 15px;">
+                  <div class="col-6">
+                    <h6 style="padding-left: 25px; white-space: nowrap;">
+                      Dont have an account?
+                    </h6>
+                  </div>
+                  <div class="col-6">
+                    <a href="register.html">
+                      <h6 style="text-align: left; padding-left: 30px;">
+                        Sign up
+                      </h6>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-login" id="loginButton">login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

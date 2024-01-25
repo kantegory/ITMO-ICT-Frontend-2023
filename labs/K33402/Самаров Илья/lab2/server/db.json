@@ -1,0 +1,97 @@
+{
+  "users": [
+    {
+      "email": "samarov2012@gmail.com",
+      "password": "$2a$10$MbjHUwnZwhs8xLJNoPlBquA2kzMEct9YwH2LS2ETSHjpkBkGKCDLS",
+      "id": "ilya3716"
+    }
+  ],
+  "services": [
+    {
+      "Head": "Website development",
+      "Text": "My strategy-driven approach allows us to create impressive websites that engage and motivate your target audience",
+      "imgSrc": "img/webdev.jpg",
+      "Group": 1,
+      "id": 1
+    },
+    {
+      "Head": "Corporate website",
+      "Text": "Creating a website for your company that will boost sales and promote your products.",
+      "imgSrc": "img/corpdev.png",
+      "Group": 1,
+      "id": 2
+    },
+    {
+      "Head": "Fixed price website",
+      "Text": "A Fixed Price Website service offers a website development package with a predetermined, non-negotiable cost.<br>This includes a set scope of design, functionality, and features, providing transparency and budget predictability for clients.",
+      "imgSrc": "img/fixprice.png",
+      "Group": 1,
+      "id": 3
+    },
+    {
+      "Head": "Web Design",
+      "Text": "Creating visually appealing and functional website designs to enhance user experience and align with the brand",
+      "imgSrc": "img/design.jpg",
+      "Group": 2,
+      "id": 4
+    },
+    {
+      "Head": "Mobile app design",
+      "Text": "Creation of visually appealing and user-friendly interfaces for mobile applications, focusing on usability andaesthetics",
+      "imgSrc": "img/mobiledev.png",
+      "Group": 2,
+      "id": 5
+    },
+    {
+      "Head": "Brand Identity",
+      "Text": "Visual and conceptual representation of a brand, encompassing elements such as logo, colors, typography,<br>and design to create a distinct and recognizable brand image",
+      "imgSrc": "img/brandident.jpg",
+      "Group": 2,
+      "id": 6
+    },
+    {
+      "Head": "Tech SEO",
+      "Text": "Optimizing a website's technical aspects for better search engine performance,<br> including speed, mobile responsiveness, and overall site structure",
+      "imgSrc": "img/seo1.png",
+      "Group": 3,
+      "id": 7
+    },
+    {
+      "Head": "On-page SEO",
+      "Text": "Optimizes individual web pages for higher search engine rankings by <br>enhancing content, meta tags, and other elements to attract relevant traffic",
+      "imgSrc": "img/seo0.jpg",
+      "Group": 3,
+      "id": 8
+    },
+    {
+      "Head": "Off-page SEO",
+      "Text": "Involves external strategies like building backlinks and leveraging social media to boost a website's credibility<br> and search engine visibility",
+      "imgSrc": "img/seo2.jpg",
+      "Group": 3,
+      "id": 9
+    }
+  ],
+  "orders": [
+    {
+      "Head": "Web Design",
+      "username": "ilya3716",
+      "date": "11.12.2023",
+      "type": "VK",
+      "id": 1
+    },
+    {
+      "Head": "Corporate website",
+      "date": "2023-12-27",
+      "type": "Telegram",
+      "username": "ilya3716",
+      "id": 2
+    },
+    {
+      "Head": "Web Design",
+      "date": "2024-01-26",
+      "type": "Telegram",
+      "username": "ilya3716",
+      "id": 3
+    }
+  ]
+}
