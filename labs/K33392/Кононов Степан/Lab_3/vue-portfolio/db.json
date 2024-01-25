@@ -1,0 +1,171 @@
+{
+  "images": [
+    {
+      "imageFile": "uploads/dcc67ed0107da71b834615d48421efa4.jpg",
+      "imageTitle": "Mona Lisa",
+      "userId": "11",
+      "id": 10
+    },
+    {
+      "imageFile": "uploads/36o68bf7.jpg",
+      "imageTitle": "Kokabiel",
+      "userId": "11",
+      "id": 11
+    },
+    {
+      "imageFile": "uploads/flxzlzv4.png",
+      "imageTitle": "ds",
+      "userId": "17",
+      "id": 12
+    },
+    {
+      "imageFile": "uploads/oqlrx1ml.jpg",
+      "imageTitle": "ыва",
+      "userId": "17",
+      "id": 13
+    }
+  ],
+  "users": [
+    {
+      "email": "register@mail.ru",
+      "password": "$2a$10$ek4ZqldazzeApRJ.0G7tXuAT.om31cKE39Johi2KDLAuc8AHA2GrG",
+      "firstname": "Степан",
+      "lastname": "Кононов",
+      "id": 1
+    },
+    {
+      "email": "check@mail.ru",
+      "password": "$2a$10$d7O9wb2/m6sDHYSU8AFHB.y9PHuBk/4C0su9u5dEAtRg6aErsAndG",
+      "firstname": "Соня",
+      "lastname": "Авокадо",
+      "id": 2
+    },
+    {
+      "email": "0c7b8865450947@lamasticots.com",
+      "password": "$2a$10$eJ2Y9Q1Zow6dvADVMxY60Ol5yh6Z6GyBG8mJ1lxgXiXo6.RUjI1yu",
+      "firstname": "Степан",
+      "lastname": "Кононов",
+      "id": 3
+    },
+    {
+      "email": "dna91643@omeie.com",
+      "password": "$2a$10$G88fEVAm.dkioEyyS6RhceOlk0hz6JMq1/M.PDbm7IPCe4z54ij4i",
+      "firstname": "Наталья",
+      "lastname": "Кононова",
+      "id": 4
+    },
+    {
+      "email": "gnz83945@omeie.com",
+      "password": "$2a$10$bF1X5b6oIJCcUCilwAV69uFJkYR5bDFYm.JPIVTLgqdwzUXE2oKHO",
+      "firstname": "Катя",
+      "lastname": "Ш",
+      "id": 5
+    },
+    {
+      "email": "nyntqnz781@ipahive.org",
+      "password": "$2a$10$jrvFd.6etHNcuw2ITapeXuC3nZAjOPoJM4bTnU4xmqETPqcG9OmFi",
+      "firstname": "Катя",
+      "lastname": "Рин",
+      "gender": "female",
+      "id": 6
+    },
+    {
+      "email": "nyntqz781@ipahive.org",
+      "password": "$2a$10$qgzXxVkkSkcsUCjVt/Hu3OB8k3QQNiYn31zVIL23oVEmOzegqH01i",
+      "firstname": "nyntqnz781@ipahive.org",
+      "lastname": "nyntqnz781@ipahive.org",
+      "gender": "female",
+      "avatar": 65,
+      "id": 7
+    },
+    {
+      "email": "nynz781@ipahive.org",
+      "password": "$2a$10$b2Mcw9VT1T6.zSLxZVvh0Ovn3xbtCO56521BLiiCZcZyMfneugbC2",
+      "firstname": "Алеша",
+      "lastname": "Алешович",
+      "gender": "male",
+      "avatar": 45,
+      "id": 8
+    },
+    {
+      "email": "nyntqnz781@ipahive.or",
+      "password": "$2a$10$oLt3t2BQefq6BTa8lgumvOurg6q3VaQzn29cWO8pkfGrch5uDrNG.",
+      "firstname": "Степан",
+      "lastname": "К",
+      "gender": "male",
+      "avatar": 32,
+      "id": 9
+    },
+    {
+      "email": "stepan.kononov.2003@mail.ru",
+      "password": "$2a$10$EHCItBAolEmtFOWHbArd9eQo0HGnIynkdjfOdc87parAzEBuFGNX.",
+      "firstname": "Алеq1111",
+      "lastname": "Алешев",
+      "gender": "male",
+      "avatar": 5,
+      "id": 10,
+      "newUsername": "Але",
+      "company": "q234",
+      "location": "234"
+    },
+    {
+      "email": "stepan.kononov.2003@gmail.com",
+      "password": "$2a$10$8q1BamlNb/cUQ1I.KU7NMu2gQ.LwDW2/Wkr66hMRCySqfSxv4mCH6",
+      "firstname": "Mauі",
+      "gender": "male",
+      "avatar": 21,
+      "id": 11,
+      "company": "ITMO",
+      "location": "Tatooine"
+    },
+    {
+      "email": "stepan.kononov.2003@mail.r",
+      "password": "$2a$10$BptuAYcDhy9CnulLFvYMxuvprplqbWLJMVBcW0wnk1PyJUsUr5H5G",
+      "firstname": "Stepan",
+      "gender": "male",
+      "avatar": 31,
+      "id": 12,
+      "company": "ITMO",
+      "location": "SPB"
+    },
+    {
+      "email": "twm39443@nezid.com",
+      "password": "$2a$10$JoE90PUxxeE3J590jm9vl.pe8lKeUDHkLtaKteRQkMQG3613363dW",
+      "firstname": "Alena",
+      "gender": "female",
+      "id": 13
+    },
+    {
+      "email": "qfr28681@zbock.com",
+      "password": "$2a$10$TFy/iEIPwYvYO2Ti/8oL3uDJ63geJhwGKJ8PNemiH3cJateKq04aC",
+      "firstname": "Alena",
+      "gender": "female",
+      "avatar": 0,
+      "id": 14
+    },
+    {
+      "email": "qfr2a8681@zbock.com",
+      "password": "$2a$10$YIPBXcityPmddmKRn3DspuqVfSl2UE3sOur0hy/zVT64Eg3T3.8PG",
+      "firstname": "Alena",
+      "gender": "female",
+      "avatar": 80,
+      "id": 15
+    },
+    {
+      "email": "uuf54712@nezid.com",
+      "password": "$2a$10$CVtsNSTmxWtxuR97AFL4hOaE4Ewy6vUHVbZjz7mNVOvWpGrGdJdFm",
+      "firstname": "Alena",
+      "gender": "female",
+      "avatarId": 52,
+      "id": 16
+    },
+    {
+      "email": "jqn94384@nezid.com",
+      "password": "$2a$10$ynqkyDWne8Raquy7W2vigucvpOF3MeOAUVkFBhcMX3eOmfgSimnn2",
+      "firstname": "Alena",
+      "gender": "female",
+      "avatar": 86,
+      "id": 17
+    }
+  ]
+}

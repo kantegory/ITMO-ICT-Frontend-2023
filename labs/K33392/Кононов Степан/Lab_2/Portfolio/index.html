@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <meta name="description"
+          content="Это страница с работами всех пользователей сайта.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="scripts/theme-switcher.js"></script>
+    <link rel="stylesheet" href="styles/gallery-styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <img src="images/logo.png" alt="Логотип компании" class="img-fluid" style="max-height: 50px;" width="50"
+         height="50">
+    <a class="navbar-brand" href="#">Портфолио</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <form class="d-flex justify-content-center align-items-center" id="searchForm">
+        <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Поиск изображений"
+               aria-label="Search" id="searchInput">
+        <button class="btn btn-outline-success" type="submit">Поиск</button>
+    </form>
+
+    <div class="collapse navbar-collapse" id="navbarNav"></div>
+    <div id="userSection" class="d-flex align-items-center">
+        <ul class="navbar-nav ml-auto d-flex">
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">Профиль</a>
+            </li>
+        </ul>
+        <a class="btn btn-primary ml-2" href="register.html" id="loginRegisterBtn">Вход/Регистрация</a>
+        <img src="" alt="Фото профиля" class="img-fluid rounded-circle"
+             style="width: 40px; height: 40px; margin-right: 10px;" id="avatar-small" onclick="redirectToProfile()">
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row" id="gallery">
+    </div>
+</div>
+
+
+<!-- Модальное окно для увеличения изображения -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">Увеличенное изображение</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="Увеличенное изображение" class="modal-image">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottom-right-container">
+    <svg class="themeIcon" id="themeIcon" role="img">
+        <use xlink:href="images/icons.svg#ic_moon"></use>
+    </svg>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="scripts/gallery-script.js"></script>
+</body>
+</html>
