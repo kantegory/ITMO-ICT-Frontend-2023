@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <style>
+        /* Стили для темной темы */
+        body.dark-mode {
+            background-color: #222;
+            color: #fff;
+        }
+
+        /* Стили для светлой темы */
+        body.light-mode {
+            background-color: #fff;
+            color: #222;
+        }
+
+        /* Общие стили для страницы */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            color: #222; /* Цвет текста по умолчанию */
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            /* ... (предыдущие стили) ... */
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: #f00;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="form-container">
+    <h2>Вход</h2>
+    <form id="loginForm">
+        <label for="username"></label><input type="text" id="username" placeholder="Логин">
+        <br>
+        <label for="password"></label><input type="password" id="password" placeholder="Пароль">
+        <br>
+        <input type="submit" value="Войти">
+    </form>
+    <p>Нет аккаунта? <a href="registration.html">Зарегистрироваться</a></p>
+    <div class="error-message" id="loginError">Введите корректные данные</div>
+    <div class="theme-toggle" onclick="toggleTheme()">Сменить тему</div>
+</div>
+<script src="js/login.js"></script>
+<script>
+    // Функция для переключения темы
+    function toggleTheme() {
+        const body = document.body;
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+
+        // Сохранение выбранной темы в localStorage
+        const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+        localStorage.setItem('theme', currentTheme);
+    }
+
+    // Проверка сохраненной темы в localStorage при загрузке страницы
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.classList.add(savedTheme + '-mode');
+    } else {
+        // По умолчанию используется тема, установленная в браузере
+        const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (userPrefersDark) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.add('light-mode');
+        }
+    }
+</script>
+<script>
+    const loginForm = document.getElementById('loginForm');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const loginError = document.getElementById('loginError');
+
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        if (!validateLogin(usernameInput.value, passwordInput.value)) {
+            loginError.style.display = 'block';
+        } else {
+            // Simulate successful login
+            alert('Успешный вход!');
+            window.location.href = 'main.html';
+        }
+    });
+
+    function validateLogin(username, password) {
+        // В данном случае просто проверим, что поля не пустые
+        return username.trim() !== '' && password.length > 4;
+    }
+</script>
+<script></script>
+</body>
+</html>
