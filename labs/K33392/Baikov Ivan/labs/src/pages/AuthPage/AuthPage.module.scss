@@ -1,0 +1,43 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .inputOption {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      input {
+        width: 200px;
+        height: 25px;
+        border-radius: 8px;
+        border: 1px solid black;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    button {
+      width: 120px;
+      height: 25px;
+      border-radius: 8px;
+      border: none;
+      color: white;
+      background-color: rgb(4, 167, 248);
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  height: 100%;
+
+  select {
+    width: 120px;
+    margin-left: 50px;
+    border-radius: 6px;
+    height: 30px;
+  }
+
+  button {
+    margin-left: 50px;
+    width: 120px;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    background-color: var(--input-btn-color);
+    cursor: pointer;
+  }
+
+  .content {
+    padding-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 50px;
+  }
+}
