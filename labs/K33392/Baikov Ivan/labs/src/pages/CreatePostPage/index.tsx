@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import style from "./CreatePostPage.module.scss";
 
 export const CreatePostPage = () => {
@@ -30,9 +30,7 @@ export const CreatePostPage = () => {
     setTitle(event.target.value);
   };
 
-  const handleDescriptionChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
+  const handleDescriptionChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setDescription(event.target.value);
   };
 
@@ -44,7 +42,7 @@ export const CreatePostPage = () => {
     event.preventDefault();
     const date = getCurrentFormattedDateTime();
     axios
-      .post("http://localhost:3000/posts", {
+      .post("http://localhost:3123/posts", {
         title,
         description,
         date,
@@ -79,6 +77,9 @@ export const CreatePostPage = () => {
           <button type="submit">Create Post</button>
         </div>
       </form>
+      <Link to="/main">
+        <button>Back</button>
+      </Link>
     </div>
   );
 };

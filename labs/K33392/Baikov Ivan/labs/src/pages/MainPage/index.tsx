@@ -21,31 +21,32 @@ export const MainPage = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response: PostData[] = await ky.get("http://localhost:3000/posts").json();
+        let url = "http://localhost:3123/posts";
+
+        if (sortMethod) {
+          url += `?sort=${sortMethod.toLowerCase()}`;
+          console.log("url", url);
+        }
+
+        const response: PostData[] = await ky.get(url).json();
         setPosts(response);
+        console.log("got");
       } catch (error) {
         console.error("There was an error fetching data", error);
       }
     };
 
     fetchPosts();
-  }, []);
+  }, [sortMethod]);
 
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSortMethod(e.target.value);
+    console.log("handle");
   };
 
-  const sortedPosts = posts
-    .filter((post) => post.title.toLowerCase().includes(searchPost.toLowerCase()))
-    .sort((a, b) => {
-      if (sortMethod === "Sort by date") {
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
-      } else if (sortMethod === "Sort by name") {
-        return a.title.localeCompare(b.title);
-      }
-      return 0;
-    });
-
+  const sortedPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchPost.toLowerCase())
+  );
   return (
     <div className={style.container}>
       <Header searchPost={setSearchPost} />
@@ -54,8 +55,8 @@ export const MainPage = () => {
       </Link>
       <select onChange={handleSortChange}>
         <option value="">Select sorting method</option>
-        <option value="Sort by date">Sort by date</option>
-        <option value="Sort by name">Sort by name</option>
+        <option value="sort_by_date">Sort by date</option>
+        <option value="sort_by_name">Sort by name</option>
       </select>
       <div className={style.content}>
         {sortedPosts.map((post: PostData) => {
@@ -66,7 +67,11 @@ export const MainPage = () => {
             description: post.description,
             date: post.date,
           };
-          return <Post key={post.id} {...props} />;
+          return (
+            <Link to={`/posts/${post.id}`} key={post.id}>
+              <Post key={post.id} {...props} />
+            </Link>
+          );
         })}
       </div>
     </div>
