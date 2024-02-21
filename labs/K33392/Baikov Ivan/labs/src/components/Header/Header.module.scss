@@ -1,0 +1,29 @@
+.container {
+  height: 100px;
+  width: 100%;
+  background-color: rgb(4, 167, 248);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  background-color: var(--input-btn-color);
+
+  h1 {
+    cursor: pointer;
+  }
+
+  input {
+    width: 200px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: var(--background-color);
+  }
+
+  p {
+    cursor: pointer;
+  }
+}

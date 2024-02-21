@@ -1,0 +1,42 @@
+.container {
+  height: 100%;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input {
+      background-color: var(--background-color);
+      border-radius: 6px;
+      height: 30px;
+      width: 200px;
+      border: 1px solid black;
+      padding: 5px;
+    }
+
+    textarea {
+      background-color: var(--background-color);
+      border-radius: 6px;
+      width: 250px;
+      height: 50px;
+      border: 1px solid black;
+      padding: 5px;
+    }
+    button {
+      background-color: var(--input-btn-color);
+      color: white;
+      cursor: pointer;
+      height: 35px;
+      border-radius: 6px;
+      border: none;
+    }
+  }
+}
