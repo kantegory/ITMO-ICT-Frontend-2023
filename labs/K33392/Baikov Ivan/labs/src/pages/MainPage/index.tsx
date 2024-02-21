@@ -68,7 +68,7 @@ export const MainPage = () => {
             date: post.date,
           };
           return (
-            <Link to={`/posts/${post.id}`} key={post.id}>
+            <Link to={`/posts/${post.id}`} key={post.id} style={{ textDecoration: "none" }}>
               <Post key={post.id} {...props} />
             </Link>
           );

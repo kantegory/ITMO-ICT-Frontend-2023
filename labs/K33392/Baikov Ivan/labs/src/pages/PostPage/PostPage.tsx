@@ -4,6 +4,7 @@ import ky from "ky";
 import { Link } from "react-router-dom";
 import { PostData } from "../MainPage";
 import style from "./PostPage.module.scss";
+import { Icon } from "../../components/Icon/Icon";
 
 export const PostPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -55,9 +56,9 @@ export const PostPage: React.FC = () => {
       <h1>{post.title}</h1>
       <p>{post.description}</p>
       <p>{post.date}</p>
-      <button onClick={handleLikeClick} className={isLiked ? style["liked"] : ""}>
-        {isLiked ? "Liked" : "Like"}
-      </button>
+      <div onClick={handleLikeClick}>
+        <Icon id={isLiked ? "Liked" : "Like"} />
+      </div>
       <Link to="/main">
         <button>Back</button>
       </Link>

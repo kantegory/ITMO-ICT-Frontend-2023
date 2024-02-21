@@ -21,10 +21,10 @@ export const Header = ({ searchPost }: HeaderProps) => {
   };
 
   return (
-    <div className={style.container}>
+    <nav className={style.container}>
       <h1>Blog App</h1>
       <input placeholder="Search post..." onChange={handleSearch} />
       <p onClick={toggleTheme}>Theme Toggle</p>
-    </div>
+    </nav>
   );
 };
