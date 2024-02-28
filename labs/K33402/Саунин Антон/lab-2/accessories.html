@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accessories</title>
+</head>
+
+<body>
+    <div class="modal fade modal-reg" id="modal-reg" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form @submit="login">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                        <button id="btnClose" type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Закрыть"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <label for="emailLogin"
+                            style="padding-left: 10px; padding-bottom: 5px; color: #077015">Email</label>
+                        <input style="border-radius: 20px; margin-bottom: 10px" type="email" class="form-control"
+                            id="emailLogin" name="email" autocomplete="on" />
+                        <label for="passwordlLogin"
+                            style="padding-left: 10px; padding-bottom: 5px; color: #077015">Password</label>
+                        <input type="password" autocomplete="on" class="form-control" id="passwordLogin" name="password"
+                            style="padding-top: 5px; margin: auto; margin-top: 10px; border-radius: 20px" />
+
+                        <div style="padding-top: 15px; padding-left: 10px">
+                            dont have an account?
+                            <a href="registration.html" style="color: #077015"> sign up </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <hr />
+                        <button type="submit" class="btn-login" id="loginButton">login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="d-flex align-items-center">
+            <div class="nav-item" style="padding-left: 100px">
+                <a href="boys.html" class="nav-links">boys</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="girls.html" class="nav-links">girls</a>
+            </div>
+            <div class="nav-item">
+                <a href="accessories.html" class="nav-links">accessories</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="catalog.html" class="nav-links">catalog</a>
+            </div>
+            <img src="/img/logo.png" height="125px" style="margin-left: 80px" />
+            <div class="nav-item ms-auto" style="margin-left: 100px">
+                <button class="nav-links" style="background-color: #077015; border: none" data-bs-toggle="modal"
+                    data-bs-target="#modal-cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                        class="bi bi-basket" viewBox="0 0 16 16">
+                        <path
+                            d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5" />
+                    </svg>
+                </button>
+            </div>
+            <div class="nav-item ms-auto" style="padding-right: 100px">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#modal-reg" class="nav-links">
+                    <h3 class="nav-text">sign in</h3>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div>
+        <div class="d-flex searchbar flex-row justify-content-evenly border border-success" style="padding: 2%">
+            <div>
+                <input type="checkbox" id="checkbox1" style="accent-color: #077015" checked="checked" value="1" />
+                <label for="checkbox1">Pants</label>
+            </div>
+            <div>
+                <input type="checkbox" id="checkbox2" style="accent-color: #077015" checked="checked" value="2" />
+                <label for="checkbox2">Costume</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="checkbox3" style="accent-color: #077015" checked="checked" value="3" />
+                <label for="checkbox3">Topwear</label>
+            </div>
+            <div class="search-item">
+                <input type="search" id="searchbox"
+                    style="color: #4a4a4a; width: 70%; border-radius: 10px 0px 0px 10px" />
+                <button onclick="Search('acs')" style="
+                background-color: #077015;
+                color: #ffd700;
+                width: 25%;
+                border-radius: 0px 10px 10px 0px;
+              ">
+                    search
+                </button>
+            </div>
+
+        </div>
+        <div class="d-flex flex-wrap justify-content-evenly" style="padding: 2%" id="productsContainer">
+
+        </div>
+    </div>
+
+</body>
+<script src="js/filters.js"></script>
+<script src="js/products.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        loadProducts("", "acs")
+    })
+</script>
+
+</html>

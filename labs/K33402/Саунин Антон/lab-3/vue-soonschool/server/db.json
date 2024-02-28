@@ -1,0 +1,166 @@
+{
+  "users": [
+    {
+      "email": "snusp@gmail.com",
+      "password": "$2a$10$jKMmXGGws2.93OUlYUt.mOi/9NBxAdbs7Z1GtpIZW7r4bkRGfilPW",
+      "id": "snusp",
+      "phonenumber": "+79201011888"
+    }
+  ],
+  "products": [
+    {
+      "name": "Baggy pants",
+      "price": "199$",
+      "imgSrc": "/catalog/boys1.jpeg",
+      "type": "1",
+      "id": 1,
+      "sex": "boys"
+    },
+    {
+      "name": "Classic Boston pants",
+      "price": "299$",
+      "imgSrc": "/catalog/boys2.png",
+      "type": "1",
+      "id": 2,
+      "sex": "boys"
+    },
+    {
+      "name": "Classic Gooliver pants",
+      "price": "149$",
+      "imgSrc": "/catalog/boys3.jpeg",
+      "type": "1",
+      "id": 3,
+      "sex": "boys"
+    },
+    {
+      "name": "Classic President pants",
+      "price": "499$",
+      "imgSrc": "/catalog/boys4.jpeg",
+      "type": "1",
+      "id": 4,
+      "sex": "boys"
+    },
+    {
+      "name": "Classic Insbruc costume",
+      "price": "799$",
+      "imgSrc": "/catalog/boys5.jpeg",
+      "type": "2",
+      "id": 5,
+      "sex": "boys"
+    },
+    {
+      "name": "Classic Lion costume",
+      "price": "699$",
+      "imgSrc": "/catalog/boys6.jpeg",
+      "type": "2",
+      "id": 6,
+      "sex": "boys"
+    },
+    {
+      "name": "Snow White blouse",
+      "price": "499$",
+      "imgSrc": "/catalog/girls1.jpeg",
+      "type": "3",
+      "id": 7,
+      "sex": "girls"
+    },
+    {
+      "name": "Andrea blouse",
+      "price": "399$",
+      "imgSrc": "/catalog/girls2.jpeg",
+      "type": "3",
+      "id": 8,
+      "sex": "girls"
+    },
+    {
+      "name": "Aurora blouse",
+      "price": "599$",
+      "imgSrc": "/catalog/girls3.jpeg",
+      "type": "3",
+      "id": 9,
+      "sex": "girls"
+    },
+    {
+      "name": "Camgridge pants",
+      "price": "499$",
+      "imgSrc": "/catalog/girls7.jpeg",
+      "type": "1",
+      "id": 10,
+      "sex": "girls"
+    },
+    {
+      "name": "Verona costume",
+      "price": "999$",
+      "imgSrc": "/catalog/girls8.jpeg",
+      "type": "2",
+      "id": 11,
+      "sex": "girls"
+    },
+    {
+      "name": "Elizarov costume",
+      "price": "899$",
+      "imgSrc": "/catalog/girls9.jpeg",
+      "type": "2",
+      "id": 12,
+      "sex": "girls"
+    },
+    {
+      "name": "Parnas pants",
+      "price": "399$",
+      "imgSrc": "/catalog/girls10.jpeg",
+      "type": "1",
+      "id": 13,
+      "sex": "girls"
+    },
+    {
+      "name": "Saphire sundress",
+      "price": "699$",
+      "imgSrc": "/catalog/girls11.jpeg",
+      "type": "3",
+      "id": 14,
+      "sex": "girls"
+    },
+    {
+      "name": "Kitten pencil case",
+      "price": "49$",
+      "imgSrc": "/accesories/acsses1.webp",
+      "type": "3",
+      "id": 15,
+      "sex": "acs"
+    },
+    {
+      "name": "Butterfly pencil case",
+      "price": "49$",
+      "imgSrc": "/accesories/acsses2.webp",
+      "type": "3",
+      "id": 16,
+      "sex": "acs"
+    },
+    {
+      "name": "Gooliver backpack",
+      "price": "299$",
+      "imgSrc": "/accesories/acsses3.webp",
+      "type": "3",
+      "id": 17,
+      "sex": "acs"
+    }
+  ],
+  "orders": [
+    {
+      "name": "Classic Boston pants",
+      "date": "Tue Feb 27 2024",
+      "price": "299$",
+      "imgSrc": "/catalog/boys2.png",
+      "username": "snusp",
+      "id": 1
+    },
+    {
+      "name": "Classic President pants",
+      "date": "Tue Feb 27 2024",
+      "price": "499$",
+      "imgSrc": "/catalog/boys4.jpeg",
+      "username": "snusp",
+      "id": 2
+    }
+  ]
+}
