@@ -1,0 +1,46 @@
+header {
+  background-color: #077015;
+  height: 125px;
+}
+.nav-item {
+  box-sizing: border-box;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+.nav-links {
+  text-decoration: none;
+  color: #ffd700;
+  font-size: xx-large;
+  white-space: nowrap;
+}
+.nav-links:hover {
+  color: #ccb325;
+}
+
+.cat-item {
+  padding-right: 3%;
+  padding-bottom: 3%;
+}
+.cat-img {
+  width: 300px;
+  height: 400px;
+}
+
+.buyIcon {
+  width: 25px;
+  height: 25px;
+  fill: black;
+}
+h4 {
+  color: #077015;
+}
+.RegObj {
+  padding-top: 1.5%;
+  color: #077015;
+}
+.btn-reg {
+  background-color: #077015;
+  color: #ffd700;
+  margin-top: 3%;
+  width: 33%;
+}
