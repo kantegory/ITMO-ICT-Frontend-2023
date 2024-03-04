@@ -1,0 +1,18 @@
+@mixin center-children
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin interactive
+    cursor: pointer
+    transition: all 0.2s
+    user-select: none
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    &:hover
+        scale: 1.05
+
+    &:active
+        scale: 0.95
+
+$mixin themable ($theme-name, container-bg, $grey-first, $grey-second,  $main-color, $secondary-color) {
+    .#{$theme-name}

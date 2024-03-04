@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "react-app"
+  ],
+  "rules": {
+    "no-console":"warn",
+    "quotes":["error", "double"],
+    "jsx-quotes":["error", "prefer-double"],
+    "prefer-const":"warn",
+    "import/order": "warn"
+  }
+}
