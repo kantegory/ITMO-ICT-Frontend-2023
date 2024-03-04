@@ -1,8 +1,12 @@
-
-@import '../styles/variables'
+@import '../styles/mixins'
 .page
+    display: flex
+    flex-direction: column
+    align-items: center
+
     width: 100%
     height: 100%
+    background: var(--main-grey)
 
 .popout
     display: flex
@@ -16,6 +20,8 @@
     width: 50%
     min-width: 260px
 
-    background: $grey-dark
+    background: var(--secondary-grey)
     border-radius: 12px
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.25)
+
+.tabbar

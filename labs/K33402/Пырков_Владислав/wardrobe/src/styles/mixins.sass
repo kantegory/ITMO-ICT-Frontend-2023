@@ -14,5 +14,32 @@
     &:active
         scale: 0.95
 
-$mixin themable ($theme-name, container-bg, $grey-first, $grey-second,  $main-color, $secondary-color) {
-    .#{$theme-name}
+// темизация 
+$white-main: #ffffff
+$black-main: #000000
+
+$green-light: #80FFAC
+$green-dark: #14A098
+
+$grey-light: #A5A5A5
+$grey-dark: rgba(58, 58, 58, 0.8)
+
+@mixin dark-theme
+    --main-accent: #ffffff
+    --secondary-accent: #000000
+
+    --main-green: #80FFAC
+    --secondary-green: #14A098
+
+    --main-grey: #A5A5A5
+    --secondary-grey: rgba(58, 58, 58, 0.8)
+
+@mixin light-theme
+    --main-accent: #000000
+    --secondary-accent: #ffffff
+
+    --main-green: #14A098
+    --secondary-green: #80FFAC
+
+    --main-grey: rgba(58, 58, 58, 0.8)
+    --secondary-grey: #A5A5A5

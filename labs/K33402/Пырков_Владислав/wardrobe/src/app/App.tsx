@@ -1,9 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import EnterPage from "./pages/enter";
-import { CartPage, ProfilePage, RegistrationPage, ShopPage } from "./pages";
+import { EnterPage, ProfilePage, RegistrationPage, ShopPage } from "../pages";
 
-import "./styles/normalize.sass";
-import "./styles/app.sass";
+import "../styles/normalize.sass";
+import "../styles/app.sass";
 
 const router = createBrowserRouter([
     {
@@ -21,10 +20,6 @@ const router = createBrowserRouter([
     {
         path: "/profile",
         element: <ProfilePage />,
-    },
-    {
-        path: "/cart",
-        element: <CartPage />,
     },
 ]);
 
