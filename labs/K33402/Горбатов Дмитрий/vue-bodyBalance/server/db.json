@@ -1,0 +1,108 @@
+{
+  "users": [
+  ],
+  "characteristics": [
+  ],
+  "weight": [
+  ],
+  "food": [
+    {
+      "name": "beef patty",
+      "calorie": "197.4",
+      "img": "/food/beef_patty.jpeg",
+      "category": "meat",
+      "subcategory": "main",
+      "id": 1
+    },
+    {
+      "name": "spaghetti",
+      "calorie": "92",
+      "img": "/food/spaghetti.png",
+      "category": "macaroni",
+      "subcategory": "garnish",
+      "id": 2
+    },
+    {
+      "name": "tomato",
+      "calorie": "20",
+      "img": "/food/tomato.jpg",
+      "category": "vegetables",
+      "subcategory": "supplement",
+      "id": 3
+    },
+    {
+      "name": "pie",
+      "calorie": "478",
+      "img": "/food/pie.jpg",
+      "category": "dessert milk",
+      "subcategory": "dessert",
+      "id": 4
+    },
+    {
+      "name": "ice cream",
+      "calorie": "227",
+      "img": "/food/icecream.jpg",
+      "category": "milk",
+      "subcategory": "dessert",
+      "id": 5
+    },
+    {
+      "name": "rise",
+      "calorie": "344",
+      "img": "/food/rise.jpg",
+      "category": "rise",
+      "subcategory": "garnish",
+      "id": 6
+    },
+    {
+      "name": "parmesan",
+      "calorie": "392",
+      "img": "/food/parmesan.jpg",
+      "category": "cheese",
+      "subcategory": "supplement",
+      "id": 7
+    },
+    {
+      "name": "shaurma",
+      "calorie": "200",
+      "img": "/food/shaurma.jpg",
+      "category": "meat vegetables",
+      "subcategory": "full",
+      "id": 8
+    },
+    {
+      "name": "russian cheese",
+      "calorie": "363",
+      "img": "/food/russiancheese.jpg",
+      "category": "cheese",
+      "subcategory": "supplement",
+      "id": 9
+    },
+    {
+      "name": "carbonara",
+      "calorie": "292",
+      "img": "/food/carbonara.jpg",
+      "category": "meat macaroni",
+      "subcategory": "full",
+      "id": 10
+    },
+    {
+      "name": "chedder",
+      "calorie": "392",
+      "img": "/food/chedder.jpg",
+      "category": "cheese",
+      "subcategory": "supplement",
+      "id": 11
+    },
+    {
+      "name": "cucumber",
+      "calorie": "15",
+      "img": "/food/cucumber.jpg",
+      "category": "vegetables",
+      "subcategory": "supplement",
+      "id": 12
+    }
+  ],
+  "calories": [
+  ]
+}
