@@ -1,0 +1,38 @@
+.shopItemContainer {
+  width: 300px;
+  height: fit-content;
+  border: 1px solid black;
+  border-radius: 9px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+
+  .shopItemImg {
+    width: 260px;
+    height: 260px;
+  }
+
+  .shopItemTitle {
+    margin-bottom: 10px;
+  }
+
+  .shopItemBuy {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .shopItemBtn {
+      height: 30px;
+      width: 70px;
+      border-radius: 9px;
+      border: none;
+      padding: 5px;
+      background-color: bisque;
+      cursor: pointer;
+    }
+  }
+}

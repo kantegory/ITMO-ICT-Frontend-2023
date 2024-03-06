@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "test",
+      "id": 1
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "title": "Чёрная футболка Nike",
+      "cover": "https://vipcross.ru/upload/iblock/eec/h25lpnsh00jmgj085ta2a39lsnj4lt1u.jpg",
+      "price": 3000
+    },
+    {
+      "id": 2,
+      "title": "Красная кофта Adidas",
+      "cover": "https://cdn.lbtq.io/productImage/resize/1200x1600_40cd750bba9870f18aada2478b24840a/20170424/165/20170424165934_003130558_1.jpg",
+      "price": 3500
+    },
+    {
+      "id": 3,
+      "title": "Синие штаны Reebok",
+      "cover": "https://fridaywear.ru/upload/resize_cache/webp/iblock/380/fhtxi3oq347hawv86uyl0r5t12pu937h.webp",
+      "price": 2500
+    }
+  ],
+  "cartItems": [
+    {
+      "title": "Чёрная футболка Nike",
+      "cover": "https://vipcross.ru/upload/iblock/eec/h25lpnsh00jmgj085ta2a39lsnj4lt1u.jpg",
+      "price": 3000,
+      "id": 1
+    }
+  ],
+  "orders": [
+    {
+      "items": ["Красная кофта Adidas", "Синие штаны Reebok"],
+      "totalSum": 6000,
+      "id": 1
+    },
+    {
+      "items": ["Чёрная футболка Nike", "Красная кофта Adidas"],
+      "totalSum": 6500,
+      "id": 2
+    }
+  ]
+}

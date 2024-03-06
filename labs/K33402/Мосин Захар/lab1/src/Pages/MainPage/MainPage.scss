@@ -1,0 +1,24 @@
+.mainPageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .mainContentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 40px;
+
+    .mainPageSelect {
+      width: 220px;
+      height: 20px;
+      border-radius: 9px;
+    }
+
+    .mainSelection {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+  }
+}
