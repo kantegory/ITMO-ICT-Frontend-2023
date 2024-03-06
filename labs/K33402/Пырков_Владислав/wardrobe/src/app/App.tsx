@@ -3,28 +3,38 @@ import { EnterPage, ProfilePage, RegistrationPage, ShopPage } from "../pages";
 
 import "../styles/normalize.sass";
 import "../styles/app.sass";
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <EnterPage />,
-    },
-    {
-        path: "/registration",
-        element: <RegistrationPage />,
-    },
-    {
-        path: "/shop",
-        element: <ShopPage />,
-    },
-    {
-        path: "/profile",
-        element: <ProfilePage />,
-    },
-]);
+import { Tabbar } from "../components";
+import { useState } from "react";
 
 function App() {
-    return <RouterProvider router={router} />;
+    const [theme, setTheme] = useState("light");
+    const [showTabs, setShowTabs] = useState(true);
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <EnterPage theme={theme} setShowTabs={setShowTabs} />,
+        },
+        {
+            path: "/registration",
+            element: (
+                <RegistrationPage theme={theme} setShowTabs={setShowTabs} />
+            ),
+        },
+        {
+            path: "/shop",
+            element: <ShopPage theme={theme} />,
+        },
+        {
+            path: "/profile",
+            element: <ProfilePage theme={theme} setTheme={setTheme} />,
+        },
+    ]);
+    return (
+        <>
+            <RouterProvider router={router} />
+            {showTabs && <Tabbar />}
+        </>
+    );
 }
 
 export default App;

@@ -3,9 +3,10 @@ import cl from "./styles.module.sass";
 import classNames from "classnames";
 type PageProps = {
     children?: ReactNode | ReactNode[];
+    theme: string;
 };
-const Page = ({ children }: PageProps) => {
-    return <main className={classNames(cl.page, "dark")}>{children}</main>;
+const Page = ({ children, theme }: PageProps) => {
+    return <main className={classNames(cl.page, theme)}>{children}</main>;
 };
 
 export default Page;
