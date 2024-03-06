@@ -1,0 +1,34 @@
+.cartPageContainer {
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .cartPageFirstSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .cartShopItemSelection {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+  .cartPageSecondSection {
+    display: flex;
+    position: sticky;
+    flex-direction: column;
+    gap: 10px;
+
+    .cartShopPageBtn {
+      height: 30px;
+      border-radius: 9px;
+      border: none;
+      padding: 5px;
+      background-color: bisque;
+      cursor: pointer;
+    }
+  }
+}
