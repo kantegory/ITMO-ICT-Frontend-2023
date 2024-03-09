@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Men's Suit</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dark.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="css/light.css" media="(prefers-color-scheme: dark)">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <svg class="logo-icon">
+              <use xlink:href="icons/sprite.svg#logo"></use>
+            </svg>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-content">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link active" aria-current="page" href="#">Главная</a>
+
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Скидки</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Прокат</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Отзывы</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Магазины</a>
+                </li>
+              </ul>
+              <div class="menu-right d-flex">
+                <div class="menu-contact">
+                  <a href="tel:+79533458549">
+                    <svg class="icon">
+                      <use xlink:href="icons/sprite.svg#phone"></use>
+                    </svg>
+                    <span>+7 (953) 345-85-49</span>
+                  </a>
+                </div>
+                <div class="menu-user">
+                  <button class="profile">
+                    <svg class="icon">
+                      <use xlink:href="icons/sprite.svg#user"></use>
+                    </svg>
+                  </button>
+                  <a href="" class="cart">
+                    <svg class="icon">
+                      <use xlink:href="icons/sprite.svg#cart"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="home-banner">
+      <div class="container">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide block">
+              <img src="img/banner.png" alt="На картинке изображен мужчина в черном костюме, которые предлагает вам получить скидку в размере 500 рублей. Для получения скидки необходимо нажать на кнопку 'Подписаться' и ввести в поле свою электронную почту для получения письма с промокодом на скидку на вашу почту.">
+              <h2>Подарок на первый заказ</h2>
+              <p>Получите 500 рублей за подписку на рассылку</p>
+              <a href="">Подписаться</a>
+            </div>
+            <div class="swiper-slide block">
+              <img src="img/banner.png" alt="">
+              <h2>Подарок на первый заказ</h2>
+              <p>Получите 500 рублей за подписку на рассылку</p>
+              <a href="">Подписаться</a>
+            </div>
+            <div class="swiper-slide block">
+              <img src="img/banner.png" alt="">
+              <h2>Подарок на первый заказ</h2>
+              <p>Получите 500 рублей за подписку на рассылку</p>
+              <a href="">Подписаться</a>
+            </div>
+            <div class="swiper-slide block">
+              <img src="img/banner.png" alt="">
+              <h2>Подарок на первый заказ</h2>
+              <p>Получите 500 рублей за подписку на рассылку</p>
+              <a href="">Подписаться</a>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </nav>
+    <section class="home-menu">
+      <div class="container">
+        <div class="swiper-menu">
+          <div class="swiper-wrapper">
+            <a href="" class="swiper-slide">
+              <span>Костюмы</span>
+            </a>
+            <a href="" class="swiper-slide">
+              <span>Пиджаки</span>
+            </a>
+            <a href="" class="swiper-slide">
+              <span>Брюки</span>
+            </a>
+            <a href="" class="swiper-slide">
+              <span>Рубашки</span>
+            </a>
+            <a href="" class="swiper-slide">
+              <span>Туфли</span>
+            </a>
+            <a href="" class="swiper-slide">
+              <span>Галустуки</span>
+            </a>
+            <a href="" class="swiper-slide">
+              <span>Часы</span>
+            </a>
+            <a href="" class="swiper-slide">
+              <span>Запанки</span>
+            </a>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </section>
+    <section class="home-product">
+      <div class="container">
+          <h3 class="all_products">Все товары</h3>
+          <div class="products-wrapper">
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+            <div class="product">
+              <div class="img">
+                <img src="img/product.png" alt="">
+              </div>
+              <a href="" class="title">Костюм Тройка</a>
+              <p class="description">Мужской костюм тройка чёрного цвета. Страна производства - Великобритания.</p>
+              <div class="rating">
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 1 звезда рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 2 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 3 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#full-star" alt="Изображение с заполненной звездочкой, показывает, что у данного предложения есть 4 звезды рейтинга."></use>
+                </svg>
+                <svg class="rating-icon">
+                  <use xlink:href="icons/sprite.svg#half-star" alt="Изображение с наполовину заполненной звездочкой, показывает, что у данного предложения есть 4.5 звезды рейтинга."></use>
+                </svg>
+              </div>
+              <div class="price">
+                <b>38 000 ₽</b> <span>1 200 ₽/сут.</span>
+              </div>
+              <a href="" class="to-cart">В корзину</a>
+            </div>
+          </div>
+          <div class="pagination-block">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">•••</a></li>
+                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <svg class="arrow-icon">
+                      <use xlink:href="icons/sprite.svg#arrow"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="footer-wrapper">
+          <div class="footer-left">
+            <div class="phones">
+              <div class="phone-item">
+                <span>Бесплатный звонок по РФ</span>
+                <a href="tel:+79533458549">+7 (953) 345-85-49</a>
+              </div>
+              <div class="phone-item">
+                <span>Для приёма заказов</span>
+                <a href="tel:+79811304497">+7 (981) 130-44-97</a>
+              </div>
+            </div>
+            <div class="work-time">
+              График работы по будням с 9:00 до 21:00
+            </div>
+            <div class="work-email">
+              <a href="mailto:artusick@list.ru">Email: artusick@list.ru</a>
+              <a href="" class="site-help">Поддержка</a>
+            </div>
+          </div>
+          <div class="footer-centre">
+            <div class="social">
+              <a href="">Мы в вконтакте ></a>
+              <a href="">Мы в instagram ></a>
+            </div>
+          </div>
+          <div class="footer-right">
+            <div class="person">
+              <a href="">
+                <svg class="person-icon">
+                  <use xlink:href="icons/sprite.svg#person"></use>
+                </svg>
+                <span>Войти / Регистрация</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <span>©2024. Пиросмани</span>
+          <a href="">Условия соглашения</a>
+          <a href="">Политика конфиденциальности</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+  </script>
+
+
+  <script>
+    var mySwiper = new Swiper('.swiper', {
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
+    })
+    var menuSwiper = new Swiper('.swiper-menu', {
+      slidesPerView: 'auto',
+      spaceBetween: 150,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    })
+  </script>
+
+
+</body>
+
+</html>
