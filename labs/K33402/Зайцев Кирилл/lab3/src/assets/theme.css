@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('BUkJ.gif'); /* Путь к бесконечной гифке для светлой темы */
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.dark-theme body {
+  background-image: url('3uvT.gif'); /* Путь к бесконечной гифке для темной темы */
+}
+
+button, input {
+    border: none;
+    outline: none;
+}
+
+/* Общие стили */
+.light-theme {
+    background-color: #fff;
+    color: #333; /* Цвет текста для светлой темы */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-theme button {
+    background-color: #1DB954;
+    color: #fff; /* Цвет текста для кнопок в светлой теме */
+}
+
+.light-theme a {
+    color: #007bff; /* Цвет ссылок в светлой теме */
+}
+
+/* Стили для темной темы */
+.dark-theme {
+    background-color: #333;
+    color: #fff; /* Цвет текста для темной темы */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-theme button {
+    background-color: #1DB954;
+    color: #fff; /* Цвет текста для кнопок в темной теме */
+}
+
+.dark-theme a {
+    color: #1DB954; /* Цвет ссылок в темной теме */
+}
