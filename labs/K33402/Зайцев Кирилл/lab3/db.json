@@ -1,0 +1,33 @@
+{
+  "topSongs": [
+    {"id": 1, "title": "Song 1", "artist": "Artist 1"},
+    {"id": 2, "title": "Song 2", "artist": "Artist 2"},
+    {"id": 3, "title": "Song 3", "artist": "Artist 3"}
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Kirill",
+      "email": "lioishka@ya.ru",
+      "password": "password123",
+      "favorites": [1],
+      "playlists": [
+        {
+          "id": 1,
+          "name": "My Playlist 1",
+          "songs": [1, 2]
+        },
+        {
+          "id": 2,
+          "name": "My Playlist 2",
+          "songs": [3]
+        }
+      ]
+    }
+  ],
+  "songs": [
+    {"id": 1, "title": "Song 1", "artist": "Artist 1", "audio": "audio1.mp3"},
+    {"id": 2, "title": "Song 2", "artist": "Artist 2", "audio": "audio2.mp3"},
+    {"id": 3, "title": "Song 3", "artist": "Artist 3", "audio": "audio3.mp3"}
+  ]
+}
