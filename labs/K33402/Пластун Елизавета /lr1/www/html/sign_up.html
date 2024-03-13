@@ -14,6 +14,10 @@
           integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
           crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../css/styleshit.css">
+  <link rel="stylesheet" href="../css/light.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="../css/dark.css" media="(prefers-color-scheme: dark)">
+  <script defer src="../js/sign.js"></script>
+  <meta name="description" content="Регистрация" />
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -25,7 +29,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="sign_in.html">sign in</a>
+        <a class="nav-link" href="sign_in.html">Sign in</a>
       </div>
     </div>
   </div>
@@ -36,24 +40,20 @@
          alt="нейроселедь логотип">
   </div>
   <div class="form-container">
-    <form>
+    <form onsubmit="register(event)">
       <div class="mb-3">
         <label class="form-label-text">Register</label>
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
       </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">sign up</button>
+      <button type="submit" class="btn btn-primary">Sign up</button>
     </form>
   </div>
 </div>

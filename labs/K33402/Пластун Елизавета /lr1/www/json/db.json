@@ -60,7 +60,7 @@
   "playlists": [
     {
       "id": "1",
-      "name": "playlist1",
+      "name": "для допсы",
       "list": [
         {
           "id": "4",
@@ -90,7 +90,7 @@
     },
     {
       "id": "2",
-      "name": "playlist2",
+      "name": "я очень старалась",
       "list": [
         {
           "id": "4",
@@ -120,7 +120,7 @@
     },
     {
       "id": "3",
-      "name": "playlist3",
+      "name": "честно!",
       "list": [
         {
           "id": "4",
@@ -150,7 +150,7 @@
     },
     {
       "id": "4",
-      "name": "playlist4",
+      "name": "поставьте 3🥺🥺🥺",
       "list": [
         {
           "id": "4",
@@ -181,16 +181,34 @@
   ],
   "users": [
     {
+      "id": 1,
       "email": "lizaplastun@gmail.com",
       "password": "fdghjk56dFfe"
     },
     {
+      "id": 2,
       "email": "lizaplastunn@gmail.com",
-      "password": "fdghjk56dFfe"
+      "password": "fdghjk56777dFfe"
     },
     {
+      "id": 3,
       "email": "lizaplaastun@gmail.com",
-      "password": "fdghjk56dFfe"
+      "password": "fdghjk58686dFfe"
+    },
+    {
+      "email": "stun@gmail.com",
+      "password": "fdghjk56dFfe",
+      "id": 4
+    },
+    {
+      "email": "new@gmail.com",
+      "password": "1234567890",
+      "id": 5
+    },
+    {
+      "email": "newww@gmail.com",
+      "password": "fdghjk56dFfe",
+      "id": 6
     }
   ]
 }

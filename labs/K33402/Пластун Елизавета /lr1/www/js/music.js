@@ -11,6 +11,8 @@ let volumeScale = document.getElementById("volume");
 const songContainerAll = document.getElementById('songContainerAll');
 const songContainerMyMusic = document.getElementById('songContainerMyMusic');
 const songContainerMyPlaylists = document.getElementById('songContainerMyPlaylists');
+const searchInput = document.querySelector('.form-control');
+const selectSort = document.querySelector('.form-select');
 const SERVER_URL = 'http://localhost:3000'
 
 async function getDataAllMusic() {
@@ -173,6 +175,7 @@ function createHtmlSongList(allMusic, parent) {
         const songImage = document.createElement('img');
         songImage.classList.add('img-thumbnail', 'resize')
         songImage.src = `../../src/img/1.png`;
+        songImage.setAttribute('alt', 'изображение песни');
         const songName = document.createElement('div');
         songName.classList.add('nav-link', 'black');
         songName.textContent = song.name;
@@ -186,6 +189,11 @@ function createHtmlSongList(allMusic, parent) {
         songPhotoDiv.appendChild(songInfoDiv);
         songDiv.appendChild(songPhotoDiv);
         parent.appendChild(songDiv);
+
+        songDiv.addEventListener('click', function() {
+            const songId = song.id;
+            loadMusic(songId, allMusic);
+        });
     });
 }
 
@@ -218,10 +226,10 @@ function createHtmlPlayList(playlists, parent) {
         const songImagei = document.createElement('img');
         songImagei.classList.add('img-thumbnail', 'resize');
         songImagei.src = `../../src/img/1.png`;
+        songImagei.setAttribute('alt', 'изображение песни');
         const songNamei = document.createElement('div');
         songNamei.classList.add('nav-link', 'black');
         songNamei.textContent = playlist.name;
-        console.log(playlist.list)
         createHtmlSongList(playlist.list, musiclist);
 
         songInfoDivi.appendChild(songNamei);
@@ -239,3 +247,38 @@ function createHtmlPlayList(playlists, parent) {
 
 
 volumeScale.addEventListener('change', ChangeVolume);
+
+
+async function searchSongs(query) {
+    try {
+        const response = await fetch(`${SERVER_URL}/all_music?q=${encodeURIComponent(query)}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return Array.isArray(data) ? data : [];
+    } catch (error) {
+        console.error('Произошла ошибка при поиске песен:', error);
+        return [];
+    }
+}
+searchInput.addEventListener('input', async () => {
+    const query = searchInput.value.trim();
+    const parentContainer = songContainerAll;
+    if (query === '') {
+        while (parentContainer.firstChild) {
+            parentContainer.removeChild(parentContainer.firstChild);
+        }
+        const allMusic = await getDataAllMusic();
+        createHtmlSongList(allMusic, parentContainer);
+    } else {
+        while (parentContainer.firstChild) {
+            parentContainer.removeChild(parentContainer.firstChild);
+        }
+        const searchResults = await searchSongs(query);
+        createHtmlSongList(searchResults, parentContainer);
+    }
+});
+
+
+
