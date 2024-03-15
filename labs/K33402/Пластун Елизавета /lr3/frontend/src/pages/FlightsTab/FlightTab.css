@@ -1,0 +1,64 @@
+.cell-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.cell-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #e1e1e1;
+  padding: 16px 20px;
+  align-items: center;
+}
+
+.cell-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 50px
+}
+
+.cell-hours {
+  font-weight: 700;
+}
+
+.cell-date {
+  font-weight: 500;
+}
+
+.cell-datatime {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+
+.cell-route {
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+  align-items: center;
+  font-weight: 500;
+}
+
+.arrow {
+  height: 15px;
+}
+
+.cell-button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px
+}
+
+.cell-button {
+  width: 140px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.airplane-icon {
+  width: 30px;
+}

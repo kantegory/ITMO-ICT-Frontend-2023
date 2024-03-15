@@ -1,0 +1,48 @@
+header {
+  background-color: #454545;
+  color: white;
+}
+
+.header-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.header-left-cell {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px
+}
+
+button {
+  margin: 10px 0;
+}
+
+.main-container {
+  padding: 10px;
+}
+
+.button-and-link {
+  display: flex;
+  flex-direction: column;
+}
+
+.lable {
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.search-cell {
+  display: flex;
+  align-items: center;
+}
+
+.info-cell {
+  font-weight: 600;
+}
+
+.logout-button {
+  margin-left: 20px;
+}
