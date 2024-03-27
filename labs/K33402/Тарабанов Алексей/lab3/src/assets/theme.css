@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('Fon.jpg.gif');
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.dark-theme body {
+  background-image: url('Fon.jpg');
+}
+
+button, input {
+    border: none;
+    outline: none;
+}
+
+
+.light-theme {
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-theme button {
+    background-color: #1DB954;
+    color: #fff;
+}
+
+.light-theme a {
+    color: #007bff;
+}
+
+/* Стили для темной темы */
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-theme button {
+    background-color: #1DB954;
+    color: #fff;
+}
+
+.dark-theme a {
+    color: #1DB954;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 50px auto 0;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: #f00;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="form-container">
+    <h2>Регистрация</h2>
+    <form id="registrationForm">
+        <label for="username"></label><input type="text" id="username" placeholder="Имя пользователя">
+        <br>
+        <label for="email"></label><input type="text" id="email" placeholder="Email">
+        <br>
+        <label for="password"></label><input type="password" id="password" placeholder="Пароль">
+        <br>
+        <label for="confirmPassword"></label><input type="password" id="confirmPassword" placeholder="Повторите пароль">
+        <br>
+        <input type="submit" value="Создать аккаунт" style="background-color: #222eaf; color: white;">
+    </form>
+    <p>Есть аккаунт? <a href="login.html">Войти</a></p>
+    <div class="error-message" id="registrationError">Введите корректные данные</div>
+</div>
+<script src="js/registration.js"></script>
+
+<script>
+    const registrationForm = document.getElementById('registrationForm');
+    const usernameInput = document.getElementById('username');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const registrationError = document.getElementById('registrationError');
+
+    registrationForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        if (!validateRegistration(usernameInput.value, emailInput.value, passwordInput.value, confirmPasswordInput.value)) {
+            registrationError.style.display = 'block';
+        } else {
+            // Simulate successful registration
+            alert('Успешная регистрация!');
+            window.location.href = 'login.html';
+        }
+    });
+
+    function validateRegistration(username, email, password, confirmPassword) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return username.trim() !== '' &&
+            emailRegex.test(email) &&
+            password.length > 4 &&
+            password === confirmPassword;
+    }
+</script>
+</body>
+</html>

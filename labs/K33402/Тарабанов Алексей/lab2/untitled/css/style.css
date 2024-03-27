@@ -1,0 +1,79 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.search-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
+.song-list {
+    /* стили для списка песен */
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+.dark-mode .form-container {
+    background-color: #181818;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .search-bar input[type="text"],
+.dark-mode .search-bar select,
+.dark-mode .search-bar button {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .music-item {
+    background-color: #333;
+    color: #fff;
+}
+
+
+.light-mode {
+    background-color: #f0f0f0;
+    color: #222;
+}
+
+.light-mode .form-container {
+    background-color: #fff;
+    color: #222;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .search-bar input[type="text"],
+.light-mode .search-bar select,
+.light-mode .search-bar button {
+    background-color: #eee;
+    color: #222;
+}
+
+.light-mode .music-item {
+    background-color: #eee;
+    color: #222;
+}
+
